@@ -1,4 +1,6 @@
 G5ClientHub::Application.routes.draw do
+  resources :features
+
   resources :locations
 
   match 'client/edit' => 'clients#edit', :as => :edit_current_client
