@@ -13,3 +13,7 @@ end
 group :development do
   gem "nifty-generators", "~> 0.4.6"
 end
+
+gem "bcrypt-ruby", :require => "bcrypt"
+
+gem "mocha", :group => :test
