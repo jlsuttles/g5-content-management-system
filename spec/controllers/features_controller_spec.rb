@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require 'spec_helper'
 
 describe FeaturesController do
   fixtures :all
@@ -20,13 +20,13 @@ describe FeaturesController do
   end
 
   it "create action should render new template when model is invalid" do
-    Feature.any_instance.stubs(:valid?).returns(false)
+    Feature.any_instance.stub(:valid?).and_return(false)
     post :create
     response.should render_template(:new)
   end
 
   it "create action should redirect when model is valid" do
-    Feature.any_instance.stubs(:valid?).returns(true)
+    Feature.any_instance.stub(:valid?).and_return(true)
     post :create
     response.should redirect_to(feature_url(assigns[:feature]))
   end
@@ -37,13 +37,13 @@ describe FeaturesController do
   end
 
   it "update action should render edit template when model is invalid" do
-    Feature.any_instance.stubs(:valid?).returns(false)
+    Feature.any_instance.stub(:valid?).and_return(false)
     put :update, :id => Feature.first
     response.should render_template(:edit)
   end
 
   it "update action should redirect when model is valid" do
-    Feature.any_instance.stubs(:valid?).returns(true)
+    Feature.any_instance.stub(:valid?).and_return(true)
     put :update, :id => Feature.first
     response.should redirect_to(feature_url(assigns[:feature]))
   end
