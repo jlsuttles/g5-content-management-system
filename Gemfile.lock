@@ -61,6 +61,8 @@ GEM
     nifty-generators (0.4.6)
     pg (0.14.1)
     polyglot (0.3.3)
+    quiet_assets (1.0.1)
+      railties (~> 3.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -116,6 +118,7 @@ DEPENDENCIES
   mocha
   nifty-generators (~> 0.4.6)
   pg
+  quiet_assets (~> 1.0.1)
   rails (= 3.2.7)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
