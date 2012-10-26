@@ -25,5 +25,3 @@ group :development, :test do
   gem "fabrication", "~> 2.5.0"
   gem "faker", "~> 1.1.2"
 end
-
-

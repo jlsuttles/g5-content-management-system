@@ -1,6 +1,6 @@
-class CreateClients < ActiveRecord::Migration
+class CreateUsers < ActiveRecord::Migration
   def self.up
-    create_table :clients do |t|
+    create_table :users do |t|
       t.string :username
       t.string :email
       t.string :password_hash
@@ -10,6 +10,6 @@ class CreateClients < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :clients
+    drop_table :users
   end
 end

@@ -5,8 +5,9 @@ describe FeaturesController do
   render_views
 
   before(:each) do
-    @client = Fabricate(:client)
-    session[:client_id] = @client.id
+    @user = Fabricate(:user)
+    session[:user_id] = @user.id
+    @feature = Fabricate(:feature)
   end
 
   it "index action should render index template" do

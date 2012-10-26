@@ -1,14 +1,14 @@
-class ClientsController < ApplicationController
+class UsersController < ApplicationController
   before_filter :login_required, :except => [:new, :create]
 
   def new
-    @client = Client.new
+    @user = User.new
   end
 
   def create
-    @client = Client.new(params[:client])
-    if @client.save
-      session[:client_id] = @client.id
+    @user = User.new(params[:user])
+    if @user.save
+      session[:user_id] = @user.id
       redirect_to root_url, :notice => "Thank you for signing up! You are now logged in."
     else
       render :action => 'new'
@@ -16,12 +16,12 @@ class ClientsController < ApplicationController
   end
 
   def edit
-    @client = current_client
+    @user = current_user
   end
 
   def update
-    @client = current_client
-    if @client.update_attributes(params[:client])
+    @user = current_user
+    if @user.update_attributes(params[:user])
       redirect_to root_url, :notice => "Your profile has been updated."
     else
       render :action => 'edit'

@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    client = Client.authenticate(params[:login], params[:password])
-    if client
-      session[:client_id] = client.id
+    user = User.authenticate(params[:login], params[:password])
+    if user
+      session[:user_id] = user.id
       redirect_to_target_or_default root_url, :notice => "Logged in successfully."
     else
       flash.now[:alert] = "Invalid login or password."
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:client_id] = nil
+    session[:user_id] = nil
     redirect_to root_url, :notice => "You have been logged out."
   end
 end

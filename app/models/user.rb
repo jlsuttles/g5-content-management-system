@@ -1,4 +1,4 @@
-class Client < ActiveRecord::Base
+class User < ActiveRecord::Base
   # new columns need to be added here to be writable through mass assignment
   attr_accessible :username, :email, :password, :password_confirmation
 
@@ -15,8 +15,8 @@ class Client < ActiveRecord::Base
 
   # login can be either username or email address
   def self.authenticate(login, pass)
-    client = find_by_username(login) || find_by_email(login)
-    return client if client && client.password_hash == client.encrypt_password(pass)
+    user = find_by_username(login) || find_by_email(login)
+    return user if user && user.password_hash == user.encrypt_password(pass)
   end
 
   def encrypt_password(pass)

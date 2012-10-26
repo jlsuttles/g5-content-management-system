@@ -1,19 +1,13 @@
 G5ClientHub::Application.routes.draw do
-  resources :features
+  match 'logout' => 'sessions#destroy', :as => :logout
+  match 'login' => 'sessions#new', :as => :login
+  resources :sessions
+  match 'user/edit' => 'users#edit', :as => :edit_current_user
+  match 'signup' => 'users#new', :as => :signup
+  resources :users
 
+  resources :features
   resources :locations
 
-  match 'client/edit' => 'clients#edit', :as => :edit_current_client
-
-  match 'signup' => 'clients#new', :as => :signup
-
-  match 'logout' => 'sessions#destroy', :as => :logout
-
-  match 'login' => 'sessions#new', :as => :login
-
-  resources :sessions
-
-  resources :clients
-
-  root to: "sessions#new"
+  root to: "users#index"
 end
