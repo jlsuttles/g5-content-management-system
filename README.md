@@ -14,6 +14,11 @@ vi config/database.yml # edit username
 rake db:create db:schema:load db:seed
 ```
 
+1. Set ENV variables
+    * `HEROKU_API_KEY`
+    * `HEROKU_USERNAME`
+
+
 ## Authors
 
   * Jessica Lynn Suttles / [@jlsuttles](https://github.com/jlsuttles)
