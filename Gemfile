@@ -22,6 +22,8 @@ group :development, :test do
   gem "guard-rspec", "~> 2.1.0"
   gem "rb-fsevent", "~> 0.9.2"
   gem "debugger", "~> 1.2.1"
+  gem "fabrication", "~> 2.5.0"
+  gem "faker", "~> 1.1.2"
 end
 
 
