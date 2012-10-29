@@ -1,17 +1,3 @@
 <% title "Features" %>
-
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
-  <% for feature in @features %>
-    <tr>
-      <td><%= feature.name %></td>
-      <td><%= link_to "Show", feature %></td>
-      <td><%= link_to "Edit", edit_feature_path(feature) %></td>
-      <td><%= link_to "Destroy", feature, :data => { :confirm => 'Are you sure?' }, :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
-
-<p><%= link_to "New Feature", new_feature_path %></p>
+<%= link_to "New Feature", new_feature_path, class: "btn btn-success" %>
+<%= simple_table_for @features, with: FeatureTable %>
