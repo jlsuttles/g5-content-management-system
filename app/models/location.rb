@@ -21,4 +21,8 @@ class Location < ActiveRecord::Base
   def heroku_repo
     "git@heroku.com:#{heroku_app_name}.git"
   end
+
+  def heroku_url
+    "https://#{heroku_app_name}.herokuapp.com"
+  end
 end

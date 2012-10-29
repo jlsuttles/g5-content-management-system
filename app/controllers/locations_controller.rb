@@ -40,4 +40,13 @@ class LocationsController < ApplicationController
     @location.destroy
     redirect_to locations_url, :notice => "Successfully destroyed location."
   end
+
+  def deploy
+    @location = Location.find(params[:id])
+    if @location.deploy
+      redirect_to @location, notice: "Successfully deployed location."
+    else
+      render :show, error: "Failed to deploy location."
+    end
+  end
 end

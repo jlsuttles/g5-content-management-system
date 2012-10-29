@@ -4,11 +4,18 @@
   <tr>
     <th>Name</th>
     <th>Corporate</th>
+    <th>Heroku URL</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
   <% for location in @locations %>
     <tr>
       <td><%= location.name %></td>
       <td><%= location.corporate %></td>
+      <td><%= link_to location.heroku_url, location.heroku_url %></td>
+      <td><%= link_to "Deploy", deploy_location_path(location), method: :post %></td>
       <td><%= link_to "Show", location %></td>
       <td><%= link_to "Edit", edit_location_path(location) %></td>
       <td><%= link_to "Destroy", location, :data => { :confirm => 'Are you sure?' }, :method => :delete %></td>
