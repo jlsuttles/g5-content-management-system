@@ -6,7 +6,7 @@ gem "jquery-rails"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "quiet_assets", "~> 1.0.1"
 gem "bootstrap-sass", "~> 2.1.0.1"
-gem "github_heroku_deployer", "~> 0.0.4"
+gem "github_heroku_deployer", "~> 0.0.5"
 gem "table_cloth", "~> 0.1.2"
 
 group :assets do

@@ -4,5 +4,7 @@ GithubHerokuDeployer.configure do |config|
   config.heroku_app_name = nil
   config.heroku_repo     = nil
   config.heroku_username = ENV["HEROKU_USERNAME"]
-  config.ssh_enabled     = true
+  config.id_rsa          = ENV["ID_RSA"]
+  config.logger          = Rails.logger
+  config.repo_dir        = File.join(Rails.root, "tmp", "repos")
 end

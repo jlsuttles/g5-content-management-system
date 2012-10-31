@@ -15,7 +15,7 @@ class Location < ActiveRecord::Base
   end
 
   def heroku_app_name
-    "g5-cli-loc-#{name[0..18]}"
+    "g5-cl-#{name[0..23]}"
   end
 
   def heroku_repo
