@@ -1,3 +1,5 @@
+require 'resque/server'
+
 G5ClientHub::Application.routes.draw do
   match "logout" => "sessions#destroy", :as => :logout
   match "login" => "sessions#new", :as => :login
@@ -14,4 +16,6 @@ G5ClientHub::Application.routes.draw do
   end
 
   root to: "locations#index"
+
+  mount Resque::Server, :at => "/resque"
 end
