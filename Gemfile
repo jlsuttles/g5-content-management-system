@@ -9,7 +9,6 @@ gem "bootstrap-sass", "~> 2.1.0.1"
 gem "github_heroku_deployer", "~> 0.0.5"
 gem "table_cloth", "~> 0.1.2"
 gem "resque", "~> 1.23.0"
-gem "thin", "~> 1.5.0"
 gem "foreman", "~> 0.60.2"
 
 group :assets do

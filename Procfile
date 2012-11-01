@@ -1,2 +1,2 @@
-web: bundle exec thin start
-jobs: bundle exec rake jobs:work
+web: bundle exec rails server
+worker: bundle exec rake jobs:work
