@@ -1,7 +1,10 @@
 class Location < ActiveRecord::Base
   attr_accessible :name, :corporate
 
-  # TODO: async
+  def async_deploy
+    Resque.enqueue(LocationDeployer, self.id)
+  end
+
   def deploy
     GithubHerokuDeployer.deploy(
       github_repo: github_repo,

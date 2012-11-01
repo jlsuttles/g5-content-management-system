@@ -43,10 +43,7 @@ class LocationsController < ApplicationController
 
   def deploy
     @location = Location.find(params[:id])
-    if @location.deploy
-      redirect_to @location, notice: "Successfully deployed location."
-    else
-      render :show, error: "Failed to deploy location."
-    end
+    @location.async_deploy
+    redirect_to @location, notice: "Deploying location."
   end
 end
