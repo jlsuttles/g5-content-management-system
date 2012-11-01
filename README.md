@@ -57,8 +57,8 @@ If you find bugs, have feature requests or questions, please
 
 ## Specs
 
-1. Export environment variables
-```
+Export environment variables
+```bash
 export PUBLIC_GITHUB_REPO=git@github.com:G5/static-sinatra-prototype.git
 export PRIVATE_GITHUB_REPO=git@github.com:g5search/g5-client-location.git
 ```
