@@ -1,5 +1,10 @@
 # G5 Client Hub
 
+* Creates and deploys location sites
+* TODO: 
+    * Consumes configurator's feed
+    * Updates client hub deployer
+
 ## Setup
 
 1. Install all the required gems
@@ -14,9 +19,21 @@ vi config/database.yml # edit username
 rake db:create db:schema:load db:seed
 ```
 
-1. Set ENV variables
-    * `HEROKU_API_KEY`
-    * `HEROKU_USERNAME`
+
+1. Create a new private key and add it to Github and Heroku
+    * [https://help.github.com/articles/generating-ssh-keys](https://help.github.com/articles/generating-ssh-keys)
+    * [https://devcenter.heroku.com/articles/keys](https://devcenter.heroku.com/articles/keys)
+
+
+1. Export you environment variables wherever you do that:
+```bash
+export HEROKU_USERNAME=your_username
+export HEROKU_API_KEY=your_api_key
+export HEROKU_APP_NAME=static-sinatra-prototype
+export HEROKU_REPO=git@heroku.com:static-sinatra-prototype.git
+export GITHUB_REPO=git@github.com:G5/static-sinatra-prototype.git
+export ID_RSA=your_private_key
+```
 
 
 ## Authors
@@ -38,6 +55,10 @@ If you find bugs, have feature requests or questions, please
 [file an issue](https://github.com/g5search/g5-client-hub/issues).
 
 
-## License
+## Specs
 
-???
+Set ENV variables
+```
+export PUBLIC_GITHUB_REPO=git@github.com:G5/static-sinatra-prototype.git
+export PRIVATE_GITHUB_REPO=git@github.com:g5search/g5-client-location.git
+```
