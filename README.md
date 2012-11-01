@@ -25,7 +25,7 @@ rake db:create db:schema:load db:seed
     * [https://devcenter.heroku.com/articles/keys](https://devcenter.heroku.com/articles/keys)
 
 
-1. Export you environment variables wherever you do that:
+1. Export environment variables
 ```bash
 export HEROKU_USERNAME=your_username
 export HEROKU_API_KEY=your_api_key
@@ -57,7 +57,7 @@ If you find bugs, have feature requests or questions, please
 
 ## Specs
 
-Set ENV variables
+1. Export environment variables
 ```
 export PUBLIC_GITHUB_REPO=git@github.com:G5/static-sinatra-prototype.git
 export PRIVATE_GITHUB_REPO=git@github.com:g5search/g5-client-location.git
