@@ -19,6 +19,11 @@ vi config/database.yml # edit username
 rake db:create db:schema:load db:seed
 ```
 
+1. Install [redis](http://redis.io/) and start it
+```bash
+brew install redis
+redis-server > ~/redis.log &
+```
 
 1. Create a new private key and add it to Github and Heroku
     * [https://help.github.com/articles/generating-ssh-keys](https://help.github.com/articles/generating-ssh-keys)
@@ -29,10 +34,16 @@ rake db:create db:schema:load db:seed
 ```bash
 export HEROKU_USERNAME=your_username
 export HEROKU_API_KEY=your_api_key
-export HEROKU_APP_NAME=static-sinatra-prototype
-export HEROKU_REPO=git@heroku.com:static-sinatra-prototype.git
-export GITHUB_REPO=git@github.com:G5/static-sinatra-prototype.git
 export ID_RSA=your_private_key
+```
+
+1. Use foreman to start the web and worker proccesses
+```bash
+foreman start
+```
+Or if you are using pow or something start the job queue
+```bash
+rake jobs:work
 ```
 
 
@@ -59,6 +70,9 @@ If you find bugs, have feature requests or questions, please
 
 Export environment variables
 ```bash
+export HEROKU_APP_NAME=static-sinatra-prototype
+export HEROKU_REPO=git@heroku.com:static-sinatra-prototype.git
+export GITHUB_REPO=git@github.com:G5/static-sinatra-prototype.git
 export PUBLIC_GITHUB_REPO=git@github.com:G5/static-sinatra-prototype.git
 export PRIVATE_GITHUB_REPO=git@github.com:g5search/g5-client-location.git
 ```
