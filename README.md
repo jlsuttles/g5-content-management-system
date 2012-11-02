@@ -3,7 +3,7 @@
 * Creates and deploys location sites
 * TODO: 
     * Consumes configurator's feed
-    * Updates client hub deployer
+    * Updates a client hub deployer
 
 ## Setup
 
@@ -50,6 +50,7 @@ rake jobs:work
 ## Authors
 
   * Jessica Lynn Suttles / [@jlsuttles](https://github.com/jlsuttles)
+  * Bookis Smuin / [@bookis](https://github.com/bookis)
 
 
 ## Contributing
@@ -64,15 +65,3 @@ rake jobs:work
 
 If you find bugs, have feature requests or questions, please
 [file an issue](https://github.com/g5search/g5-client-hub/issues).
-
-
-## Specs
-
-Export environment variables
-```bash
-export HEROKU_APP_NAME=static-sinatra-prototype
-export HEROKU_REPO=git@heroku.com:static-sinatra-prototype.git
-export GITHUB_REPO=git@github.com:G5/static-sinatra-prototype.git
-export PUBLIC_GITHUB_REPO=git@github.com:G5/static-sinatra-prototype.git
-export PRIVATE_GITHUB_REPO=git@github.com:g5search/g5-client-location.git
-```
