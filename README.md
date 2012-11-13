@@ -5,6 +5,7 @@
     * Consumes configurator's feed
     * Updates a client hub deployer
 
+
 ## Setup
 
 1. Install all the required gems
@@ -65,3 +66,9 @@ rake jobs:work
 
 If you find bugs, have feature requests or questions, please
 [file an issue](https://github.com/g5search/g5-client-hub/issues).
+
+## Specs
+
+```bash
+guard
+```
