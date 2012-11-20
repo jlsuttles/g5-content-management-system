@@ -18,7 +18,7 @@ class Location < ActiveRecord::Base
   end
 
   def heroku_app_name
-    "g5-cl-#{name[0..23]}"
+    "g5-cl-#{name.parameterize[0..23]}"
   end
 
   def heroku_repo
