@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  attr_accessible :name, :corporate
+  attr_accessible :uid, :name, :corporate
 
   def async_deploy
     Resque.enqueue(LocationDeployer, self.id)
