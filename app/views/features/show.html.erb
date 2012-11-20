@@ -1,12 +1,6 @@
 <% title "Feature" %>
+<% header_right link_to("All Features", features_path, class: "btn") %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @feature.name %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_feature_path(@feature) %> |
-  <%= link_to "Destroy", @feature, :data => { :confirm => 'Are you sure?' }, :method => :delete %> |
-  <%= link_to "View All", features_path %>
-</p>
+<div class="well">
+  <%= render @feature %>
+</div>

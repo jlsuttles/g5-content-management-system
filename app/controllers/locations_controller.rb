@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
   before_filter :login_required
 
   def index
-    @locations = Location.all
+    @locations = Location.order("updated_at DESC").all
   end
 
   def show
