@@ -1,8 +1,2 @@
 <% title "Features" %>
-<% header_right link_to("New Feature", new_feature_path, class: "btn btn-success") %>
-
-<% @features.each do |feature| %>
-  <div class="well">
-    <%= render feature %>
-  </div>
-<% end %>
+<%= simple_table_for @features, with: FeatureTable %>

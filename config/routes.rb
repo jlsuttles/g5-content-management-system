@@ -1,21 +1,14 @@
 require 'resque/server'
 
 G5ClientHub::Application.routes.draw do
-  match "logout" => "sessions#destroy", :as => :logout
-  match "login" => "sessions#new", :as => :login
-  resources :sessions
-  match "user/edit" => "users#edit", :as => :edit_current_user
-  match "signup" => "users#new", :as => :signup
-  resources :users
+  mount Resque::Server, :at => "/resque"
 
-  resources :features
-  resources :locations do
+  resources :features, only: [:index]
+  resources :locations, only: [:index] do
     member do
       post "deploy"
     end
   end
 
   root to: "locations#index"
-
-  mount Resque::Server, :at => "/resque"
 end
