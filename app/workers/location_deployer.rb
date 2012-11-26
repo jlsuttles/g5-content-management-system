@@ -1,4 +1,5 @@
 class LocationDeployer
+  extend HerokuResqueAutoscaler if Rails.env.production?
   @queue = :deployer
 
   def self.perform(location_id)

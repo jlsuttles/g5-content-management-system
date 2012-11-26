@@ -1,4 +1,5 @@
 class ClientReader
+  extend HerokuResqueAutoscaler if Rails.env.production?
   @queue = :reader
 
   def self.perform(client_uid)
