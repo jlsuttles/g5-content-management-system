@@ -36,6 +36,7 @@ redis-server > ~/redis.log &
 export HEROKU_USERNAME=your_username
 export HEROKU_API_KEY=your_api_key
 export ID_RSA=your_private_key
+export HEROKU_APP_NAME=g5-ch-* # this is only needed in production
 ```
 
 1. Use foreman to start the web and worker proccesses
