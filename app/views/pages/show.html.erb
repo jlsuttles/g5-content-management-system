@@ -13,12 +13,12 @@
   <h3>Widgets: </h3>
   <ul>
     <% @page.widgets.each do |widget| %>
-      <li><strong>Name:</strong> <%= widget.name %></li>
+      <li><%= widget.name %></li>
     <% end %>
   </ul>
 </p>
 
 <p>
-  <%= link_to "Preview", preview_location_page_path(@location, @page) %>
+  <%= link_to "Preview", preview_location_page_path(@location, @page), class: "btn btn-success" %>
   <%= link_to "View All", location_path(@location) %>
 </p>
