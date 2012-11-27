@@ -1,0 +1,22 @@
+<% title "Page :: #{@page.name}" %>
+<% content_for :head, stylesheet_link_tag(@page.theme.url) %>
+<p>
+  <%= raw @page.layout.html %>
+</p>
+<p>
+  <strong>Theme URL: </strong>
+  <%= @page.theme.url %>
+</p>
+
+<h2>Widgets</h2>
+<p>
+  <% @page.widgets.each do |widget| %>
+    <strong>Name:</strong> <%= widget.name %>
+    <div class='well'><%= raw widget.html %></div>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to "Preview", preview_location_page_path(@location, @page) %>
+  <%= link_to "View All", pages_path %>
+</p>

@@ -9,3 +9,11 @@
  * awesome mixins that Bootstrap has defined. */
 @import "bootstrap";
 @import "bootstrap-responsive";
+
+.informative-input[readonly=readonly] {
+  cursor: pointer;
+}
+
+#add-widgets {
+  min-height: 100px;
+}
