@@ -3,7 +3,7 @@ class PageLayout < ActiveRecord::Base
   validates :url, presence: true
   before_create :set_html
   def self.all_remote
-    entries = G5HentryConsumer.parse("http://localhost:3003/").entries
+    entries = G5HentryConsumer.parse("http://g5-layout-garden.herokuapp.com/").entries
     entries.map do |entry|
       new(
         name: entry.name,

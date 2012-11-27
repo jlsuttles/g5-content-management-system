@@ -7,7 +7,7 @@ class Widget < ActiveRecord::Base
   serialize :javascript, Array
   
   def self.all_remote
-    entries = G5HentryConsumer.parse("http://localhost:3004").entries
+    entries = G5HentryConsumer.parse("http://g5-widget-garden.herokuapp.com").entries
     entries.map do |entry|
       puts entry.content.inspect
       new(

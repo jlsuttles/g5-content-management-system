@@ -2,7 +2,7 @@ class Theme < ActiveRecord::Base
   attr_accessible :name, :url
   validates :url, presence: true
   def self.all_remote
-    entries = G5HentryConsumer.parse("http://localhost:3002").entries
+    entries = G5HentryConsumer.parse("http://g5-theme-garden.herokuapp.com").entries
     entries.map do |entry|
       new(
         name: entry.name,
