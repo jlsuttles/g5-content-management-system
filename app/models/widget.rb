@@ -9,6 +9,7 @@ class Widget < ActiveRecord::Base
   def self.all_remote
     entries = G5HentryConsumer.parse("http://localhost:3004").entries
     entries.map do |entry|
+      puts entry.content.inspect
       new(
         name:        entry.name,
         url:         entry.bookmark,

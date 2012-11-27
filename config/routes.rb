@@ -4,7 +4,7 @@ G5ClientHub::Application.routes.draw do
   mount Resque::Server, :at => "/resque"
 
   resources :features, only: [:index]
-  resources :locations, only: [:index] do
+  resources :locations, only: [:index, :show] do
     resources :pages do
       member do
         get "preview"

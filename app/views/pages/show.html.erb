@@ -1,22 +1,25 @@
 <% title "Page :: #{@page.name}" %>
 <% content_for :head, stylesheet_link_tag(@page.theme.url) %>
 <p>
-  <%= raw @page.layout.html %>
+  <strong>Layout URL: </strong>
+  <%= @page.layout.url %>
 </p>
+
 <p>
   <strong>Theme URL: </strong>
   <%= @page.theme.url %>
 </p>
 
-<h2>Widgets</h2>
 <p>
-  <% @page.widgets.each do |widget| %>
-    <strong>Name:</strong> <%= widget.name %>
-    <div class='well'><%= raw widget.html %></div>
-  <% end %>
+  <h3>Widgets: </h3>
+  <ul>
+    <% @page.widgets.each do |widget| %>
+      <li><strong>Name:</strong> <%= widget.name %></li>
+    <% end %>
+  </ul>
 </p>
 
 <p>
   <%= link_to "Preview", preview_location_page_path(@location, @page) %>
-  <%= link_to "View All", pages_path %>
+  <%= link_to "View All", location_path(@location) %>
 </p>

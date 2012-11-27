@@ -14,11 +14,11 @@
     <li><%= link_to page.name, location_page_path(@location, page) %></li>
   <% end %>
 </ul>
+
 <p>
   <%= link_to "New Page", new_location_page_path(@location) %>
 </p>
+
 <p>
-  <%= link_to "Edit", edit_location_path(@location) %> |
-  <%= link_to "Destroy", @location, :data => { :confirm => 'Are you sure?' }, :method => :delete %> |
   <%= link_to "View All", locations_path %>
 </p>
