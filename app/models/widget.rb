@@ -5,11 +5,10 @@ class Widget < ActiveRecord::Base
   before_create :set_html
   serialize :css, Array
   serialize :javascript, Array
-  
+
   def self.all_remote
     entries = G5HentryConsumer.parse("http://g5-widget-garden.herokuapp.com").entries
     entries.map do |entry|
-      puts entry.content.inspect
       new(
         name:        entry.name,
         url:         entry.bookmark,
@@ -18,20 +17,20 @@ class Widget < ActiveRecord::Base
       )
     end
   end
-  
+
   private
-  
+
   def set_html
     self.html = parse_html
   end
-  
+
   def parse_html
     Nokogiri::HTML(get_html).at_css('.widget').children.to_html
   end
-  
+
   def get_html
     open(self.url).read
   end
-  
-  
+
+
 end
