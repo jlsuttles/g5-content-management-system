@@ -11,18 +11,18 @@ class PagesController < ApplicationController
   def create
     @page = @location.pages.new(params[:page])
     if @page.save
-      redirect_to [@location, @page], :notice => "Successfully created page."
+      redirect_to @location, :notice => "Successfully created page."
     else
       render :action => 'new'
     end
   end
   
   def edit
-    @page = Page.find(params[:id])
+    @page = Page.find_by_slug(params[:id])
   end
   
   def update
-    @page = Page.find(params[:id])
+    @page = Page.find_by_slug(params[:id])
     @page.mark_widgets_for_destruction
     if @page.update_attributes(params[:page])
       redirect_to @location, :notice => "Successfully updated page."
@@ -32,11 +32,11 @@ class PagesController < ApplicationController
   end
 
   def show
-    @page = Page.find(params[:id])
+    @page = Page.find_by_slug(params[:id])
   end
   
   def preview
-    @page = Page.find(params[:id])
+    @page = Page.find_by_slug(params[:id])
     render layout: false
   end
   
