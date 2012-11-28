@@ -1,0 +1,74 @@
+<div class='row'>
+  <%= form_for [@location, @page] do |f| %>
+    <div class='span4'>
+        <%= f.error_messages %>
+        <p>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </p>
+
+        <p>
+          <%= f.fields_for :layout, @page.layout || PageLayout.new do |ff| -%>
+            <%= f.label :url, "Layout" %>
+            <%= ff.collection_select :url, PageLayout.all_remote, :url, :name, include_blank: "Select Layout" %>
+          <% end -%>
+        </p>
+
+        <p>
+          <%= f.fields_for :theme, @page.theme || Theme.new do |ff| -%>
+            <%= f.label :url, "Theme" %>
+            <%= ff.collection_select :url, Theme.all_remote, :url, :name, include_blank: "Select Theme" %>
+          <% end -%>
+        </p>
+        <p><%= f.submit "Submit", class: 'btn' %></p>
+    </div>
+    <div class='span4'>
+      <h3>Selected Widgets</h3>
+      <ul id="add-widgets" class='well sortable'>
+        <% @page.widgets.each do |widget| %>
+          <%= f.fields_for :widgets, widget do |ff| -%>
+            <li>
+              <%= ff.hidden_field :position, class: 'position' %>
+              <% widget.css.each do |css| %>
+                <%= ff.hidden_field "css][", value: css %>
+              <% end %>
+              <% widget.javascript.each do |js| %>
+                <%= ff.hidden_field :"javascript][", value: js %>
+              <% end %>
+              <%= ff.hidden_field :url %>
+              <%= ff.hidden_field :name %>
+              <%= widget.name %>
+            </li>
+          <% end -%>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+  <div class='span4'>
+    <h3>Available Widgets</h3>
+    <%= form_for [@location, @page] do |f| %>
+      <ul id='choose-widgets' class='well sortable'>
+        <% @page.remote_widgets.each_with_index do |widget, index| %>
+          <%= f.fields_for :widgets, widget do |ff| -%>
+            <li>
+              <%= ff.hidden_field :position, value: index + 1, class: 'position' %>
+              <% widget.css.each do |css| %>
+                <%= ff.hidden_field "css][", value: css %>
+              <% end %>
+              <% widget.javascript.each do |js| %>
+                <%= ff.hidden_field :"javascript][", value: js %>
+              <% end %>
+              <%= ff.hidden_field :url %>
+              <%= ff.hidden_field :name %>
+              <%= widget.name %>
+            </li>
+          <% end -%>
+        <% end %>
+      </ul>
+    <% end %>
+    <small>Drag & Drop</small>
+  </div>
+  
+</div>

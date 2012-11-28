@@ -10,4 +10,8 @@ class Page < ActiveRecord::Base
   
   validates :name, presence: true
   
+  
+  def remote_widgets
+    Widget.all_remote.delete_if {|widget| widgets.map(&:name).include? widget.name}
+  end
 end

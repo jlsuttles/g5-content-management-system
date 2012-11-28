@@ -11,9 +11,22 @@ class PagesController < ApplicationController
   def create
     @page = @location.pages.new(params[:page])
     if @page.save
-      redirect_to [@location, @page], :notice => "Successfully created pages."
+      redirect_to [@location, @page], :notice => "Successfully created page."
     else
       render :action => 'new'
+    end
+  end
+  
+  def edit
+    @page = Page.find(params[:id])
+  end
+  
+  def update
+    @page = Page.find(params[:id])
+    if @page.update_attributes(params[:page])
+      redirect_to @location, :notice => "Successfully updated page."
+    else
+      render :edit
     end
   end
 

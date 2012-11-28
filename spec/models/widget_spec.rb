@@ -1,12 +1,14 @@
 require 'spec_helper'
 
 describe Widget do
+  let(:widget) { Widget.create(name: "remote", url: "http://localhost:3004/static_assets/floorplan-list-filters", page_id: 1) }
+  
   describe "remote" do
     let(:remotes) { Widget.all_remote }
     it "has many remote widgets" do
       remotes.should have_at_least(8).things
     end
-
+    
     describe "remote to new" do
       let(:remote) { remotes.first }
 
@@ -18,9 +20,7 @@ describe Widget do
 
   describe "get HTML" do
     before { Widget.any_instance.stub(:get_html) { "<div class='widget'><h1>THIS IS THE HTML</h1></div>"}}
-    let(:widget) { Widget.create(name: "remote", url: "http://localhost:3004/static_assets/floorplan-list-filters", page_id: 1) }
-
-
     it { widget.html.should eq "<h1>THIS IS THE HTML</h1>" }
   end
+  
 end

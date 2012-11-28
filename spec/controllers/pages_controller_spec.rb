@@ -1,32 +1,32 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe PagesController do
-  render_views
+
   before { 
     Location.stub(:find) { Location.create }
     Page.any_instance.stub(:theme) { Theme.new }
     Page.any_instance.stub(:layout) { PageLayout.new }
   }
   it "index action should render index template" do
-    get :index
+    get :index, location_id: 1
     response.should render_template(:index)
   end
 
   it "new action should render new template" do
-    get :new
+    get :new, location_id: 1
     response.should render_template(:new)
   end
 
   it "create action should render new template when model is invalid" do
     Page.any_instance.stub(:save) {false}
-    post :create
+    post :create, location_id: 1
     response.should render_template(:new)
   end
 
   it "create action should redirect when model is valid" do
     Page.any_instance.stub(:save) {true}
-    post :create
-    response.should redirect_to(pages_url(assigns[:pages]))
+    post :create, location_id: 1
+    response.should redirect_to(location_pages_url(assigns[:location], assigns[:pages]))
   end
 
   it "show action should render show template" do
