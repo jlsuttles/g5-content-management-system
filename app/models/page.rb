@@ -7,6 +7,7 @@ class Page < ActiveRecord::Base
   accepts_nested_attributes_for :theme
   accepts_nested_attributes_for :widgets, :allow_destroy => true
   belongs_to :location
+  before_create :set_slug
   
   validates :name, presence: true
   
@@ -16,5 +17,11 @@ class Page < ActiveRecord::Base
   
   def remote_widgets
     Widget.all_remote.delete_if {|widget| widgets.map(&:name).include? widget.name}
+  end
+  
+  private
+  
+  def set_slug
+    self.slug = self.name.parameterize
   end
 end

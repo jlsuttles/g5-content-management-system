@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 describe Page do
-  let(:page) { Page.create(name: "P", widgets_attributes: [{name: "Widgie", url: "http://example.com"}]) }
+  let(:page) { Page.create(name: "Some Name", widgets_attributes: [{name: "Widgie", url: "http://example.com"}]) }
   before { Widget.any_instance.stub(:get_html) { "<div class='widget'><h1>THIS IS THE HTML</h1></div>"}}
   
+  it { page.slug.should eq "some-name"}
   describe "layouts" do
     it { Page.new.should respond_to :layout }
   end
