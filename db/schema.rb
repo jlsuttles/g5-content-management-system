@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121126164637) do
+ActiveRecord::Schema.define(:version => 20121128212541) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20121126164637) do
     t.text     "html"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "thumbnail"
   end
 
   add_index "page_layouts", ["page_id"], :name => "index_page_layouts_on_page_id"
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20121126164637) do
     t.string   "name"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "slug"
   end
 
   add_index "pages", ["location_id"], :name => "index_pages_on_location_id"
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20121126164637) do
     t.integer  "page_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "thumbnail"
   end
 
   add_index "themes", ["page_id"], :name => "index_themes_on_page_id"
@@ -75,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20121126164637) do
     t.text     "javascript"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "thumbnail"
   end
 
   add_index "widgets", ["page_id"], :name => "index_widgets_on_page_id"
