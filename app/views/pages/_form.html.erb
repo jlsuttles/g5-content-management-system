@@ -26,20 +26,7 @@
       <h3>Selected Widgets</h3>
       <ul id="add-widgets" class='well sortable'>
         <% @page.widgets.each do |widget| %>
-          <%= f.fields_for :widgets, widget do |ff| -%>
-            <li>
-              <%= ff.hidden_field :position, class: 'position' %>
-              <% widget.css.each do |css| %>
-                <%= ff.hidden_field "css][", value: css %>
-              <% end %>
-              <% widget.javascript.each do |js| %>
-                <%= ff.hidden_field :"javascript][", value: js %>
-              <% end %>
-              <%= ff.hidden_field :url %>
-              <%= ff.hidden_field :name %>
-              <%= widget.name %>
-            </li>
-          <% end -%>
+          <%= render "/widgets/form_fields", f: f, widget: widget %>
         <% end %>
       </ul>
     </div>
@@ -51,20 +38,7 @@
     <%= form_for [@location, @page] do |f| %>
       <ul id='choose-widgets' class='well sortable'>
         <% @page.remote_widgets.each_with_index do |widget, index| %>
-          <%= f.fields_for :widgets, widget do |ff| -%>
-            <li>
-              <%= ff.hidden_field :position, value: index + 1, class: 'position' %>
-              <% widget.css.each do |css| %>
-                <%= ff.hidden_field "css][", value: css %>
-              <% end %>
-              <% widget.javascript.each do |js| %>
-                <%= ff.hidden_field :"javascript][", value: js %>
-              <% end %>
-              <%= ff.hidden_field :url %>
-              <%= ff.hidden_field :name %>
-              <%= widget.name %>
-            </li>
-          <% end -%>
+          <%= render "/widgets/form_fields", f: f, widget: widget %>
         <% end %>
       </ul>
     <% end %>

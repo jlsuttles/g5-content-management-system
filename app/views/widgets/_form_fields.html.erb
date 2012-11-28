@@ -1,0 +1,14 @@
+<%= f.fields_for :widgets, widget.dup do |ff| -%>
+  <li>
+    <%= ff.hidden_field :position, class: 'position' %>
+    <% widget.css.each do |css| %>
+      <%= ff.hidden_field "css][", value: css %>
+    <% end %>
+    <% widget.javascript.each do |js| %>
+      <%= ff.hidden_field :"javascript][", value: js %>
+    <% end %>
+    <%= ff.hidden_field :url %>
+    <%= ff.hidden_field :name %>
+    <%= widget.name %>
+  </li>
+<% end -%>
