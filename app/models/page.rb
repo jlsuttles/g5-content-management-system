@@ -26,9 +26,6 @@ class Page < ActiveRecord::Base
     Widget.all_remote.delete_if {|widget| widgets.map(&:name).include? widget.name}
   end
   
-  def to_param
-    self.slug
-  end
   private
   
   def set_slug

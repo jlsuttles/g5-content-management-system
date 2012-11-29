@@ -18,11 +18,11 @@ class PagesController < ApplicationController
   end
   
   def edit
-    @page = @location.pages.find_by_slug(params[:id])
+    @page = @location.pages.find(params[:id])
   end
   
   def update
-    @page = @location.pages.find_by_slug(params[:id])
+    @page = @location.pages.find(params[:id])
     @page.mark_widgets_for_destruction
     if @page.update_attributes(params[:page])
       redirect_to @location, :notice => "Successfully updated page."
@@ -32,11 +32,11 @@ class PagesController < ApplicationController
   end
 
   def show
-    @page = @location.pages.find_by_slug(params[:id])
+    @page = @location.pages.find(params[:id])
   end
   
   def preview
-    @page = @location.pages.find_by_slug(params[:id])
+    @page = @location.pages.find(params[:id])
     render layout: false
   end
   
