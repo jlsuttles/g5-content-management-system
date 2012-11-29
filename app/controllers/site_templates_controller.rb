@@ -11,7 +11,8 @@ class SiteTemplatesController < ApplicationController
     if @page.update_attributes(params[:site_template])
       redirect_to @location, :notice => "Successfully updated site template."
     else
-      render :edit
+      @page = SiteTemplate.find_by_slug(params[:id])
+      render :"/pages/edit"
     end
   end
   def find_location
