@@ -2,11 +2,6 @@
   <%= form_for [@location, @page] do |f| %>
     <div class='span12'>
       <%= f.error_messages %>
-      <p>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-      </p>
-      
       <% if @page.is_a? SiteTemplate %>
         <p>
           <%= f.fields_for :layout, @page.layout || PageLayout.new do |ff| -%>
@@ -20,6 +15,11 @@
             <%= f.label :url, "Theme" %>
             <%= ff.collection_select :url, Theme.all_remote, :url, :name, include_blank: "Select Theme" %>
           <% end -%>
+        </p>
+      <% else %>
+        <p>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
         </p>
       <% end %>
     </div>

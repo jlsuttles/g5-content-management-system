@@ -20,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr class='site-template'>
       <td><%= @location.site_template.name %></td>
       <td><img src="http://placehold.it/100x70"></td>
       <td><img src="http://placehold.it/100x70"></td>
@@ -39,8 +39,8 @@
     <% @location.pages.each do |page| %>
       <tr>
         <td><%= page.name %></td>
-        <td><img src="http://placehold.it/100x70"></td>
-        <td><img src="http://placehold.it/100x70"></td>
+        <td></td>
+        <td></td>
         <td>
           <ul>
             <% page.widgets.each do |widget| %>
@@ -58,7 +58,6 @@
 </table>
 
 <p>
-  <%= link_to "Site Template", edit_location_site_template_path(@location, @location.site_template), class: 'btn' %>
   <%= link_to "New Page", new_location_page_path(@location), class: 'btn' %>
   <%= link_to "View All", locations_path %>
 </p>
