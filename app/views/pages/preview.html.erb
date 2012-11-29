@@ -1,6 +1,5 @@
 <head>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-  <%= stylesheet_link_tag(@page.theme.url) %>
+  <%= stylesheet_link_tag(@location.site_template.theme.url) %>
   <% @page.widgets.map(&:css).flatten.uniq.each do |css| %>
     <%= stylesheet_link_tag css %>
   <% end %>

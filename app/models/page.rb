@@ -14,6 +14,10 @@ class Page < ActiveRecord::Base
   def sections
     %w(main)
   end
+  
+  def all_widgets
+    location.site_template.widgets + widgets
+  end
   def mark_widgets_for_destruction
     widgets.each(&:mark_for_destruction)
   end
