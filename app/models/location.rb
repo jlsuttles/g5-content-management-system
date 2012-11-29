@@ -1,8 +1,10 @@
 class Location < ActiveRecord::Base
 
   attr_accessible :uid, :name, :corporate
-  has_many :pages
+  has_many :pages, conditions: ["pages.template = ?", false]
+  has_one :site_template
   after_create :create_homepage
+  before_create :create_template
 
   def async_deploy
     Resque.enqueue(LocationDeployer, self.id)
@@ -33,6 +35,10 @@ class Location < ActiveRecord::Base
   end
   
   private
+  
+  def create_template
+    create_site_template(name: "Site Template")
+  end
   
   def create_homepage
     pages.create(name: "Home")

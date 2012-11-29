@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
-  attr_accessible :location_id, :widgets_attributes, :name, :layout_attributes, :theme_attributes
+  attr_accessible :location_id, :widgets_attributes, :name, :layout_attributes, :theme_attributes, :template
   has_one :layout, class_name: "PageLayout"
   has_one :theme
   has_many :widgets, autosave: true, order: "position asc"
@@ -11,6 +11,9 @@ class Page < ActiveRecord::Base
   
   validates :name, presence: true
   
+  def sections
+    %w(main)
+  end
   def mark_widgets_for_destruction
     widgets.each(&:mark_for_destruction)
   end

@@ -1,12 +1,13 @@
 <div class='row'>
   <%= form_for [@location, @page] do |f| %>
-    <div class='span4'>
-        <%= f.error_messages %>
-        <p>
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-        </p>
-
+    <div class='span12'>
+      <%= f.error_messages %>
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
+      
+      <% if @page.is_a? SiteTemplate %>
         <p>
           <%= f.fields_for :layout, @page.layout || PageLayout.new do |ff| -%>
             <%= f.label :url, "Layout" %>
@@ -20,20 +21,24 @@
             <%= ff.collection_select :url, Theme.all_remote, :url, :name, include_blank: "Select Theme" %>
           <% end -%>
         </p>
-        <p><%= f.submit "Submit", class: 'btn' %></p>
+      <% end %>
     </div>
-    <div class='span4'>
+    <div class='span6'>
       <h3>Selected Widgets</h3>
-      <ul id="add-widgets" class='well sortable'>
-        <% @page.widgets.each do |widget| %>
-          <%= render "/widgets/form_fields", f: f, widget: widget %>
-        <% end %>
-      </ul>
+      <% @page.sections.each do |section| %>
+        <h4><%= section.capitalize %></h4>
+        <ul id="add-widgets" class='well sortable' data-section='<%= section %>'>
+          <% @page.widgets.in_section(section).each do |widget| %>
+            <%= render "/widgets/form_fields", f: f, widget: widget %>
+          <% end %>
+        </ul>
+      <% end %>
+      <p><%= f.submit "Submit", class: 'btn' %></p>
     </div>
   <% end %>
   
   
-  <div class='span4'>
+  <div class='span6'>
     <h3>Available Widgets</h3>
     <%= form_for [@location, @page] do |f| %>
       <ul id='choose-widgets' class='well sortable'>

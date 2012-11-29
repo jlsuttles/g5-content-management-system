@@ -26,7 +26,7 @@ describe PagesController do
   it "create action should redirect when model is valid" do
     Page.any_instance.stub(:save) {true}
     post :create, location_id: 1
-    response.should redirect_to(location_pages_url(assigns[:location], assigns[:pages]))
+    response.should redirect_to(location_url(assigns[:location]))
   end
 
   it "show action should render show template" do

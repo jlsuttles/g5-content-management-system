@@ -1,6 +1,7 @@
 <%= f.fields_for :widgets, widget.dup do |ff| -%>
   <li>
     <%= ff.hidden_field :position, class: 'position' %>
+    <%= ff.hidden_field :section, class: 'section' %>
     <% widget.css.each do |css| %>
       <%= ff.hidden_field "css][", value: css %>
     <% end %>

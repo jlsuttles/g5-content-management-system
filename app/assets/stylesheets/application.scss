@@ -17,6 +17,7 @@
 form {margin: 0}
 #add-widgets {
   min-height: 100px;
+  padding-bottom: 25px;
 }
 
 .sortable {
@@ -39,4 +40,15 @@ form {margin: 0}
 #add-widgets li {
   border: 1px solid white;
   background-color: #F5FFBF;
+}
+
+#add-widgets li.section {
+  text-align: center;
+  background-color: #ccc;
+  cursor: default;
+}
+
+.edit_page input[type=submit], 
+.new_page input[type=submit] {
+  margin-top: 10px;
 }

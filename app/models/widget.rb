@@ -1,10 +1,11 @@
 class Widget < ActiveRecord::Base
-  attr_accessible :html, :name, :page_id, :url, :position, :css, :javascript
+  attr_accessible :html, :name, :page_id, :url, :position, :css, :javascript, :section
   belongs_to :page
   validates :name, :url, presence: true
   before_create :set_html
   serialize :css, Array
   serialize :javascript, Array
+  scope :in_section, lambda { |section| where(section: section) }
 
   def self.all_remote
     entries = G5HentryConsumer.parse("http://g5-widget-garden.herokuapp.com").entries

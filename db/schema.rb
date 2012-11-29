@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128212541) do
+ActiveRecord::Schema.define(:version => 20121128221003) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -50,9 +50,10 @@ ActiveRecord::Schema.define(:version => 20121128212541) do
   create_table "pages", :force => true do |t|
     t.integer  "location_id"
     t.string   "name"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "slug"
+    t.boolean  "template",    :default => false
   end
 
   add_index "pages", ["location_id"], :name => "index_pages_on_location_id"
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20121128212541) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "thumbnail"
+    t.string   "section"
   end
 
   add_index "widgets", ["page_id"], :name => "index_widgets_on_page_id"

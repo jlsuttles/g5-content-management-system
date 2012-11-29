@@ -10,8 +10,10 @@
 $ ->
   $('#choose-widgets, #add-widgets').sortable {
     connectWith: ".sortable",
+    cancel: ".section"
     stop: (event, ui)->
       $('#add-widgets li').each (index) ->
-        console.log $(this).find('.position').val(index + 1)
+        $(this).find('.position').val(index + 1)
+        $(this).find('.section').val($(this).parent().data('section'))
   }
   
