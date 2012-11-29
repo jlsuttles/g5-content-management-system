@@ -6,5 +6,6 @@
   <% @page.widgets.map(&:javascript).flatten.uniq.each do |js| %>
     <%= javascript_include_tag js %>
   <% end %>
+  <title><%= @location.name %> || <%= @page.name %></title>
 </head>
 <%= raw preview @location, @page %>
