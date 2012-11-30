@@ -23,6 +23,8 @@ class Location < ActiveRecord::Base
     "https://#{heroku_app_name}.herokuapp.com"
   end
 
+  private
+
   def github_repo
     "git@github.com:g5search/g5-client-location"
   end
