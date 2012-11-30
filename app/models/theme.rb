@@ -1,9 +1,11 @@
 class Theme < ActiveRecord::Base
   THEME_GARDEN_URL = "http://g5-theme-garden.herokuapp.com"
 
-  attr_accessible :name, :url, :stylesheets
+  attr_accessible :page_id, :url, :name, :stylesheets, :thumbnail
 
   serialize :stylesheets, Array
+
+  belongs_to :page
 
   validates :url, presence: true
 
@@ -11,8 +13,8 @@ class Theme < ActiveRecord::Base
     components = G5HentryConsumer::HG5Component.parse(THEME_GARDEN_URL)
     components.map do |component|
       new(
-        name: component.name.first,
         url:  component.uid,
+        name: component.name.first,
         stylesheets: component.stylesheets
       )
     end

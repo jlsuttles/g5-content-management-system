@@ -1,10 +1,11 @@
 class Location < ActiveRecord::Base
-
   attr_accessible :uid, :name, :corporate
-  has_many :pages, conditions: ["pages.template = ?", false]
+
   has_one :site_template
+  has_many :pages, conditions: ["pages.template = ?", false]
+
+  before_create :create_site_template
   after_create :create_homepage
-  before_create :create_template
 
   def async_deploy
     Resque.enqueue(LocationDeployer, self.id)
@@ -16,6 +17,12 @@ class Location < ActiveRecord::Base
       heroku_app_name: heroku_app_name,
       heroku_repo: heroku_repo
     )
+  end
+
+  private
+
+  def heroku_url
+    "https://#{heroku_app_name}.herokuapp.com"
   end
 
   def github_repo
@@ -57,7 +64,7 @@ class Location < ActiveRecord::Base
   def create_template
     create_site_template(name: "Site Template")
   end
-  
+
   def create_homepage
     pages.create(name: "Home")
   end

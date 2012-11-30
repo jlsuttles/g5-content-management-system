@@ -1,7 +1,9 @@
 class PageLayout < ActiveRecord::Base
   LAYOUT_GARDEN_URL = "http://g5-layout-garden.herokuapp.com/"
 
-  attr_accessible :html, :name, :page_id, :url
+  attr_accessible :page_id, :url, :name, :html
+
+  belongs_to :page
 
   validates :url, presence: true
 
@@ -9,8 +11,8 @@ class PageLayout < ActiveRecord::Base
     components = G5HentryConsumer::HG5Component.parse(LAYOUT_GARDEN_URL)
     components.map do |component|
       new(
-        name: component.name.first,
         url:  component.uid,
+        name: component.name.first,
         html: component.content.first
       )
     end
