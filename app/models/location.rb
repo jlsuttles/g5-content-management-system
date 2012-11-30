@@ -19,8 +19,6 @@ class Location < ActiveRecord::Base
     )
   end
 
-  private
-
   def heroku_url
     "https://#{heroku_app_name}.herokuapp.com"
   end
@@ -37,10 +35,6 @@ class Location < ActiveRecord::Base
     "git@heroku.com:#{heroku_app_name}.git"
   end
 
-  def heroku_url
-    "https://#{heroku_app_name}.herokuapp.com"
-  end
-  
   def self.compiled_site_root
     "#{Rails.root}/tmp/compiled_site/"
   end
