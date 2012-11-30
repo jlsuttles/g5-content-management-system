@@ -1,13 +1,6 @@
-<% title "Location" %>
+<% title "Location: #{@location.name}" %>
+<% header_right link_to "New Page", new_location_page_path(@location), class: 'btn btn-success' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @location.name %>
-</p>
-<p>
-  <strong>Corporate:</strong>
-  <%= @location.corporate %>
-</p>
 <h3>Pages</h3>
 <table class='table table-striped'>
   <thead>
@@ -58,6 +51,4 @@
 </table>
 
 <p>
-  <%= link_to "New Page", new_location_page_path(@location), class: 'btn' %>
-  <%= link_to "View All", locations_path %>
 </p>
