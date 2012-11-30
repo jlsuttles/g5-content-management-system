@@ -1,8 +1,7 @@
 require 'spec_helper'
 
 describe Page do
-  let(:page) { Page.create(name: "Some Name", widgets_attributes: [{name: "Widgie", url: "http://example.com"}]) }
-  before { Widget.any_instance.stub(:get_html) { "<div class='widget'><h1>THIS IS THE HTML</h1></div>"}}
+  let(:page) { Page.create(name: "Some Name", widgets_attributes: [{name: "Widgie", url: "http://g5-widget-garden.herokuapp.com/components/storage-list"}]) }
   
   it { page.slug.should eq "some-name"}
   describe "layouts" do
@@ -27,16 +26,15 @@ describe Page do
     
     it "finds all but included widgets" do
       page.widgets << remotes.first
-      page.remote_widgets.first.name.should_not eq "Widget1"
+      page.remote_widgets.first.name.first.should_not eq "Widget1"
     end
     
     describe "nested attributes" do
       let(:widget) { page.widgets.first }
       it "creates a new widget" do
-        widget.name.should eq "Widgie"
+        widget.name.should eq "Storage List"
       end
       
-      it { widget.html.should eq "<h1>THIS IS THE HTML</h1>" }
       
       it "doesn't save if it's marked as destroy" do
         page = Page.create(name: "P", widgets_attributes: [{_destroy: true, name: "Widgie", url: "http://example.com"}])

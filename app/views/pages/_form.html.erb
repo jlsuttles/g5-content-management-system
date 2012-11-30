@@ -1,21 +1,23 @@
 <div class='row'>
   <%= form_for [@location, @page] do |f| %>
+    <%= f.error_messages %>
+
     <div class='span12'>
-      <%= f.error_messages %>
       <% if @page.is_a? SiteTemplate %>
         <p>
           <%= f.fields_for :layout, @page.layout || PageLayout.new do |ff| -%>
+            <%= ff.error_messages %>
             <%= ff.label :url, "Layout" %>
             <%= ff.collection_select :url, PageLayout.all_remote, :url, :name, include_blank: "Select Layout" %>
-            <%= ff.hidden_field :html %>
-          <% end -%>
+          <% end %>
         </p>
 
         <p>
           <%= f.fields_for :theme, @page.theme || Theme.new do |ff| -%>
+            <%= ff.error_messages %>
             <%= f.label :url, "Theme" %>
             <%= ff.collection_select :url, Theme.all_remote, :url, :name, include_blank: "Select Theme" %>
-          <% end -%>
+          <% end %>
         </p>
       <% else %>
         <p>
@@ -24,6 +26,7 @@
         </p>
       <% end %>
     </div>
+
     <div class='span6'>
       <h3>Selected Widgets</h3>
       <% @page.sections.each do |section| %>
@@ -37,7 +40,6 @@
       <p><%= f.submit "Submit", class: 'btn' %></p>
     </div>
   <% end %>
-  
   
   <div class='span6'>
     <h3>Available Widgets</h3>

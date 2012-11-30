@@ -6,7 +6,7 @@ class SiteTemplatesController < ApplicationController
   end
   
   def update
-    @page = Page.find(params[:id])
+    @page = SiteTemplate.find(params[:id])
     @page.mark_widgets_for_destruction
     if @page.update_attributes(params[:site_template])
       redirect_to @location, :notice => "Successfully updated site template."

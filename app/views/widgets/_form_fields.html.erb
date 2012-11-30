@@ -1,22 +1,9 @@
 <%= f.fields_for :widgets, widget.dup do |ff| -%>
+  <%= ff.error_messages %>
   <li>
     <%= ff.hidden_field :position, class: 'position' %>
     <%= ff.hidden_field :section, class: 'section' %>
     <%= ff.hidden_field :url %>
-    <%= ff.hidden_field :name %>
-
-    <%# css needs to be passed as an array %>
-    <% widget.css.each_with_index do |css, index| %>
-      <%= hidden_field_tag "page[widgets_attributes][#{index}][css][]", css %>
-    <% end if widget.css %>
-
-    <%# javascript needs to be passed as an array %>
-    <% widget.javascript.each_with_index do |javascript, index| %>
-      <%= hidden_field_tag "page[widgets_attributes][#{index}][javascript][]", javascript %>
-    <% end if widget.javascript %>
-
-    <%= ff.hidden_field :html %>
-
     <%= widget.name %>
   </li>
 <% end -%>

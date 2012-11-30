@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 describe Widget do
-  before { Widget.any_instance.stub(:get_html) { "<div class='widget'><h1>THIS IS THE HTML</h1></div>"}}
-  
-  let(:widget) { Widget.create(name: "remote", url: "http://localhost:3004/static_assets/floorplan-list-filters", page_id: 1, section: "main") }
+  let(:widget) { Widget.create(name: "remote", url: "http://g5-widget-garden.herokuapp.com/components/storage-list", page_id: 1, section: "main") }
   
   it { Widget.in_section("main").should include widget }
   
@@ -23,7 +21,7 @@ describe Widget do
   end
 
   describe "get HTML" do
-    it { widget.html.should eq "<h1>THIS IS THE HTML</h1>" }
+    it { widget.html.should include "storage-list widget" }
   end
   
 end
