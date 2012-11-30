@@ -23,6 +23,14 @@ class Location < ActiveRecord::Base
     "https://#{heroku_app_name}.herokuapp.com"
   end
 
+  def stylesheets
+    site_template.stylesheets || []
+  end
+
+  def javascripts
+    site_template.javascripts || []
+  end
+
   def github_repo
     "git@github.com:g5search/g5-client-location"
   end

@@ -1,14 +1,6 @@
 <head>
-  <%= stylesheet_link_tag(@location.site_template.theme.try :url) %>
-  <% @location.site_template.theme.stylesheets.flatten.uniq.each do |css| %>
-    <%= stylesheet_link_tag css %>
-  <% end if @location.site_template.theme %>
-  <% @page.widgets.map(&:css).flatten.uniq.each do |css| %>
-    <%= stylesheet_link_tag css %>
-  <% end %>
-  <% @page.widgets.map(&:javascript).flatten.uniq.each do |js| %>
-    <%= javascript_include_tag js %>
-  <% end %>
+  <%= stylesheet_link_tag *@page.stylesheets %>
+  <%= javascript_include_tag *@page.javascripts %>
   <title><%= @location.name %> || <%= @page.name %></title>
 </head>
 <%= raw preview @location, @page %>
