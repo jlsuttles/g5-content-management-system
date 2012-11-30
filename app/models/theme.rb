@@ -1,14 +1,20 @@
 class Theme < ActiveRecord::Base
-  attr_accessible :name, :url
+  THEME_GARDEN_URL = "http://g5-theme-garden.herokuapp.com"
+
+  attr_accessible :name, :url, :stylesheets
+
+  serialize :stylesheets, Array
+
   validates :url, presence: true
+
   def self.all_remote
-    entries = G5HentryConsumer.parse("http://g5-theme-garden.herokuapp.com").entries
-    entries.map do |entry|
+    components = G5HentryConsumer::HG5Component.parse(THEME_GARDEN_URL)
+    components.map do |component|
       new(
-        name: entry.name,
-        url:  entry.bookmark
+        name: component.name.first,
+        url:  component.uid,
+        stylesheets: component.stylesheets
       )
     end
   end
-  
 end

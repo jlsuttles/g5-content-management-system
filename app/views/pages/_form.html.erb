@@ -5,8 +5,9 @@
       <% if @page.is_a? SiteTemplate %>
         <p>
           <%= f.fields_for :layout, @page.layout || PageLayout.new do |ff| -%>
-            <%= f.label :url, "Layout" %>
+            <%= ff.label :url, "Layout" %>
             <%= ff.collection_select :url, PageLayout.all_remote, :url, :name, include_blank: "Select Layout" %>
+            <%= ff.hidden_field :html %>
           <% end -%>
         </p>
 

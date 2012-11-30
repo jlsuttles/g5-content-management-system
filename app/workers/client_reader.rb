@@ -18,7 +18,7 @@ class ClientReader
         uid: location.uid,
         name: location.name.first
       )
-    end
+    end if client.locations
 
     Feature.destroy_all
     client.features.each do |feature|
@@ -26,6 +26,6 @@ class ClientReader
         uid: feature.uid,
         name: feature.name.first
       )
-    end
+    end if client.features
   end
 end

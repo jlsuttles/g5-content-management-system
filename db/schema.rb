@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121128221003) do
+ActiveRecord::Schema.define(:version => 20121130041258) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -62,9 +62,10 @@ ActiveRecord::Schema.define(:version => 20121128221003) do
     t.string   "url"
     t.string   "name"
     t.integer  "page_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "thumbnail"
+    t.text     "stylesheets"
   end
 
   add_index "themes", ["page_id"], :name => "index_themes_on_page_id"

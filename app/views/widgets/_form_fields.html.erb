@@ -4,12 +4,13 @@
     <%= ff.hidden_field :section, class: 'section' %>
     <% widget.css.each do |css| %>
       <%= ff.hidden_field "css][", value: css %>
-    <% end %>
+    <% end if widget.css %>
     <% widget.javascript.each do |js| %>
       <%= ff.hidden_field :"javascript][", value: js %>
-    <% end %>
+    <% end if widget.javascript %>
     <%= ff.hidden_field :url %>
     <%= ff.hidden_field :name %>
+    <%= ff.hidden_field :html %>
     <%= widget.name %>
   </li>
 <% end -%>
