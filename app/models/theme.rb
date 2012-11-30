@@ -14,8 +14,7 @@ class Theme < ActiveRecord::Base
     components.map do |component|
       new(
         url:  component.uid,
-        name: component.name.first,
-        stylesheets: component.stylesheets
+        name: component.name.first
       )
     end
   end

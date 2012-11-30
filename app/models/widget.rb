@@ -17,10 +17,7 @@ class Widget < ActiveRecord::Base
     components.map do |component|
       new(
         url:        component.uid,
-        name:       component.name.first,
-        css:        component.stylesheets,
-        javascript: component.javascripts,
-        html:       component.content.first
+        name:       component.name.first
       )
     end
   end
