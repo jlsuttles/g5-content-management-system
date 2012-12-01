@@ -13,6 +13,7 @@ G5ClientHub::Application.routes.draw do
     end
     member do
       post "deploy"
+      post "compile"
     end
   end
 
