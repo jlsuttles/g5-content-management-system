@@ -3,9 +3,9 @@
  *= require_tree .
 */
 
-/* Import "bootstrap" in your SCSS file of choice to get all of Bootstrap's 
- * styles, mixins and variables! We recommend against using //= require 
- * directives, since none of your other stylesheets will be able to use the 
+/* Import "bootstrap" in your SCSS file of choice to get all of Bootstrap's
+ * styles, mixins and variables! We recommend against using //= require
+ * directives, since none of your other stylesheets will be able to use the
  * awesome mixins that Bootstrap has defined. */
 @import "bootstrap";
 @import "bootstrap-responsive";
@@ -26,7 +26,7 @@ form {margin: 0}
 }
 .sortable li {
   list-style: none;
-  width: 100%;
+  margin: 5px;
   border: 1px solid gray;
   padding: 3px 5px;
   border-radius: 3px;
@@ -34,7 +34,12 @@ form {margin: 0}
 }
 
 #choose-widgets li {
-  border: 1px solid red;
+  background: #fff;
+  background: -webkit-linear-gradient(#fff, #eee);
+  border: 1px solid #888;
+}
+.ui-sortable-helper {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 5px 10px rgba(0, 0, 0, .3);
 }
 
 #add-widgets li {
@@ -48,11 +53,32 @@ form {margin: 0}
   cursor: default;
 }
 
-.edit_page input[type=submit], 
+.edit_page input[type=submit],
 .new_page input[type=submit] {
   margin-top: 10px;
 }
 
 table tr.site-template {
   border-bottom: 2px solid gray;
+}
+
+.thumbs {
+  input {
+    position: absolute;
+    left: -999em;
+  }
+  img {
+    display: block;
+    margin: 0 0 .5em;
+  }
+  label {
+    font-size: 12px;
+    line-height: 1.2;
+    cursor: pointer;
+  }
+}
+.edit_site_template {
+  input[type=submit] {
+    margin-top: 1em;
+  }
 }
