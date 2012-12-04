@@ -48,6 +48,11 @@ Or if you are using pow or something start the job queue
 rake jobs:work
 ```
 
+1. Seed a Client
+```bash
+G5_CLIENT_UID=http://g5-hub.herokuapp.com/clients/6 rake seed_client
+```
+
 
 ## Authors
 
