@@ -38,7 +38,11 @@ class Page < ActiveRecord::Base
   def javascripts
     location.javascripts + widgets.map(&:javascript).flatten
   end
-
+  
+  def compiled_file_path
+    location.compiled_site_path + self.name + '.html'
+  end
+  
   private
 
   def set_slug

@@ -24,9 +24,7 @@ class LocationsController < ApplicationController
     @location.create_root_directory
     @location.pages.each do |page|
       @page = page
-      File.open(@location.compiled_site_path + page.name + '.html', 'w') { |file|
-        file << render_to_string("/pages/preview", layout: false)
-      }
+      File.open(@page.compiled_file_path, 'w') { |file| file << render_to_string("/pages/preview", layout: false) }
     end
   end
   helper_method :create_compiled_folder
