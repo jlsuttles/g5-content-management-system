@@ -1,6 +1,6 @@
 <head>
-  <%= stylesheet_link_tag *@page.stylesheets %>
-  <%= javascript_include_tag *@page.javascripts %>
-  <title><%= @location.name %> || <%= @page.name %></title>
+  <%= stylesheet_link_tag *page.stylesheets %>
+  <%= javascript_include_tag *page.javascripts %>
+  <title><%= location.name %> || <%= page.name %></title>
 </head>
-<%= raw preview @location, @page %>
+<%= raw preview(location, page) %>
