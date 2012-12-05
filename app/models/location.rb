@@ -65,6 +65,15 @@ class Location < ActiveRecord::Base
     FileUtils.rm_rf(compiled_site_path) if Dir::exists?(compiled_site_path)
   end
   
+  def delete_repo
+    FileUtils.rm_rf("#{Rails.root}/tmp/repos") if Dir::exists?("#{Rails.root}/tmp/repos")
+  end
+  
+  def clean_up
+    delete_compiled_folder
+    delete_repo
+  end
+  
   private
   
   def create_template
