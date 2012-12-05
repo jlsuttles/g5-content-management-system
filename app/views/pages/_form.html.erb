@@ -37,13 +37,13 @@
       <% end %>
 
       <h3>Widgets</h3>
-      <p class="instructions"><em>Drag widgets from the list on the right into a page section on the left</em></p>
+      <p class="instructions"><em>Drag widgets from the list on the left into a page section on the right</em></p>
     </div>
 
-    <div class='span6'>
+    <div class='dropzone span8'>
       <% @page.sections.each do |section| %>
         <h4><%= section.capitalize %></h4>
-        <ul id="add-widgets" class='well sortable' data-section='<%= section %>'>
+        <ul id="add-widgets" class='well sortable clearfix' data-section='<%= section %>'>
           <% @page.widgets.in_section(section).each do |widget| %>
             <%= render "/widgets/form_fields", f: f, widget: widget %>
           <% end %>
@@ -53,9 +53,9 @@
     </div>
   <% end %>
 
-  <div class='span6'>
+  <div class='widget-list span4'>
     <%= form_for [@location, @page] do |f| %>
-      <ul id='choose-widgets' class='well sortable'>
+      <ul id='choose-widgets' class='well sortable clearfix'>
         <% @page.remote_widgets.each_with_index do |widget, index| %>
           <%= render "/widgets/form_fields", f: f, widget: widget %>
         <% end %>
