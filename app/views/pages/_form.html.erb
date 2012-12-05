@@ -10,7 +10,10 @@
             <% PageLayout.all_remote.each do |layout| %>
               <div class="thumb">
                 <%= ff.radio_button :url, layout.url %>
-                <%= ff.label :url, image_tag("http://placehold.it/75x75"), :value => layout.url  %>
+                <%= ff.label :url, :value => layout.url do %>
+                  <%= image_tag("http://placehold.it/75x75") %>
+                  <%= layout.name %>
+                <% end %>
               </div>
             <% end %>
           <% end %>
@@ -23,7 +26,10 @@
             <% Theme.all_remote.each do |theme| %>
               <div class="thumb">
                 <%= ff.radio_button :url, theme.url %>
-                <%= ff.label :url, image_tag("http://placehold.it/75x75"), :value => theme.url %>
+                <%= ff.label :url, :value => theme.url do %>
+                  <%= image_tag("http://placehold.it/75x75") %>
+                  <%= theme.name %>
+                <% end %>
               </div>
             <% end %>
           <% end %>

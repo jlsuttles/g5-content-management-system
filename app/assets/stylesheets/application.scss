@@ -74,11 +74,12 @@ table tr.site-template {
   .thumb {
     float: left;
     margin-right: 1em;
+    width: 100px;
   }
   input {
     position: absolute;
     left: -999em;
-    &:checked + label {
+    &:checked + label img {
       outline: 1px solid black;
     }
   }
