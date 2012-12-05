@@ -16,7 +16,11 @@ class Location < ActiveRecord::Base
       github_repo: github_repo,
       heroku_app_name: heroku_app_name,
       heroku_repo: heroku_repo
-    )
+    ) do |repo|
+      `cp #{self.compiled_site_path}/* #{repo.dir}`
+      repo.add('.')
+      repo.commit_all "Add compiled site"
+    end
   end
 
   def heroku_url
@@ -32,7 +36,7 @@ class Location < ActiveRecord::Base
   end
 
   def github_repo
-    "git@github.com:g5search/g5-client-location"
+    "git@github.com:G5/static-heroku-app.git"
   end
 
   def heroku_app_name
