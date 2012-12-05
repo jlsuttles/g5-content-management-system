@@ -10,6 +10,16 @@ describe LocationDeployer do
     @location.site_template.layout = Fabricate(:page_layout)
     Location.stub(:find).with(@location.id) { @location }
   }
+  
+  it "should delete the repos dir" do
+    @location.should_receive(:delete_repo).once
+    LocationDeployer.perform(@location.id)
+  end
+
+  it "should delete the compiled dir" do
+    @location.should_receive(:delete_compiled_folder).twice
+    LocationDeployer.perform(@location.id)
+  end
 
   it "calls deploy" do
     @location.should_receive(:deploy).once
