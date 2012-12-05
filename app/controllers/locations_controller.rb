@@ -10,6 +10,7 @@ class LocationsController < ApplicationController
 
   def deploy
     @location = Location.find(params[:id])
+    create_compiled_folder
     @location.async_deploy
     redirect_to locations_path, notice: "Deploying location #{@location.heroku_url}."
   end
