@@ -2,8 +2,10 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe PagesController do
 
-  before { 
-    Location.stub(:find) { Location.create }
+  before {
+    PageLayout.any_instance.stub(:assign_attributes_from_url)
+    @location = Fabricate(:location)
+    Location.stub(:find) { @location }
     Page.any_instance.stub(:theme) { Theme.new }
     Page.any_instance.stub(:layout) { PageLayout.new }
   }
@@ -30,8 +32,8 @@ describe PagesController do
   end
 
   it "show action should render show template" do
-    Page.stub(:find).with("1") {Page.new}
-    get :show, :id => 1, location_id: 1
+    @location.pages.stub(:find).with("1") { Page.new }
+    get :show, :id => @location.pages.first.id, location_id: 1
     response.should render_template(:show)
   end
 end

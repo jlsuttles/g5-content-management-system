@@ -17,7 +17,7 @@ class Location < ActiveRecord::Base
       heroku_app_name: heroku_app_name,
       heroku_repo: heroku_repo
     ) do |repo|
-      `cp #{self.compiled_site_path}/* #{repo.dir}`
+      `cp #{self.compiled_site_path}* #{repo.dir}`
       repo.add('.')
       repo.commit_all "Add compiled site"
     end

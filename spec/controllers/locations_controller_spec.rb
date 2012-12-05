@@ -3,6 +3,7 @@ require 'spec_helper'
 describe LocationsController do
 
   before(:each) do
+    PageLayout.any_instance.stub(:assign_attributes_from_url)
     @location = Fabricate(:location)
   end
 
