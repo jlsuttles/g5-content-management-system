@@ -4,52 +4,30 @@
     <div class="span12">
       <% if @page.is_a? SiteTemplate %>
         <h3>Layout</h3>
-        <p>
+        <div class="thumbs clearfix">
           <%= f.fields_for :layout, @page.layout || PageLayout.new do |ff| -%>
             <%= ff.error_messages %>
-            <!-- <%= ff.label :url, "Layout" %> -->
-            <%= ff.collection_select :url, PageLayout.all_remote, :url, :name, include_blank: "Select Layout" %>
+            <% PageLayout.all_remote.each do |layout| %>
+              <div class="thumb">
+                <%= ff.radio_button :url, layout.url %>
+                <%= ff.label :url, image_tag("http://placehold.it/75x75"), :value => layout.url  %>
+              </div>
+            <% end %>
           <% end %>
-        </p>
-
-        <!-- <div class="row thumbs">
-          <div class="span2 thumb">
-            <input type="radio" />
-            <label><img src="http://placehold.it/50x50" /> Single Column</label>
-          </div>
-          <div class="span2 thumb">
-            <input type="radio" />
-            <label><img src="http://placehold.it/50x50" /> Sidebar Left</label>
-          </div>
-          <div class="span2 thumb">
-            <input type="radio" />
-            <label><img src="http://placehold.it/50x50" /> Sidebar Right</label>
-          </div>
-        </div> -->
+        </div>
 
         <h3>Theme</h3>
-        <p>
+        <div class="thumbs clearfix">
           <%= f.fields_for :theme, @page.theme || Theme.new do |ff| -%>
             <%= ff.error_messages %>
-            <!-- <%= f.label :url, "Theme" %> -->
-            <%= ff.collection_select :url, Theme.all_remote, :url, :name, include_blank: "Select Theme" %>
+            <% Theme.all_remote.each do |theme| %>
+              <div class="thumb">
+                <%= ff.radio_button :url, theme.url %>
+                <%= ff.label :url, image_tag("http://placehold.it/75x75"), :value => theme.url %>
+              </div>
+            <% end %>
           <% end %>
-        </p>
-
-        <!-- <div class="row thumbs">
-          <div class="span2 thumb">
-            <input type="radio" />
-            <label><img src="http://placehold.it/50x50" /> Big Picture</label>
-          </div>
-          <div class="span2 thumb">
-            <input type="radio" />
-            <label><img src="http://placehold.it/50x50" /> Mid-Century Modern</label>
-          </div>
-          <div class="span2 thumb">
-            <input type="radio" />
-            <label><img src="http://placehold.it/50x50" /> Classic</label>
-          </div>
-        </div> -->
+        </div>
 
       <% else %>
         <p>
