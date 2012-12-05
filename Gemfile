@@ -11,7 +11,7 @@ gem "table_cloth", "~> 0.1.2"
 gem "foreman", "~> 0.60.2"
 gem "heroku_resque_autoscaler", "~> 0.1.0"
 gem "g5_hentry_consumer", "~> 0.2.6"
-gem "github_heroku_deployer", "~> 0.1.6"
+gem "github_heroku_deployer", "~> 0.2.0"
 
 group :assets do
   gem "sass-rails", "~> 3.2.3"
