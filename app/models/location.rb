@@ -40,7 +40,7 @@ class Location < ActiveRecord::Base
   end
 
   def heroku_app_name
-    "g5-cl-#{name.parameterize[0..23]}"
+    "g5-cl-#{short_uid}-#{name.parameterize}"[0..29]
   end
 
   def heroku_repo
@@ -53,6 +53,10 @@ class Location < ActiveRecord::Base
   
   def compiled_site_path
     Location.compiled_site_root + "#{id}/"
+  end
+  
+  def short_uid
+    "#{created_at.utc.to_i}-#{self.id}"
   end
   
   def create_root_directory
