@@ -1,7 +1,8 @@
 <% title "Location: #{@location.name}" %>
-<% header_right link_to "New Page", new_location_page_path(@location), class: 'btn btn-success' %>
-
-<h3>Pages</h3>
+<div class="page-title">
+  <h3>Pages</h3>
+  <%= link_to "New Page", new_location_page_path(@location), class: 'btn btn-large btn-success' %>
+</div>
 <table class='table table-striped'>
   <thead>
     <tr>
@@ -25,11 +26,11 @@
         </ul>
       </td>
       <td>
-        <%= link_to "Edit", edit_location_site_template_path(@location, @location.site_template), class: "btn" %>
-        <%= link_to "Deploy", deploy_location_path(@location), method: :post, class: "btn" %>
+        <%= link_to "Edit", edit_location_site_template_path(@location, @location.site_template), class: "btn btn-large" %>
+        <%= link_to "Deploy", deploy_location_path(@location), method: :post, class: "btn btn-large" %>
       </td>
     </tr>
-    
+
     <% @location.pages.each do |page| %>
       <tr>
         <td><%= page.name %></td>
@@ -43,8 +44,8 @@
           </ul>
         </td>
         <td>
-          <%= link_to "Edit", edit_location_page_path(@location, page), class: "btn" %>
-          <%= link_to "Preview", preview_location_page_path(@location, page), class: "btn btn-success" %>
+          <%= link_to "Edit", edit_location_page_path(@location, page), class: "btn btn-large" %>
+          <%= link_to "Preview", preview_location_page_path(@location, page), class: "btn btn-large btn-success" %>
         </td>
       </tr>
     <% end %>
