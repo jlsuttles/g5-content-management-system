@@ -3,36 +3,40 @@
     <%= f.error_messages %>
     <div class="span12">
       <% if @page.is_a? SiteTemplate %>
-        <h3>Layout</h3>
-        <div class="thumbs clearfix">
-          <%= f.fields_for :layout, @page.layout || PageLayout.new do |ff| -%>
-            <%= ff.error_messages %>
-            <% PageLayout.all_remote.each do |layout| %>
-              <div class="thumb">
-                <%= ff.radio_button :url, layout.url %>
-                <%= ff.label :url, :value => layout.url do %>
-                  <%= image_tag("http://placehold.it/75x75") %>
-                  <%= layout.name %>
-                <% end %>
-              </div>
-            <% end %>
+        <div class="thumbnail-field">
+          <h3>Layout</h3>
+          <div class="thumbs clearfix">
+            <%= f.fields_for :layout, @page.layout || PageLayout.new do |ff| -%>
+              <%= ff.error_messages %>
+              <% PageLayout.all_remote.each do |layout| %>
+                <div class="thumb">
+                  <%= ff.radio_button :url, layout.url %>
+                  <%= ff.label :url, :value => layout.url do %>
+                    <%= image_tag("http://placehold.it/100x70") %>
+                    <%= layout.name %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
           <% end %>
         </div>
 
-        <h3>Theme</h3>
-        <div class="thumbs clearfix">
-          <%= f.fields_for :theme, @page.theme || Theme.new do |ff| -%>
-            <%= ff.error_messages %>
-            <% Theme.all_remote.each do |theme| %>
-              <div class="thumb">
-                <%= ff.radio_button :url, theme.url %>
-                <%= ff.label :url, :value => theme.url do %>
-                  <%= image_tag("http://placehold.it/75x75") %>
-                  <%= theme.name %>
-                <% end %>
-              </div>
+        <div class="thumbnail-field">
+          <h3>Theme</h3>
+          <div class="thumbs clearfix">
+            <%= f.fields_for :theme, @page.theme || Theme.new do |ff| -%>
+              <%= ff.error_messages %>
+              <% Theme.all_remote.each do |theme| %>
+                <div class="thumb">
+                  <%= ff.radio_button :url, theme.url %>
+                  <%= ff.label :url, :value => theme.url do %>
+                    <%= image_tag("http://placehold.it/100x70") %>
+                    <%= theme.name %>
+                  <% end %>
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
         </div>
 
       <% else %>
@@ -43,7 +47,7 @@
       <% end %>
 
       <h3>Widgets</h3>
-      <p class="instructions"><em>Drag widgets from the list on the left into a page section on the right</em></p>
+      <p class="instructions">Drag widgets from the list on the left into a page section on the right</p>
     </div>
 
     <div class='dropzone span8'>
@@ -61,7 +65,7 @@
 
   <div class='widget-list span4'>
     <%= form_for [@location, @page] do |f| %>
-      <ul id='choose-widgets' class='well sortable clearfix'>
+      <ul id='choose-widgets' class='sortable clearfix'>
         <% @page.remote_widgets.each_with_index do |widget, index| %>
           <%= render "/widgets/form_fields", f: f, widget: widget %>
         <% end %>
