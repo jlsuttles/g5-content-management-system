@@ -15,6 +15,8 @@ class Page < ActiveRecord::Base
 
   validates :name, presence: true
 
+  scope :home, where(name: "Home")
+  
   def sections
     %w(main)
   end
