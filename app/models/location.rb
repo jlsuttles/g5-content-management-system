@@ -1,14 +1,15 @@
 class Location < ActiveRecord::Base
-  attr_accessible :uid, :name, :corporate
+  attr_accessible :uid, :name, :corporate, :urn
 
   has_one :site_template, conditions: ["pages.template = ?", true]
   has_many :pages, conditions: ["pages.template = ?", false]
 
   before_create :create_template
   after_create :create_homepage
+  after_create :set_urn
 
   def async_deploy
-    Resque.enqueue(LocationDeployer, self.id)
+    Resque.enqueue(LocationDeployer, self.urn)
   end
    
   def deploy
@@ -40,7 +41,7 @@ class Location < ActiveRecord::Base
   end
 
   def heroku_app_name
-    "g5-cl-#{short_uid}-#{name.parameterize}"[0..29]
+    urn[0..29]
   end
 
   def heroku_repo
@@ -55,8 +56,16 @@ class Location < ActiveRecord::Base
     Location.compiled_site_root + "#{id}/"
   end
   
-  def short_uid
-    "#{created_at.utc.to_i}-#{self.id}"
+  def record_type
+    "g5-cl"
+  end
+
+  def hashed_id
+    "#{self.created_at.to_i}#{self.id}".to_i.to_s(36)
+  end
+  
+  def to_param
+    self.urn
   end
   
   def create_root_directory
@@ -79,6 +88,10 @@ class Location < ActiveRecord::Base
   end
   
   private
+  
+  def set_urn
+    update_attributes(urn: "#{record_type}-#{hashed_id}-#{name.parameterize}")
+  end
   
   def create_template
     create_site_template(name: "Site Template")

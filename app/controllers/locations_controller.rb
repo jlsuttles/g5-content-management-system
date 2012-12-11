@@ -5,11 +5,11 @@ class LocationsController < ApplicationController
   end
   
   def show
-    @location = Location.find(params[:id])
+    @location = Location.find_by_urn(params[:id])
   end
 
   def deploy
-    @location = Location.find(params[:id])
+    @location = Location.find_by_urn(params[:id])
     @location.async_deploy
     redirect_to locations_path, notice: "Deploying location #{@location.heroku_url}."
   end

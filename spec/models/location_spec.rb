@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Location do
-  let(:location) { Location.create }
+  let(:location) { Location.create(name: "Example") }
   it "should be valid" do
     Location.new.should be_valid
   end

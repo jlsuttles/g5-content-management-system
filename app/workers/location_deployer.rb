@@ -3,7 +3,7 @@ class LocationDeployer
   @queue = :deployer
 
   def self.perform(location_id)
-    @location = Location.find(location_id)
+    @location = Location.find_by_urn(location_id)
     @location.create_root_directory
 
     @location.pages.each do |page|

@@ -5,7 +5,7 @@ describe PagesController do
   before {
     PageLayout.any_instance.stub(:assign_attributes_from_url)
     @location = Fabricate(:location)
-    Location.stub(:find) { @location }
+    Location.stub(:find_by_urn) { @location }
     Page.any_instance.stub(:theme) { Theme.new }
     Page.any_instance.stub(:layout) { PageLayout.new }
   }
