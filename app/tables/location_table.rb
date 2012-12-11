@@ -1,6 +1,8 @@
 class LocationTable < TableCloth::Base
   column :name, :heroku_url
-  action {|location, h| h.link_to "View", location.heroku_url, class: "btn" }
-  action {|location, h| h.link_to "Pages", h.location_path(location), class: "btn" }
-  action {|location, h| h.link_to "Deploy", h.deploy_location_path(location), method: :post, class: "btn"}
+  actions do
+    action {|location| link_to "View", location.heroku_url, class: "btn" }
+    action {|location| link_to "Pages", location_path(location.id), class: "btn" }
+    action {|location| link_to "Deploy", deploy_location_path(location.id), method: :post, class: "btn"}
+  end
 end

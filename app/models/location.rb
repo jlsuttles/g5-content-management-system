@@ -41,7 +41,7 @@ class Location < ActiveRecord::Base
   end
 
   def heroku_app_name
-    urn[0..29]
+    urn[0..29] if urn
   end
 
   def heroku_repo
