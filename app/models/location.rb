@@ -23,6 +23,10 @@ class Location < ActiveRecord::Base
       repo.commit_all "Add compiled site"
     end
   end
+  
+  def homepage
+    pages.home.first
+  end
 
   def heroku_url
     "https://#{heroku_app_name}.herokuapp.com"
