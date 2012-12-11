@@ -12,7 +12,7 @@ gem "foreman", "~> 0.60.2"
 gem "heroku_resque_autoscaler", "~> 0.1.0"
 gem "g5_hentry_consumer", "~> 0.2.7"
 gem "github_heroku_deployer", "~> 0.2.0"
-gem "g5_sibling_deployer", "~> 0.0.1"
+gem "g5_sibling_deployer", "~> 0.0.2"
 
 group :assets do
   gem "sass-rails", "~> 3.2.3"
