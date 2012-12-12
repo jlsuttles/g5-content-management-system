@@ -8,7 +8,7 @@ class Theme < ActiveRecord::Base
 
   belongs_to :page
 
-  before_create :assign_attributes_from_url
+  before_save :assign_attributes_from_url
 
   validates :url, presence: true
 
