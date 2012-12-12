@@ -11,12 +11,10 @@ class LocationDeployer
       @location.clean_up
     end
   end
-
   def self.compile_pages(location)
     location.create_root_directory
     add_page_at_path(location.homepage, location, location.compiled_site_path + "index.html")
     location.pages.each do |page|
-      puts page.name
       add_page_at_path(page, location, page.compiled_file_path)
     end
   end
@@ -26,5 +24,4 @@ class LocationDeployer
       file << LocationsController.new.render_to_string("/pages/preview", layout: false, :locals => {:page => page, location: location})
     end
   end
-
 end
