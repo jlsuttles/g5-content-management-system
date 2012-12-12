@@ -10,17 +10,18 @@ class SiteTemplate < Page
   end
 
   def stylesheets
-    theme.stylesheets +
-      aside_widgets.map(&:css).flatten +
+    aside_widgets.map(&:css).flatten +
       header_widgets.map(&:css).flatten +
-      footer_widgets.map(&:css).flatten
+      footer_widgets.map(&:css).flatten +
+      layout.stylesheets + 
+      theme.stylesheets
   end
 
   def javascripts
-    theme.javascripts +
-      aside_widgets.map(&:javascript).flatten +
+    aside_widgets.map(&:javascript).flatten +
       header_widgets.map(&:javascript).flatten +
-      footer_widgets.map(&:javascript).flatten
+      footer_widgets.map(&:javascript).flatten +
+      theme.javascripts
   end
 
   private
