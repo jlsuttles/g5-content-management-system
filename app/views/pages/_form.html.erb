@@ -39,14 +39,16 @@
           </div>
           <div class="colors clearfix">
             <h3>Colors</h3>
+            <%= f.fields_for :location do |ff| -%>
             <div class="color-field">
-              <input type="color" value="#000000" id="color-1" />
+              <%= ff.text_field :primary_color, type: 'color', id: 'color-1' %>
               <label for="color-1">Primary</label>
             </div>
             <div class="color-field">
-              <input type="color" value="#ffffff" id="color-2" />
+              <%= ff.text_field :secondary_color, type: 'color', id: 'color-2' %>
               <label for="color-2">Secondary</label>
             </div>
+            <% end -%>
           </div>
         </div>
 
