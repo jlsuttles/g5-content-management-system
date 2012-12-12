@@ -1,7 +1,7 @@
 class Location < ActiveRecord::Base
   attr_accessible :uid, :name, :corporate, :urn
 
-  has_one :site_template, conditions: ["pages.template = ?", true]
+  has_one :site_template
   has_many :pages, conditions: ["pages.template = ?", false]
 
   before_create :create_template

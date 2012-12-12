@@ -32,7 +32,7 @@ describe PagesController do
   end
 
   it "show action should render show template" do
-    @location.pages.stub(:find).with("1") { Page.new }
+    @location.pages.stub(:find){ Page.new }
     get :show, :id => @location.pages.first.id, location_id: 1
     response.should render_template(:show)
   end
