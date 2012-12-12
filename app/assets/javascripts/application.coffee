@@ -1,12 +1,16 @@
-# VENDOR
+# 
+# vendor/assets
+#
 #= require jquery
 #= require jquery-ui
 #= require jquery_ujs
 #= require bootstrap
 #= require spectrum
-
-# APPLICATION
+#
+# app/assets
+#
 #= require_self
+#= require_tree ./application
 
 $ ->
   $('#choose-widgets, #add-widgets').sortable {

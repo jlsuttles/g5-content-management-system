@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= javascript_include_tag "compiled_pages" %>
+    <%= csrf_meta_tag %>
+    <meta charset="utf8" />
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

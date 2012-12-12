@@ -37,7 +37,7 @@ class PagesController < ApplicationController
   
   def preview
     @page = @location.pages.find(params[:id])
-    render layout: false, :locals => {:page => @page, location: @location} 
+    render layout: "compiled_pages", :locals => {:page => @page, location: @location} 
   end
   
   private
