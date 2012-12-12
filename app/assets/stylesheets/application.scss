@@ -9,6 +9,7 @@
  * awesome mixins that Bootstrap has defined. */
 @import "bootstrap";
 @import "bootstrap-responsive";
+@import "spectrum";
 
 body {
   padding-bottom: 2em;
@@ -129,4 +130,13 @@ table tr.site-template {
   input[type=submit] {
     margin-top: 1em;
   }
+}
+.theme-picker .thumbs,
+.theme-picker .colors {
+  float: left;
+  width: 50%;
+}
+.color-field {
+  float: left;
+  margin-right: 2em;
 }
