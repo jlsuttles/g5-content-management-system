@@ -21,7 +21,7 @@ class LocationDeployer
 
   def self.add_page_at_path(page, location, path)
     File.open(path, 'w') do |file|
-      file << LocationsController.new.render_to_string("/pages/preview", layout: false, :locals => {:page => page, location: location})
+      file << LocationsController.new.render_to_string("/pages/preview", layout: "compiled_pages", :locals => {:page => page, location: location})
     end
   end
 end
