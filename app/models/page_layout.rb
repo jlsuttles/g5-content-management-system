@@ -1,7 +1,7 @@
 class PageLayout < ActiveRecord::Base
   LAYOUT_GARDEN_URL = "http://g5-layout-garden.herokuapp.com/"
 
-  attr_accessible :page_id, :url, :name, :html
+  attr_accessible :page_id, :url, :name, :html, :thumbnail
 
   belongs_to :page
 
