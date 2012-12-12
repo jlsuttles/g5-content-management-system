@@ -16,7 +16,6 @@ class LocationDeployer
     location.create_root_directory
     add_page_at_path(location.homepage, location, location.compiled_site_path + "index.html")
     location.pages.each do |page|
-      puts page.name
       add_page_at_path(page, location, page.compiled_file_path)
     end
   end
