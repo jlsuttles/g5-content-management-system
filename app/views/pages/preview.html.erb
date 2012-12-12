@@ -1,8 +1,5 @@
-<html class='page-<%= page.slug %>'>
-  <head>
-    <%= stylesheet_link_tag *page.stylesheets %>
-    <%= javascript_include_tag *page.javascripts %>
-    <title><%= location.name %> || <%= page.name %></title>
-  </head>
-  <%= raw preview(location, page) %>
-</html>
+<%= content_for :body_classes, "page-#{page.slug}"%>
+<%= content_for :head, stylesheet_link_tag(*page.stylesheets) %>
+<%= content_for :head, javascript_include_tag(*page.javascripts) %>
+<%= content_for :title, "#{location.name} || #{page.name}" %>
+<%= raw preview(location, page) %>
