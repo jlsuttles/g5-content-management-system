@@ -14,7 +14,7 @@ class Theme < ActiveRecord::Base
   def self.all_remote
     components = G5HentryConsumer::HG5Component.parse(THEME_GARDEN_URL)
     components.map do |component|
-      new(url: component.uid, name: component.name.first)
+      new(url: component.uid, name: component.name.first, thumbnail: component.thumbnail.first)
     end
   end
 
