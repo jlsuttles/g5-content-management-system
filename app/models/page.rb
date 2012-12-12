@@ -34,11 +34,11 @@ class Page < ActiveRecord::Base
   end
 
   def stylesheets
-    location.stylesheets + widgets.map(&:css).flatten
+    widgets.map(&:css).flatten + location.stylesheets
   end
 
   def javascripts
-    location.javascripts + widgets.map(&:javascript).flatten
+    widgets.map(&:javascript).flatten + location.javascripts
   end
   
   def compiled_file_path

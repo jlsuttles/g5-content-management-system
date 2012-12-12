@@ -1,9 +1,11 @@
 class PageLayout < ActiveRecord::Base
   LAYOUT_GARDEN_URL = "http://g5-layout-garden.herokuapp.com"
 
-  attr_accessible :page_id, :url, :name, :html, :thumbnail
+  attr_accessible :page_id, :url, :name, :html, :thumbnail, :stylesheets
 
   belongs_to :page
+
+  serialize :stylesheets, Array
 
   before_create :assign_attributes_from_url
 
@@ -27,6 +29,7 @@ class PageLayout < ActiveRecord::Base
     if component
       self.name = component.name.first
       self.html = component.content.first
+      self.stylesheets = component.content.first
       true
     else
       raise "No h-g5-component found at url: #{url}"
