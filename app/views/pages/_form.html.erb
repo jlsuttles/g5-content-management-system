@@ -12,7 +12,7 @@
                 <div class="thumb">
                   <%= ff.radio_button :url, layout.url %>
                   <%= ff.label :url, :value => layout.url do %>
-                    <%= image_tag(layout.thumbnail) %>
+                    <%= image_tag_or_placeholder(layout.thumbnail) %>
                     <%= layout.name %>
                   <% end %>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="thumb">
                   <%= ff.radio_button :url, theme.url %>
                   <%= ff.label :url, :value => theme.url do %>
-                    <%= image_tag(theme.thumbnail) %>
+                    <%= image_tag_or_placeholder(theme.thumbnail) %>
                     <%= theme.name %>
                   <% end %>
                 </div>
