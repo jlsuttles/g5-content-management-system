@@ -27,9 +27,9 @@ class PageLayout < ActiveRecord::Base
   def assign_attributes_from_url
     component = G5HentryConsumer::HG5Component.parse(url).first
     if component
-      self.name = component.name.first
-      self.html = component.content.first
-      self.stylesheets = component.content.first
+      self.name        = component.name.first
+      self.stylesheets = component.stylesheets
+      self.html        = component.content.first
       true
     else
       raise "No h-g5-component found at url: #{url}"
