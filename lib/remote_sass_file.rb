@@ -18,7 +18,7 @@ class RemoteSassFile
   # The path of the compiled css
   # i.e. tmp/stylesheets/layout-side-left-<timestamp>.css
   def css_file_path
-    @css_file_path ||= Tempfile.new([css_file_name, ".css"]).path
+    @css_file_path ||= File.join("compiled", "#{css_file_name.css}")
   end
 
   # The file name of the compiled css file
