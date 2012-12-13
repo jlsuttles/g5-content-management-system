@@ -33,11 +33,11 @@ class Location < ActiveRecord::Base
   end
 
   def stylesheets
-    site_template.stylesheets || []
+    self.site_template.stylesheets || []
   end
 
   def javascripts
-    site_template.javascripts || []
+    self.site_template.javascripts || []
   end
 
   def github_repo
@@ -98,10 +98,10 @@ class Location < ActiveRecord::Base
   end
   
   def create_template
-    create_site_template(name: "Site Template")
+    create_site_template(name: "Site Template", slug: "site-template", title: "Site Template")
   end
 
   def create_homepage
-    pages.create(name: "Home")
+    pages.create(name: "Home", slug: "Home", title: "Home")
   end
 end

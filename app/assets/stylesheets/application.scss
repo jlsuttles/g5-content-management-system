@@ -44,6 +44,8 @@ th {
 }
 
 form {margin: 0}
+
+.field_with_errors input { border: 1px solid red}
 #add-widgets {
   min-height: 100px;
   padding-bottom: 25px;

@@ -2,61 +2,11 @@
   <%= form_for [@location, @page] do |f| %>
     <%= f.error_messages %>
     <div class="span12">
+      
       <% if @page.is_a? SiteTemplate %>
-        <div class="layout-picker thumbnail-field">
-          <h3>Layout</h3>
-          <div class="thumbs clearfix">
-            <%= f.fields_for :layout, @page.layout || PageLayout.new do |ff| -%>
-              <%= ff.error_messages %>
-              <% PageLayout.all_remote.each do |layout| %>
-                <div class="thumb">
-                  <%= ff.radio_button :url, layout.url %>
-                  <%= ff.label :url, :value => layout.url do %>
-                    <%= image_tag_or_placeholder(layout.thumbnail) %>
-                    <%= layout.name %>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-
-        <div class="theme-picker thumbnail-field clearfix">
-          <div class="thumbs clearfix">
-            <h3>Theme</h3>
-            <%= f.fields_for :theme, @page.theme || Theme.new do |ff| -%>
-              <%= ff.error_messages %>
-              <% Theme.all_remote.each do |theme| %>
-                <div class="thumb">
-                  <%= ff.radio_button :url, theme.url %>
-                  <%= ff.label :url, :value => theme.url do %>
-                    <%= image_tag_or_placeholder(theme.thumbnail) %>
-                    <%= theme.name %>
-                  <% end %>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="colors clearfix">
-            <h3>Colors</h3>
-            <%= f.fields_for :location do |ff| -%>
-            <div class="color-field">
-              <%= ff.text_field :primary_color, type: 'color', id: 'color-1' %>
-              <label for="color-1">Primary</label>
-            </div>
-            <div class="color-field">
-              <%= ff.text_field :secondary_color, type: 'color', id: 'color-2' %>
-              <label for="color-2">Secondary</label>
-            </div>
-            <% end -%>
-          </div>
-        </div>
-
+        <%= render "/site_templates/site_template_fields", f: f %>
       <% else %>
-        <p>
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-        </p>
+        <%= render "page_fields", f: f %>
       <% end %>
 
       <h3>Widgets</h3>

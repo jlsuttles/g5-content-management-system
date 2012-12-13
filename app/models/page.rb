@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
-  attr_accessible :location_id, :name, :template, :slug
+  attr_accessible :location_id, :name, :template, :slug, :title
   attr_accessible :widgets_attributes, :layout_attributes, :theme_attributes, :location_attributes
 
   belongs_to :location
@@ -12,9 +12,8 @@ class Page < ActiveRecord::Base
   accepts_nested_attributes_for :theme
   accepts_nested_attributes_for :widgets, :allow_destroy => true
 
-  before_create :set_slug
-
-  validates :name, presence: true
+  validates :slug, :title, :name, presence: true
+  validates :slug, :format => {with: /^[-_A-Za-z0-9]*$/, message: "can only contain letters, numbers, dashes, and underscores."}
 
   scope :home, where(name: "Home")
   
@@ -43,12 +42,7 @@ class Page < ActiveRecord::Base
   end
   
   def compiled_file_path
-    location.compiled_site_path + self.name + '.html'
+    location.compiled_site_path + self.slug + '.html'
   end
   
-  private
-
-  def set_slug
-    self.slug = self.name.parameterize
-  end
 end

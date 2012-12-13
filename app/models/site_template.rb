@@ -3,8 +3,6 @@ class SiteTemplate < Page
   has_many :header_widgets, class_name: "Widget", conditions: ['section = ?', 'header'], foreign_key: "page_id"
   has_many :footer_widgets, class_name: "Widget", conditions: ['section = ?', 'footer'], foreign_key: "page_id"
 
-  before_create :set_template_flag
-
   def sections
     %w(header aside footer)
   end
@@ -13,7 +11,7 @@ class SiteTemplate < Page
     aside_widgets.map(&:css).flatten +
       header_widgets.map(&:css).flatten +
       footer_widgets.map(&:css).flatten +
-      layout.stylesheets + 
+      layout.stylesheets +
       theme.stylesheets
   end
 
@@ -24,9 +22,4 @@ class SiteTemplate < Page
       theme.javascripts
   end
 
-  private
-
-  def set_template_flag
-    self.template = true
-  end
 end

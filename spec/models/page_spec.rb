@@ -1,9 +1,53 @@
 require 'spec_helper'
 
 describe Page do
-  let(:page) { Page.create(name: "Some Name", widgets_attributes: [{name: "Widgie", url: "http://g5-widget-garden.herokuapp.com/components/storage-list"}]) }
+  let(:page) { Page.create(title: "What a wonderful world", name: "Some Name", slug: "some-name", widgets_attributes: [{name: "Widgie", url: "http://g5-widget-garden.herokuapp.com/components/storage-list"}]) }
   
   it { page.slug.should eq "some-name"}
+  
+  describe "validations" do
+    describe "slug" do
+      it do
+        page.slug = "*"
+        page.should be_invalid
+      end
+      it do
+        page.slug = "somename"
+        page.should be_valid
+      end
+      it do
+        page.slug = "some name"
+        page.should be_invalid
+      end
+      it do
+        page.slug = "some-name"
+        page.should be_valid
+      end
+      it do
+        page.slug = "1name"
+        page.should be_valid
+      end
+      it do
+        page.slug = "some_name"
+        page.should be_valid
+      end
+      it do
+        page.slug = "some%name"
+        page.should be_invalid
+      end
+      it do
+        page.slug = "some.name"
+        page.should be_invalid
+      end
+      it do
+        page.slug = "some.name"
+        page.save
+        page.errors[:slug].should include "can only contain letters, numbers, dashes, and underscores."
+      end
+      
+    end
+  end
+  
   describe "layouts" do
     it { Page.new.should respond_to :layout }
   end

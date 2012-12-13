@@ -2,8 +2,8 @@ class LocationDeployer
   extend HerokuResqueAutoscaler if Rails.env.production?
   @queue = :deployer
 
-  def self.perform(location_id)
-    @location = Location.find_by_urn(location_id)
+  def self.perform(location_urn)
+    @location = Location.find_by_urn(location_urn)
     compile_pages(@location)
     begin
       @location.deploy
