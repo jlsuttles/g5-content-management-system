@@ -72,9 +72,5 @@ module G5ClientHub
 
     # include G5SiblingDeployer::Engine's migrations
     config.paths['db/migrate'] += G5SiblingDeployer::Engine.paths['db/migrate'].existent
-
-    # any Sass files in public/stylesheets/sass 
-    # will be compiled into CSS files in public/stylesheets on every request
-    config.middleware.use Sass::Plugin::Rack
   end
 end
