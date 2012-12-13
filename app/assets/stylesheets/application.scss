@@ -105,7 +105,6 @@ table tr.site-template {
   .thumb {
     float: left;
     margin-right: 2em;
-    width: 100px;
   }
   input {
     position: absolute;
@@ -133,10 +132,18 @@ table tr.site-template {
     margin-top: 1em;
   }
 }
-.theme-picker .thumbs,
-.theme-picker .colors {
-  float: left;
-  width: 50%;
+.layout-picker .thumb {
+  width: 100px;
+}
+.theme-picker {
+  .thumb {
+    width: 250px;
+  }
+  .thumbs,
+  .colors {
+    float: left;
+    width: 50%;
+  }
 }
 .color-field {
   float: left;
