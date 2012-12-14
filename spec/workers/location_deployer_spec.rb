@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe LocationDeployer do
-  before {
+  before :each do
     PageLayout.any_instance.stub(:assign_attributes_from_url)
     SiteTemplate.any_instance.stub(:compiled_stylesheets) { [Faker::Internet.domain_name] }
     SiteTemplate.any_instance.stub(:javascripts) { [Faker::Internet.domain_name] }
@@ -12,25 +12,77 @@ describe LocationDeployer do
     
     @location.stub(:homepage) { @location.pages.first }
     Location.stub(:find_by_urn).with(@location.urn) { @location }
-  }
-
-  it "should delete the repos dir" do
-    @location.should_receive(:delete_repo).once
-    LocationDeployer.perform(@location.urn)
+    @location_deployer = LocationDeployer.new(@location.urn)
   end
 
-  it "should delete the compiled dir" do
-    @location.should_receive(:delete_compiled_folder).twice
-    LocationDeployer.perform(@location.urn)
+  describe "#initialize" do
+    it "finds a location" do
+      Location.should_receive(:find_by_urn).with(@location.urn).once
+      LocationDeployer.new(@location.urn)
+    end
   end
-
-  it "calls deploy" do
-    @location.should_receive(:deploy).once
-    LocationDeployer.perform(@location.urn)
+  describe "#compile_and_deploy" do
+    it "compiles pages" do
+      @location_deployer.should_receive(:compile_pages).once
+      @location_deployer.compile_and_deploy
+    end
+    it "compiles stylesheets" do
+      @location_deployer.should_receive(:compile_stylesheets).once
+      @location_deployer.compile_and_deploy
+    end
+    it "deploys" do
+      @location_deployer.should_receive(:deploy).once
+      @location_deployer.compile_and_deploy
+    end
+    it "cleans up" do
+      @location_deployer.should_receive(:clean_up).once
+      @location_deployer.compile_and_deploy
+    end
   end
-
-  it "finds a location" do
-    Location.should_receive(:find_by_urn).with(@location.urn).once
-    LocationDeployer.perform(@location.urn)
+  describe "#compile_pages" do
+    it "creates root directory" do
+      @location_deployer.compile_pages
+      Dir.exists?(@location.compiled_site_path).should be_true
+    end
+    it "compiles all pages" do
+      pages = @location.pages.length + 1 # for homepage
+      @location_deployer.should_receive(:compile_page).exactly(pages).times
+      @location_deployer.compile_pages
+    end
+  end
+  describe "#compile_page" do
+    before :each do
+      @page = @location.pages.first
+      @page_path = @page.compiled_file_path
+      FileUtils.rm(@page_path) if File.exists?(@page_path)
+      @location_deployer.compile_page(@page, @page_path)
+    end
+    it "creates page file" do
+      File.exists?(@page_path).should be_true
+    end
+  end
+  describe "#compile_stylesheets" do
+    it "creates stylesheets direcoty" do
+      @location_deployer.compile_stylesheets
+      stylesheets_path = File.join(@location.compiled_site_path, "stylesheets")
+      Dir.exists?(stylesheets_path).should be_true
+    end
+    it "compiles all stylesheet" do
+      stylesheets = @location.all_stylesheets.length
+      @location_deployer.should_receive(:compile_stylesheet).exactly(stylesheets).times
+      @location_deployer.compile_stylesheets
+    end
+  end
+  describe "#compile_stylesheet" do
+    before :each do
+      @location_deployer.create_directory(:stylesheets)
+      @stylesheet = @location.all_stylesheets.first
+      @stylesheet_path = @location_deployer.stylesheet_path(@stylesheet)
+      FileUtils.rm(@stylesheet_path) if File.exists?(@stylesheet_path)
+      @location_deployer.compile_stylesheet(@stylesheet)
+    end
+    it "creates stylesheet file" do
+      File.exists?(@stylesheet_path).should be_true
+    end
   end
 end

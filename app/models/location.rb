@@ -1,4 +1,6 @@
 class Location < ActiveRecord::Base
+  COMPILED_SITES_PATH = File.join(Rails.root, "tmp", "compiled_sites")
+
   attr_accessible :uid, :name, :corporate, :urn, :primary_color, :secondary_color
 
   has_one :site_template
@@ -13,27 +15,23 @@ class Location < ActiveRecord::Base
   end
    
   def deploy
-    GithubHerokuDeployer.deploy(
-      github_repo: github_repo,
-      heroku_app_name: heroku_app_name,
-      heroku_repo: heroku_repo
-    ) do |repo|
-      `cp #{self.compiled_site_path}* #{repo.dir}`
-      repo.add('.')
-      repo.commit_all "Add compiled site"
-    end
+    LocationDeployer.perform(self.urn)
   end
   
   def homepage
     pages.home.first
   end
 
-  def heroku_url
-    "https://#{heroku_app_name}.herokuapp.com"
-  end
-
+  # TODO: site_template_stylesheets
   def stylesheets
     self.site_template.stylesheets || []
+  end
+
+  # TODO: stylesheets
+  def all_stylesheets
+    self.pages.map do |page|
+      page.stylesheets
+    end.flatten
   end
 
   def javascripts
@@ -52,14 +50,18 @@ class Location < ActiveRecord::Base
     "git@heroku.com:#{heroku_app_name}.git"
   end
 
-  def self.compiled_site_root
-    "#{Rails.root}/tmp/compiled_site/"
+  def heroku_url
+    "https://#{heroku_app_name}.herokuapp.com"
   end
   
   def compiled_site_path
-    Location.compiled_site_root + "#{id}/"
+    File.join(COMPILED_SITES_PATH, self.urn)
   end
-  
+
+  def homepage_compiled_file_path
+    homepage.compiled_file_path if homepage
+  end
+
   def record_type
     "g5-cl"
   end
@@ -70,25 +72,6 @@ class Location < ActiveRecord::Base
   
   def to_param
     self.urn
-  end
-  
-  def create_root_directory
-    delete_compiled_folder
-    Dir::mkdir(Location.compiled_site_root) unless Dir::exists?(Location.compiled_site_root)
-    Dir::mkdir(compiled_site_path)
-  end
-  
-  def delete_compiled_folder
-    FileUtils.rm_rf(compiled_site_path) if Dir::exists?(compiled_site_path)
-  end
-  
-  def delete_repo
-    FileUtils.rm_rf("#{Rails.root}/tmp/repos") if Dir::exists?("#{Rails.root}/tmp/repos")
-  end
-  
-  def clean_up
-    delete_compiled_folder
-    delete_repo
   end
   
   private
