@@ -27,6 +27,7 @@ class Theme < ActiveRecord::Base
       self.name        = component.name.first
       self.stylesheets = component.stylesheets
       self.javascripts = component.javascripts
+      self.thumbnail   = component.thumbnail.first
       true
     else
       raise "No h-g5-component found at url: #{url}"

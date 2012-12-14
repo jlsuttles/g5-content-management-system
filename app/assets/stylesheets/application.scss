@@ -45,6 +45,36 @@ th {
 
 form {margin: 0}
 
+.pages {
+  .thumb {
+    width: 100px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .widgets {
+    li {
+      float: left;
+      margin-bottom: 5px;
+      width: 69px;
+      min-height: 90px;
+      font-size: 12px;
+      line-height: 1.25;
+      text-align: center;
+    }
+    img {
+      display: block;
+      margin: 0 auto 5px;
+      width: 50px;
+    }
+  }
+  img {
+    display: block;
+  }
+}
+
 .field_with_errors input { border: 1px solid red}
 #add-widgets {
   min-height: 100px;

@@ -3,7 +3,7 @@
   <h3>Pages</h3>
   <%= link_to "New Page", new_location_page_path(@location), class: 'btn btn-large btn-success' %>
 </div>
-<table class='table table-striped'>
+<table class='pages table table-striped'>
   <thead>
     <tr>
       <th>Page</th>
@@ -16,12 +16,15 @@
   <tbody>
     <tr class='site-template'>
       <td><%= @location.site_template.name %></td>
-      <td><img src="http://placehold.it/100x70"></td>
-      <td><img src="http://placehold.it/100x70"></td>
+      <td><%= image_tag @location.site_template.layout.thumbnail, class: 'thumb' %></td>
+      <td><%= image_tag @location.site_template.theme.thumbnail, class: 'thumb' %></td>
       <td>
-        <ul>
+        <ul class="widgets">
           <% @location.site_template.widgets.each do |widget| %>
-            <li><%= widget.name %></li>
+            <li>
+              <%= image_tag widget.thumbnail %>
+              <%= widget.name %>
+            </li>
           <% end %>
         </ul>
       </td>
@@ -37,9 +40,12 @@
         <td></td>
         <td></td>
         <td>
-          <ul>
+          <ul class="widgets">
             <% page.widgets.each do |widget| %>
-              <li><%= widget.name %></li>
+              <li>
+                <%= image_tag widget.thumbnail %>
+                <%= widget.name %>
+              </li>
             <% end %>
           </ul>
         </td>
