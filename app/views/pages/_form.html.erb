@@ -2,7 +2,7 @@
   <%= form_for [@location, @page] do |f| %>
     <%= f.error_messages %>
     <div class="span12">
-      
+
       <% if @page.is_a? SiteTemplate %>
         <%= render "/site_templates/site_template_fields", f: f %>
       <% else %>

@@ -50,7 +50,7 @@ rake jobs:work
 
 1. Seed a Client
 ```bash
-G5_CLIENT_UID=http://g5-hub.herokuapp.com/clients/6 rake seed_client
+G5_CLIENT_UID=http://g5-hub.herokuapp.com/clients/g5-c-685e4rp-moo-man rake seed_client
 ```
 
 
