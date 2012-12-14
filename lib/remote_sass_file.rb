@@ -1,68 +1,56 @@
+require "open-uri"
+
 class RemoteSassFile
-  def initialize(file_path)
-    @file_path = file_path
+  def initialize(sass_file_path)
+    @sass_file_path = sass_file_path
+    write_to_public_stylesheets_sass
+    compile_to_public_stylesheets
   end
 
-  # The path of the uncompiled Sass file,
-  # i.e. http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.scss
   def sass_file_path
-    @file_path
+    @sass_file_path
   end
 
-  # The file name of the uncompiled Sass file,
-  # i.e. layout-side-left
+  def file_name
+    @file_name ||= sass_file_path.split("/").last.split(".").first
+  end
+
   def sass_file_name
-    @sass_file_name ||= sass_file_path.split("/").last.split(".").first
+    @sass_file_name ||= "#{file_name}.scss"
   end
 
-  # The path of the compiled css
-  # i.e. tmp/stylesheets/layout-side-left-<timestamp>.css
-  def css_file_path
-    @css_file_path ||= File.join("compiled", "#{css_file_name.css}")
-  end
-
-  # The file name of the compiled css file
-  # i.e. layout-side-left-<timestamp>
   def css_file_name
-    @css_file_name ||= [sass_file_name, Time.now.to_s(:number)].join('-')
+    @css_file_name ||= "#{file_name}.css"
   end
 
-  # Sprockets::Environment
-  def sprockets_environment
-      if Rails.application.assets.is_a?(Sprockets::Index)
-        # In production Sprockets::Index caches everything
-        # we want the uncached Sprockets::Environment
-        Rails.application.assets.instance_variable_get('@environment')
-      else 
-        Rails.application.assets
-      end
+  def public_css_path
+    @public_css_path ||= File.join(Rails.root, "public", "stylesheets")
   end
 
-  # Sprockets::StaticCompiler
-  def sprockets_static_compiler
-    @sprockets_static_compiler ||= Sprockets::StaticCompiler.new(
-      sprockets_environment,
-      File.join(Rails.public_path, Rails.application.config.assets.prefix),
-      [css_file_path],
-      digest:   true,
-      manifest: false
-    )
+  def public_sass_path
+    @public_sass_path ||= File.join(public_css_path, "sass")
   end
 
-  # Compile css
-  def compile
-    sprockets_static_compiler.compile
-    register_digest
-    compiled?
+  def public_css_file_path
+    @public_css_file_path ||= File.join(public_css_path, css_file_name)
   end
 
-  # Check if the digested file is registered as an asset
-  def compiled?
-    Rails.application.config.assets.paths.include? css_file_path
+  def public_sass_file_path
+    @public_sass_file_path ||= File.join(public_sass_path, sass_file_name)
   end
 
-  # Register digested file as an asset
-  def register_digest
-    Rails.application.config.assets.paths << css_file_path
+  def css_path
+    @css_path ||= File.join("/stylesheets", css_file_name)
+  end
+
+  def write_to_public_stylesheets_sass
+    FileUtils.mkdir_p(public_sass_path)
+    open(public_sass_file_path, "wb") do |file|
+      file << open(sass_file_path).read
+    end
+  end
+
+  def compile_to_public_stylesheets
+    Sass.compile_file(public_sass_file_path, public_css_file_path)
   end
 end

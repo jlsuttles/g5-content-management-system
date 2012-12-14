@@ -33,6 +33,12 @@ class Page < ActiveRecord::Base
     Widget.all_remote.delete_if {|widget| widgets.map(&:name).include? widget.name}
   end
 
+  def compiled_stylesheets
+    stylesheets.map do |stylesheet|
+      RemoteSassFile.new(stylesheet).css_path
+    end
+  end
+
   def stylesheets
     widgets.map(&:css).flatten + location.stylesheets
   end

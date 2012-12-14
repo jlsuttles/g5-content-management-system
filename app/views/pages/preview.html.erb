@@ -1,5 +1,5 @@
 <%= content_for :body_classes, "page-#{page.slug}"%>
-<%= content_for :head, stylesheet_link_tag(*page.stylesheets) %>
+<%= content_for :head, stylesheet_link_tag(*page.compiled_stylesheets) %>
 <%= content_for :head, javascript_include_tag(*page.javascripts) %>
 <%= content_for :title, page.title %>
 <%= raw preview(location, page) %>
