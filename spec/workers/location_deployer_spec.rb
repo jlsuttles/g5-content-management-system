@@ -3,7 +3,7 @@ require 'spec_helper'
 describe LocationDeployer do
   before {
     PageLayout.any_instance.stub(:assign_attributes_from_url)
-    SiteTemplate.any_instance.stub(:stylesheets) { [Faker::Internet.domain_name] }
+    SiteTemplate.any_instance.stub(:compiled_stylesheets) { [Faker::Internet.domain_name] }
     SiteTemplate.any_instance.stub(:javascripts) { [Faker::Internet.domain_name] }
     GithubHerokuDeployer.stub(:deploy) { true }
 
