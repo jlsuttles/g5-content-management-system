@@ -4,6 +4,7 @@
     <%= ff.hidden_field :position, class: 'position' %>
     <%= ff.hidden_field :section, class: 'section' %>
     <%= ff.hidden_field :url %>
+    <%= image_tag_or_placeholder(widget.thumbnail) %>
     <%= widget.name %>
   </li>
 <% end -%>
