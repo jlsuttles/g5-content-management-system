@@ -30,6 +30,7 @@ class Widget < ActiveRecord::Base
       self.css        = component.stylesheets
       self.javascript = component.javascripts
       self.html       = component.content.first
+      self.thumbnail  = component.thumbnail.first
       true
     else
       raise "No h-g5-component found at url: #{url}"
