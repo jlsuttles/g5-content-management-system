@@ -22,7 +22,7 @@
         <ul class="widgets">
           <% @location.site_template.widgets.each do |widget| %>
             <li>
-              <%= image_tag_or_placeholder(widget.thumbnail) %>
+              <%= image_tag_or_placeholder(widget.try(:thumbnail)) %>
               <%= widget.name %>
             </li>
           <% end %>
@@ -43,7 +43,7 @@
           <ul class="widgets">
             <% page.widgets.each do |widget| %>
               <li>
-                <%= image_tag widget.thumbnail %>
+                <%= image_tag_or_placeholder(widget.try(:thumbnail)) %>
                 <%= widget.name %>
               </li>
             <% end %>
