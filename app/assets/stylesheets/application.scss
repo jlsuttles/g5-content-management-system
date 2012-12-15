@@ -118,6 +118,7 @@ form {margin: 0}
 }
 #add-widgets {
   li {
+    float: left;
     padding: 5px;
     display: block;
     background: #f0f0f0;
@@ -128,6 +129,20 @@ form {margin: 0}
     margin-right: .5em;
     width: 25px;
   }
+}
+.ui-state-highlight {
+  background: red;
+}
+.sortable:after {
+  content: '.';
+  clear: both;
+  display: block;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 #add-widgets li.section {

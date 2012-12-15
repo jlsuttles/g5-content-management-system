@@ -1,4 +1,4 @@
-# 
+#
 # vendor/assets
 #
 #= require jquery
@@ -15,7 +15,8 @@
 $ ->
   $('#choose-widgets, #add-widgets').sortable {
     connectWith: ".sortable",
-    cancel: ".section"
+    forcePlaceholderSize: true,
+    cancel: ".section",
     stop: (event, ui)->
       $('#add-widgets li').each (index) ->
         $(this).find('.position').val(index + 1)
