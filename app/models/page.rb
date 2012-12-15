@@ -35,7 +35,7 @@ class Page < ActiveRecord::Base
 
   def compiled_stylesheets
     stylesheets.map do |stylesheet|
-      RemoteSassFile.new(stylesheet).css_path
+      RemoteSassFile.new(stylesheet).stylesheet_link_path
     end
   end
 

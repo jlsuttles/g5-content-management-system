@@ -6,6 +6,7 @@ describe LocationDeployer do
     SiteTemplate.any_instance.stub(:compiled_stylesheets) { [Faker::Internet.domain_name] }
     SiteTemplate.any_instance.stub(:javascripts) { [Faker::Internet.domain_name] }
     GithubHerokuDeployer.stub(:deploy) { true }
+    RemoteSassFile.any_instance.stub(:compile)
 
     @location = Fabricate(:location)
     @location.site_template = Fabricate(:site_template)
@@ -74,15 +75,9 @@ describe LocationDeployer do
     end
   end
   describe "#compile_stylesheet" do
-    before :each do
-      @location_deployer.create_directory(:stylesheets)
-      @stylesheet = @location.all_stylesheets.first
-      @stylesheet_path = @location_deployer.stylesheet_path(@stylesheet)
-      FileUtils.rm(@stylesheet_path) if File.exists?(@stylesheet_path)
-      @location_deployer.compile_stylesheet(@stylesheet)
-    end
-    it "creates stylesheet file" do
-      File.exists?(@stylesheet_path).should be_true
+    it "compiles remote sass file" do
+      RemoteSassFile.any_instance.should_receive(:compile)
+      @location_deployer.compile_stylesheet(@location.stylesheets.first)
     end
   end
 end

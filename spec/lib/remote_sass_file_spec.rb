@@ -6,17 +6,14 @@ describe RemoteSassFile do
     @remote_sass_file = RemoteSassFile.new("spec/support/remote_sass_file.scss")
   end
   after :each do
-    if File.exists?(@remote_sass_file.public_sass_file_path)
-      FileUtils.rm(@remote_sass_file.public_sass_file_path) 
-    end
-    if File.exists?(@remote_sass_file.public_css_file_path)
-      FileUtils.rm(@remote_sass_file.public_css_file_path) 
+    if File.exists?(@remote_sass_file.compiled_file_path)
+      FileUtils.rm(@remote_sass_file.compiled_file_path) 
     end
   end
 
-  describe "#sass_file_path" do
-    it "should return the file path" do
-      @remote_sass_file.sass_file_path.should == "spec/support/remote_sass_file.scss"
+  describe "#file_name" do
+    it "should return the sass file name without .scss" do
+      @remote_sass_file.file_name.should == "remote_sass_file"
     end
   end
   describe "#sass_file_name" do
@@ -24,46 +21,46 @@ describe RemoteSassFile do
       @remote_sass_file.sass_file_name.should == "remote_sass_file.scss"
     end
   end
-  describe "#file_name" do
-    it "should return the sass file name without .scss" do
-      @remote_sass_file.file_name.should == "remote_sass_file"
-    end
-  end
   describe "#css_file_name" do
     it "should return the file name with .css" do
       @remote_sass_file.css_file_name.should == "remote_sass_file.css"
     end
   end
-  describe "#public_css_path" do
+  describe "#compile_path" do
     it "should include /public/stylesheets" do
-      @remote_sass_file.public_css_file_path.should include "public/stylesheets"
+      @remote_sass_file.compile_path.should include "public/stylesheets"
     end
   end
-  describe "#public_sass_path" do
-    it "should include /public/stylesheets/sass" do
-      @remote_sass_file.public_sass_file_path.should include "public/stylesheets/sass"
+  describe "#compiled_file_path" do
+    it "should include the stylesheet file name" do
+      @remote_sass_file.compiled_file_path.should include @remote_sass_file.css_file_name
     end
   end
-  describe "#write_to_public_stylesheets_sass" do
+  describe "#stylesheet_link_path" do
+    it "should include the styleheet file name" do
+      @remote_sass_file.stylesheet_link_path.should include @remote_sass_file.css_file_name
+    end
+  end
+  describe "#save_locally" do
     before :each do
-      if File.exists?(@remote_sass_file.public_sass_file_path)
-        FileUtils.rm(@remote_sass_file.public_sass_file_path)
+      if File.exists?(@remote_sass_file.local_path)
+        FileUtils.rm(@remote_sass_file.local_path)
       end
-      @remote_sass_file.write_to_public_stylesheets_sass
+      @remote_sass_file.save_locally
     end
-    it "write file to public/stylesheets/sass/" do
-      File.exists?(@remote_sass_file.public_sass_file_path).should be_true
+    it "saves sass file locally" do
+      File.exists?(@remote_sass_file.local_path).should be_true
     end
   end
-  describe "#compile_to_public_stylesheets" do
+  describe "#sass_compile_file" do
     before :each do
-      if File.exists?(@remote_sass_file.public_css_file_path)
-        FileUtils.rm(@remote_sass_file.public_css_file_path)
+      if File.exists?(@remote_sass_file.compiled_file_path)
+        FileUtils.rm(@remote_sass_file.compiled_file_path)
       end
-      @remote_sass_file.compile_to_public_stylesheets
+      @remote_sass_file.sass_compile_file
     end
     it "write file to public/stylesheets" do
-      File.exists?(@remote_sass_file.public_css_file_path).should be_true
+      File.exists?(@remote_sass_file.compiled_file_path).should be_true
     end
   end
 end

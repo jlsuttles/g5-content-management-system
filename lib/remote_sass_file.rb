@@ -1,18 +1,17 @@
 require "open-uri"
 
 class RemoteSassFile
-  def initialize(sass_file_path)
-    @sass_file_path = sass_file_path
-    write_to_public_stylesheets_sass
-    compile_to_public_stylesheets
+  def initialize(remote_path, compile_path=nil)
+    @remote_path = remote_path
+    @compile_path = compile_path
   end
 
-  def sass_file_path
-    @sass_file_path
+  def local_path
+    @local_path ||= Tempfile.new(sass_file_name).path
   end
 
   def file_name
-    @file_name ||= sass_file_path.split("/").last.split(".").first
+    @file_name ||= @remote_path.split("/").last.split(".").first
   end
 
   def sass_file_name
@@ -23,34 +22,30 @@ class RemoteSassFile
     @css_file_name ||= "#{file_name}.css"
   end
 
-  def public_css_path
-    @public_css_path ||= File.join(Rails.root, "public", "stylesheets")
+  def compile_path
+    @compile_path ||= File.join(Rails.root, "public", "stylesheets")
   end
 
-  def public_sass_path
-    @public_sass_path ||= File.join(public_css_path, "sass")
+  def compiled_file_path
+    @compiled_file_path ||= File.join(compile_path, css_file_name)
   end
 
-  def public_css_file_path
-    @public_css_file_path ||= File.join(public_css_path, css_file_name)
+  def stylesheet_link_path
+    @stylesheet_link_path ||= File.join("/stylesheets", css_file_name)
   end
 
-  def public_sass_file_path
-    @public_sass_file_path ||= File.join(public_sass_path, sass_file_name)
+  def compile
+    save_locally
+    sass_compile_file
   end
 
-  def css_path
-    @css_path ||= File.join("/stylesheets", css_file_name)
-  end
-
-  def write_to_public_stylesheets_sass
-    FileUtils.mkdir_p(public_sass_path)
-    open(public_sass_file_path, "wb") do |file|
-      file << open(sass_file_path).read
+  def save_locally
+    open(local_path, "wb") do |file|
+      file << open(@remote_path).read
     end
   end
 
-  def compile_to_public_stylesheets
-    Sass.compile_file(public_sass_file_path, public_css_file_path)
+  def sass_compile_file
+    Sass.compile_file(local_path, compiled_file_path)
   end
 end

@@ -47,15 +47,11 @@ class LocationDeployer
   end
 
   def compile_stylesheet(stylesheet)
-    # RemoteSassFile.new(stylesheet).compile(to_path)
-    from_path = RemoteSassFile.new(stylesheet).public_css_file_path
-    to_path = stylesheet_path(stylesheet)
-    FileUtils.mv(from_path, to_path)
+    RemoteSassFile.new(stylesheet, stylesheets_path).compile
   end
 
-  def stylesheet_path(stylesheet)
-    stylesheet_name = RemoteSassFile.new(stylesheet).css_file_name
-    File.join(@location.compiled_site_path, "stylesheets", stylesheet_name)
+  def stylesheets_path
+    File.join(@location.compiled_site_path, "stylesheets")
   end
 
   def create_directory(name)
