@@ -36,7 +36,7 @@ describe LocationDeployer do
       @location_deployer.compile_and_deploy
     end
     it "cleans up" do
-      @location_deployer.should_receive(:clean_up).once
+      @location_deployer.should_receive(:remove_compiled_site).exactly(2).times
       @location_deployer.compile_and_deploy
     end
   end

@@ -16,7 +16,7 @@ class LocationDeployer
       compile_stylesheets
       deploy
     ensure
-      clean_up
+      remove_compiled_site
     end
   end
 
@@ -61,35 +61,34 @@ class LocationDeployer
   private
   
   def create_root_directory
-    remove_root_directory
+    remove_compiled_site
     FileUtils.mkdir_p(@location.compiled_site_path)
   end
   
-  def deploy
-    GithubHerokuDeployer.deploy(
-      github_repo: @location.github_repo,
-      heroku_app_name: @location.heroku_app_name,
-      heroku_repo: @location.heroku_repo
-    ) do |repo|
-      `cp #{@location.compiled_site_path}* #{repo.dir}`
-      repo.add('.')
-      repo.commit_all "Add compiled site"
-    end
-  end
-  
-  def clean_up
-    remove_root_directory
-    delete_repo
-  end
-
-  def remove_root_directory
-    if Dir::exists?(@location.compiled_site_path)
+  def remove_compiled_site
+    if Dir.exists?(@location.compiled_site_path)
       FileUtils.rm_rf(@location.compiled_site_path)
     end
   end
   
-  # TODO: this is not safe, there could be other repos there doing stuff
-  def delete_repo
-    FileUtils.rm_rf("#{Rails.root}/tmp/repos") if Dir::exists?("#{Rails.root}/tmp/repos")
+  def deploy
+    begin
+      GithubHerokuDeployer.deploy(
+        github_repo: @location.github_repo,
+        heroku_app_name: @location.heroku_app_name,
+        heroku_repo: @location.heroku_repo
+      ) do |repo|
+        @repo = repo
+        `cp #{@location.compiled_site_path}* #{repo.dir}`
+        repo.add('.')
+        repo.commit_all "Add compiled site"
+      end
+    ensure
+      remove_repo
+    end
+  end
+  
+  def remove_repo
+    FileUtils.rm_rf(@repo) if @repo && Dir.exists?(@repo)
   end
 end
