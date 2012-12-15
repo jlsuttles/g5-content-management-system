@@ -3,7 +3,8 @@ require 'remote_sass_file'
 
 describe RemoteSassFile do
   before :each do
-    @remote_sass_file = RemoteSassFile.new("spec/support/remote_sass_file.scss")
+    @remote_sass_file = RemoteSassFile.new("spec/support/remote_sass_file.scss",
+      primary: "#ffffff", secondary: "#000000")
   end
   after :each do
     if File.exists?(@remote_sass_file.compiled_file_path)
@@ -52,6 +53,17 @@ describe RemoteSassFile do
       File.exists?(@remote_sass_file.local_path).should be_true
     end
   end
+  describe "#save_colors" do
+    before :each do
+      if File.exists?(@remote_sass_file.colors_path)
+        FileUtils.rm(@remote_sass_file.colors_path)
+      end
+      @remote_sass_file.save_colors
+    end
+    it "creates colors file" do
+      File.exists?(@remote_sass_file.colors_path).should be_true
+    end
+  end
   describe "#sass_compile_file" do
     before :each do
       if File.exists?(@remote_sass_file.compiled_file_path)
@@ -61,6 +73,11 @@ describe RemoteSassFile do
     end
     it "write file to public/stylesheets" do
       File.exists?(@remote_sass_file.compiled_file_path).should be_true
+    end
+  end
+  describe "#compile" do
+    it "does the right thing" do
+      @remote_sass_file.compile.should == "body {\n  background: white;\n  color: black; }\n"
     end
   end
 end
