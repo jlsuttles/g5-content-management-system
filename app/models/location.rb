@@ -31,7 +31,7 @@ class Location < ActiveRecord::Base
   def all_stylesheets
     self.pages.map do |page|
       page.stylesheets
-    end.flatten
+    end.flatten.uniq
   end
 
   def javascripts

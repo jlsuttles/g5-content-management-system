@@ -47,7 +47,12 @@ class LocationDeployer
   end
 
   def compile_stylesheet(stylesheet)
-    RemoteSassFile.new(stylesheet, stylesheets_path).compile
+    RemoteSassFile.new(
+      stylesheet, 
+      { primary_color: @location.primary_color,
+       secondary_color: @location.secondary_color},
+      stylesheets_path
+    ).compile
   end
 
   def stylesheets_path
