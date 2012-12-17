@@ -27,3 +27,14 @@ a {
 img {
   max-width: 100%;
 }
+form input,
+form label {
+  display: block;
+}
+form .field {
+  margin-bottom: 1em;
+}
+form input[type=text],
+form input[type=email] {
+  padding: .3em .5em .2em;
+}
