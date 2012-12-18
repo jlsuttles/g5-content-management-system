@@ -35,13 +35,13 @@ class Page < ActiveRecord::Base
 
   def compiled_stylesheets
     stylesheets.map do |stylesheet|
-      remote_sass_file = RemoteStylesheet.new(
+      remote_stylesheet = RemoteStylesheet.new(
        stylesheet,
        { primary: location.primary_color,
          secondary: location.secondary_color }
       )
-      remote_sass_file.compile
-      remote_sass_file.css_link_path
+      remote_stylesheet.compile
+      remote_stylesheet.css_link_path
     end
   end
 
