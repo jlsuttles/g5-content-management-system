@@ -52,7 +52,7 @@ class RemoteSassFile
     FileUtils.mkdir_p(colors_dir)
     open(colors_path, "wb") do |file|
       file << PagesController.new.render_to_string(
-      "pages/colors",
+      "compiled_pages/stylesheets/colors",
       formats: [:scss],
       layout:  false,
       locals:  { 
@@ -63,9 +63,13 @@ class RemoteSassFile
     open(colors_path).read
   end
 
+  def compiled_pages_stylesheets_dir
+    @compiled_pages_stylesheets_dir ||= File.join(Rails.root, "app", "views", "compiled_pages", "stylesheets")
+  end
+
   def compile_self
     FileUtils.mkdir_p(css_dir)
-    options = { syntax: :scss, load_paths: [colors_dir] }
+    options = { syntax: :scss, load_paths: [colors_dir, compiled_pages_stylesheets_dir] }
     open(css_file_path, "wb") do |file|
       file << Sass::Engine.new(open(@remote_path).read, options).render
     end

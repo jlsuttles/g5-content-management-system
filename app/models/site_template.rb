@@ -8,11 +8,16 @@ class SiteTemplate < Page
   end
 
   def stylesheets
-    aside_widgets.map(&:css).flatten +
+    compiled_pages_stylesheets + 
+      aside_widgets.map(&:css).flatten +
       header_widgets.map(&:css).flatten +
       footer_widgets.map(&:css).flatten +
       layout.stylesheets +
       theme.stylesheets
+  end
+
+  def compiled_pages_stylesheets
+    [File.join(Rails.root, "app", "views", "compiled_pages", "stylesheets.scss")]
   end
 
   def javascripts
