@@ -6,10 +6,10 @@ describe LocationDeployer do
     SiteTemplate.any_instance.stub(:compiled_stylesheets) { [Faker::Internet.domain_name] }
     SiteTemplate.any_instance.stub(:javascripts) { [Faker::Internet.domain_name] }
     GithubHerokuDeployer.stub(:deploy) { true }
-    RemoteSassFile.any_instance.stub(:compile)
 
     @location = Fabricate(:location)
     @location.site_template = Fabricate(:site_template)
+    @location.stub(:all_stylesheets).and_return(["spec/support/remote_sass_file.scss"])
     
     @location.stub(:homepage) { @location.pages.first }
     Location.stub(:find_by_urn).with(@location.urn) { @location }
@@ -36,7 +36,7 @@ describe LocationDeployer do
       @location_deployer.compile_and_deploy
     end
     it "cleans up" do
-      @location_deployer.should_receive(:remove_compiled_site).exactly(2).times
+      @location_deployer.should_receive(:remove_compiled_site).once
       @location_deployer.compile_and_deploy
     end
   end
@@ -56,6 +56,7 @@ describe LocationDeployer do
       @page = @location.pages.first
       @page_path = @page.compiled_file_path
       FileUtils.rm(@page_path) if File.exists?(@page_path)
+      FileUtils.mkdir_p(@location.compiled_site_path)
       @location_deployer.compile_page(@page, @page_path)
     end
     it "creates page file" do
@@ -76,8 +77,9 @@ describe LocationDeployer do
   end
   describe "#compile_stylesheet" do
     it "compiles remote sass file" do
-      RemoteSassFile.any_instance.should_receive(:compile)
-      @location_deployer.compile_stylesheet(@location.stylesheets.first)
+      stylesheet = @location.all_stylesheets.first
+      stylesheet_path = @location_deployer.stylesheet_path(stylesheet)
+      @location_deployer.compile_stylesheet(stylesheet).should == "body {\n  background: black;\n  color: white; }\n"
     end
   end
 end

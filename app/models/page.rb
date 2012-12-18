@@ -37,11 +37,11 @@ class Page < ActiveRecord::Base
     stylesheets.map do |stylesheet|
       remote_sass_file = RemoteSassFile.new(
        stylesheet,
-       primary: location.primary_color,
-       secondary: location.secondary_color
+       { primary: location.primary_color,
+         secondary: location.secondary_color }
       )
       remote_sass_file.compile
-      remote_sass_file.stylesheet_link_path
+      remote_sass_file.css_link_path
     end
   end
 
@@ -54,7 +54,7 @@ class Page < ActiveRecord::Base
   end
   
   def compiled_file_path
-    location.compiled_site_path + self.slug + '.html'
+    File.join(location.compiled_site_path, "#{self.slug}.html")
   end
   
 end

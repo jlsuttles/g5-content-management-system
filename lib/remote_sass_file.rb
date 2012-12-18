@@ -1,42 +1,34 @@
 require "open-uri"
 
 class RemoteSassFile
-  def initialize(remote_path, colors, compile_path=nil)
+  def initialize(remote_path, colors=nil, css_dir=nil)
     @remote_path = remote_path
-    @colors = colors
-    @compile_path = compile_path
-  end
-
-  def local_file
-    @local_file ||= Tempfile.new(sass_file_name)
-  end
-
-  def local_path
-    @local_path ||= local_file.path
+    @colors = colors || { primary: "#000000", secondary: "#ffffff" }
+    @css_dir = css_dir || File.join(Rails.root, "public", "stylesheets")
   end
 
   def file_name
     @file_name ||= @remote_path.split("/").last.split(".").first
   end
 
-  def sass_file_name
-    @sass_file_name ||= "#{file_name}.scss"
+  def scss_file_name
+    @scss_file_name ||= "#{file_name}.scss"
+  end
+
+  def css_dir
+    @css_dir
   end
 
   def css_file_name
     @css_file_name ||= "#{file_name}.css"
   end
 
-  def compile_path
-    @compile_path ||= File.join(Rails.root, "public", "stylesheets")
+  def css_file_path
+    @css_file_path ||= File.join(css_dir, css_file_name)
   end
 
-  def compiled_file_path
-    @compiled_file_path ||= File.join(compile_path, css_file_name)
-  end
-
-  def stylesheet_link_path
-    @stylesheet_link_path ||= File.join("/stylesheets", css_file_name)
+  def css_link_path
+    @css_link_path ||= File.join("/stylesheets", css_file_name)
   end
 
   def colors_dir
@@ -49,23 +41,14 @@ class RemoteSassFile
 
   def compile
     begin
-      save_locally
-      save_colors
-      sass_compile_file
+      compile_colors
+      compile_self
     ensure
-      local_file.close
-      local_file.unlink
       FileUtils.rm_rf(colors_dir)
     end
   end
 
-  def save_locally
-    open(local_path, "wb") do |file|
-      file << open(@remote_path).read
-    end
-  end
-  
-  def save_colors
+  def compile_colors
     FileUtils.mkdir_p(colors_dir)
     open(colors_path, "wb") do |file|
       file << PagesController.new.render_to_string(
@@ -77,11 +60,15 @@ class RemoteSassFile
         secondary_color: @colors[:secondary]
       })
     end
+    open(colors_path).read
   end
 
-  def sass_compile_file
-    Sass.load_paths << colors_dir
-    Sass.compile_file(local_path, compiled_file_path, syntax: :scss)
-    open(compiled_file_path).read
+  def compile_self
+    FileUtils.mkdir_p(css_dir)
+    options = { syntax: :scss, load_paths: [colors_dir] }
+    open(css_file_path, "wb") do |file|
+      file << Sass::Engine.new(open(@remote_path).read, options).render
+    end
+    open(css_file_path).read
   end
 end
