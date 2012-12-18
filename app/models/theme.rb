@@ -1,10 +1,12 @@
 class Theme < ActiveRecord::Base
-  THEME_GARDEN_URL = "http://g5-theme-garden.herokuapp.com"
+  # THEME_GARDEN_URL = "http://g5-theme-garden.herokuapp.com"
+  THEME_GARDEN_URL = "http://g5-theme-garden.dev"
 
-  attr_accessible :page_id, :url, :name, :stylesheets, :javascripts, :thumbnail
+  attr_accessible :page_id, :url, :name, :stylesheets, :javascripts, :thumbnail, :colors
 
   serialize :stylesheets, Array
   serialize :javascripts, Array
+  serialize :colors, Array
 
   belongs_to :page
 
@@ -19,6 +21,14 @@ class Theme < ActiveRecord::Base
     end
   end
 
+  def primary_color
+    colors[0]
+  end
+
+  def secondary_color
+    colors[1]
+  end
+
   private
 
   def assign_attributes_from_url
@@ -28,6 +38,7 @@ class Theme < ActiveRecord::Base
       self.stylesheets = component.stylesheets
       self.javascripts = component.javascripts
       self.thumbnail   = component.thumbnail.first
+      self.colors      = component.colors
       true
     else
       raise "No h-g5-component found at url: #{url}"

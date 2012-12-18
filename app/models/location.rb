@@ -10,6 +10,14 @@ class Location < ActiveRecord::Base
   after_create :create_homepage
   after_create :set_urn
 
+  def primary_color
+    read_attribute(:primary_color) || site_tempate.try(:primary_color) || "#000000"
+  end
+
+  def secondary_color
+    read_attribute(:secondary_color) || site_template.try(:secondary_color) || "#ffffff"
+  end
+
   def async_deploy
     Resque.enqueue(LocationDeployer, self.urn)
   end

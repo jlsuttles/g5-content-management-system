@@ -27,4 +27,11 @@ class SiteTemplate < Page
       theme.javascripts
   end
 
+  def primary_color
+    theme.try(:primary_color)
+  end
+
+  def secondary_color
+    theme.try(:secondary_color)
+  end
 end
