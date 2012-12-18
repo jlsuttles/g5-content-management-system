@@ -9,7 +9,7 @@ describe LocationDeployer do
 
     @location = Fabricate(:location)
     @location.site_template = Fabricate(:site_template)
-    @location.stub(:all_stylesheets).and_return(["spec/support/remote_sass_file.scss"])
+    @location.stub(:all_stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
     
     @location.stub(:homepage) { @location.pages.first }
     Location.stub(:find_by_urn).with(@location.urn) { @location }

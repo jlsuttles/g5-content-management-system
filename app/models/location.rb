@@ -22,20 +22,20 @@ class Location < ActiveRecord::Base
     pages.home.first
   end
 
-  # TODO: site_template_stylesheets
-  def stylesheets
-    self.site_template.stylesheets || []
+  def site_template_stylesheets
+    site_template.stylesheets || []
   end
 
-  # TODO: stylesheets
-  def all_stylesheets
-    self.pages.map do |page|
-      page.stylesheets
-    end.flatten.uniq
+  def site_template_javascripts
+    site_template.javascripts || []
+  end
+
+  def stylesheets
+    pages.map(&:stylesheets).flatten.uniq
   end
 
   def javascripts
-    self.site_template.javascripts || []
+    pages.map(&:javascripts).flatten.uniq
   end
 
   def github_repo
@@ -85,6 +85,6 @@ class Location < ActiveRecord::Base
   end
 
   def create_homepage
-    pages.create(name: "Home", slug: "Home", title: "Home")
+    pages.create(name: "Home", slug: "home", title: "Home")
   end
 end

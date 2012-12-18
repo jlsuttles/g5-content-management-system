@@ -1,6 +1,6 @@
 require "open-uri"
 
-class RemoteSassFile
+class RemoteStylesheet
   def initialize(remote_path, colors=nil, css_dir=nil)
     @remote_path = remote_path
     @colors = colors || { primary: "#000000", secondary: "#ffffff" }

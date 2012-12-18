@@ -35,7 +35,7 @@ class Page < ActiveRecord::Base
 
   def compiled_stylesheets
     stylesheets.map do |stylesheet|
-      remote_sass_file = RemoteSassFile.new(
+      remote_sass_file = RemoteStylesheet.new(
        stylesheet,
        { primary: location.primary_color,
          secondary: location.secondary_color }
@@ -46,11 +46,11 @@ class Page < ActiveRecord::Base
   end
 
   def stylesheets
-    widgets.map(&:css).flatten + location.stylesheets
+    widgets.map(&:css).flatten + location.site_template_stylesheets
   end
 
   def javascripts
-    widgets.map(&:javascript).flatten + location.javascripts
+    widgets.map(&:javascript).flatten + location.site_template_javascripts
   end
   
   def compiled_file_path

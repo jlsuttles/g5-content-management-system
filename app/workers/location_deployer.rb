@@ -14,6 +14,7 @@ class LocationDeployer
     begin
       compile_pages
       compile_stylesheets
+      compile_javascripts
       deploy
     ensure
       remove_compiled_site
@@ -41,20 +42,19 @@ class LocationDeployer
 
   def compile_stylesheets
     FileUtils.mkdir_p(stylesheets_path)
-    @location.all_stylesheets.map do |stylesheet|
+    @location.stylesheets.map do |stylesheet|
       compile_stylesheet(stylesheet)
     end
   end
 
   def compile_stylesheet(stylesheet)
-    puts stylesheet
-    remote_sass_file = RemoteSassFile.new(
+    remote_stylesheet = RemoteStylesheet.new(
      stylesheet,
      { primary: @location.primary_color,
        secondary: @location.secondary_color },
      stylesheets_path
     )
-    remote_sass_file.compile
+    remote_stylesheet.compile
   end
 
   def stylesheets_path
@@ -64,6 +64,30 @@ class LocationDeployer
   def stylesheet_path(stylesheet)
     stylesheet_name = stylesheet.split("/").last.split(".").first
     File.join(stylesheets_path, "#{stylesheet_name}.css")
+  end
+
+  def compile_javascripts
+    FileUtils.mkdir_p(javascripts_path)
+    @location.javascripts.map do |javascript|
+      compile_javascript(javascript)
+    end
+  end
+
+  def compile_javascript(javascript)
+    remote_javascript = RemoteJavascript.new(
+     javascript,
+     javascripts_path
+    )
+    remote_javascript.compile
+  end
+
+  def javascripts_path
+    File.join(@location.compiled_site_path, "javascripts")
+  end
+
+  def javascript_path(javascript)
+    javascript_name = javascript.split("/").last
+    File.join(javascripts_path, javascript_name)
   end
 
   private
@@ -76,23 +100,33 @@ class LocationDeployer
   
   def deploy
     begin
+      remove_repo
       GithubHerokuDeployer.deploy(
         github_repo: @location.github_repo,
         heroku_app_name: @location.heroku_app_name,
         heroku_repo: @location.heroku_repo
       ) do |repo|
+        # save dir so we can delete it later
         @repo_dir = repo.dir.to_s
+        
         # copy all pages over
         `cp #{@location.compiled_site_path}/* #{repo.dir}`
-        # copy all stylehseets over
+       
+        # copy all stylesheets over
         `mkdir #{repo.dir}/stylesheets`
-        `cp #{stylesheets_path}/* #{repo.dir}/stylesheets`
+        `cp #{stylesheets_path}/* #{repo.dir}/stylesheets/`
+        
+        # cp all javascripts over
+        `mkdir #{repo.dir}/javascripts`
+        `cp #{javascripts_path}/* #{repo.dir}/javascripts/`
+        `cp #{File.join(Rails.root, "public", "javascripts")}/* #{repo.dir}/javascripts/`
+
         # commit changes
         repo.add('.')
         repo.commit_all "Add compiled site"
       end
     ensure
-      remove_repo
+      # remove_repo
     end
   end
   
