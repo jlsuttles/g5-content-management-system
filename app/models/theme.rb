@@ -1,6 +1,5 @@
 class Theme < ActiveRecord::Base
-  # THEME_GARDEN_URL = "http://g5-theme-garden.herokuapp.com"
-  THEME_GARDEN_URL = "http://g5-theme-garden.dev"
+  THEME_GARDEN_URL = "http://g5-theme-garden.herokuapp.com"
 
   attr_accessible :page_id, :url, :name, :stylesheets, :javascripts, :thumbnail, :colors
 
