@@ -28,10 +28,18 @@ class SiteTemplate < Page
   end
 
   def primary_color
-    theme.try(:primary_color)
+    if location.custom_colors?
+      location.primary_color
+    else
+      theme.try(:primary_color)
+    end
   end
 
   def secondary_color
-    theme.try(:secondary_color)
+    if location.custom_colors?
+      location.secondary_color
+    else
+      theme.try(:secondary_color)
+    end
   end
 end

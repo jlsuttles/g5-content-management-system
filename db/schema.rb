@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121218051246) do
+ActiveRecord::Schema.define(:version => 20121219014459) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -31,11 +31,12 @@ ActiveRecord::Schema.define(:version => 20121218051246) do
     t.string   "uid"
     t.string   "name"
     t.boolean  "corporate"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.string   "urn"
-    t.string   "primary_color"
-    t.string   "secondary_color"
+    t.string   "primary_color",   :default => "#000000"
+    t.string   "secondary_color", :default => "#ffffff"
+    t.boolean  "custom_colors",   :default => false,     :null => false
   end
 
   add_index "locations", ["urn"], :name => "index_locations_on_urn"

@@ -35,6 +35,10 @@
   <div class="colors clearfix">
     <h3>Colors</h3>
     <%= f.fields_for :location do |ff| -%>
+    <div>
+      <%= ff.check_box :custom_colors %>
+      <%= ff.label :custom_colors %>
+    </div>
     <div class="color-field">
       <%= ff.text_field :primary_color, type: 'color', id: 'color-1' %>
       <label for="color-1">Primary</label>

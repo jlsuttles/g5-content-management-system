@@ -1,7 +1,7 @@
 class Location < ActiveRecord::Base
   COMPILED_SITES_PATH = File.join(Rails.root, "tmp", "compiled_sites")
 
-  attr_accessible :uid, :name, :corporate, :urn, :primary_color, :secondary_color
+  attr_accessible :uid, :name, :corporate, :urn, :primary_color, :secondary_color, :custom_colors
 
   has_one :site_template
   has_many :pages, conditions: ["pages.type = ?", "Page"]
@@ -11,11 +11,19 @@ class Location < ActiveRecord::Base
   after_create :set_urn
 
   def primary_color
-    read_attribute(:primary_color) || site_tempate.try(:primary_color) || "#000000"
+    if custom_colors?
+      read_attribute(:primary_color)
+    else
+      site_template.try(:primary_color) || "#000000"
+    end
   end
 
   def secondary_color
-    read_attribute(:secondary_color) || site_template.try(:secondary_color) || "#ffffff"
+    if custom_colors?
+      read_attribute(:secondary_color)
+    else
+      site_template.try(:secondary_color) || "#ffffff"
+    end
   end
 
   def async_deploy
