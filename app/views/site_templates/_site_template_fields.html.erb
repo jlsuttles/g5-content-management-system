@@ -1,14 +1,14 @@
 <div class="layout-picker thumbnail-field">
   <h3>Layout</h3>
   <div class="thumbs clearfix">
-    <%= f.fields_for :layout, @page.layout || PageLayout.new do |ff| -%>
+    <%= f.fields_for :page_layout, @page.page_layout || PageLayout.new do |ff| -%>
       <%= ff.error_messages %>
-      <% PageLayout.all_remote.each do |layout| %>
+      <% PageLayout.all_remote.each do |page_layout| %>
         <div class="thumb">
-          <%= ff.radio_button :url, layout.url %>
-          <%= ff.label :url, :value => layout.url do %>
-            <%= image_tag_or_placeholder(layout.thumbnail) %>
-            <%= layout.name %>
+          <%= ff.radio_button :url, page_layout.url %>
+          <%= ff.label :url, :value => page_layout.url do %>
+            <%= image_tag_or_placeholder(page_layout.thumbnail) %>
+            <%= page_layout.name %>
           <% end %>
         </div>
       <% end %>

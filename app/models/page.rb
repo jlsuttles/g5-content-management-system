@@ -1,14 +1,14 @@
 class Page < ActiveRecord::Base
   attr_accessible :location_id, :name, :template, :slug, :title
-  attr_accessible :widgets_attributes, :layout_attributes, :theme_attributes, :location_attributes
+  attr_accessible :widgets_attributes, :page_layout_attributes, :theme_attributes, :location_attributes
 
   belongs_to :location
-  has_one :layout, class_name: "PageLayout"
+  has_one :page_layout
   has_one :theme
   has_many :widgets, autosave: true, order: "position asc"
   
   accepts_nested_attributes_for :location
-  accepts_nested_attributes_for :layout
+  accepts_nested_attributes_for :page_layout
   accepts_nested_attributes_for :theme
   accepts_nested_attributes_for :widgets, :allow_destroy => true
 

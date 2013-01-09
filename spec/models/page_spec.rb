@@ -53,7 +53,7 @@ describe Page do
   end
   
   describe "layouts" do
-    it { Page.new.should respond_to :layout }
+    it { Page.new.should respond_to :page_layout }
   end
   
   describe "themes" do

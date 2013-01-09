@@ -7,7 +7,7 @@ describe PagesController do
     @location = Fabricate(:location)
     Location.stub(:find_by_urn) { @location }
     Page.any_instance.stub(:theme) { Theme.new }
-    Page.any_instance.stub(:layout) { PageLayout.new }
+    Page.any_instance.stub(:page_layout) { PageLayout.new }
   }
   it "index action should render index template" do
     get :index, location_id: 1

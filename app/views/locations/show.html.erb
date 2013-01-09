@@ -16,7 +16,7 @@
   <tbody>
     <tr class='site-template'>
       <td><%= @location.site_template.name %></td>
-      <td><%= image_tag_or_placeholder(@location.site_template.layout.try(:thumbnail), class: 'thumb') %></td>
+      <td><%= image_tag_or_placeholder(@location.site_template.page_layout.try(:thumbnail), class: 'thumb') %></td>
       <td><%= image_tag_or_placeholder(@location.site_template.theme.try(:thumbnail), class: 'thumb') %></td>
       <td>
         <ul class="widgets">

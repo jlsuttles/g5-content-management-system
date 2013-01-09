@@ -12,7 +12,7 @@ class SiteTemplate < Page
       aside_widgets.map(&:css).flatten +
       header_widgets.map(&:css).flatten +
       footer_widgets.map(&:css).flatten +
-      layout.stylesheets +
+      page_layout.stylesheets +
       theme.stylesheets
   end
 
