@@ -46,11 +46,11 @@ class Page < ActiveRecord::Base
   end
 
   def stylesheets
-    widgets.map(&:css).flatten + location.site_template_stylesheets
+    widgets.map(&:css).flatten + location.site_template.stylesheets
   end
 
   def javascripts
-    widgets.map(&:javascript).flatten + location.site_template_javascripts
+    widgets.map(&:javascript).flatten + location.site_template.javascripts
   end
   
   def compiled_file_path

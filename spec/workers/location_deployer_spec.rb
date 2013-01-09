@@ -12,7 +12,7 @@ describe LocationDeployer do
     @location.site_template = Fabricate(:site_template)
     @location.stub(:all_stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
     Location.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
-    Location.any_instance.stub(:site_template_stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
+    SiteTemplate.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
     @location.stub(:homepage) { @location.pages.first }
     Location.stub(:find_by_urn).with(@location.urn) { @location }
     RemoteJavascript.any_instance.stub(:compile) { true }

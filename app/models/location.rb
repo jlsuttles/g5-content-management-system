@@ -38,14 +38,6 @@ class Location < ActiveRecord::Base
     pages.home.first
   end
 
-  def site_template_stylesheets
-    site_template.stylesheets || []
-  end
-
-  def site_template_javascripts
-    site_template.javascripts || []
-  end
-
   def stylesheets
     pages.map(&:stylesheets).flatten.uniq
   end
