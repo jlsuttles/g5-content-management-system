@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe LocationDeployer do
   before :each do
+    Widget.any_instance.stub(:assign_attributes_from_url) { true }
     PageLayout.any_instance.stub(:assign_attributes_from_url)
     SiteTemplate.any_instance.stub(:compiled_stylesheets) { [Faker::Internet.domain_name] }
     SiteTemplate.any_instance.stub(:javascripts) { [Faker::Internet.domain_name] }
@@ -10,9 +11,11 @@ describe LocationDeployer do
     @location = Fabricate(:location)
     @location.site_template = Fabricate(:site_template)
     @location.stub(:all_stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
-    
+    Location.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
+    Location.any_instance.stub(:site_template_stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
     @location.stub(:homepage) { @location.pages.first }
     Location.stub(:find_by_urn).with(@location.urn) { @location }
+    RemoteJavascript.any_instance.stub(:compile) { true }
     @location_deployer = LocationDeployer.new(@location.urn)
   end
 
@@ -23,7 +26,7 @@ describe LocationDeployer do
     end
   end
   describe "#compile_and_deploy" do
-    it "compiles pages" do
+    it "compiles pages", focus: true do
       @location_deployer.should_receive(:compile_pages).once
       @location_deployer.compile_and_deploy
     end

@@ -1,7 +1,10 @@
 require 'spec_helper'
 
 describe Widget do
-  let(:widget) { Widget.create(name: "remote", url: "http://g5-widget-garden.herokuapp.com/components/storage-list", page_id: 1, section: "main") }
+  before do
+    stub_const("Widget::WIDGET_GARDEN_URL", "spec/support/widgets.html")
+  end
+  let(:widget) { Widget.create(name: "remote", url: "spec/support/widget.html", page_id: 1, section: "main") }
   
   it { Widget.in_section("main").should include widget }
   

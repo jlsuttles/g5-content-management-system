@@ -1,7 +1,11 @@
 require 'spec_helper'
 
 describe Page do
-  let(:page) { Page.create(title: "What a wonderful world", name: "Some Name", slug: "some-name", widgets_attributes: [{name: "Widgie", url: "http://g5-widget-garden.herokuapp.com/components/storage-list"}]) }
+  before do
+    # Widget.any_instance.stub(:assign_attributes_from_url) { true }
+  end
+  
+  let(:page) { Page.create(title: "What a wonderful world", name: "Some Name", slug: "some-name", widgets_attributes: [{name: "Widgie", url: "spec/support/widget.html"}]) }
   
   it { page.slug.should eq "some-name"}
   
