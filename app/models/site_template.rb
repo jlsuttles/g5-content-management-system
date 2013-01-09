@@ -9,9 +9,9 @@ class SiteTemplate < Page
 
   def stylesheets
     compiled_pages_stylesheets + 
-      aside_widgets.map(&:css).flatten +
-      header_widgets.map(&:css).flatten +
-      footer_widgets.map(&:css).flatten +
+      aside_widgets.map(&:stylesheets).flatten +
+      header_widgets.map(&:stylesheets).flatten +
+      footer_widgets.map(&:stylesheets).flatten +
       page_layout.stylesheets +
       theme.stylesheets
   end
@@ -21,9 +21,9 @@ class SiteTemplate < Page
   end
 
   def javascripts
-    aside_widgets.map(&:javascript).flatten +
-      header_widgets.map(&:javascript).flatten +
-      footer_widgets.map(&:javascript).flatten +
+    aside_widgets.map(&:javascripts).flatten +
+      header_widgets.map(&:javascripts).flatten +
+      footer_widgets.map(&:javascripts).flatten +
       theme.javascripts
   end
 

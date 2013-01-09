@@ -1,10 +1,10 @@
 class Widget < ActiveRecord::Base
   WIDGET_GARDEN_URL = "http://g5-widget-garden.herokuapp.com"
 
-  attr_accessible :page_id, :section, :position, :url, :name, :css, :javascript, :html, :thumbnail
+  attr_accessible :page_id, :section, :position, :url, :name, :stylesheets, :javascripts, :html, :thumbnail
 
-  serialize :css, Array
-  serialize :javascript, Array
+  serialize :stylesheets, Array
+  serialize :javascripts, Array
 
   belongs_to :page
 
@@ -27,8 +27,8 @@ class Widget < ActiveRecord::Base
     component = G5HentryConsumer::HG5Component.parse(url).first
     if component
       self.name       = component.name.first
-      self.css        = component.stylesheets
-      self.javascript = component.javascripts
+      self.stylesheets        = component.stylesheets
+      self.javascripts = component.javascripts
       self.html       = component.content.first
       self.thumbnail  = component.thumbnail.first
       true

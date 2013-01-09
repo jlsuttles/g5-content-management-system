@@ -12,7 +12,7 @@ Fabricator :site_template do
   slug  "slug" 
   title "What a wonderful world"
   template true
-  layout(fabricator: :page_layout)
+  page_layout
   theme
 end
 

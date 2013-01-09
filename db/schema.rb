@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121219014459) do
+ActiveRecord::Schema.define(:version => 20130109221132) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -118,10 +118,10 @@ ActiveRecord::Schema.define(:version => 20121219014459) do
     t.integer  "page_id"
     t.integer  "position"
     t.text     "html"
-    t.text     "css"
-    t.text     "javascript"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "stylesheets"
+    t.text     "javascripts"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "thumbnail"
     t.string   "section"
   end
