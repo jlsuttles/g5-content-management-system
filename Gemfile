@@ -32,6 +32,7 @@ group :development, :test do
   gem "debugger", "~> 1.2.1"
   gem "fabrication", "~> 2.5.0"
   gem "faker", "~> 1.1.2"
+  gem 'simplecov', :require => false
 end
 
 group :production do
