@@ -6,7 +6,8 @@ class PageLayout < ActiveRecord::Base
   belongs_to :page
 
   serialize :stylesheets, Array
-
+  after_initialize :set_default_stylesheets
+  
   before_save :assign_attributes_from_url
 
   validates :url, presence: true
@@ -37,5 +38,9 @@ class PageLayout < ActiveRecord::Base
     end
   rescue OpenURI::HTTPError => e
     logger.warn e.message
+  end
+  
+  def set_default_stylesheets
+    self.stylesheets = []
   end
 end
