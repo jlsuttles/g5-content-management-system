@@ -10,7 +10,6 @@ describe LocationDeployer do
 
     @location = Fabricate(:location)
     @location.site_template = Fabricate(:site_template)
-    @location.stub(:all_stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
     Location.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
     SiteTemplate.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
     @location.stub(:homepage) { @location.pages.first }
@@ -26,7 +25,7 @@ describe LocationDeployer do
     end
   end
   describe "#compile_and_deploy" do
-    it "compiles pages", focus: true do
+    it "compiles pages" do
       @location_deployer.should_receive(:compile_pages).once
       @location_deployer.compile_and_deploy
     end
@@ -73,16 +72,24 @@ describe LocationDeployer do
       Dir.exists?(stylesheets_path).should be_true
     end
     it "compiles all stylesheet" do
-      stylesheets = @location.all_stylesheets.length
+      stylesheets = @location.stylesheets.length
       @location_deployer.should_receive(:compile_stylesheet).exactly(stylesheets).times
       @location_deployer.compile_stylesheets
     end
   end
   describe "#compile_stylesheet" do
     it "compiles remote sass file" do
-      stylesheet = @location.all_stylesheets.first
+      stylesheet = @location.stylesheets.first
       stylesheet_path = @location_deployer.stylesheet_path(stylesheet)
       @location_deployer.compile_stylesheet(stylesheet).should == "body {\n  background: black;\n  color: white; }\n"
+    end
+  end
+  
+  describe "#compile_javascripts" do
+    it "creates stylesheets direcoty" do
+      @location_deployer.compile_javascripts
+      javascripts_path = File.join(@location.compiled_site_path, "javascripts")
+      Dir.exists?(javascripts_path).should be_true
     end
   end
 end
