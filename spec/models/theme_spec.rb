@@ -39,8 +39,8 @@ describe Theme do
     
     it "should rescue from not found" do
       theme.stub(:url) { "http://g5-non-existant-app.herokuapp.com" }
-      # Should be G5HentryConsumer::NotFound or something.
-      expect { theme.save! }.to_not raise_error OpenURI::HTTPError
+      Rails.logger.should_receive(:warn).with("404 Object Not Found")
+      theme.save!
     end
   end
   
