@@ -4,9 +4,9 @@ describe Widget do
   before do
     stub_const("Widget::WIDGET_GARDEN_URL", "spec/support/widgets.html")
   end
-  let(:widget) { Widget.create(name: "remote", url: "spec/support/widget.html", page_id: 1, section: "main") }
+  let(:widget) { Fabricate(:widget) }
   
-  it { Widget.in_section("main").should include widget }
+  it { Widget.in_section("aside").should include widget }
   
   describe "remote" do
     let(:remotes) { Widget.all_remote }
@@ -25,6 +25,12 @@ describe Widget do
 
   describe "get HTML" do
     it { widget.html.should include "storage-list widget" }
+  end
+  
+  describe "stylesheets" do
+    it "has 1 stylesheet" do
+      widget.stylesheets.should have(1).thing
+    end
   end
   
 end
