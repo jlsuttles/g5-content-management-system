@@ -12,12 +12,20 @@ class SiteTemplate < Page
       aside_widgets.map(&:stylesheets).flatten +
       header_widgets.map(&:stylesheets).flatten +
       footer_widgets.map(&:stylesheets).flatten +
-      page_layout.stylesheets +
-      theme.stylesheets
+      page_layout_stylesheets  +
+      theme_stylesheets
   end
 
   def compiled_pages_stylesheets
     [File.join(Rails.root, "app", "views", "compiled_pages", "stylesheets.scss")]
+  end
+  
+  def page_layout_stylesheets
+    page_layout.try(:stylesheets) || []
+  end
+
+  def theme_stylesheets
+    theme.try(:stylesheets) || []
   end
 
   def javascripts
