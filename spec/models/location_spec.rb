@@ -1,7 +1,8 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Location do
-  let(:location) { Fabricate(:location) }
+  before { Location.any_instance.stub(:hashed_id) { "im-an-id" }}
+  let(:location) { Fabricate(:location, name: "Some Name") }
 
   describe "Validations" do
     it "should be valid" do
@@ -48,6 +49,39 @@ describe Location do
       location.homepage.slug.should eq "home"
     end
 
+    it "has a collection of stylesheets" do
+      location.stylesheets.should_not be_empty
+    end
+  end
+
+  describe "Paths" do
+    it do
+      location.urn.should eq "g5-cl-im-an-id-some-name"
+    end
+
+    it "has a github repo" do
+      location.github_repo.should eq "git@github.com:G5/static-heroku-app.git"
+    end
+
+    it "has a github repo" do
+      location.heroku_repo.should eq "git@heroku.com:g5-cl-im-an-id-some-name.git"
+    end
+    
+    it "param is urn" do
+      location.to_param.should eq location.urn
+    end
+
+    it "has a 30 character heroku name" do
+      Fabricate(:location, name: "Some Name That is way too longzzzzzz").heroku_app_name.length.should eq 30
+    end
+
+    it "has a heroku url" do
+      location.heroku_url.should eq 'https://g5-cl-im-an-id-some-name.herokuapp.com'
+    end
+
+    it "has a homepage path" do
+      location.homepage_compiled_file_path.should eq "#{location.compiled_site_path}/home.html"
+    end
   end
 
 end
