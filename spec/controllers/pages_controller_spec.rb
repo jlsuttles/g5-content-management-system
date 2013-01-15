@@ -1,39 +1,75 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe PagesController do
-
   before {
-    PageLayout.any_instance.stub(:assign_attributes_from_url)
     @location = Fabricate(:location)
-    Location.stub(:find_by_urn) { @location }
-    Page.any_instance.stub(:theme) { Theme.new }
-    Page.any_instance.stub(:page_layout) { PageLayout.new }
+    @page = @location.pages.first
   }
-  it "index action should render index template" do
-    get :index, location_id: 1
-    response.should render_template(:index)
+  
+  describe "#index" do
+    it "index action should render index template" do
+      get :index, location_id: @location.urn
+      response.should render_template(:index)
+    end
   end
 
-  it "new action should render new template" do
-    get :new, location_id: 1
-    response.should render_template(:new)
+  describe "#new" do
+    it "new action should render new template" do
+      get :new, location_id: @location.urn
+      response.should render_template(:new)
+    end
+  end
+  
+  describe "#create" do
+    it "create action should render new template when model is invalid" do
+      Page.any_instance.stub(:save) {false}
+      post :create, location_id: @location.urn
+      response.should render_template(:new)
+    end
+
+    it "create action should redirect when model is valid" do
+      Page.any_instance.stub(:save) {true}
+      post :create, location_id: @location.urn
+      response.should redirect_to(location_url(assigns[:location]))
+    end
   end
 
-  it "create action should render new template when model is invalid" do
-    Page.any_instance.stub(:save) {false}
-    post :create, location_id: 1
-    response.should render_template(:new)
+  describe "#show" do
+    it "show action should render show template" do
+      @location.pages.stub(:find){ Page.new }
+      get :show, :id => @page.id, location_id: @location.urn
+      response.should render_template(:show)
+    end
   end
-
-  it "create action should redirect when model is valid" do
-    Page.any_instance.stub(:save) {true}
-    post :create, location_id: 1
-    response.should redirect_to(location_url(assigns[:location]))
+  
+  describe "#edit" do
+    it "renders the edit template" do
+      get :edit, id: @page.id, location_id: @location.urn
+      response.should render_template(:edit)
+    end
   end
-
-  it "show action should render show template" do
-    @location.pages.stub(:find){ Page.new }
-    get :show, :id => @location.pages.first.id, location_id: 1
-    response.should render_template(:show)
+  
+  describe "#update" do
+    let(:update) { put :update, id: @page.id, location_id: @location.urn, page: {name: "New Name"} }
+    
+    it "renders edit" do
+      put :update, id: @page.id, location_id: @location.urn, page: {name: nil}
+      response.should render_template :edit
+    end
+    it "redirects to the location" do
+      update
+      response.should redirect_to @location
+    end
+    it "updates a page" do
+      update
+      @page.reload.name.should eq "New Name"
+    end
+  end
+  
+  describe "#preview" do
+    it "should render the preview template" do
+      get :preview, :id => @page.id, location_id: @location.urn
+      response.should render_template :preview
+    end
   end
 end
