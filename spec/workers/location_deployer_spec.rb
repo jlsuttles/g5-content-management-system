@@ -18,6 +18,14 @@ describe LocationDeployer do
     @location_deployer = LocationDeployer.new(@location.urn)
   end
 
+  describe "perform" do
+    it "compiles and deploys" do
+      compile_count = 0
+      LocationDeployer.any_instance.stub(:compile_and_deploy) { compile_count += 1 }
+      LocationDeployer.perform(@location.urn)
+      compile_count.should eq 1
+    end
+  end
   describe "#initialize" do
     it "finds a location" do
       Location.should_receive(:find_by_urn).with(@location.urn).once
@@ -91,5 +99,16 @@ describe LocationDeployer do
       javascripts_path = File.join(@location.compiled_site_path, "javascripts")
       Dir.exists?(javascripts_path).should be_true
     end
+  end
+  
+  describe "javascript paths" do
+    it "has a javascript path" do
+      @location_deployer.javascripts_path.should match "/tmp/compiled_sites/#{@location.urn}/javascripts"
+    end
+    
+    it "has a path to a javascript file" do
+      @location_deployer.javascript_path("some-file/script.js").should match "/tmp/compiled_sites/#{@location.urn}/javascripts/script.js"
+    end
+    
   end
 end
