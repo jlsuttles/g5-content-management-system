@@ -15,6 +15,8 @@ class SiteTemplatesController < ApplicationController
       render :"/pages/edit"
     end
   end
+  
+  private
   def find_location
     @location = Location.find_by_urn(params[:location_id])
   end
