@@ -20,6 +20,30 @@ class Widget < ActiveRecord::Base
       new(url: component.uid, name: component.name.first, thumbnail: component.thumbnail.first)
     end
   end
+  
+  def update_configuration(params)
+    # SHOULD UPDATE CONFIGURATIONS DEFINED BY WIDGET GARDEN
+    self.valid?
+  end
+  
+  def edit_form_html
+    <<-HEREDOC
+      <form action="/widgets/{{ widget.id }}">
+        <div style="margin:0;padding:0;display:inline">
+          <input name="_method" type="hidden" value="put">
+        </div>
+        <div class="field">
+          <label>Enter Twitter username</label>
+          <input type="text" name="widget[username]" placeholder="@username" />
+        </div>
+        <div class="field">
+          <label>Enter feed title</label>
+          <input name="widget[feed_title]" type="text" />
+        </div>
+        <input type="submit" value="Save" />
+      </form>
+    HEREDOC
+  end
 
   private
 
