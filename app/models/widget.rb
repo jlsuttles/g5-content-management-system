@@ -35,7 +35,7 @@ class Widget < ActiveRecord::Base
       self.stylesheets    = component.stylesheets
       self.javascripts    = component.javascripts
       # TEMPORARY - CHANGE WITH HTML RETURNED FROM WIDGET GARDEN
-      self.edit_form_html = '<form action="/widgets/{{ widget.id }}"> <div style="margin:0;padding:0;display:inline"> <input name="_method" type="hidden" value="put"> </div><input type="submit" value="Save" /><div class="field"> <label>Enter Twitter username</label> <input type="text" name="widget[username]" placeholder="@username" /> </div></form>'
+      self.edit_form_html = '<form action="/widgets/{{ widget.id }}"> <div style="margin:0;padding:0;display:inline"> <input name="_method" type="hidden" value="put"> </div><div class="field"> <label>Enter Twitter username</label> <input type="text" name="widget[username]" placeholder="@username" /> <input type="submit" value="Save" /></div></form>'
       self.html           = component.content.first
       self.thumbnail      = component.thumbnail.first
       true
