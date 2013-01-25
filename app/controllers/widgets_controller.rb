@@ -1,7 +1,11 @@
 class WidgetsController < ApplicationController
-  respond_to :html, :json
+  respond_to :html, :json, :js
   def edit
     @widget = Widget.find(params[:id])
+    html = render_to_string(format: :html, layout: false)
+    respond_with do |format|
+      format.json { render json: {html: html} } 
+    end
   end
   
   def update
