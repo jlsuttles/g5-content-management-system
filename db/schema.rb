@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109221132) do
+ActiveRecord::Schema.define(:version => 20130125053520) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -120,10 +120,12 @@ ActiveRecord::Schema.define(:version => 20130109221132) do
     t.text     "html"
     t.text     "stylesheets"
     t.text     "javascripts"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "thumbnail"
     t.string   "section"
+    t.text     "configuration"
+    t.text     "edit_form_html"
   end
 
   add_index "widgets", ["page_id"], :name => "index_widgets_on_page_id"

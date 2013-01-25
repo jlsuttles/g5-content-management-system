@@ -1,7 +1,7 @@
 class Widget < ActiveRecord::Base
   WIDGET_GARDEN_URL = "http://g5-widget-garden.herokuapp.com"
 
-  attr_accessible :page_id, :section, :position, :url, :name, :stylesheets, :javascripts, :html, :thumbnail
+  attr_accessible :page_id, :section, :position, :url, :name, :stylesheets, :javascripts, :html, :thumbnail, :edit_form_html
 
   serialize :stylesheets, Array
   serialize :javascripts, Array
@@ -26,35 +26,18 @@ class Widget < ActiveRecord::Base
     self.valid?
   end
   
-  def edit_form_html
-    <<-HEREDOC
-      <form action="/widgets/{{ widget.id }}">
-        <div style="margin:0;padding:0;display:inline">
-          <input name="_method" type="hidden" value="put">
-        </div>
-        <div class="field">
-          <label>Enter Twitter username</label>
-          <input type="text" name="widget[username]" placeholder="@username" />
-        </div>
-        <div class="field">
-          <label>Enter feed title</label>
-          <input name="widget[feed_title]" type="text" />
-        </div>
-        <input type="submit" value="Save" />
-      </form>
-    HEREDOC
-  end
-
   private
 
   def assign_attributes_from_url
     component = G5HentryConsumer::HG5Component.parse(url).first
     if component
-      self.name         = component.name.first
-      self.stylesheets  = component.stylesheets
-      self.javascripts  = component.javascripts
-      self.html         = component.content.first
-      self.thumbnail    = component.thumbnail.first
+      self.name           = component.name.first
+      self.stylesheets    = component.stylesheets
+      self.javascripts    = component.javascripts
+      # TEMPORARY - CHANGE WITH HTML RETURNED FROM WIDGET GARDEN
+      self.edit_form_html = '<form action="/widgets/{{ widget.id }}"> <div style="margin:0;padding:0;display:inline"> <input name="_method" type="hidden" value="put"> </div><input type="submit" value="Save" /><div class="field"> <label>Enter Twitter username</label> <input type="text" name="widget[username]" placeholder="@username" /> </div></form>'
+      self.html           = component.content.first
+      self.thumbnail      = component.thumbnail.first
       true
     else
       raise "No h-g5-component found at url: #{url}"
