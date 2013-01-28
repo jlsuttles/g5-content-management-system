@@ -56,7 +56,7 @@ describe WidgetsController do
         response.status.should eq 422
       end
       it "returns the error messages on fail" do
-        widget.stub(:update_configuration) { widget.errors[:base] << "There was an error" }
+        widget.stub(:update_configuration) { widget.errors[:base] << "There was an error"; false }
         update
         JSON.parse(response.body).should eq({"errors" => {"base" => ["There was an error"]}})
       end
