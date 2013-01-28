@@ -25,10 +25,6 @@ class Page < ActiveRecord::Base
     location.site_template.widgets + widgets
   end
 
-  def mark_widgets_for_destruction
-    widgets.each(&:mark_for_destruction)
-  end
-
   def remote_widgets
     Widget.all_remote.delete_if {|widget| widgets.map(&:name).include? widget.name}
   end

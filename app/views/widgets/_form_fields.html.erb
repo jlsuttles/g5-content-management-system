@@ -1,8 +1,13 @@
-<%= f.fields_for :widgets, widget.dup do |ff| -%>
+<%= f.fields_for :widgets, widget do |ff| -%>
   <%= ff.error_messages %>
-  <li>
+	<%= ff.hidden_field :_destroy, value: 1 %>
+  <%= ff.hidden_field :id %>
+  <li class='<%= "widget" unless widget.new_record? %>' data-id='<%= widget.id %>'>
+		<%= ff.hidden_field :id, class: 'resource-id' %>
     <%= ff.hidden_field :position, class: 'position' %>
     <%= ff.hidden_field :section, class: 'section' %>
+		<%= ff.hidden_field :_destroy, value: false %>
+		
     <%= ff.hidden_field :url %>
     <%= image_tag_or_placeholder(widget.thumbnail) %>
     <%= widget.name %>

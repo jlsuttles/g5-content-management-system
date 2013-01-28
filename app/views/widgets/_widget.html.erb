@@ -1,0 +1,6 @@
+<li>
+	<%= link_to edit_widget_path(widget), class: "widget", "data-id" => widget.id do %>
+  	<%= image_tag_or_placeholder(widget.try(:thumbnail)) %>
+  	<%= widget.name %>
+	<% end %>
+</li>

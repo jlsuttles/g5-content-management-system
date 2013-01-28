@@ -20,14 +20,7 @@
       <td><%= image_tag_or_placeholder(@location.site_template.theme.try(:thumbnail), class: 'thumb') %></td>
       <td>
         <ul class="widgets">
-          <% @location.site_template.widgets.each do |widget| %>
-            <li>
-							<%= link_to edit_widget_path(widget), class: "widget", "data-id" => widget.id do %>
-              	<%= image_tag_or_placeholder(widget.try(:thumbnail)) %>
-              	<%= widget.name %>
-							<% end %>
-            </li>
-          <% end %>
+          <%= render @location.site_template.widgets %>
         </ul>
       </td>
       <td>
@@ -43,12 +36,7 @@
         <td></td>
         <td>
           <ul class="widgets">
-            <% page.widgets.each do |widget| %>
-              <li>
-                <%= image_tag_or_placeholder(widget.try(:thumbnail)) %>
-                <%= widget.name %>
-              </li>
-            <% end %>
+						<%= render page.widgets %>
           </ul>
         </td>
         <td>
@@ -65,6 +53,5 @@
 		<h3 id="myModalLabel">Edit Widget</h3>
 	</div>
 	<div class="modal-body">
-		
 	</div>
 </div>

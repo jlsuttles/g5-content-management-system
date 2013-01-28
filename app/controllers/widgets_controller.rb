@@ -12,6 +12,7 @@ class WidgetsController < ApplicationController
     @widget = Widget.find(params[:id])
     if @widget.update_configuration(params[:widget])
       respond_with(@widget) do |format|
+        format.json { render json: @widget}
         format.html { redirect_to location_path(@widget.page.location) }
       end
     else

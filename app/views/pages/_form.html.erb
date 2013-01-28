@@ -1,5 +1,5 @@
 <div class="row">
-  <%= form_for [@location, @page] do |f| %>
+  <%= form_for [@location, @page], html: {class: "edit_page"} do |f| %>
     <%= f.error_messages %>
     <div class="span12">
 
@@ -16,7 +16,7 @@
     <div class='dropzone span8'>
       <% @page.sections.each do |section| %>
         <h4><%= section.capitalize %></h4>
-        <ul id="add-widgets" class='well sortable clearfix' data-section='<%= section %>'>
+        <ul class='add-widgets well sortable clearfix' data-section='<%= section %>'>
           <% @page.widgets.in_section(section).each do |widget| %>
             <%= render "/widgets/form_fields", f: f, widget: widget %>
           <% end %>

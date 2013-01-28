@@ -23,9 +23,12 @@ class PagesController < ApplicationController
   
   def update
     @page = @location.pages.find(params[:id])
-    @page.mark_widgets_for_destruction
     if @page.update_attributes(params[:page])
-      redirect_to @location, :notice => "Successfully updated page."
+      @page.reload
+      respond_to do |format|
+        format.json { render json: @page.widgets.last }
+        format.html { redirect_to @location, :notice => "Successfully updated page." }
+      end
     else
       render :edit
     end

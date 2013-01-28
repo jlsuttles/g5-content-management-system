@@ -76,7 +76,7 @@ form {margin: 0}
 }
 
 .field_with_errors input { border: 1px solid red}
-#add-widgets {
+.add-widgets {
   min-height: 100px;
   padding-bottom: 25px;
 }
@@ -85,17 +85,29 @@ form {margin: 0}
   margin: 0;
   padding: 0 10px 0 0;
 }
-.sortable li {
+.sortable.ui-sortable li {
   list-style: none;
   margin: 5px;
   border: 1px solid gray;
   padding: 3px 5px;
   border-radius: 3px;
   cursor: move;
+  float: left;
+  padding: 5px;
+  display: block;
+  background: #f0f0f0;
+  background: -webkit-linear-gradient(#fff, #f0f0f0);
+  border: 1px solid #cbcbcb;
 }
+
+.sortable.ui-sortable.ui-sortable-disabled li {
+  background: #DEDEDE;
+  background: -webkit-linear-gradient(#CCC, #DEDEDE);
+  opacity: 0.5;
+}
+
 #choose-widgets {
   li {
-    float: left;
     margin-bottom: 5px;
     padding: 5px;
     width: 62px;
@@ -103,8 +115,6 @@ form {margin: 0}
     font-size: 12px;
     line-height: 1.25;
     text-align: center;
-    background: #f0f0f0;
-    background: -webkit-linear-gradient(#fff, #f0f0f0);
     border: 1px solid #cbcbcb;
   }
   img {
@@ -116,15 +126,8 @@ form {margin: 0}
 .ui-sortable-helper {
   box-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 5px 10px rgba(0, 0, 0, .3);
 }
-#add-widgets {
-  li {
-    float: left;
-    padding: 5px;
-    display: block;
-    background: #f0f0f0;
-    background: -webkit-linear-gradient(#fff, #f0f0f0);
-    border: 1px solid #cbcbcb;
-  }
+
+.add-widgets {
   img {
     margin-right: .5em;
     width: 25px;
@@ -145,7 +148,7 @@ form {margin: 0}
   margin: 0;
 }
 
-#add-widgets li.section {
+.add-widgets li.section {
   text-align: center;
   background-color: #ccc;
   cursor: default;

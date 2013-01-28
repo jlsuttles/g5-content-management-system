@@ -7,9 +7,13 @@ class SiteTemplatesController < ApplicationController
   
   def update
     @page = SiteTemplate.find(params[:id])
-    @page.mark_widgets_for_destruction
     if @page.update_attributes(params[:site_template])
-      redirect_to @location, :notice => "Successfully updated site template."
+      @page.reload
+      respond_to do |format|
+        format.json { render json: @page.widgets.last }
+        format.html { redirect_to @location, :notice => "Successfully updated site template." }
+      end
+      
     else
       @page = SiteTemplate.find(params[:id])
       render :"/pages/edit"
