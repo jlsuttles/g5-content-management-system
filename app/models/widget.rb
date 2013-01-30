@@ -17,25 +17,27 @@ class Widget < ActiveRecord::Base
   def self.all_remote
     components = G5HentryConsumer::HG5Component.parse(WIDGET_GARDEN_URL)
     components.map do |component|
+      puts component.edit_template.inspect
       new(url: component.uid, name: component.name.first, thumbnail: component.thumbnail.first)
     end
   end
   
   def update_configuration(params)
     # SHOULD UPDATE CONFIGURATIONS DEFINED BY WIDGET GARDEN
-    self.valid?
+    true
   end
   
   private
 
   def assign_attributes_from_url
     component = G5HentryConsumer::HG5Component.parse(url).first
+    puts component.edit_template.inspect
     if component
       self.name           = component.name.first
       self.stylesheets    = component.stylesheets
       self.javascripts    = component.javascripts
       # TEMPORARY - CHANGE WITH HTML RETURNED FROM WIDGET GARDEN
-      self.edit_form_html = '<form action="/widgets/{{ widget.id }}"> <div style="margin:0;padding:0;display:inline"> <input name="_method" type="hidden" value="put"> </div><div class="field"> <label>Enter Twitter username</label> <input type="text" name="widget[username]" placeholder="@username" /> <input type="submit" value="Save" /></div></form>'
+      self.edit_form_html = open(component.edit_template.first).read
       self.html           = component.content.first
       self.thumbnail      = component.thumbnail.first
       true

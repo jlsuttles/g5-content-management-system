@@ -48,7 +48,13 @@ class Widget
       dataType: 'json',
       data: $('.modal-body .edit_widget').serialize(),
       success: => $('#modal').modal('hide')
-      error: (xhr) => this.insertErrorMessages($.parseJSON(xhr.responseText))
+      error: (xhr) => 
+        if xhr.status == 204
+          $('#modal').modal('hide')
+        else if xhr.responseText.length
+          this.insertErrorMessages($.parseJSON(xhr.responseText))
+        else
+          this.insertErrorMessages({errors: {base: ["There was a problem saving the widget"]}})
     }
 
   insertErrorMessages: (errors) =>
