@@ -27,7 +27,7 @@ describe Widget do
     it { widget.name.should eq "Storage List" }
     it { widget.stylesheets.should have(1).thing }
     it { widget.javascripts.should have(1).things }
-    it { widget.edit_form_html.should include "<form" }
+    it { widget.edit_form_html.should eq "I'm an edit form!" }
     it { widget.html.should include "storage-list widget" }
     it { widget.thumbnail.should eq "http://g5-widget-garden.herokuapp.com/static/components/storage-list/images/thumbnail.png"}
   end

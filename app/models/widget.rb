@@ -17,7 +17,6 @@ class Widget < ActiveRecord::Base
   def self.all_remote
     components = G5HentryConsumer::HG5Component.parse(WIDGET_GARDEN_URL)
     components.map do |component|
-      puts component.edit_template.inspect
       new(url: component.uid, name: component.name.first, thumbnail: component.thumbnail.first)
     end
   end
@@ -31,13 +30,11 @@ class Widget < ActiveRecord::Base
 
   def assign_attributes_from_url
     component = G5HentryConsumer::HG5Component.parse(url).first
-    puts component.edit_template.inspect
     if component
       self.name           = component.name.first
       self.stylesheets    = component.stylesheets
       self.javascripts    = component.javascripts
-      # TEMPORARY - CHANGE WITH HTML RETURNED FROM WIDGET GARDEN
-      self.edit_form_html = open(component.edit_template.first).read
+      self.edit_form_html = get_edit_form_html(component)
       self.html           = component.content.first
       self.thumbnail      = component.thumbnail.first
       true
@@ -46,5 +43,10 @@ class Widget < ActiveRecord::Base
     end
   rescue OpenURI::HTTPError => e
     logger.warn e.message
+  end
+  
+  def get_edit_form_html(component)
+    url = component.edit_template.try(:first)
+    open(url).read if url
   end
 end
