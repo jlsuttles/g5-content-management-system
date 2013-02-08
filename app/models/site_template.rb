@@ -2,17 +2,19 @@ class SiteTemplate < Page
   has_many :aside_widgets,  class_name: "Widget",  conditions: ['section = ?', 'aside'], foreign_key: "page_id"
   has_many :header_widgets, class_name: "Widget", conditions: ['section = ?', 'header'], foreign_key: "page_id"
   has_many :footer_widgets, class_name: "Widget", conditions: ['section = ?', 'footer'], foreign_key: "page_id"
-
+  has_many :widgets, class_name: "Widget", foreign_key: "page_id"
+  
   def sections
     %w(header aside footer)
   end
 
   def stylesheets
-    compiled_pages_stylesheets + 
-      aside_widgets.map(&:stylesheets).flatten +
-      header_widgets.map(&:stylesheets).flatten +
-      footer_widgets.map(&:stylesheets).flatten +
-      page_layout_stylesheets  +
+    layout_stylesheets + widgets.map(&:stylesheets).flatten
+  end
+  
+  def layout_stylesheets
+    compiled_pages_stylesheets +
+      page_layout_stylesheets +
       theme_stylesheets
   end
 
@@ -29,10 +31,7 @@ class SiteTemplate < Page
   end
 
   def javascripts
-    aside_widgets.map(&:javascripts).flatten +
-      header_widgets.map(&:javascripts).flatten +
-      footer_widgets.map(&:javascripts).flatten +
-      theme.javascripts
+    widgets.map(&:javascripts).flatten + theme.javascripts
   end
 
   def primary_color
