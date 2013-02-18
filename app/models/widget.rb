@@ -2,7 +2,7 @@ class Widget < ActiveRecord::Base
   WIDGET_GARDEN_URL = "http://localhost:3000"
 
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets, :javascripts, :html, :thumbnail, :edit_form_html
-
+  has_many :settings, as: :component
   serialize :stylesheets, Array
   serialize :javascripts, Array
 
@@ -37,12 +37,20 @@ class Widget < ActiveRecord::Base
       self.edit_form_html = get_edit_form_html(component)
       self.html           = component.content.first
       self.thumbnail      = component.thumbnail.first
+      
+      parse_settings(component.configurations)
       true
     else
       raise "No h-g5-component found at url: #{url}"
     end
   rescue OpenURI::HTTPError => e
     logger.warn e.message
+  end
+  
+  def parse_settings(configs)
+    configs.each do |config|
+      self.settings.build(name: config.name, categories: config.category)
+    end
   end
   
   def get_edit_form_html(component)

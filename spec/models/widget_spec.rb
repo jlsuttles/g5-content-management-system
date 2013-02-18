@@ -33,8 +33,16 @@ describe Widget do
   end
   
   describe "#configurations" do
-    it "create" do
-      expect { widget }.to change(widget.settings, :count).by(1)
+    let(:setting) { widget.settings.first }
+    it "creates one" do
+      expect { widget }.to change(Setting, :count).by(1)
+    end
+    
+    it "assigns a name" do
+      setting.name.should eq "Feed"
+    end
+    it "assigns categories" do
+      setting.categories.should eq ["Instance"]
     end
   end
 

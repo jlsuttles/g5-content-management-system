@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(:version => 20130301193442) do
 
   add_index "pages", ["location_id"], :name => "index_pages_on_location_id"
 
+  create_table "settings", :force => true do |t|
+    t.integer  "component_id"
+    t.string   "component_type"
+    t.string   "name"
+    t.text     "categories"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "sibling_deploys", :force => true do |t|
     t.integer  "sibling_id"
     t.integer  "instruction_id"
