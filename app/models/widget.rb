@@ -1,5 +1,5 @@
 class Widget < ActiveRecord::Base
-  WIDGET_GARDEN_URL = "http://g5-widget-garden.herokuapp.com"
+  WIDGET_GARDEN_URL = "http://localhost:3000"
 
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets, :javascripts, :html, :thumbnail, :edit_form_html
 

@@ -31,5 +31,11 @@ describe Widget do
     it { widget.html.should include "storage-list widget" }
     it { widget.thumbnail.should eq "http://g5-widget-garden.herokuapp.com/static/components/storage-list/images/thumbnail.png"}
   end
+  
+  describe "#configurations" do
+    it "create" do
+      expect { widget }.to change(widget.settings, :count).by(1)
+    end
+  end
 
 end
