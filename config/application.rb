@@ -65,12 +65,12 @@ module G5ClientHub
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    # load G5SiblingDeployer::Engine with highest priority
+    # load G5SiblingDeployerEngine::Engine with highest priority
     # followed by application and other railties
     # allows overridding in main app
-    config.railties_order = [G5SiblingDeployer::Engine, :main_app, :all]
+    config.railties_order = [G5SiblingDeployerEngine::Engine, :main_app, :all]
 
-    # include G5SiblingDeployer::Engine's migrations
-    config.paths['db/migrate'] += G5SiblingDeployer::Engine.paths['db/migrate'].existent
+    # include G5SiblingDeployerEngine::Engine's migrations
+    config.paths['db/migrate'] += G5SiblingDeployerEngine::Engine.paths['db/migrate'].existent
   end
 end
