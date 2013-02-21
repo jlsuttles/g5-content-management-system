@@ -3,9 +3,7 @@ class WidgetsController < ApplicationController
   def edit
     @widget = Widget.find(params[:id])
     @fields = Liquid::Template.parse(@widget.edit_form_html)
-    @form_html = @fields.render(
-  		"setting1" => @widget.settings.first.widget_attributes.first, 
-  		"setting2" => @widget.settings.first.widget_attributes.last)
+    @form_html = @fields.render("widget" => @widget)
     html = render_to_string(format: :html, layout: false)
     respond_with do |format|
       format.json { render json: {html: html} } 

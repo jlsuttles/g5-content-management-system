@@ -12,7 +12,9 @@ module AssociationToMethod
   end
   
   def define_dynamic_association_method(association)
-    define_singleton_method association.name.parameterize.underscore.to_sym, lambda { association }
+    name = association.name.parameterize.underscore.to_sym
+    self.class.liquid_methods name
+    define_singleton_method name, lambda { association }
   end
   
 end
