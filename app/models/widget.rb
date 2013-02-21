@@ -1,6 +1,6 @@
 class Widget < ActiveRecord::Base
   include AssociationToMethod
-  WIDGET_GARDEN_URL = "http://localhost:3001"
+  WIDGET_GARDEN_URL = "http://g5-widget-garden.herokuapp.com"
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets, :javascripts, :html, :thumbnail, :edit_form_html, :widget_attributes_attributes
   has_many :settings, as: :component, after_add: :define_dynamic_association_method
   alias_attribute :dynamic_association, :settings
