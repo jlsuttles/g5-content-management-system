@@ -61,5 +61,17 @@ describe Widget do
       attribute.value.should eq "TEST"
     end
   end
+  
+  describe "dynamic setting methods" do
+    it "makes a dynamic method" do
+      widget.should respond_to :feed
+    end
+    it "sets the value to an association" do
+      widget.feed.should eq widget.settings.first
+    end
+    it "lists the methods" do
+      widget.settings_methods.should include :feed
+    end
+  end
 
 end

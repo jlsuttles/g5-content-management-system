@@ -1,10 +1,10 @@
 class Widget < ActiveRecord::Base
   WIDGET_GARDEN_URL = "http://localhost:3001"
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets, :javascripts, :html, :thumbnail, :edit_form_html, :widget_attributes_attributes
-  has_many :settings, as: :component
+  has_many :settings, as: :component, after_add: :define_setting_method
   has_many :widget_attributes, through: :settings
   accepts_nested_attributes_for :widget_attributes
-  
+  after_initialize :define_settings_methods
   serialize :stylesheets, Array
   serialize :javascripts, Array
 
@@ -15,7 +15,7 @@ class Widget < ActiveRecord::Base
   validates :url, presence: true
 
   scope :in_section, lambda { |section| where(section: section) }
-
+  
   def self.all_remote
     components = G5HentryConsumer::HG5Component.parse(WIDGET_GARDEN_URL)
     components.map do |component|
@@ -23,13 +23,8 @@ class Widget < ActiveRecord::Base
     end
   end
   
-  def update_configuration(params)
-    # SHOULD UPDATE CONFIGURATIONS DEFINED BY WIDGET GARDEN
-    true
-  end
-  
-  def attribute_name(name)
-    "widget[#{name}]"
+  def settings_methods
+    singleton_methods
   end
   
   private
@@ -62,8 +57,19 @@ class Widget < ActiveRecord::Base
     end
   end
   
+  def define_settings_methods
+    settings.each do |setting|
+      define_setting_method setting
+    end
+  end
+  
+  def define_setting_method(setting)
+    define_singleton_method setting.name.parameterize.underscore.to_sym, lambda { setting }
+  end
+  
   def get_edit_form_html(component)
     url = component.edit_template.try(:first)
     open(url).read if url
   end
+  
 end
