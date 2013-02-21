@@ -44,6 +44,22 @@ describe Widget do
     it "assigns categories" do
       setting.categories.should eq ["Instance"]
     end
+    
+    it "assigns widget attributes to the settings" do
+      expect { widget }.to change(WidgetAttribute, :count).by(2)
+    end
+  end
+  
+  describe "updating widget attributes" do
+    it "updates with nested attributes" do
+      attribute = widget.widget_attributes.first
+      widget.update_attributes(widget_attributes_attributes: {
+        id: attribute.id,
+        value: "TEST"
+      })
+      attribute.reload
+      attribute.value.should eq "TEST"
+    end
   end
 
 end

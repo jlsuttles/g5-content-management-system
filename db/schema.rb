@@ -121,6 +121,16 @@ ActiveRecord::Schema.define(:version => 20130301193442) do
 
   add_index "themes", ["page_id"], :name => "index_themes_on_page_id"
 
+  create_table "widget_attributes", :force => true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.boolean  "editable",      :default => false
+    t.string   "default_value"
+    t.integer  "setting_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
   create_table "widgets", :force => true do |t|
     t.string   "url"
     t.string   "name"
