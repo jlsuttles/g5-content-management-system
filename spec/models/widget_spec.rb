@@ -70,7 +70,7 @@ describe Widget do
       widget.feed.should eq widget.settings.first
     end
     it "lists the methods" do
-      widget.settings_methods.should include :feed
+      widget.singleton_methods.should include :feed
     end
   end
 

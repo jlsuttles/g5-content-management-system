@@ -19,4 +19,10 @@ describe Setting do
       setting.categories.should be_an_instance_of Array
     end
   end
+  
+  describe "widget_attributes" do
+    it "defines dynamic methods" do
+      setting.should respond_to :username
+    end
+  end
 end

@@ -1,19 +1,16 @@
 class Widget < ActiveRecord::Base
+  include AssociationToMethod
   WIDGET_GARDEN_URL = "http://localhost:3001"
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets, :javascripts, :html, :thumbnail, :edit_form_html, :widget_attributes_attributes
-  has_many :settings, as: :component, after_add: :define_setting_method
+  has_many :settings, as: :component, after_add: :define_dynamic_association_method
+  alias_attribute :dynamic_association, :settings
   has_many :widget_attributes, through: :settings
   accepts_nested_attributes_for :widget_attributes
-  after_initialize :define_settings_methods
   serialize :stylesheets, Array
   serialize :javascripts, Array
-
   belongs_to :page
-
   before_create :assign_attributes_from_url
-
   validates :url, presence: true
-
   scope :in_section, lambda { |section| where(section: section) }
   
   def self.all_remote
@@ -21,10 +18,6 @@ class Widget < ActiveRecord::Base
     components.map do |component|
       new(url: component.uid, name: component.name.first, thumbnail: component.thumbnail.first)
     end
-  end
-  
-  def settings_methods
-    singleton_methods
   end
   
   private
@@ -55,16 +48,6 @@ class Widget < ActiveRecord::Base
         setting.widget_attributes.build(name: attribute.name, editable: attribute.editable || false, default_value: attribute.default_value)
       end
     end
-  end
-  
-  def define_settings_methods
-    settings.each do |setting|
-      define_setting_method setting
-    end
-  end
-  
-  def define_setting_method(setting)
-    define_singleton_method setting.name.parameterize.underscore.to_sym, lambda { setting }
   end
   
   def get_edit_form_html(component)
