@@ -20,6 +20,10 @@ class Widget < ActiveRecord::Base
     end
   end
   
+  def liquidized_html
+    Liquid::Template.parse(CGI::unescape(self.html)).render("widget" => self)
+  end
+  
   private
 
   def assign_attributes_from_url
