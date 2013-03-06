@@ -19,6 +19,6 @@ class WidgetAttribute < ActiveRecord::Base
   end
 
   def assign_lead_widget_submission_url
-    self.value = ENV["LEAD_SERVICE_HEROKU_URL"]
+    self.value = ENV["LEADS_SERVICE_HEROKU_URL"]
   end
 end
