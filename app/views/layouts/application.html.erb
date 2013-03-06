@@ -28,10 +28,10 @@
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse">
               <ul class="nav">
-                <li><a href="<%= locations_path %>">Locations</a></li>
-                <li><a href="<%= features_path %>">Features</a></li>
-                <li><a href="<%= siblings_path %>">Siblings</a></li>
-                <li><a href="/resque" target="_blank">Resque</a></li>
+                <%= content_tag :li, link_to("Locations", locations_path) %>
+                <%= content_tag :li, link_to("Leads", ENV["LEADS_SERVICE_HEROKU_URL"]) %>
+                <%= content_tag :li, link_to("Siblings", siblings_path) %>
+                <%= content_tag :li, link_to("Resque", "/resque", target: "_blank") %>
               </ul>
             </div>
 
