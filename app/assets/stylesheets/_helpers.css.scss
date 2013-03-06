@@ -1,0 +1,71 @@
+/* VARIABLES ====================== */
+$primary-text: #000;
+$alt-text: #f17c50;
+$linen: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAEsCAYAAADtt+XCAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEnUlEQVR42u3aoQ1EMQwFsOy/bEBU0OpL72YIOWTkJVxJ8t4LSZIba2byfV9IktxYM5PuDkmSGytJ7r0hSXJjdXeShCTJjXXOSXeHJMmNZROQJC0skqSFRZK0sEiSFhZJkhYWSdLCIklaWCRJC4skaWGRJGlhkSQtLJKkhUWStLBIkhYWSZIWFknSwiJJWlgkSQuLJGlhkSRpYZEkLSySpIVFkrSwSJIWFkmSFhZJ0sIiSVpYJEkLiyRpYZEkaWGRJC0skqSFRZK0sEiSFpZNQJK0sEiSFhZJ0sIiSVpYJElaWCRJC4skaWGRJC0skqSFRZKkhUWStLBIkhYWSdLCIklaWCRJWlgkSQuLJGlhkSQtLJKkhUWSpIVFkrSwSJIWFknSwiJJWlgkSVpYJEkLiyRpYZEkLSySpIVFkqSFRZK0sEiSFhZJ0sIiSVpYJElaWCRJC4skaWGRJC0skqSFZROQJC0skqSFRZK0sEiSFhZJkhYWSdLCIklaWCRJC4skaWGRJGlhkSQtLJKkhUWStLBIkhYWSZIWFknSwiJJWlgkSQuLJGlhkSRpYZEkLSySpIVFkrSwSJIWFkmSFhZJ0sIiSVpYJEkLiyRpYZEkaWGRJC0skqSFRZK0sEiSFpZNQJK0sEiSFhZJ0sIiSVpYJElaWCRJC4skaWGRJC0skqSFRZKkhUWStLBIkhYWSdLCIklaWCRJWlgkSQuLJGlhkSQtLJKkhUWSpIVFkrSwSJIWFknSwiJJWlgkSVpYJEkLiyRpYZEkLSySpIVFkqSFRZK0sEiSFhZJ0sIiSVpYJElaWCRJC4skaWGRJC0skqSFZROQJC0skqSFRZK0sEiSFhZJkhYWSdLCIklaWCRJC4skaWGRJGlhkSQtLJKkhUWStLBIkhYWSZIWFknSwiJJWlgkSQuLJGlhkSRpYZEkLSySpIVFkrSwSJIWFkmSFhZJ0sIiSVpYJEkLiyRpYZEkaWGRJC0skqSFRZK0sEiSFpZNQJK0sEiSFhZJ0sIiSVpYJElaWCRJC4skaWGRJC0skqSFRZKkhUWStLBIkhYWSdLCIklaWCRJWlgkSQuLJGlhkSQtLJKkhUWSpIVFkrSwSJIWFknSwiJJWlgkSVpYJEkLiyRpYZEkLSySpIVFkqSFRZK0sEiSFhZJ0sIiSVpYJElaWCRJC4skaWGRJC0skqSFZROQJC0skqSFRZK0sEiSFhZJkhYWSdLCIklaWCRJC4skaWGRJGlhkSQtLJKkhUWStLBIkhYWSZIWFknSwiJJWlgkSQuLJGlhkSRpYZEkLSySpIVFkrSwSJIWFkmSFhZJ0sIiSVpYJEkLiyRpYZEkaWGRJC0skqSFRZK0sEiSFpZVQJK0sEiSFhZJ0sIiSVpYJEkLyyYgSVpYJEkLiyRpYZEkLSySJC0skqSFRZK0sEiSFhZJ0sIiSdLCIklaWCRJC4skaWGRJC0skiQtLJKkhUWStLBIkhYWSdLCIknSwiJJWlgkSQuLJGlhkSQtLJIkLSySpIVFkrSwSJIWFknSwiJJ0sIiSVpYJEkLiyRpYZEkLSybgCRpYZEk/+IP3hwl4eGy3RgAAAAASUVORK5CYII=";
+
+
+/* MIXINS ====================== */
+@mixin box-shadow($properties) {
+  box-shadow:         $properties;
+  -moz-box-shadow:    $properties;
+  -webkit-box-shadow: $properties;
+}
+
+@mixin standard-shadow {
+  @include box-shadow(0 2px 3px rgba(0, 0, 0, .25));
+}
+
+/* mixin to create diagonal stripes */
+@mixin stripes($color1, $color2, $size) {
+  background-image: -webkit-linear-gradient(right bottom, $color1 15%, $color2 15%, $color2 50%, $color1 50%, $color1 65%, $color2 65%);
+  background-image: -moz-linear-gradient(right bottom, $color1 15%, $color2 15%, $color2 50%, $color1 50%, $color1 65%, $color2 65%);
+  background-image: -ms-linear-gradient(right bottom, $color1 15%, $color2 15%, $color2 50%, $color1 50%, $color1 65%, $color2 65%);
+  background-image: -o-linear-gradient(right bottom, $color1 15%, $color2 15%, $color2 50%, $color1 50%, $color1 65%, $color2 65%);
+  background-image: linear-gradient(right bottom, $color1 15%, $color2 15%, $color2 50%, $color1 50%, $color1 65%, $color2 65%);
+  background-size: $size $size;
+}
+
+@mixin gradient($start, $stop, $background: $stop) {
+  background: $background;
+  background: $background -webkit-linear-gradient($start, $stop);
+  background: $background -moz-linear-gradient($start, $stop);
+  background: $background -ms-linear-gradient($start, $stop);
+  background: $background -o-linear-gradient($start, $stop);
+  background: $background linear-gradient($start, $stop);
+}
+
+@mixin border-box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* for image replacement */
+@mixin image-replacement {
+  display: inline-block;
+  text-indent : -999em;
+  white-space : nowrap;
+  overflow : hidden;
+}
+
+/* include mixin in parent of floats to clear */
+@mixin clearfix {
+  &:before,
+  &:after {
+    display: table;
+    line-height: 0;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+/* CLASSES ====================== */
+.hide {
+  display: none;
+}
+
+
+

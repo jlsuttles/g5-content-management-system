@@ -1,38 +1,33 @@
-<div class="row">
-  <%= form_for [@location, @page], html: {class: "edit_page"} do |f| %>
-    <%= f.error_messages %>
-    <div class="span12">
+<%= form_for [@location, @page], html: {class: "edit_page"} do |f| %>
+  <%= f.error_messages %>
 
-      <% if @page.is_a? SiteTemplate %>
-        <%= render "/site_templates/site_template_fields", f: f %>
-      <% else %>
-        <%= render "page_fields", f: f %>
-      <% end %>
-
-      <h3>Widgets</h3>
-      <p class="instructions">Drag widgets from the list on the left into a page section on the right</p>
-    </div>
-
-    <div class='dropzone span8'>
-      <% @page.sections.each do |section| %>
-        <h4><%= section.capitalize %></h4>
-        <ul class='add-widgets well sortable clearfix' data-section='<%= section %>'>
-          <% @page.widgets.in_section(section).each do |widget| %>
-            <%= render "/widgets/form_fields", f: f, widget: widget %>
-          <% end %>
-        </ul>
-      <% end %>
-      <p><%= f.submit "Submit", class: 'btn btn-primary btn-large' %></p>
-    </div>
+  <% if @page.is_a? SiteTemplate %>
+    <%= render "/site_templates/site_template_fields", f: f %>
+  <% else %>
+    <%= render "page_fields", f: f %>
   <% end %>
 
-  <div class='widget-list span4'>
-    <%= form_for [@location, @page] do |f| %>
-      <ul id='choose-widgets' class='sortable clearfix'>
-        <% @page.remote_widgets.each_with_index do |widget, index| %>
+  <div class='dropzone'>
+    <% @page.sections.each do |section| %>
+      <label><%= section.capitalize %></label>
+      <ul class='add-widgets well sortable clearfix' data-section='<%= section %>'>
+        <% @page.widgets.in_section(section).each do |widget| %>
           <%= render "/widgets/form_fields", f: f, widget: widget %>
         <% end %>
       </ul>
     <% end %>
+    <p><%= f.submit "Submit", class: 'btn btn-primary btn-large' %></p>
   </div>
+<% end %>
+
+<div class='widget-list'>
+  <h2>Select Widgets:</h2>
+  <p class="instructions">Drag widgets from the list on the left into a page section on the right</p>
+  <%= form_for [@location, @page] do |f| %>
+    <ul id='choose-widgets' class='sortable clearfix'>
+      <% @page.remote_widgets.each_with_index do |widget, index| %>
+        <%= render "/widgets/form_fields", f: f, widget: widget %>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

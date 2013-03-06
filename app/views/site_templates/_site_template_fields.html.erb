@@ -1,5 +1,5 @@
 <div class="layout-picker thumbnail-field">
-  <h3>Layout</h3>
+  <h2>Select a Layout</h2>
   <div class="thumbs clearfix">
     <%= f.fields_for :page_layout, @page.page_layout || PageLayout.new do |ff| -%>
       <%= ff.error_messages %>
@@ -17,8 +17,8 @@
 </div>
 
 <div class="theme-picker thumbnail-field clearfix">
+  <h2>Select a Theme</h2>
   <div class="thumbs clearfix">
-    <h3>Theme</h3>
     <%= f.fields_for :theme, @page.theme || Theme.new do |ff| -%>
       <%= ff.error_messages %>
       <% Theme.all_remote.each do |theme| %>
@@ -32,21 +32,26 @@
       <% end %>
     <% end %>
   </div>
+</div>
+
+<div class="page">
   <div class="colors clearfix">
-    <h3>Colors</h3>
-    <%= f.fields_for :location do |ff| -%>
-    <div>
-      <%= ff.check_box :custom_colors %>
-      <%= ff.label :custom_colors %>
+    <h3>Customize Colors:</h3>
+    <div class="color-fields">
+      <%= f.fields_for :location do |ff| -%>
+      <div class="check-field">
+        <%= ff.check_box :custom_colors %>
+        <%= ff.label :custom_colors %>
+      </div>
+      <div class="color-field">
+        <%= ff.text_field :primary_color, type: 'color', id: 'color-1' %>
+        <label for="color-1">Primary</label>
+      </div>
+      <div class="color-field">
+        <%= ff.text_field :secondary_color, type: 'color', id: 'color-2' %>
+        <label for="color-2">Secondary</label>
+      </div>
+      <% end -%>
     </div>
-    <div class="color-field">
-      <%= ff.text_field :primary_color, type: 'color', id: 'color-1' %>
-      <label for="color-1">Primary</label>
-    </div>
-    <div class="color-field">
-      <%= ff.text_field :secondary_color, type: 'color', id: 'color-2' %>
-      <label for="color-2">Secondary</label>
-    </div>
-    <% end -%>
   </div>
 </div>
