@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(:version => 20130301193442) do
 
   add_index "pages", ["location_id"], :name => "index_pages_on_location_id"
 
+  create_table "settings", :force => true do |t|
+    t.integer  "component_id"
+    t.string   "component_type"
+    t.string   "name"
+    t.text     "categories"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "sibling_deploys", :force => true do |t|
     t.integer  "sibling_id"
     t.integer  "instruction_id"
@@ -111,6 +120,16 @@ ActiveRecord::Schema.define(:version => 20130301193442) do
   end
 
   add_index "themes", ["page_id"], :name => "index_themes_on_page_id"
+
+  create_table "widget_attributes", :force => true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.boolean  "editable",      :default => false
+    t.string   "default_value"
+    t.integer  "setting_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
 
   create_table "widgets", :force => true do |t|
     t.string   "url"

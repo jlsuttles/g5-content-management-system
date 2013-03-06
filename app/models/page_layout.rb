@@ -41,6 +41,6 @@ class PageLayout < ActiveRecord::Base
   end
   
   def set_default_stylesheets
-    self.stylesheets = []
+    self.stylesheets ||= []
   end
 end
