@@ -1,8 +1,8 @@
-source :rubygems
+source 'https://rubygems.org'
 source "https://gems.gemfury.com/88yeKzEGfizstwBaXVqj/"
+ruby "1.9.3"
 
-gem "rails", "3.2.11"
-gem "pg"
+gem "rails", "3.2.12"
 gem "jquery-rails"
 
 gem "quiet_assets", "~> 1.0.1"
@@ -10,9 +10,10 @@ gem "bootstrap-sass", "~> 2.1.1.0"
 gem "table_cloth", "~> 0.2.1"
 gem "foreman", "~> 0.60.2"
 gem "heroku_resque_autoscaler", "~> 0.1.0"
-gem "g5_hentry_consumer", "~> 0.5.4"
+gem "g5_hentry_consumer", "~> 0.5.5"
 gem "github_heroku_deployer", "~> 0.2.0"
 gem "g5_sibling_deployer_engine", "~> 0.1.1"
+gem "liquid", "~> 2.4.1"
 
 group :assets do
   gem "sass-rails", "~> 3.2.3"
@@ -26,6 +27,8 @@ group :development do
 end
 
 group :development, :test do
+  gem "sqlite3"
+  gem "rails-default-database", "~> 1.0.6"
   gem "rspec-rails", "~> 2.11.4"
   gem "guard-rspec", "~> 2.1.0"
   gem "rb-fsevent", "~> 0.9.2"
@@ -37,4 +40,5 @@ end
 
 group :production do
   gem "thin", "~> 1.5.0"
+  gem "pg"
 end

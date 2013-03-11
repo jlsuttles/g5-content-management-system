@@ -1,56 +1,69 @@
 # G5 Client Hub
 
+* Consumes gardens's feeds
 * Creates and deploys location sites
-* TODO: 
-    * Consumes configurator's feed
-    * Updates a client hub deployer
+* Consumes configurator's feed
+* Updates a client hub deployer
 
 
 ## Setup
 
-1. Install all the required gems
+1. Install all the required gems.
 ```bash
-bundle
+$ bundle
 ```
 
-1. Set up your database
+1. Set up your database.
+[rails-default-database](https://github.com/tpope/rails-default-database)
+automatically uses sensible defaults for the primary ActiveRecord database.
 ```bash
-cp config/database.example.yml config/database.yml
-vi config/database.yml # edit username
-rake db:create db:schema:load db:seed
+$ rake db:setup
 ```
 
-1. Install [redis](http://redis.io/) and start it
+
+### Optional: To Seed a Client from the G5 Hub
+
+In the previous step `$ rake db:setup` seeds a client from `spec/support/client.html`. If you want to seed a different client, this is what you do.
+
+1. [Find a client UID on the g5-hub.](http://g5-hub.herokuapp.com)
+It should look like: http://g5-hub.herokuapp.com/clients/g5-c-*
+
+1. Export the client UID and run the rake task.
 ```bash
-brew install redis
-redis-server > ~/redis.log &
+$ export G5_CLIENT_UID=found_client_uid
+$ rake seed_client
 ```
 
-1. Create a new private key and add it to Github and Heroku
-    * [https://help.github.com/articles/generating-ssh-keys](https://help.github.com/articles/generating-ssh-keys)
-    * [https://devcenter.heroku.com/articles/keys](https://devcenter.heroku.com/articles/keys)
 
+### Optional: To Deploy Location Sites to Heroku
 
-1. Export environment variables
+1. [Create a new private key and add it to Github.](https://help.github.com/articles/generating-ssh-keys)
+
+1. [Add your private key to Heroku.](https://devcenter.heroku.com/articles/keys)
+
+1. Export environment variables.
 ```bash
+export G5_CLIENT_UID=client_uid
 export HEROKU_USERNAME=your_username
 export HEROKU_API_KEY=your_api_key
 export ID_RSA=your_private_key
-export HEROKU_APP_NAME=g5-ch-* # this is only needed in production
+# HEROKU_APP_NAME is only needed in production for dyno autoscaling
+export HEROKU_APP_NAME=g5-ch-*
 ```
 
-1. Use foreman to start the web and worker proccesses
+1. Install [redis](http://redis.io/) and start it.
 ```bash
-foreman start
-```
-Or if you are using pow or something start the job queue
-```bash
-rake jobs:work
+$ brew install redis
+$ redis-server > ~/redis.log &
 ```
 
-1. Seed a Client
+1. Use foreman to start the web and worker proccesses.
 ```bash
-G5_CLIENT_UID=http://g5-hub.herokuapp.com/clients/g5-c-685e4rp-moo-man rake seed_client
+$ foreman start
+```
+Or if you are using pow or something start the job queue.
+```bash
+$ rake jobs:work
 ```
 
 
@@ -75,6 +88,18 @@ If you find bugs, have feature requests or questions, please
 
 ## Specs
 
+Run once.
 ```bash
-guard
+$ rspec spec
+```
+
+Keep them running.
+```bash
+$ guard
+```
+
+Coverage.
+```bash
+$ rspec spec
+$ open coverage/index.html
 ```
