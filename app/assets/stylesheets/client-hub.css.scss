@@ -24,6 +24,11 @@ h2 {
   text-align: center;
 }
 
+.nav li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
 .btn {
   @include gradient(#fefefe, #f0f0f0);
   display: inline-block;
