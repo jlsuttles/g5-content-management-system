@@ -110,6 +110,9 @@ nav[role=navigation] {
   padding: 1em 20px;
   position: relative;
   z-index: 5;
+  img {
+    margin: 0 0 16px;
+  }
 }
 .thumbs {
   overflow: hidden;
@@ -121,7 +124,6 @@ nav[role=navigation] {
     display: block;
     padding: 2px;
     background: #fff;
-    margin: 0 0 16px;
     @include box-shadow(0 2px 5px rgba(0, 0, 0, .45));
   }
   input {
@@ -132,6 +134,7 @@ nav[role=navigation] {
     }
   }
   label {
+    margin: 0;
     font-size: 20px;
     cursor: pointer;
   }
@@ -145,9 +148,14 @@ nav[role=navigation] {
   z-index: 4;
   .thumb {
     margin-right: 10px;
+    opacity: 0.7;
+    -webkit-transition: opacity .2s linear;
+    &:hover {
+      opacity: 1;
+    }
   }
   img {
-    width: 254px;
+    margin: 2px 3px 5px;
   }
 }
 
