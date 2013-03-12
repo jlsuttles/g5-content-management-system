@@ -15,43 +15,20 @@ body {
   text-transform: uppercase;
   padding-bottom: 2em;
 }
-a {
+a, a:hover {
   text-decoration: none;
+}
+ul, ol {
+  margin: 0;
+  list-style-type: none;
 }
 img {
   max-width: 100%;
 }
-ul, ol {
-  margin: 0;
-  padding: 0;
-}
-ul, ol, li {
-  list-style-type: none;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  th, td {
-    padding: 1em;
-  }
-  th {
-    font-size: 26px;
-    font-weight: bold;
-  }
-  thead {
-    border-bottom: 1px solid #000;
-  }
-  tr:nth-child(even) {
-    background: #efefef;
-  }
-}
+
 form {
-  input,
-  label {
-    display: block;
-  }
-  .check-field {
+  .check-field,
+  .field.check {
     input,
     label {
       display: inline-block;
@@ -59,8 +36,5 @@ form {
   }
   .field {
     margin-bottom: 1em;
-  }
-  input {
-    padding: .3em .5em .2em;
   }
 }
