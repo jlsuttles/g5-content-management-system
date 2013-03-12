@@ -10,9 +10,9 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <div class="container">
 
-      <header role="banner">
+    <header role="banner">
+      <div class="container">
         <h1 class="brand"><a href="<%= root_path %>"><span class="logo">G5</span> Client Hub: <strong><%= @client_name %></strong></a></h1>
 
         <nav role="navigation">
@@ -23,23 +23,25 @@
             <%= content_tag :li, link_to("Resque", "/resque", target: "_blank") %>
           </ul>
         </nav>
-      </header>
+      </div>
+    </header>
 
-      <% flash.each do |name, msg| %>
-        <%= flash_div name %>
-      <% end %>
+    <% flash.each do |name, msg| %>
+      <div class="container"><%= flash_div name %></div>
+    <% end %>
 
-      <section role="main">
+    <section role="main">
 
-        <!-- <div class="row page-header">
+      <!-- <div class="row page-header">
+        <div class="container">
           <%= content_tag :h2, yield(:title), class: "span10" if show_title? %>
           <%= content_tag :span, yield(:header_right), class: "span2" if show_header_right? %>
-        </div> -->
+        </div>
+      </div> -->
 
-        <%= yield %>
+      <%= yield %>
 
-      </section>
+    </section>
 
-    </div>
   </body>
 </html>
