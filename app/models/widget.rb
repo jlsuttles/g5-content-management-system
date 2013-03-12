@@ -1,6 +1,9 @@
 class Widget < ActiveRecord::Base
   include AssociationToMethod
 
+  #TODO remove this if location will not have a concept of address
+  liquid_methods :location
+
   WIDGET_GARDEN_URL = "http://g5-widget-garden.herokuapp.com"
 
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets,
@@ -11,6 +14,7 @@ class Widget < ActiveRecord::Base
   serialize :javascripts, Array
 
   belongs_to :page
+  has_one :location, :through => :page
   has_many :settings, as: :component, after_add: :define_dynamic_association_method
   has_many :widget_attributes, through: :settings
 
@@ -64,7 +68,9 @@ class Widget < ActiveRecord::Base
     configs.each do |config|
       setting = self.settings.build(name: config.name, categories: config.category)
       config.attributes.each do |attribute|
-        setting.widget_attributes.build(name: attribute.name, editable: attribute.editable || false, default_value: attribute.default_value)
+        setting.widget_attributes.build(name: attribute.name,
+                                        editable: attribute.editable || false,
+                                        default_value: attribute.default_value)
       end
     end
   end

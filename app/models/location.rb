@@ -1,5 +1,7 @@
 class Location < ActiveRecord::Base
   COMPILED_SITES_PATH = File.join(Rails.root, "tmp", "compiled_sites")
+  #TODO remove this if location will not have a concept of address
+  liquid_methods :address
 
   attr_accessible :uid, :name, :corporate, :urn, :primary_color, :secondary_color, :custom_colors
 
@@ -9,6 +11,11 @@ class Location < ActiveRecord::Base
   before_create :create_template
   after_create :create_homepage
   after_create :set_urn
+
+  #TODO remove this if location will not have a concept of address
+  def address
+    "12345 greenwood ave, bend OR"
+  end
 
   def primary_color
     if custom_colors?
@@ -29,11 +36,11 @@ class Location < ActiveRecord::Base
   def async_deploy
     Resque.enqueue(LocationDeployer, self.urn)
   end
-   
+
   def deploy
     LocationDeployer.perform(self.urn)
   end
-  
+
   def homepage
     pages.home.first
   end
@@ -61,7 +68,7 @@ class Location < ActiveRecord::Base
   def heroku_url
     "https://#{heroku_app_name}.herokuapp.com"
   end
-  
+
   def compiled_site_path
     File.join(COMPILED_SITES_PATH, self.urn)
   end
@@ -77,17 +84,17 @@ class Location < ActiveRecord::Base
   def hashed_id
     "#{self.created_at.to_i}#{self.id}".to_i.to_s(36)
   end
-  
+
   def to_param
     self.urn
   end
-  
+
   private
-  
+
   def set_urn
     update_attributes(urn: "#{record_type}-#{hashed_id}-#{name.parameterize}")
   end
-  
+
   def create_template
     create_site_template(name: "Site Template", slug: "site-template", title: "Site Template")
   end
