@@ -18,19 +18,30 @@
 
 <div class="theme-picker thumbnail-field clearfix">
   <h2>Select a Theme</h2>
-  <div class="thumbs clearfix">
-    <%= f.fields_for :theme, @page.theme || Theme.new do |ff| -%>
-      <%= ff.error_messages %>
-      <% Theme.all_remote.each do |theme| %>
-        <div class="thumb">
-          <%= ff.radio_button :url, theme.url %>
-          <%= ff.label :url, :value => theme.url do %>
-            <%= image_tag_or_placeholder(theme.thumbnail) %>
-            <%= theme.name %>
+  <div id="chad" class="jThumbnailScroller">
+    <div class="jTscrollerContainer">
+      <div class="jTscroller thumbs clearfix">
+        <%= f.fields_for :theme, @page.theme || Theme.new do |ff| -%>
+          <%= ff.error_messages %>
+          <% Theme.all_remote.each do |theme| %>
+            <div class="thumb">
+              <%= ff.radio_button :url, theme.url %>
+              <%= ff.label :url, :value => theme.url do %>
+                <%= image_tag_or_placeholder(theme.thumbnail) %>
+              <% end %>
+            </div>
           <% end %>
-        </div>
-      <% end %>
-    <% end %>
+          <% Theme.all_remote.each do |theme| %>
+            <div class="thumb">
+              <%= ff.radio_button :url, theme.url %>
+              <%= ff.label :url, :value => theme.url do %>
+                <%= image_tag_or_placeholder(theme.thumbnail) %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
