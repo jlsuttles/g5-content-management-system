@@ -1,9 +1,5 @@
 $ ->
-  $('body[class~=staging] form').each ->
-    new FormSubmitDisabler $(this)
-  $('body[class~=development] form').each ->
-    new FormSubmitDisabler $(this)
-  $('body[class~=test] form').each ->
+  $('body[class~=preview] form').each ->
     new FormSubmitDisabler $(this)
 
 class FormSubmitDisabler

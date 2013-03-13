@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= yield(:head) %>
   </head>
-  <body class="<%= [Rails.env, yield(:body_classes)].join(" ") %>">
+  <body class="<%= [mode, yield(:body_classes)].join(" ") %>">
     <%= yield %>
   </body>
 </html>
