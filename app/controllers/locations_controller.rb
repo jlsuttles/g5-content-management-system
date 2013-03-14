@@ -1,9 +1,9 @@
 class LocationsController < ApplicationController
-  
+
   def index
     @locations = Location.order("updated_at DESC").all
   end
-  
+
   def show
     @location = Location.find_by_urn(params[:id])
   end
@@ -13,5 +13,5 @@ class LocationsController < ApplicationController
     @location.async_deploy
     redirect_to locations_path, notice: "Deploying location #{@location.name}."
   end
-  
+
 end

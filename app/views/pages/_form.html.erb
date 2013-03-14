@@ -4,7 +4,9 @@
   <% if @page.is_a? SiteTemplate %>
     <%= render "/site_templates/site_template_fields", f: f %>
   <% else %>
-    <%= render "page_fields", f: f %>
+    <div class="container page-fields">
+      <%= render "page_fields", f: f %>
+    </div>
   <% end %>
 
   <div class="container" style="position: relative;">

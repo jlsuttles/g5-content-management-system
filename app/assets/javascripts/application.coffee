@@ -19,9 +19,12 @@ $ ->
     showInput: true
   }
 
+  $('.layout-picker input, .theme-picker input').click ->
+    $(this).parent().css('opacity', '1').siblings().css('opacity', '0.7')
+
   window.onload = ->
     $("#chad").thumbnailScroller
-      scrollerType:"hoverAccelerate"
+      scrollerType:"clickButtons"
   		scrollerOrientation:"horizontal"
   		scrollSpeed:2
   		scrollEasing:"easeOutCirc"
