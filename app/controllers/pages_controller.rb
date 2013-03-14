@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_filter :find_location
+
   def index
     @pages = Page.all
   end
@@ -16,11 +17,12 @@ class PagesController < ApplicationController
       render :action => 'new'
     end
   end
-  
+
   def edit
     @page = @location.pages.find(params[:id])
+    render :layout => 'builder'
   end
-  
+
   def update
     @page = @location.pages.find(params[:id])
     if @page.update_attributes(params[:page])
@@ -37,14 +39,14 @@ class PagesController < ApplicationController
   def show
     @page = @location.pages.find(params[:id])
   end
-  
+
   def preview
     @page = @location.pages.find(params[:id])
-    render layout: "compiled_pages", :locals => {:page => @page, location: @location} 
+    render layout: "compiled_pages", :locals => {:page => @page, location: @location}
   end
-  
+
   private
-  
+
   def find_location
     @location = Location.find_by_urn(params[:location_id])
   end

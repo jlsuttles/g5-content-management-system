@@ -1,40 +1,57 @@
 <div class="layout-picker thumbnail-field">
-  <h2>Select a Layout</h2>
-  <div class="thumbs clearfix">
-    <%= f.fields_for :page_layout, @page.page_layout || PageLayout.new do |ff| -%>
-      <%= ff.error_messages %>
-      <% PageLayout.all_remote.each do |page_layout| %>
-        <div class="thumb">
-          <%= ff.radio_button :url, page_layout.url %>
-          <%= ff.label :url, :value => page_layout.url do %>
-            <%= image_tag_or_placeholder(page_layout.thumbnail) %>
-            <%= page_layout.name %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-
-<div class="theme-picker thumbnail-field clearfix">
-  <h2>Select a Theme</h2>
-  <div class="thumbs clearfix">
-    <%= f.fields_for :theme, @page.theme || Theme.new do |ff| -%>
-      <%= ff.error_messages %>
-      <% Theme.all_remote.each do |theme| %>
-        <div class="thumb">
-          <%= ff.radio_button :url, theme.url %>
-          <%= ff.label :url, :value => theme.url do %>
-            <%= image_tag_or_placeholder(theme.thumbnail) %>
-            <%= theme.name %>
-          <% end %>
-        </div>
-      <% end %>
+  <div class="container">
+    <h2>Select a Layout</h2>
+    <div class="thumbs clearfix">
+      <%= f.fields_for :page_layout, @page.page_layout || PageLayout.new do |ff| -%>
+        <%= ff.error_messages %>
+        <% PageLayout.all_remote.each do |page_layout| %>
+          <div class="thumb">
+            <%= ff.radio_button :url, page_layout.url %>
+            <%= ff.label :url, :value => page_layout.url do %>
+              <%= image_tag_or_placeholder(page_layout.thumbnail) %>
+              <%= page_layout.name %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
 
-<div class="page">
+<div class="theme-picker thumbnail-field clearfix">
+  <div class="container">
+    <h2>Select a Theme</h2>
+    <div id="chad" class="jThumbnailScroller">
+      <div class="jTscrollerContainer">
+        <div class="jTscroller thumbs clearfix">
+          <%= f.fields_for :theme, @page.theme || Theme.new do |ff| -%>
+            <%= ff.error_messages %>
+            <% Theme.all_remote.each do |theme| %>
+              <div class="thumb">
+                <%= ff.radio_button :url, theme.url %>
+                <%= ff.label :url, :value => theme.url do %>
+                  <%= image_tag_or_placeholder(theme.thumbnail) %>
+                <% end %>
+              </div>
+            <% end %>
+            <% Theme.all_remote.each do |theme| %>
+              <div class="thumb">
+                <%= ff.radio_button :url, theme.url %>
+                <%= ff.label :url, :value => theme.url do %>
+                  <%= image_tag_or_placeholder(theme.thumbnail) %>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <a href="#" class="jTscrollerPrevButton"></a>
+    	<a href="#" class="jTscrollerNextButton"></a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
   <div class="colors clearfix">
     <h3>Customize Colors:</h3>
     <div class="color-fields">

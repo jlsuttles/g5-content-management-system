@@ -1,19 +1,25 @@
 @import "helpers";
 
 h2 {
-  display: inline-block;
   margin-bottom: 1em;
-  font-size: 26px;
+  font-size: 28px;
   line-height: 1;
   color: $alt-text;
   font-weight: normal;
   border-bottom: 1px solid $alt-text;
 }
 
+.locations h2 {
+  display: inline-block;
+}
+
 .container {
-  width: 1230px;
+  width: 1190px;
+  padding: 0 20px;
   margin: 0 auto;
-  position: relative;
+}
+section[role=main] .container {
+  padding-top: 1em;
 }
 
 .page {
@@ -29,14 +35,12 @@ h2 {
   padding: 1em 0;
 }
 
-
 header[role=banner] {
   @include standard-shadow;
   @include clearfix;
-  font-family: 'Oswald', 'helvetica neue', helvetica, arial, sans-serif;
   background: #363a3b;
   letter-spacing: .1em;
-  padding: .5em 20px;
+  padding: .5em 0;
   position: relative;
   z-index: 6;
   &, a {
@@ -44,15 +48,14 @@ header[role=banner] {
   }
   .brand {
     float: left;
-    font-size: 20px;
-    font-weight: normal;
-    margin: .45em 0 0;
+    margin: 0;
     strong {
       color: $alt-text;
     }
   }
   .logo {
     @include image-replacement;
+    vertical-align: middle;
     width: 30px;
     height: 27px;
     margin-right: 30px;
@@ -60,9 +63,13 @@ header[role=banner] {
   }
 }
 
+.brand,
+nav[role=navigation] {
+  font-size: 24px;
+}
+
 nav[role=navigation] {
   float: right;
-  font-size: 18px;
   li, a {
     display: inline-block;
   }
@@ -71,9 +78,31 @@ nav[role=navigation] {
   }
 }
 
+.btn {
+  font-family: 'Proxima Nova Extra Condensed', 'helvetica neue', helvetica, arial, sans-serif;
+  font-size: 16px;
+  &.primary {
+    @include box-shadow(none);
+    @include gradient(#fda585, #fd8c62);
+    color: #fff;
+    border: 1px solid #fea687;
+    text-shadow: none;
+  }
+  &.btn-large {
+    font-size: 24px;
+  }
+}
 
-.new-page {
-  margin-left: 2em;
+.page-title {
+  h2 {
+    @include clearfix;
+    margin-top: 1em;
+  }
+  .new-page {
+    float: right;
+    margin-bottom: .2em;
+    margin-top: -1em;
+  }
 }
 
 .pages {
@@ -89,7 +118,7 @@ nav[role=navigation] {
       margin-bottom: 5px;
       width: 85px;
       min-height: 90px;
-      font-size: 16px;
+      font-size: 14px;
       text-align: center;
     }
     img {
@@ -97,49 +126,67 @@ nav[role=navigation] {
       margin: 0 auto 5px;
       width: 50px;
     }
+    a {
+      color: #000;
+    }
   }
   img {
     display: block;
   }
 }
 
-
-.layout-picker {
-  @include standard-shadow;
-  background: #efefef;
-  padding: 1em 20px;
-  position: relative;
-  z-index: 5;
-}
 .thumbs {
   overflow: hidden;
   .thumb {
     float: left;
     margin-right: 20px;
+    -moz-transition: opacity .2s linear;
+    -webkit-transition: opacity .2s linear;
+    -o-transition: opacity .2s linear;
+    transition: opacity .2s linear;
   }
   img {
     display: block;
     padding: 2px;
     background: #fff;
-    margin: 0 0 16px;
     @include box-shadow(0 2px 5px rgba(0, 0, 0, .45));
   }
   input {
     position: absolute;
     left: -999em;
+    &:checked + label,
     &:checked + label img {
-      background: $alt-text;;
+      opacity: 1;
+    }
+    &:checked + label img {
+      background: $alt-text;
     }
   }
   label {
+    margin: 0;
     font-size: 20px;
     cursor: pointer;
   }
 }
 
+.locations section[role=main] .container {
+  padding-top: 0;
+}
+
+.layout-picker {
+  @include standard-shadow;
+  background: #efefef;
+  padding: 1em 0;
+  position: relative;
+  z-index: 5;
+  img {
+    margin: 0 0 16px;
+  }
+}
+
 .theme-picker {
   @include standard-shadow;
-  padding: 1em 20px;
+  padding: 1em 0;
   background: #fff;
   position: relative;
   z-index: 4;
@@ -147,14 +194,14 @@ nav[role=navigation] {
     margin-right: 10px;
   }
   img {
-    width: 254px;
+    margin: 2px 3px 5px;
   }
 }
 
 .widget-list {
   @include clearfix;
   @include standard-shadow;
-  padding: 1em 20px;
+  padding: 1em 0;
   background: url($linen) 0 0 repeat;
   .instructions {
     display: inline-block;
@@ -190,7 +237,11 @@ nav[role=navigation] {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .5), 0 10px 20px rgba(0, 0, 0, .5);
   }
 }
-
+.widget-list,
+.add-widgets {
+  font-family: 'Proxima Nova Extra Condensed', 'helvetica neue', helvetica, arial, sans-serif;
+  text-transform: uppercase;
+}
 .dropzone {
   width: 285px;
   padding-top: 2em;
@@ -220,7 +271,7 @@ nav[role=navigation] {
 }
 
 .colors {
-  margin: 0;
+  margin: 1em 0;
   width: 210px;
   border: 1px solid #cbcbcb;
   h3 {
@@ -250,4 +301,8 @@ nav[role=navigation] {
   label {
     font-size: 22px;
   }
+}
+
+.page-fields {
+  padding-top: 1em;
 }
