@@ -4,3 +4,5 @@
 @import "spectrum";
 @import "jquery.thumbnailScroller";
 @import "client-hub";
+
+.p-category:before { content: "#" }
