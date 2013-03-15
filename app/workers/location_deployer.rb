@@ -16,6 +16,7 @@ class LocationDeployer
       compile_stylesheets
       compile_javascripts
       deploy
+      create_entries_for_widget_forms
     ensure
       remove_compiled_site
     end
@@ -132,5 +133,9 @@ class LocationDeployer
 
   def remove_repo
     FileUtils.rm_rf(@repo_dir) if @repo_dir && Dir.exists?(@repo_dir)
+  end
+
+  def create_entries_for_widget_forms
+    @location.widgets.name_like_form.map(&:create_entry)
   end
 end
