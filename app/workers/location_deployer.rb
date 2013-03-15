@@ -127,7 +127,7 @@ class LocationDeployer
         repo.commit_all "Add compiled site"
       end
     ensure
-      # remove_repo
+      remove_repo
     end
   end
 
@@ -136,6 +136,6 @@ class LocationDeployer
   end
 
   def create_entries_for_widget_forms
-    @location.widgets.name_like_form.map(&:create_entry)
+    @location.widgets.name_like_form.map(&:create_widget_entry)
   end
 end
