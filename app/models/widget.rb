@@ -1,7 +1,7 @@
 class Widget < ActiveRecord::Base
   include AssociationToMethod
 
-  WIDGET_GARDEN_URL = "http://g5-widget-garden.herokuapp.com"
+  WIDGET_GARDEN_URL = "http://0.0.0.0:3001"
 
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets,
                   :javascripts, :html, :thumbnail, :edit_form_html,
@@ -48,7 +48,7 @@ class Widget < ActiveRecord::Base
       self.stylesheets    = component.stylesheets
       self.javascripts    = component.javascripts
       self.edit_form_html = get_edit_form_html(component)
-      self.html           = component.content.first
+      self.html           = get_show_form_html(component)
       self.thumbnail      = component.thumbnail.first
       parse_settings(component.configurations)
       true
@@ -71,6 +71,11 @@ class Widget < ActiveRecord::Base
 
   def get_edit_form_html(component)
     url = component.edit_template.try(:first)
+    open(url).read if url
+  end
+
+  def get_show_form_html(component)
+    url = component.show_template.try(:first)
     open(url).read if url
   end
 
