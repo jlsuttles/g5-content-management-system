@@ -7,18 +7,18 @@ class PageLayout < ActiveRecord::Base
 
   serialize :stylesheets, Array
   after_initialize :set_default_stylesheets
-  
+
   before_save :assign_attributes_from_url
 
   validates :url, presence: true
 
   def self.all_remote
-    components = G5HentryConsumer::HG5Component.parse(LAYOUT_GARDEN_URL)
+    components = Microformats2.parse(LAYOUT_GARDEN_URL).g5_components
     components.map do |component|
       new(
         url: component.uid,
-        name: component.name.first,
-        thumbnail: component.thumbnail.first
+        name: component.name,
+        thumbnail: component.photo
       )
     end
   end
@@ -26,12 +26,12 @@ class PageLayout < ActiveRecord::Base
   private
 
   def assign_attributes_from_url
-    component = G5HentryConsumer::HG5Component.parse(url).first
+    component = Microformats2.parse(url).first
     if component
-      self.name        = component.name.first
-      self.stylesheets = component.stylesheets
-      self.html        = component.content.first
-      self.thumbnail   = component.thumbnail.first
+      self.name        = component.name.to_s
+      self.stylesheets = component.g5_stylesheets if component.respond_to?(:g5_stylesheets)
+      self.html        = CGI.unescapeHTML(component.content.to_s)
+      self.thumbnail   = component.photo.to_s
       true
     else
       raise "No h-g5-component found at url: #{url}"
@@ -39,7 +39,7 @@ class PageLayout < ActiveRecord::Base
   rescue OpenURI::HTTPError => e
     logger.warn e.message
   end
-  
+
   def set_default_stylesheets
     self.stylesheets ||= []
   end
