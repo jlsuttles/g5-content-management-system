@@ -66,10 +66,12 @@ class Widget < ActiveRecord::Base
   def parse_settings(property_groups)
     return if property_groups.blank?
     property_groups.each do |property_group|
+      property_group = property_group.format
       setting = self.settings.build(name: property_group.name.to_s,
-                                    categories: property_group.category.to_s)
-      property_group.properties.each do |property|
-        setting.widget_attributes.build(name: property.name, editable: property.editable || false, default_value: property.default_value)
+                                    categories: property_group.categories.map{|c|c.to_s})
+      property_group.g5_properties.each do |property|
+        property = property.format
+        setting.widget_attributes.build(name: property.g5_name.to_s, editable: property.g5_editable.to_s || false, default_value: property.g5_default_value.to_s)
       end
     end
   end
