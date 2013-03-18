@@ -16,9 +16,9 @@ class PageLayout < ActiveRecord::Base
     components = Microformats2.parse(LAYOUT_GARDEN_URL).g5_components
     components.map do |component|
       new(
-        url: component.uid,
-        name: component.name,
-        thumbnail: component.photo
+        url: component.uid.to_s,
+        name: component.name.to_s,
+        thumbnail: component.photo.to_s
       )
     end
   end
