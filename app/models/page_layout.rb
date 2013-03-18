@@ -29,7 +29,7 @@ class PageLayout < ActiveRecord::Base
     component = Microformats2.parse(url).first
     if component
       self.name        = component.name.to_s
-      self.stylesheets = component.g5_stylesheets if component.respond_to?(:g5_stylesheets)
+      self.stylesheets = (component.g5_stylesheets.try(:map) {|s|s.to_s} if component.respond_to?(:g5_stylesheets))
       self.html        = CGI.unescapeHTML(component.content.to_s)
       self.thumbnail   = component.photo.to_s
       true
