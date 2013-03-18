@@ -83,12 +83,14 @@ class Widget
 
   openLightBox: (response) ->
     $('#modal .modal-body').html(response["html"])
+    if($('#modal textarea').length >= 1)
+      CKEDITOR.replace('ckeditor',
+        customConfig: 'ckeditor-config.js'
+      )
     $('#modal').modal()
-    CKEDITOR.replace('ckeditor',
-      customConfig: 'ckeditor-config.js'
-    )
     $('.modal-body .edit_widget').submit =>
-      $('#ckeditor').val(CKEDITOR.instances.ckeditor.getData())
+      if($('#modal textarea').length >= 1)
+        $('#ckeditor').val(CKEDITOR.instances.ckeditor.getData())
       this.saveEditForm()
       false
     false
