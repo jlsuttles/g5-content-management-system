@@ -17,14 +17,14 @@ $ ->
       $(this).find('.position').val(index + 1)
       # Changes the section value to match the section the widget was dropped in
       $(this).find('.section').val($(this).parent().data('section'))
-    
+
     # Async update the pages widgets
     $.ajax {
       url: $('.edit_page').prop('action'),
       type: 'PUT',
       dataType: 'json',
       data: ui.item.find(":input").serialize(),
-      success: (data) => 
+      success: (data) =>
         # Update the item with the db ID
         ui.item.data('id', data["id"])
         ui.item.find('.resource-id').val(data["id"])
@@ -37,7 +37,7 @@ $ ->
       # TODO: Error Handling
       error: (xhr) => console.log("Error")
     }
-  
+
   # Create widget objects out of all widgets on the page
   $('.widget').each ->
     new Widget(this)
@@ -48,12 +48,12 @@ class Widget
     $(@element).click =>
       this.openEditForm()
       false
-  
+
   # open the configuration form retreived from the edit.html in the widget garden
   openEditForm: =>
     callback = (response) => this.openLightBox response
     $.get this.editURL(), {}, callback, "json"
-    
+
   #  Submits the widget configuration to the widget controller
   saveEditForm: =>
     $.ajax {
@@ -63,7 +63,7 @@ class Widget
       data: $('.modal-body .edit_widget').serialize(),
       # Hide the configuration form if the request is successful
       success: => $('#modal').modal('hide')
-      error: (xhr) => 
+      error: (xhr) =>
         # This is/was needed because of a bug in jQuery, it's actually successful
         if xhr.status == 204
           $('#modal').modal('hide')
@@ -76,19 +76,22 @@ class Widget
     }
 
   insertErrorMessages: (errors) =>
-    error = "<div class=\"alert alert-error\">" + 
-      errors["errors"]["base"][0] + 
+    error = "<div class=\"alert alert-error\">" +
+      errors["errors"]["base"][0] +
       "</div>"
     $('#modal .modal-body').prepend error
-      
+
   openLightBox: (response) ->
     $('#modal .modal-body').html(response["html"])
     $('#modal').modal()
-    $('.modal-body .edit_widget').submit => 
+    CKEDITOR.replace('ckeditor',
+      customConfig: 'ckeditor-config.js'
+    )
+    $('.modal-body .edit_widget').submit =>
+      $('#ckeditor').val(CKEDITOR.instances.ckeditor.getData())
       this.saveEditForm()
       false
     false
-    
+
   editURL: =>
     '/widgets/' + $(@element).data('id') + "/edit"
-    
