@@ -9,6 +9,10 @@ class WidgetEntry < ActiveRecord::Base
 
   before_create :save_widget_html
 
+  def widget_name
+    widget.name if widget
+  end
+
   private
 
   def save_widget_html

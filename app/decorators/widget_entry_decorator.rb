@@ -4,11 +4,11 @@ class WidgetEntryDecorator < Draper::Decorator
   delegate_all
 
   def name
-    "Widget Deployed: #{widget.name}"
+    "Widget Deployed: #{widget_name}"
   end
 
   def summary
-    "#{widget.name} deployed."
+    "#{widget_name} deployed."
   end
 
   def author_name
