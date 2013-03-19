@@ -7,19 +7,19 @@ class WidgetEntry < ActiveRecord::Base
 
   belongs_to :widget
 
-  before_create :save_widget_html
+  before_create :save_widget_liquidized_html
 
   def widget_name
     widget.name if widget
   end
 
-  def widget_html
-    widget.html if widget
+  def widget_liquidized_html
+    widget.liquidized_html if widget
   end
 
   private
 
-  def save_widget_html
-    self.content = widget_html
+  def save_widget_liquidized_html
+    self.content = widget_liquidized_html
   end
 end
