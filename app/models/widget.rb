@@ -47,8 +47,13 @@ class Widget < ActiveRecord::Base
     name == kind
   end
 
-  def create_widget_entry
-    widget_entries.create
+  def create_widget_entry_if_updated
+    widget_entries.create if updated_since_last_widget_entry
+  end
+
+  def updated_since_last_widget_entry
+    return true if widget_entries.blank?
+    updated_at > widget_entries.maximum(:updated_at)
   end
 
   private
