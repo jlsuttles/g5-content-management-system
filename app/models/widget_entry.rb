@@ -13,9 +13,13 @@ class WidgetEntry < ActiveRecord::Base
     widget.name if widget
   end
 
+  def widget_html
+    widget.html if widget
+  end
+
   private
 
   def save_widget_html
-    self.content = widget.html if widget
+    self.content = widget_html
   end
 end
