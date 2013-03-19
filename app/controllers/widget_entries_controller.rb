@@ -4,6 +4,6 @@ class WidgetEntriesController < ApplicationController
   end
 
   def show
-    @widget_entry = WidgetEntry.find(params[:id])
+    @widget_entry = WidgetEntry.find(params[:id]).decorate
   end
 end
