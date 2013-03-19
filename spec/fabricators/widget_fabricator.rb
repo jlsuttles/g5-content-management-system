@@ -3,4 +3,3 @@ Fabricator :widget do
   section 'aside'
   url "spec/support/widget.html"
 end
-

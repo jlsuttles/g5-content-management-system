@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe WidgetEntryDecorator do
-  let(:widget_entry) { WidgetEntry.create(widget_id: Fabricate(:widget).id) }
+  let(:widget_entry) { Fabricate.build(:widget_entry) }
   let(:decorated_widget_entry) { WidgetEntryDecorator.decorate(widget_entry) }
 
   describe "#name" do
