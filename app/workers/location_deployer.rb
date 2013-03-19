@@ -136,6 +136,6 @@ class LocationDeployer
   end
 
   def create_entries_for_widget_forms
-    @location.widgets.name_like_form.map(&:create_widget_entry_if_update)
+    @location.widgets.name_like_form.map(&:create_widget_entry_if_updated)
   end
 end
