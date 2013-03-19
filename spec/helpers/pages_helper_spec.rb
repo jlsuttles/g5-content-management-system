@@ -12,7 +12,7 @@ describe PagesHelper do
     it "has layout in html" do
       helper.preview(location, location.pages.first).should match /single-column/
     end
-    
+
     it "has widget in html" do
       helper.preview(location, location.pages.first).should match /storage-list widget/
     end
