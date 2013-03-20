@@ -32,7 +32,9 @@ section[role=main] .container-fluid {
 }
 .builder {
   .container {
-    width: 1170px;
+    width: 1210px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   section[role=main] .container {
     padding-top: 0;
@@ -56,8 +58,10 @@ section[role=main] .container-fluid {
 
 // BUTTONS ================================
 .btn {
+  padding: .4167em 1em;
   font-family: 'Proxima Nova Extra Condensed', 'helvetica neue', helvetica, arial, sans-serif;
   font-size: 24px;
+  text-transform: uppercase;
   &.primary {
     @include box-shadow(none);
     @include gradient(#fda585, #fd8c62);
@@ -160,7 +164,7 @@ nav[role=navigation] {
     @include transition(opacity .2s linear);
     float: left;
     margin-right: 20px;
-    width: 171px;
+    width: 178px;
     &:last-child {
       margin-right: 0;
     }
@@ -253,7 +257,7 @@ nav[role=navigation] {
     margin-left: 20px;
   }
   ul {
-    width: 834px;
+    width: 850px;
   }
 }
 /* styles for unselected widgets */
