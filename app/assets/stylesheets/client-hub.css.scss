@@ -1,56 +1,77 @@
 @import "helpers";
 
+// GENERAL ================================
 h2 {
-  margin-bottom: 1em;
-  font-size: 28px;
-  line-height: 1;
   color: $alt-text;
   font-weight: normal;
   border-bottom: 1px solid $alt-text;
+  .builder & {
+    display: inline-block;
+    margin-bottom: 1em;
+  }
+}
+.page-title {
+  h2 {
+    @include clearfix;
+  }
+  .new-page {
+    float: right;
+    margin-bottom: .2em;
+  }
 }
 
-.builder h2 {
-  display: inline-block;
-}
 
+// LAYOUT ================================
 .container,
 .container-fluid {
   @include border-box;
-  padding: 0 20px;
-  margin: 0 auto;
-  max-width: 1200px;
 }
-
-.builder .container {
-  width: 1170px;
-}
-
-.navbar .container-fluid {
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 section[role=main] .container,
 section[role=main] .container-fluid {
   padding-top: 1em;
 }
-
-.page {
-  padding: 1em 20px;
+.builder {
+  .container {
+    width: 1170px;
+  }
+  section[role=main] .container {
+    padding-top: 0;
+  }
+}
+@media (max-width: 768px) {
+  .container,
+  .container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
+
+// ALERTS ================================
 .alert-info {
   color: green;
   text-align: center;
 }
 
-.nav {
-  padding: 1em 0;
+
+// BUTTONS ================================
+.btn {
+  font-family: 'Proxima Nova Extra Condensed', 'helvetica neue', helvetica, arial, sans-serif;
+  font-size: 24px;
+  &.primary {
+    @include box-shadow(none);
+    @include gradient(#fda585, #fd8c62);
+    color: #fff;
+    border: 1px solid #fea687;
+    text-shadow: none;
+  }
 }
 
+
+// HEADER ================================
 header[role=banner] {
-  @include standard-shadow;
   @include clearfix;
+  @include standard-shadow;
   background: #363a3b;
   letter-spacing: .1em;
   padding: .5em 0;
@@ -75,12 +96,10 @@ header[role=banner] {
     background: url(logo.png) 0 0 no-repeat;
   }
 }
-
 .branding,
 nav[role=navigation] {
   font-size: 24px;
 }
-
 nav[role=navigation] {
   margin: 0;
   padding: 0;
@@ -90,35 +109,17 @@ nav[role=navigation] {
   a {
     padding: .5em 1em;
   }
-}
-
-.btn {
-  font-family: 'Proxima Nova Extra Condensed', 'helvetica neue', helvetica, arial, sans-serif;
-  font-size: 16px;
-  &.primary {
-    @include box-shadow(none);
-    @include gradient(#fda585, #fd8c62);
-    color: #fff;
-    border: 1px solid #fea687;
-    text-shadow: none;
-  }
-  &.btn-large {
-    font-size: 24px;
+  li:last-child a {
+    padding-right: 0;
   }
 }
 
-.page-title {
-  h2 {
-    @include clearfix;
-    margin-top: 1em;
-  }
-  .new-page {
-    float: right;
-    margin-bottom: .2em;
-    margin-top: -1em;
-  }
-}
 
+// PAGES ================================
+.table th,
+.table td {
+  padding: 1em 8px;
+}
 .pages {
   td {
     vertical-align: top;
@@ -130,13 +131,12 @@ nav[role=navigation] {
     li {
       float: left;
       margin-bottom: 5px;
-      width: 85px;
-      min-height: 90px;
-      font-size: 14px;
+      width: 70px;
+      font-size: 12px;
+      line-height: 1.25;
       text-align: center;
     }
     img {
-      display: block;
       margin: 0 auto 5px;
       width: 50px;
     }
@@ -144,27 +144,28 @@ nav[role=navigation] {
       color: #000;
     }
   }
-  img {
-    display: block;
+}
+
+@media (max-width: 768px) {
+  .table .btn {
+    margin-bottom: .5em;
   }
 }
 
+
+// BUILDER ================================
 .thumbs {
   overflow: hidden;
   .thumb {
+    @include transition(opacity .2s linear);
     float: left;
     margin-right: 20px;
     width: 171px;
-    -moz-transition: opacity .2s linear;
-    -webkit-transition: opacity .2s linear;
-    -o-transition: opacity .2s linear;
-    transition: opacity .2s linear;
     &:last-child {
       margin-right: 0;
     }
   }
   img {
-    display: block;
     padding: 2px;
     background: #fff;
     @include box-shadow(0 2px 5px rgba(0, 0, 0, .45));
@@ -186,11 +187,6 @@ nav[role=navigation] {
     cursor: pointer;
   }
 }
-
-.builder section[role=main] .container {
-  padding-top: 0;
-}
-
 .layout-picker {
   @include standard-shadow;
   background: #efefef;
@@ -201,7 +197,6 @@ nav[role=navigation] {
     margin: 0 0 16px;
   }
 }
-
 .theme-picker {
   @include standard-shadow;
   padding: 1em 0;
@@ -215,7 +210,38 @@ nav[role=navigation] {
     margin: 2px 3px 5px;
   }
 }
-
+.colors {
+  margin: 1em 0;
+  width: 210px;
+  border: 1px solid #cbcbcb;
+  h3 {
+    @include gradient(#fefefe, #f5f5f5);
+    font-size: 24px;
+    padding: .5em 1em .4em;
+    margin: 0;
+    border-bottom: 1px solid #cbcbcb;
+  }
+  .color-fields {
+    padding: 10px;
+    background: #fff;
+  }
+  .color-field {
+    margin-bottom: 10px;
+  }
+  .check-field {
+    margin-bottom: 1em;
+  }
+  .sp-replacer,
+  label {
+    display: inline-block;
+  }
+  .sp-replacer {
+    margin-right: 20px;
+  }
+  label {
+    font-size: 22px;
+  }
+}
 .widget-list {
   @include clearfix;
   @include standard-shadow;
@@ -227,10 +253,9 @@ nav[role=navigation] {
     margin-left: 20px;
   }
   ul {
-    width: 900px;
+    width: 834px;
   }
 }
-
 /* styles for unselected widgets */
 #choose-widgets li {
   display: inline-block;
@@ -262,9 +287,9 @@ nav[role=navigation] {
 }
 .dropzone {
   width: 285px;
-  padding-top: 2em;
   position: absolute;
   right: 20px;
+  top: 3.6em;
   z-index: 10;
 }
 .add-widgets {
@@ -276,51 +301,13 @@ nav[role=navigation] {
   background: #fff;
   border: 1px solid #ccc;
   li {
-    width: auto;
-    margin-right: 10px;
     margin-bottom: .2em;
     cursor: move;
     img {
-      display: inline;
-      vertical-align: middle;
       width: 20px;
     }
   }
 }
-
-.colors {
-  margin: 1em 0;
-  width: 210px;
-  border: 1px solid #cbcbcb;
-  h3 {
-    @include gradient(#fefefe, #f5f5f5);
-    font-size: 24px;
-    padding: .5em 1em .4em;
-    margin: 0;
-    border-bottom: 1px solid #cbcbcb;
-  }
-  .color-fields {
-    padding: 10px;
-    background: #fff;
-  }
-  .check-field {
-    margin-bottom: 1em;
-  }
-  .color-field {
-    margin-bottom: 10px;
-  }
-  .sp-replacer,
-  label {
-    display: inline-block;
-  }
-  .sp-replacer {
-    margin-right: 20px;
-  }
-  label {
-    font-size: 22px;
-  }
-}
-
 .page-fields {
   padding-top: 1em;
 }

@@ -34,6 +34,13 @@ $linen: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAEsCAYAAADtt+XCAAAAC
   background: $background linear-gradient($start, $stop);
 }
 
+@mixin transition($properties) {
+  -moz-transition: $properties;
+  -webkit-transition: $properties;
+  -o-transition: $properties;
+  transition: $properties;
+}
+
 @mixin border-box {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

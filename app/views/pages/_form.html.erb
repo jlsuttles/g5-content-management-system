@@ -4,8 +4,10 @@
   <% if @page.is_a? SiteTemplate %>
     <%= render "/site_templates/site_template_fields", f: f %>
   <% else %>
-    <div class="container page-fields">
-      <%= render "page_fields", f: f %>
+    <div class="container">
+      <div class="page-fields">
+        <%= render "page_fields", f: f %>
+      </div>
     </div>
   <% end %>
 
