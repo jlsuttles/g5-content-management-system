@@ -9,16 +9,29 @@ h2 {
   border-bottom: 1px solid $alt-text;
 }
 
-.locations h2 {
+.builder h2 {
   display: inline-block;
 }
 
-.container {
-  width: 1190px;
+.container,
+.container-fluid {
+  @include border-box;
   padding: 0 20px;
   margin: 0 auto;
+  max-width: 1200px;
 }
-section[role=main] .container {
+
+.builder .container {
+  width: 1170px;
+}
+
+.navbar .container-fluid {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section[role=main] .container,
+section[role=main] .container-fluid {
   padding-top: 1em;
 }
 
@@ -46,7 +59,7 @@ header[role=banner] {
   &, a {
     color: #fff;
   }
-  .brand {
+  .branding {
     float: left;
     margin: 0;
     strong {
@@ -63,13 +76,14 @@ header[role=banner] {
   }
 }
 
-.brand,
+.branding,
 nav[role=navigation] {
   font-size: 24px;
 }
 
 nav[role=navigation] {
-  float: right;
+  margin: 0;
+  padding: 0;
   li, a {
     display: inline-block;
   }
@@ -140,10 +154,14 @@ nav[role=navigation] {
   .thumb {
     float: left;
     margin-right: 20px;
+    width: 171px;
     -moz-transition: opacity .2s linear;
     -webkit-transition: opacity .2s linear;
     -o-transition: opacity .2s linear;
     transition: opacity .2s linear;
+    &:last-child {
+      margin-right: 0;
+    }
   }
   img {
     display: block;
@@ -169,7 +187,7 @@ nav[role=navigation] {
   }
 }
 
-.locations section[role=main] .container {
+.builder section[role=main] .container {
   padding-top: 0;
 }
 
@@ -191,7 +209,7 @@ nav[role=navigation] {
   position: relative;
   z-index: 4;
   .thumb {
-    margin-right: 10px;
+    margin-right: 20px;
   }
   img {
     margin: 2px 3px 5px;
