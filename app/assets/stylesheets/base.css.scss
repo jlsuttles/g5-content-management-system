@@ -10,12 +10,12 @@
 
 body {
   color: $primary-text;
-  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  font-family: helvetica, arial, sans-serif;
   font-size: 16px;
-  padding-bottom: 2em;
+  padding: 0 0 2em;
 }
 h1, h2, h3, h4, h5, h6, header, label, th {
-  font-family: 'Proxima Nova Extra Condensed', 'helvetica neue', helvetica, arial, sans-serif;
+  font-family: 'Proxima Nova Extra Condensed', helvetica, arial, sans-serif;
   text-transform: uppercase;
 }
 label, th {
@@ -28,10 +28,6 @@ ul, ol {
   margin: 0;
   list-style-type: none;
 }
-img {
-  max-width: 100%;
-}
-
 form {
   .check-field,
   .field.check {

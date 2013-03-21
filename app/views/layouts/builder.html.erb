@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf8" />
     <title>G5 Client Hub: <%= @client_name %> - <%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "builder" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
-  <body class="locations">
+  <body class="builder">
 
     <header role="banner">
       <div class="container">
-        <h1 class="brand"><a href="<%= root_path %>"><span class="logo">G5</span> Client Hub: <strong><%= @client_name %></strong></a></h1>
+        <h1 class="branding"><a href="<%= root_path %>"><span class="logo">G5</span> Client Hub: <strong><%= @client_name %></strong></a></h1>
 
-        <nav role="navigation">
+        <nav role="navigation" class="pull-right">
           <ul>
             <%= content_tag :li, link_to("Locations", locations_path) %>
             <%= content_tag :li, link_to("Leads", ENV["LEADS_SERVICE_HEROKU_URL"]) %>

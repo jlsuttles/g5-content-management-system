@@ -33,9 +33,9 @@ class LocationDeployer
   def compile_page(page, to_path)
     File.open(to_path, "w") do |file|
       file << LocationsController.new.render_to_string(
-        "/pages/preview", 
-        layout: "compiled_pages", 
-        locals: { page: page, location: @location }
+        "/pages/preview",
+        layout: "compiled_pages",
+        locals: { page: page, location: @location, mode: "deployed" }
       )
     end
   end
@@ -91,13 +91,13 @@ class LocationDeployer
   end
 
   private
-  
+
   def remove_compiled_site
     if Dir.exists?(@location.compiled_site_path)
       FileUtils.rm_rf(@location.compiled_site_path)
     end
   end
-  
+
   def deploy
     begin
       remove_repo
@@ -108,14 +108,14 @@ class LocationDeployer
       ) do |repo|
         # save dir so we can delete it later
         @repo_dir = repo.dir.to_s
-        
+
         # copy all pages over
         `cp #{@location.compiled_site_path}/* #{repo.dir}`
-       
+
         # copy all stylesheets over
         `mkdir #{repo.dir}/stylesheets`
         `cp #{stylesheets_path}/* #{repo.dir}/stylesheets/`
-        
+
         # cp all javascripts over
         `mkdir #{repo.dir}/javascripts`
         `cp #{javascripts_path}/* #{repo.dir}/javascripts/`
@@ -129,7 +129,7 @@ class LocationDeployer
       # remove_repo
     end
   end
-  
+
   def remove_repo
     FileUtils.rm_rf(@repo_dir) if @repo_dir && Dir.exists?(@repo_dir)
   end
