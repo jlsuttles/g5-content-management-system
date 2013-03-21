@@ -84,9 +84,7 @@ class Widget
   openLightBox: (response) ->
     $('#modal .modal-body').html(response["html"])
     if($('#ckeditor').length >= 1)
-      CKEDITOR.replace('ckeditor',
-        customConfig: "<% asset_path('ckeditor/ckeditor-config.js') %>"
-      )
+      CKEDITOR.replace('ckeditor')
     $('#modal').modal()
     $('.modal-body .edit_widget').submit =>
       if($('#ckeditor').length >= 1)

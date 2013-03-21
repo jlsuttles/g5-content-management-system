@@ -14,6 +14,7 @@ gem "microformats2", "2.0.0.pre1"
 gem "github_heroku_deployer", "~> 0.2.0"
 gem "g5_sibling_deployer_engine", "~> 0.1.1"
 gem "liquid", "~> 2.4.1"
+gem "ckeditor"
 
 group :assets do
   gem "sass-rails", "~> 3.2.3"
