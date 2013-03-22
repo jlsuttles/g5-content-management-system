@@ -7,6 +7,7 @@
 #= require bootstrap
 #= require spectrum
 #= require jquery.thumbnailScroller
+#= require ckeditor/init
 #
 # app/assets
 #
