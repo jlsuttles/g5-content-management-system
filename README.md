@@ -86,6 +86,19 @@ $ rake jobs:work
 If you find bugs, have feature requests or questions, please
 [file an issue](https://github.com/g5search/g5-client-hub/issues).
 
+
+## Deploy Topic Branch to Heroku
+
+The Heroku Fork plugin copies over addons, database, and config vars.
+
+```bash
+$ heroku plugins:install https://github.com/heroku/heroku-fork
+$ heroku fork -a g5-client-hub g5-ch-my-new-feature
+$ git remote add g5-ch-my-new-feature git@heroku.g5:g5-ch-my-new-feature.git
+$ git push g5-ch-my-new-feature my-new-feature:master
+```
+
+
 ## Specs
 
 Run once.

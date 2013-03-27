@@ -28,20 +28,20 @@ describe Theme do
     it { theme.stylesheets.should eq ["http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss"]}
     it { theme.javascripts.should be_empty }
   end
-  
+
   describe "errors" do
-    
+
     it "raises an error if no themes can be found" do
       theme.stub(:url) { "spec/support/blank.html" }
-      # Should be G5HentryConsumer::NotFound or something.
+      # Should be Microformats2::NotFound or something.
       expect { theme.save! }.to raise_error StandardError, "No h-g5-component found at url: #{theme.url}"
     end
-    
+
     it "should rescue from not found" do
       theme.stub(:url) { "http://g5-non-existant-app.herokuapp.com" }
       Rails.logger.should_receive(:warn).with("404 Object Not Found")
       theme.save!
     end
   end
-  
+
 end

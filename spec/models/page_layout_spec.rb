@@ -25,14 +25,14 @@ describe PageLayout do
     it { page_layout.html.should match "container single-column" }
     it { page_layout.thumbnail.should eq "http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/images/thumbnail.png"}
   end
-  
+
   describe "parse error" do
     it "raises an error if no components are found" do
-      # Should be G5HentryConsumer::NotFound or something.
+      # Should be Microformats2::NotFound or something.
       expect { Fabricate(:page_layout, url: "spec/support/blank.html") }.to raise_error StandardError, "No h-g5-component found at url: spec/support/blank.html"
     end
   end
-  
+
   describe "url not found" do
     it "logs a failed request" do
       Rails.logger.should_receive(:warn).with("404 Object Not Found")

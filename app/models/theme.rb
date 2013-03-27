@@ -14,9 +14,9 @@ class Theme < ActiveRecord::Base
   validates :url, presence: true
 
   def self.all_remote
-    components = G5HentryConsumer::HG5Component.parse(THEME_GARDEN_URL)
+    components = Microformats2.parse(THEME_GARDEN_URL).g5_components
     components.map do |component|
-      new(url: component.uid, name: component.name.first, thumbnail: component.thumbnail.first)
+      new(url: component.uid.to_s, name: component.name.to_s, thumbnail: component.photo.to_s)
     end
   end
 
@@ -31,13 +31,13 @@ class Theme < ActiveRecord::Base
   private
 
   def assign_attributes_from_url
-    component = G5HentryConsumer::HG5Component.parse(url).first
+    component = Microformats2.parse(url).first
     if component
-      self.name        = component.name.first
-      self.stylesheets = component.stylesheets
-      self.javascripts = component.javascripts
-      self.thumbnail   = component.thumbnail.first
-      self.colors      = component.colors
+      self.name        = component.name.to_s
+      self.stylesheets = component.g5_stylesheets.try(:map) {|s|s.to_s} if component.respond_to?(:g5_stylesheets)
+      self.javascripts = component.g5_javascripts.try(:map) {|j|j.to_s} if component.respond_to?(:g5_javascripts)
+      self.thumbnail   = component.photo.to_s                           if component.respond_to?(:photo)
+      self.colors      = component.g5_colors.try(:map) {|c|c.to_s}      if component.respond_to?(:g5_colors)
       true
     else
       raise "No h-g5-component found at url: #{url}"
