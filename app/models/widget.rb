@@ -48,7 +48,6 @@ class Widget < ActiveRecord::Base
   def assign_attributes_from_url
     component = Microformats2.parse(url).g5_components.first
     if component
-      binding.pry
       self.name        = component.name.to_s
       self.stylesheets = component.g5_stylesheets.try(:map) {|s|s.to_s} if component.respond_to?(:g5_stylesheets)
       self.javascripts = component.g5_javascripts.try(:map) {|j|j.to_s} if component.respond_to?(:g5_javascripts)
