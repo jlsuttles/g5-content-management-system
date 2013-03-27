@@ -4,7 +4,7 @@ class Widget < ActiveRecord::Base
   #TODO remove this if location will not have a concept of address
   liquid_methods :location
 
-  WIDGET_GARDEN_URL = "http://g5-widget-garden.herokuapp.com"
+  WIDGET_GARDEN_URL = "http://localhost:3000"
 
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets,
                   :javascripts, :html, :thumbnail, :edit_form_html,
@@ -48,6 +48,7 @@ class Widget < ActiveRecord::Base
   def assign_attributes_from_url
     component = Microformats2.parse(url).g5_components.first
     if component
+      binding.pry
       self.name        = component.name.to_s
       self.stylesheets = component.g5_stylesheets.try(:map) {|s|s.to_s} if component.respond_to?(:g5_stylesheets)
       self.javascripts = component.g5_javascripts.try(:map) {|j|j.to_s} if component.respond_to?(:g5_javascripts)
