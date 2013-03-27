@@ -4,7 +4,7 @@ class Widget < ActiveRecord::Base
   #TODO remove this if location will not have a concept of address
   liquid_methods :location
 
-  WIDGET_GARDEN_URL = "http://localhost:3000"
+  WIDGET_GARDEN_URL = "http://g5-widget-garden.herokuapp.com"
 
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets,
                   :javascripts, :html, :thumbnail, :edit_form_html,
