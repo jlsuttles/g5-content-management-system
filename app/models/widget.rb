@@ -1,7 +1,7 @@
 class Widget < ActiveRecord::Base
   include AssociationToMethod
 
-  WIDGET_GARDEN_URL = "http://0.0.0.0:3001"
+  WIDGET_GARDEN_URL = "http://g5-widget-garden.herokuapp.com"
   #TODO remove this if location will not have a concept of address
   liquid_methods :location
 
