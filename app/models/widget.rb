@@ -35,7 +35,7 @@ class Widget < ActiveRecord::Base
   end
 
   def liquidized_html
-    Liquid::Template.parse(CGI::unescape(self.html)).render("widget" => self)
+    Liquid::Template.parse(self.html).render("widget" => self)
   end
 
   def kind_of_widget?(kind)
@@ -51,7 +51,7 @@ class Widget < ActiveRecord::Base
       self.stylesheets = component.g5_stylesheets.try(:map) {|s|s.to_s} if component.respond_to?(:g5_stylesheets)
       self.javascripts = component.g5_javascripts.try(:map) {|j|j.to_s} if component.respond_to?(:g5_javascripts)
       self.edit_form_html = get_edit_form_html(component)
-      self.html           = get_show_form_html(component)
+      self.html           = get_show_html(component)
       self.thumbnail      = component.photo.to_s
       parse_settings(component.g5_property_groups)
       true
@@ -80,7 +80,7 @@ class Widget < ActiveRecord::Base
     open(url).read if url
   end
 
-  def get_show_form_html(component)
+  def get_show_html(component)
     url = component.g5_show_template.to_s
     open(url).read if url
   end
