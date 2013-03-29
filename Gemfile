@@ -12,7 +12,7 @@ gem "foreman", "~> 0.60.2"
 gem "heroku_resque_autoscaler", "~> 0.1.0"
 gem "microformats2", "2.0.0.pre3"
 gem "github_heroku_deployer", "~> 0.2.0"
-gem "g5_sibling_deployer_engine", "~> 0.1.1"
+gem "g5_sibling_deployer_engine", "~> 0.2"
 gem "liquid", "~> 2.4.1"
 gem "ckeditor"
 

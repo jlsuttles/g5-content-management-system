@@ -1,10 +1,11 @@
+require_dependency 'liquid_filters'
+
 class Widget < ActiveRecord::Base
   include AssociationToMethod
 
+  WIDGET_GARDEN_URL = "http://g5-widget-garden.herokuapp.com"
   #TODO remove this if location will not have a concept of address
   liquid_methods :location
-
-  WIDGET_GARDEN_URL = "http://localhost:3000"
 
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets,
                   :javascripts, :html, :thumbnail, :edit_form_html,
@@ -36,7 +37,7 @@ class Widget < ActiveRecord::Base
   end
 
   def liquidized_html
-    CGI::unescapeHTML(Liquid::Template.parse(CGI::unescape(self.html)).render({'widget' => self}, filters: [UrlEncode]))
+    Liquid::Template.parse(self.html).render({'widget' => self}, filters: [UrlEncode])
   end
 
   def kind_of_widget?(kind)
@@ -52,7 +53,7 @@ class Widget < ActiveRecord::Base
       self.stylesheets = component.g5_stylesheets.try(:map) {|s|s.to_s} if component.respond_to?(:g5_stylesheets)
       self.javascripts = component.g5_javascripts.try(:map) {|j|j.to_s} if component.respond_to?(:g5_javascripts)
       self.edit_form_html = get_edit_form_html(component)
-      self.html           = component.content.to_s
+      self.html           = get_show_html(component)
       self.thumbnail      = component.photo.to_s
       parse_settings(component.g5_property_groups)
       true
@@ -81,12 +82,10 @@ class Widget < ActiveRecord::Base
     open(url).read if url
   end
 
-end
-
-#TODO put this somewhere
-module UrlEncode
-  def url_encode(input)
-    URI::encode(input)
+  def get_show_html(component)
+    url = component.g5_show_template.to_s
+    open(url).read if url
   end
+
 end
 
