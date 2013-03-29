@@ -31,7 +31,7 @@ class SiteTemplate < Page
   end
 
   def javascripts
-    widgets.map(&:javascripts).flatten + theme.try(:javascripts).to_a
+    widgets.map(&:javascripts).flatten + theme.try(:javascripts)
   end
 
   def primary_color
