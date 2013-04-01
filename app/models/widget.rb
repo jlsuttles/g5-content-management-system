@@ -1,8 +1,10 @@
+require_dependency 'liquid_filters'
+
 class Widget < ActiveRecord::Base
   include AssociationToMethod
 
   WIDGET_GARDEN_URL = "http://g5-widget-garden.herokuapp.com"
-  #TODO remove this if location will not have a concept of address
+
   liquid_methods :location
 
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets,
@@ -35,7 +37,7 @@ class Widget < ActiveRecord::Base
   end
 
   def liquidized_html
-    Liquid::Template.parse(self.html).render("widget" => self)
+    Liquid::Template.parse(self.html).render({'widget' => self}, filters: [UrlEncode])
   end
 
   def kind_of_widget?(kind)
@@ -86,3 +88,4 @@ class Widget < ActiveRecord::Base
   end
 
 end
+
