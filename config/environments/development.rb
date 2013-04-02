@@ -34,4 +34,7 @@ G5ClientHub::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  WIDGET_GARDEN_URL = "http://0.0.0.0:3001" unless defined?(WIDGET_GARDEN_URL)
+
 end

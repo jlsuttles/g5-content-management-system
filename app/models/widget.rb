@@ -3,8 +3,6 @@ require_dependency 'liquid_filters'
 class Widget < ActiveRecord::Base
   include AssociationToMethod
 
-  WIDGET_GARDEN_URL = "http://g5-widget-garden.herokuapp.com"
-
   liquid_methods :location
 
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets,
