@@ -1,0 +1,40 @@
+<div class="h-entry">
+  <h2 class="p-name">
+    <%= link_to widget_entry.name, widget_entry_url(widget_entry), class: "u-uid u-url", rel: "bookmark" %>
+  </h2>
+
+  <p class="p-summary"><%= widget_entry.summary %></p>
+
+  <p>Updated at
+    <time datetime="<%= widget_entry.updated_at_computer_readable %>" class="dt-updated">
+      <%= widget_entry.updated_at_human_readable %>
+    </time>
+  </p>
+
+  <% unless widget_entry.updated_at_computer_readable == widget_entry.updated_at_computer_readable %>
+    <p>Published at
+      <time datetime="<%= widget_entry.created_at_computer_readable %>" class="dt-published">
+        <%= widget_entry.created_at_human_readable %>
+      </time>
+    </p>
+  <% end %>
+
+  <%# TODO: author should ideally be the person that performed the action %>
+  <p>by
+    <span class="p-author h-card">
+      <%= link_to widget_entry.author_name, root_url, class: "u-uid u-url" %>
+    </span>
+  </p>
+
+  <p>
+    <% widget_entry.categories.each do |category| %>
+      <%= link_to category, tag_url(category), class: "p-category", rel: "tag" %>
+    <% end %>
+  </p>
+
+  <hr/>
+
+  <div class="e-content">
+    <%= widget_entry.content %>
+  </div>
+</div>

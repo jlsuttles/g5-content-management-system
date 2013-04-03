@@ -81,4 +81,28 @@ describe Widget do
     end
   end
 
+  describe "#create_widget_entry_if_updated" do
+    context "when no widget entries exist" do
+      before do
+        widget.widget_entries = []
+      end
+      it "returns a new widget entry" do
+        widget.create_widget_entry_if_updated.should be_kind_of WidgetEntry
+      end
+    end
+    context "when widget entries exist" do
+      before do
+        widget.widget_entries.create
+      end
+      it "returns a new widget entry if the widget has been updated" do
+        widget.updated_at = Time.now + 1.day
+        widget.create_widget_entry_if_updated.should be_kind_of WidgetEntry
+      end
+      it "returns nil if the widget has not been updated" do
+        widget.updated_at = Time.now - 1.day
+        widget.create_widget_entry_if_updated.should be_nil
+      end
+    end
+  end
+
 end
