@@ -20,7 +20,7 @@ describe PropertyGroup do
     end
   end
 
-  describe "widget_attributes" do
+  describe "properties" do
     it "defines dynamic methods" do
       property_group.should respond_to :username
     end

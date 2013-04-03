@@ -46,14 +46,14 @@ describe Widget do
     end
 
     it "assigns widget attributes to the property_groups" do
-      expect { widget }.to change(WidgetAttribute, :count).by(2)
+      expect { widget }.to change(Property, :count).by(2)
     end
   end
 
   describe "updating widget attributes" do
     it "updates with nested attributes" do
-      attribute = widget.widget_attributes.first
-      widget.update_attributes(widget_attributes_attributes: {
+      attribute = widget.properties.first
+      widget.update_attributes(properties_attributes: {
         id: attribute.id,
         value: "TEST"
       })

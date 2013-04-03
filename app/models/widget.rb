@@ -7,7 +7,7 @@ class Widget < ActiveRecord::Base
 
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets,
                   :javascripts, :html, :thumbnail, :edit_form_html,
-                  :widget_attributes_attributes
+                  :properties_attributes
 
   serialize :stylesheets, Array
   serialize :javascripts, Array
@@ -15,11 +15,11 @@ class Widget < ActiveRecord::Base
   belongs_to :page
   has_one :location, :through => :page
   has_many :property_groups, as: :component, after_add: :define_dynamic_association_method
-  has_many :widget_attributes, through: :property_groups
+  has_many :properties, through: :property_groups
 
   has_many :widget_entries, dependent: :destroy
 
-  accepts_nested_attributes_for :widget_attributes
+  accepts_nested_attributes_for :properties
 
   alias_attribute :dynamic_association, :property_groups
 
@@ -83,10 +83,10 @@ class Widget < ActiveRecord::Base
         name: h_property_group.name.to_s,
         categories: h_property_group.categories.map{|c|c.to_s}
       )
-      # build widget_attributes for each property group
+      # build properties for each property group
       h_property_group.g5_properties.each do |e_property|
         h_property = e_property.format
-        property_group.widget_attributes.build(
+        property_group.properties.build(
           name: h_property.g5_name.to_s,
           editable: h_property.g5_editable.to_s || false,
           default_value: h_property.g5_default_value.to_s
