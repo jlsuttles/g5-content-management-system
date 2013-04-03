@@ -14,7 +14,7 @@ describe WidgetsController do
     end
   end
   describe "PUT update" do
-    
+
     describe "HTML" do
       let(:update) { put :update, id: 1, widget: { username: "Bookis" } }
       it "attempts to update configurations" do
@@ -36,12 +36,12 @@ describe WidgetsController do
         update
         assigns(:widget).errors[:base].should include "There was an error"
       end
-      
+
     end
-  
+
     describe "JSON" do
-      let(:setting) { widget.settings.create(name: "Feed") }
-      let(:attribute) { setting.widget_attributes.create(name: "username") }
+      let(:property_group) { widget.property_groups.create(name: "Feed") }
+      let(:attribute) { property_group.widget_attributes.create(name: "username") }
       let(:update) { put :update, id: 1, widget: { widget_attributes_attributes: {id: attribute.id, value: "Bookis"}}, format: :json }
       it "attempts to update configurations" do
         widget.should_receive(:update_attributes).once.with({"widget_attributes_attributes" => {"id" => attribute.id, "value" => "Bookis"}})
@@ -63,6 +63,6 @@ describe WidgetsController do
         JSON.parse(response.body).should eq({"errors" => {"base" => ["There was an error"]}})
       end
     end
-  end  
+  end
 
 end

@@ -2,7 +2,7 @@ class WidgetAttribute < ActiveRecord::Base
   attr_accessible :default_value, :editable, :name, :value
   liquid_methods :name, :default_value, :id, :value
 
-  belongs_to :setting
+  belongs_to :property_group
 
   before_create :assign_lead_widget_submission_url, if: :lead_widget_submission_url?
 
@@ -11,7 +11,7 @@ class WidgetAttribute < ActiveRecord::Base
   end
 
   def lead_widget?
-    setting.component.kind_of_widget?("Lead Form")
+    property_group.component.kind_of_widget?("Lead Form")
   end
 
   def submission_url?

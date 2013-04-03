@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130319030042) do
+ActiveRecord::Schema.define(:version => 20130403185232) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20130319030042) do
 
   add_index "pages", ["location_id"], :name => "index_pages_on_location_id"
 
-  create_table "settings", :force => true do |t|
+  create_table "property_groups", :force => true do |t|
     t.integer  "component_id"
     t.string   "component_type"
     t.string   "name"
@@ -133,11 +133,11 @@ ActiveRecord::Schema.define(:version => 20130319030042) do
   create_table "widget_attributes", :force => true do |t|
     t.string   "name"
     t.string   "value"
-    t.boolean  "editable",      :default => false
+    t.boolean  "editable",          :default => false
     t.string   "default_value"
-    t.integer  "setting_id"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.integer  "property_group_id"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   create_table "widget_entries", :force => true do |t|

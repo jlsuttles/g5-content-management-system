@@ -1,4 +1,4 @@
-class Setting < ActiveRecord::Base
+class PropertyGroup < ActiveRecord::Base
   include AssociationToMethod
 
   attr_accessible :categories, :component_id, :component_type, :name
