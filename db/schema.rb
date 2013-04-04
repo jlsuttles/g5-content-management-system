@@ -33,20 +33,6 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
 
   add_index "locations", ["urn"], :name => "index_locations_on_urn"
 
-  create_table "pages", :force => true do |t|
-    t.integer  "website_id"
-    t.string   "name"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-    t.string   "slug"
-    t.boolean  "template",   :default => false
-    t.string   "type",       :default => "Page"
-    t.string   "title"
-    t.boolean  "disabled"
-  end
-
-  add_index "pages", ["website_id"], :name => "index_pages_on_location_id"
-
   create_table "properties", :force => true do |t|
     t.string   "name"
     t.string   "value"
@@ -100,29 +86,45 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
   create_table "themes", :force => true do |t|
     t.string   "url"
     t.string   "name"
-    t.integer  "page_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "web_template_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "thumbnail"
     t.text     "stylesheets"
     t.text     "javascripts"
     t.text     "colors"
+    t.string   "web_template_type"
   end
 
-  add_index "themes", ["page_id"], :name => "index_themes_on_page_id"
+  add_index "themes", ["web_template_id"], :name => "index_themes_on_page_id"
 
   create_table "web_layouts", :force => true do |t|
     t.string   "url"
     t.string   "name"
-    t.integer  "page_id"
+    t.integer  "web_template_id"
     t.text     "html"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "thumbnail"
     t.text     "stylesheets"
+    t.string   "web_template_type"
   end
 
-  add_index "web_layouts", ["page_id"], :name => "index_page_layouts_on_page_id"
+  add_index "web_layouts", ["web_template_id"], :name => "index_page_layouts_on_page_id"
+
+  create_table "web_templates", :force => true do |t|
+    t.integer  "website_id"
+    t.string   "name"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.string   "slug"
+    t.boolean  "template",   :default => false
+    t.string   "type",       :default => "Page"
+    t.string   "title"
+    t.boolean  "disabled"
+  end
+
+  add_index "web_templates", ["website_id"], :name => "index_pages_on_location_id"
 
   create_table "websites", :force => true do |t|
     t.integer  "location_id"
@@ -146,19 +148,20 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
   create_table "widgets", :force => true do |t|
     t.string   "url"
     t.string   "name"
-    t.integer  "page_id"
+    t.integer  "web_template_id"
     t.integer  "position"
     t.text     "html"
     t.text     "stylesheets"
     t.text     "javascripts"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "thumbnail"
     t.string   "section"
     t.text     "edit_form_html"
+    t.string   "web_template_type"
   end
 
   add_index "widgets", ["name"], :name => "index_widgets_on_name"
-  add_index "widgets", ["page_id"], :name => "index_widgets_on_page_id"
+  add_index "widgets", ["web_template_id"], :name => "index_widgets_on_page_id"
 
 end

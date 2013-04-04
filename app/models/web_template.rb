@@ -1,11 +1,19 @@
-class Page < ActiveRecord::Base
-  attr_accessible :website_id, :name, :template, :slug, :title, :disabled
-  attr_accessible :widgets_attributes, :web_layout_attributes, :theme_attributes, :website_attributes
+class WebTemplate < ActiveRecord::Base
+  attr_accessible :website_id,
+                  :name,
+                  :template,
+                  :slug,
+                  :title,
+                  :disabled,
+                  :widgets_attributes,
+                  :web_layout_attributes,
+                  :theme_attributes,
+                  :website_attributes
 
   belongs_to :website
-  has_one :web_layout
-  has_one :theme
-  has_many :widgets, autosave: true, order: "position asc"
+  has_one :web_layout, dependent: :destroy
+  has_one :theme, dependent: :destroy
+  has_many :widgets, autosave: true, dependent: :destroy, order: "position asc"
 
   accepts_nested_attributes_for :website
   accepts_nested_attributes_for :web_layout
@@ -26,7 +34,7 @@ class Page < ActiveRecord::Base
   end
 
   def all_widgets
-    website.site_template.widgets + widgets
+    website.website_template.widgets + widgets
   end
 
   def remote_widgets
@@ -46,11 +54,11 @@ class Page < ActiveRecord::Base
   end
 
   def stylesheets
-    widgets.map(&:stylesheets).flatten + website.site_template.stylesheets
+    widgets.map(&:stylesheets).flatten + website.website_template.stylesheets
   end
 
   def javascripts
-    widgets.map(&:javascripts).flatten + website.site_template.javascripts
+    widgets.map(&:javascripts).flatten + website.website_template.javascripts
   end
 
   def compiled_file_path

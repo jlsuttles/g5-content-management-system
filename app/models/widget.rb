@@ -4,15 +4,24 @@ class Widget < ActiveRecord::Base
 
   liquid_methods :location
 
-  attr_accessible :page_id, :section, :position, :url, :name, :stylesheets,
-                  :javascripts, :html, :thumbnail, :edit_form_html,
+  attr_accessible :web_template_id,
+                  :web_template_type,
+                  :section,
+                  :position,
+                  :url,
+                  :name,
+                  :stylesheets,
+                  :javascripts,
+                  :html,
+                  :thumbnail,
+                  :edit_form_html,
                   :properties_attributes
 
   serialize :stylesheets, Array
   serialize :javascripts, Array
 
-  belongs_to :page
-  has_one :location, :through => :page
+  belongs_to :web_template, polymorphic: true
+  has_one :location, :through => :web_template
   has_many :property_groups, as: :component, after_add: :define_dynamic_association_method
   has_many :properties, through: :property_groups
 

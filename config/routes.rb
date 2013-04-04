@@ -9,8 +9,8 @@ G5ClientHub::Application.routes.draw do
   resources :tags, only: [:show]
 
   resources :locations, only: [:index, :show] do
-    resources :site_templates, only: [:edit, :update]
-    resources :pages do
+    resources :website_templates, only: [:edit, :update]
+    resources :web_page_templates do
       member do
         get "preview"
         put "toggle_disabled"

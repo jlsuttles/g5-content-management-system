@@ -7,7 +7,7 @@ describe RemoteStylesheet do
   end
   after :each do
     if File.exists?(@remote_stylesheet.css_file_path)
-      FileUtils.rm(@remote_stylesheet.css_file_path) 
+      FileUtils.rm(@remote_stylesheet.css_file_path)
     end
   end
 

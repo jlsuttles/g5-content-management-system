@@ -4,7 +4,7 @@
   <tr>
     <th>Name</th>
   </tr>
-  <% for pages in @pages %>
+  <% for pages in @web_templates %>
     <tr>
       <td><%= pages.name %></td>
       <td><%= link_to "Show", pages %></td>
@@ -12,4 +12,4 @@
   <% end %>
 </table>
 
-<p><%= link_to "New Page", new_page_path %></p>
+<p><%= link_to "New Page", new_web_page_template_path %></p>

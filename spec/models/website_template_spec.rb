@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe SiteTemplate do
-  let(:template) { Fabricate(:site_template) }
+describe WebsiteTemplate do
+  let(:template) { Fabricate(:website_template) }
 
   its(:sections) { should eq ['header', 'aside', 'footer']}
-  its(:type) { should eq "SiteTemplate" }
+  its(:type) { should eq "WebsiteTemplate" }
   its(:header_widgets) { should eq [] }
   its(:aside_widgets) { should eq [] }
   its(:footer_widgets) { should eq [] }

@@ -1,8 +1,8 @@
-class SiteTemplate < Page
-  has_many :aside_widgets,  class_name: "Widget", conditions: ['section = ?', 'aside'], foreign_key: "page_id"
-  has_many :header_widgets, class_name: "Widget", conditions: ['section = ?', 'header'], foreign_key: "page_id"
-  has_many :footer_widgets, class_name: "Widget", conditions: ['section = ?', 'footer'], foreign_key: "page_id"
-  has_many :widgets, class_name: "Widget", foreign_key: "page_id"
+class WebsiteTemplate < WebTemplate
+  has_many :aside_widgets,  class_name: "Widget", conditions: ['section = ?', 'aside'], foreign_key: "web_template_id"
+  has_many :header_widgets, class_name: "Widget", conditions: ['section = ?', 'header'], foreign_key: "web_template_id"
+  has_many :footer_widgets, class_name: "Widget", conditions: ['section = ?', 'footer'], foreign_key: "web_template_id"
+  has_many :widgets, class_name: "Widget", foreign_key: "web_template_id"
 
   def sections
     %w(header aside footer)

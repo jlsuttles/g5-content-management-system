@@ -3,13 +3,20 @@ class Theme < ActiveRecord::Base
 
   set_garden_url ENV["THEME_GARDEN_URL"]
 
-  attr_accessible :page_id, :url, :name, :stylesheets, :javascripts, :thumbnail, :colors
+  attr_accessible :web_template_id,
+                  :web_template_type,
+                  :url,
+                  :name,
+                  :stylesheets,
+                  :javascripts,
+                  :thumbnail,
+                  :colors
 
   serialize :stylesheets, Array
   serialize :javascripts, Array
   serialize :colors, Array
 
-  belongs_to :page
+  belongs_to :web_template, polymorphic: true
 
   before_save :assign_attributes_from_url
 

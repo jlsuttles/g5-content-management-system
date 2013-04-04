@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe WidgetsController do
-  let(:page) { Fabricate(:page) }
-  let(:widget) { Fabricate(:widget, page: page) }
+  let(:page) { Fabricate(:web_template) }
+  let(:widget) { Fabricate(:widget, web_template: page) }
   before do
     Widget.stub(:find) { widget }
-    Page.any_instance.stub(:location) { Fabricate(:location_without_pages) }
+    WebPageTemplate.any_instance.stub(:location) { Fabricate(:location_without_pages) }
   end
   describe "GET 'edit'" do
     it "returns http success" do

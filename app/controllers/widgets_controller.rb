@@ -6,16 +6,16 @@ class WidgetsController < ApplicationController
     @form_html = @fields.render("widget" => @widget)
     html = render_to_string(format: :html, layout: false)
     respond_with do |format|
-      format.json { render json: {html: html} } 
+      format.json { render json: {html: html} }
     end
   end
-  
+
   def update
     @widget = Widget.find(params[:id])
     if @widget.update_attributes(params[:widget])
       respond_with(@widget) do |format|
         format.json { render json: @widget, status: 204}
-        format.html { redirect_to location_path(@widget.page.location) }
+        format.html { redirect_to location_web_page_template_path(@widget.web_template) }
       end
     else
       respond_with do |format|

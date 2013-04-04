@@ -26,7 +26,7 @@ class LocationDeployer
     FileUtils.mkdir_p(@location.website.compiled_site_path)
     homepage_path = File.join(@location.website.compiled_site_path, "index.html")
     compile_page(@location.website.homepage, homepage_path)
-    @location.website.pages.enabled.each do |page|
+    @location.website.web_page_templates.enabled.each do |page|
       compile_page(page, page.compiled_file_path)
     end
   end
@@ -34,9 +34,9 @@ class LocationDeployer
   def compile_page(page, to_path)
     File.open(to_path, "w") do |file|
       file << LocationsController.new.render_to_string(
-        "/pages/preview",
+        "/web_templates/preview",
         layout: "compiled_pages",
-        locals: { page: page, location: @location.website, mode: "deployed" }
+        locals: { web_template: page, location: @location.website, mode: "deployed" }
       )
     end
   end

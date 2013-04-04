@@ -1,4 +1,4 @@
-<% title "Edit Page: #{@location.name} - #{@page.name}" %>
+<% title "Edit Page: #{@location.name} - #{@web_template.name}" %>
 <% header_right link_to "Cancel", location_path(@location), class: 'btn btn-large' %>
 <div id="modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-header">
@@ -8,5 +8,5 @@
 	<div class="modal-body">
 	</div>
 </div>
-<%= render "/pages/form" %>
+<%= render "/web_templates/form" %>
 

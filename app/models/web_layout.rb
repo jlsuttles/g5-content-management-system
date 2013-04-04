@@ -3,9 +3,15 @@ class WebLayout < ActiveRecord::Base
 
   set_garden_url ENV["LAYOUT_GARDEN_URL"]
 
-  attr_accessible :page_id, :url, :name, :html, :thumbnail, :stylesheets
+  attr_accessible :web_template_id,
+                  :web_template_type,
+                  :url,
+                  :name,
+                  :html,
+                  :thumbnail,
+                  :stylesheets
 
-  belongs_to :page
+  belongs_to :web_template, polymorphic: true
 
   serialize :stylesheets, Array
   after_initialize :set_default_stylesheets

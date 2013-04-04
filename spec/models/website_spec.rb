@@ -16,34 +16,34 @@ describe Website do
 
   describe "on create" do
     it "creates two pages" do
-      expect { website }.to change(Page, :count).by(2)
+      expect { website }.to change(WebTemplate, :count).by(2)
     end
-    it "creates a site_template" do
-      website.site_template.should_not be_blank
+    it "creates a website_template" do
+      website.website_template.should_not be_blank
     end
     it "creates a homepage" do
       website.homepage.slug.should eq "home"
     end
   end
 
-  describe "#templates" do
-    it "includes site_template" do
-      website.templates.should include website.site_template
+  describe "#web_templates" do
+    it "includes website_template" do
+      website.web_templates.should include website.website_template
     end
     it "includes pages" do
-      website.templates.should include website.pages.first
+      website.web_templates.should include website.web_page_templates.first
     end
   end
 
-  describe "#site_template" do
+  describe "#website_template" do
     it "returns the site template, not a page" do
-      website.site_template.should be_kind_of(SiteTemplate)
+      website.website_template.should be_kind_of(WebsiteTemplate)
     end
   end
 
-  describe "#pages" do
-    it "doesn't includes site_template" do
-      website.pages.should_not include website.site_template
+  describe "#web_page_templates" do
+    it "returns web page template, not web template" do
+      website.web_page_templates.first.should be_kind_of(WebPageTemplate)
     end
   end
 
@@ -59,17 +59,17 @@ describe Website do
     end
 
     describe "with a site template" do
-      let (:site_template) { website.site_template }
+      let (:website_template) { website.website_template }
       before do
-        site_template.stub(:primary_color).and_return("#333333")
-        site_template.stub(:secondary_color).and_return("#444444")
+        website_template.stub(:primary_color).and_return("#333333")
+        website_template.stub(:secondary_color).and_return("#444444")
       end
       context "when not using custom colors" do
         it "uses site template's default primany color #000000" do
-          website.primary_color.should eq site_template.primary_color
+          website.primary_color.should eq website_template.primary_color
         end
         it "uses site template's default secondary color #ffffff" do
-          website.secondary_color.should eq site_template.secondary_color
+          website.secondary_color.should eq website_template.secondary_color
         end
       end
       context "when using custom colors" do

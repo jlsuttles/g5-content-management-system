@@ -7,16 +7,15 @@ class Website < ActiveRecord::Base
 
   belongs_to :location
 
-  has_one :site_template, autosave: true
-  has_many :pages, conditions: ["pages.type = ?", "Page"], autosave: true
+  has_one :website_template, autosave: true, dependent: :destroy
+  has_many :web_page_templates, autosave: true, dependent: :destroy
 
-  # templates are all templates for the website (site_template and pages)
-  has_many :templates, class_name: "Page"
-  # widgets are all widgets for the website (site_template and pages)
-  has_many :widgets, through: :templates
+  has_many :web_templates
+  has_many :widgets, through: :web_templates
 
-  before_create :build_template
-  after_create :build_homepage
+  before_create :build_default_website_template
+  before_create :build_default_web_page_template
+
   after_create :set_urn
 
   def location_name
@@ -27,7 +26,7 @@ class Website < ActiveRecord::Base
     if custom_colors?
       read_attribute(:primary_color)
     else
-      site_template.try(:primary_color) || "#000000"
+      website_template.try(:primary_color) || "#000000"
     end
   end
 
@@ -35,7 +34,7 @@ class Website < ActiveRecord::Base
     if custom_colors?
       read_attribute(:secondary_color)
     else
-      site_template.try(:secondary_color) || "#ffffff"
+      website_template.try(:secondary_color) || "#ffffff"
     end
   end
 
@@ -48,15 +47,15 @@ class Website < ActiveRecord::Base
   end
 
   def homepage
-    pages.home.first
+    web_page_templates.home.first
   end
 
   def stylesheets
-    pages.map(&:stylesheets).flatten.uniq
+    web_page_templates.map(&:stylesheets).flatten.uniq
   end
 
   def javascripts
-    pages.map(&:javascripts).flatten.uniq
+    web_page_templates.map(&:javascripts).flatten.uniq
   end
 
   def github_repo
@@ -93,16 +92,16 @@ class Website < ActiveRecord::Base
 
   private
 
-  def build_template
-    build_site_template(
-      name: "Site Template",
-      slug: "site-template",
-      title: "Site Template"
+  def build_default_website_template
+    build_website_template(
+      name: "Website Template",
+      slug: "website-template",
+      title: "Website Template"
     )
   end
 
-  def build_homepage
-    pages.build(
+  def build_default_web_page_template
+    web_page_templates.build(
       name: "Home",
       slug: "home",
       title: "Home"

@@ -8,8 +8,9 @@ class Location < ActiveRecord::Base
                   :corporate
 
   has_one :website
-  has_one :site_template, through: :website
-  has_many :pages, through: :website
+  has_one :website_template, through: :website
+  has_many :web_page_templates, through: :website
+  has_many :web_templates, through: :website
 
   after_create :set_urn
   before_create :build_website

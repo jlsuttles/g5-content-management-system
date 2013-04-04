@@ -1,4 +1,4 @@
-Fabricator :site_template do
+Fabricator :website_template do
   name { Faker::Name.name }
   slug  "slug"
   title "What a wonderful world"

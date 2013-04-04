@@ -3,7 +3,7 @@
    end %>
 
 <div class="page-title">
-  <h2><%= "Location: #{@location.name}" %> <%= link_to "Create New Page", new_location_page_path(@location), class: 'btn btn-large primary new-page' %></h2>
+  <h2><%= "Location: #{@location.name}" %> <%= link_to "Create New Page", new_location_web_page_template_path(@location), class: 'btn btn-large primary new-page' %></h2>
 
 </div>
 <table class='pages table table-striped'>
@@ -18,21 +18,21 @@
   </thead>
   <tbody>
     <tr class='site-template'>
-      <td><%= @location.site_template.name %></td>
-      <td><%= image_tag_or_placeholder(@location.site_template.web_layout.try(:thumbnail), class: 'thumb') %></td>
-      <td><%= image_tag_or_placeholder(@location.site_template.theme.try(:thumbnail), class: 'thumb') %></td>
+      <td><%= @location.website_template.name %></td>
+      <td><%= image_tag_or_placeholder(@location.website_template.web_layout.try(:thumbnail), class: 'thumb') %></td>
+      <td><%= image_tag_or_placeholder(@location.website_template.theme.try(:thumbnail), class: 'thumb') %></td>
       <td>
         <ul class="widgets">
-          <%= render @location.site_template.widgets %>
+          <%= render @location.website_template.widgets %>
         </ul>
       </td>
       <td>
-        <%= link_to "Edit", edit_location_site_template_path(@location, @location.site_template), class: "btn" %>
+        <%= link_to "Edit", edit_location_website_template_path(@location, @location.website_template), class: "btn" %>
         <%= link_to "Deploy", deploy_location_path(@location), method: :post, class: "btn" %>
       </td>
     </tr>
 
-    <% @location.pages.order("created_at ASC").each do |page| %>
+    <% @location.web_page_templates.order("created_at ASC").each do |page| %>
       <tr>
         <td><%= page.name %></td>
         <td></td>
@@ -46,7 +46,7 @@
           <%= link_to "Edit", edit_location_page_path(@location, page), class: "btn btn-large" %>
           <%= link_to "Preview", preview_location_page_path(@location, page), class: "btn btn-large primary" %>
           <%= page_disable_toggle(@location, page) %>
-        </td>
+        <td>
       </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,24 @@
+<% title "Page :: #{@web_template.name}" %>
+<p>
+  <strong>Layout URL: </strong>
+  <%= @web_template.web_layout.url %>
+</p>
+
+<p>
+  <strong>Theme URL: </strong>
+  <%= @web_template.theme.url %>
+</p>
+
+<p>
+  <h3>Widgets: </h3>
+  <ul>
+    <% @web_template.widgets.each do |widget| %>
+      <li><%= widget.name %></li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <%= link_to "Preview", preview_location_web_page_template_path(@location, @web_template), class: "btn btn-success" %>
+  <%= link_to "View All", location_path(@location) %>
+</p>

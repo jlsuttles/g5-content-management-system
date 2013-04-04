@@ -4,15 +4,15 @@ describe LocationDeployer do
   before :each do
     Widget.any_instance.stub(:assign_attributes_from_url) { true }
     WebLayout.any_instance.stub(:assign_attributes_from_url)
-    SiteTemplate.any_instance.stub(:compiled_stylesheets) { [Faker::Internet.domain_name] }
-    SiteTemplate.any_instance.stub(:javascripts) { [Faker::Internet.domain_name] }
+    WebsiteTemplate.any_instance.stub(:compiled_stylesheets) { [Faker::Internet.domain_name] }
+    WebsiteTemplate.any_instance.stub(:javascripts) { [Faker::Internet.domain_name] }
     GithubHerokuDeployer.stub(:deploy) { true }
 
     @location = Fabricate(:location)
-    @location.website.site_template = Fabricate(:site_template)
+    @location.website.website_template = Fabricate(:website_template)
     Website.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
-    SiteTemplate.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
-    @location.website.stub(:homepage) { @location.pages.first }
+    WebsiteTemplate.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
+    @location.website.stub(:homepage) { @location.web_page_templates.first }
     Location.stub(:find_by_urn).with(@location.urn) { @location }
     RemoteJavascript.any_instance.stub(:compile) { true }
     @location_deployer = LocationDeployer.new(@location.urn)
@@ -60,7 +60,7 @@ describe LocationDeployer do
       Dir.exists?(@location.website.compiled_site_path).should be_true
     end
     it "compiles all enabled pages" do
-      pages = @location.pages.length + 1 # for homepage
+      pages = @location.web_page_templates.length + 1 # for homepage
       @location_deployer.should_receive(:compile_page).exactly(pages).times
       @location_deployer.compile_pages
     end
@@ -73,7 +73,7 @@ describe LocationDeployer do
   end
   describe "#compile_page" do
     before :each do
-      @page = @location.pages.first
+      @page = @location.web_page_templates.first
       @page_path = @page.compiled_file_path
       FileUtils.rm(@page_path) if File.exists?(@page_path)
       FileUtils.mkdir_p(@location.website.compiled_site_path)

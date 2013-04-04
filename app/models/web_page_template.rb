@@ -1,0 +1,2 @@
+class WebPageTemplate < WebTemplate
+end
