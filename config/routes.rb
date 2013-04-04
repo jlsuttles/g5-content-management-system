@@ -4,7 +4,6 @@ G5ClientHub::Application.routes.draw do
 
   mount Resque::Server, :at => "/resque"
 
-  resources :features,  only: [:index]
   resources :widgets, only: [:edit, :update]
   resources :widget_entries, only: [:index, :show]
   resources :tags, only: [:show]
