@@ -23,10 +23,10 @@ class LocationDeployer
   end
 
   def compile_pages
-    FileUtils.mkdir_p(@location.compiled_site_path)
-    homepage_path = File.join(@location.compiled_site_path, "index.html")
-    compile_page(@location.homepage, homepage_path)
-    @location.pages.enabled.each do |page|
+    FileUtils.mkdir_p(@location.website.compiled_site_path)
+    homepage_path = File.join(@location.website.compiled_site_path, "index.html")
+    compile_page(@location.website.homepage, homepage_path)
+    @location.website.pages.enabled.each do |page|
       compile_page(page, page.compiled_file_path)
     end
   end
@@ -36,14 +36,14 @@ class LocationDeployer
       file << LocationsController.new.render_to_string(
         "/pages/preview",
         layout: "compiled_pages",
-        locals: { page: page, location: @location, mode: "deployed" }
+        locals: { page: page, location: @location.website, mode: "deployed" }
       )
     end
   end
 
   def compile_stylesheets
     FileUtils.mkdir_p(stylesheets_path)
-    @location.stylesheets.map do |stylesheet|
+    @location.website.stylesheets.map do |stylesheet|
       compile_stylesheet(stylesheet)
     end
   end
@@ -51,15 +51,15 @@ class LocationDeployer
   def compile_stylesheet(stylesheet)
     remote_stylesheet = RemoteStylesheet.new(
      stylesheet,
-     { primary: @location.primary_color,
-       secondary: @location.secondary_color },
+     { primary: @location.website.primary_color,
+       secondary: @location.website.secondary_color },
      stylesheets_path
     )
     remote_stylesheet.compile
   end
 
   def stylesheets_path
-    File.join(@location.compiled_site_path, "stylesheets")
+    File.join(@location.website.compiled_site_path, "stylesheets")
   end
 
   def stylesheet_path(stylesheet)
@@ -69,7 +69,7 @@ class LocationDeployer
 
   def compile_javascripts
     FileUtils.mkdir_p(javascripts_path)
-    @location.javascripts.map do |javascript|
+    @location.website.javascripts.map do |javascript|
       compile_javascript(javascript)
     end
   end
@@ -83,7 +83,7 @@ class LocationDeployer
   end
 
   def javascripts_path
-    File.join(@location.compiled_site_path, "javascripts")
+    File.join(@location.website.compiled_site_path, "javascripts")
   end
 
   def javascript_path(javascript)
@@ -94,8 +94,8 @@ class LocationDeployer
   private
 
   def remove_compiled_site
-    if Dir.exists?(@location.compiled_site_path)
-      FileUtils.rm_rf(@location.compiled_site_path)
+    if Dir.exists?(@location.website.compiled_site_path)
+      FileUtils.rm_rf(@location.website.compiled_site_path)
     end
   end
 
@@ -103,15 +103,15 @@ class LocationDeployer
     begin
       remove_repo
       GithubHerokuDeployer.deploy(
-        github_repo: @location.github_repo,
-        heroku_app_name: @location.heroku_app_name,
-        heroku_repo: @location.heroku_repo
+        github_repo: @location.website.github_repo,
+        heroku_app_name: @location.website.heroku_app_name,
+        heroku_repo: @location.website.heroku_repo
       ) do |repo|
         # save dir so we can delete it later
         @repo_dir = repo.dir.to_s
 
         # copy all pages over
-        `cp #{@location.compiled_site_path}/* #{repo.dir}`
+        `cp #{@location.website.compiled_site_path}/* #{repo.dir}`
 
         # copy all stylesheets over
         `mkdir #{repo.dir}/stylesheets`
@@ -136,6 +136,6 @@ class LocationDeployer
   end
 
   def create_entries_for_widget_forms
-    @location.widgets.name_like_form.map(&:create_widget_entry_if_updated)
+    @location.website.widgets.name_like_form.map(&:create_widget_entry_if_updated)
   end
 end

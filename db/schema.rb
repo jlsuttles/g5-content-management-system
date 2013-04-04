@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.string   "urn"
     t.string   "primary_color",   :default => "#000000"
     t.string   "secondary_color", :default => "#ffffff"
-    t.boolean  "custom_colors",   :default => false,     :null => false
   end
 
   add_index "locations", ["urn"], :name => "index_locations_on_urn"
@@ -55,18 +54,18 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
   add_index "page_layouts", ["page_id"], :name => "index_page_layouts_on_page_id"
 
   create_table "pages", :force => true do |t|
-    t.integer  "location_id"
+    t.integer  "website_id"
     t.string   "name"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "slug"
-    t.boolean  "template",    :default => false
-    t.string   "type",        :default => "Page"
+    t.boolean  "template",   :default => false
+    t.string   "type",       :default => "Page"
     t.string   "title"
     t.boolean  "disabled"
   end
 
-  add_index "pages", ["location_id"], :name => "index_pages_on_location_id"
+  add_index "pages", ["website_id"], :name => "index_pages_on_location_id"
 
   create_table "properties", :force => true do |t|
     t.string   "name"
@@ -132,14 +131,17 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
 
   add_index "themes", ["page_id"], :name => "index_themes_on_page_id"
 
-  create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "email"
-    t.string   "password_hash"
-    t.string   "password_salt"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+  create_table "websites", :force => true do |t|
+    t.integer  "location_id"
+    t.string   "urn"
+    t.boolean  "custom_colors",   :default => false,     :null => false
+    t.string   "primary_color",   :default => "#000000"
+    t.string   "secondary_color", :default => "#ffffff"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
+
+  add_index "websites", ["location_id"], :name => "index_websites_on_location_id"
 
   create_table "widget_entries", :force => true do |t|
     t.integer  "widget_id"

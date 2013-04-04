@@ -9,10 +9,10 @@ describe LocationDeployer do
     GithubHerokuDeployer.stub(:deploy) { true }
 
     @location = Fabricate(:location)
-    @location.site_template = Fabricate(:site_template)
-    Location.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
+    @location.website.site_template = Fabricate(:site_template)
+    Website.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
     SiteTemplate.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
-    @location.stub(:homepage) { @location.pages.first }
+    @location.website.stub(:homepage) { @location.pages.first }
     Location.stub(:find_by_urn).with(@location.urn) { @location }
     RemoteJavascript.any_instance.stub(:compile) { true }
     @location_deployer = LocationDeployer.new(@location.urn)
@@ -57,7 +57,7 @@ describe LocationDeployer do
   describe "#compile_pages" do
     it "creates root directory" do
       @location_deployer.compile_pages
-      Dir.exists?(@location.compiled_site_path).should be_true
+      Dir.exists?(@location.website.compiled_site_path).should be_true
     end
     it "compiles all enabled pages" do
       pages = @location.pages.length + 1 # for homepage
@@ -76,7 +76,7 @@ describe LocationDeployer do
       @page = @location.pages.first
       @page_path = @page.compiled_file_path
       FileUtils.rm(@page_path) if File.exists?(@page_path)
-      FileUtils.mkdir_p(@location.compiled_site_path)
+      FileUtils.mkdir_p(@location.website.compiled_site_path)
       @location_deployer.compile_page(@page, @page_path)
     end
     it "creates page file" do
@@ -86,18 +86,18 @@ describe LocationDeployer do
   describe "#compile_stylesheets" do
     it "creates stylesheets direcoty" do
       @location_deployer.compile_stylesheets
-      stylesheets_path = File.join(@location.compiled_site_path, "stylesheets")
+      stylesheets_path = File.join(@location.website.compiled_site_path, "stylesheets")
       Dir.exists?(stylesheets_path).should be_true
     end
     it "compiles all stylesheet" do
-      stylesheets = @location.stylesheets.length
+      stylesheets = @location.website.stylesheets.length
       @location_deployer.should_receive(:compile_stylesheet).exactly(stylesheets).times
       @location_deployer.compile_stylesheets
     end
   end
   describe "#compile_stylesheet" do
     it "compiles remote sass file" do
-      stylesheet = @location.stylesheets.first
+      stylesheet = @location.website.stylesheets.first
       stylesheet_path = @location_deployer.stylesheet_path(stylesheet)
       @location_deployer.compile_stylesheet(stylesheet).should == "body {\n  background: black;\n  color: white; }\n"
     end
@@ -105,16 +105,16 @@ describe LocationDeployer do
   describe "#compile_javascripts" do
     it "creates stylesheets direcoty" do
       @location_deployer.compile_javascripts
-      javascripts_path = File.join(@location.compiled_site_path, "javascripts")
+      javascripts_path = File.join(@location.website.compiled_site_path, "javascripts")
       Dir.exists?(javascripts_path).should be_true
     end
   end
   describe "javascript paths" do
     it "has a javascript path" do
-      @location_deployer.javascripts_path.should match "/tmp/compiled_sites/#{@location.urn}/javascripts"
+      @location_deployer.javascripts_path.should match "/tmp/compiled_sites/#{@location.website.urn}/javascripts"
     end
     it "has a path to a javascript file" do
-      @location_deployer.javascript_path("some-file/script.js").should match "/tmp/compiled_sites/#{@location.urn}/javascripts/script.js"
+      @location_deployer.javascript_path("some-file/script.js").should match "/tmp/compiled_sites/#{@location.website.urn}/javascripts/script.js"
     end
   end
 end

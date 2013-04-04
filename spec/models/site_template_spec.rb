@@ -27,9 +27,9 @@ describe SiteTemplate do
     it { template.primary_color.should eq nil }
     it { template.secondary_color.should eq nil }
     describe "Custom" do
-      before { template.location.stub(:custom_colors?) { true } }
-      it { template.primary_color.should eq "#111111" }
-      it { template.secondary_color.should eq "#222222" }
+      before { template.website.stub(:custom_colors?) { true } }
+      it { template.primary_color.should eq "#000000" }
+      it { template.secondary_color.should eq "#ffffff" }
     end
 
     describe "Theme" do

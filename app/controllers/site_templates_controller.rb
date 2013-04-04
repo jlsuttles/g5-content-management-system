@@ -23,6 +23,7 @@ class SiteTemplatesController < ApplicationController
   end
 
   private
+
   def find_location
     @location = Location.find_by_urn(params[:location_id])
   end

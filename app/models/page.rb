@@ -1,13 +1,13 @@
 class Page < ActiveRecord::Base
-  attr_accessible :location_id, :name, :template, :slug, :title, :disabled
-  attr_accessible :widgets_attributes, :page_layout_attributes, :theme_attributes, :location_attributes
+  attr_accessible :website_id, :name, :template, :slug, :title, :disabled
+  attr_accessible :widgets_attributes, :page_layout_attributes, :theme_attributes, :website_attributes
 
-  belongs_to :location
+  belongs_to :website
   has_one :page_layout
   has_one :theme
   has_many :widgets, autosave: true, order: "position asc"
 
-  accepts_nested_attributes_for :location
+  accepts_nested_attributes_for :website
   accepts_nested_attributes_for :page_layout
   accepts_nested_attributes_for :theme
   accepts_nested_attributes_for :widgets, :allow_destroy => true
@@ -26,7 +26,7 @@ class Page < ActiveRecord::Base
   end
 
   def all_widgets
-    location.site_template.widgets + widgets
+    website.site_template.widgets + widgets
   end
 
   def remote_widgets
@@ -37,8 +37,8 @@ class Page < ActiveRecord::Base
     stylesheets.map do |stylesheet|
       remote_stylesheet = RemoteStylesheet.new(
        stylesheet,
-       { primary: location.primary_color,
-         secondary: location.secondary_color }
+       { primary: website.primary_color,
+         secondary: website.secondary_color }
       )
       remote_stylesheet.compile
       remote_stylesheet.css_link_path
@@ -46,15 +46,15 @@ class Page < ActiveRecord::Base
   end
 
   def stylesheets
-    widgets.map(&:stylesheets).flatten + location.site_template.stylesheets
+    widgets.map(&:stylesheets).flatten + website.site_template.stylesheets
   end
 
   def javascripts
-    widgets.map(&:javascripts).flatten + location.site_template.javascripts
+    widgets.map(&:javascripts).flatten + website.site_template.javascripts
   end
 
   def compiled_file_path
-    File.join(location.compiled_site_path, "#{self.slug}.html")
+    File.join(website.compiled_site_path, "#{self.slug}.html")
   end
 
   private
