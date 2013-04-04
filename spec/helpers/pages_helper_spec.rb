@@ -2,9 +2,9 @@ require "spec_helper"
 
 describe PagesHelper do
   let(:location)    { Fabricate(:location) }
-  let(:page_layout) { Fabricate(:page_layout) }
+  let(:web_layout) { Fabricate(:web_layout) }
   before do
-    location.site_template.stub(:page_layout) { page_layout }
+    location.site_template.stub(:web_layout) { web_layout }
     Page.any_instance.stub(:widgets) { [Fabricate(:widget, section: "aside")]}
   end
 

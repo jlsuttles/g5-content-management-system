@@ -1,4 +1,4 @@
-class PageLayout < ActiveRecord::Base
+class WebLayout < ActiveRecord::Base
   include ComponentGardenable
 
   set_garden_url ENV["LAYOUT_GARDEN_URL"]

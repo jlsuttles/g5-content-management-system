@@ -14,7 +14,7 @@ class SiteTemplate < Page
 
   def layout_stylesheets
     compiled_pages_stylesheets +
-      page_layout_stylesheets +
+      web_layout_stylesheets +
       theme_stylesheets
   end
 
@@ -22,8 +22,8 @@ class SiteTemplate < Page
     [File.join(Rails.root, "app", "views", "compiled_pages", "stylesheets.scss")]
   end
 
-  def page_layout_stylesheets
-    page_layout.try(:stylesheets) || []
+  def web_layout_stylesheets
+    web_layout.try(:stylesheets) || []
   end
 
   def theme_stylesheets

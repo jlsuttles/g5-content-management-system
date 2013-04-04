@@ -2,14 +2,14 @@
   <div class="container">
     <h2>Select a Layout</h2>
     <div class="thumbs clearfix">
-      <%= f.fields_for :page_layout, @page.page_layout || PageLayout.new do |ff| -%>
+      <%= f.fields_for :web_layout, @page.web_layout || PageLayout.new do |ff| -%>
         <%= ff.error_messages %>
-        <% PageLayout.all_remote.each do |page_layout| %>
+        <% WebLayout.all_remote.each do |web_layout| %>
           <div class="thumb">
-            <%= ff.radio_button :url, page_layout.url %>
-            <%= ff.label :url, :value => page_layout.url do %>
-              <%= image_tag_or_placeholder(page_layout.thumbnail) %>
-              <%= page_layout.name %>
+            <%= ff.radio_button :url, web_layout.url %>
+            <%= ff.label :url, :value => web_layout.url do %>
+              <%= image_tag_or_placeholder(web_layout.thumbnail) %>
+              <%= web_layout.name %>
             <% end %>
           </div>
         <% end %>

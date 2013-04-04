@@ -6,7 +6,7 @@ module PagesHelper
 
   def preview(location, page)
     # grab the layout
-    html = Nokogiri.parse(location.site_template.page_layout.html)
+    html = Nokogiri.parse(location.site_template.web_layout.html)
     # put widgets in their section in the layout
     page.all_widgets.group_by(&:section).each do |section, widgets|
       html_section = html.at_css("[role=#{section}],.#{section},#{section}")

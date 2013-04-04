@@ -3,7 +3,7 @@ Fabricator :site_template do
   slug  "slug"
   title "What a wonderful world"
   template true
-  page_layout
+  web_layout
   theme
   website
   aside_widgets(fabricator: :widget, count: 1)

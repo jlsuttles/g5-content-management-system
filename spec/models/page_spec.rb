@@ -73,7 +73,7 @@ describe Page do
   end
 
   describe "layouts" do
-    it { Page.new.should respond_to :page_layout }
+    it { Page.new.should respond_to :web_layout }
   end
 
   describe "themes" do

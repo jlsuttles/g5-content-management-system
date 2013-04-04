@@ -33,19 +33,6 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
 
   add_index "locations", ["urn"], :name => "index_locations_on_urn"
 
-  create_table "page_layouts", :force => true do |t|
-    t.string   "url"
-    t.string   "name"
-    t.integer  "page_id"
-    t.text     "html"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "thumbnail"
-    t.text     "stylesheets"
-  end
-
-  add_index "page_layouts", ["page_id"], :name => "index_page_layouts_on_page_id"
-
   create_table "pages", :force => true do |t|
     t.integer  "website_id"
     t.string   "name"
@@ -123,6 +110,19 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
   end
 
   add_index "themes", ["page_id"], :name => "index_themes_on_page_id"
+
+  create_table "web_layouts", :force => true do |t|
+    t.string   "url"
+    t.string   "name"
+    t.integer  "page_id"
+    t.text     "html"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "thumbnail"
+    t.text     "stylesheets"
+  end
+
+  add_index "web_layouts", ["page_id"], :name => "index_page_layouts_on_page_id"
 
   create_table "websites", :force => true do |t|
     t.integer  "location_id"
