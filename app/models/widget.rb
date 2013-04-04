@@ -15,21 +15,20 @@ class Widget < ActiveRecord::Base
                   :html,
                   :thumbnail,
                   :edit_form_html,
-                  :properties_attributes
+                  :settings_attributes
 
   serialize :stylesheets, Array
   serialize :javascripts, Array
 
   belongs_to :web_template, polymorphic: true
   has_one :location, :through => :web_template
-  has_many :property_groups, as: :component, after_add: :define_dynamic_association_method
-  has_many :properties, through: :property_groups
+  has_many :settings, as: :owner, after_add: :define_dynamic_association_method
 
   has_many :widget_entries, dependent: :destroy
 
-  accepts_nested_attributes_for :properties
+  accepts_nested_attributes_for :settings
 
-  alias_attribute :dynamic_association, :property_groups
+  alias_attribute :dynamic_association, :settings
 
   before_create :assign_attributes_from_url
 
@@ -97,8 +96,8 @@ class Widget < ActiveRecord::Base
     settings.build(
       name: h_property.g5_name.to_s,
       editable: h_property.g5_editable.to_s || false,
-      default_value: h_property.g5_default_value.to_s
-      categories: h_property_group.categories.map{|c|c.to_s}
+      default_value: h_property.g5_default_value.to_s,
+      categories: h_property_group.try(:categories).try(:map, &:to_s)
     )
   end
 

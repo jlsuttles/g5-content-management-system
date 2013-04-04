@@ -40,11 +40,10 @@ describe WidgetsController do
     end
 
     describe "JSON" do
-      let(:property_group) { widget.property_groups.create(name: "Feed") }
-      let(:attribute) { property_group.properties.create(name: "username") }
-      let(:update) { put :update, id: 1, widget: { properties_attributes: {id: attribute.id, value: "Bookis"}}, format: :json }
+      let(:setting) { widget.settings.create(name: "Feed") }
+      let(:update) { put :update, id: 1, widget: { settings_attributes: {id: setting.id, value: "Bookis"}}, format: :json }
       it "attempts to update configurations" do
-        widget.should_receive(:update_attributes).once.with({"properties_attributes" => {"id" => attribute.id, "value" => "Bookis"}})
+        widget.should_receive(:update_attributes).once.with({"settings_attributes" => {"id" => setting.id, "value" => "Bookis"}})
         update
       end
       it "returns a 204 on success" do

@@ -37,28 +37,25 @@ describe Widget do
     it { simple_widget.name.should eq "Simple Widget" }
   end
 
-  describe "#configurations" do
-    let(:property_group) { widget.property_groups.first }
-    it "creates one" do
-      expect { widget }.to change(PropertyGroup, :count).by(1)
-    end
+  describe "on create" do
+    let(:setting) { widget.settings.first }
 
     it "assigns a name" do
-      property_group.name.should eq "Feed"
+      setting.name.should eq "username"
     end
     it "assigns categories" do
-      property_group.categories.should eq ["Instance"]
+      setting.categories.should eq ["Instance"]
     end
 
-    it "assigns widget attributes to the property_groups" do
-      expect { widget }.to change(Property, :count).by(2)
+    it "assigns widget attributes to the settings" do
+      expect { widget }.to change(Setting, :count).by(2)
     end
   end
 
   describe "updating widget attributes" do
     it "updates with nested attributes" do
-      attribute = widget.properties.first
-      widget.update_attributes(properties_attributes: {
+      attribute = widget.settings.first
+      widget.update_attributes(settings_attributes: {
         id: attribute.id,
         value: "TEST"
       })
@@ -67,15 +64,15 @@ describe Widget do
     end
   end
 
-  describe "dynamic property_group methods" do
+  describe "dynamic setting methods" do
     it "makes a dynamic method" do
-      widget.should respond_to :feed
+      widget.should respond_to :username
     end
     it "sets the value to an association" do
-      widget.feed.should eq widget.property_groups.first
+      widget.username.should eq widget.settings.first
     end
     it "lists the methods" do
-      widget.singleton_methods.should include :feed
+      widget.singleton_methods.should include :username
     end
   end
 

@@ -33,23 +33,16 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
 
   add_index "locations", ["urn"], :name => "index_locations_on_urn"
 
-  create_table "properties", :force => true do |t|
+  create_table "settings", :force => true do |t|
     t.string   "name"
     t.string   "value"
-    t.boolean  "editable",          :default => false
+    t.boolean  "editable",      :default => false
     t.string   "default_value"
-    t.integer  "property_group_id"
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
-  end
-
-  create_table "property_groups", :force => true do |t|
-    t.integer  "component_id"
-    t.string   "component_type"
-    t.string   "name"
+    t.integer  "owner_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "owner_type"
     t.text     "categories"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
   end
 
   create_table "sibling_deploys", :force => true do |t|
