@@ -33,13 +33,13 @@ describe WebsiteTemplate do
     end
 
     describe "Theme" do
-      before { template.theme.stub(:primary_color) { "#999999" }}
+      before { template.web_theme.stub(:primary_color) { "#999999" }}
       it do
-        template.theme.stub(:primary_color) { "#999999" }
+        template.web_theme.stub(:primary_color) { "#999999" }
         template.primary_color.should eq "#999999"
       end
       it do
-        template.theme.stub(:secondary_color) { "#666666" }
+        template.web_theme.stub(:secondary_color) { "#666666" }
         template.secondary_color.should eq "#666666"
       end
     end

@@ -15,7 +15,7 @@ class WebsiteTemplate < WebTemplate
   def layout_stylesheets
     compiled_pages_stylesheets +
       web_layout_stylesheets +
-      theme_stylesheets
+      web_theme_stylesheets
   end
 
   def compiled_pages_stylesheets
@@ -26,19 +26,19 @@ class WebsiteTemplate < WebTemplate
     web_layout.try(:stylesheets) || []
   end
 
-  def theme_stylesheets
-    theme.try(:stylesheets) || []
+  def web_theme_stylesheets
+    web_theme.try(:stylesheets) || []
   end
 
   def javascripts
-    widgets.map(&:javascripts).flatten + theme.try(:javascripts)
+    widgets.map(&:javascripts).flatten + web_theme.try(:javascripts)
   end
 
   def primary_color
     if website.custom_colors?
       website.primary_color
     else
-      theme.try(:primary_color)
+      web_theme.try(:primary_color)
     end
   end
 
@@ -46,7 +46,7 @@ class WebsiteTemplate < WebTemplate
     if website.custom_colors?
       website.secondary_color
     else
-      theme.try(:secondary_color)
+      web_theme.try(:secondary_color)
     end
   end
 end

@@ -24,13 +24,13 @@
     <div id="chad" class="jThumbnailScroller">
       <div class="jTscrollerContainer">
         <div class="jTscroller thumbs clearfix">
-          <%= f.fields_for :theme, @web_template.theme || Theme.new do |ff| -%>
+          <%= f.fields_for :web_theme, @web_template.web_theme || WebTheme.new do |ff| -%>
             <%= ff.error_messages %>
-            <% Theme.all_remote.each do |theme| %>
+            <% WebTheme.all_remote.each do |web_theme| %>
               <div class="thumb">
-                <%= ff.radio_button :url, theme.url %>
-                <%= ff.label :url, :value => theme.url do %>
-                  <%= image_tag_or_placeholder(theme.thumbnail) %>
+                <%= ff.radio_button :url, web_theme.url %>
+                <%= ff.label :url, :value => web_theme.url do %>
+                  <%= image_tag_or_placeholder(web_theme.thumbnail) %>
                 <% end %>
               </div>
             <% end %>

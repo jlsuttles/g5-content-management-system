@@ -7,17 +7,17 @@ class WebTemplate < ActiveRecord::Base
                   :disabled,
                   :widgets_attributes,
                   :web_layout_attributes,
-                  :theme_attributes,
+                  :web_theme_attributes,
                   :website_attributes
 
   belongs_to :website
   has_one :web_layout, dependent: :destroy
-  has_one :theme, dependent: :destroy
+  has_one :web_theme, dependent: :destroy
   has_many :widgets, autosave: true, dependent: :destroy, order: "position asc"
 
   accepts_nested_attributes_for :website
   accepts_nested_attributes_for :web_layout
-  accepts_nested_attributes_for :theme
+  accepts_nested_attributes_for :web_theme
   accepts_nested_attributes_for :widgets, :allow_destroy => true
 
   validates :slug, :title, :name, presence: true

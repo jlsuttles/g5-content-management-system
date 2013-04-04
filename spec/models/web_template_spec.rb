@@ -57,7 +57,7 @@ describe WebTemplate do
   end
 
   describe "themes" do
-    it { WebTemplate.new.should respond_to :theme }
+    it { WebTemplate.new.should respond_to :web_theme }
   end
 
   describe "widgets" do

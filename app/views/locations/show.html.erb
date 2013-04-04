@@ -20,7 +20,7 @@
     <tr class='site-template'>
       <td><%= @location.website_template.name %></td>
       <td><%= image_tag_or_placeholder(@location.website_template.web_layout.try(:thumbnail), class: 'thumb') %></td>
-      <td><%= image_tag_or_placeholder(@location.website_template.theme.try(:thumbnail), class: 'thumb') %></td>
+      <td><%= image_tag_or_placeholder(@location.website_template.web_theme.try(:thumbnail), class: 'thumb') %></td>
       <td>
         <ul class="widgets">
           <%= render @location.website_template.widgets %>

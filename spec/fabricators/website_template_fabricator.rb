@@ -4,7 +4,7 @@ Fabricator :website_template do
   title "What a wonderful world"
   template true
   web_layout
-  theme
+  web_theme
   website
   aside_widgets(fabricator: :widget, count: 1)
 end

@@ -1,4 +1,4 @@
-class Theme < ActiveRecord::Base
+class WebTheme < ActiveRecord::Base
   include ComponentGardenable
 
   set_garden_url ENV["THEME_GARDEN_URL"]

@@ -83,21 +83,6 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "themes", :force => true do |t|
-    t.string   "url"
-    t.string   "name"
-    t.integer  "web_template_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-    t.string   "thumbnail"
-    t.text     "stylesheets"
-    t.text     "javascripts"
-    t.text     "colors"
-    t.string   "web_template_type"
-  end
-
-  add_index "themes", ["web_template_id"], :name => "index_themes_on_page_id"
-
   create_table "web_layouts", :force => true do |t|
     t.string   "url"
     t.string   "name"
@@ -125,6 +110,21 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
   end
 
   add_index "web_templates", ["website_id"], :name => "index_pages_on_location_id"
+
+  create_table "web_themes", :force => true do |t|
+    t.string   "url"
+    t.string   "name"
+    t.integer  "web_template_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "thumbnail"
+    t.text     "stylesheets"
+    t.text     "javascripts"
+    t.text     "colors"
+    t.string   "web_template_type"
+  end
+
+  add_index "web_themes", ["web_template_id"], :name => "index_themes_on_page_id"
 
   create_table "websites", :force => true do |t|
     t.integer  "location_id"
