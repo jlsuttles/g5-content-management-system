@@ -1,40 +1,37 @@
 class Location < ActiveRecord::Base
-  #TODO remove this if location will not have a concept of address
-  liquid_methods :address
+  include PrioritizedSettings
+  include SettingNavigationLinks
 
   attr_accessible :uid,
                   :urn,
                   :name,
                   :corporate
 
-  has_one :website
-  has_one :website_template, through: :website
-  has_many :web_page_templates, through: :website
-  has_many :web_templates, through: :website
+  has_one :website, dependent: :destroy
+  # TODO: remove these, requires changes elsewhere
+  has_one :website_template    , through: :website
+  has_many :web_page_templates , through: :website
+  has_many :web_templates      , through: :website
 
-  after_create :set_urn
+  validates :uid, presence: true, uniqueness: true
+  validates :urn, presence: true, uniqueness: true
+  validates :name, presence: true
+
   before_create :build_website
 
-  #TODO remove this if location will not have a concept of address
-  def address
-    "12345 greenwood ave, bend OR"
-  end
+  after_create :set_urn
 
   def record_type
     "g5-cl"
   end
 
-  def hashed_id
-    "#{self.created_at.to_i}#{self.id}".to_i.to_s(36)
-  end
-
   def to_param
-    self.urn
+    urn
   end
 
   private
 
   def set_urn
-    update_attributes(urn: "#{record_type}-#{hashed_id}-#{name.parameterize}")
+    update_attributes(urn: "#{record_type}-#{id}-#{name.parameterize}")
   end
 end
