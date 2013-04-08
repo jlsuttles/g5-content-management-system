@@ -1,4 +1,6 @@
 class WebPageTemplate < WebTemplate
+  has_many :main_widgets,  class_name: "Widget", conditions: ['section = ?', 'main'], foreign_key: "web_template_id"
+
   after_initialize :assign_defaults
 
   def sections
