@@ -10,8 +10,8 @@ describe Website do
     it "should have a valid fabricator" do
       Fabricate.build(:website).should be_valid
     end
-    it "should require urn" do
-      Fabricate.build(:website, urn: "").should_not be_valid
+    it "should not require urn on new records" do
+      Fabricate.build(:website, urn: "").should be_valid
     end
   end
   describe "#urn" do
