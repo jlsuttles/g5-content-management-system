@@ -7,7 +7,7 @@ class LocationDeployer
   end
 
   def initialize(location_urn)
-    @location = Location.find_by_urn(location_urn)
+    @location = Location.find_by_urn(location_urn).decorate
   end
 
   def compile_and_deploy
@@ -23,11 +23,11 @@ class LocationDeployer
   end
 
   def compile_pages
-    FileUtils.mkdir_p(@location.website.compiled_site_path)
-    homepage_path = File.join(@location.website.compiled_site_path, "index.html")
+    FileUtils.mkdir_p(@location.website.compile_path)
+    homepage_path = File.join(@location.website.compile_path, "index.html")
     compile_page(@location.website.homepage, homepage_path)
     @location.website.web_page_templates.enabled.each do |page|
-      compile_page(page, page.compiled_file_path)
+      compile_page(page, page.compile_path)
     end
   end
 
@@ -59,7 +59,7 @@ class LocationDeployer
   end
 
   def stylesheets_path
-    File.join(@location.website.compiled_site_path, "stylesheets")
+    File.join(@location.website.compile_path, "stylesheets")
   end
 
   def stylesheet_path(stylesheet)
@@ -83,7 +83,7 @@ class LocationDeployer
   end
 
   def javascripts_path
-    File.join(@location.website.compiled_site_path, "javascripts")
+    File.join(@location.website.compile_path, "javascripts")
   end
 
   def javascript_path(javascript)
@@ -94,8 +94,8 @@ class LocationDeployer
   private
 
   def remove_compiled_site
-    if Dir.exists?(@location.website.compiled_site_path)
-      FileUtils.rm_rf(@location.website.compiled_site_path)
+    if Dir.exists?(@location.website.compile_path)
+      FileUtils.rm_rf(@location.website.compile_path)
     end
   end
 
@@ -111,7 +111,7 @@ class LocationDeployer
         @repo_dir = repo.dir.to_s
 
         # copy all pages over
-        `cp #{@location.website.compiled_site_path}/* #{repo.dir}`
+        `cp #{@location.website.compile_path}/* #{repo.dir}`
 
         # copy all stylesheets over
         `mkdir #{repo.dir}/stylesheets`

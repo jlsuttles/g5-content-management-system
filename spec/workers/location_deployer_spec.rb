@@ -9,6 +9,7 @@ describe LocationDeployer do
     GithubHerokuDeployer.stub(:deploy) { true }
 
     @location = Fabricate(:location)
+    @location.website = Fabricate(:website)
     @location.website.website_template = Fabricate(:website_template)
     Website.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
     WebsiteTemplate.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
@@ -57,7 +58,7 @@ describe LocationDeployer do
   describe "#compile_pages" do
     it "creates root directory" do
       @location_deployer.compile_pages
-      Dir.exists?(@location.website.compiled_site_path).should be_true
+      Dir.exists?(@location.website.compile_path).should be_true
     end
     it "compiles all enabled pages" do
       pages = @location.web_page_templates.length + 1 # for homepage
@@ -74,9 +75,9 @@ describe LocationDeployer do
   describe "#compile_page" do
     before :each do
       @page = @location.web_page_templates.first
-      @page_path = @page.compiled_file_path
+      @page_path = @page.compile_path
       FileUtils.rm(@page_path) if File.exists?(@page_path)
-      FileUtils.mkdir_p(@location.website.compiled_site_path)
+      FileUtils.mkdir_p(@location.website.compile_path)
       @location_deployer.compile_page(@page, @page_path)
     end
     it "creates page file" do
@@ -86,7 +87,7 @@ describe LocationDeployer do
   describe "#compile_stylesheets" do
     it "creates stylesheets direcoty" do
       @location_deployer.compile_stylesheets
-      stylesheets_path = File.join(@location.website.compiled_site_path, "stylesheets")
+      stylesheets_path = File.join(@location.website.compile_path, "stylesheets")
       Dir.exists?(stylesheets_path).should be_true
     end
     it "compiles all stylesheet" do
@@ -105,7 +106,7 @@ describe LocationDeployer do
   describe "#compile_javascripts" do
     it "creates stylesheets direcoty" do
       @location_deployer.compile_javascripts
-      javascripts_path = File.join(@location.website.compiled_site_path, "javascripts")
+      javascripts_path = File.join(@location.website.compile_path, "javascripts")
       Dir.exists?(javascripts_path).should be_true
     end
   end
