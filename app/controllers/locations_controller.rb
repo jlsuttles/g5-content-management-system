@@ -1,11 +1,11 @@
 class LocationsController < ApplicationController
 
   def index
-    @locations = Location.order("updated_at DESC").all
+    @locations = Location.order("updated_at DESC").decorate
   end
 
   def show
-    @location = Location.find_by_urn(params[:id])
+    @location = Location.find_by_urn(params[:id]).decorate
   end
 
   def deploy
