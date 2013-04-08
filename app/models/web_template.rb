@@ -1,33 +1,43 @@
 class WebTemplate < ActiveRecord::Base
+  include PrioritizedSettings
+
   attr_accessible :website_id,
                   :name,
-                  :template,
-                  :slug,
                   :title,
                   :disabled,
-                  :widgets_attributes,
+                  :slug,
+                  :website_attributes,
                   :web_layout_attributes,
                   :web_theme_attributes,
-                  :website_attributes
+                  :widgets_attributes
 
   belongs_to :website
-  has_one :web_layout, dependent: :destroy
-  has_one :web_theme, dependent: :destroy
-  has_many :widgets, autosave: true, dependent: :destroy, order: "position asc"
+
+  has_one :web_layout , autosave: true , dependent: :destroy
+  has_one :web_theme  , autosave: true , dependent: :destroy
+  # TODO: has_many :widgets, through: :drop_areas
+  has_many :widgets   , autosave: true , dependent: :destroy , order: "position asc"
 
   accepts_nested_attributes_for :website
-  accepts_nested_attributes_for :web_layout
-  accepts_nested_attributes_for :web_theme
-  accepts_nested_attributes_for :widgets, :allow_destroy => true
+  accepts_nested_attributes_for :web_layout , allow_destroy: true
+  accepts_nested_attributes_for :web_theme  , allow_destroy: true
+  accepts_nested_attributes_for :widgets    , allow_destroy: true
 
-  validates :slug, :title, :name, presence: true
-  validates :slug, :format => {with: /^[-_A-Za-z0-9]*$/, message: "can only contain letters, numbers, dashes, and underscores."}
+  validates :title , presence: true
+  validates :name  , presence: true
+  validates :slug  , presence: true ,
+    format: {
+      with: /^[-_A-Za-z0-9]*$/,
+      message: "can only contain letters, numbers, dashes, and underscores."
+    }
 
   scope :home, where(name: "Home")
   scope :enabled, where(disabled: false)
   scope :disabled, where(disabled: true)
 
   after_initialize :default_enabled_to_true
+
+  before_validation :parameterize_title_to_slug, if: :title_changed?
 
   def sections
     %w(main)
@@ -38,7 +48,9 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def remote_widgets
-    Widget.all_remote.delete_if {|widget| widgets.map(&:name).include? widget.name}
+    Widget.all_remote.delete_if do |widget|
+      widgets.map(&:name).include? widget.name
+    end
   end
 
   def compiled_stylesheets
@@ -54,15 +66,15 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def stylesheets
-    widgets.map(&:stylesheets).flatten + website.website_template.stylesheets
+    widgets.map(&:stylesheets).flatten + website.website_template.stylesheets.to_a
   end
 
   def javascripts
-    widgets.map(&:javascripts).flatten + website.website_template.javascripts
+    widgets.map(&:javascripts).flatten + website.website_template.javascripts.to_a
   end
 
-  def compiled_file_path
-    File.join(website.compiled_site_path, "#{self.slug}.html")
+  def compile_path
+    File.join(website.compile_path, "#{self.slug}.html")
   end
 
   private
@@ -71,4 +83,7 @@ class WebTemplate < ActiveRecord::Base
     self.disabled ||= false
   end
 
+  def parameterize_title_to_slug
+    self.slug = title.parameterize
+  end
 end
