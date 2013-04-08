@@ -1,16 +1,11 @@
 require "spec_helper"
 
 describe WebTemplatesHelper do
-  let(:location)    { Fabricate(:location) }
-  let(:web_layout) { Fabricate(:web_layout) }
-  before do
-    location.website_template.stub(:web_layout) { web_layout }
-    WebTemplate.any_instance.stub(:widgets) { [Fabricate(:widget, section: "aside")]}
-  end
+  let(:location) { Fabricate.build(:location_with_website_with_everything) }
 
   describe "preview" do
     it "has layout in html" do
-      helper.preview(location, location.web_templates.first).should match /single-column/
+      helper.preview(location, location.web_page_templates.first).should match /single-column/
     end
 
     it "has widget in html" do
