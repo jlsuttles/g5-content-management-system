@@ -10,6 +10,11 @@ G5ClientHub::Application.routes.draw do
 
   resources :locations, only: [:index, :show] do
     resources :website_templates, only: [:edit, :update]
+    resources :web_home_templates do
+      member do
+        get "preview"
+      end
+    end
     resources :web_page_templates do
       member do
         get "preview"
