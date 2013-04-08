@@ -28,7 +28,7 @@ class Widget < ActiveRecord::Base
   scope :in_section, lambda { |section| where(section: section) }
 
   def self.all_remote
-    components = Microformats2.parse(WIDGET_GARDEN_URL).g5_components
+    components = Microformats2.parse(ENV['WIDGET_GARDEN_URL']).g5_components
     components.map do |component|
       new(url: component.uid.to_s, name: component.name.to_s, thumbnail: component.photo.to_s)
     end
