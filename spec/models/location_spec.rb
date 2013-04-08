@@ -35,9 +35,8 @@ describe Location do
   end
   describe "#website" do
     let(:location) { Fabricate(:location) }
-    let(:website) { location.website }
     it "creates a website on create" do
-      website.should_not be_nil
+      expect { location }.to change(Website, :count).by(1)
     end
   end
 end
