@@ -45,6 +45,10 @@ describe LocationDeployer do
       @location_deployer.should_receive(:deploy).once
       @location_deployer.compile_and_deploy
     end
+    it "creates entries for widgets" do
+      @location_deployer.should_receive(:create_entries_for_widget_forms).once
+      @location_deployer.compile_and_deploy
+    end
     it "cleans up" do
       @location_deployer.should_receive(:remove_compiled_site).once
       @location_deployer.compile_and_deploy
@@ -92,7 +96,6 @@ describe LocationDeployer do
       @location_deployer.compile_stylesheet(stylesheet).should == "body {\n  background: black;\n  color: white; }\n"
     end
   end
-  
   describe "#compile_javascripts" do
     it "creates stylesheets direcoty" do
       @location_deployer.compile_javascripts
@@ -100,15 +103,12 @@ describe LocationDeployer do
       Dir.exists?(javascripts_path).should be_true
     end
   end
-  
   describe "javascript paths" do
     it "has a javascript path" do
       @location_deployer.javascripts_path.should match "/tmp/compiled_sites/#{@location.urn}/javascripts"
     end
-    
     it "has a path to a javascript file" do
       @location_deployer.javascript_path("some-file/script.js").should match "/tmp/compiled_sites/#{@location.urn}/javascripts/script.js"
     end
-    
   end
 end

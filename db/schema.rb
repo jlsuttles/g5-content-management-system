@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130301193442) do
+ActiveRecord::Schema.define(:version => 20130319030042) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -131,6 +131,13 @@ ActiveRecord::Schema.define(:version => 20130301193442) do
     t.datetime "updated_at",                       :null => false
   end
 
+  create_table "widget_entries", :force => true do |t|
+    t.integer  "widget_id"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "widgets", :force => true do |t|
     t.string   "url"
     t.string   "name"
@@ -146,6 +153,7 @@ ActiveRecord::Schema.define(:version => 20130301193442) do
     t.text     "edit_form_html"
   end
 
+  add_index "widgets", ["name"], :name => "index_widgets_on_name"
   add_index "widgets", ["page_id"], :name => "index_widgets_on_page_id"
 
 end

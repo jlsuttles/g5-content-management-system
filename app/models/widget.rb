@@ -17,6 +17,8 @@ class Widget < ActiveRecord::Base
   has_many :settings, as: :component, after_add: :define_dynamic_association_method
   has_many :widget_attributes, through: :settings
 
+  has_many :widget_entries, dependent: :destroy
+
   accepts_nested_attributes_for :widget_attributes
 
   alias_attribute :dynamic_association, :settings
@@ -26,6 +28,7 @@ class Widget < ActiveRecord::Base
   validates :url, presence: true
 
   scope :in_section, lambda { |section| where(section: section) }
+  scope :name_like_form, where("widgets.name LIKE '%Form'")
 
   def self.all_remote
     components = Microformats2.parse(ENV['WIDGET_GARDEN_URL']).g5_components
@@ -40,6 +43,15 @@ class Widget < ActiveRecord::Base
 
   def kind_of_widget?(kind)
     name == kind
+  end
+
+  def create_widget_entry_if_updated
+    widget_entries.create if updated_since_last_widget_entry
+  end
+
+  def updated_since_last_widget_entry
+    return true if widget_entries.blank?
+    updated_at > widget_entries.maximum(:updated_at)
   end
 
   private

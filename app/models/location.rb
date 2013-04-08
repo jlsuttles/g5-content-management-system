@@ -8,6 +8,11 @@ class Location < ActiveRecord::Base
   has_one :site_template
   has_many :pages, conditions: ["pages.type = ?", "Page"]
 
+  # templates are all templates for the website (site_template and pages)
+  has_many :templates, class_name: "Page"
+  # widgets are all widgets for the website (site_template and pages)
+  has_many :widgets, through: :templates
+
   before_create :create_template
   after_create :create_homepage
   after_create :set_urn
