@@ -4,12 +4,16 @@ class WebsiteTemplate < WebTemplate
   has_many :footer_widgets, class_name: "Widget", conditions: ['section = ?', 'footer'], foreign_key: "web_template_id"
   has_many :widgets, class_name: "Widget", foreign_key: "web_template_id"
 
+  # name: "Website Template",
+  # slug: "website-template",
+  # title: "Website Template"
+
   def sections
     %w(header aside footer)
   end
 
   def stylesheets
-    layout_stylesheets + widgets.map(&:stylesheets).flatten
+    layout_stylesheets + widget_stylesheets
   end
 
   def layout_stylesheets
@@ -23,30 +27,26 @@ class WebsiteTemplate < WebTemplate
   end
 
   def web_layout_stylesheets
-    web_layout.try(:stylesheets) || []
+    web_layout ? web_layout.stylesheets : []
   end
 
   def web_theme_stylesheets
-    web_theme.try(:stylesheets) || []
+    web_theme ? web_theme.stylesheets : []
+  end
+
+  def widget_stylesheets
+    widgets ? widgets.map(&:stylesheets).flatten : []
   end
 
   def javascripts
-    widgets.map(&:javascripts).flatten + web_theme.try(:javascripts)
+    web_theme_javascripts + widget_javascripts
   end
 
-  def primary_color
-    if website.custom_colors?
-      website.primary_color
-    else
-      web_theme.try(:primary_color)
-    end
+  def widget_javascripts
+    widgets ? widgets.map(&:javascripts).flatten : []
   end
 
-  def secondary_color
-    if website.custom_colors?
-      website.secondary_color
-    else
-      web_theme.try(:secondary_color)
-    end
+  def web_theme_javascripts
+    web_theme ? web_theme.javascripts : []
   end
 end

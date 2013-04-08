@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe WebsiteTemplate do
-  let(:template) { Fabricate(:website_template) }
+  let(:website_template) { Fabricate.build(:website_template) }
 
   its(:sections) { should eq ['header', 'aside', 'footer']}
   its(:type) { should eq "WebsiteTemplate" }
@@ -9,40 +9,16 @@ describe WebsiteTemplate do
   its(:aside_widgets) { should eq [] }
   its(:footer_widgets) { should eq [] }
 
-  describe "stylesheets" do
-    it { template.stylesheets.should have(3).things }
-
-    it "has compiled stylesheets" do
-      template.compiled_pages_stylesheets.should have(1).thing
+  describe "#stylesheets" do
+    let(:website_template) { Fabricate.build(:website_template) }
+    it "has a collection of stylesheets" do
+      website_template.stylesheets.should be_kind_of(Array)
     end
   end
-
-  describe "javascripts" do
-    it "has javascript files" do
-      template.javascripts.should have(2).things
+  describe "#javascripts" do
+    let(:website_template) { Fabricate.build(:website_template) }
+    it "has a collection of javascripts" do
+      website_template.javascripts.should be_kind_of(Array)
     end
   end
-
-  describe "Colors" do
-    it { template.primary_color.should eq nil }
-    it { template.secondary_color.should eq nil }
-    describe "Custom" do
-      before { template.website.stub(:custom_colors?) { true } }
-      it { template.primary_color.should eq "#000000" }
-      it { template.secondary_color.should eq "#ffffff" }
-    end
-
-    describe "Theme" do
-      before { template.web_theme.stub(:primary_color) { "#999999" }}
-      it do
-        template.web_theme.stub(:primary_color) { "#999999" }
-        template.primary_color.should eq "#999999"
-      end
-      it do
-        template.web_theme.stub(:secondary_color) { "#666666" }
-        template.secondary_color.should eq "#666666"
-      end
-    end
-  end
-
 end
