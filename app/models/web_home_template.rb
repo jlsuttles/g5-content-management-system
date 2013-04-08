@@ -1,5 +1,5 @@
 class WebHomeTemplate < WebPageTemplate
-  before_validation :assign_defaults
+  after_initialize :assign_defaults
 
   private
 

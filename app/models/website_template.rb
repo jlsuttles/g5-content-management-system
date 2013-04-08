@@ -4,7 +4,7 @@ class WebsiteTemplate < WebTemplate
   has_many :footer_widgets, class_name: "Widget", conditions: ['section = ?', 'footer'], foreign_key: "web_template_id"
   has_many :widgets, class_name: "Widget", foreign_key: "web_template_id"
 
-  before_validation :assign_defaults
+  after_initialize :assign_defaults
 
   def sections
     %w(header aside footer)

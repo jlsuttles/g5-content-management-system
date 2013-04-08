@@ -1,5 +1,5 @@
 class WebPageTemplate < WebTemplate
-  before_validation :assign_defaults
+  after_initialize :assign_defaults
 
   def sections
     %w(main)
