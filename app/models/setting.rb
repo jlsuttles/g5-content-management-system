@@ -1,36 +1,39 @@
 class Setting < ActiveRecord::Base
+  PRIORITIZED_OWNERS = [
+    "Widget",
+    "WebTemplate",
+    "WebPageTemplate",
+    "WebsiteTemplate",
+    "WebLayout",
+    "WebTheme",
+    "Website",
+    "Location",
+    "Client"
+  ]
+
   attr_accessible :owner_id,
                   :owner_type,
-                  :editable,
                   :name,
+                  :editable,
                   :value,
                   :default_value,
-                  :categories
-
-  liquid_methods :name, :default_value, :id, :value
-
-  belongs_to :owner, polymorphic: true
+                  :categories,
+                  :priority
 
   serialize :categories
 
-  before_create :assign_lead_widget_submission_url, if: :lead_widget_submission_url?
+  belongs_to :owner, polymorphic: true
+
+  before_validation :set_priority
 
   validates :name, presence: true
   validates :owner, presence: true
+  validates :owner_type, presence: true, inclusion: { in: PRIORITIZED_OWNERS }
+  validates :priority, presence: true, numericality: { only_integer: true }
 
-  def lead_widget_submission_url?
-    lead_widget? && submission_url?
-  end
+  private
 
-  def lead_widget?
-    owner.respond_to?(:kind_of_widget) && owner.kind_of_widget?("Lead Form")
-  end
-
-  def submission_url?
-    name == "submission_url"
-  end
-
-  def assign_lead_widget_submission_url
-    self.value = ENV["LEADS_SERVICE_HEROKU_URL"]
+  def set_priority
+    self.priority = PRIORITIZED_OWNERS.index(owner_type)
   end
 end

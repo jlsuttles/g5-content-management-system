@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.datetime "updated_at",                       :null => false
     t.string   "owner_type"
     t.text     "categories"
+    t.integer  "priority"
   end
 
   create_table "sibling_deploys", :force => true do |t|

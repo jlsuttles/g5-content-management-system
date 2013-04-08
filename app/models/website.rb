@@ -22,7 +22,7 @@ class Website < ActiveRecord::Base
 
   has_many :widgets, through: :web_templates
 
-  validates :urn, presence: true, uniqueness: true
+  validates :urn, presence: true, uniqueness: true, unless: :new_record?
 
   before_create :build_website_template
   before_create :build_web_home_template
