@@ -29,7 +29,8 @@ class WebTemplate < ActiveRecord::Base
     format: {
       with: /^[-_A-Za-z0-9]*$/,
       message: "can only contain letters, numbers, dashes, and underscores."
-    }
+    },
+    unless: :new_record?
 
   scope :home, where(name: "Home")
   scope :enabled, where(disabled: false)
@@ -37,14 +38,15 @@ class WebTemplate < ActiveRecord::Base
 
   after_initialize :default_enabled_to_true
 
+  before_create :parameterize_title_to_slug
   before_validation :parameterize_title_to_slug, if: :title_changed?
 
-  def sections
-    %w(main)
+  def website?
+    type == "WebsiteTemplate"
   end
 
-  def all_widgets
-    website.website_template.widgets + widgets
+  def homepage?
+    type == "WebHomeTemplate"
   end
 
   def remote_widgets

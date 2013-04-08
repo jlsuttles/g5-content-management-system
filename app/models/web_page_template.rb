@@ -1,4 +1,6 @@
 class WebPageTemplate < WebTemplate
+  before_validation :assign_defaults
+
   def sections
     %w(main)
   end
@@ -17,5 +19,12 @@ class WebPageTemplate < WebTemplate
 
   def display
     true
+  end
+
+  private
+
+  def assign_defaults
+    self.name ||= "New Page"
+    self.title ||= name
   end
 end

@@ -4,9 +4,7 @@ class WebsiteTemplate < WebTemplate
   has_many :footer_widgets, class_name: "Widget", conditions: ['section = ?', 'footer'], foreign_key: "web_template_id"
   has_many :widgets, class_name: "Widget", foreign_key: "web_template_id"
 
-  # name: "Website Template",
-  # slug: "website-template",
-  # title: "Website Template"
+  before_validation :assign_defaults
 
   def sections
     %w(header aside footer)
@@ -48,5 +46,12 @@ class WebsiteTemplate < WebTemplate
 
   def web_theme_javascripts
     web_theme ? web_theme.javascripts : []
+  end
+
+  private
+
+  def assign_defaults
+    self.name ||= "Website Template"
+    self.title ||= name
   end
 end
