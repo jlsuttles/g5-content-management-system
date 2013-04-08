@@ -10,14 +10,10 @@ describe LocationDeployer do
   let(:web_page_template) { Fabricate(:web_page_template) }
 
   before :each do
-    Widget.any_instance.stub(:assign_attributes_from_url) { true }
-    WebLayout.any_instance.stub(:assign_attributes_from_url)
-    WebsiteTemplate.any_instance.stub(:compiled_stylesheets) { [Faker::Internet.domain_name] }
-    WebsiteTemplate.any_instance.stub(:javascripts) { [Faker::Internet.domain_name] }
+    Location.stub(:find_by_urn).and_return(location)
     GithubHerokuDeployer.stub(:deploy) { true }
     Website.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
     WebsiteTemplate.any_instance.stub(:stylesheets).and_return(["spec/support/remote_stylesheet.scss"])
-    Location.stub(:find_by_urn).with(location.urn) { location }
     RemoteJavascript.any_instance.stub(:compile) { true }
 
     location.website = website
