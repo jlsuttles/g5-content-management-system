@@ -1,6 +1,8 @@
 require_dependency 'liquid_filters'
 
 class Widget < ActiveRecord::Base
+  include AssociationToMethod
+  include PrioritizedSettings
 
   liquid_methods :location
 
@@ -45,7 +47,11 @@ class Widget < ActiveRecord::Base
   scope :name_like_form, where("widgets.name LIKE '%Form'")
 
   def liquidized_html
-    Liquid::Template.parse(self.html).render({'widget' => self}, filters: [UrlEncode])
+    Liquid::Template.parse(self.html).render({"settings" => prioritized_settings}, filters: [UrlEncode])
+  end
+
+  def edit_form_html_rendered
+    Liquid::Template.parse(edit_form_html).render("settings" => prioritized_settings)
   end
 
   def kind_of_widget?(kind)
