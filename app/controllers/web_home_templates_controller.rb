@@ -1,5 +1,5 @@
 class WebHomeTemplatesController < ApplicationController
-  before_filter :find_location
+  before_filter :find_website
 
   def edit
     @web_template = WebHomeTemplate.find(params[:id])
@@ -12,7 +12,7 @@ class WebHomeTemplatesController < ApplicationController
       @web_template.reload
       respond_to do |format|
         format.json { render json: @web_template.widgets.last }
-        format.html { redirect_to @location, :notice => "Successfully updated page." }
+        format.html { redirect_to @website, :notice => "Successfully updated page." }
       end
     else
       render :"/web_templates/edit", :layout => 'builder'
@@ -27,12 +27,12 @@ class WebHomeTemplatesController < ApplicationController
   def preview
     @web_template = WebHomeTemplate.find(params[:id])
     render :"/web_templates/preview", layout: "compiled_pages",
-      locals: { web_template: @web_template, location: @location, mode: "preview" }
+      locals: { website: @website, web_template: @web_template, mode: "preview" }
   end
 
   private
 
-  def find_location
-    @location = Location.find_by_urn(params[:location_id])
+  def find_website
+    @website = Website.find_by_urn(params[:website_id])
   end
 end

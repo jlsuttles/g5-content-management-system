@@ -44,10 +44,10 @@ class Website < ActiveRecord::Base
   end
 
   def deploy
-    LocationDeployer.perform(urn)
+    WebsiteDeployer.perform(urn)
   end
 
   def async_deploy
-    Resque.enqueue(LocationDeployer, urn)
+    Resque.enqueue(WebsiteDeployer, urn)
   end
 end

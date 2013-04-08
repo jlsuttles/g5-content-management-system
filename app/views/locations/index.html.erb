@@ -1,4 +1,26 @@
 <div class="page-title">
   <h2>Locations</h2>
 </div>
-<%= simple_table_for @locations, with: LocationTable %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @locations.each do |location| %>
+    <tr>
+      <td>
+        <%= location.name %>
+      </td>
+      <td>
+        <%= link_to "Edit Website", website_path(location.website), class: "btn" %>
+        <%= link_to "View on Heroku", location.website.heroku_url, class: "btn" %>
+        <%= link_to "Deploy to Heroku", deploy_website_path(location), method: :post, class: "btn" %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

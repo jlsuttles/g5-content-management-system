@@ -8,7 +8,9 @@ G5ClientHub::Application.routes.draw do
   resources :widget_entries, only: [:index, :show]
   resources :tags, only: [:show]
 
-  resources :locations, only: [:index, :show] do
+  resources :locations, only: [:index]
+
+  resources :websites, only: [:show] do
     resources :website_templates, only: [:edit, :update]
     resources :web_home_templates do
       member do

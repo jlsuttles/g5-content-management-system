@@ -8,11 +8,11 @@
     </ul>
   </td>
   <td class="page-actions">
-    <%= link_to "Edit", send("edit_location_#{web_template.type.underscore}_path", location, web_template), class: "btn btn-large" %>
+    <%= link_to "Edit", send("edit_website_#{web_template.type.underscore}_path", website, web_template), class: "btn btn-large" %>
     <% if web_template.website? %>
-      <%= link_to "Deploy", deploy_location_path(location), method: :post, class: "btn btn-large" %>
+      <%= link_to "Deploy", deploy_website_path(website), method: :post, class: "btn btn-large" %>
     <% else %>
-      <%= link_to "Preview", send("preview_location_#{web_template.type.underscore}_path", location, web_template), class: "btn btn-large primary" %>
+      <%= link_to "Preview", send("preview_website_#{web_template.type.underscore}_path", website, web_template), class: "btn btn-large primary" %>
       <%= page_disable_toggle(@location, page) %>
     <% end %>
   </td>

@@ -2,20 +2,20 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe WebPageTemplatesController do
   before {
-    @location = Fabricate(:location)
-    @web_page_template = @location.web_page_templates.first
+    @website = Fabricate(:website)
+    @web_page_template = @website.web_page_templates.first
   }
 
   describe "#index" do
     it "index action should render index template" do
-      get :index, location_id: @location.urn
+      get :index, website_id: @website.urn
       response.should render_template(:index)
     end
   end
 
   describe "#new" do
     it "new action should render new template" do
-      get :new, location_id: @location.urn
+      get :new, website_id: @website.urn
       response.should render_template(:new)
     end
   end
@@ -23,42 +23,42 @@ describe WebPageTemplatesController do
   describe "#create" do
     it "create action should render new template when model is invalid" do
       WebPageTemplate.any_instance.stub(:save) {false}
-      post :create, location_id: @location.urn
+      post :create, website_id: @website.urn
       response.should render_template(:new)
     end
 
     it "create action should redirect when model is valid" do
       WebPageTemplate.any_instance.stub(:save) {true}
-      post :create, location_id: @location.urn
-      response.should redirect_to(location_url(assigns[:location]))
+      post :create, website_id: @website.urn
+      response.should redirect_to(website_url(assigns[:website]))
     end
   end
 
   describe "#show" do
     it "show action should render show template" do
-      @location.web_page_templates.stub(:find){ WebPageTemplate.new }
-      get :show, :id => @web_page_template.id, location_id: @location.urn
+      @website.web_page_templates.stub(:find){ WebPageTemplate.new }
+      get :show, :id => @web_page_template.id, website_id: @website.urn
       response.should render_template(:show)
     end
   end
 
   describe "#edit" do
     it "renders the edit template" do
-      get :edit, id: @web_page_template.id, location_id: @location.urn
+      get :edit, id: @web_page_template.id, website_id: @website.urn
       response.should render_template(:edit)
     end
   end
 
   describe "#update" do
-    let(:update) { put :update, id: @web_page_template.id, location_id: @location.urn, web_page_template: {name: "New Name"} }
+    let(:update) { put :update, id: @web_page_template.id, website_id: @website.urn, web_page_template: {name: "New Name"} }
 
     it "renders edit" do
-      put :update, id: @web_page_template.id, location_id: @location.urn, web_page_template: {name: nil}
+      put :update, id: @web_page_template.id, website_id: @website.urn, web_page_template: {name: nil}
       response.should render_template :edit
     end
-    it "redirects to the location" do
+    it "redirects to the website" do
       update
-      response.should redirect_to @location
+      response.should redirect_to @website
     end
     it "updates a web_page_template" do
       update
@@ -68,7 +68,7 @@ describe WebPageTemplatesController do
 
   describe "#preview" do
     it "should render the preview template" do
-      get :preview, :id => @web_page_template.id, location_id: @location.urn
+      get :preview, :id => @web_page_template.id, website_id: @website.urn
       response.should render_template :preview
     end
   end

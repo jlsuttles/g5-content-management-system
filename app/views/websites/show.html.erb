@@ -4,12 +4,13 @@
 
 <div class="page-title">
   <h2>
-    <%= "Location: #{@location.name}" %>
-    <%= link_to "Create New Page", new_location_web_page_template_path(@location), class: 'btn btn-large primary new-page' %>
+    <%= "Website: #{@website.name}" %>
+    <%= link_to "Create New Page", new_website_web_page_template_path(@website),
+      class: "btn btn-large primarynew-page" %>
   </h2>
 </div>
 
-<table class='pages table table-striped'>
+<table class="pages table table-striped">
   <thead>
     <tr>
       <th>Page</th>
@@ -20,9 +21,11 @@
     </tr>
   </thead>
   <tbody>
-    <%= render partial: "web_template", locals: { location: @location, web_template: @location.website_template } %>
-    <% @location.web_page_templates.order("created_at ASC").each do |web_page_template| %>
-      <%= render partial: "web_template", locals: { location: @location, web_template: web_page_template } %>
+    <%= render partial: "web_template",
+      locals: { website: @website, web_template: @website.website_template } %>
+    <% @website.web_page_templates.each do |web_page_template| %>
+      <%= render partial: "web_template",
+        locals: { website: @website, web_template: web_page_template } %>
     <% end %>
   </tbody>
 </table>

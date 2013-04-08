@@ -1,13 +1,13 @@
-class LocationDeployer
+class WebsiteDeployer
   extend HerokuResqueAutoscaler if Rails.env.production?
   @queue = :deployer
 
-  def self.perform(location_urn)
-    new(location_urn).compile_and_deploy
+  def self.perform(website_urn)
+    new(website_urn).compile_and_deploy
   end
 
-  def initialize(location_urn)
-    @location = Location.find_by_urn(location_urn).decorate
+  def initialize(website_urn)
+    @website = Website.find_by_urn(website_urn).decorate
   end
 
   def compile_and_deploy
@@ -23,27 +23,27 @@ class LocationDeployer
   end
 
   def compile_pages
-    FileUtils.mkdir_p(@location.website.compile_path)
-    homepage_path = File.join(@location.website.compile_path, "index.html")
-    compile_page(@location.website.web_home_template, homepage_path)
-    @location.website.web_page_templates.enabled.each do |page|
+    FileUtils.mkdir_p(@website.compile_path)
+    homepage_path = File.join(@website.compile_path, "index.html")
+    compile_page(@website.web_home_template, homepage_path)
+    @website.web_page_templates.enabled.each do |page|
       compile_page(page, page.compile_path)
     end
   end
 
   def compile_page(page, to_path)
     File.open(to_path, "w") do |file|
-      file << LocationsController.new.render_to_string(
+      file << WebsitesController.new.render_to_string(
         "/web_templates/preview",
         layout: "compiled_pages",
-        locals: { web_template: page, location: @location.website, mode: "deployed" }
+        locals: { web_template: page, website: @website, mode: "deployed" }
       )
     end
   end
 
   def compile_stylesheets
     FileUtils.mkdir_p(stylesheets_path)
-    @location.website.stylesheets.map do |stylesheet|
+    @website.stylesheets.map do |stylesheet|
       compile_stylesheet(stylesheet)
     end
   end
@@ -51,15 +51,15 @@ class LocationDeployer
   def compile_stylesheet(stylesheet)
     remote_stylesheet = RemoteStylesheet.new(
      stylesheet,
-     { primary: @location.website.primary_color,
-       secondary: @location.website.secondary_color },
+     { primary: @website.primary_color,
+       secondary: @website.secondary_color },
      stylesheets_path
     )
     remote_stylesheet.compile
   end
 
   def stylesheets_path
-    File.join(@location.website.compile_path, "stylesheets")
+    File.join(@website.compile_path, "stylesheets")
   end
 
   def stylesheet_path(stylesheet)
@@ -69,7 +69,7 @@ class LocationDeployer
 
   def compile_javascripts
     FileUtils.mkdir_p(javascripts_path)
-    @location.website.javascripts.map do |javascript|
+    @website.javascripts.map do |javascript|
       compile_javascript(javascript)
     end
   end
@@ -83,7 +83,7 @@ class LocationDeployer
   end
 
   def javascripts_path
-    File.join(@location.website.compile_path, "javascripts")
+    File.join(@website.compile_path, "javascripts")
   end
 
   def javascript_path(javascript)
@@ -94,8 +94,8 @@ class LocationDeployer
   private
 
   def remove_compiled_site
-    if Dir.exists?(@location.website.compile_path)
-      FileUtils.rm_rf(@location.website.compile_path)
+    if Dir.exists?(@website.compile_path)
+      FileUtils.rm_rf(@website.compile_path)
     end
   end
 
@@ -103,15 +103,15 @@ class LocationDeployer
     begin
       remove_repo
       GithubHerokuDeployer.deploy(
-        github_repo: @location.website.github_repo,
-        heroku_app_name: @location.website.heroku_app_name,
-        heroku_repo: @location.website.heroku_repo
+        github_repo: @website.github_repo,
+        heroku_app_name: @website.heroku_app_name,
+        heroku_repo: @website.heroku_repo
       ) do |repo|
         # save dir so we can delete it later
         @repo_dir = repo.dir.to_s
 
         # copy all pages over
-        `cp #{@location.website.compile_path}/* #{repo.dir}`
+        `cp #{@website.compile_path}/* #{repo.dir}`
 
         # copy all stylesheets over
         `mkdir #{repo.dir}/stylesheets`
@@ -136,6 +136,6 @@ class LocationDeployer
   end
 
   def create_entries_for_widget_forms
-    @location.website.widgets.name_like_form.map(&:create_widget_entry_if_updated)
+    @website.widgets.name_like_form.map(&:create_widget_entry_if_updated)
   end
 end

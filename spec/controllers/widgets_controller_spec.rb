@@ -5,7 +5,7 @@ describe WidgetsController do
   let(:widget) { Fabricate(:widget, web_template: page) }
   before do
     Widget.stub(:find) { widget }
-    WebPageTemplate.any_instance.stub(:location) { Fabricate(:location_without_pages) }
+    # WebPageTemplate.any_instance.stub(:location) { Fabricate(:location_without_pages) }
   end
   describe "GET 'edit'" do
     it "returns http success" do

@@ -84,16 +84,16 @@ describe Website do
   end
   describe "#deploy" do
     let(:website) { Fabricate(:website) }
-    it "calls LocationDeployer with urn" do
-      LocationDeployer.should_receive(:perform).with(website.urn).once
+    it "calls WebsiteDeployer with urn" do
+      WebsiteDeployer.should_receive(:perform).with(website.urn).once
       website.deploy
     end
   end
   describe "#async_deploy" do
     let(:website) { Fabricate(:website) }
-    it "enquques LocationDeployer with urn" do
+    it "enquques WebsiteDeployer with urn" do
       Resque.stub(:enqueue)
-      Resque.should_receive(:enqueue).with(LocationDeployer, website.urn).once
+      Resque.should_receive(:enqueue).with(WebsiteDeployer, website.urn).once
       website.async_deploy
     end
   end

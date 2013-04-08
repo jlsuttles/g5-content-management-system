@@ -1,5 +1,5 @@
 class WebsiteTemplatesController < ApplicationController
-  before_filter :find_location
+  before_filter :find_website
   layout 'builder'
 
   def edit
@@ -13,7 +13,7 @@ class WebsiteTemplatesController < ApplicationController
       @web_template.reload
       respond_to do |format|
         format.json { render json: @web_template.widgets.last }
-        format.html { redirect_to @location, :notice => "Successfully updated site template." }
+        format.html { redirect_to website_url(@website), :notice => "Successfully updated site template." }
       end
 
     else
@@ -24,8 +24,7 @@ class WebsiteTemplatesController < ApplicationController
 
   private
 
-  def find_location
-    @location = Location.find_by_urn(params[:location_id])
+  def find_website
+    @website = Website.find_by_urn(params[:website_id])
   end
-
 end
