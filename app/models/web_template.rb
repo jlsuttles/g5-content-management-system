@@ -37,9 +37,7 @@ class WebTemplate < ActiveRecord::Base
   scope :disabled, where(disabled: true)
 
   after_initialize :default_enabled_to_true
-
-  before_create :parameterize_title_to_slug
-  before_validation :parameterize_title_to_slug, if: :title_changed?
+  before_validation :parameterize_title_to_slug, if: :new_record?
 
   def website?
     type == "WebsiteTemplate"
