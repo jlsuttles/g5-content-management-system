@@ -36,7 +36,7 @@ class WebTemplate < ActiveRecord::Base
   scope :enabled, where(disabled: false)
   scope :disabled, where(disabled: true)
 
-  after_initialize :default_enabled_to_true
+  after_initialize :assign_defaults
   before_validation :parameterize_title_to_slug, if: :new_record?
 
   def website?
@@ -81,7 +81,10 @@ class WebTemplate < ActiveRecord::Base
 
   private
 
-  def default_enabled_to_true
+  def assign_defaults
+    self.name  ||= "Web Template"
+    self.title ||= name
+    self.slug  ||= title.parameterize
     self.disabled ||= false
   end
 

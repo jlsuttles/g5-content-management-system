@@ -51,7 +51,8 @@ class WebsiteTemplate < WebTemplate
   private
 
   def assign_defaults
-    self.name ||= "Website Template"
+    self.name  ||= "Website Template"
     self.title ||= name
+    self.slug  ||= title.parameterize
   end
 end

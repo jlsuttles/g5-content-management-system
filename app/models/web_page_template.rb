@@ -24,7 +24,8 @@ class WebPageTemplate < WebTemplate
   private
 
   def assign_defaults
-    self.name ||= "New Page"
+    self.name  ||= "New Page"
     self.title ||= name
+    self.slug  ||= title.parameterize
   end
 end

@@ -57,9 +57,10 @@ describe Website do
     end
   end
   describe "#name" do
-    let(:website) { Fabricate.build(:website_with_location) }
-    let(:location) { website.location }
+    let(:website) { Fabricate.build(:website) }
+    let(:location) { Fabricate.build(:location) }
     it "uses location's name" do
+      website.location = location
       website.name.should eq location.name
     end
   end
