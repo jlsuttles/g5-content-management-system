@@ -50,4 +50,28 @@ describe WebTemplate do
       web_template.remote_widgets.should_not include web_template.widgets.last
     end
   end
+  describe "#stylesheets" do
+    let(:web_template) { Fabricate.build(:web_template) }
+    it "has a collection of stylesheets" do
+      web_template.stylesheets.should be_kind_of(Array)
+    end
+  end
+  describe "#javascripts" do
+    let(:web_template) { Fabricate.build(:web_template) }
+    it "has a collection of javascripts" do
+      web_template.javascripts.should be_kind_of(Array)
+    end
+  end
+  describe "#compile_path" do
+    let(:web_template) { Fabricate.build(:web_template) }
+    it "includes slug" do
+      web_template.compile_path.should include web_template.slug
+    end
+  end
+  describe "#compiled_stylesheets" do
+    let(:web_template) { Fabricate.build(:web_template) }
+    it "has a collection of compiled stylesheets" do
+      web_template.compiled_stylesheets.should be_kind_of(Array)
+    end
+  end
 end

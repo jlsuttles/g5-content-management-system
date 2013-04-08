@@ -53,6 +53,20 @@ class WebTemplate < ActiveRecord::Base
     end
   end
 
+  def stylesheets
+    widgets.map(&:stylesheets).flatten +
+    website.try(:website_template).try(:stylesheets).to_a
+  end
+
+  def javascripts
+    widgets.map(&:javascripts).flatten +
+    website.try(:website_template).try(:javascripts).to_a
+  end
+
+  def compile_path
+    File.join(website.try(:compile_path).to_s, "#{slug}.html")
+  end
+
   def compiled_stylesheets
     stylesheets.map do |stylesheet|
       remote_stylesheet = RemoteStylesheet.new(
@@ -63,18 +77,6 @@ class WebTemplate < ActiveRecord::Base
       remote_stylesheet.compile
       remote_stylesheet.css_link_path
     end
-  end
-
-  def stylesheets
-    widgets.map(&:stylesheets).flatten + website.website_template.stylesheets.to_a
-  end
-
-  def javascripts
-    widgets.map(&:javascripts).flatten + website.website_template.javascripts.to_a
-  end
-
-  def compile_path
-    File.join(website.compile_path, "#{self.slug}.html")
   end
 
   private
