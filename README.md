@@ -20,6 +20,11 @@ automatically uses sensible defaults for the primary ActiveRecord database.
 $ rake db:setup
 ```
 
+1. Configure your local instance of the widget garden. If you are using Foreman, the simplest way is to create a .env file which sets a WIDGET_GARDEN_URL variable to whatever server you are running locally, e.g. http://0.0.0.0:3001. If you aren't using Foreman you can still set one locally when you start up your server, i.e. 
+```bash
+$ WIDGET_GARDEN_URL=http://0.0.0.0:3001 rails s
+```
+If you don't set this environment variable, the WIDGET_GARDEN_URL will default to the value set in config/constants/environment_variables.rb.
 
 ### Optional: To Seed a Client from the G5 Hub
 
@@ -71,6 +76,8 @@ $ rake jobs:work
 
   * Jessica Lynn Suttles / [@jlsuttles](https://github.com/jlsuttles)
   * Bookis Smuin / [@bookis](https://github.com/bookis)
+  * Chris Stringer / [@jcstringer](https://github.com/jcstringer)
+  * Michael Mitchell / [@variousred](https://github.com/variousred)
 
 
 ## Contributing
