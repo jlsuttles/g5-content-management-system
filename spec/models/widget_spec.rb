@@ -64,18 +64,6 @@ describe Widget do
     end
   end
 
-  describe "dynamic setting methods" do
-    it "makes a dynamic method" do
-      widget.should respond_to :username
-    end
-    it "sets the value to an association" do
-      widget.username.should eq widget.settings.first
-    end
-    it "lists the methods" do
-      widget.singleton_methods.should include :username
-    end
-  end
-
   describe "#liquidized_html" do
     it "does not escape funky characters" do
       widget.html = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"

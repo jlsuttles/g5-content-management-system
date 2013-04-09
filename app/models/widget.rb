@@ -1,7 +1,6 @@
 require_dependency 'liquid_filters'
 
 class Widget < ActiveRecord::Base
-  include AssociationToMethod
   include HasManyPrioritizedSettings
 
   liquid_methods :location
@@ -23,14 +22,9 @@ class Widget < ActiveRecord::Base
   serialize :javascripts, Array
 
   belongs_to :web_template, polymorphic: true
-  has_one :location, :through => :web_template
-  has_many :settings, as: :owner, after_add: :define_dynamic_association_method
+  has_one :location, through: :web_template
 
   has_many :widget_entries, dependent: :destroy
-
-  accepts_nested_attributes_for :settings
-
-  alias_attribute :dynamic_association, :settings
 
   before_create :assign_attributes_from_url
 
