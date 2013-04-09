@@ -13,4 +13,8 @@ module HasManyPrioritizedSettings
   def settings_names
     settings.map(&:name)
   end
+
+  def priority
+    Setting::PRIORITIZED_OWNERS.index(self.class.name)
+  end
 end
