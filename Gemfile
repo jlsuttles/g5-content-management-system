@@ -35,6 +35,7 @@ group :development, :test do
   gem "selenium-webdriver", "~> 2.32.1"
   gem "database_cleaner", "~> 0.9.1"
   gem "rspec-rails", "~> 2.11.4"
+  gem "shoulda-matchers", "~> 2.0.0"
   gem "guard-rspec", "~> 2.1.0"
   gem "rb-fsevent", "~> 0.9.2"
   gem "debugger", "~> 1.2.1"
