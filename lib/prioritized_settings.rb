@@ -16,6 +16,7 @@ class PrioritizedSettings
     if @settings_names.include?(method_name)
       Setting.
         where(name: method_name).
+        where("value IS NOT NULL").
         where("priority >= ?", @owner.priority).
         order("priority ASC").
         first

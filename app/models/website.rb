@@ -1,7 +1,7 @@
 class Website < ActiveRecord::Base
   include HasManyPrioritizedSettings
-  include UrnCreator
-  include UseUrnForParams
+  include AfterCreateUpdateUrn
+  include ToParamUrn
 
   COMPILE_PATH = File.join(Rails.root, "tmp", "compiled_sites")
 

@@ -1,6 +1,9 @@
 class Location < ActiveRecord::Base
   include HasManyPrioritizedSettings
-  include SettingNavigationLinks
+  include AfterCreateUpdateUrn
+  include ToParamUrn
+
+  set_urn_prefix "g5-cl"
 
   attr_accessible :uid,
                   :urn,
@@ -19,20 +22,4 @@ class Location < ActiveRecord::Base
   validates :name, presence: true
 
   before_create :build_website
-
-  after_create :set_urn
-
-  def record_type
-    "g5-cl"
-  end
-
-  def to_param
-    urn
-  end
-
-  private
-
-  def set_urn
-    update_attributes(urn: "#{record_type}-#{id}-#{name.parameterize}")
-  end
 end

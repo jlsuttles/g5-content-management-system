@@ -1,4 +1,4 @@
-module UseUrnForParams
+module ToParamUrn
   extend ActiveSupport::Concern
 
   def to_param
