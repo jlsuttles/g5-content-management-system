@@ -1,4 +1,4 @@
-module PrioritizedSettings
+module HasManyPrioritizedSettings
   extend ActiveSupport::Concern
 
   included do
@@ -7,10 +7,10 @@ module PrioritizedSettings
   end
 
   def prioritized_settings
-    PrioritizedSettingsSearch.new(self)
+    PrioritizedSettings.new(self)
   end
 
   def settings_names
-    settings.pluck(:name)
+    settings.map(&:name)
   end
 end

@@ -1,4 +1,4 @@
-class PrioritizedSettingsSearch
+class PrioritizedSettings
   def initialize(owner)
     @owner = owner
     @settings_names = @owner.settings_names

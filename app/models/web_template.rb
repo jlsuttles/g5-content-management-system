@@ -1,5 +1,5 @@
 class WebTemplate < ActiveRecord::Base
-  include PrioritizedSettings
+  include HasManyPrioritizedSettings
 
   attr_accessible :website_id,
                   :name,

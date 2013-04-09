@@ -2,7 +2,7 @@ require_dependency 'liquid_filters'
 
 class Widget < ActiveRecord::Base
   include AssociationToMethod
-  include PrioritizedSettings
+  include HasManyPrioritizedSettings
 
   liquid_methods :location
 

@@ -1,5 +1,5 @@
 class Website < ActiveRecord::Base
-  include PrioritizedSettings
+  include HasManyPrioritizedSettings
   include UrnCreator
   include UseUrnForParams
 

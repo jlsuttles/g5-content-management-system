@@ -1,5 +1,5 @@
 class Client < ActiveRecord::Base
-  include PrioritizedSettings
+  include HasManyPrioritizedSettings
 
   attr_accessible :uid,
                   :name

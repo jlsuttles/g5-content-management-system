@@ -1,6 +1,6 @@
 class WebTheme < ActiveRecord::Base
   include ComponentGardenable
-  include PrioritizedSettings
+  include HasManyPrioritizedSettings
 
   set_garden_url ENV["THEME_GARDEN_URL"]
 

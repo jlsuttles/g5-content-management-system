@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  include PrioritizedSettings
+  include HasManyPrioritizedSettings
   include SettingNavigationLinks
 
   attr_accessible :uid,
