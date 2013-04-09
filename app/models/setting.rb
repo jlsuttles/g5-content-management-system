@@ -31,6 +31,20 @@ class Setting < ActiveRecord::Base
   validates :owner_type, presence: true, inclusion: { in: PRIORITIZED_OWNERS }
   validates :priority, presence: true, numericality: { only_integer: true }
 
+  def value
+    prioritized_value || read_attribute(:value)
+  end
+
+  def prioritized_value
+    Setting.
+      where(name: name).
+      where("value IS NOT NULL").
+      where("priority >= ?", owner.priority).
+      order("priority ASC").
+      first.
+      try(:read_attribute, :value)
+  end
+
   private
 
   def set_priority

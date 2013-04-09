@@ -1,6 +1,6 @@
 class WebLayout < ActiveRecord::Base
   include ComponentGardenable
-  include HasManyPrioritizedSettings
+  include HasManySettings
 
   set_garden_url ENV["LAYOUT_GARDEN_URL"]
 

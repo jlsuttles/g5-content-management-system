@@ -1,16 +1,10 @@
 require "spec_helper"
 
-shared_examples_for HasManyPrioritizedSettings do
+shared_examples_for HasManySettings do
   let(:described_instance) { described_class.new }
 
   it { should have_many(:settings) }
   it { should respond_to("settings_attributes=") }
-
-  describe"#prioritized_settings" do
-    it "returns PrioritizedSettingsSearch" do
-      described_instance.prioritized_settings.should be_a(PrioritizedSettings)
-    end
-  end
 
   describe "#settings_names" do
     it "when no settings returns empty array" do
@@ -24,29 +18,29 @@ shared_examples_for HasManyPrioritizedSettings do
 end
 
 describe Client do
-  it_behaves_like HasManyPrioritizedSettings
+  it_behaves_like HasManySettings
 end
 
 describe Location do
-  it_behaves_like HasManyPrioritizedSettings
+  it_behaves_like HasManySettings
 end
 
 describe Website do
-  it_behaves_like HasManyPrioritizedSettings
+  it_behaves_like HasManySettings
 end
 
 describe WebTemplate do
-  it_behaves_like HasManyPrioritizedSettings
+  it_behaves_like HasManySettings
 end
 
 describe WebLayout do
-  it_behaves_like HasManyPrioritizedSettings
+  it_behaves_like HasManySettings
 end
 
 describe WebTheme do
-  it_behaves_like HasManyPrioritizedSettings
+  it_behaves_like HasManySettings
 end
 
 describe Widget do
-  it_behaves_like HasManyPrioritizedSettings
+  it_behaves_like HasManySettings
 end

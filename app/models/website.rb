@@ -1,5 +1,5 @@
 class Website < ActiveRecord::Base
-  include HasManyPrioritizedSettings
+  include HasManySettings
   include AfterCreateUpdateUrn
   include ToParamUrn
 
