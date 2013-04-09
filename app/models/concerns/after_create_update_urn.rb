@@ -7,11 +7,11 @@ module AfterCreateUpdateUrn
 
   module ClassMethods
     def set_urn_prefix(prefix)
-      @@urn_prefix = prefix
+      @urn_prefix = prefix
     end
 
     def urn_prefix
-      @@urn_prefix
+      @urn_prefix
     end
   end
 

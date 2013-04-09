@@ -21,18 +21,6 @@ describe Location do
       location.urn.should match /g5-cl-1-/
     end
   end
-  describe "#record_type" do
-    let(:location) { Fabricate.build(:location) }
-    it "is g5-cl" do
-      location.record_type.should eq "g5-cl"
-    end
-  end
-  describe "#to_param" do
-    let(:location) { Fabricate(:location) }
-    it "uses urn" do
-      location.to_param.should eq location.urn
-    end
-  end
   describe "#website" do
     let(:location) { Fabricate(:location) }
     it "creates a website on create" do

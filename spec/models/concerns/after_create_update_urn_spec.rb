@@ -9,10 +9,11 @@ shared_examples_for AfterCreateUpdateUrn do
   end
 
   describe ".set_urn_prefix" do
-    let(:original_urn_prefix) { described_class.urn_prefix }
-
+    before do
+      @original_urn_prefix = described_class.urn_prefix
+    end
     after do
-      described_class.set_urn_prefix(original_urn_prefix)
+      described_class.set_urn_prefix(@original_urn_prefix)
     end
 
     it "sets .urn_prefix" do
