@@ -1,7 +1,6 @@
 require "spec_helper"
 
 describe WebTemplatesHelper do
-  let(:location) { Fabricate(:location) }
   let(:website) { Fabricate(:website) }
   let(:website_template) { Fabricate(:website_template) }
   let(:web_layout) { Fabricate(:web_layout) }
@@ -10,7 +9,6 @@ describe WebTemplatesHelper do
   let(:widget) { Fabricate(:widget) }
 
   before :each do
-    location.website = website
     website.website_template = website_template
     website_template.web_layout = web_layout
     website_template.web_theme = web_theme
@@ -19,7 +17,7 @@ describe WebTemplatesHelper do
   end
 
   describe "preview" do
-    let(:preview) { helper.preview(location, location.web_page_templates.first) }
+    let(:preview) { helper.preview(website, website.web_page_templates.first) }
 
     it "has layout in html" do
       preview.should match /single-column/

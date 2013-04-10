@@ -20,7 +20,7 @@ class Setting < ActiveRecord::Base
                   :categories,
                   :priority
 
-  serialize :categories
+  serialize :categories, Array
 
   belongs_to :owner, polymorphic: true
 

@@ -14,7 +14,7 @@ class Website < ActiveRecord::Base
 
   belongs_to :location
 
-  has_many :web_templates, dependent: :destroy
+  has_many :web_templates
   # subclasses of web_templates
   has_one  :website_template, autosave: true, dependent: :destroy
   has_one  :web_home_template, autosave: true, dependent: :destroy
@@ -28,7 +28,7 @@ class Website < ActiveRecord::Base
   before_create :build_web_home_template
 
   def name
-    location ? location.name : ""
+    location.try(:name)
   end
 
   def compile_path

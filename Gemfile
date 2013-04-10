@@ -7,7 +7,6 @@ gem "jquery-rails"
 
 gem "quiet_assets", "~> 1.0.1"
 gem "bootstrap-sass", "~> 2.1.1.0"
-gem "table_cloth", "~> 0.2.1"
 gem "foreman", "~> 0.60.2"
 gem "heroku_resque_autoscaler", "~> 0.1.0"
 gem "microformats2", "2.0.0.pre4"
