@@ -7,6 +7,6 @@ module AfterUpdateSetSettingNavigation
   end
 
   def set_setting_navigation
-    website.set_setting_navigation
+    website.try(:set_setting_navigation)
   end
 end

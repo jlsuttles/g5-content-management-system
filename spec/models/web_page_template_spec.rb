@@ -11,13 +11,4 @@ describe WebPageTemplate do
   it "should return all widgets" do
     web_page_template.all_widgets.should be_a(Array)
   end
-  it "should have a url string" do
-    web_page_template.url.should be_a(String)
-  end
-  it "should have an alt string" do
-    web_page_template.alt.should be_a(String)
-  end
-  it "should have a display boolean" do
-    web_page_template.display.should be_true
-  end
 end
