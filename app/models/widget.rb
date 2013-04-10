@@ -3,8 +3,6 @@ require_dependency 'liquid_filters'
 class Widget < ActiveRecord::Base
   include HasManySettings
 
-  liquid_methods :location
-
   attr_accessible :web_template_id,
                   :web_template_type,
                   :section,

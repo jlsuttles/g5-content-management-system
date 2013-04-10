@@ -1,5 +1,6 @@
 class WebTemplate < ActiveRecord::Base
   include HasManySettings
+  include AfterUpdateSetSettingNavigation
 
   attr_accessible :website_id,
                   :name,

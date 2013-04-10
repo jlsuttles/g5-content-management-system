@@ -7,7 +7,8 @@ class SettingDecorator < Draper::Decorator
                   :field_id,
                   :value_field_name,
                   :value_field_id,
-                  :value
+                  :value,
+                  :best_value
 
   def id_hidden_field
     h.hidden_field_tag("#{field_name}[id]", id)
