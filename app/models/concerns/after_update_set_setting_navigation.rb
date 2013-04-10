@@ -6,6 +6,8 @@ module AfterUpdateSetSettingNavigation
     after_update :set_setting_navigation, if: :title_changed?
   end
 
+  private
+
   def set_setting_navigation
     website.try(:set_setting_navigation)
   end
