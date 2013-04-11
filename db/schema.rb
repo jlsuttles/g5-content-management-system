@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.string   "urn"
     t.string   "primary_color",   :default => "#000000"
     t.string   "secondary_color", :default => "#ffffff"
+    t.boolean  "custom_colors",   :default => false,     :null => false
   end
 
   add_index "locations", ["urn"], :name => "index_locations_on_urn"
