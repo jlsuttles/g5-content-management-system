@@ -33,7 +33,14 @@ class Setting < ActiveRecord::Base
   validates :name, presence: true
   validates :owner, presence: true
   validates :owner_type, presence: true, inclusion: { in: PRIORITIZED_OWNERS }
-  # validates :priority, presence: true, numericality: { only_integer: true }
+  validates :priority, presence: true, numericality: { only_integer: true },
+    unless: :new_record?
+
+  scope :where_name, lambda { |name| where(name: name) }
+  scope :value_is_present, where("value IS NOT NULL")
+  scope :order_priority_asc, order("priority ASC")
+  scope :where_priority_gte, lambda { |priority| where("priority >= ?", priority) }
+  scope :where_priority_gt, lambda { |priority| where("priority > ?", priority) }
 
   def best_value
     prioritized_value || value
@@ -44,23 +51,13 @@ class Setting < ActiveRecord::Base
   end
 
   def prioritized_value
-    self.class.
-      where(name: name).
-      where("value IS NOT NULL").
-      where("priority >= ?", owner.priority).
-      order("priority ASC").
-      first.
-      try(:value)
+    self.class.where_name(name).value_is_present.order_priority_asc.
+      where_priority_gte(owner.priority).first.try(:value)
   end
 
   def next_value
-    self.class.
-      where(name: name).
-      where("value IS NOT NULL").
-      where("priority > ?", owner.priority).
-      order("priority ASC").
-      first.
-      try(:value)
+    self.class.where_name(name).value_is_present.order_priority_asc.
+      where_priority_gt(owner.priority).first.try(:value)
   end
 
   def next_value_merge
