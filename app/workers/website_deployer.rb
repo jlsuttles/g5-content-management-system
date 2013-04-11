@@ -34,9 +34,9 @@ class WebsiteDeployer
   def compile_page(page, to_path)
     File.open(to_path, "w") do |file|
       file << WebsitesController.new.render_to_string(
-        "/web_templates/preview",
+        "/web_templates/show",
         layout: "compiled_pages",
-        locals: { web_template: page, website: @website, mode: "deployed" }
+        locals: { website: @website, web_template: page, mode: "deployed" }
       )
     end
   end

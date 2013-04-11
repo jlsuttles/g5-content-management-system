@@ -1,14 +1,10 @@
 class WebTemplatesController < ApplicationController
   before_filter :find_website
-  before_filter :find_web_template, only: [:show, :edit, :update, :destroy, :preview]
-
-  def index
-    @web_templates = web_template_klass.all
-    render "web_templates/index"
-  end
+  before_filter :find_web_template, only: [:show, :edit, :update]
 
   def show
-    render "web_templates/show"
+    render "web_templates/show", layout: "compiled_pages",
+      locals: { website: @website, web_template: @web_template, mode: "preview" }
   end
 
   def new
@@ -38,11 +34,6 @@ class WebTemplatesController < ApplicationController
     else
       render "web_templates/edit", layout: "builder"
     end
-  end
-
-  def preview
-    render "web_templates/preview", layout: "compiled_pages",
-      locals: { website: @website, web_template: @web_template, mode: "preview" }
   end
 
   private

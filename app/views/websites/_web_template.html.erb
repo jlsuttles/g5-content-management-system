@@ -12,8 +12,8 @@
     <% if web_template.website? %>
       <%= link_to "Deploy", deploy_website_path(website), method: :post, class: "btn btn-large" %>
     <% else %>
-      <%= link_to "Preview", send("preview_website_#{web_template.type.underscore}_path", website, web_template), class: "btn btn-large primary" %>
-      <%= page_disable_toggle(@location, page) %>
+      <%= link_to "Preview", send("website_#{web_template.type.underscore}_path", website, web_template), class: "btn btn-large primary" %>
+      <%= page_disable_toggle(@website, page) %>
     <% end %>
   </td>
 </tr>

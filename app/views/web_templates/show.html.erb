@@ -1,24 +1,5 @@
-<% title "Page :: #{@web_template.name}" %>
-<p>
-  <strong>Layout URL: </strong>
-  <%= @web_template.web_layout.url %>
-</p>
-
-<p>
-  <strong>Theme URL: </strong>
-  <%= @web_template.theme.url %>
-</p>
-
-<p>
-  <h3>Widgets: </h3>
-  <ul>
-    <% @web_template.widgets.each do |widget| %>
-      <li><%= widget.name %></li>
-    <% end %>
-  </ul>
-</p>
-
-<p>
-  <%= link_to "Preview", preview_website_web_page_template_path(@website, @web_template), class: "btn btn-success" %>
-  <%= link_to "View All", website_path(@website) %>
-</p>
+<%= content_for :body_classes, "page-#{web_template.slug}"%>
+<%= content_for :head, stylesheet_link_tag(*web_template.compiled_stylesheets) %>
+<%= content_for :head, javascript_include_tag(*web_template.javascripts) %>
+<%= content_for :title, web_template.title %>
+<%= raw preview(website, web_template) %>

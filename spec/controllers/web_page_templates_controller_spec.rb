@@ -6,13 +6,6 @@ describe WebPageTemplatesController do
     @web_page_template = @website.web_page_templates.first
   }
 
-  describe "#index" do
-    it "index action should render index template" do
-      get :index, website_id: @website.urn
-      response.should render_template(:index)
-    end
-  end
-
   describe "#new" do
     it "new action should render new template" do
       get :new, website_id: @website.urn
@@ -63,13 +56,6 @@ describe WebPageTemplatesController do
     it "updates a web_page_template" do
       update
       @web_page_template.reload.name.should eq "New Name"
-    end
-  end
-
-  describe "#preview" do
-    it "should render the preview template" do
-      get :preview, :id => @web_page_template.id, website_id: @website.urn
-      response.should render_template :preview
     end
   end
 

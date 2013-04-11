@@ -15,6 +15,7 @@ G5ClientHub::Application.routes.draw do
     resources :web_home_templates do
       member do
         get "preview"
+        put "toggle_disabled"
       end
     end
     resources :web_page_templates do
@@ -26,6 +27,9 @@ G5ClientHub::Application.routes.draw do
     member do
       post "deploy"
     end
+    resources :website_templates, only: [:edit, :update]
+    resources :web_page_templates, only: [:show, :new, :create, :edit, :update]
+    resources :web_home_templates, only: [:show, :new, :create, :edit, :update]
   end
 
   root to: "locations#index"
