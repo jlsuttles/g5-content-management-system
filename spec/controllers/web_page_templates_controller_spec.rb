@@ -22,13 +22,13 @@ describe WebPageTemplatesController do
 
   describe "#create" do
     it "create action should render new template when model is invalid" do
-      WebPageTemplate.any_instance.stub(:save) {false}
+      WebTemplate.any_instance.stub(:save) {false}
       post :create, website_id: @website.urn
       response.should render_template(:new)
     end
 
     it "create action should redirect when model is valid" do
-      WebPageTemplate.any_instance.stub(:save) {true}
+      WebTemplate.any_instance.stub(:save) {true}
       post :create, website_id: @website.urn
       response.should redirect_to(website_url(assigns[:website]))
     end

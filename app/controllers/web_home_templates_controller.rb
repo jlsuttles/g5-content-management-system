@@ -1,38 +1,10 @@
-class WebHomeTemplatesController < ApplicationController
-  before_filter :find_website
-
-  def edit
-    @web_template = WebHomeTemplate.find(params[:id])
-    render :"/web_templates/edit", :layout => 'builder'
-  end
-
-  def update
-    @web_template = WebHomeTemplate.find(params[:id])
-    if @web_template.update_attributes(params[:web_home_template])
-      @web_template.reload
-      respond_to do |format|
-        format.json { render json: @web_template.widgets.last }
-        format.html { redirect_to @website, :notice => "Successfully updated page." }
-      end
-    else
-      render :"/web_templates/edit", :layout => 'builder'
-    end
-  end
-
-  def show
-    @web_template = WebHomeTemplate.find(params[:id])
-    render :"/web_templates/show"
-  end
-
-  def preview
-    @web_template = WebHomeTemplate.find(params[:id])
-    render :"/web_templates/preview", layout: "compiled_pages",
-      locals: { website: @website, web_template: @web_template, mode: "preview" }
-  end
-
+class WebHomeTemplatesController < WebTemplatesController
   private
+  def web_template_klass
+    WebHomeTemplate
+  end
 
-  def find_website
-    @website = Website.find_by_urn(params[:website_id])
+  def web_template_params
+    params[:web_home_template]
   end
 end
