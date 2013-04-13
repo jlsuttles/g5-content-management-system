@@ -3,7 +3,7 @@ require_dependency 'liquid_filters'
 class Widget < ActiveRecord::Base
   include AssociationToMethod
 
-  liquid_methods :location
+  liquid_methods :location, :available_calls_to_action, :default_calls_to_action
 
   attr_accessible :page_id, :section, :position, :url, :name, :stylesheets,
                   :javascripts, :html, :thumbnail, :edit_form_html,
@@ -35,6 +35,14 @@ class Widget < ActiveRecord::Base
     components.map do |component|
       new(url: component.uid.to_s, name: component.name.to_s, thumbnail: component.photo.to_s)
     end
+  end
+
+  def available_calls_to_action
+    CallToAction::CALLS_TO_ACTION
+  end
+
+  def default_calls_to_action
+    CallToAction.default_calls_to_action
   end
 
   def liquidized_html
