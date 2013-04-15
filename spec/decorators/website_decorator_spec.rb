@@ -12,9 +12,9 @@ describe WebsiteDecorator do
     website.heroku_app_name.length.should eq 30
   end
   it "has a heroku repo" do
-    website.heroku_repo.should match /git@heroku\.com:g5-clw-\d+-awesome-location-name\.git/
+    website.heroku_repo.should match /git@heroku\.com:g5-clw-\d+-/
   end
   it "has a heroku url" do
-    website.heroku_url.should match /https:\/\/g5-clw-\d+-awesome-location-name\.herokuapp\.com/
+    website.heroku_url.should match /https:\/\/g5-clw-\d+-/
   end
 end
