@@ -19,8 +19,18 @@ class CallToAction
     CALLS_TO_ACTION.select{ |key| DEFAULT_CALLS_TO_ACTION.include?(key) }
   end
 
-  def self.options_for_select
-    CALLS_TO_ACTION.map{ |k,v| [v,v] }
+  def self.set_widget_defaults(widget)
+    return unless widget.kind_of_widget?("Calls to Action")
+    numbers = %w{One Two Three Four}
+    default_calls_to_action.each_with_index do |cta, index|
+      number = numbers[index]
+      if text = widget.widget_attributes.where(:name => "CTA #{number} Text").first
+        text.update_attribute(:value, cta[0])
+      end
+      if url = widget.widget_attributes.where(:name => "CTA #{number} URL").first
+        url.update_attribute(:value, cta[1])
+      end
+    end
   end
 
 end

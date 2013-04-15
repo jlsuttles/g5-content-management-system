@@ -24,23 +24,15 @@ class Widget < ActiveRecord::Base
   alias_attribute :dynamic_association, :settings
 
   before_create :assign_attributes_from_url
+  after_create :set_default_calls_to_action
 
   validates :url, presence: true
 
   scope :in_section, lambda { |section| where(section: section) }
   scope :name_like_form, where("widgets.name LIKE '%Form'")
 
-  after_create :set_calls_to_action
-
-  def set_calls_to_action
-    if self.name == "Calls to Action"
-      default_ctas = default_calls_to_action
-      %w{One Two Three Four}.each do |num|
-        cta = default_ctas.shift
-        self.widget_attributes.where(:name => "CTA #{num} Text").first.update_attribute(:value, cta[0])
-        self.widget_attributes.where(:name => "CTA #{num} URL").first.update_attribute(:value, cta[1])
-      end
-    end
+  def set_default_calls_to_action
+    CallToAction.set_widget_defaults(self)
     true
   end
 
