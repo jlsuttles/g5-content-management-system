@@ -33,27 +33,27 @@ describe Widget do
   end
 
   describe "#configurations" do
-    let(:setting) { widget.settings.first }
+    let(:property_group) { widget.property_groups.first }
     it "creates one" do
-      expect { widget }.to change(Setting, :count).by(1)
+      expect { widget }.to change(PropertyGroup, :count).by(1)
     end
 
     it "assigns a name" do
-      setting.name.should eq "Feed"
+      property_group.name.should eq "Feed"
     end
     it "assigns categories" do
-      setting.categories.should eq ["Instance"]
+      property_group.categories.should eq ["Instance"]
     end
 
-    it "assigns widget attributes to the settings" do
-      expect { widget }.to change(WidgetAttribute, :count).by(2)
+    it "assigns widget attributes to the property_groups" do
+      expect { widget }.to change(Property, :count).by(2)
     end
   end
 
   describe "updating widget attributes" do
     it "updates with nested attributes" do
-      attribute = widget.widget_attributes.first
-      widget.update_attributes(widget_attributes_attributes: {
+      attribute = widget.properties.first
+      widget.update_attributes(properties_attributes: {
         id: attribute.id,
         value: "TEST"
       })
@@ -62,12 +62,12 @@ describe Widget do
     end
   end
 
-  describe "dynamic setting methods" do
+  describe "dynamic property_group methods" do
     it "makes a dynamic method" do
       widget.should respond_to :feed
     end
     it "sets the value to an association" do
-      widget.feed.should eq widget.settings.first
+      widget.feed.should eq widget.property_groups.first
     end
     it "lists the methods" do
       widget.singleton_methods.should include :feed
