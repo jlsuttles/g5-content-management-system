@@ -18,7 +18,7 @@ describe Location do
   describe "#urn" do
     let(:location) { Fabricate(:location) }
     it "sets on save" do
-      location.urn.should match /g5-cl-1-/
+      location.urn.should match /g5-cl-\d+-/
     end
   end
   describe "#website" do

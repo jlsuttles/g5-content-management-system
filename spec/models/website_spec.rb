@@ -17,7 +17,7 @@ describe Website do
   describe "#urn" do
     let(:website) { Fabricate(:website) }
     it "sets on save" do
-      website.urn.should match /g5-clw-1-/
+      website.urn.should match /g5-clw-\d+-/
     end
   end
   describe "#to_param" do
