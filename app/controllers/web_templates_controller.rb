@@ -13,7 +13,7 @@ class WebTemplatesController < ApplicationController
   end
 
   def create
-    @web_template = @website.web_templates.new(web_template_params)
+    @web_template = @website.send(web_template_method).new(web_template_params)
     if @web_template.save
       redirect_to website_url(@website), notice: "Successfully created."
     else
@@ -42,8 +42,12 @@ class WebTemplatesController < ApplicationController
     WebTemplate
   end
 
+  def web_template_method
+    web_template_klass.name.underscore.pluralize
+  end
+
   def web_template_params
-    params[:web_template]
+    params[web_template_klass.name.underscore]
   end
 
   def find_website

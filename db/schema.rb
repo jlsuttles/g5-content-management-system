@@ -95,12 +95,12 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
   create_table "web_templates", :force => true do |t|
     t.integer  "website_id"
     t.string   "name"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "slug"
     t.boolean  "template",   :default => false
-    t.string   "type",       :default => "Page"
     t.string   "title"
+    t.string   "type"
     t.boolean  "disabled"
   end
 
