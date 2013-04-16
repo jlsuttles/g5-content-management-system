@@ -4,7 +4,10 @@ module HasSettingNavigation
   extend ActiveSupport::Concern
 
   def setting_navigation
-    settings.find_or_initialize_by_name("navigation")
+    settings.find_or_initialize_by_name(
+      name: "navigation",
+      categories: ["collection"]
+    )
   end
 
   def set_setting_navigation

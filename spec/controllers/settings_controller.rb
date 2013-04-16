@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe LocationsController do
-  let(:location) { Fabricate.build(:location) }
+describe SettingsController do
+  let(:setting) { Fabricate.build(:setting) }
 
   describe "#index" do
     it "index action should render index template" do

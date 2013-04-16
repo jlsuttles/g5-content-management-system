@@ -10,6 +10,10 @@ class SettingDecorator < Draper::Decorator
                   :value,
                   :best_value
 
+  def owner_name
+    owner.name if owner && owner.respond_to?(:name)
+  end
+
   def id_hidden_field
     h.hidden_field_tag("#{field_name}[id]", id)
   end
