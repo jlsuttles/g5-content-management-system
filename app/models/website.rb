@@ -51,4 +51,20 @@ class Website < ActiveRecord::Base
   def async_deploy
     Resque.enqueue(WebsiteDeployer, urn)
   end
+
+  def primary_color
+    if custom_colors?
+      read_attribute(:primary_color)
+    else
+      website_template.try(:primary_color) || "#000000"
+    end
+  end
+
+  def secondary_color
+    if custom_colors?
+      read_attribute(:secondary_color)
+    else
+      website_template.try(:secondary_color) || "#ffffff"
+    end
+  end
 end

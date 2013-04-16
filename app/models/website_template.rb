@@ -48,6 +48,22 @@ class WebsiteTemplate < WebTemplate
     web_theme ? web_theme.javascripts : []
   end
 
+  def primary_color
+    if website.custom_colors?
+      website.primary_color
+    else
+      web_theme.try(:primary_color)
+    end
+  end
+
+  def secondary_color
+    if website.custom_colors?
+      website.secondary_color
+    else
+      web_theme.try(:secondary_color)
+    end
+  end
+
   private
 
   def assign_defaults

@@ -97,4 +97,39 @@ describe Website do
       website.async_deploy
     end
   end
+  describe "Colors" do
+    let(:website) { Fabricate(:website) }
+    describe "Default" do
+      it { website.primary_color.should eq "#000000" }
+      it { website.secondary_color.should eq "#ffffff" }
+    end
+    describe "Custom" do
+      let(:web_theme) { Fabricate(:web_theme) }
+      before do
+        website.website_template.web_theme = web_theme
+      end
+      before do
+        website.stub(:custom_colors?) { true }
+        website.stub(:read_attribute) { "#111111" }
+      end
+      it { website.primary_color.should eq "#111111" }
+      it { website.secondary_color.should eq "#111111" }
+    end
+    describe "Website Template" do
+      let(:web_theme) { Fabricate(:web_theme) }
+      before do
+        website.website_template.web_theme = web_theme
+      end
+      it { website.primary_color.should eq "#000000" }
+      it { website.secondary_color.should eq "#ffffff" }
+      it do
+        website.website_template.stub(:primary_color) { "#121212"}
+        website.primary_color.should eq "#121212"
+      end
+      it do
+        website.website_template.stub(:secondary_color) { "#212121"}
+        website.secondary_color.should eq "#212121"
+      end
+    end
+  end
 end
