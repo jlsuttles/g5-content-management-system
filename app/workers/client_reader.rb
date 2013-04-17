@@ -13,21 +13,12 @@ class ClientReader
     )
 
     Location.destroy_all
-    client.g5_locations.each do |location|
+    client.orgs.each do |location|
       location = location.format
       Location.create!(
         uid: location.uid.to_s,
         name: location.name.to_s
       )
-    end if client.g5_locations
-
-    Feature.destroy_all
-    client.g5_features.each do |feature|
-      feature = feature.format
-      Feature.create!(
-        uid: feature.uid.to_s,
-        name: feature.name.to_s
-      )
-    end if client.respond_to?(:g5_features)
+    end if client.respond_to?(:orgs)
   end
 end
