@@ -4,7 +4,7 @@ module CallsToAction
   AVAILABLE_CALLS_TO_ACTION = {
     "Apply" => "/lead_url/apply",
     "Brochure" => "/lead_url/brochure",
-    "1234567890"     => "tel:1234567890",
+    "1234567890" => "tel:1234567890",
     "Contact"  => "/lead_url/contact",
     "Special Offer"  => "/coupon",
     "Hold Unit" => "/lead_url/hold",
@@ -17,7 +17,7 @@ module CallsToAction
   ].freeze
 
   included do
-    after_create :set_default_calls_to_action, if: Proc.new{ |w| w.kind_of_widget?("Calls to Action") }
+    after_create :set_default_calls_to_action, if: :calls_to_action_widget?
     liquid_methods :available_calls_to_action, :default_calls_to_action
   end
 
@@ -46,6 +46,12 @@ module CallsToAction
   def get_default_calls_to_action
     @default_calls_to_action ||=
       AVAILABLE_CALLS_TO_ACTION.select{ |key| DEFAULT_CALLS_TO_ACTION.include?(key) }
+  end
+
+  private
+
+  def calls_to_action_widget?
+    kind_of_widget?("Calls to Action")
   end
 
 end

@@ -114,5 +114,9 @@ describe Widget do
         widget_attribute_values.should include(value)
       end
     end
+
+    it "does not assign cta widget defaults on a non-cta widget" do
+      widget.should_not_receive(:set_default_calls_to_action)
+    end
   end
 end
