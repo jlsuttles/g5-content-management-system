@@ -105,4 +105,18 @@ describe Widget do
     end
   end
 
+  describe "#set_default_calls_to_action" do
+    let (:cta_widget) { Fabricate(:widget, url: "spec/support/calls_to_action_widget.html")}
+
+    it "assigns the defaults" do
+      widget_attribute_values = cta_widget.widget_attributes.reload.map(&:value)
+      cta_widget.get_default_calls_to_action.values.each do |value|
+        widget_attribute_values.should include(value)
+      end
+    end
+
+    it "does not assign cta widget defaults on a non-cta widget" do
+      widget.should_not_receive(:set_default_calls_to_action)
+    end
+  end
 end

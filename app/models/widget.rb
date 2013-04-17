@@ -1,7 +1,6 @@
 require_dependency 'liquid_filters'
 
 class Widget < ActiveRecord::Base
-  include AssociationToMethod
 
   liquid_methods :location
 
@@ -26,6 +25,10 @@ class Widget < ActiveRecord::Base
   before_create :assign_attributes_from_url
 
   validates :url, presence: true
+
+  # These need to be below the associations, otherwise they aren't aware of them
+  include AssociationToMethod
+  include CallsToAction
 
   scope :in_section, lambda { |section| where(section: section) }
   scope :name_like_form, where("widgets.name LIKE '%Form'")
