@@ -40,6 +40,7 @@
         </td>
         <td>
           <%= link_to "Edit", edit_location_page_path(@location, page), class: "btn btn-large" %>
+          <%= page_disable_toggle(@location, page) %>
           <%= link_to "Preview", preview_location_page_path(@location, page), class: "btn btn-large primary" %>
         </td>
       </tr>
