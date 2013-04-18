@@ -9,13 +9,11 @@ describe Page do
       @disabled_page = Fabricate(:page, disabled: true)
       @page = page
     end
-
     context ".enabled" do
       it "should return enabled pages"do
         Page.enabled.should == [@page]
       end
     end
-
     context ".disabled" do
       it "should return enabled pages"do
         Page.disabled.should == [@disabled_page]
