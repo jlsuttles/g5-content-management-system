@@ -1,6 +1,6 @@
 require "requests_helper"
 
-describe "pages", js: true do
+describe "pages requests", js: true do
   before do
     @client = Fabricate(:client)
     @location = Fabricate(:location)

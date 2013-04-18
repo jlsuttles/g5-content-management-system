@@ -1,6 +1,6 @@
 require "requests_helper"
 
-describe "site_templates", js: true do
+describe "site_templates requests", js: true do
   before do
     @client = Fabricate(:client)
     @location = Fabricate(:location)

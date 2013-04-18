@@ -1,6 +1,6 @@
 require "requests_helper"
 
-describe "locations", js: true do
+describe "locations requests", js: true do
   before do
     @client = Fabricate(:client)
     @location = Fabricate(:location)
@@ -36,7 +36,7 @@ describe "locations", js: true do
       within "table tbody tr:last-child" do
         click_link "Edit"
       end
-      current_path.should eq edit_location_page_path(@location, @location.pages.last)
+      current_path.should eq edit_location_page_path(@location, @location.pages.first)
     end
   end
 end
