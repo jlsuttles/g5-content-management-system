@@ -97,7 +97,6 @@ describe Page do
         widget.name.should eq "Storage List"
       end
 
-
       it "doesn't save if it's marked as destroy" do
         page = Fabricate(:page, name: "P", widgets_attributes: [{_destroy: true, name: "Widgie", url: "http://example.com"}])
         page.widgets.should be_empty
