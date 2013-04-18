@@ -46,6 +46,13 @@ class PagesController < ApplicationController
       locals: { page: @page, location: @location, mode: "preview" }
   end
 
+  def disable
+    page = @location.pages.find(params[:id])
+    page.update_attribute(:disabled, !page.disabled)
+    @text = page.disabled? ? "Enable" : "Disable"
+    @dom_id = params[:dom_id]
+  end
+
   private
 
   def find_location

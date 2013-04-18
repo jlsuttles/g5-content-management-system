@@ -13,6 +13,7 @@ G5ClientHub::Application.routes.draw do
     resources :pages do
       member do
         get "preview"
+        put "disable"
       end
     end
     member do
