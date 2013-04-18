@@ -46,7 +46,7 @@ describe "site_templates requests", js: true do
       target = find(".add-widgets[data-section=header]")
       drag_and_drop(source, target) # drag_to was not working
       page.should_not have_content "jlsuttles"
-      find("input[type=text][placeholder=username]").set("jlsuttles")
+      page.should have_css("input[type=text][placeholder=username]")
       find("input[type=text][placeholder=username]").set("jlsuttles")
       click_button "Save"
       click_button "Submit"
