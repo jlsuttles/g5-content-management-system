@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe PageLayout do
   before do
-    stub_const("PageLayout::LAYOUT_GARDEN_URL", "spec/support/layouts.html")
+    PageLayout.stub(:garden_url) { "spec/support/layouts.html" }
   end
   let(:page_layout) { Fabricate(:page_layout) }
   describe "validations" do
@@ -10,16 +10,16 @@ describe PageLayout do
       page_layout.should be_valid
     end
   end
-  
+
   describe "remote" do
     it "returns six components" do
       PageLayout.all_remote.should have(6).things
     end
   end
-  
+
   describe "attribute assignment" do
     let(:page_layout) { Fabricate(:page_layout) }
-    
+
     it { page_layout.name.should eq "Main First Single Column"}
     it { page_layout.stylesheets.should be_empty }
     it { page_layout.html.should match "container single-column" }

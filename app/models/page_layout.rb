@@ -1,6 +1,4 @@
 class PageLayout < ActiveRecord::Base
-  LAYOUT_GARDEN_URL = "http://g5-layout-garden.herokuapp.com"
-
   attr_accessible :page_id, :url, :name, :html, :thumbnail, :stylesheets
 
   belongs_to :page
@@ -12,8 +10,12 @@ class PageLayout < ActiveRecord::Base
 
   validates :url, presence: true
 
+  def self.garden_url
+    ENV["LAYOUT_GARDEN_URL"]
+  end
+
   def self.all_remote
-    components = Microformats2.parse(LAYOUT_GARDEN_URL).g5_components
+    components = Microformats2.parse(garden_url).g5_components
     components.map do |component|
       new(
         url: component.uid.to_s,
