@@ -24,6 +24,8 @@ describe Page do
   end
 
   describe "validations" do
+    let(:page) { Fabricate.build(:page, name: "Some Name", slug: "some-name", widgets_attributes: [{name: "Widgie", url: "spec/support/widget.html"}]) }
+
     describe "slug" do
       it do
         page.slug = "*"
