@@ -1,12 +1,12 @@
 class Page < ActiveRecord::Base
-  attr_accessible :location_id, :name, :template, :slug, :title
+  attr_accessible :location_id, :name, :template, :slug, :title, :disabled
   attr_accessible :widgets_attributes, :page_layout_attributes, :theme_attributes, :location_attributes
 
   belongs_to :location
   has_one :page_layout
   has_one :theme
   has_many :widgets, autosave: true, order: "position asc"
-  
+
   accepts_nested_attributes_for :location
   accepts_nested_attributes_for :page_layout
   accepts_nested_attributes_for :theme
@@ -16,7 +16,9 @@ class Page < ActiveRecord::Base
   validates :slug, :format => {with: /^[-_A-Za-z0-9]*$/, message: "can only contain letters, numbers, dashes, and underscores."}
 
   scope :home, where(name: "Home")
-  
+  scope :enabled, where(disabled: false)
+  scope :disabled, where(disabled: true)
+
   def sections
     %w(main)
   end
@@ -48,9 +50,9 @@ class Page < ActiveRecord::Base
   def javascripts
     widgets.map(&:javascripts).flatten + location.site_template.javascripts
   end
-  
+
   def compiled_file_path
     File.join(location.compiled_site_path, "#{self.slug}.html")
   end
-  
+
 end
