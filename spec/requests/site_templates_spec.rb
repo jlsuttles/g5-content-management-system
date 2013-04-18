@@ -1,4 +1,4 @@
-require "requests_helper"
+require "spec_helper"
 
 describe "site_templates requests", js: true do
   before do
