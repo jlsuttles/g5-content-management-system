@@ -1,3 +1,7 @@
+<% content_for :head do
+     javascript_tag("$(function(){ new window.toggleSwitch($('.page-actions .switch')); });")
+   end %>
+
 <div class="page-title">
   <h2><%= "Location: #{@location.name}" %> <%= link_to "Create New Page", new_location_page_path(@location), class: 'btn btn-large primary new-page' %></h2>
 
@@ -40,8 +44,10 @@
         </td>
         <td class="page-actions">
           <%= link_to "Preview", preview_location_page_path(@location, page), class: "btn btn-large primary" %>
-          <%= page_disable_toggle(@location, page) %>
           <%= link_to "Edit", edit_location_page_path(@location, page), class: "btn btn-large" %>
+          <div class="switch switch-large" data-on="success" data-off="danger">
+            <input type="checkbox" data-remote-url="<%= toggle_disabled_location_page_path(@location, page) %>"<%= " checked" unless page.disabled? %> />
+          </div>
         </td>
       </tr>
     <% end %>

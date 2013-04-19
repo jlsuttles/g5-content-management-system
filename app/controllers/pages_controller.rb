@@ -47,10 +47,12 @@ class PagesController < ApplicationController
   end
 
   def toggle_disabled
-    page = @location.pages.find(params[:id])
-    page.update_attribute(:disabled, !page.disabled)
-    @dom_id = params[:dom_id]
-    @disabled = page.disabled?
+    if page = @location.pages.find(params[:id])
+      page.update_attribute(:disabled, params[:disabled])
+    end
+    respond_to do |format|
+      format.json { render json: {success: true} }
+    end
   end
 
   private

@@ -1,7 +1,0 @@
-<% if @disabled %>
-  $("#<%= @dom_id %>").removeClass("page-enabled").addClass("page-disabled");
-  $("#<%= @dom_id %>").html("Enable");
-<% else %>
-  $("#<%= @dom_id %>").removeClass("page-disabled").addClass("page-enabled");
-  $("#<%= @dom_id %>").html("Disable");
-<% end %>

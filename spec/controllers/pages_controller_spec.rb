@@ -76,21 +76,8 @@ describe PagesController do
   describe "#toggle_disabled" do
     it "disables the page" do
       expect{
-        put :toggle_disabled, id: @page.id, location_id: @location.urn, format: :js
+        put :toggle_disabled, id: @page.id, location_id: @location.urn, format: :js, disabled: true
       }.to change{@page.reload.disabled}.from(false).to(true)
-    end
-
-    context "instance vars" do
-      before do
-        put :toggle_disabled, id: @page.id, location_id: @location.urn, dom_id: "foo", format: :js
-      end
-
-      it "sets dom_id" do
-        assigns(:dom_id).should == "foo"
-      end
-      it "sets disabled" do
-        assigns(:disabled).should be_true
-      end
     end
   end
 end
