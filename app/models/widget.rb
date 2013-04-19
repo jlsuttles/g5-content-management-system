@@ -72,7 +72,7 @@ class Widget < ActiveRecord::Base
       self.edit_form_html = get_edit_form_html(component)
       self.html           = get_show_html(component)
       self.thumbnail      = component.photo.to_s
-      build_property_groups_from_microformats(component.g5_property_groups)
+      build_property_groups_from_microformats(component)
       true
     else
       raise "No h-g5-component found at url: #{url}"
@@ -81,25 +81,31 @@ class Widget < ActiveRecord::Base
     logger.warn e.message
   end
 
-  def build_property_groups_from_microformats(e_property_groups)
-    return if e_property_groups.blank?
-    # build property groups
+  def build_property_groups_from_microformats(component)
+    return unless component.respond_to?(:g5_property_groups)
+    e_property_groups = component.g5_property_groups
     e_property_groups.each do |e_property_group|
       h_property_group = e_property_group.format
-      property_group = self.property_groups.build(
-        name: h_property_group.name.to_s,
-        categories: h_property_group.categories.map{|c|c.to_s}
-      )
-      # build properties for each property group
-      h_property_group.g5_properties.each do |e_property|
-        h_property = e_property.format
-        property_group.properties.build(
-          name: h_property.g5_name.to_s,
-          editable: h_property.g5_editable.to_s || false,
-          default_value: h_property.g5_default_value.to_s
-        )
+      property_group = build_property_group(h_property_group)
+      h_property_group.g5_properties.each do |property|
+        build_property(property_group, property.format)
       end
     end
+  end
+
+  def build_property_group(h_property_group)
+    property_group = self.property_groups.build(
+      name: h_property_group.name.to_s,
+      categories: h_property_group.categories.map{|c|c.to_s}
+    )
+  end
+
+  def build_property(property_group, property)
+    property_group.properties.build(
+      name: property.g5_name.to_s,
+      editable: property.g5_editable.to_s || false,
+      default_value: property.g5_default_value.to_s
+    )
   end
 
   def get_edit_form_html(component)

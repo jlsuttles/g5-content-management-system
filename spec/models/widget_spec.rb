@@ -32,6 +32,11 @@ describe Widget do
     it { widget.thumbnail.should eq "http://g5-widget-garden.herokuapp.com/static/components/storage-list/images/thumbnail.png"}
   end
 
+  describe "assign_attributes_from_url with no property groups" do
+    let (:simple_widget) { Fabricate(:simple_widget) }
+    it { simple_widget.name.should eq "Simple Widget" }
+  end
+
   describe "#configurations" do
     let(:property_group) { widget.property_groups.first }
     it "creates one" do
