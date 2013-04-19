@@ -13,7 +13,7 @@ class Location < ActiveRecord::Base
   has_one :website, dependent: :destroy
 
   validates :uid, presence: true, uniqueness: true
-  validates :urn, presence: true, uniqueness: true
+  validates :urn, presence: true, uniqueness: true, unless: :new_record?
   validates :name, presence: true
 
   before_create :build_website

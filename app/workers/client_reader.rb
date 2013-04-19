@@ -17,7 +17,6 @@ class ClientReader
       location = location.format
       Location.create!(
         uid: location.uid.to_s,
-        urn: location.urn.to_s,
         name: location.name.to_s
       )
     end if client.respond_to?(:orgs)

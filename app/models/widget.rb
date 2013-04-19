@@ -29,7 +29,6 @@ class Widget < ActiveRecord::Base
   validates :url, presence: true
 
   # These need to be below the associations, otherwise they aren't aware of them
-  include AssociationToMethod
   include CallsToAction
   include ComponentGardenable
 

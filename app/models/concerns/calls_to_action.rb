@@ -25,10 +25,10 @@ module CallsToAction
     numbers = %w{One Two Three Four}
     get_default_calls_to_action.each_with_index do |cta, index|
       number = numbers[index]
-      if text = self.properties.where(:name => "CTA #{number} Text").first
+      if text = self.settings.where(:name => "CTA #{number} Text").first
         text.update_attribute(:value, cta[0])
       end
-      if url = self.properties.where(:name => "CTA #{number} URL").first
+      if url = self.settings.where(:name => "CTA #{number} URL").first
         url.update_attribute(:value, cta[1])
       end
     end

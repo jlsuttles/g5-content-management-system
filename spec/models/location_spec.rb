@@ -8,8 +8,8 @@ describe Location do
     it "should require uid" do
       Fabricate.build(:location, uid: "").should_not be_valid
     end
-    it "should require urn" do
-      Fabricate.build(:location, urn: "").should_not be_valid
+    it "should not require urn on new records" do
+      Fabricate.build(:location, urn: "").should be_valid
     end
     it "should require name" do
       Fabricate.build(:location, name: "").should_not be_valid

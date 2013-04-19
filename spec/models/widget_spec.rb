@@ -99,10 +99,10 @@ describe Widget do
     let (:cta_widget) { Fabricate(:widget, url: "spec/support/calls_to_action_widget.html")}
 
     it "assigns the defaults" do
-      properties_values = cta_widget.properties.map(&:value)
+      settings_values = cta_widget.settings.map(&:value)
       # These are too high in Bend, OR ;-)
       cta_widget.get_default_calls_to_action.values.each do |value|
-        properties_values.should include(value)
+        settings_values.should include(value)
       end
     end
 
