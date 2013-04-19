@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Widget do
   before do
-    stub_const("ENV", {"WIDGET_GARDEN_URL" => "spec/support/widgets.html"})
+    Widget.stub(:garden_url) { "spec/support/widgets.html" }
   end
   let(:widget) { Fabricate(:widget) }
 
@@ -30,6 +30,11 @@ describe Widget do
     it { widget.edit_form_html.should eq "I'm an edit form!" }
     it { widget.html.should include "I'm a show page!" }
     it { widget.thumbnail.should eq "http://g5-widget-garden.herokuapp.com/static/components/storage-list/images/thumbnail.png"}
+  end
+
+  describe "assign_attributes_from_url with no property groups" do
+    let (:simple_widget) { Fabricate(:simple_widget) }
+    it { simple_widget.name.should eq "Simple Widget" }
   end
 
   describe "#configurations" do

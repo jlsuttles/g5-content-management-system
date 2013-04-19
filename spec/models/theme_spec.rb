@@ -2,25 +2,25 @@ require 'spec_helper'
 
 describe Theme do
   before do
-    stub_const("Theme::THEME_GARDEN_URL", "spec/support/theme-garden.html")
+    Theme.stub(:garden_url) { "spec/support/theme-garden.html" }
     Theme.any_instance.stub(:url) { "spec/support/theme.html" }
   end
   let(:remote_themes) { Theme.all_remote }
   let(:theme) { remote_themes.first }
-  
+
   describe "Remote" do
     it "reads the HTML feed" do
       remote_themes.should have(3).things
     end
   end
-  
+
   describe "attribute assignment" do
     it { theme.name.should eq "Classic" }
     it { theme.read_attribute(:url).should eq "http://g5-theme-garden.herokuapp.com/components/classic" }
     it { theme.thumbnail.should eq "http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png"}
   end
-  
-  
+
+
   describe "attributes assignment on save" do
     before { theme.save! }
     it { theme.primary_color.should eq "#0095a0"}
