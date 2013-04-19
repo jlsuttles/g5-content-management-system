@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Widget do
   before do
-    stub_const("ENV", {"WIDGET_GARDEN_URL" => "spec/support/widgets.html"})
+    Widget.stub(:garden_url) { "spec/support/widgets.html" }
   end
   let(:widget) { Fabricate(:widget) }
 

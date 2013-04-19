@@ -34,14 +34,6 @@
                 <% end %>
               </div>
             <% end %>
-            <% Theme.all_remote.each do |theme| %>
-              <div class="thumb">
-                <%= ff.radio_button :url, theme.url %>
-                <%= ff.label :url, :value => theme.url do %>
-                  <%= image_tag_or_placeholder(theme.thumbnail) %>
-                <% end %>
-              </div>
-            <% end %>
           <% end %>
         </div>
       </div>

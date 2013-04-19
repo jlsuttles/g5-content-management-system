@@ -33,8 +33,12 @@ class Widget < ActiveRecord::Base
   scope :in_section, lambda { |section| where(section: section) }
   scope :name_like_form, where("widgets.name LIKE '%Form'")
 
+  def self.garden_url
+    ENV["WIDGET_GARDEN_URL"]
+  end
+
   def self.all_remote
-    components = Microformats2.parse(ENV['WIDGET_GARDEN_URL']).g5_components
+    components = Microformats2.parse(garden_url).g5_components
     components.map do |component|
       new(url: component.uid.to_s, name: component.name.to_s, thumbnail: component.photo.to_s)
     end

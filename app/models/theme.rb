@@ -1,6 +1,4 @@
 class Theme < ActiveRecord::Base
-  THEME_GARDEN_URL = "http://g5-theme-garden.herokuapp.com"
-
   attr_accessible :page_id, :url, :name, :stylesheets, :javascripts, :thumbnail, :colors
 
   serialize :stylesheets, Array
@@ -13,8 +11,12 @@ class Theme < ActiveRecord::Base
 
   validates :url, presence: true
 
+  def self.garden_url
+    ENV["THEME_GARDEN_URL"]
+  end
+
   def self.all_remote
-    components = Microformats2.parse(THEME_GARDEN_URL).g5_components
+    components = Microformats2.parse(garden_url).g5_components
     components.map do |component|
       new(url: component.uid.to_s, name: component.name.to_s, thumbnail: component.photo.to_s)
     end
