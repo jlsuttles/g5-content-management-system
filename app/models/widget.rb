@@ -68,7 +68,9 @@ class Widget < ActiveRecord::Base
       self.edit_form_html = get_edit_form_html(component)
       self.html           = get_show_html(component)
       self.thumbnail      = component.photo.to_s
-      build_property_groups_from_microformats(component.g5_property_groups)
+      if component.respond_to?(:g5_property_groups)
+        build_property_groups_from_microformats(component.g5_property_groups)
+      end
       true
     else
       raise "No h-g5-component found at url: #{url}"
