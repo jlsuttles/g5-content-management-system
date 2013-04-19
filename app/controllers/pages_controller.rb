@@ -46,7 +46,7 @@ class PagesController < ApplicationController
       locals: { page: @page, location: @location, mode: "preview" }
   end
 
-  def disable
+  def toggle_disabled
     page = @location.pages.find(params[:id])
     page.update_attribute(:disabled, !page.disabled)
     @dom_id = params[:dom_id]

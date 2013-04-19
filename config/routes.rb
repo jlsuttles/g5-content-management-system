@@ -13,7 +13,7 @@ G5ClientHub::Application.routes.draw do
     resources :pages do
       member do
         get "preview"
-        put "disable"
+        put "toggle_disabled"
       end
     end
     member do
