@@ -132,15 +132,6 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
 
   add_index "themes", ["page_id"], :name => "index_themes_on_page_id"
 
-  create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "email"
-    t.string   "password_hash"
-    t.string   "password_salt"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
   create_table "widget_entries", :force => true do |t|
     t.integer  "widget_id"
     t.text     "content"

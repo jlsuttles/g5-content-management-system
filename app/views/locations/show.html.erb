@@ -22,9 +22,9 @@
           <%= render @location.site_template.widgets %>
         </ul>
       </td>
-      <td>
-        <%= link_to "Edit", edit_location_site_template_path(@location, @location.site_template), class: "btn btn-large" %>
+      <td class="page-actions">
         <%= link_to "Deploy", deploy_location_path(@location), method: :post, class: "btn btn-large" %>
+        <%= link_to "Edit", edit_location_site_template_path(@location, @location.site_template), class: "btn btn-large" %>
       </td>
     </tr>
 
@@ -38,10 +38,10 @@
 						<%= render page.widgets %>
           </ul>
         </td>
-        <td>
-          <%= link_to "Edit", edit_location_page_path(@location, page), class: "btn btn-large" %>
-          <%= page_disable_toggle(@location, page) %>
+        <td class="page-actions">
           <%= link_to "Preview", preview_location_page_path(@location, page), class: "btn btn-large primary" %>
+          <%= page_disable_toggle(@location, page) %>
+          <%= link_to "Edit", edit_location_page_path(@location, page), class: "btn btn-large" %>
         </td>
       </tr>
     <% end %>
