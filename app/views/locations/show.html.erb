@@ -23,8 +23,8 @@
         </ul>
       </td>
       <td>
-        <%= link_to "Edit", edit_location_site_template_path(@location, @location.site_template), class: "btn btn-large" %>
-        <%= link_to "Deploy", deploy_location_path(@location), method: :post, class: "btn btn-large" %>
+        <%= link_to "Edit", edit_location_site_template_path(@location, @location.site_template), class: "btn" %>
+        <%= link_to "Deploy", deploy_location_path(@location), method: :post, class: "btn" %>
       </td>
     </tr>
 
@@ -39,8 +39,8 @@
           </ul>
         </td>
         <td>
-          <%= link_to "Edit", edit_location_page_path(@location, page), class: "btn btn-large" %>
-          <%= link_to "Preview", preview_location_page_path(@location, page), class: "btn btn-large primary" %>
+          <%= link_to "Edit", edit_location_page_path(@location, page), class: "btn" %>
+          <%= link_to "Preview", preview_location_page_path(@location, page), class: "btn primary" %>
         </td>
       </tr>
     <% end %>

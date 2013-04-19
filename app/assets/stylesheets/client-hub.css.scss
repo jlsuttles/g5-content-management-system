@@ -61,7 +61,6 @@ section[role=main] .container-fluid {
 input[type=submit] {
   padding: .4167em 1em;
   font-family: 'Proxima Nova Extra Condensed', 'helvetica neue', helvetica, arial, sans-serif;
-  font-size: 24px;
   text-transform: uppercase;
   &.primary {
     @include box-shadow(none);
