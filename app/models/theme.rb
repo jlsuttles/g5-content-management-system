@@ -1,4 +1,8 @@
 class Theme < ActiveRecord::Base
+  include ComponentGardenable
+
+  set_garden_url ENV["THEME_GARDEN_URL"]
+
   attr_accessible :page_id, :url, :name, :stylesheets, :javascripts, :thumbnail, :colors
 
   serialize :stylesheets, Array
@@ -10,17 +14,6 @@ class Theme < ActiveRecord::Base
   before_save :assign_attributes_from_url
 
   validates :url, presence: true
-
-  def self.garden_url
-    ENV["THEME_GARDEN_URL"]
-  end
-
-  def self.all_remote
-    components = Microformats2.parse(garden_url).g5_components
-    components.map do |component|
-      new(url: component.uid.to_s, name: component.name.to_s, thumbnail: component.photo.to_s)
-    end
-  end
 
   def primary_color
     colors[0]

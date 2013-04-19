@@ -29,20 +29,12 @@ class Widget < ActiveRecord::Base
   # These need to be below the associations, otherwise they aren't aware of them
   include AssociationToMethod
   include CallsToAction
+  include ComponentGardenable
+
+  set_garden_url ENV["WIDGET_GARDEN_URL"]
 
   scope :in_section, lambda { |section| where(section: section) }
   scope :name_like_form, where("widgets.name LIKE '%Form'")
-
-  def self.garden_url
-    ENV["WIDGET_GARDEN_URL"]
-  end
-
-  def self.all_remote
-    components = Microformats2.parse(garden_url).g5_components
-    components.map do |component|
-      new(url: component.uid.to_s, name: component.name.to_s, thumbnail: component.photo.to_s)
-    end
-  end
 
   def liquidized_html
     Liquid::Template.parse(self.html).render({'widget' => self}, filters: [UrlEncode])
