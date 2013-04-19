@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.boolean  "template",    :default => false
     t.string   "type",        :default => "Page"
     t.string   "title"
-    t.boolean  "disabled",    :default => false
+    t.boolean  "disabled"
   end
 
   add_index "pages", ["location_id"], :name => "index_pages_on_location_id"
@@ -131,6 +131,15 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
   end
 
   add_index "themes", ["page_id"], :name => "index_themes_on_page_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "widget_entries", :force => true do |t|
     t.integer  "widget_id"

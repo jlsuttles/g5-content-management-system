@@ -19,6 +19,8 @@ class Page < ActiveRecord::Base
   scope :enabled, where(disabled: false)
   scope :disabled, where(disabled: true)
 
+  after_initialize :enable_page
+
   def sections
     %w(main)
   end
@@ -53,6 +55,12 @@ class Page < ActiveRecord::Base
 
   def compiled_file_path
     File.join(location.compiled_site_path, "#{self.slug}.html")
+  end
+
+  private
+
+  def enable_page
+    self.disabled ||= false
   end
 
 end

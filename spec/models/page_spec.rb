@@ -4,6 +4,12 @@ describe Page do
 
   let(:page) { Fabricate(:page, name: "Some Name", slug: "some-name", widgets_attributes: [{name: "Widgie", url: "spec/support/widget.html"}]) }
 
+  describe "callbacks" do
+    it "should enable pages by default" do
+      Page.new.disabled?.should be_false
+    end
+  end
+
   describe "scopes" do
     before do
       @disabled_page = Fabricate(:page, disabled: true)
