@@ -1,9 +1,10 @@
 require "spec_helper"
 
-describe "pages requests", js: true do
+describe "web_page_templates requests", js: true do
   before do
     @client = Fabricate(:client)
     @location = Fabricate(:location)
+    @website = @location.website
   end
 
   describe "#index" do
@@ -13,7 +14,7 @@ describe "pages requests", js: true do
       end
       it "should go to the new page page" do
         click_link "Create New Page"
-        current_path.should eq new_location_page_path(@location)
+        current_path.should eq new_website_web_page_template_path(@website)
       end
     end
     describe "toggle page disabled" do
@@ -33,7 +34,7 @@ describe "pages requests", js: true do
 
   describe "#edit" do
     before do
-      visit edit_location_page_path(@location, @location.pages.first)
+      visit edit_website_web_page_template_path(@website, @website.web_page_templates.first)
     end
     it "should have content" do
       page.should_not have_content "Select a Layout".upcase
@@ -45,19 +46,19 @@ describe "pages requests", js: true do
 
   describe "#new" do
     before do
-      visit new_location_page_path(@location)
+      visit new_website_web_page_template_path(@website)
     end
     it "should have content" do
       page.should have_content "Name".upcase
       page.should have_content "Slug".upcase
       page.should have_content "Page Title".upcase
     end
-    it "should create a new page" do
-      find("input#page_name").set("about mj")
-      find("input#page_slug").set("about_mj")
-      find("input#page_title").set("About MJ")
+    it "should create a new web_page_template" do
+      find("input#web_page_template_name").set("about mj")
+      find("input#web_page_template_slug").set("about_mj")
+      find("input#web_page_template_title").set("About MJ")
       click_button "Submit"
-      current_path.should eq location_path(@location)
+      current_path.should eq website_path(@website)
       page.should have_content "about mj"
     end
   end

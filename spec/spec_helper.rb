@@ -8,6 +8,8 @@ require 'rspec/rails'
 require 'capybara/rspec'
 require 'database_cleaner'
 
+ENV["WIDGET_GARDEN_URL"] = "http://g5-widget-garden.dev/"
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
