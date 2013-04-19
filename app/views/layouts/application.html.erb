@@ -4,7 +4,6 @@
     <meta charset="utf8" />
     <title>G5 Client Hub: <%= @client_name %> - <%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
