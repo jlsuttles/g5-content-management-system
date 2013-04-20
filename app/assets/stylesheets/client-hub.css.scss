@@ -57,17 +57,30 @@ section[role=main] .container-fluid {
 
 
 // BUTTONS ================================
+
+%common-buttons{
+  color:#fff;
+  @include box-shadow(none);
+  text-shadow: none;
+}
+
 .btn,
 input[type=submit] {
-  padding: .4167em 1em;
   font-family: 'Proxima Nova Extra Condensed', 'helvetica neue', helvetica, arial, sans-serif;
   text-transform: uppercase;
   &.primary {
-    @include box-shadow(none);
+    @extend %common-buttons;
     @include gradient(#fda585, #fd8c62);
-    color: #fff;
     border: 1px solid #fea687;
-    text-shadow: none;
+  }
+}
+.page-actions {
+  .btn {
+    float: right;
+    margin-left: 5px;
+  }
+  .switch {
+    float: right;
   }
 }
 
@@ -150,7 +163,7 @@ nav[role=navigation] {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 979px) {
   .table .btn {
     margin-bottom: .5em;
   }

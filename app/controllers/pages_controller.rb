@@ -46,6 +46,15 @@ class PagesController < ApplicationController
       locals: { page: @page, location: @location, mode: "preview" }
   end
 
+  def toggle_disabled
+    if page = @location.pages.find(params[:id])
+      page.update_attribute(:disabled, params[:disabled])
+    end
+    respond_to do |format|
+      format.json { render json: {success: true} }
+    end
+  end
+
   private
 
   def find_location

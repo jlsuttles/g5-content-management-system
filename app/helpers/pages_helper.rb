@@ -1,9 +1,9 @@
 module PagesHelper
-  
+
   def self.preview(location, page)
     return process(location, page)
   end
-  
+
   def preview(location, page)
     # grab the layout
     html = Nokogiri.parse(location.site_template.page_layout.html)

@@ -5,7 +5,7 @@ describe PagesController do
     @location = Fabricate(:location)
     @page = @location.pages.first
   }
-  
+
   describe "#index" do
     it "index action should render index template" do
       get :index, location_id: @location.urn
@@ -19,7 +19,7 @@ describe PagesController do
       response.should render_template(:new)
     end
   end
-  
+
   describe "#create" do
     it "create action should render new template when model is invalid" do
       Page.any_instance.stub(:save) {false}
@@ -41,17 +41,17 @@ describe PagesController do
       response.should render_template(:show)
     end
   end
-  
+
   describe "#edit" do
     it "renders the edit template" do
       get :edit, id: @page.id, location_id: @location.urn
       response.should render_template(:edit)
     end
   end
-  
+
   describe "#update" do
     let(:update) { put :update, id: @page.id, location_id: @location.urn, page: {name: "New Name"} }
-    
+
     it "renders edit" do
       put :update, id: @page.id, location_id: @location.urn, page: {name: nil}
       response.should render_template :edit
@@ -65,11 +65,19 @@ describe PagesController do
       @page.reload.name.should eq "New Name"
     end
   end
-  
+
   describe "#preview" do
     it "should render the preview template" do
       get :preview, :id => @page.id, location_id: @location.urn
       response.should render_template :preview
+    end
+  end
+
+  describe "#toggle_disabled" do
+    it "disables the page" do
+      expect{
+        put :toggle_disabled, id: @page.id, location_id: @location.urn, format: :js, disabled: true
+      }.to change{@page.reload.disabled}.from(false).to(true)
     end
   end
 end

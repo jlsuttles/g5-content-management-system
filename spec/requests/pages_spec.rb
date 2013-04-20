@@ -7,13 +7,26 @@ describe "pages requests", js: true do
   end
 
   describe "#index" do
-    before do
-      visit location_path(@location)
-    end
     describe "create new page link" do
+      before do
+        visit location_path(@location)
+      end
       it "should go to the new page page" do
         click_link "Create New Page"
         current_path.should eq new_location_page_path(@location)
+      end
+    end
+    describe "toggle page disabled" do
+      it "should disable the page when i click the toggle" do
+        visit location_path(@location)
+        first(".switch").first(".switch-left").click
+        first(".switch").should have_css(".switch-off")
+      end
+      it "should enable the page when i click the toggle" do
+        @location.pages.first.update_attribute(:disabled, true)
+        visit location_path(@location)
+        first(".switch").first(".switch-left").click
+        first(".switch").should have_css(".switch-on")
       end
     end
   end

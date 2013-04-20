@@ -26,7 +26,7 @@ class LocationDeployer
     FileUtils.mkdir_p(@location.compiled_site_path)
     homepage_path = File.join(@location.compiled_site_path, "index.html")
     compile_page(@location.homepage, homepage_path)
-    @location.pages.each do |page|
+    @location.pages.enabled.each do |page|
       compile_page(page, page.compiled_file_path)
     end
   end

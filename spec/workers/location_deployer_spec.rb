@@ -59,8 +59,14 @@ describe LocationDeployer do
       @location_deployer.compile_pages
       Dir.exists?(@location.compiled_site_path).should be_true
     end
-    it "compiles all pages" do
+    it "compiles all enabled pages" do
       pages = @location.pages.length + 1 # for homepage
+      @location_deployer.should_receive(:compile_page).exactly(pages).times
+      @location_deployer.compile_pages
+    end
+    it "skips compiling of disabled pages" do
+      @location.pages.first.update_attribute(:disabled, true)
+      pages = @location.pages.length
       @location_deployer.should_receive(:compile_page).exactly(pages).times
       @location_deployer.compile_pages
     end
