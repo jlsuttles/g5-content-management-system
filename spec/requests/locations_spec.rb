@@ -36,7 +36,7 @@ describe "locations requests", js: true do
       within "table tbody tr:last-child" do
         click_link "Edit"
       end
-      current_path.should eq edit_location_page_path(@location, @location.pages.first)
+      current_path.should eq edit_location_page_path(@location, @location.pages.last)
     end
   end
 end
