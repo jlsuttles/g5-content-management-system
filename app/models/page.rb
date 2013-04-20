@@ -19,7 +19,7 @@ class Page < ActiveRecord::Base
   scope :enabled, where(disabled: false)
   scope :disabled, where(disabled: true)
 
-  after_initialize :enable_page
+  after_initialize :default_enabled_to_true
 
   def sections
     %w(main)
@@ -59,7 +59,7 @@ class Page < ActiveRecord::Base
 
   private
 
-  def enable_page
+  def default_enabled_to_true
     self.disabled ||= false
   end
 
