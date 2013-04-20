@@ -66,7 +66,6 @@ section[role=main] .container-fluid {
 
 .btn,
 input[type=submit] {
-  padding: .4167em 1em;
   font-family: 'Proxima Nova Extra Condensed', 'helvetica neue', helvetica, arial, sans-serif;
   text-transform: uppercase;
   &.primary {
@@ -74,29 +73,17 @@ input[type=submit] {
     @include gradient(#fda585, #fd8c62);
     border: 1px solid #fea687;
   }
-  &.page-enabled {
-    @extend %common-buttons;
-    @include gradient(#ee5f5b, #bd362f);
-    border: 1px solid;
-    border-color: #bd362f #bd362f #802420;
+}
+.page-actions {
+  .btn {
+    float: right;
+    margin-left: 5px;
   }
-  &.page-disabled {
-    @extend %common-buttons;
-    @include gradient(#62c462, #51a351);
-    border: 1px solid;
-    border-color: #51a351 #51a351 #387038;
+  .switch {
+    float: right;
   }
 }
 
-.page-actions .btn {
-  width: 2.5em;
-  float: right;
-  margin-left: 5px;
-}
-
-.page-actions .switch {
-  float: right;
-}
 
 // HEADER ================================
 header[role=banner] {
