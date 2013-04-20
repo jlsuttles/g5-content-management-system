@@ -32,7 +32,7 @@
       </td>
     </tr>
 
-    <% @location.pages.each do |page| %>
+    <% @location.pages.order("created_at ASC").each do |page| %>
       <tr>
         <td><%= page.name %></td>
         <td></td>
