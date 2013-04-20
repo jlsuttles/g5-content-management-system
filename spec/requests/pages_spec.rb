@@ -16,6 +16,20 @@ describe "pages requests", js: true do
         current_path.should eq new_location_page_path(@location)
       end
     end
+    describe "toggle page disabled" do
+      it "should disable the page when i click the toggle" do
+        first(".switch").first(".switch-left").click
+        visit(current_path)
+        first(".switch").should have_css(".switch-off")
+      end
+      it "should enable the page when i click the toggle" do
+        @location.pages.first.update_attribute(:disabled, true)
+        visit(current_path)
+        first(".switch").first(".switch-left").click
+        visit(current_path)
+        first(".switch").should have_css(".switch-on")
+      end
+    end
   end
 
   describe "#edit" do
