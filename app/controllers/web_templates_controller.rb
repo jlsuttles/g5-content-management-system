@@ -1,6 +1,6 @@
 class WebTemplatesController < ApplicationController
   before_filter :find_website
-  before_filter :find_web_template, only: [:show, :edit, :update]
+  before_filter :find_web_template, only: [:show, :edit, :update, :toggle_disabled]
 
   def show
     render "web_templates/show", layout: "compiled_pages",
@@ -33,6 +33,12 @@ class WebTemplatesController < ApplicationController
       end
     else
       render "web_templates/edit", layout: "builder"
+    end
+  end
+
+  def toggle_disabled
+    respond_to do |format|
+      format.json { render json: { success: @web_template.update_attribute(:disabled, !@web_template.disabled) } }
     end
   end
 

@@ -13,7 +13,7 @@
       <%= link_to "Deploy", deploy_website_path(website), method: :post, class: "btn btn-large" %>
     <% else %>
       <%= link_to "Preview", send("website_#{web_template.type.underscore}_path", website, web_template), class: "btn btn-large primary" %>
-      <%= page_disable_toggle(@website, page) %>
+      <%= render partial: "web_template_toggle_disabled", locals: { website: website, web_template: web_template } %>
     <% end %>
   </td>
 </tr>

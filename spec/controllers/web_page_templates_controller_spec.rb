@@ -60,10 +60,11 @@ describe WebPageTemplatesController do
   end
 
   describe "#toggle_disabled" do
-    it "disables the page" do
+    it "disables the web_page_template" do
+      @web_page_template.update_attribute(:disabled, false)
       expect{
-        put :toggle_disabled, id: @page.id, location_id: @location.urn, format: :js, disabled: true
-      }.to change{@page.reload.disabled}.from(false).to(true)
+        put :toggle_disabled, id: @web_page_template.id, website_id: @website.urn, format: :json
+      }.to change{@web_page_template.reload.disabled}.from(false).to(true)
     end
   end
 end

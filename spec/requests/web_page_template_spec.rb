@@ -10,7 +10,7 @@ describe "web_page_templates requests", js: true do
   describe "#index" do
     describe "create new page link" do
       before do
-        visit location_path(@location)
+        visit website_path(@website)
       end
       it "should go to the new page page" do
         click_link "Create New Page"
@@ -19,13 +19,13 @@ describe "web_page_templates requests", js: true do
     end
     describe "toggle page disabled" do
       it "should disable the page when i click the toggle" do
-        visit location_path(@location)
+        visit website_path(@website)
         first(".switch").first(".switch-left").click
         first(".switch").should have_css(".switch-off")
       end
       it "should enable the page when i click the toggle" do
-        @location.pages.first.update_attribute(:disabled, true)
-        visit location_path(@location)
+        @website.web_page_templates.first.update_attribute(:disabled, true)
+        visit website_path(@website)
         first(".switch").first(".switch-left").click
         first(".switch").should have_css(".switch-on")
       end

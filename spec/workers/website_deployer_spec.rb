@@ -65,8 +65,8 @@ describe WebsiteDeployer do
       @website_deployer.compile_pages
       Dir.exists?(website.compile_path).should be_true
     end
-    it "compiles all pages" do
-      pages = website.web_page_templates.length + 1 # for homepage
+    it "compiles all enabled pages" do
+      pages = website.web_page_templates.enabled.length + 1 # homepage
       @website_deployer.should_receive(:compile_page).exactly(pages).times
       @website_deployer.compile_pages
     end

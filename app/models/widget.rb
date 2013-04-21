@@ -2,6 +2,7 @@ require_dependency 'liquid_filters'
 
 class Widget < ActiveRecord::Base
   include HasManySettings
+  include ComponentGardenable
 
   attr_accessible :web_template_id,
                   :web_template_type,
@@ -30,7 +31,6 @@ class Widget < ActiveRecord::Base
 
   # These need to be below the associations, otherwise they aren't aware of them
   include CallsToAction
-  include ComponentGardenable
 
   set_garden_url ENV["WIDGET_GARDEN_URL"]
 

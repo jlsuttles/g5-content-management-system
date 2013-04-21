@@ -6,7 +6,7 @@ class window.toggleSwitch
     @elements.bind("switch-change", (e, data) => @updatePage(data))
 
   updatePage: (data) ->
-    url = $(data.el).attr('data-remote-url') + "?disabled=" + !data.value
+    url = $(data.el).attr('data-remote-url')
     $.ajax
       url: url
       dataType: 'json'
