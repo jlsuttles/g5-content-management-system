@@ -24,7 +24,7 @@ module HasManySettings
 
   def method_missing(method_name, *args, &block)
     if settings_names.include?(method_name.to_s)
-      settings.find_by_name(method_name).decorate
+      settings.find_or_initialize_by_name(method_name).decorate
     else
       super
     end

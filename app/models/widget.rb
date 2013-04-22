@@ -2,7 +2,10 @@ require_dependency 'liquid_filters'
 
 class Widget < ActiveRecord::Base
   include HasManySettings
+  include AfterCreateSetDefaultCallsToAction
   include ComponentGardenable
+
+  set_garden_url ENV["WIDGET_GARDEN_URL"]
 
   attr_accessible :web_template_id,
                   :web_template_type,
@@ -21,18 +24,12 @@ class Widget < ActiveRecord::Base
   serialize :javascripts, Array
 
   belongs_to :web_template, polymorphic: true
-  has_one :location, through: :web_template
 
   has_many :widget_entries, dependent: :destroy
 
   before_create :assign_attributes_from_url
 
   validates :url, presence: true
-
-  # These need to be below the associations, otherwise they aren't aware of them
-  include CallsToAction
-
-  set_garden_url ENV["WIDGET_GARDEN_URL"]
 
   scope :in_section, lambda { |section| where(section: section) }
   scope :name_like_form, where("widgets.name LIKE '%Form'")

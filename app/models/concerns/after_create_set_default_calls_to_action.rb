@@ -1,4 +1,4 @@
-module CallsToAction
+module AfterCreateSetDefaultCallsToAction
   extend ActiveSupport::Concern
 
   AVAILABLE_CALLS_TO_ACTION = {
@@ -18,24 +18,23 @@ module CallsToAction
 
   included do
     after_create :set_default_calls_to_action, if: :calls_to_action_widget?
-    # liquid_methods :available_calls_to_action, :default_calls_to_action
   end
 
   def set_default_calls_to_action
-    numbers = %w{One Two Three Four}
+    numbers = %w{one two three four}
     get_default_calls_to_action.each_with_index do |cta, index|
       number = numbers[index]
-      if text = self.settings.where(:name => "CTA #{number} Text").first
+      if text = self.settings.where(:name => "cta_#{number}_text").first
         text.update_attribute(:value, cta[0])
       end
-      if url = self.settings.where(:name => "CTA #{number} URL").first
+      if url = self.settings.where(:name => "cta_#{number}_url").first
         url.update_attribute(:value, cta[1])
       end
     end
     true
   end
 
-  def available_calls_to_action
+  def get_available_calls_to_action
     AVAILABLE_CALLS_TO_ACTION
   end
 
@@ -47,8 +46,6 @@ module CallsToAction
     @default_calls_to_action ||=
       AVAILABLE_CALLS_TO_ACTION.select{ |key| DEFAULT_CALLS_TO_ACTION.include?(key) }
   end
-
-  private
 
   def calls_to_action_widget?
     kind_of_widget?("Calls to Action")
