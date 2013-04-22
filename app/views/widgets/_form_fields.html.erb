@@ -2,7 +2,7 @@
   <%= ff.error_messages %>
   <%= ff.hidden_field :_destroy, value: 1 %>
   <%= ff.hidden_field :id %>
-  <li class="<%= "widget" unless widget.new_record? %> <%= widget.name.parameterize %>" data-id="<%= widget.id %>">
+  <li class="<%= "widget" unless widget.new_record? %> <%= widget.name.try(:parameterize) %>" data-id="<%= widget.id %>">
     <%= ff.hidden_field :id, class: "resource-id" %>
     <%= ff.hidden_field :position, class: "position" %>
     <%= ff.hidden_field :section, class: "section" %>

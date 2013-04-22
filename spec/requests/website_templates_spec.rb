@@ -45,17 +45,19 @@ describe "website_templates requests", js: true do
       page.should_not have_css(".add-widgets[data-section=header] .twitter-feed")
       source = find("#choose-widgets .twitter-feed")
       target = find(".add-widgets[data-section=header]")
-      drag_and_drop(source, target) # drag_to was not working
-      page.should_not have_content "jlsuttles"
-      page.should have_css("input[type=text][placeholder=username]")
-      find("input[type=text][placeholder=username]").set("jlsuttles")
+      drag_and_drop(source, target) # native drag_to was not working
+      page.should have_css("#modal input[type=text]")
+      page.should have_css(".add-widgets[data-section=header] .twitter-feed")
+      # shouldn't have to do this twice
+      find("#modal").first("input[type=text]").set("jlsuttles")
+      find("#modal").first("input[type=text]").set("jlsuttles")
       click_button "Save"
       click_button "Submit"
       current_path.should eq website_path(@website)
       visit edit_website_website_template_path(@website, @website.website_template)
-      page.should have_css(".add-widgets[data-section=header] .twitter-feed")
       find(".add-widgets[data-section=header] .twitter-feed").click
-      find("input[type=text][placeholder=username]").value.should eq "jlsuttles"
+      page.should have_css("#modal")
+      find("#modal").first("input[type=text]").value.should == "jlsuttles"
     end
   end
 end

@@ -18,7 +18,7 @@ module CallsToAction
 
   included do
     after_create :set_default_calls_to_action, if: :calls_to_action_widget?
-    liquid_methods :available_calls_to_action, :default_calls_to_action
+    # liquid_methods :available_calls_to_action, :default_calls_to_action
   end
 
   def set_default_calls_to_action
