@@ -37,45 +37,30 @@ describe Widget do
     it { simple_widget.name.should eq "Simple Widget" }
   end
 
-  describe "#configurations" do
-    let(:property_group) { widget.property_groups.first }
-    it "creates one" do
-      expect { widget }.to change(PropertyGroup, :count).by(1)
-    end
+  describe "on create" do
+    let(:setting) { widget.settings.first }
 
     it "assigns a name" do
-      property_group.name.should eq "Feed"
+      setting.name.should eq "username"
     end
     it "assigns categories" do
-      property_group.categories.should eq ["Instance"]
+      setting.categories.should eq ["Instance"]
     end
 
-    it "assigns widget attributes to the property_groups" do
-      expect { widget }.to change(Property, :count).by(2)
+    it "assigns widget attributes to the settings" do
+      expect { widget }.to change(Setting, :count).by(2)
     end
   end
 
   describe "updating widget attributes" do
     it "updates with nested attributes" do
-      attribute = widget.properties.first
-      widget.update_attributes(properties_attributes: {
+      attribute = widget.settings.first
+      widget.update_attributes(settings_attributes: {
         id: attribute.id,
         value: "TEST"
       })
       attribute.reload
       attribute.value.should eq "TEST"
-    end
-  end
-
-  describe "dynamic property_group methods" do
-    it "makes a dynamic method" do
-      widget.should respond_to :feed
-    end
-    it "sets the value to an association" do
-      widget.feed.should eq widget.property_groups.first
-    end
-    it "lists the methods" do
-      widget.singleton_methods.should include :feed
     end
   end
 
@@ -114,10 +99,10 @@ describe Widget do
     let (:cta_widget) { Fabricate(:widget, url: "spec/support/calls_to_action_widget.html")}
 
     it "assigns the defaults" do
-      properties_values = cta_widget.properties.map(&:value)
+      settings_values = cta_widget.settings.map(&:value)
       # These are too high in Bend, OR ;-)
       cta_widget.get_default_calls_to_action.values.each do |value|
-        properties_values.should include(value)
+        settings_values.should include(value)
       end
     end
 

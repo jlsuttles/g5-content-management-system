@@ -1,43 +1,45 @@
 require_dependency 'liquid_filters'
 
 class Widget < ActiveRecord::Base
+  include HasManySettings
+  include AfterCreateSetDefaultCallsToAction
+  include ComponentGardenable
 
-  liquid_methods :location
+  set_garden_url ENV["WIDGET_GARDEN_URL"]
 
-  attr_accessible :page_id, :section, :position, :url, :name, :stylesheets,
-                  :javascripts, :html, :thumbnail, :edit_form_html,
-                  :properties_attributes
+  attr_accessible :web_template_id,
+                  :web_template_type,
+                  :section,
+                  :position,
+                  :url,
+                  :name,
+                  :stylesheets,
+                  :javascripts,
+                  :html,
+                  :thumbnail,
+                  :edit_form_html,
+                  :settings_attributes
 
   serialize :stylesheets, Array
   serialize :javascripts, Array
 
-  belongs_to :page
-  has_one :location, :through => :page
-  has_many :property_groups, as: :component, after_add: :define_dynamic_association_method
-  has_many :properties, through: :property_groups
+  belongs_to :web_template, polymorphic: true
 
   has_many :widget_entries, dependent: :destroy
-
-  accepts_nested_attributes_for :properties
-
-  alias_attribute :dynamic_association, :property_groups
 
   before_create :assign_attributes_from_url
 
   validates :url, presence: true
 
-  # These need to be below the associations, otherwise they aren't aware of them
-  include AssociationToMethod
-  include CallsToAction
-  include ComponentGardenable
-
-  set_garden_url ENV["WIDGET_GARDEN_URL"]
-
   scope :in_section, lambda { |section| where(section: section) }
   scope :name_like_form, where("widgets.name LIKE '%Form'")
 
   def liquidized_html
-    Liquid::Template.parse(self.html).render({'widget' => self}, filters: [UrlEncode])
+    Liquid::Template.parse(self.html).render({"widget" => self}, filters: [UrlEncode])
+  end
+
+  def edit_form_html_rendered
+    Liquid::Template.parse(edit_form_html).render("widget" => self)
   end
 
   def kind_of_widget?(kind)
@@ -64,7 +66,7 @@ class Widget < ActiveRecord::Base
       self.edit_form_html = get_edit_form_html(component)
       self.html           = get_show_html(component)
       self.thumbnail      = component.photo.to_s
-      build_property_groups_from_microformats(component)
+      build_settings_from_microformat(component)
       true
     else
       raise "No h-g5-component found at url: #{url}"
@@ -73,30 +75,23 @@ class Widget < ActiveRecord::Base
     logger.warn e.message
   end
 
-  def build_property_groups_from_microformats(component)
+  def build_settings_from_microformat(component)
     return unless component.respond_to?(:g5_property_groups)
     e_property_groups = component.g5_property_groups
     e_property_groups.each do |e_property_group|
       h_property_group = e_property_group.format
-      property_group = build_property_group(h_property_group)
-      h_property_group.g5_properties.each do |property|
-        build_property(property_group, property.format)
+      h_property_group.g5_properties.each do |e_property|
+        build_setting(h_property_group, e_property.format)
       end
     end
   end
 
-  def build_property_group(h_property_group)
-    property_group = self.property_groups.build(
-      name: h_property_group.name.to_s,
-      categories: h_property_group.categories.map{|c|c.to_s}
-    )
-  end
-
-  def build_property(property_group, property)
-    property_group.properties.build(
-      name: property.g5_name.to_s,
-      editable: property.g5_editable.to_s || false,
-      default_value: property.g5_default_value.to_s
+  def build_setting(h_property_group, h_property)
+    settings.build(
+      name: h_property.g5_name.to_s,
+      editable: h_property.g5_editable.to_s || false,
+      default_value: h_property.g5_default_value.to_s,
+      categories: h_property_group.try(:categories).try(:map, &:to_s)
     )
   end
 

@@ -20,13 +20,6 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "features", :force => true do |t|
-    t.string   "uid"
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "locations", :force => true do |t|
     t.string   "uid"
     t.string   "name"
@@ -41,50 +34,17 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
 
   add_index "locations", ["urn"], :name => "index_locations_on_urn"
 
-  create_table "page_layouts", :force => true do |t|
-    t.string   "url"
-    t.string   "name"
-    t.integer  "page_id"
-    t.text     "html"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "thumbnail"
-    t.text     "stylesheets"
-  end
-
-  add_index "page_layouts", ["page_id"], :name => "index_page_layouts_on_page_id"
-
-  create_table "pages", :force => true do |t|
-    t.integer  "location_id"
-    t.string   "name"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
-    t.string   "slug"
-    t.boolean  "template",    :default => false
-    t.string   "type",        :default => "Page"
-    t.string   "title"
-    t.boolean  "disabled"
-  end
-
-  add_index "pages", ["location_id"], :name => "index_pages_on_location_id"
-
-  create_table "properties", :force => true do |t|
+  create_table "settings", :force => true do |t|
     t.string   "name"
     t.string   "value"
-    t.boolean  "editable",          :default => false
+    t.boolean  "editable",      :default => false
     t.string   "default_value"
-    t.integer  "property_group_id"
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
-  end
-
-  create_table "property_groups", :force => true do |t|
-    t.integer  "component_id"
-    t.string   "component_type"
-    t.string   "name"
+    t.integer  "owner_id"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "owner_type"
     t.text     "categories"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.integer  "priority"
   end
 
   create_table "sibling_deploys", :force => true do |t|
@@ -118,28 +78,60 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "themes", :force => true do |t|
+  create_table "web_layouts", :force => true do |t|
     t.string   "url"
     t.string   "name"
-    t.integer  "page_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "web_template_id"
+    t.text     "html"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "thumbnail"
+    t.text     "stylesheets"
+    t.string   "web_template_type"
+  end
+
+  add_index "web_layouts", ["web_template_id"], :name => "index_page_layouts_on_page_id"
+
+  create_table "web_templates", :force => true do |t|
+    t.integer  "website_id"
+    t.string   "name"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.string   "slug"
+    t.boolean  "template",   :default => false
+    t.string   "title"
+    t.string   "type"
+    t.boolean  "disabled"
+  end
+
+  add_index "web_templates", ["website_id"], :name => "index_pages_on_location_id"
+
+  create_table "web_themes", :force => true do |t|
+    t.string   "url"
+    t.string   "name"
+    t.integer  "web_template_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "thumbnail"
     t.text     "stylesheets"
     t.text     "javascripts"
     t.text     "colors"
+    t.string   "web_template_type"
   end
 
-  add_index "themes", ["page_id"], :name => "index_themes_on_page_id"
+  add_index "web_themes", ["web_template_id"], :name => "index_themes_on_page_id"
 
-  create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "email"
-    t.string   "password_hash"
-    t.string   "password_salt"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+  create_table "websites", :force => true do |t|
+    t.integer  "location_id"
+    t.string   "urn"
+    t.boolean  "custom_colors",   :default => false,     :null => false
+    t.string   "primary_color",   :default => "#000000"
+    t.string   "secondary_color", :default => "#ffffff"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
+
+  add_index "websites", ["location_id"], :name => "index_websites_on_location_id"
 
   create_table "widget_entries", :force => true do |t|
     t.integer  "widget_id"
@@ -151,19 +143,20 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
   create_table "widgets", :force => true do |t|
     t.string   "url"
     t.string   "name"
-    t.integer  "page_id"
+    t.integer  "web_template_id"
     t.integer  "position"
     t.text     "html"
     t.text     "stylesheets"
     t.text     "javascripts"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "thumbnail"
     t.string   "section"
     t.text     "edit_form_html"
+    t.string   "web_template_type"
   end
 
   add_index "widgets", ["name"], :name => "index_widgets_on_name"
-  add_index "widgets", ["page_id"], :name => "index_widgets_on_page_id"
+  add_index "widgets", ["web_template_id"], :name => "index_widgets_on_page_id"
 
 end

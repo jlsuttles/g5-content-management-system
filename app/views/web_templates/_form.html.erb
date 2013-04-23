@@ -1,0 +1,41 @@
+<%= form_for [@website, @web_template], html: {class: "edit_page"} do |f| %>
+  <%= f.error_messages %>
+
+  <% if @web_template.is_a? WebsiteTemplate %>
+    <%= render "/website_templates/website_template_fields", f: f %>
+  <% else %>
+    <div class="container">
+      <div class="page-fields">
+        <%= render "/web_templates/web_template_fields", f: f %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="container" style="position: relative;">
+    <div class='dropzone'>
+      <% @web_template.sections.each do |section| %>
+        <label><%= section.capitalize %></label>
+        <ul class='add-widgets well sortable clearfix' data-section='<%= section %>'>
+          <% @web_template.widgets.in_section(section).each do |widget| %>
+            <%= render "/widgets/form_fields", f: f, widget: widget %>
+          <% end %>
+        </ul>
+      <% end %>
+      <p><%= f.submit "Submit", class: 'btn btn-primary btn-large' %></p>
+    </div>
+  </div>
+<% end %>
+
+<div class='widget-list'>
+  <div class="container">
+    <h2>Select Widgets:</h2>
+    <p class="instructions">Drag widgets from the list on the left into a page section on the right</p>
+    <%= form_for [@website, @web_template] do |f| %>
+      <ul id='choose-widgets' class='sortable clearfix'>
+        <% @web_template.remote_widgets.each_with_index do |widget, index| %>
+          <%= render "/widgets/form_fields", f: f, widget: widget %>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

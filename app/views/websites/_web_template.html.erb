@@ -1,0 +1,19 @@
+<tr class="<%= web_template.type.parameterize %>">
+  <td><%= web_template.name %></td>
+  <td><%= image_tag_or_placeholder(web_template.web_layout.try(:thumbnail), class: 'thumb') if web_template.website? %></td>
+  <td><%= image_tag_or_placeholder(web_template.web_theme.try(:thumbnail), class: 'thumb') if web_template.website? %></td>
+  <td>
+    <ul class="widgets">
+      <%= render web_template.widgets %>
+    </ul>
+  </td>
+  <td class="page-actions">
+    <%= link_to "Edit", send("edit_website_#{web_template.type.underscore}_path", website, web_template), class: "btn btn-large" %>
+    <% if web_template.website? %>
+      <%= link_to "Deploy", deploy_website_path(website), method: :post, class: "btn btn-large" %>
+    <% else %>
+      <%= link_to "Preview", send("website_#{web_template.type.underscore}_path", website, web_template), class: "btn btn-large primary" %>
+      <%= render partial: "web_template_toggle_disabled", locals: { website: website, web_template: web_template } %>
+    <% end %>
+  </td>
+</tr>

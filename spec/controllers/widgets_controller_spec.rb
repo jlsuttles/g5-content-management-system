@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe WidgetsController do
-  let(:page) { Fabricate(:page) }
-  let(:widget) { Fabricate(:widget, page: page) }
+  let(:page) { Fabricate(:web_template) }
+  let(:widget) { Fabricate(:widget, web_template: page) }
   before do
     Widget.stub(:find) { widget }
-    Page.any_instance.stub(:location) { Fabricate(:location_without_pages) }
+    # WebPageTemplate.any_instance.stub(:location) { Fabricate(:location_without_pages) }
   end
   describe "GET 'edit'" do
     it "returns http success" do
@@ -40,11 +40,10 @@ describe WidgetsController do
     end
 
     describe "JSON" do
-      let(:property_group) { widget.property_groups.create(name: "Feed") }
-      let(:attribute) { property_group.properties.create(name: "username") }
-      let(:update) { put :update, id: 1, widget: { properties_attributes: {id: attribute.id, value: "Bookis"}}, format: :json }
+      let(:setting) { widget.settings.create(name: "Feed") }
+      let(:update) { put :update, id: 1, widget: { settings_attributes: {id: setting.id, value: "Bookis"}}, format: :json }
       it "attempts to update configurations" do
-        widget.should_receive(:update_attributes).once.with({"properties_attributes" => {"id" => attribute.id, "value" => "Bookis"}})
+        widget.should_receive(:update_attributes).once.with({"settings_attributes" => {"id" => setting.id, "value" => "Bookis"}})
         update
       end
       it "returns a 204 on success" do

@@ -1,0 +1,34 @@
+<% content_for :head do
+     javascript_tag("$(function(){ new window.toggleSwitch($('.page-actions .switch')); });")
+   end %>
+
+<div class="page-title">
+  <h2>
+    <%= "Website: #{@website.name}" %>
+    <%= link_to "Create New Page", new_website_web_page_template_path(@website),
+      class: "btn btn-large primary new-page" %>
+  </h2>
+</div>
+
+<table class="pages table table-striped">
+  <thead>
+    <tr>
+      <th>Page</th>
+      <th>Layout</th>
+      <th>Theme</th>
+      <th>Widgets</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "web_template",
+      locals: { website: @website, web_template: @website.website_template } %>
+
+    <% @website.web_templates.navigateable.each do |web_page_template| %>
+      <%= render partial: "web_template",
+        locals: { website: @website, web_template: web_page_template } %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render "widgets/edit_modal" %>

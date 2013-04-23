@@ -1,0 +1,5 @@
+<% title "Edit Page: #{@website.name} - #{@web_template.name}" %>
+<% header_right link_to "Cancel", website_path(@website), class: 'btn btn-large' %>
+<%= render "/web_templates/form" %>
+
+<%= render "widgets/edit_modal" %>

@@ -1,0 +1,52 @@
+<div class="page-title">
+  <h2>Settings</h2>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Owner Type</th>
+      <th>Owner Name</th>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Best Value</th>
+      <th>Default Value</th>
+      <th>Editable</th>
+      <th>Categories</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @settings.each do |setting| %>
+    <tr>
+      <td>
+        <%= setting.owner_type %>
+      </td>
+      <td>
+        <%= setting.owner_name %>
+      </td>
+      <td>
+        <%= setting.name %>
+      </td>
+      <td>
+        <%= setting.value %>
+      </td>
+      <td>
+        <%= setting.best_value %>
+      </td>
+      <td>
+        <%= setting.default_value %>
+      </td>
+      <td>
+        <%= setting.editable %>
+      </td>
+      <td>
+        <%= setting.categories %>
+      </td>
+      <td>
+        <%= setting.priority %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
