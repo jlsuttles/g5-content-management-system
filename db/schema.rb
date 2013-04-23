@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418180107) do
+ActiveRecord::Schema.define(:version => 20130423194036) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
 
   create_table "settings", :force => true do |t|
     t.string   "name"
-    t.string   "value"
+    t.text     "value"
     t.boolean  "editable",      :default => false
     t.string   "default_value"
     t.integer  "owner_id"
