@@ -28,8 +28,12 @@ describe Website do
   end
   describe "#web_templates" do
     let(:website) { Fabricate(:website) }
-    it "creates two on create" do
-      expect { website }.to change(WebTemplate, :count).by(2)
+    it "creates WebTemplates on create" do
+      default_page_count = Website::DEFAULT_WEB_PAGE_TEMPLATES.size
+      before_create_web_template_count = 2
+      expectation = default_page_count + before_create_web_template_count
+
+      expect { website }.to change(WebTemplate, :count).by(expectation)
     end
     it "includes website_template" do
       website.web_templates.should include website.website_template
