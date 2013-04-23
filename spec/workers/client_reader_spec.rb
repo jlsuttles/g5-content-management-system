@@ -22,15 +22,19 @@ describe ClientReader do
     end
 
     describe "default pages" do
-      it "creates an Amenities page" do
+      before do
         perform
+      end
+      it "creates an Amenities page" do
         WebPageTemplate.where(name: "Amenities").count.should == 2
       end
       it "configures default pages" do
-        perform
         Website::DEFAULT_WEB_PAGE_TEMPLATES.each do |template|
           WebPageTemplate.where(name: template).count.should == 2
         end
+      end
+      it "disables the pages not needed by all clients" do
+          WebPageTemplate.disabled.map(&:name).uniq.should =~ Website::DISABLED_DEFAULT_WEB_PAGE_TEMPLATES
       end
     end
   end

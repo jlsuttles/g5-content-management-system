@@ -23,7 +23,11 @@ module DefaultWebPageTemplates
 
   def configure_default_web_page_templates
     DEFAULT_WEB_PAGE_TEMPLATES.each do |template|
-      web_page_templates.create(name: template)    
+      web_page_templates.create(name: template, disabled: disabled_template?(template))    
     end
+  end
+
+  def disabled_template?(template)
+    DISABLED_DEFAULT_WEB_PAGE_TEMPLATES.include?(template)
   end
 end
