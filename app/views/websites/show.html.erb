@@ -24,10 +24,7 @@
     <%= render partial: "web_template",
       locals: { website: @website, web_template: @website.website_template } %>
 
-    <%= render partial: "web_template",
-      locals: { website: @website, web_template: @website.web_home_template } %>
-
-    <% @website.web_page_templates.each do |web_page_template| %>
+    <% @website.web_templates.navigateable.each do |web_page_template| %>
       <%= render partial: "web_template",
         locals: { website: @website, web_template: web_page_template } %>
     <% end %>

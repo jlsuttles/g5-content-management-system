@@ -15,7 +15,7 @@ module HasSettingNavigation
   end
 
   def web_page_templates_to_hashes
-    web_page_templates.decorate.map do |web_page_template|
+    web_templates.navigateable.decorate.map do |web_page_template|
       hash = HashWithToLiquid.new
       hash["display"] = web_page_template.display
       hash["title"] = web_page_template.title

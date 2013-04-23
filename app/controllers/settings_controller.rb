@@ -1,5 +1,5 @@
 class SettingsController < ApplicationController
   def index
-    @settings = Setting.order("priority ASC").order("name ASC").decorate
+    @settings = Setting.order("name ASC").order("priority ASC").decorate
   end
 end
