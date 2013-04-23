@@ -25,9 +25,6 @@ describe ClientReader do
       before do
         perform
       end
-      it "creates an Amenities page" do
-        WebPageTemplate.where(name: "Amenities").count.should == 2
-      end
       it "configures default pages" do
         Website::DEFAULT_WEB_PAGE_TEMPLATES.each do |template|
           WebPageTemplate.where(name: template).count.should == 2

@@ -60,6 +60,20 @@ describe Website do
       website.web_home_template.should be_kind_of(WebHomeTemplate)
     end
   end
+
+  describe "default pages" do
+    let(:website) { Fabricate(:website) }
+    it "configures default pages" do
+      website.default_web_page_templates.each do |template|
+        website.web_page_templates.map(&:name).should include(template)
+      end
+    end
+    it "disables the pages not needed by all clients" do
+      website.web_page_templates.disabled.map(&:name).should =~
+      website.disabled_default_web_page_templates
+    end
+  end
+
   describe "#name" do
     let(:website) { Fabricate.build(:website) }
     let(:location) { Fabricate.build(:location) }
