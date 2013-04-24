@@ -11,4 +11,20 @@ describe WebPageTemplate do
   it "should return all widgets" do
     web_page_template.all_widgets.should be_a(Array)
   end
+
+  describe "WebPageTemplate default widgets" do
+    before do
+      WebPageTemplate.any_instance.stub(build_widget_url: "spec/support/widget.html")
+      WebHomeTemplate.any_instance.stub(default_widgets: ["storage-list"])
+      @web_home_template = Fabricate(:web_home_template)
+    end
+    it "builds default widgets for WebPageTemplate subclasses" do
+      @web_home_template.widgets.map(&:name).should include("Storage List")
+    end
+    it "assigns the widgets to the 'main' section" do
+      @web_home_template.main_widgets.size.should ==
+      @web_home_template.widgets.size
+
+    end
+  end
 end
