@@ -78,15 +78,6 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "email"
-    t.string   "password_hash"
-    t.string   "password_salt"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
   create_table "web_layouts", :force => true do |t|
     t.string   "url"
     t.string   "name"
@@ -109,7 +100,7 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.string   "slug"
     t.boolean  "template",   :default => false
     t.string   "title"
-    t.boolean  "disabled"
+    t.boolean  "disabled",   :default => false
     t.string   "type"
   end
 
