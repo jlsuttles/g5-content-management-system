@@ -28,11 +28,6 @@ class WebPageTemplate < WebTemplate
   end
 
   def create_default_widgets
-    #TODO FIGURE OUT A SMARTER WAY TO DO THIS
-    # Ask jessica
-    # we want to subclass WebPageTemplate with the different types of
-    # pages that we're creating by default. These classes will contain constants
-    # of what widgets they should get by default
     default_widgets.each do |widget|
       url = build_widget_url(widget)
       widgets.create(url: url, section: "main")

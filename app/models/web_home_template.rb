@@ -2,10 +2,8 @@ class WebHomeTemplate < WebPageTemplate
   after_initialize :assign_defaults
   
   DEFAULT_WIDGETS = [
-    "header-navigation",
     "calls-to-action",
-    "social-links",
-    "footer" 
+    "social-links"
   ]  
 
   private

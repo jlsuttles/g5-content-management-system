@@ -22,9 +22,8 @@ describe WebPageTemplate do
       @web_home_template.widgets.map(&:name).should include("Storage List")
     end
     it "assigns the widgets to the 'main' section" do
-      @web_home_template.main_widgets.size.should ==
-      @web_home_template.widgets.size
-
+      @web_home_template.main_widgets.count.should ==
+      @web_home_template.widgets.count
     end
   end
 end
