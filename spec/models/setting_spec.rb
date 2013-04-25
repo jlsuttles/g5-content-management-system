@@ -20,7 +20,82 @@ describe Setting do
     end
   end
 
-  describe "others_with_higher_priority" do
+  describe "#collection?" do
+    let(:collection_setting) { Fabricate(:setting, categories: ["collection"]) }
+    let(:instance_setting) { Fabricate(:setting, categories: ["instance"]) }
+
+    it "returns true when categories includes collection" do
+      collection_setting.collection?.should be_true
+    end
+    it "returns false when categories doesn't includes collection" do
+      instance_setting.collection?.should be_false
+    end
+  end
+
+  describe "#best_value" do
+    let(:web_template) { Fabricate.build(:web_template) }
+    let(:web_template_setting) { Fabricate.build(:setting, name: "same_name") }
+    let(:website) { Fabricate.build(:website) }
+    let(:website_setting) { Fabricate.build(:setting, name: "same_name") }
+    let(:client_setting) { Fabricate.build(:setting, name: "same_name") }
+
+    before do
+      web_template.settings << web_template_setting
+      website.web_templates << web_template
+      website.settings << website_setting
+    end
+
+    context "my value is present" do
+      before do
+        web_template_setting.value = "web template value"
+        website_setting.value = "website value"
+        client_setting.value = "client value"
+        website.save
+        client_setting.save
+      end
+
+      it "returns my value" do
+        web_template_setting.best_value.should eq "web template value"
+      end
+    end
+
+    context "lower priority and global settings are present" do
+      before do
+        website_setting.value = "website value"
+        client_setting.value = "client value"
+        website.save
+        client_setting.save
+      end
+
+      it "returns lower priority setting value" do
+        web_template_setting.best_value.should eq "website value"
+      end
+    end
+
+    context "only global setting is present" do
+      before do
+        client_setting.value = "client value"
+        website.save
+        client_setting.save
+      end
+
+      it "returns global setting value" do
+        web_template_setting.best_value.should eq "client value"
+      end
+    end
+  end
+
+  describe "#global_others" do
+    let(:web_template_setting) { Fabricate(:setting, name: "same", website_id: 1) }
+    let(:website_setting) { Fabricate(:setting, name: "same", website_id: 1) }
+    let(:client_setting) { Fabricate(:setting, name: "same") }
+
+    it "returns settings without a website id" do
+      web_template_setting.global_others.should eq [client_setting]
+    end
+  end
+
+  describe "#others_with_higher_priority" do
     let(:setting0) { Fabricate(:setting, name: "same", value: "0", priority: 0) }
     let(:setting1) { Fabricate(:setting, name: "same", value: "1", priority: 1) }
     let(:setting2) { Fabricate(:setting, name: "same", value: "2", priority: 2) }
@@ -38,7 +113,7 @@ describe Setting do
     end
   end
 
-  describe "others_with_lower_priority" do
+  describe "#others_with_lower_priority" do
     let(:setting0) { Fabricate(:setting, name: "same", value: "0", priority: 0) }
     let(:setting1) { Fabricate(:setting, name: "same", value: "1", priority: 1) }
     let(:setting2) { Fabricate(:setting, name: "same", value: "2", priority: 2) }
