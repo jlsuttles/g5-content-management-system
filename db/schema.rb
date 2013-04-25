@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418180107) do
+ActiveRecord::Schema.define(:version => 20130425002811) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -45,7 +45,10 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.string   "owner_type"
     t.text     "categories"
     t.integer  "priority"
+    t.integer  "website_id"
   end
+
+  add_index "settings", ["website_id"], :name => "index_settings_on_website_id"
 
   create_table "sibling_deploys", :force => true do |t|
     t.integer  "sibling_id"
@@ -83,11 +86,10 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.string   "name"
     t.integer  "web_template_id"
     t.text     "html"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "thumbnail"
     t.text     "stylesheets"
-    t.string   "web_template_type"
   end
 
   add_index "web_layouts", ["web_template_id"], :name => "index_page_layouts_on_page_id"
@@ -110,13 +112,12 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.string   "url"
     t.string   "name"
     t.integer  "web_template_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "thumbnail"
     t.text     "stylesheets"
     t.text     "javascripts"
     t.text     "colors"
-    t.string   "web_template_type"
   end
 
   add_index "web_themes", ["web_template_id"], :name => "index_themes_on_page_id"
@@ -148,12 +149,11 @@ ActiveRecord::Schema.define(:version => 20130418180107) do
     t.text     "html"
     t.text     "stylesheets"
     t.text     "javascripts"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "thumbnail"
     t.string   "section"
     t.text     "edit_form_html"
-    t.string   "web_template_type"
   end
 
   add_index "widgets", ["name"], :name => "index_widgets_on_name"
