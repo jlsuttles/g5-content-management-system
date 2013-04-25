@@ -5,6 +5,7 @@ class Setting < ActiveRecord::Base
     "Widget",
     "WebTemplate",
     "WebPageTemplate",
+    "WebHomeTemplate",
     "WebsiteTemplate",
     "WebLayout",
     "WebTheme",
@@ -15,6 +16,7 @@ class Setting < ActiveRecord::Base
 
   attr_accessible :owner_id,
                   :owner_type,
+                  :website_id,
                   :name,
                   :editable,
                   :value,
@@ -26,10 +28,13 @@ class Setting < ActiveRecord::Base
   serialize :categories, Array
 
   belongs_to :owner, polymorphic: true
+  belongs_to :website
 
   before_create :set_priority
+  after_create :set_website_id
+  # TODO: does this fire twice?
   before_update :update_self, if: :collection?
-  after_update :update_others, if: :collection?
+  after_update  :update_next, if: :collection?
 
   validates :name, presence: true
   validates :owner, presence: true
@@ -44,6 +49,8 @@ class Setting < ActiveRecord::Base
   scope :where_priority_gte, lambda { |priority| where("priority >= ?", priority) }
   scope :where_priority_gt, lambda { |priority| where("priority > ?", priority) }
   scope :where_priority_lt, lambda { |priority| where("priority < ?", priority) }
+  scope :for_website, lambda { |wid| where(website_id: wid) }
+  scope :for_no_website, where("website_id IS NULL")
 
   def collection?
     categories.include?("collection")
@@ -52,17 +59,33 @@ class Setting < ActiveRecord::Base
   # TODO: rename to best_value to value
   # TODO: rename value to my_value or something
   def best_value
-    value || others_with_lower_priority.first.try(:value)
+    value || others_with_lower_priority.first.try(:value) || global_others.first.try(:value)
+  end
+
+  def global_others
+    query = self.class
+    query = query.for_no_website
+    query = query.where_name(name)
+    query = query.value_is_present
+    query = query.order_priority_asc
   end
 
   def others_with_higher_priority
-    self.class.where_name(name).value_is_present.order_priority_desc.
-      where_priority_lt(priority)
+    query = self.class
+    query = query.for_website(website_id) if website_id
+    query = query.where_name(name)
+    query = query.value_is_present
+    query = query.order_priority_desc
+    query = query.where_priority_lt(priority)
   end
 
   def others_with_lower_priority
-    self.class.where_name(name).value_is_present.order_priority_asc.
-      where_priority_gt(priority)
+    query = self.class
+    query = query.for_website(website_id) if website_id
+    query = query.where_name(name)
+    query = query.value_is_present
+    query = query.order_priority_asc
+    query = query.where_priority_gt(priority)
   end
 
   def next_with_higher_priority
@@ -75,16 +98,20 @@ class Setting < ActiveRecord::Base
 
   def merge_value_with_lower_priority(other)
     if other_value = other.try(:value)
-      new_value = []
-      other_value.each_with_index do |other_partial_value, index|
-        if my_partial_value = value.is_a?(Array) ? value[index] : value[index.to_s]
-          partial_value = other_partial_value.merge(my_partial_value)
-          new_value << HashWithToLiquid[partial_value] if partial_value
-        else
-          new_value << HashWithToLiquid[other_partial_value]
+      if value
+        new_value = []
+        other_value.each_with_index do |other_partial_value, index|
+          if my_partial_value = value.is_a?(Array) ? value[index] : value[index.to_s]
+            partial_value = other_partial_value.merge(my_partial_value)
+            new_value << HashWithToLiquid[partial_value] if partial_value
+          else
+            new_value << HashWithToLiquid[other_partial_value]
+          end
         end
+        self.value = new_value
+      else
+        self.value = other_value
       end
-      self.value = new_value
     end
     self
   end
@@ -103,6 +130,11 @@ class Setting < ActiveRecord::Base
 
   private
 
+  def set_website_id
+    self.website_id ||= owner.website_id if owner.respond_to?(:website_id)
+    save
+  end
+
   def set_priority
     self.priority ||= PRIORITIZED_OWNERS.index(owner_type)
   end
@@ -111,7 +143,7 @@ class Setting < ActiveRecord::Base
     merge_next_value_with_lower_priority
   end
 
-  def update_others
+  def update_next
     next_with_higher_priority.try :merge_next_value_with_lower_priority!
   end
 end

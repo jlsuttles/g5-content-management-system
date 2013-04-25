@@ -31,6 +31,10 @@ class Website < ActiveRecord::Base
   before_create :build_website_template
   before_create :build_web_home_template
 
+  def website_id
+    id
+  end
+
   def name
     location.try(:name)
   end

@@ -5,7 +5,6 @@ class WebTheme < ActiveRecord::Base
   set_garden_url ENV["THEME_GARDEN_URL"]
 
   attr_accessible :web_template_id,
-                  :web_template_type,
                   :url,
                   :name,
                   :stylesheets,
@@ -17,11 +16,16 @@ class WebTheme < ActiveRecord::Base
   serialize :javascripts, Array
   serialize :colors, Array
 
-  belongs_to :web_template, polymorphic: true
+  belongs_to :web_template
+  has_one :website, through: :web_template
 
   before_save :assign_attributes_from_url
 
   validates :url, presence: true
+
+  def website_id
+    web_template.website_id if web_template
+  end
 
   def primary_color
     colors[0]
