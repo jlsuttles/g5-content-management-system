@@ -24,10 +24,12 @@ describe "web_page_templates requests", js: true do
         first(".webhometemplate").first(".switch").should have_css(".switch-off")
       end
       it "should enable the page when i click the toggle" do
+        klass = @website.web_page_templates.first.class.to_s
+        klass = klass.downcase.gsub(" ", "")
         @website.web_page_templates.first.update_attribute(:disabled, true)
         visit website_path(@website)
-        first(".switch").first(".switch-left").click
-        first(".switch").should have_css(".switch-on")
+        first(".#{klass} .switch").first(".switch-left").click
+        first(".#{klass} .switch").should have_css(".switch-on")
       end
     end
   end
