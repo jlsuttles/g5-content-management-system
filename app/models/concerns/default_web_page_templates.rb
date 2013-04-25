@@ -3,7 +3,7 @@ module DefaultWebPageTemplates
 
   DEFAULT_WEB_PAGE_TEMPLATES = [
     "Amenities",
-    "Floor Plans and Rates",
+    "Floorplans and Rates",
     "Maps and Directions",
     "Neighborhood",
     "Photo Gallery",
@@ -31,11 +31,20 @@ module DefaultWebPageTemplates
 
   def configure_default_web_page_templates
     default_web_page_templates.each do |template|
-      web_page_templates.create(name: template, disabled: disabled_template?(template))    
+      klass = determine_class(template)
+      klass.create(name: template, disabled: disabled_template?(template), website_id: id)    
     end
   end
 
   def disabled_template?(template)
     disabled_default_web_page_templates.include?(template)
+  end
+
+  def determine_class(template)
+    begin
+      template.titleize.gsub(/\s+/, '').constantize
+    rescue
+      WebPageTemplate
+    end
   end
 end
