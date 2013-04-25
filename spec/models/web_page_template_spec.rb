@@ -12,6 +12,19 @@ describe WebPageTemplate do
     web_page_template.all_widgets.should be_a(Array)
   end
 
+  describe "#type_for_route" do
+    it "should use its own type" do
+      web_page_template.type_for_route.should == web_page_template.type
+    end  
+
+    describe "web_page_template subclass" do
+      it "should use the parent class" do
+        floorplans_and_rates_template = Fabricate.build(:floorplans_and_rates_template)
+        floorplans_and_rates_template.type_for_route.should == web_page_template.type
+      end  
+    end
+  end  
+  
   describe "WebPageTemplate default widgets" do
     before do
       WebPageTemplate.any_instance.stub(build_widget_url: "spec/support/widget.html")

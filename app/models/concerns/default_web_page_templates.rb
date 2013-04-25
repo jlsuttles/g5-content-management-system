@@ -42,8 +42,8 @@ module DefaultWebPageTemplates
 
   def determine_class(template)
     begin
-      template.titleize.gsub(/\s+/, '').constantize
-    rescue
+      "#{template} Template".titleize.gsub(/\s+/, '').constantize
+    rescue NameError
       WebPageTemplate
     end
   end

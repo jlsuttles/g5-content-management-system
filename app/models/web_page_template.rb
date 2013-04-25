@@ -4,6 +4,9 @@ class WebPageTemplate < WebTemplate
 
   after_initialize :assign_defaults
   after_create :create_default_widgets
+
+  include WebPageTemplateTypeForRoute
+
   
   DEFAULT_WIDGETS = []
 
