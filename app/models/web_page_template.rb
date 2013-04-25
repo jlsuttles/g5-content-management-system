@@ -29,12 +29,8 @@ class WebPageTemplate < WebTemplate
 
   def create_default_widgets
     default_widgets.each do |widget|
-      url = build_widget_url(widget)
+      url = Widget.build_widget_url(widget)
       widgets.create(url: url, section: "main")
     end  
-  end
-
-  def build_widget_url(widget)
-    ENV["WIDGET_GARDEN_URL"] + "/components/#{widget}"
   end
 end
