@@ -9,7 +9,7 @@ class WebTemplatesController < ApplicationController
 
   def new
     @web_template = web_template_klass.new
-    render "web_templates/new"
+    render "web_templates/new", :layout => 'builder'
   end
 
   def create

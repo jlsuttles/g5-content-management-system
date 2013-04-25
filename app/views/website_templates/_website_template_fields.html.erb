@@ -20,47 +20,48 @@
 
 <div class="theme-picker thumbnail-field clearfix">
   <div class="container">
-    <h2>Select a Theme</h2>
-    <div id="chad" class="jThumbnailScroller">
-      <div class="jTscrollerContainer">
-        <div class="jTscroller thumbs clearfix">
-          <%= f.fields_for :web_theme, @web_template.web_theme || WebTheme.new do |ff| -%>
-            <%= ff.error_messages %>
-            <% WebTheme.all_remote.each do |web_theme| %>
-              <div class="thumb">
-                <%= ff.radio_button :url, web_theme.url %>
-                <%= ff.label :url, :value => web_theme.url do %>
-                  <%= image_tag_or_placeholder(web_theme.thumbnail) %>
-                <% end %>
-              </div>
+    <div class="left" style="width:75%;float:left;">
+      <h2>Select a Theme</h2>
+      <div id="chad" class="jThumbnailScroller">
+        <div class="jTscrollerContainer">
+          <div class="jTscroller thumbs clearfix">
+            <%= f.fields_for :web_theme, @web_template.web_theme || WebTheme.new do |ff| -%>
+              <%= ff.error_messages %>
+              <% WebTheme.all_remote.each do |web_theme| %>
+                <div class="thumb">
+                  <%= ff.radio_button :url, web_theme.url %>
+                  <%= ff.label :url, :value => web_theme.url do %>
+                    <%= image_tag_or_placeholder(web_theme.thumbnail) %>
+                  <% end %>
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
+        </div>
+        <a href="#" class="jTscrollerPrevButton"></a>
+      	<a href="#" class="jTscrollerNextButton"></a>
+      </div>
+    </div> <!-- end left -->
+    <div class="right" style="float:right;">
+      <div class="colors clearfix">
+        <h3>Customize Colors:</h3>
+        <div class="color-fields">
+          <%= f.fields_for :website do |ff| -%>
+          <div class="check-field">
+            <%= ff.check_box :custom_colors %>
+            <%= ff.label :custom_colors %>
+          </div>
+          <div class="color-field">
+            <%= ff.text_field :primary_color, type: 'color', id: 'color-1' %>
+            <label for="color-1">Primary</label>
+          </div>
+          <div class="color-field">
+            <%= ff.text_field :secondary_color, type: 'color', id: 'color-2' %>
+            <label for="color-2">Secondary</label>
+          </div>
+          <% end -%>
         </div>
       </div>
-      <a href="#" class="jTscrollerPrevButton"></a>
-    	<a href="#" class="jTscrollerNextButton"></a>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="colors clearfix">
-    <h3>Customize Colors:</h3>
-    <div class="color-fields">
-      <%= f.fields_for :website do |ff| -%>
-      <div class="check-field">
-        <%= ff.check_box :custom_colors %>
-        <%= ff.label :custom_colors %>
-      </div>
-      <div class="color-field">
-        <%= ff.text_field :primary_color, type: 'color', id: 'color-1' %>
-        <label for="color-1">Primary</label>
-      </div>
-      <div class="color-field">
-        <%= ff.text_field :secondary_color, type: 'color', id: 'color-2' %>
-        <label for="color-2">Secondary</label>
-      </div>
-      <% end -%>
-    </div>
+    </div> <!-- end right -->
   </div>
 </div>
