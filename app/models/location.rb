@@ -17,4 +17,8 @@ class Location < ActiveRecord::Base
   validates :name, presence: true
 
   before_create :build_website
+
+  def website_id
+    website.id if website
+  end
 end

@@ -23,6 +23,10 @@ class WebTheme < ActiveRecord::Base
 
   validates :url, presence: true
 
+  def website_id
+    web_template.website_id if web_template
+  end
+
   def primary_color
     colors[0]
   end

@@ -34,6 +34,10 @@ class Widget < ActiveRecord::Base
   scope :in_section, lambda { |section| where(section: section) }
   scope :name_like_form, where("widgets.name LIKE '%Form'")
 
+  def website_id
+    web_template.website_id if web_template
+  end
+
   def liquidized_html
     Liquid::Template.parse(self.html).render({"widget" => self}, filters: [UrlEncode])
   end

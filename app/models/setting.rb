@@ -131,9 +131,8 @@ class Setting < ActiveRecord::Base
   private
 
   def set_website_id
-    self.website_id ||= owner.website.try(:id) if owner.respond_to?(:website)
-    self.website_id ||= owner.try(:id) if owner.respond_to?(:website?) && owner.website?
-    save!
+    self.website_id ||= owner.website_id if owner.respond_to?(:website_id)
+    save
   end
 
   def set_priority

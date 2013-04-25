@@ -21,6 +21,10 @@ class WebLayout < ActiveRecord::Base
 
   validates :url, presence: true
 
+  def website_id
+    web_template.website_id if web_template
+  end
+
   private
 
   def assign_attributes_from_url
