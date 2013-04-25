@@ -36,12 +36,12 @@ ActiveRecord::Schema.define(:version => 20130425002811) do
 
   create_table "settings", :force => true do |t|
     t.string   "name"
-    t.string   "value"
-    t.boolean  "editable",      :default => false
+    t.text     "value",         :limit => 255
+    t.boolean  "editable",                     :default => false
     t.string   "default_value"
     t.integer  "owner_id"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
     t.string   "owner_type"
     t.text     "categories"
     t.integer  "priority"
