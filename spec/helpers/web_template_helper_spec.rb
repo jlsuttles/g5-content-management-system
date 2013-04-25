@@ -17,7 +17,7 @@ describe WebTemplatesHelper do
   end
 
   describe "preview" do
-    let(:preview) { helper.preview(website, website.web_page_templates.first) }
+    let(:preview) { helper.preview(website, website.web_home_template) }
 
     it "has layout in html" do
       preview.should match /single-column/
