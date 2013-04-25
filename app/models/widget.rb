@@ -8,7 +8,6 @@ class Widget < ActiveRecord::Base
   set_garden_url ENV["WIDGET_GARDEN_URL"]
 
   attr_accessible :web_template_id,
-                  :web_template_type,
                   :section,
                   :position,
                   :url,
@@ -23,7 +22,8 @@ class Widget < ActiveRecord::Base
   serialize :stylesheets, Array
   serialize :javascripts, Array
 
-  belongs_to :web_template, polymorphic: true
+  belongs_to :web_template
+  has_one :website, through: :web_template
 
   has_many :widget_entries, dependent: :destroy
 
