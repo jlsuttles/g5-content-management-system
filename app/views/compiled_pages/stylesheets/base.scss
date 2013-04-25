@@ -33,8 +33,12 @@ form label {
 form .field {
   margin-bottom: 1em;
 }
+form textarea,
 form input[type=text],
-form input[type=email] {
+form input[type=email],
+form input[type=tel],
+form input[type=password],
+form input[type=url] {
   padding: .3em .5em .2em;
 }
 .dxm {
