@@ -1,9 +1,6 @@
 class FloorplansAndRatesTemplate < WebPageTemplate
   DEFAULT_WIDGETS = [
-    "Floorplans"
+    "floorplans"
   ]
 
-  def type_for_route
-    "WebPageTemplate"
-  end
 end
