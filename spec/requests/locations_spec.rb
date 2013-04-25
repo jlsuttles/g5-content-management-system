@@ -16,5 +16,11 @@ describe "locations requests", js: true do
       page.should have_content @location.name
       page.should have_content @website.name
     end
+    it "goes to websites#deploy when I click deploy link" do
+      within "table tbody tr:first-child" do
+        click_link "Deploy to Heroku"
+      end
+      current_path.should eq deploy_website_path(@website)
+    end
   end
 end
