@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130425002602) do
+ActiveRecord::Schema.define(:version => 20130425002811) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -45,7 +45,10 @@ ActiveRecord::Schema.define(:version => 20130425002602) do
     t.string   "owner_type"
     t.text     "categories"
     t.integer  "priority"
+    t.integer  "website_id"
   end
+
+  add_index "settings", ["website_id"], :name => "index_settings_on_website_id"
 
   create_table "sibling_deploys", :force => true do |t|
     t.integer  "sibling_id"
