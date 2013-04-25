@@ -15,7 +15,7 @@ describe "website requests", js: true do
       page.should have_content @client.name.upcase
       page.should have_content @website.name.upcase
       page.should have_content "Website Template"
-      page.should have_content "Homepage"
+      page.should have_content "Home"
     end
     it "goes to website_templates#edit when I click edit link" do
       within "table tbody tr:first-child" do
