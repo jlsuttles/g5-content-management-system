@@ -7,8 +7,8 @@ shared_examples_for HasSettingNavigation do
     context "navigation setting exists" do
       let(:navigation) { described_instance.settings.build(name: "navigation") }
       it "finds setting with name navigation" do
-        navigation.save(validate: false)
-        described_instance.setting_navigation.should eq navigation
+        described_instance.save
+        described_instance.setting_navigation.new_record?.should be_false
       end
     end
     context "navigation setting does not exist" do
