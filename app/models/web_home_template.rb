@@ -15,6 +15,6 @@ class WebHomeTemplate < WebPageTemplate
   def assign_defaults
     self.name  ||= "Home"
     self.title ||= name
-    self.slug  ||= "index"
+    self.slug  ||= name.parameterize
   end
 end
