@@ -1,4 +1,4 @@
-<%= form_for [@website, @web_template], html: {class: "edit_page"}, url: send("website_#{@web_template.type_for_route.underscore}_path", @website, @web_template) do |f| %>
+<%= form_for [@website, @web_template], html: {class: "edit_page"}, url: {controller: :web_page_templates, action: :create, website: @website} do |f| %>
   <%= f.error_messages %>
 
   <% if @web_template.is_a? WebsiteTemplate %>
@@ -30,7 +30,7 @@
   <div class="container">
     <h2>Select Widgets:</h2>
     <p class="instructions">Drag widgets from the list on the left into a page section on the right</p>
-    <%= form_for [@website, @web_template], url: send("website_#{@web_template.type_for_route.underscore}_path", @website, @web_template) do |f| %>
+    <%= form_for [@website, @web_template], url: {controller: :web_page_templates, action: :create, website: @website} do |f| %>
       <ul id='choose-widgets' class='sortable clearfix'>
         <% @web_template.remote_widgets.each_with_index do |widget, index| %>
           <%= render "/widgets/form_fields", f: f, widget: widget %>
