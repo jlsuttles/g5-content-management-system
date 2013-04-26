@@ -4,9 +4,9 @@ module DefaultWebPageTemplates
   DEFAULT_WEB_PAGE_TEMPLATES = [
     "Amenities",
     "Floorplans and Rates",
-    "Human Directions",
+    "Map And Directions",
     "Neighborhood",
-    "Gallery",
+    "Photo Gallery",
     "Residents",
     "Coupon"
   ].freeze
