@@ -20,11 +20,11 @@ module DefaultWebPageTemplates
   end
   
   def disabled_default_web_page_templates
-    @disabled_default_web_page_templates ||= DISABLED_DEFAULT_WEB_PAGE_TEMPLATES
+    DISABLED_DEFAULT_WEB_PAGE_TEMPLATES
   end
 
   def default_web_page_templates
-    @default_web_page_templates ||= DEFAULT_WEB_PAGE_TEMPLATES 
+    DEFAULT_WEB_PAGE_TEMPLATES 
   end
 
   private
