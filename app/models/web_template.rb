@@ -91,11 +91,11 @@ class WebTemplate < ActiveRecord::Base
   def assign_defaults
     self.name  ||= "Web Template"
     self.title ||= name
-    self.slug  ||= title.parameterize
+    self.slug  ||= name.parameterize
     self.disabled ||= false
   end
 
   def parameterize_title_to_slug
-    self.slug = title.parameterize
+    self.slug ||= title.parameterize
   end
 end

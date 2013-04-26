@@ -1,10 +1,10 @@
 class WebHomeTemplate < WebPageTemplate
   after_initialize :assign_defaults
-  
+
   DEFAULT_WIDGETS = [
     "calls-to-action",
     "social-links"
-  ]  
+  ]
 
   def type_for_route
     self.type
@@ -15,6 +15,6 @@ class WebHomeTemplate < WebPageTemplate
   def assign_defaults
     self.name  ||= "Home"
     self.title ||= name
-    self.slug  ||= title.parameterize
+    self.slug  ||= name.parameterize
   end
 end
