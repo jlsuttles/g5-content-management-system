@@ -8,6 +8,6 @@ class WebTemplateDecorator < Draper::Decorator
   end
 
   def url
-    "/#{slug}"
+    "/#{slug}.html"
   end
 end
