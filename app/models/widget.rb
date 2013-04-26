@@ -34,6 +34,10 @@ class Widget < ActiveRecord::Base
   scope :in_section, lambda { |section| where(section: section) }
   scope :name_like_form, where("widgets.name LIKE '%Form'")
 
+  def self.build_widget_url(widget)
+    garden_url + "/components/#{widget}"
+  end
+
   def website_id
     web_template.website_id if web_template
   end

@@ -5,6 +5,7 @@ class Website < ActiveRecord::Base
   include AfterCreateSetSettingAvailableCallsToAction
   include AfterCreateUpdateUrn
   include ToParamUrn
+  include DefaultWebPageTemplates
 
   COMPILE_PATH = File.join(Rails.root, "tmp", "compiled_sites")
 

@@ -28,8 +28,12 @@ describe Website do
   end
   describe "#web_templates" do
     let(:website) { Fabricate(:website) }
-    it "creates two on create" do
-      expect { website }.to change(WebTemplate, :count).by(2)
+    it "creates WebTemplates on create" do
+      default_page_count = Website::DEFAULT_WEB_PAGE_TEMPLATES.size
+      before_create_web_template_count = 2
+      expectation = default_page_count + before_create_web_template_count
+
+      expect { website }.to change(WebTemplate, :count).by(expectation)
     end
     it "includes website_template" do
       website.web_templates.should include website.website_template
@@ -56,6 +60,20 @@ describe Website do
       website.web_home_template.should be_kind_of(WebHomeTemplate)
     end
   end
+
+  describe "default pages" do
+    let(:website) { Fabricate(:website) }
+    it "configures default pages" do
+      website.default_web_page_templates.each do |template|
+        website.web_page_templates.map(&:name).should include(template)
+      end
+    end
+    it "disables the pages not needed by all clients" do
+      website.web_page_templates.disabled.map(&:name).should =~
+      website.disabled_default_web_page_templates
+    end
+  end
+
   describe "#name" do
     let(:website) { Fabricate.build(:website) }
     let(:location) { Fabricate.build(:location) }

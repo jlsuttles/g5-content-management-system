@@ -42,6 +42,10 @@ class WebTemplate < ActiveRecord::Base
   after_initialize :assign_defaults
   before_validation :parameterize_title_to_slug, if: :new_record?
 
+  def type_for_route
+    self.type
+  end
+
   def website?
     type == "WebsiteTemplate"
   end
