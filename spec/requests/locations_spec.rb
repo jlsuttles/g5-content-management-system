@@ -16,5 +16,12 @@ describe "locations requests", js: true do
       page.should have_content @location.name
       page.should have_content @website.name
     end
+    it "locations#index when I click deploy link" do
+      Resque.stub(:enqueue)
+      within "table tbody tr:first-child" do
+        click_link "Deploy to Heroku"
+      end
+      current_path.should eq locations_path
+    end
   end
 end
