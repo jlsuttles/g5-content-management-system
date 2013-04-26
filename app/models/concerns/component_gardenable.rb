@@ -15,7 +15,11 @@ module ComponentGardenable
     end
 
     def components_microformats
-      garden_microformats.g5_components
+      if garden_microformats.respond_to?(:g5_components)
+        garden_microformats.g5_components
+      else
+        []
+      end
     end
 
     def all_remote
