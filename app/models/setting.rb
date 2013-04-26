@@ -102,11 +102,9 @@ class Setting < ActiveRecord::Base
         new_value = []
         other_value.each_with_index do |other_partial_value, index|
           if my_partial_value = value.is_a?(Array) ? value[index] : value[index.to_s]
-            partial_value = other_partial_value.merge(my_partial_value)
-            new_value << HashWithToLiquid[partial_value] if partial_value
-          else
-            new_value << HashWithToLiquid[other_partial_value]
+            other_partial_value["display"] = my_partial_value["display"]
           end
+          new_value << HashWithToLiquid[other_partial_value]
         end
         self.value = new_value
       else
