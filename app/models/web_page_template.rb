@@ -1,11 +1,12 @@
 class WebPageTemplate < WebTemplate
+  include WebPageTemplateTypeForRoute
+
   has_many :main_widgets,  class_name: "Widget",
     conditions: ['section = ?', 'main'], foreign_key: "web_template_id"
 
   after_initialize :assign_defaults
   after_create :create_default_widgets
 
-  include WebPageTemplateTypeForRoute
 
   
   DEFAULT_WIDGETS = []
