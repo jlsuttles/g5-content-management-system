@@ -4,9 +4,9 @@ module DefaultWebPageTemplates
   DEFAULT_WEB_PAGE_TEMPLATES = [
     "Amenities",
     "Floorplans and Rates",
-    "Maps and Directions",
+    "Human Directions",
     "Neighborhood",
-    "Photo Gallery",
+    "Gallery",
     "Residents",
     "Coupon"
   ].freeze
@@ -33,6 +33,7 @@ module DefaultWebPageTemplates
     default_web_page_templates.each do |template|
       klass = determine_class(template)
       klass.create(name: template, disabled: disabled_template?(template), website_id: id)    
+      #web_page_template.extend(klass)
     end
   end
 
