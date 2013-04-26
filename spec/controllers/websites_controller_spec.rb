@@ -20,8 +20,8 @@ describe WebsitesController do
     it "assigns website_template" do
       assigns(:website_template).should eq website.website_template
     end
-    it "assings web_templates only the navigateable templates orderd by created at" do
-      assigns(:web_templates).should eq website.web_templates.navigateable.created_at_asc
+    it "assings web_page_templates only the navigateable templates orderd by created at" do
+      assigns(:web_page_templates).should eq website.web_templates.navigateable.created_at_asc
     end
   end
 
