@@ -37,6 +37,7 @@ class WebTemplate < ActiveRecord::Base
   scope :enabled, where(disabled: false)
   scope :disabled, where(disabled: true)
   scope :navigateable, where("type != ?", "WebsiteTemplate")
+  scope :created_at_asc, order("created_at ASC")
 
   after_initialize :assign_defaults
   before_validation :parameterize_title_to_slug, if: :new_record?
