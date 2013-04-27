@@ -32,7 +32,7 @@ module DefaultWebPageTemplates
   def configure_default_web_page_templates
     default_web_page_templates.each do |template|
       klass = determine_class(template)
-      web_page_templates << WebPageTemplate.new(name: template).extend(klass)
+      web_page_templates << WebPageTemplate.new(name: template, disabled: disabled_template?(template)).extend(klass)
     end
   end
 
