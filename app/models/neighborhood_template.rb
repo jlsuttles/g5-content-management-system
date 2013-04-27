@@ -1,7 +1,8 @@
-class NeighborhoodTemplate < WebPageTemplate
-  DEFAULT_WIDGETS = [
-    "html",
-    "html"
-  ]
-
+module NeighborhoodTemplate
+  def default_widgets
+    [
+      "html",
+      "html"
+    ]
+  end
 end

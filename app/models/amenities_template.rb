@@ -1,7 +1,8 @@
-class AmenitiesTemplate < WebPageTemplate
-  DEFAULT_WIDGETS = [
-    "html",
-    "calls-to-action"
-  ]
-
+module AmenitiesTemplate
+  def default_widgets
+    [
+      "html",
+      "calls-to-action"
+    ]
+  end
 end

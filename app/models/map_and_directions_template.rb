@@ -1,6 +1,8 @@
-class MapAndDirectionsTemplate < WebPageTemplate
-  DEFAULT_WIDGETS = [
-    "human-directions",
-    "html"
-  ]
+module MapAndDirectionsTemplate
+  def default_widgets
+    [
+      "human-directions",
+      "html"
+    ]
+  end
 end

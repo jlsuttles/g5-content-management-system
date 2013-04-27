@@ -1,6 +1,7 @@
-class FloorplansAndRatesTemplate < WebPageTemplate
-  DEFAULT_WIDGETS = [
-    "floorplans"
-  ]
-
+module FloorplansAndRatesTemplate
+  def default_widgets
+    [
+      "floorplans"
+    ]
+  end
 end

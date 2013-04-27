@@ -1,6 +1,7 @@
-class ResidentsTemplate < WebPageTemplate
-  DEFAULT_WIDGETS = [
-    "html"
-  ]
-
+module ResidentsTemplate
+  def default_widgets
+    [
+      "html"
+    ]
+  end
 end
