@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe WebTheme do
   before do
-    WebTheme.stub(:garden_url) { "spec/support/theme-garden.html" }
     WebTheme.any_instance.stub(:url) { "spec/support/web_theme.html" }
   end
   let(:remote_web_themes) { WebTheme.all_remote }

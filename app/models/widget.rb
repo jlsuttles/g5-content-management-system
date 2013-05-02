@@ -35,6 +35,7 @@ class Widget < ActiveRecord::Base
   scope :name_like_form, where("widgets.name LIKE '%Form'")
 
   def self.build_widget_url(widget)
+    # sbs
     garden_url + "/components/#{widget}"
   end
 

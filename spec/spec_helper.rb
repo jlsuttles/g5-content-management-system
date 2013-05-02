@@ -35,6 +35,15 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+
+  config.before(:each) do
+    Widget.stub(:garden_url) { "spec/support/widgets.html" }
+    WebTheme.stub(:garden_url) { "spec/support/themes.html" }
+    WebLayout.stub(:garden_url) { "spec/support/layouts.html" }
+
+    Widget.any_instance.stub(:configure_default_web_page_templates)
+    WebPageTemplate.any_instance.stub(:create_default_widgets)
+  end
 end
 
 def drag_and_drop(source, target)

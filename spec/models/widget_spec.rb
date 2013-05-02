@@ -1,9 +1,6 @@
 require 'spec_helper'
 
 describe Widget do
-  before do
-    Widget.stub(:garden_url) { "spec/support/widgets.html" }
-  end
   let(:widget) { Fabricate(:widget) }
 
   it { Widget.in_section("aside").should include widget }
@@ -96,6 +93,10 @@ describe Widget do
   end
 
   describe "#set_default_calls_to_action" do
+    before do
+      Widget.any_instance.stub(:get_edit_form_html)
+      Widget.any_instance.stub(:get_show_html)
+    end
     let (:cta_widget) { Fabricate(:widget, url: "spec/support/calls_to_action_widget.html")}
 
     it "assigns the defaults" do

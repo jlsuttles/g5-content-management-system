@@ -1,9 +1,6 @@
 require "spec_helper"
 
 describe WebLayout do
-  before do
-    WebLayout.stub(:garden_url) { "spec/support/layouts.html" }
-  end
   let(:web_layout) { Fabricate(:web_layout) }
   describe "validations" do
     it "is valid" do
