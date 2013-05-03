@@ -1,7 +1,5 @@
 module ResidentsTemplate
   def default_widgets
-    [
-      "html"
-    ]
+    %w(html)
   end
 end

@@ -1,8 +1,5 @@
 module MapAndDirectionsTemplate
   def default_widgets
-    [
-      "human-directions",
-      "html"
-    ]
+    %w(human-directions html)
   end
 end

@@ -1,7 +1,5 @@
 module CouponTemplate
   def default_widgets
-    [
-      "coupon"
-    ]
+    %w(coupon)
   end
 end

@@ -1,8 +1,5 @@
 module NeighborhoodTemplate
   def default_widgets
-    [
-      "html",
-      "html"
-    ]
+    %w(html html)
   end
 end

@@ -1,8 +1,6 @@
 module PhotoGalleryTemplate
   def default_widgets
-    [
-      "gallery"
-    ]
+    %w(gallery)
   end
 end
 

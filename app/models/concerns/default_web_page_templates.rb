@@ -31,8 +31,8 @@ module DefaultWebPageTemplates
 
   def configure_default_web_page_templates
     default_web_page_templates.each do |template|
-      klass = determine_class(template)
-      web_page_templates << WebPageTemplate.new(name: template, disabled: disabled_template?(template)).extend(klass)
+      mod = determine_class(template)
+      web_page_templates << WebPageTemplate.new(name: template, disabled: disabled_template?(template)).extend(mod)
     end
   end
 
@@ -44,7 +44,7 @@ module DefaultWebPageTemplates
     begin
       "#{template} Template".titleize.gsub(/\s+/, '').constantize
     rescue NameError
-      WebPageTemplate
+      Module.new
     end
   end
 end

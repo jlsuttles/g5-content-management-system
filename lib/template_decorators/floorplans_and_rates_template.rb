@@ -1,7 +1,5 @@
 module FloorplansAndRatesTemplate
   def default_widgets
-    [
-      "floorplans"
-    ]
+    %w(floorplans)
   end
 end
