@@ -14,7 +14,8 @@ describe WebPageTemplate do
 
   describe "WebPageTemplate default widgets" do
     before do
-      WebPageTemplate.any_instance.stub(build_widget_url: "spec/support/widget.html")
+      WebPageTemplate.any_instance.unstub(:create_default_widgets)
+      Widget.stub(build_widget_url: "spec/support/widget.html")
       WebHomeTemplate.any_instance.stub(default_widgets: ["storage-list"])
       @web_home_template = Fabricate(:web_home_template)
     end
