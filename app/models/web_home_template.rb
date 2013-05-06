@@ -6,10 +6,6 @@ class WebHomeTemplate < WebPageTemplate
     "social-links"
   ]
 
-  def type_for_route
-    self.type
-  end
-
   private
 
   def assign_defaults

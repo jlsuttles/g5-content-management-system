@@ -1,6 +1,4 @@
 class WebPageTemplate < WebTemplate
-  include WebPageTemplateTypeForRoute
-
   has_many :main_widgets,  class_name: "Widget",
     conditions: ['section = ?', 'main'], foreign_key: "web_template_id"
 

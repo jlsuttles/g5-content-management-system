@@ -8,11 +8,11 @@
     </ul>
   </td>
   <td class="page-actions">
-    <%= link_to "Edit", send("edit_website_#{web_template.type_for_route.underscore}_path", website, web_template), class: "btn" %>
+    <%= link_to "Edit", send("edit_website_#{web_template.type.underscore}_path", website, web_template), class: "btn" %>
     <% if web_template.website? %>
       <%= link_to "Deploy", deploy_website_path(website), method: :post, class: "btn" %>
     <% else %>
-      <%= link_to "Preview", send("website_#{web_template.type_for_route.underscore}_path", website, web_template), class: "btn primary" %>
+      <%= link_to "Preview", send("website_#{web_template.type.underscore}_path", website, web_template), class: "btn primary" %>
       <%= render partial: "web_template_toggle_disabled", locals: { website: website, web_template: web_template } %>
     <% end %>
   </td>
