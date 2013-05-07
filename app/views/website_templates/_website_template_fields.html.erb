@@ -22,7 +22,7 @@
   <div class="container">
     <div class="left" style="width:75%;float:left;">
       <h2>Select a Theme</h2>
-      <div id="chad" class="jThumbnailScroller">
+      <div class="jThumbnailScroller">
         <div class="jTscrollerContainer">
           <div class="jTscroller thumbs clearfix">
             <%= f.fields_for :web_theme, @web_template.web_theme || WebTheme.new do |ff| -%>
@@ -44,12 +44,12 @@
     </div> <!-- end left -->
     <div class="right" style="float:right;">
       <div class="colors clearfix">
-        <h3>Customize Colors:</h3>
+        <h3>Theme Colors:</h3>
         <div class="color-fields">
           <%= f.fields_for :website do |ff| -%>
           <div class="check-field">
             <%= ff.check_box :custom_colors %>
-            <%= ff.label :custom_colors %>
+            <%= ff.label :custom_colors, "Use custom colors" %>
           </div>
           <div class="color-field">
             <%= ff.text_field :primary_color, type: 'color', id: 'color-1' %>
