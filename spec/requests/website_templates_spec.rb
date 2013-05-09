@@ -14,7 +14,7 @@ describe "website_templates requests", js: true do
     it "should have content" do
       page.should have_content "Select a Layout".upcase
       page.should have_content "Select a Theme".upcase
-      page.should have_content "Customize Colors".upcase
+      page.should have_content "Theme Colors".upcase
       page.should have_content "Select Widgets".upcase
     end
     it "saves layout" do
