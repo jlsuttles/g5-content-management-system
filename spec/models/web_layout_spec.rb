@@ -1,9 +1,6 @@
 require "spec_helper"
 
 describe WebLayout do
-  before do
-    WebLayout.stub(:garden_url) { "spec/support/layouts.html" }
-  end
   let(:web_layout) { Fabricate(:web_layout) }
   describe "validations" do
     it "is valid" do
@@ -34,9 +31,14 @@ describe WebLayout do
   end
 
   describe "url not found" do
+    before do
+      Microformats2.stub(:parse) {
+        raise OpenURI::HTTPError.new("404 Object Not Found", nil)
+      }
+    end
     it "logs a failed request" do
       Rails.logger.should_receive(:warn).with("404 Object Not Found")
-      Fabricate(:web_layout, url: "http://g5-non-existant-app.herokuapp.com")
+      Fabricate(:web_layout)
     end
   end
 end

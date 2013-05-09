@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe WebTheme do
   before do
-    WebTheme.stub(:garden_url) { "spec/support/theme-garden.html" }
     WebTheme.any_instance.stub(:url) { "spec/support/web_theme.html" }
   end
   let(:remote_web_themes) { WebTheme.all_remote }
@@ -10,7 +9,7 @@ describe WebTheme do
 
   describe "Remote" do
     it "reads the HTML feed" do
-      remote_web_themes.should have(3).things
+      remote_web_themes.should have_at_least(4).things
     end
   end
 
@@ -37,11 +36,17 @@ describe WebTheme do
       expect { web_theme.save! }.to raise_error StandardError, "No h-g5-component found at url: #{web_theme.url}"
     end
 
-    it "should rescue from not found" do
-      web_theme.stub(:url) { "http://g5-non-existant-app.herokuapp.com" }
-      Rails.logger.should_receive(:warn).with("404 Object Not Found")
-      web_theme.save!
-    end
   end
 
+  describe "url not found" do
+    before do
+      Microformats2.stub(:parse) {
+        raise OpenURI::HTTPError.new("404 Object Not Found", nil)
+      }
+    end
+    it "logs a failed request" do
+      Rails.logger.should_receive(:warn).with("404 Object Not Found")
+      Fabricate(:web_theme)
+    end
+  end
 end

@@ -14,13 +14,16 @@ describe WebPageTemplate do
 
   describe "WebPageTemplate default widgets" do
     before do
-      WebPageTemplate.any_instance.stub(build_widget_url: "spec/support/widget.html")
+      WebPageTemplate.any_instance.unstub(:create_default_widgets)
+      Widget.stub(build_widget_url: "spec/support/widget.html")
       WebHomeTemplate.any_instance.stub(default_widgets: ["storage-list"])
       @web_home_template = Fabricate(:web_home_template)
     end
     it "builds default widgets for WebPageTemplate subclasses" do
       @web_home_template.widgets.map(&:name).should include("Storage List")
     end
+    # TODO: this spec could be written more better. it doesnt actually make
+    # sure that the the count is the same as the expected default widget count
     it "assigns the widgets to the 'main' section" do
       @web_home_template.main_widgets.count.should ==
       @web_home_template.widgets.count

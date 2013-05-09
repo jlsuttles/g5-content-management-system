@@ -18,6 +18,7 @@ describe "website_templates requests", js: true do
       page.should have_content "Select Widgets".upcase
     end
     it "saves layout" do
+      WebLayout.any_instance.stub(:assign_attributes_from_url)
       page.should_not have_css("input:checked[value*=main-first-sidebar-left]")
       find("label[for*=main-first-sidebar-left]").click
       click_button "Submit"
@@ -26,6 +27,7 @@ describe "website_templates requests", js: true do
       page.should have_css("input:checked[value*=main-first-sidebar-left]")
     end
     it "saves theme" do
+      WebTheme.any_instance.stub(:assign_attributes_from_url)
       page.should_not have_css("input:checked[value*=big-picture]")
       find("label[for*=big-picture]").click
       click_button "Submit"
@@ -42,6 +44,11 @@ describe "website_templates requests", js: true do
       page.should have_css("input:checked[name*=custom_colors]")
     end
     it "saves widgets and their properties" do
+      Widget.any_instance.stub(:url) { "spec/support/twitter-feed.html" }
+      Widget.any_instance.stub(:get_edit_form_html) {
+        open("spec/support/twitter-feed-edit.html").read
+      }
+      Widget.any_instance.stub(:get_show_html)
       page.should_not have_css(".add-widgets[data-section=header] .twitter-feed")
       source = find("#choose-widgets .twitter-feed")
       target = find(".add-widgets[data-section=header]")

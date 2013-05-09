@@ -7,6 +7,7 @@ require 'capybara/rails'
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'database_cleaner'
+require 'webmock/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -15,6 +16,10 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 RSpec.configure do |config|
   config.order = "random"
   config.include Capybara::DSL, type: :request
+
+  config.before(:all, type: :request) do
+    WebMock.disable_net_connect!(:allow_localhost => true)
+  end
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
@@ -34,6 +39,15 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
+  end
+
+  config.before(:each) do
+    Widget.stub(:garden_url) { "spec/support/widgets.html" }
+    WebTheme.stub(:garden_url) { "spec/support/themes.html" }
+    WebLayout.stub(:garden_url) { "spec/support/layouts.html" }
+
+    Widget.any_instance.stub(:configure_default_web_page_templates)
+    WebPageTemplate.any_instance.stub(:create_default_widgets)
   end
 end
 
