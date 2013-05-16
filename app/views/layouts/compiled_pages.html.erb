@@ -2,19 +2,21 @@
 <html>
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-    <%= javascript_include_tag "/javascripts/jquery-1.8.1.min.js" %>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= yield(:head) %>
     <%= javascript_include_tag "/javascripts/modernizr.custom.js" %>
+  </head>
+  <body class="<%= [mode, yield(:body_classes)].join(" ") %>">
+    <%= yield %>
+
+    <%= javascript_include_tag "/javascripts/jquery-1.8.1.min.js" %>
     <%= javascript_include_tag "/javascripts/selectivizr-min.js" %>
     <%= javascript_include_tag "/javascripts/respond.min.js" %>
     <%= javascript_include_tag "/javascripts/bootstrap-collapse.js" %>
     <%= javascript_include_tag "/javascripts/helper.js" %>
     <%= javascript_include_tag "/javascripts/script.js" %>
     <%= javascript_include_tag "compiled_pages" if mode == "preview" %>
-    <meta charset="utf8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%= yield(:head) %>
-  </head>
-  <body class="<%= [mode, yield(:body_classes)].join(" ") %>">
-    <%= yield %>
+    <%= yield(:bottom_of_body) %>
   </body>
 </html>
