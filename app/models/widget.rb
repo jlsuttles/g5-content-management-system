@@ -13,14 +13,14 @@ class Widget < ActiveRecord::Base
                   :url,
                   :name,
                   :stylesheets,
-                  :javascripts,
+                  :edit_javascript,
+                  :show_javascript,
                   :html,
                   :thumbnail,
                   :edit_form_html,
                   :settings_attributes
 
   serialize :stylesheets, Array
-  serialize :javascripts, Array
 
   belongs_to :web_template
   has_one :website, through: :web_template
@@ -71,7 +71,8 @@ class Widget < ActiveRecord::Base
     if component
       self.name        = component.name.to_s
       self.stylesheets = component.g5_stylesheets.try(:map) {|s|s.to_s} if component.respond_to?(:g5_stylesheets)
-      self.javascripts = component.g5_javascripts.try(:map) {|j|j.to_s} if component.respond_to?(:g5_javascripts)
+      self.edit_javascript =  component.g5_edit_javascript.to_s if component.respond_to?(:g5_edit_javascript)
+      self.show_javascript =  component.g5_show_javascript.to_s if component.respond_to?(:g5_show_javascript)
       self.edit_form_html = get_edit_form_html(component)
       self.html           = get_show_html(component)
       self.thumbnail      = component.photo.to_s

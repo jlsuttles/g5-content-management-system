@@ -23,7 +23,8 @@ describe Widget do
   describe "assign_attributes_from_url" do
     it { widget.name.should eq "Storage List" }
     it { widget.stylesheets.should have(1).thing }
-    it { widget.javascripts.should have(1).things }
+    it { widget.edit_javascript.should eq "http://g5-widget-garden.herokuapp.com/static/components/storage-list/javascripts/edit.js" }
+    it { widget.show_javascript.should eq "http://g5-widget-garden.herokuapp.com/static/components/storage-list/javascripts/show.js" }
     it { widget.edit_form_html.should eq "I'm an edit form!" }
     it { widget.html.should include "I'm a show page!" }
     it { widget.thumbnail.should eq "http://g5-widget-garden.herokuapp.com/static/components/storage-list/images/thumbnail.png"}
