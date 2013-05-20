@@ -5,9 +5,19 @@ class WebsiteTemplate < WebTemplate
   has_many :widgets, class_name: "Widget", foreign_key: "web_template_id"
 
   after_initialize :assign_defaults
+  after_create :create_default_header_widgets
+  after_create :create_default_footer_widgets
 
   def sections
     %w(header aside footer)
+  end
+
+  def default_header_widgets
+    %w(logo simple-nav)
+  end
+
+  def default_footer_widgets
+    %w(simple-nav hcard hours)
   end
 
   def stylesheets
@@ -65,6 +75,20 @@ class WebsiteTemplate < WebTemplate
   end
 
   private
+
+  def create_default_header_widgets
+    default_header_widgets.each do |widget|
+      url = Widget.build_widget_url(widget)
+      widgets.create(url: url, section: "header")
+    end
+  end
+
+  def create_default_footer_widgets
+    default_footer_widgets.each do |widget|
+      url = Widget.build_widget_url(widget)
+      widgets.create(url: url, section: "footer")
+    end
+  end
 
   def assign_defaults
     self.name  ||= "Website Template"

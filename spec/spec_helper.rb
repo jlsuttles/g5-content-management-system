@@ -48,6 +48,8 @@ RSpec.configure do |config|
 
     Widget.any_instance.stub(:configure_default_web_page_templates)
     WebPageTemplate.any_instance.stub(:create_default_widgets)
+    WebsiteTemplate.any_instance.stub(:create_default_header_widgets)
+    WebsiteTemplate.any_instance.stub(:create_default_footer_widgets)
   end
 end
 

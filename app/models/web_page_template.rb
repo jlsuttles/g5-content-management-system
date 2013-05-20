@@ -5,12 +5,12 @@ class WebPageTemplate < WebTemplate
   after_initialize :assign_defaults
   after_create :create_default_widgets
 
-
-  
-  DEFAULT_WIDGETS = []
-
   def sections
     %w(main)
+  end
+
+  def default_widgets
+    []
   end
 
   def all_widgets
@@ -18,10 +18,6 @@ class WebPageTemplate < WebTemplate
   end
 
   private
-
-  def default_widgets
-    self.class::DEFAULT_WIDGETS
-  end
 
   def assign_defaults
     self.name  ||= "New Page"
@@ -33,6 +29,6 @@ class WebPageTemplate < WebTemplate
     default_widgets.each do |widget|
       url = Widget.build_widget_url(widget)
       widgets.create(url: url, section: "main")
-    end  
+    end
   end
 end
