@@ -2,8 +2,7 @@
 	<%= link_to edit_widget_path(widget),
               class: "widget",
               "data-id" => widget.id,
-              "data-removeable" => widget.removeable
-              do %>
+              "data-removeable" => widget.removeable do %>
   	<%= image_tag_or_placeholder(widget.try(:thumbnail)) %>
   	<%= widget.name %>
 	<% end %>
