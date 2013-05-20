@@ -79,14 +79,14 @@ class WebsiteTemplate < WebTemplate
   def create_default_header_widgets
     default_header_widgets.reverse.each do |widget|
       url = Widget.build_widget_url(widget)
-      widgets.create(url: url, section: "header")
+      widgets.create(url: url, section: "header", removeable: false)
     end
   end
 
   def create_default_footer_widgets
     default_footer_widgets.reverse.each do |widget|
       url = Widget.build_widget_url(widget)
-      widgets.create(url: url, section: "footer")
+      widgets.create(url: url, section: "footer", removeable: false)
     end
   end
 

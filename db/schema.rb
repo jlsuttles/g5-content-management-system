@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516210922) do
+ActiveRecord::Schema.define(:version => 20130520183443) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -153,6 +153,7 @@ ActiveRecord::Schema.define(:version => 20130516210922) do
     t.string   "thumbnail"
     t.string   "section"
     t.text     "edit_form_html"
+    t.boolean  "removeable"
     t.string   "edit_javascript"
     t.string   "show_javascript"
   end

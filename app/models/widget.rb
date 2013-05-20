@@ -18,7 +18,8 @@ class Widget < ActiveRecord::Base
                   :html,
                   :thumbnail,
                   :edit_form_html,
-                  :settings_attributes
+                  :settings_attributes,
+                  :removeable
 
   serialize :stylesheets, Array
 
@@ -27,6 +28,7 @@ class Widget < ActiveRecord::Base
 
   has_many :widget_entries, dependent: :destroy
 
+  after_initialize :set_defaults
   before_create :assign_attributes_from_url
 
   validates :url, presence: true
@@ -65,6 +67,10 @@ class Widget < ActiveRecord::Base
   end
 
   private
+
+  def set_defaults
+    self.removeable = true
+  end
 
   def assign_attributes_from_url
     component = Microformats2.parse(url).first
