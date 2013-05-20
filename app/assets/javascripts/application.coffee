@@ -25,7 +25,7 @@ $ ->
     $(this).parent().css('opacity', '1').siblings().css('opacity', '0.7')
 
   window.onload = ->
-    $("#chad").thumbnailScroller
+    $(".theme-picker .jThumbnailScroller").thumbnailScroller
       scrollerType:"clickButtons"
   		scrollerOrientation:"horizontal"
   		scrollSpeed:2
