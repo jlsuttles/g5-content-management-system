@@ -1,23 +1,16 @@
 class WebsiteTemplate < WebTemplate
+  has_many :logo_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-logo'], foreign_key: "web_template_id"
+  has_many :phone_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-phone'], foreign_key: "web_template_id"
+  has_many :btn_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-btn'], foreign_key: "web_template_id"
+  has_many :nav_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-nav'], foreign_key: "web_template_id"
   has_many :aside_widgets,  class_name: "Widget", conditions: ['section = ?', 'aside'], foreign_key: "web_template_id"
-  has_many :header_widgets, class_name: "Widget", conditions: ['section = ?', 'header'], foreign_key: "web_template_id"
   has_many :footer_widgets, class_name: "Widget", conditions: ['section = ?', 'footer'], foreign_key: "web_template_id"
   has_many :widgets, class_name: "Widget", foreign_key: "web_template_id"
 
   after_initialize :assign_defaults
-  after_create :create_default_header_widgets
-  after_create :create_default_footer_widgets
 
   def sections
-    %w(header aside footer)
-  end
-
-  def default_header_widgets
-    %w(logo simple-nav)
-  end
-
-  def default_footer_widgets
-    %w(simple-nav hcard hours)
+    %w(drop-target-logo drop-target-phone drop-target-btn drop-target-nav aside footer)
   end
 
   def stylesheets
@@ -75,20 +68,6 @@ class WebsiteTemplate < WebTemplate
   end
 
   private
-
-  def create_default_header_widgets
-    default_header_widgets.each do |widget|
-      url = Widget.build_widget_url(widget)
-      widgets.create(url: url, section: "header", removeable: false)
-    end
-  end
-
-  def create_default_footer_widgets
-    default_footer_widgets.each do |widget|
-      url = Widget.build_widget_url(widget)
-      widgets.create(url: url, section: "footer", removeable: false)
-    end
-  end
 
   def assign_defaults
     self.name  ||= "Website Template"
