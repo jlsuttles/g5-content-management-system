@@ -18,10 +18,18 @@ describe WebsiteTemplate do
       website_template.stylesheets.should be_kind_of(Array)
     end
   end
-  describe "#javascripts" do
+  describe "#edit_javascript" do
     let(:website_template) { Fabricate.build(:website_template) }
-    it "has a collection of javascripts" do
-      website_template.javascripts.should be_kind_of(Array)
+    it "has an edit javascript" do
+      website_template.edit_javascript.should be_kind_of(String)
+    end
+  end
+  describe "#show_javascript" do
+    let(:website_template) { Fabricate.build(:website_template) }
+    it "has a show javascript" do
+      website_template.show_javascript.should be_kind_of(String)
+    end
+  end
     end
   end
 end
