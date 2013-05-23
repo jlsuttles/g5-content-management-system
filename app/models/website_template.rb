@@ -37,11 +37,11 @@ class WebsiteTemplate < WebTemplate
   end
 
   def javascripts
-    web_theme_javascripts + widget_javascripts
+    web_theme_javascripts + widget_show_javascripts
   end
 
-  def widget_javascripts
-    widgets ? widgets.map(&:javascripts).flatten : []
+  def widget_show_javascripts
+    widgets ? widgets.map(&:show_javascript).flatten : []
   end
 
   def web_theme_javascripts
