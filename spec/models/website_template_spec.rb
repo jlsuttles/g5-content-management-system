@@ -3,7 +3,7 @@ require 'spec_helper'
 describe WebsiteTemplate do
   let(:website_template) { Fabricate.build(:website_template) }
 
-  its(:sections) { should eq %w(drop-target-logo drop-target-phone drop-target-btn drop-target-nav aside footer) }
+  its(:sections) { should eq %w(drop-target-logo drop-target-phone drop-target-btn drop-target-nav drop-target-aside drop-target-footer) }
   its(:type) { should eq "WebsiteTemplate" }
   its(:logo_widgets) { should eq [] }
   its(:phone_widgets) { should eq [] }

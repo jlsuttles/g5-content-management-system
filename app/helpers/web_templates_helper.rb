@@ -6,7 +6,7 @@ module WebTemplatesHelper
     web_template.all_widgets.group_by(&:section).each do |section, widgets|
       # find by role, class, id, or tag. seems bad.
       # TODO: use only ids
-      html_section = html.at_css("[role=#{section}],.#{section},##{section},#{section}")
+      html_section = html.at_css("##{section}")
       if html_section
         widget_html = widgets.map(&:liquidized_html).join
         html_section.inner_html = widget_html

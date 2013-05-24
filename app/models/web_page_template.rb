@@ -1,12 +1,12 @@
 class WebPageTemplate < WebTemplate
   has_many :main_widgets,  class_name: "Widget",
-    conditions: ['section = ?', 'main'], foreign_key: "web_template_id"
+    conditions: ['section = ?', 'drop-target-main'], foreign_key: "web_template_id"
 
   after_initialize :assign_defaults
   after_create :create_default_widgets
 
   def sections
-    %w(main)
+    %w(drop-target-main)
   end
 
   def default_widgets
@@ -28,7 +28,7 @@ class WebPageTemplate < WebTemplate
   def create_default_widgets
     default_widgets.each do |widget|
       url = Widget.build_widget_url(widget)
-      widgets.create(url: url, section: "main")
+      widgets.create(url: url, section: "drop-target-main")
     end
   end
 end
