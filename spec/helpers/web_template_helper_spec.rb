@@ -6,7 +6,7 @@ describe WebTemplatesHelper do
   let(:web_layout) { Fabricate(:web_layout) }
   let(:web_theme) { Fabricate(:web_theme) }
   let(:web_home_template) { Fabricate(:web_home_template) }
-  let(:widget) { Fabricate(:widget) }
+  let(:widget) { Fabricate(:widget, section: "drop-target-main") }
 
   before :each do
     website.website_template = website_template
