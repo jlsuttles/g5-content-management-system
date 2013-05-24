@@ -3,8 +3,8 @@ class WebsiteTemplateWithDefaultWidgets
     "drop-target-logo" => ["logo"],
     "drop-target-phone" => ["phone"],
     "drop-target-btn" => ["button"],
-    "drop-target-nav" => ["simple-nav"],
-    "footer" => ["simple-nav", "hcard", "hours"]
+    "drop-target-nav" => ["navigation"],
+    "footer" => ["navigation", "contact-info", "hours"]
   }
 
   def initialize(website_template)
