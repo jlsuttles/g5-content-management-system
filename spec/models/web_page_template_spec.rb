@@ -22,11 +22,9 @@ describe WebPageTemplate do
     it "builds default widgets for WebPageTemplate subclasses" do
       @web_home_template.widgets.map(&:name).should include("Storage List")
     end
-    # TODO: this spec could be written more better. it doesnt actually make
-    # sure that the the count is the same as the expected default widget count
     it "assigns the widgets to the 'main' section" do
       @web_home_template.main_widgets.count.should ==
-      @web_home_template.widgets.count
+        @web_home_template.default_widgets.length
     end
   end
 end

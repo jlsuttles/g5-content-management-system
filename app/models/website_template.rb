@@ -1,13 +1,16 @@
 class WebsiteTemplate < WebTemplate
+  has_many :logo_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-logo'], foreign_key: "web_template_id"
+  has_many :phone_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-phone'], foreign_key: "web_template_id"
+  has_many :btn_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-btn'], foreign_key: "web_template_id"
+  has_many :nav_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-nav'], foreign_key: "web_template_id"
   has_many :aside_widgets,  class_name: "Widget", conditions: ['section = ?', 'aside'], foreign_key: "web_template_id"
-  has_many :header_widgets, class_name: "Widget", conditions: ['section = ?', 'header'], foreign_key: "web_template_id"
   has_many :footer_widgets, class_name: "Widget", conditions: ['section = ?', 'footer'], foreign_key: "web_template_id"
   has_many :widgets, class_name: "Widget", foreign_key: "web_template_id"
 
   after_initialize :assign_defaults
 
   def sections
-    %w(header aside footer)
+    %w(drop-target-logo drop-target-phone drop-target-btn drop-target-nav aside footer)
   end
 
   def stylesheets

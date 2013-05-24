@@ -1,3 +1,5 @@
+require_dependency "website_template_with_default_widgets"
+
 class Website < ActiveRecord::Base
   include HasManySettings
   include HasSettingNavigation
@@ -28,7 +30,7 @@ class Website < ActiveRecord::Base
 
   validates :urn, presence: true, uniqueness: true, unless: :new_record?
 
-  before_create :build_website_template
+  before_create :create_website_template
   before_create :build_web_home_template
 
   def website_id
@@ -73,5 +75,11 @@ class Website < ActiveRecord::Base
     else
       website_template.try(:secondary_color) || "#ffffff"
     end
+  end
+
+  private
+
+  def create_website_template
+    WebsiteTemplateWithDefaultWidgets.new(build_website_template).create
   end
 end

@@ -3,9 +3,12 @@ require 'spec_helper'
 describe WebsiteTemplate do
   let(:website_template) { Fabricate.build(:website_template) }
 
-  its(:sections) { should eq ['header', 'aside', 'footer']}
+  its(:sections) { should eq %w(drop-target-logo drop-target-phone drop-target-btn drop-target-nav aside footer) }
   its(:type) { should eq "WebsiteTemplate" }
-  its(:header_widgets) { should eq [] }
+  its(:logo_widgets) { should eq [] }
+  its(:phone_widgets) { should eq [] }
+  its(:btn_widgets) { should eq [] }
+  its(:nav_widgets) { should eq [] }
   its(:aside_widgets) { should eq [] }
   its(:footer_widgets) { should eq [] }
 
