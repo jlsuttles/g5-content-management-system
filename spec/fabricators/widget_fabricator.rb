@@ -1,6 +1,6 @@
 Fabricator :widget do
   name { Faker::Name.name }
-  section 'aside'
+  section 'drop-target-aside'
   url "spec/support/widget.html"
 end
 
