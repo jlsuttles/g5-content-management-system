@@ -62,8 +62,13 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def javascripts
-    widgets.map(&:show_javascript).flatten.compact +
+    widget_lib_javascripts + widgets.map(&:show_javascript).flatten.compact +
     website.try(:website_template).try(:javascripts).to_a.flatten.compact
+  end
+
+  def widget_lib_javascripts
+    widgets.map(&:lib_javascripts).flatten +
+    website.try(:website_template).try(:lib_javascripts).to_a
   end
 
   def compile_path
