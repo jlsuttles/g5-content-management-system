@@ -23,6 +23,11 @@ class WebTheme < ActiveRecord::Base
 
   validates :url, presence: true
 
+  def self.build_theme_url(theme)
+    # sbs
+    garden_url + "/components/#{theme}"
+  end
+
   def website_id
     web_template.website_id if web_template
   end
