@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520183443) do
+ActiveRecord::Schema.define(:version => 20130523212458) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -36,12 +36,12 @@ ActiveRecord::Schema.define(:version => 20130520183443) do
 
   create_table "settings", :force => true do |t|
     t.string   "name"
-    t.text     "value"
-    t.boolean  "editable",      :default => false
+    t.text     "value",         :limit => 255
+    t.boolean  "editable",                     :default => false
     t.string   "default_value"
     t.integer  "owner_id"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
     t.string   "owner_type"
     t.text     "categories"
     t.integer  "priority"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(:version => 20130520183443) do
     t.text     "stylesheets"
   end
 
-  add_index "web_layouts", ["web_template_id"], :name => "index_web_layouts_on_web_template_id"
+  add_index "web_layouts", ["web_template_id"], :name => "index_page_layouts_on_page_id"
 
   create_table "web_templates", :force => true do |t|
     t.integer  "website_id"
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(:version => 20130520183443) do
     t.boolean  "disabled"
   end
 
-  add_index "web_templates", ["website_id"], :name => "index_web_templates_on_website_id"
+  add_index "web_templates", ["website_id"], :name => "index_pages_on_location_id"
 
   create_table "web_themes", :force => true do |t|
     t.string   "url"
@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(:version => 20130520183443) do
     t.text     "colors"
   end
 
-  add_index "web_themes", ["web_template_id"], :name => "index_web_themes_on_web_template_id"
+  add_index "web_themes", ["web_template_id"], :name => "index_themes_on_page_id"
 
   create_table "websites", :force => true do |t|
     t.integer  "location_id"
@@ -153,12 +153,13 @@ ActiveRecord::Schema.define(:version => 20130520183443) do
     t.string   "thumbnail"
     t.string   "section"
     t.text     "edit_form_html"
-    t.boolean  "removeable"
     t.string   "edit_javascript"
     t.string   "show_javascript"
+    t.text     "lib_javascripts"
+    t.boolean  "removeable"
   end
 
   add_index "widgets", ["name"], :name => "index_widgets_on_name"
-  add_index "widgets", ["web_template_id"], :name => "index_widgets_on_web_template_id"
+  add_index "widgets", ["web_template_id"], :name => "index_widgets_on_page_id"
 
 end
