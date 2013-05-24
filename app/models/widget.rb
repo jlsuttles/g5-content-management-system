@@ -15,6 +15,7 @@ class Widget < ActiveRecord::Base
                   :stylesheets,
                   :edit_javascript,
                   :show_javascript,
+                  :lib_javascripts,
                   :html,
                   :thumbnail,
                   :edit_form_html,
@@ -22,6 +23,7 @@ class Widget < ActiveRecord::Base
                   :removeable
 
   serialize :stylesheets, Array
+  serialize :lib_javascripts, Array
 
   belongs_to :web_template
   has_one :website, through: :web_template
@@ -79,9 +81,11 @@ class Widget < ActiveRecord::Base
       self.stylesheets = component.g5_stylesheets.try(:map) {|s|s.to_s} if component.respond_to?(:g5_stylesheets)
       self.edit_javascript =  component.g5_edit_javascript.to_s if component.respond_to?(:g5_edit_javascript)
       self.show_javascript =  component.g5_show_javascript.to_s if component.respond_to?(:g5_show_javascript)
+      self.lib_javascripts = component.g5_lib_javascripts.try(:map) {|j|j.to_s} if component.respond_to?(:g5_lib_javascripts)
       self.edit_form_html = get_edit_form_html(component)
       self.html           = get_show_html(component)
       self.thumbnail      = component.photo.to_s
+
       build_settings_from_microformat(component)
       true
     else
