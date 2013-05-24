@@ -155,6 +155,7 @@ nav[role=navigation] {
     width: 100px;
   }
   .widgets {
+    max-width: 500px;
     li {
       float: left;
       margin-bottom: 5px;
@@ -162,6 +163,9 @@ nav[role=navigation] {
       font-size: 12px;
       line-height: 1.25;
       text-align: center;
+      &:nth-child(6n) {
+        clear: left;
+      }
     }
     img {
       margin: 0 auto 5px;
