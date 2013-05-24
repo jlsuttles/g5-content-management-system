@@ -155,8 +155,8 @@ ActiveRecord::Schema.define(:version => 20130523212458) do
     t.text     "edit_form_html"
     t.string   "edit_javascript"
     t.string   "show_javascript"
-    t.text     "lib_javascripts"
     t.boolean  "removeable"
+    t.text     "lib_javascripts"
   end
 
   add_index "widgets", ["name"], :name => "index_widgets_on_name"
