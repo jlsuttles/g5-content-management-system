@@ -43,18 +43,21 @@ describe "website_templates requests", js: true do
       visit edit_website_website_template_path(@website, @website.website_template)
       page.should have_css("input:checked[name*=custom_colors]")
     end
+  end
+  describe "#edit" do
     it "saves widgets and their properties" do
       Widget.any_instance.stub(:url) { "spec/support/twitter-feed.html" }
       Widget.any_instance.stub(:get_edit_form_html) {
         open("spec/support/twitter-feed-edit.html").read
       }
       Widget.any_instance.stub(:get_show_html)
-      page.should_not have_css(".add-widgets[data-section=aside] .twitter-feed")
+      visit edit_website_website_template_path(@website, @website.website_template) + "#choose-widgets"
+      page.should_not have_css(".add-widgets[data-section=drop-target-phone] .twitter-feed")
       source = find("#choose-widgets .twitter-feed")
-      target = find(".add-widgets[data-section=aside]")
+      target = find(".add-widgets[data-section=drop-target-phone]")
       drag_and_drop(source, target) # native drag_to was not working
       page.should have_css("#modal input[type=text]")
-      page.should have_css(".add-widgets[data-section=aside] .twitter-feed")
+      page.should have_css(".add-widgets[data-section=drop-target-phone] .twitter-feed")
       # shouldn't have to do this twice
       find("#modal").first("input[type=text]").set("jlsuttles")
       find("#modal").first("input[type=text]").set("jlsuttles")
@@ -62,7 +65,7 @@ describe "website_templates requests", js: true do
       click_button "Submit"
       current_path.should eq website_path(@website)
       visit edit_website_website_template_path(@website, @website.website_template)
-      find(".add-widgets[data-section=aside] .twitter-feed").click
+      find(".add-widgets[data-section=drop-target-phone] .twitter-feed").click
       page.should have_css("#modal")
       find("#modal").first("input[type=text]").value.should == "jlsuttles"
     end
