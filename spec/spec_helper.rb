@@ -1,5 +1,4 @@
-require 'simplecov'
-SimpleCov.start
+require 'simplecov' SimpleCov.start
 
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
@@ -49,6 +48,7 @@ RSpec.configure do |config|
     Widget.any_instance.stub(:configure_default_web_page_templates)
     WebPageTemplate.any_instance.stub(:create_default_widgets)
     Website.any_instance.stub(:create_website_template_defaults)
+    Website.any_instance.stub(:create_web_home_template_defaults)
   end
 end
 
