@@ -34,7 +34,8 @@ class Website < ActiveRecord::Base
 
   before_create :create_website_template
   before_create :create_website_template_defaults
-  before_create :build_web_home_template
+  before_create :create_web_home_template
+  before_create :create_web_home_template_defaults
 
   def website_id
     id
@@ -86,5 +87,9 @@ class Website < ActiveRecord::Base
     WebTemplateDefaultLayout::Website.new(website_template).create
     WebTemplateDefaultTheme::Website.new(website_template).create
     WebTemplateDefaultWidgets::Website.new(website_template).create
+  end
+
+  def create_web_home_template_defaults
+    WebTemplateDefaultWidgets::WebHome.new(web_home_template).create
   end
 end
