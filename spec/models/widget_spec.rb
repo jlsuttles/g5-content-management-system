@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Widget do
   let(:widget) { Fabricate(:widget) }
 
-  it { Widget.in_section("aside").should include widget }
+  it { Widget.in_section("drop-target-aside").should include widget }
 
   describe "remote" do
     let(:remotes) { Widget.all_remote }
