@@ -21,6 +21,11 @@ class WebLayout < ActiveRecord::Base
 
   validates :url, presence: true
 
+  def self.build_layout_url(layout)
+    # sbs
+    garden_url + "/components/#{layout}"
+  end
+
   def website_id
     web_template.website_id if web_template
   end

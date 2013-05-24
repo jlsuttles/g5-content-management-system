@@ -1,4 +1,6 @@
-require_dependency "website_template_with_default_widgets"
+require_dependency "web_template_default_layout/website"
+require_dependency "web_template_default_theme/website"
+require_dependency "web_template_default_widgets/website"
 
 class Website < ActiveRecord::Base
   include HasManySettings
@@ -31,6 +33,7 @@ class Website < ActiveRecord::Base
   validates :urn, presence: true, uniqueness: true, unless: :new_record?
 
   before_create :create_website_template
+  before_create :create_website_template_defaults
   before_create :build_web_home_template
 
   def website_id
@@ -79,7 +82,9 @@ class Website < ActiveRecord::Base
 
   private
 
-  def create_website_template
-    WebsiteTemplateWithDefaultWidgets.new(build_website_template).create
+  def create_website_template_defaults
+    WebTemplateDefaultLayout::Website.new(website_template).create
+    WebTemplateDefaultTheme::Website.new(website_template).create
+    WebTemplateDefaultWidgets::Website.new(website_template).create
   end
 end
