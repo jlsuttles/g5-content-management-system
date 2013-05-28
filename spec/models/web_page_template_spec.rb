@@ -6,7 +6,7 @@ describe WebPageTemplate do
     web_page_template.should be_kind_of(WebTemplate)
   end
   it "should have a main section" do
-    web_page_template.sections.should include "main"
+    web_page_template.sections.should include "drop-target-main"
   end
   it "should return all widgets" do
     web_page_template.all_widgets.should be_a(Array)

@@ -1,7 +1,7 @@
 module WebTemplateDefaultWidgets
   class WebHome
     DEFAULTS = {
-      "main" => ["photo"],
+      "drop-target-main" => ["photo"],
     }
 
     def initialize(web_home_template)

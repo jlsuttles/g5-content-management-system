@@ -5,8 +5,8 @@ module WebTemplateDefaultWidgets
       "drop-target-phone" => ["phone"],
       "drop-target-btn" => ["button"],
       "drop-target-nav" => ["navigation"],
-      "aside" => ["calls-to-action", "social-links"],
-      "footer" => ["navigation", "contact-info", "hours"]
+      "drop-target-aside" => ["calls-to-action", "social-links"],
+      "drop-target-footer" => ["navigation", "contact-info", "hours"]
     }
 
     def initialize(website_template)

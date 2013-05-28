@@ -19,7 +19,7 @@ describe WebLayout do
 
     it { web_layout.name.should eq "Main First Single Column"}
     it { web_layout.stylesheets.should be_empty }
-    it { web_layout.html.should match "container single-column" }
+    it { web_layout.html.should match "single-column layout" }
     it { web_layout.thumbnail.should eq "http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/images/thumbnail.png"}
   end
 
