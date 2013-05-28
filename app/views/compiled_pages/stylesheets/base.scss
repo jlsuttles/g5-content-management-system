@@ -49,12 +49,10 @@ form input[type=url] {
 .collapsable-btn {
   display: inline-block;
   cursor: pointer; }
-
 .collapsable-content,
 .collapsable-content.collapse {
   height: 0;
   overflow: hidden; }
-
 .collapse {
   position: relative;
   height: 0;
@@ -63,14 +61,46 @@ form input[type=url] {
   -moz-transition: height 0.35s ease;
   -o-transition: height 0.35s ease;
   transition: height 0.35s ease; }
-
 .collapse.in {
   height: auto; }
 
+footer[role=contentinfo] nav {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  footer[role=contentinfo] {
+    .copyright,
+    .dxm {
+      clear: right;
+      float: right;
+    }
+    .navigation {
+      li {
+        display: inline-block;
+        &:before {
+          content: '/';
+        }
+        &:first-child:before {
+          content: '';
+        }
+      }
+      &:before {
+        content: '/';
+      }
+      &:first-child:before {
+        content: '';
+      }
+    }
+  }
+}
+
 @media (min-width: 980px) {
   .collapsable-btn {
-    display: none; }
-
+    display: none;
+  }
   .collapsable-content {
     height: auto !important;
-    overflow: visible !important; } }
+    overflow: visible !important;
+  }
+}
