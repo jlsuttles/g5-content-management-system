@@ -1,10 +1,6 @@
-html {
-  font-size: 62.5%;
-}
 body {
   margin: 0;
   padding: 0;
-  font-size: 16px;
 }
 nav ul,
 nav ol {
@@ -30,17 +26,6 @@ form input,
 form label {
   display: block;
 }
-form .field {
-  margin-bottom: 1em;
-}
-form textarea,
-form input[type=text],
-form input[type=email],
-form input[type=tel],
-form input[type=password],
-form input[type=url] {
-  padding: .3em .5em .2em;
-}
 .dxm {
   width: 100px;
   height: 23px;
@@ -64,36 +49,6 @@ form input[type=url] {
 .collapse.in {
   height: auto; }
 
-footer[role=contentinfo] nav {
-  margin-bottom: 1em;
-}
-
-@media (min-width: 768px) {
-  footer[role=contentinfo] {
-    .copyright,
-    .dxm {
-      clear: right;
-      float: right;
-    }
-    .navigation {
-      li {
-        display: inline-block;
-        &:before {
-          content: '/';
-        }
-        &:first-child:before {
-          content: '';
-        }
-      }
-      &:before {
-        content: '/';
-      }
-      &:first-child:before {
-        content: '';
-      }
-    }
-  }
-}
 
 @media (min-width: 980px) {
   .collapsable-btn {
