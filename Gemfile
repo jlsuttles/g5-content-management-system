@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 source "https://gems.gemfury.com/88yeKzEGfizstwBaXVqj/"
 ruby "1.9.3"
 
@@ -42,9 +42,10 @@ group :development, :test do
   gem "debugger", "~> 1.2.1"
   gem "fabrication", "~> 2.5.0"
   gem "faker", "~> 1.1.2"
-  gem 'simplecov', :require => false
-  gem 'pry'
+  gem "simplecov", :require => false
+  gem "pry"
   gem "webmock", "~> 1.11.0", :require => false
+  gem "jasminerice", :git => "https://github.com/bradphelan/jasminerice.git"
 end
 
 group :production do

@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/bradphelan/jasminerice.git
+  revision: b5370e3cf2931aa5478e775369afb5ecef1c18b5
+  specs:
+    jasminerice (0.1.0)
+      coffee-rails
+
 GEM
   remote: https://rubygems.org/
   remote: https://gems.gemfury.com/88yeKzEGfizstwBaXVqj/
@@ -286,6 +293,7 @@ DEPENDENCIES
   github_heroku_deployer (~> 0.2.0)
   guard-rspec (~> 2.1.0)
   heroku_resque_autoscaler (~> 0.1.0)
+  jasminerice!
   jquery-rails
   liquid (~> 2.4.1)
   microformats2 (= 2.0.0.pre4)
