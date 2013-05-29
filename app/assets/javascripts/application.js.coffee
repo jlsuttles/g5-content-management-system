@@ -10,6 +10,10 @@
 #= require jquery.thumbnailScroller
 #= require ckeditor/init
 #
+# app/assets
+#
+#= require_tree ./application
+#
 # ember app
 #
 #= require handlebars
@@ -18,10 +22,6 @@
 #= require_self
 #= require g5_client_hub
 window.G5ClientHub = Ember.Application.create()
-#
-# app/assets
-#
-#= require_tree ./application
 
 $ ->
   $('input[type=color]').spectrum {
