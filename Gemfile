@@ -16,6 +16,8 @@ gem "liquid", "~> 2.4.1"
 gem "ckeditor"
 gem "draper", "~> 1.1.0"
 
+gem "ember-rails"
+
 group :assets do
   gem "sass-rails", "~> 3.2.3"
   gem "coffee-rails", "~> 3.2.1"
