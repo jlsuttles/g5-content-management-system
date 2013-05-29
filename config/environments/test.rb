@@ -34,4 +34,7 @@ G5ClientHub::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # Configure Ember variant
+  config.ember.variant = :development
 end
