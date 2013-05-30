@@ -1,0 +1,6 @@
+## Customize test commands
+test:
+  override:
+    - bundle exec rspec
+  post:
+    - bundle exec guard-jasmine
