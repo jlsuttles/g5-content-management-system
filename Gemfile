@@ -45,6 +45,7 @@ group :development, :test do
   gem "simplecov", :require => false
   gem "pry"
   gem "webmock", "~> 1.11.0", :require => false
+  gem "jasmine"
   gem "jasminerice", :git => "https://github.com/bradphelan/jasminerice.git"
 end
 
