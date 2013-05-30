@@ -47,6 +47,7 @@ group :development, :test do
   gem "webmock", "~> 1.11.0", :require => false
   gem "jasmine"
   gem "jasminerice", :git => "https://github.com/bradphelan/jasminerice.git"
+  gem "guard-jasmine"
 end
 
 group :production do
