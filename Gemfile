@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 source "https://gems.gemfury.com/88yeKzEGfizstwBaXVqj/"
 ruby "1.9.3"
 
@@ -15,6 +15,8 @@ gem "g5_sibling_deployer_engine", "~> 0.2"
 gem "liquid", "~> 2.4.1"
 gem "ckeditor"
 gem "draper", "~> 1.1.0"
+
+gem "ember-rails"
 
 group :assets do
   gem "sass-rails", "~> 3.2.3"
@@ -40,9 +42,12 @@ group :development, :test do
   gem "debugger", "~> 1.2.1"
   gem "fabrication", "~> 2.5.0"
   gem "faker", "~> 1.1.2"
-  gem 'simplecov', :require => false
-  gem 'pry'
+  gem "simplecov", :require => false
+  gem "pry"
   gem "webmock", "~> 1.11.0", :require => false
+  gem "jasmine"
+  gem "jasminerice", :git => "https://github.com/bradphelan/jasminerice.git"
+  gem "guard-jasmine"
 end
 
 group :production do

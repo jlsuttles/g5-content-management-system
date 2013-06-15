@@ -12,8 +12,16 @@
 #
 # app/assets
 #
-#= require_self
 #= require_tree ./application
+#
+# ember app
+#
+#= require handlebars
+#= require ember
+#= require ember-data
+#= require_self
+#= require g5_client_hub
+window.G5ClientHub = Ember.Application.create()
 
 $ ->
   $('input[type=color]').spectrum {
