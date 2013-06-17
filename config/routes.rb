@@ -33,4 +33,8 @@ G5ClientHub::Application.routes.draw do
   end
 
   root to: "locations#index"
+
+  namespace :ember do
+    root to: "ember#start"
+  end
 end
