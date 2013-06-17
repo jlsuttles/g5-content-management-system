@@ -5,3 +5,4 @@ G5ClientHub.Router.map ->
     @route "edit"
     @resource "web_layout", ->
       @route "edit"
+  @resource "web_layouts"
