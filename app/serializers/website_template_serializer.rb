@@ -6,9 +6,10 @@ class WebsiteTemplateSerializer < ActiveModel::Serializer
               :slug,
               :template,
               :title,
-              :website_id
+              :website_id,
+              :web_layout_id
 
   def web_layout_id
-    web_layout.id
+    object.web_layout.id
   end
 end
