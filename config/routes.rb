@@ -37,4 +37,11 @@ G5ClientHub::Application.routes.draw do
   namespace :ember do
     root to: "ember#start"
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :website_templates
+      resources :web_layouts
+    end
+  end
 end
