@@ -7,4 +7,8 @@ class WebsiteTemplateSerializer < ActiveModel::Serializer
               :template,
               :title,
               :website_id
+
+  def web_layout_id
+    web_layout.id
+  end
 end
