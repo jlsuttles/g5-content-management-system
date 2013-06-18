@@ -2,6 +2,11 @@
 
 <ul>
   {{#each controller}}
-    <li>Hello, {{name}}!</li>
+    <li>
+      <a href="#" {{ action "addLayout" this }}>
+        <img {{ bindAttr src="thumbnail" }}>
+        <p>{{ name }}</p>
+      </a>
+    </li>
   {{/each}}
 </ul>

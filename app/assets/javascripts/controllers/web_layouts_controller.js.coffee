@@ -1,1 +1,3 @@
-G5ClientHub.WebLayoutsController = Ember.ArrayController.extend()
+G5ClientHub.WebLayoutsController = Ember.ArrayController.extend
+  addLayout: ->
+    console.log "added"
