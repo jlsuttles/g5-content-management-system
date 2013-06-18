@@ -1,12 +1,17 @@
-<h3>Web Layouts</h3>
+<div class="layout-picker thumbnail-field">
+  <div class="container">
+    <h2>Select a Layout</h2>
 
-<ul>
-  {{#each controller}}
-    <li>
-      <a href="#" {{ action "addLayout" this }}>
-        <img {{ bindAttr src="thumbnail" }}>
-        <p>{{ name }}</p>
-      </a>
-    </li>
-  {{/each}}
-</ul>
+    <div class="thumbs clearfix">
+      {{#each controller}}
+        <div class="thumb">
+          <input {{ action "addLayout" this }} />
+          <label>
+            <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
+            {{ name }}
+          </label>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
