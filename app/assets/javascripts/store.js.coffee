@@ -1,4 +1,4 @@
-G5ClientHub.Store = DS.Store.extend
-  revision: 4
-  adapter: DS.RESTAdapter.create()
+DS.RESTAdapter.reopen
+  namespace: 'api/v1'
 
+G5ClientHub.Store = DS.Store.extend()
