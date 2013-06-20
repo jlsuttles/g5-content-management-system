@@ -1,4 +1,3 @@
 G5ClientHub.WebsiteTemplateRoute = Ember.Route.extend
-
-  setupController: (params) ->
-    @controller.set('setWebLayouts',  G5ClientHub.WebLayout.find())
+  setupController: ->
+    @controller.set('webLayouts',  G5ClientHub.WebLayout.find())
