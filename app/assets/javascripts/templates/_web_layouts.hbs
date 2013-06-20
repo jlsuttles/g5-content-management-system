@@ -2,16 +2,15 @@
   <div class="container">
     <h2>Select a Layout</h2>
 
-    <div class="thumbs clearfix">
+    <ul class="thumbs clearfix">
       {{#each controller}}
-        <div class="thumb">
-          <input {{ action "addLayout" this }} />
-          <label>
+        <li class="thumb">
+          <a href="#" {{ action "addLayout" this }}>
             <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
             {{ name }}
-          </label>
-        </div>
+          </a>
+        </li>
       {{/each}}
-    </div>
+    </ul>
   </div>
 </div>
