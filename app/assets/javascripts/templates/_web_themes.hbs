@@ -1,0 +1,18 @@
+<div class="theme-picker thumbnail-field clearfix">
+  <div class="container">
+    <div class="left">
+      <h2>Select a Theme</h2>
+      <ul class="thumbs clearfix">
+        {{#each controller}}
+          <li class="thumb">
+            <a href="#" {{ action "addTheme" this }}>
+              <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
+              {{ name }}
+              {{ id }}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

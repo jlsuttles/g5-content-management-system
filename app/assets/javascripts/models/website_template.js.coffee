@@ -7,4 +7,5 @@ G5ClientHub.WebsiteTemplate = DS.Model.extend
   template: DS.attr("boolean"),
   title: DS.attr("string"),
   websiteId: DS.attr("number"),
-  webLayout: DS.belongsTo("G5ClientHub.WebLayout")
+  webLayout: DS.belongsTo("G5ClientHub.WebLayout"),
+  webTheme: DS.belongsTo("G5ClientHub.WebTheme")
