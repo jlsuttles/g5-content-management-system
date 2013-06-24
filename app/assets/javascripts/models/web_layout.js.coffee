@@ -5,4 +5,5 @@ G5ClientHub.WebLayout = DS.Model.extend
   html: DS.attr("string"),
   url: DS.attr("string"),
   thumbnail: DS.attr("string"),
-  stylesheets: DS.attr("string")
+  stylesheets: DS.attr("string"),
+  webTemplateId: DS.attr("number")

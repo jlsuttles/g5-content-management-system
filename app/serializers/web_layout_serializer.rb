@@ -5,5 +5,6 @@ class WebLayoutSerializer < ActiveModel::Serializer
               :name,
               :stylesheets,
               :thumbnail,
-              :url
+              :url,
+              :web_template_id
 end
