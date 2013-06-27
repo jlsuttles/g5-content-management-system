@@ -12,7 +12,6 @@ gem "heroku_resque_autoscaler", "~> 0.1.0"
 gem "microformats2", "2.0.0.pre4"
 gem "github_heroku_deployer", "~> 0.2.0"
 gem "g5_sibling_deployer_engine", "~> 0.2"
-gem "newrelic_rpm"
 gem "liquid", "~> 2.4.1"
 gem "ckeditor"
 gem "draper", "~> 1.1.0"
@@ -54,4 +53,5 @@ end
 group :production do
   gem "thin", "~> 1.5.0"
   gem "pg"
+  gem "newrelic_rpm"
 end
