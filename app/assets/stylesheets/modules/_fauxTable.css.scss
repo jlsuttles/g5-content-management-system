@@ -1,0 +1,80 @@
+// *************************************
+//
+//   Module
+//   -> Faux Table
+//
+// *************************************
+
+.fauxTable {
+  @include respond-to($l-min-large) {
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+  }
+}
+
+
+// ----- Submodules ----- //
+
+.fauxTable-head {
+  @extend %c-shout;
+  font-weight: $c-semiBold;
+  @include respond-to($l-max-large, max-width) {
+    display: none;
+  }
+  @include respond-to($l-min-large) {
+    display: table-header-group;
+  }
+}
+
+.fauxTable-body {
+  @include respond-to($l-min-large) {
+    display: table-row-group;
+  }
+}
+
+.fauxTable-footer {
+  @include respond-to($l-min-large) {
+    display: table-footer-group;
+  }
+}
+
+.fauxTable-row {
+  border-bottom: $alt-border-a;
+  @include respond-to($l-max-large, max-width) {
+    left: -#{$base-whitespace};
+    padding-left: $base-whitespace;
+    padding-right: $base-whitespace;
+    position: relative;
+    width: 100%;
+  }
+  @include respond-to($l-min-large) {
+    display: table-row;
+  }
+}
+
+.fauxTable-cell {
+  padding: 1em 0;
+  @include respond-to($l-max-large, max-width) {
+    &:first-child {
+      padding-bottom: 0;
+    }
+  }
+  @include respond-to($l-min-large) {
+    display: table-cell;
+    padding: 1em $base-whitespace;
+  }
+}
+
+
+// ----- Modifiers ----- //
+
+.fauxTable--striped {
+  .fauxTable-row:nth-child(even) {
+    background: $alt-background-a;
+  }
+}
+
+.fauxTable--a {
+  @extend .fauxTable--striped;
+}

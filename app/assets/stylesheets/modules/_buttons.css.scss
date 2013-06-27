@@ -1,0 +1,50 @@
+// *************************************
+//
+//   Module
+//   -> Buttons
+//
+// *************************************
+
+.buttons {
+  .btn {
+    @include respond-to($l-max-medium, max-width) {
+      display: block;
+      margin-bottom: .5em;
+    }
+  }
+}
+
+.btn, %btn {
+  @extend %c-shout;
+  @include transition(background-color 0.1s linear);
+  background-color: $alt-color-a;
+  color: #fff;
+  display: inline-block;
+  outline: none;
+  padding: .5em 1em;
+  text-align: center;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    background-color: darken($alt-color-a, 10%);
+    color: #fff;
+  }
+}
+
+
+// ----- Modifiers ----- //
+
+.btn--small {
+  @include font-size(12px);
+  font-weight: $c-semiBold;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.btn--a {
+  background-color: $alt-background-b;
+  &:hover,
+  &:focus {
+    background-color: darken($alt-background-b, 10%);
+  }
+}

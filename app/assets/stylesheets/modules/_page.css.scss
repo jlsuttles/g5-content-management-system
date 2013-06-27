@@ -1,0 +1,18 @@
+// *************************************
+//
+//   Module
+//   -> Page
+//
+// *************************************
+
+.page {
+  padding: $base-whitespace 0;
+}
+
+.page-title {
+  @extend %c-shout;
+  @include font-size(20px);
+  border-bottom: $base-border;
+  color: $alt-color-a;
+  font-weight: $c-semiBold;
+}

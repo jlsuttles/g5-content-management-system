@@ -1,0 +1,25 @@
+// *************************************
+//
+//   Module
+//   -> Navigation
+//
+// *************************************
+
+.navigation {
+  a {
+    display: block;
+    padding: .5em 0;
+  }
+  @include respond-to($l-max-large, max-width) {
+    text-align: center;
+  }
+  @include respond-to($l-min-large) {
+    float: right;
+    li, a {
+      display: inline-block;
+    }
+    a {
+      padding: 0 2em;
+    }
+  }
+}

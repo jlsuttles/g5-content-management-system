@@ -3,54 +3,49 @@
   <head>
     <meta charset="utf8" />
     <title>G5 Client Hub: <%= @client_name %> - <%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
   <body>
 
-    <header role="banner">
-      <div class="container">
+    <header role="banner" class="banner">
+      <div class="l-container">
 
-        <div class="navbar">
+        <h1 class="banner-title">
+          <a href="<%= root_path %>"><span class="banner-logo">G5</span> Client Hub: <strong class="banner-subtitle"><%= @client_name %></strong></a>
+        </h1>
 
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
+        <nav role="navigation" class="banner-navigation navigation">
+          <ul>
+            <%= content_tag :li, link_to("Locations", locations_path) %>
+            <%= content_tag :li, link_to("Leads", ENV["LEADS_SERVICE_HEROKU_URL"]) %>
+            <%= content_tag :li, link_to("Siblings", siblings_path) %>
+            <%= content_tag :li, link_to("Widget Entries", widget_entries_path) %>
+            <%= content_tag :li, link_to("Resque", "/resque", target: "_blank") %>
+          </ul>
+        </nav>
 
-          <h1 class="branding"><a href="<%= root_path %>"><span class="logo">G5</span> Client Hub: <strong><%= @client_name %></strong></a></h1>
-
-          <div class="nav-collapse">
-            <nav role="navigation" class="nav pull-right">
-              <ul>
-                <%= content_tag :li, link_to("Locations", locations_path) %>
-                <%= content_tag :li, link_to("Leads", ENV["LEADS_SERVICE_HEROKU_URL"]) %>
-                <%= content_tag :li, link_to("Siblings", siblings_path) %>
-                <%= content_tag :li, link_to("Widget Entries", widget_entries_path) %>
-                <%= content_tag :li, link_to("Resque", "/resque", target: "_blank") %>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
+      </div> <!-- end .l-container -->
     </header>
 
     <% flash.each do |name, msg| %>
-      <div class="container"><%= flash_div name %></div>
+      <div class="flash container">
+        <%= flash_div name %>
+      </div>
     <% end %>
 
-    <section role="main">
+    <section role="main" class="page">
 
-      <div class="container">
+      <div class="l-container">
 
         <%= yield %>
 
-      </div>
+      </div> <!-- end .l-container -->
 
     </section>
 
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

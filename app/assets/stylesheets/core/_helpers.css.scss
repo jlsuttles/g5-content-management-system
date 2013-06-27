@@ -1,0 +1,75 @@
+// *************************************
+//
+//   Helpers
+//   -> Extends, Functions, Mixins, Animations
+//
+// *************************************
+
+// -------------------------------------
+//   Extends
+// -------------------------------------
+
+%debug {
+  background-color: pink !important;
+}
+
+%ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ----- Clearfix ----- //
+%group:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+// ----- Image Replacement ----- //
+%ir {
+  background-color: transparent;
+  border: 0;
+  display: inline-block;
+  overflow: hidden;
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 150%;
+  }
+}
+
+
+// -------------------------------------
+//   Functions
+// -------------------------------------
+
+// ----- rem ----- //
+@function rem($size) {
+  @return #{$size / $base-fontSize}rem;
+}
+
+
+// -------------------------------------
+//   Mixins
+// -------------------------------------
+
+// ----- Font-size ----- //
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: #{$size / $base-fontSize}rem;
+}
+
+// ----- Respond-to ----- //
+
+@mixin respond-to($val, $query: min-width, $media: screen) {
+  @media #{$media} and ($query: $val) {
+    @content;
+  }
+}
+
+
+// -------------------------------------
+//   Animations
+// -------------------------------------

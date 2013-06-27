@@ -1,0 +1,59 @@
+// *************************************
+//
+//   Module
+//   -> Banner
+//
+// *************************************
+
+.banner {
+  @extend %group;
+  @extend %c-shout;
+  background: $base-color;
+  padding-bottom: rem(10px);
+  padding-top: rem(10px);
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.banner-title {
+  font-size: rem(20px);
+  font-weight: $base-fontWeight;
+  letter-spacing: rem(1px);
+  margin: 0;
+  a {
+    display: block;
+  }
+  @include respond-to($l-min-large) {
+    float: left;
+  }
+}
+
+.banner-logo {
+  @extend %ir;
+  background-image: url(logo.png);
+  height: 27px;
+  margin-right: $base-whitespace;
+  vertical-align: middle;
+  width: 30px;
+}
+
+.banner-subtitle {
+  color: $alt-color-a;
+  font-weight: $base-fontWeight;
+}
+
+.banner-navigation {
+  font-weight: $c-light;
+  margin-top: rem(4px);
+  a {
+    @include transition(color .1s linear);
+    &:hover {
+      color: $alt-color-a;
+    }
+    @include respond-to($l-max-large, max-width) {
+      border-top: 1px solid rgba(255, 255, 255, .2);
+    }
+  }
+}

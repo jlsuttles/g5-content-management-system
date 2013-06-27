@@ -1,9 +1,51 @@
-@import "bootstrap";
-@import "bootstrap-responsive";
-@import "base";
+// *************************************
+//
+//   Application
+//   -> Client Hub
+//
+// *************************************
+
+// -------------------------------------
+//   Bourbon
+// -------------------------------------
+
+@import "bourbon";
+
+
+// -------------------------------------
+//   Core
+// -------------------------------------
+
+@import "core/normalize";
+@import "core/settings";
+@import "core/helpers";
+@import "core/base";
+@import "core/content";
+@import "core/layout";
+
+
+// -------------------------------------
+//   Plugins
+// -------------------------------------
+
 @import "spectrum";
 @import "jquery.thumbnailScroller";
 @import "bootstrap-switch";
-@import "client-hub";
+
+
+// -------------------------------------
+//   Modules
+// -------------------------------------
+
+@import "modules/navigation";
+@import "modules/banner";
+@import "modules/page";
+@import "modules/buttons";
+@import "modules/fauxTable";
+
+
+// -------------------------------------
+//   Inbox
+// -------------------------------------
 
 .p-category:before { content: "#" }
