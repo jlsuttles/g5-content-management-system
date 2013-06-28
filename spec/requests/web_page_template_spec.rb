@@ -59,7 +59,7 @@ describe "web_page_templates requests", js: true do
       find("input#web_page_template_title").set("About MJ")
       click_button "Submit"
       current_path.should eq website_path(@website)
-      page.should have_content "about mj"
+      page.should have_content "about mj".upcase
     end
   end
 end

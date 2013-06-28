@@ -12,9 +12,9 @@ describe "website requests", js: true do
       visit website_path(@website)
     end
     it "should have content" do
+      page.should have_content 'Home'.upcase
       page.should have_content @client.name.upcase
       page.should have_content @website.name.upcase
-      page.should have_content "Home"
     end
     it "goes to website_templates#edit when I click edit link" do
       within ".site-settings" do
