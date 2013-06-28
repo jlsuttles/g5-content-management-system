@@ -16,8 +16,9 @@
 
 .btn, %btn {
   @extend %c-shout;
+  @extend %c-h6;
   @include transition(background-color 0.1s linear);
-  background-color: $alt-color-a;
+  background-color: $c-color-a;
   color: #fff;
   display: inline-block;
   outline: none;
@@ -26,7 +27,7 @@
   text-decoration: none;
   &:hover,
   &:focus {
-    background-color: darken($alt-color-a, 10%);
+    background-color: darken($c-color-a, 10%);
     color: #fff;
   }
 }
@@ -42,9 +43,9 @@
 }
 
 .btn--a {
-  background-color: $alt-background-b;
+  background-color: $c-background-b;
   &:hover,
   &:focus {
-    background-color: darken($alt-background-b, 10%);
+    background-color: darken($c-background-b, 10%);
   }
 }

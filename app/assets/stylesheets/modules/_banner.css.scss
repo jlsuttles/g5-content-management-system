@@ -40,19 +40,22 @@
 }
 
 .banner-subtitle {
-  color: $alt-color-a;
+  color: $c-color-a;
   font-weight: $base-fontWeight;
 }
 
 .banner-navigation {
   font-weight: $c-light;
   margin-top: rem(4px);
+  @include respond-to($l-min-medium) {
+    margin-top: 1em;
+  }
   a {
     @include transition(color .1s linear);
     &:hover {
-      color: $alt-color-a;
+      color: $c-color-a;
     }
-    @include respond-to($l-max-large, max-width) {
+    @include respond-to($l-max-medium, max-width) {
       border-top: 1px solid rgba(255, 255, 255, .2);
     }
   }

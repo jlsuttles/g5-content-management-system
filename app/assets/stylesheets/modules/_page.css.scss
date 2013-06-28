@@ -11,8 +11,40 @@
 
 .page-title {
   @extend %c-shout;
-  @include font-size(20px);
+  @extend %c-h3;
   border-bottom: $base-border;
-  color: $alt-color-a;
+  color: $c-color-a;
   font-weight: $c-semiBold;
+  margin-bottom: 1.25em;
+  @include respond-to($l-max-medium, max-width) {
+    .buttons {
+      display: block;
+      margin-top: .5em;
+    }
+  }
+  @include respond-to($l-min-medium) {
+    @include clearfix;
+    .buttons {
+      float: right;
+    }
+  }
+}
+
+.page-section {
+  margin-bottom: $base-whitespace;
+  .l-cell {
+    width: 100%;
+    margin-bottom: $base-whitespace;
+    @include respond-to($l-min-medium) {
+      width: 46%;
+      margin-left: 2%;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    @include respond-to($l-min-large) {
+      width: 23.5%;
+      margin-left: 2%;
+    }
+  }
 }

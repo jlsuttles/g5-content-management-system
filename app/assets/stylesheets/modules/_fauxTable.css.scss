@@ -40,7 +40,7 @@
 }
 
 .fauxTable-row {
-  border-bottom: $alt-border-a;
+  border-bottom: $c-border-a;
   @include respond-to($l-max-large, max-width) {
     left: -#{$base-whitespace};
     padding-left: $base-whitespace;
@@ -71,7 +71,7 @@
 
 .fauxTable--striped {
   .fauxTable-row:nth-child(even) {
-    background: $alt-background-a;
+    background: $c-background-a;
   }
 }
 

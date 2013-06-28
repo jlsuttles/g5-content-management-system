@@ -61,8 +61,14 @@
   font-size: #{$size / $base-fontSize}rem;
 }
 
-// ----- Respond-to ----- //
+// ----- Cell ----- //
+@mixin cell($width, $margin) {
+  @include box-sizing(border-box);
+  margin-right: $margin;
+  width: $width;
+}
 
+// ----- Respond-to ----- //
 @mixin respond-to($val, $query: min-width, $media: screen) {
   @media #{$media} and ($query: $val) {
     @content;

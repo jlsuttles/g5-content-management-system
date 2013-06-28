@@ -1,0 +1,35 @@
+// *************************************
+//
+//   Module
+//   -> Card
+//
+// *************************************
+
+.card {
+  background-color: $c-background-a;
+  .widgets {
+    @extend %group;
+    margin-bottom: 1em;
+  }
+}
+
+.card-head {
+  @extend %group;
+  background-color: #000;
+  color: #fff;
+  padding: 1em;
+  h3 {
+    @extend %c-h5;
+    @extend %l-pullLeft;
+    margin-bottom: 0;
+  }
+  .switch {
+    @extend %l-pullRight;
+  }
+}
+
+.card-body {
+  background-color: $c-background-a;
+  padding: 25px 10px;
+}
+

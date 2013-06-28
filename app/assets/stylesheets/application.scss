@@ -30,18 +30,20 @@
 
 @import "spectrum";
 @import "jquery.thumbnailScroller";
-@import "bootstrap-switch";
 
 
 // -------------------------------------
 //   Modules
 // -------------------------------------
 
+@import "modules/switch";
 @import "modules/navigation";
 @import "modules/banner";
 @import "modules/page";
 @import "modules/buttons";
 @import "modules/fauxTable";
+@import "modules/card";
+@import "modules/widgets";
 
 
 // -------------------------------------

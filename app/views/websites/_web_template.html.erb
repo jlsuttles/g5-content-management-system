@@ -1,19 +1,23 @@
-<tr class="<%= web_template.type.parameterize %>">
-  <td><%= web_template.name %></td>
-  <td><%= image_tag_or_placeholder(web_template.web_layout.try(:thumbnail), class: 'thumb') if web_template.website? %></td>
-  <td><%= image_tag_or_placeholder(web_template.web_theme.try(:thumbnail), class: 'thumb') if web_template.website? %></td>
-  <td>
+<div class="<%= web_template.type.parameterize %>">
+  <div class="l-cell">
+    <%= image_tag_or_placeholder(web_template.web_layout.try(:thumbnail), class: 'thumb') %>
+  </div>
+
+  <div class="l-cell">
+    <%= image_tag_or_placeholder(web_template.web_theme.try(:thumbnail), class: 'thumb') %>
+  </div>
+
+  <div class="l-cell">
+    <h3 class="template-heading">Widgets</h3>
     <ul class="widgets">
       <%= render web_template.widgets %>
     </ul>
-  </td>
-  <td class="page-actions">
+  </div>
+
+  <div class="l-cell buttons">
+    <h3 class="template-heading">Actions</h3>
     <%= link_to "Edit", send("edit_website_#{web_template.type.underscore}_path", website, web_template), class: "btn" %>
-    <% if web_template.website? %>
-      <%= link_to "Deploy", deploy_website_path(website), method: :post, class: "btn" %>
-    <% else %>
-      <%= link_to "Preview", send("website_#{web_template.type.underscore}_path", website, web_template), class: "btn primary" %>
-      <%= render partial: "web_template_toggle_disabled", locals: { website: website, web_template: web_template } %>
-    <% end %>
-  </td>
-</tr>
+    <%= link_to "Deploy", deploy_website_path(website), method: :post, class: "btn" %>
+  </div>
+
+</div>

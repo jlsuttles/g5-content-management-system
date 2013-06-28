@@ -21,16 +21,16 @@ $base-background: #fff;
 $base-color: #222;
 $base-link-color: $base-color;
 
-$alt-background-a: #efefef;
-$alt-background-b: #414142;
-$alt-color-a: #f17c4f;
+$c-background-a: #f4f4f4;
+$c-background-b: #414142;
+$c-color-a: #f17c4f;
 
 
 
 // ----- Borders ----- //
-$base-border: 1px solid $alt-color-a;
+$base-border: 1px solid $c-color-a;
 
-$alt-border-a: 1px solid #ddd;
+$c-border-a: 1px solid #ddd;
 
 // ----- Content ----- //
 $base-fontFamily: 'Open Sans', sans-serif;

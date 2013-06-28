@@ -1,0 +1,32 @@
+// *************************************
+//
+//   Module
+//   -> Widgets
+//
+// *************************************
+
+
+.widgets {
+  li {
+    @extend %l-cell;
+    @include box-sizing(border-box);
+    @include font-size(10px);
+    line-height: 1.2;
+    margin-bottom: 1em;
+    padding-left: 2%;
+    text-align: center;
+    width: 20%;
+    img {
+      margin: 0 auto .5em;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.widgets--large {
+  li {
+    width: 33%;
+  }
+}
