@@ -11,14 +11,14 @@
   </span>
 </h2>
 
-<div class="page-section l-grid">
+<div class="site-settings page-section l-grid">
   <%= render partial: "web_template", locals: { website: @website, web_template: @website_template } %>
 </div>
 
-<div class="page-section">
+<div class="site-pages page-section">
   <% @web_page_templates.each do |web_page_template| %>
     <%= render partial: "page_template", locals: { website: @website, web_template: web_page_template } %>
   <% end %>
 </div>
 
-<!-- <%= render "widgets/edit_modal" %> -->
+<%= render "widgets/edit_modal" %>
