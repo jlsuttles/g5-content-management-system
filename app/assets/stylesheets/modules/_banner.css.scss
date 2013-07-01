@@ -11,25 +11,29 @@
   background: $base-color;
   padding-bottom: em(10px);
   padding-top: em(10px);
+  position: relative;
   a {
     color: #fff;
     text-decoration: none;
   }
+  .navigation-container {
+    @include respond-to($l-min-large) {
+      float: right;
+    }
+  }
 }
 
 .banner-title {
-  @include font-size(20px);
+  @include font-size($base-fontSize);
+  float: left;
   font-weight: $base-fontWeight;
   letter-spacing: em(1px);
   margin: 0;
   a {
     display: block;
   }
-  @include respond-to($l-max-small, max-width) {
-    text-align: center;
-  }
   @include respond-to($l-min-large) {
-    float: left;
+    @include font-size(20px);
   }
 }
 
@@ -40,10 +44,6 @@
   vertical-align: middle;
   width: 30px;
   margin-right: $base-whitespace / 2;
-  @include respond-to($l-max-small, max-width) {
-    display: block;
-    margin: 0 auto .5em;
-  }
   @include respond-to($l-min-xlarge) {
     margin-right: $base-whitespace;
   }
