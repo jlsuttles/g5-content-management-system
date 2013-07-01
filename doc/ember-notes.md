@@ -8,17 +8,23 @@
     - add Ember routes
     - add Ember model
     - add Rails serializer
+    - add Ember template
 * WebLayoutController
     - add Rails routes
     - add Rails controller - do we need this if nesting JSON?
     - add Ember routes - nested under WebsiteTemplate
     - add Ember model
     - add Rails serializer
+    - add Ember template
+    - display information
 
 ## Doing
 
-* WebLayoutController
-    - display information
+* WebLayoutsController
+    - display all
+    - add Rails controller #index action
+    - add Ember controller - don't need
+    - add Ember template
 
 ## Next
 

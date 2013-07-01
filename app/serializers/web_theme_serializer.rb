@@ -1,10 +1,10 @@
-class WebLayoutSerializer < ActiveModel::Serializer
+class WebThemeSerializer < ActiveModel::Serializer
   attributes  :created_at,
               :updated_at,
-              :html,
+              :colors,
               :name,
               :stylesheets,
+              :javascripts,
               :thumbnail,
-              :url,
-              :web_template_id
+              :url
 end

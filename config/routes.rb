@@ -42,6 +42,7 @@ G5ClientHub::Application.routes.draw do
     namespace :v1 do
       resources :website_templates
       resources :web_layouts
+      resources :web_themes
     end
   end
 end
