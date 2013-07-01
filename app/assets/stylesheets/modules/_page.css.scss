@@ -31,20 +31,31 @@
 }
 
 .page-section {
+  @extend %group;
   margin-bottom: $base-whitespace;
   .l-cell {
     width: 100%;
     margin-bottom: $base-whitespace;
-    @include respond-to($l-min-medium) {
-      width: 46%;
-      margin-left: 2%;
-      &:first-child {
+    @media screen and (min-width: $l-min-medium) and (max-width: $l-max-large) {
+      width: 48%;
+      margin-left: 4%;
+      &:nth-child(2n+1) {
         margin-left: 0;
       }
     }
-    @include respond-to($l-min-large) {
+    @media screen and (min-width: $l-min-large) and (max-width: $l-max-xlarge) {
+      width: 31.33%;
+      margin-left: 3%;
+      &:nth-child(3n+1) {
+        margin-left: 0;
+      }
+    }
+    @include respond-to($l-min-xlarge) {
       width: 23.5%;
       margin-left: 2%;
+      &:nth-child(4n+1) {
+        margin-left: 0;
+      }
     }
   }
 }

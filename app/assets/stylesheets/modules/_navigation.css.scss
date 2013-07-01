@@ -18,10 +18,15 @@
       display: inline-block;
     }
     a {
-      padding: 0 2em;
+      padding: 0 1em;
     }
   }
   @include respond-to($l-min-large) {
     float: right;
+  }
+  @include respond-to($l-min-xlarge) {
+    a {
+      padding: 0 2em;
+    }
   }
 }

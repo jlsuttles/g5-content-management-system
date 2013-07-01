@@ -9,8 +9,8 @@
   @extend %group;
   @extend %c-shout;
   background: $base-color;
-  padding-bottom: rem(10px);
-  padding-top: rem(10px);
+  padding-bottom: em(10px);
+  padding-top: em(10px);
   a {
     color: #fff;
     text-decoration: none;
@@ -18,12 +18,15 @@
 }
 
 .banner-title {
-  font-size: rem(20px);
+  @include font-size(20px);
   font-weight: $base-fontWeight;
-  letter-spacing: rem(1px);
+  letter-spacing: em(1px);
   margin: 0;
   a {
     display: block;
+  }
+  @include respond-to($l-max-small, max-width) {
+    text-align: center;
   }
   @include respond-to($l-min-large) {
     float: left;
@@ -34,9 +37,16 @@
   @extend %ir;
   background-image: url(logo.png);
   height: 27px;
-  margin-right: $base-whitespace;
   vertical-align: middle;
   width: 30px;
+  margin-right: $base-whitespace / 2;
+  @include respond-to($l-max-small, max-width) {
+    display: block;
+    margin: 0 auto .5em;
+  }
+  @include respond-to($l-min-xlarge) {
+    margin-right: $base-whitespace;
+  }
 }
 
 .banner-subtitle {
@@ -46,9 +56,9 @@
 
 .banner-navigation {
   font-weight: $c-light;
-  margin-top: rem(4px);
-  @include respond-to($l-min-medium) {
-    margin-top: 1em;
+  margin-top: 1em;
+  @include respond-to($l-min-large) {
+    margin-top: em(4px);
   }
   a {
     @include transition(color .1s linear);

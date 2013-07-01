@@ -10,9 +10,14 @@
 // -------------------------------------
 
 %l-container, .l-container {
+  @extend %group;
+  @include box-sizing(border-box);
   margin: 0 auto;
-  max-width: rem($l-maxWidth);
-  padding: 0 rem($base-whitespace);
+  max-width: $l-maxWidth;
+  padding: 0 percent(10px, 320px);
+  @include respond-to($l-min-large) {
+    padding: 0 percent($base-whitespace);
+  }
 }
 
 
@@ -51,9 +56,9 @@
 }
 
 %l-space, .l-space {
-  margin-bottom: rem($base-whitespace);
+  margin-bottom: $base-whitespace;
 }
 
 %l-xspace, .l-xspace {
-  margin-bottom: rem($base-whitespace * 2);
+  margin-bottom: $base-whitespace * 2;
 }

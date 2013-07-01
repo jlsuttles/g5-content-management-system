@@ -23,7 +23,7 @@ body {
 // -------------------------------------
 
 p {
-  font-size: rem($base-fontSize);
+  @include font-size($base-fontSize);
 }
 
 ul, ol {
