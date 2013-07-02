@@ -60,7 +60,7 @@
   @return #{$size / $base-fontSize}rem;
 }
 
-// ---- percent ----- //
+// ---- px to percent ----- //
 @function percent($target, $context: $l-maxWidth) {
   @return #{$target / $context * 100}#{"%"};
 }
@@ -69,6 +69,15 @@
 // -------------------------------------
 //   Mixins
 // -------------------------------------
+
+// ----- Clearfix ----- //
+@mixin group {
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
 
 // ----- Font-size ----- //
 @mixin font-size($size) {

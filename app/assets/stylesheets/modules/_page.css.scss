@@ -9,26 +9,8 @@
   padding: $base-whitespace 0;
 }
 
-.page-title {
-  @extend %c-shout;
-  @extend %c-h3;
-  border-bottom: $base-border;
-  color: $c-color-a;
-  font-weight: $c-semiBold;
-  margin-bottom: 1.25em;
-  @include respond-to($l-max-medium, max-width) {
-    .buttons {
-      display: block;
-      margin-top: .5em;
-    }
-  }
-  @include respond-to($l-min-medium) {
-    @include clearfix;
-    .buttons {
-      float: right;
-    }
-  }
-}
+
+// ----- Submodules ----- //
 
 .page-section {
   @extend %group;
@@ -56,6 +38,27 @@
       &:nth-child(4n+1) {
         margin-left: 0;
       }
+    }
+  }
+}
+
+.page-title {
+  @extend %c-shout;
+  @extend %c-h3;
+  border-bottom: $base-border;
+  color: $c-color-a;
+  font-weight: $c-semiBold;
+  margin-bottom: 1.25em;
+  @include respond-to($l-max-medium, max-width) {
+    .buttons {
+      display: block;
+      margin-top: .5em;
+    }
+  }
+  @include respond-to($l-min-medium) {
+    @include clearfix;
+    .buttons {
+      float: right;
     }
   }
 }

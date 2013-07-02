@@ -1,6 +1,6 @@
 <h2 class="page-title">Locations</h2>
 
-<div class="fauxTable fauxTable--a">
+<div class="fauxTable fauxTable--striped">
 
   <div class="fauxTable-head">
     <span class="fauxTable-cell">Name</span>
@@ -14,9 +14,9 @@
         <%= location.name %>
       </div>
       <div class="fauxTable-cell buttons">
-        <%= link_to "Edit Website", website_path(location.website), class: "btn" %>
-        <%= link_to "View on Heroku", location.website.heroku_url, class: "btn" %>
-        <%= link_to "Deploy to Heroku", deploy_website_path(location.website), method: :post, class: "btn btn--a" %>
+        <%= link_to "Edit", website_path(location.website), class: "btn  btn--a" %>
+        <%= link_to "View", location.website.heroku_url, class: "btn  btn--a" %>
+        <%= link_to "Deploy", deploy_website_path(location.website), method: :post, class: "btn btn--a" %>
       </div>
     </li>
     <% end %>

@@ -28,23 +28,23 @@
 //   Plugins
 // -------------------------------------
 
-@import "bootstrapModal";
-@import "spectrum";
 @import "jquery.thumbnailScroller";
+@import "spectrum";
 
 
 // -------------------------------------
 //   Modules
 // -------------------------------------
 
-@import "modules/bootstrapSwitch";
-@import "modules/bootstrapCollapse";
-@import "modules/navigation";
 @import "modules/banner";
-@import "modules/page";
 @import "modules/buttons";
-@import "modules/fauxTable";
+@import "modules/bootstrapCollapse";
+@import "modules/bootstrapModal";
+@import "modules/bootstrapSwitch";
 @import "modules/card";
+@import "modules/fauxTable";
+@import "modules/navigation";
+@import "modules/page";
 @import "modules/widgets";
 
 

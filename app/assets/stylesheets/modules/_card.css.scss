@@ -20,6 +20,7 @@
   padding: 1em;
   h3 {
     @extend %c-h6;
+    @extend %ellipsis;
     @extend %l-pullLeft;
     margin-bottom: 0;
   }

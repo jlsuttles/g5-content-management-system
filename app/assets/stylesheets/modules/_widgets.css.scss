@@ -5,7 +5,6 @@
 //
 // *************************************
 
-
 .widgets {
   li {
     @extend %l-cell;
@@ -24,6 +23,8 @@
     }
   }
 }
+
+// ----- Modifiers ----- //
 
 .widgets--large {
   li {

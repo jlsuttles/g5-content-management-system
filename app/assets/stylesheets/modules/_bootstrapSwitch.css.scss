@@ -3,24 +3,27 @@
 //   Module
 //   -> Switch
 //
+//  Adapted from bootstrapSwitch v1.2 by Larentis Mattia @spiritualGuru
+//  http://www.larentis.eu/switch/
+//
+//  Licensed under the Apache License, Version 2.0
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
 // *************************************
 
 .has-switch {
-  display: inline-block;
+  @include user-select(none);
   cursor: pointer;
+  display: inline-block;
+  line-height: 8px;
+  min-width: 100px;
+  overflow: hidden;
   position: relative;
   text-align: left;
-  overflow: hidden;
-  line-height: 8px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  min-width: 100px;
 }
 .has-switch.switch-mini {
-  min-width: 72px;
+  width: 72px;
+  min-width: auto;
 }
 .has-switch.switch-small {
   min-width: 80px;
@@ -38,7 +41,7 @@
 }
 .has-switch > div {
   display: inline-block;
-  width: 150%;
+  width: 167%;
   position: relative;
   top: 0;
 }
@@ -46,19 +49,17 @@
   @include transition(left 0.5s ease);
 }
 .has-switch > div.switch-off {
-  left: -60%;
+  left: -67%;
 }
 .has-switch > div.switch-on {
-  left: 10%;
+  left: 0;
 }
 .has-switch input[type=checkbox] {
   display: none;
 }
 .has-switch span,
 .has-switch label {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -90,7 +91,7 @@
   line-height: normal;
 }
 .has-switch label {
-  @include transition(background-color .2s ease);
+  @include transition(background-color .1s ease);
   text-align: center;
   margin-top: -1px;
   margin-bottom: -1px;

@@ -14,7 +14,7 @@
   }
 }
 
-.btn, %btn {
+%btn, .btn {
   @extend %c-shout;
   @extend %c-h6;
   @include transition(background-color 0.1s linear);
@@ -22,7 +22,7 @@
   color: #fff;
   display: inline-block;
   outline: none;
-  padding: .5em 1em;
+  padding: .5em 2em;
   text-align: center;
   text-decoration: none;
   &:hover,
@@ -38,8 +38,6 @@
 .btn--small {
   @include font-size(12px);
   font-weight: $c-semiBold;
-  padding-left: 2em;
-  padding-right: 2em;
 }
 
 .btn--a {

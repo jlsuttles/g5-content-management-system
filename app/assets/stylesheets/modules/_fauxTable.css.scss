@@ -18,6 +18,7 @@
 
 .fauxTable-head {
   @extend %c-shout;
+  border-bottom: $c-border-a;
   font-weight: $c-semiBold;
   @include respond-to($l-max-large, max-width) {
     display: none;
@@ -40,7 +41,6 @@
 }
 
 .fauxTable-row {
-  border-bottom: $c-border-a;
   @include respond-to($l-max-large, max-width) {
     left: -#{$base-whitespace};
     padding-left: $base-whitespace;
@@ -70,11 +70,7 @@
 // ----- Modifiers ----- //
 
 .fauxTable--striped {
-  .fauxTable-row:nth-child(even) {
+  .fauxTable-row:nth-child(2n+1) {
     background: $c-background-a;
   }
-}
-
-.fauxTable--a {
-  @extend .fauxTable--striped;
 }
