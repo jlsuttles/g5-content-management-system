@@ -21,8 +21,12 @@ module ComponentGardenable
     def garden_microformats
       @microformats = microformats_parser.parse(garden_url,
         {"If-Modified-Since" => if_modified_since.to_s})
-    rescue OpenURI::HTTPError
-      @microformats || []
+    rescue OpenURI::HTTPError => e
+      if e.message.include?("304")
+        @microformats || []
+      else
+        raise e
+      end
     end
 
     def components_microformats
