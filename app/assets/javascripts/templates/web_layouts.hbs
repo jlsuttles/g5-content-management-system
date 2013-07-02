@@ -5,11 +5,9 @@
     <ul class="thumbs clearfix">
     {{#each model}}
       <li class="thumb">
-        <a href="#" {{ action "addLayout" this }}>
+        <a href="#" {{ action "addWebLayout" this }}>
           <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
           {{ name }}
-          {{ webTemplateId }}
-          {{ id }}
         </a>
       </li>
     {{/each}}

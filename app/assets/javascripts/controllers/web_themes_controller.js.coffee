@@ -1,3 +1,4 @@
 G5ClientHub.WebThemesController = Ember.ArrayController.extend
-  addTheme: ->
-    console.log "added"
+  addWebTheme: (webTheme) ->
+    websiteTemplate = @controllerFor("websiteTemplate").get("model")
+    websiteTemplate.set("webTheme", webTheme)

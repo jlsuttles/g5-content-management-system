@@ -1,3 +1,4 @@
 G5ClientHub.WebLayoutsController = Ember.ArrayController.extend
-  addLayout: ->
-    console.log "added"
+  addWebLayout: (webLayout) ->
+    websiteTemplate = @controllerFor("websiteTemplate").get("model")
+    websiteTemplate.set("webLayout", webLayout)
