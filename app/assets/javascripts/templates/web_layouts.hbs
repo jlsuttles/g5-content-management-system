@@ -3,7 +3,7 @@
     <h2>Select a Layout</h2>
 
     <ul class="thumbs clearfix">
-    {{#each controller}}
+    {{#each model}}
       <li class="thumb">
         <a href="#" {{ action "addLayout" this }}>
           <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>

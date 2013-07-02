@@ -3,7 +3,7 @@
     <div class="left">
       <h2>Select a Theme</h2>
       <ul class="thumbs clearfix">
-        {{#each controller}}
+        {{#each model}}
           <li class="thumb">
             <a href="#" {{ action "addTheme" this }}>
               <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
