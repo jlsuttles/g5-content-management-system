@@ -10,8 +10,23 @@ module ComponentGardenable
       @garden_url
     end
 
+    def microformats_parser
+      @microformats_parser ||= Microformats2::Parser.new
+    end
+
+    def if_modified_since
+      microformats_parser.http_headers["last-modified"]
+    end
+
     def garden_microformats
-      Microformats2.parse(garden_url)
+      @microformats = microformats_parser.parse(garden_url,
+        {"If-Modified-Since" => if_modified_since.to_s})
+    rescue OpenURI::HTTPError => e
+      if e.message.include?("304")
+        @microformats || []
+      else
+        raise e
+      end
     end
 
     def components_microformats
