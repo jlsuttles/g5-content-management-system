@@ -53,7 +53,8 @@ class WebTemplatesController < ApplicationController
   end
 
   def web_template_params
-    params[web_template_klass.name.underscore]
+    key = web_template_klass.name.underscore
+    params.require(key).permit! if params[key]
   end
 
   def find_website
