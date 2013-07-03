@@ -4,3 +4,4 @@ G5ClientHub.WebLayoutsController = Ember.ArrayController.extend
   addWebLayout: (webLayout) ->
     websiteTemplate = @get("controllers.websiteTemplate.model")
     websiteTemplate.set("webLayout", webLayout)
+    websiteTemplate.get('transaction').commit()
