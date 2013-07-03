@@ -1,7 +1,7 @@
 G5ClientHub.WebThemesController = Ember.ArrayController.extend
-  needs: ["websiteTemplate"]
+  needs: ["webTheme"]
 
-  addWebTheme: (webTheme) ->
-    websiteTemplate = @get("controllers.websiteTemplate.model")
-    websiteTemplate.set("webTheme", webTheme)
-    websiteTemplate.get('transaction').commit()
+  update: (webTheme) ->
+    currentWebTheme = @get("controllers.webTheme.model")
+    currentWebTheme.set("url", webTheme.get("url"))
+    currentWebTheme.get("transaction").commit()
