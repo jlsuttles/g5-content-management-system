@@ -1,4 +1,6 @@
 class WebsiteTemplate < WebTemplate
+  include ActiveModel::ForbiddenAttributesProtection
+
   has_many :logo_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-logo'], foreign_key: "web_template_id"
   has_many :phone_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-phone'], foreign_key: "web_template_id"
   has_many :btn_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-btn'], foreign_key: "web_template_id"
