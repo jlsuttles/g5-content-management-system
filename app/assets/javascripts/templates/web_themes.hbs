@@ -6,15 +6,18 @@
 
       <ul class="thumbs clearfix">
         {{#each model}}
+          {{#if id}}
+          {{else}}
           <li class="thumb">
             <a href="#" {{ action "addWebTheme" this }}>
               <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
               {{ name }}
             </a>
           </li>
+          {{/if}}
         {{/each}}
       </ul>
-      
+
     </div>
   </div>
 </div>
