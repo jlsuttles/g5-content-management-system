@@ -1,13 +1,5 @@
 class WebsiteTemplateSerializer < ActiveModel::Serializer
-  attributes  :created_at,
-              :updated_at,
-              :disabled,
-              :name,
-              :slug,
-              :template,
-              :title,
-              :website_id,
-              :web_layout_id,
+  attributes  :web_layout_id,
               :web_theme_id
 
   def web_layout_id
