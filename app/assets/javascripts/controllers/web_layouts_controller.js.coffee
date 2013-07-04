@@ -4,4 +4,6 @@ G5ClientHub.WebLayoutsController = Ember.ArrayController.extend
   update: (webLayout) ->
     currentWebLayout = @get("controllers.webLayout.model")
     currentWebLayout.set("url", webLayout.get("url"))
-    currentWebLayout.get("transaction").commit()
+    currentWebLayout.save()
+    currentWebLayout.on "didUpdate", ->
+      currentWebLayout.reload()
