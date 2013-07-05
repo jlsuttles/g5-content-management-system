@@ -19,7 +19,7 @@ describe "locations requests", js: true do
     it "locations#index when I click deploy link" do
       Resque.stub(:enqueue)
       within ".fauxTable .fauxTable-row:first-child" do
-        click_link "Deploy to Heroku"
+        click_link "Deploy"
       end
       current_path.should eq locations_path
     end
