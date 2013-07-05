@@ -7,6 +7,11 @@
 
 .card {
   background-color: $c-background-a;
+  padding-bottom: 35px;
+  position: relative;
+  @include respond-to($l-min-medium) {
+    min-height: em(300px);
+  }
   .widgets {
     @extend %group;
     margin-bottom: 1em;
@@ -30,7 +35,16 @@
 }
 
 .card-body {
-  background-color: $c-background-a;
-  padding: 25px 10px;
+  padding: 25px 10px 0;
 }
 
+.card-settings {
+  @extend %ir;
+  background: url(gear.png) center no-repeat;
+  bottom: 0;
+  height: 15px;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  width: 14px;
+}

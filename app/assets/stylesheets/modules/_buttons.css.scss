@@ -11,6 +11,11 @@
       display: block;
       margin-bottom: .5em;
     }
+    & + .btn {
+      @include respond-to($l-min-medium) {
+        margin-left: 5px;
+      }
+    }
   }
 }
 
