@@ -28,7 +28,7 @@ class WebTemplatesController < ApplicationController
   def update
     if @web_template.update_attributes(web_template_params)
       respond_to do |format|
-        format.json { render json: @web_template.reload.widgets.last }
+        format.json { render json: @web_template.reload.widgets.last.to_json }
         format.html { redirect_to website_url(@website), notice: "Successfully updated." }
       end
     else

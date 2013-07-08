@@ -41,6 +41,7 @@ G5ClientHub::Application.routes.draw do
       resources :website_templates
       resources :web_layouts
       resources :web_themes
+      resources :widgets
     end
   end
 end
