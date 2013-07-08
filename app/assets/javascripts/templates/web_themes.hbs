@@ -1,18 +1,23 @@
 <div class="theme-picker thumbnail-field clearfix">
   <div class="container">
     <div class="left">
+
       <h2>Select a Theme</h2>
+
       <ul class="thumbs clearfix">
-        {{#each controller}}
+        {{#each model}}
           <li class="thumb">
-            <a href="#" {{ action "addTheme" this }}>
+            <a href="#" {{ action "update" this }}>
               <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
               {{ name }}
-              {{ id }}
             </a>
+            {{#if id}}(selected){{/if}}
           </li>
+        {{else}}
+          <li>No Themes Available</li>
         {{/each}}
       </ul>
+
     </div>
   </div>
 </div>

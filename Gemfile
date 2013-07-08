@@ -5,6 +5,8 @@ ruby "1.9.3"
 gem "rails", "3.2.13"
 gem "jquery-rails"
 
+gem "strong_parameters"
+
 gem "quiet_assets", "~> 1.0.1"
 gem "bootstrap-sass", "~> 2.1.1.0"
 gem "foreman", "~> 0.60.2"

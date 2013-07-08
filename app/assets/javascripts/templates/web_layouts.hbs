@@ -1,18 +1,21 @@
 <div class="layout-picker thumbnail-field">
   <div class="container">
+
     <h2>Select a Layout</h2>
 
     <ul class="thumbs clearfix">
-    {{#each controller}}
+    {{#each model}}
       <li class="thumb">
-        <a href="#" {{ action "addLayout" this }}>
+        <a href="#" {{ action "update" this }}>
           <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
           {{ name }}
-          {{ webTemplateId }}
-          {{ id }}
         </a>
+	      {{#if id}}(selected){{/if}}
       </li>
+    {{else}}
+      <li>No Layouts Available</li>
     {{/each}}
     </ul>
+
   </div>
 </div>

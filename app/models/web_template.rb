@@ -1,4 +1,6 @@
 class WebTemplate < ActiveRecord::Base
+  include ActiveModel::ForbiddenAttributesProtection
+
   include HasManySettings
   include AfterUpdateSetSettingNavigation
 
