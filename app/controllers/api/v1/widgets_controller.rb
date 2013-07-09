@@ -1,6 +1,6 @@
 class Api::V1::WidgetsController < Api::V1::ApplicationController
   def index
-    render json: Widget.all_remote
+    render json: Widget.find(params[:ids])
   end
 
   def show
