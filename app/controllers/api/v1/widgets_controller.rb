@@ -16,6 +16,15 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
     end
   end
 
+  def destroy
+    @widget = Widget.find(params[:id])
+    if @widget.destroy
+      render json: @widget
+    else
+      render json: @widget.errors, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def widget_params

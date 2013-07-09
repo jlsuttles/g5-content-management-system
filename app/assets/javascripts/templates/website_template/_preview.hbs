@@ -4,7 +4,7 @@
 <p>Widgets:</p>
 <ul>
 {{#each widgets}}
-  <li>{{ name }}</li>
+  <li>{{ name }} <a href="#" {{ action "removeWidget" this }}>remove</a></li>
 {{/each}}
 </ul>
 </div>
