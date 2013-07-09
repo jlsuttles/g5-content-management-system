@@ -5,5 +5,3 @@ G5ClientHub.RemoteWebLayoutsController = Ember.ArrayController.extend
     currentWebLayout = @get("controllers.webLayout.model")
     currentWebLayout.set("url", webLayout.get("url"))
     currentWebLayout.save()
-    currentWebLayout.on "didUpdate", ->
-      currentWebLayout.reload()

@@ -6,5 +6,3 @@ G5ClientHub.RemoteWidgetsController = Ember.ArrayController.extend
     widgets.createRecord
       url: remoteWidget.get("url")
     .save()
-    widgets.on "didCreate", ->
-      widgets.reload()
