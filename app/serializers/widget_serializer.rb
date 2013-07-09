@@ -1,5 +1,6 @@
 class WidgetSerializer < ActiveModel::Serializer
-  attributes  :name,
+  attributes  :id,
+              :name,
               :thumbnail,
               :url,
               :web_template_id
