@@ -1,10 +1,10 @@
 <div>
-<p>Layout: {{ controllers.webLayout.model.name }}</p>
-<p>Theme: {{ controllers.webTheme.model.name }}</p>
+<p>Layout: {{ webLayout.name }}</p>
+<p>Theme: {{ webTheme.name }}</p>
 <p>Widgets:</p>
 <ul>
 {{#each widgets}}
-  <li>{{ name }}</li>
+  <li>{{ name }} <a href="#" {{ action "removeWidget" this }}>remove</a></li>
 {{/each}}
 </ul>
 </div>

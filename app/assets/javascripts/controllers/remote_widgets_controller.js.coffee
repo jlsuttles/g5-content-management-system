@@ -1,9 +1,8 @@
 G5ClientHub.RemoteWidgetsController = Ember.ArrayController.extend
   needs: ["widgets"]
 
-  update: (widget) ->
-    currentWebTheme = @get("controllers.widgets")
-    # currentWebTheme.set("url", webTheme.get("url"))
-    # currentWebTheme.save()
-    # currentWebTheme.on "didUpdate", ->
-    #   currentWebTheme.reload()
+  addWidget: (remoteWidget) ->
+    widgets = @get("controllers.widgets.model")
+    widgets.createRecord
+      url: remoteWidget.get("url")
+    .save()

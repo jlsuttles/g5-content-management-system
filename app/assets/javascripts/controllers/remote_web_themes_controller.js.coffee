@@ -5,5 +5,3 @@ G5ClientHub.RemoteWebThemesController = Ember.ArrayController.extend
     currentWebTheme = @get("controllers.webTheme.model")
     currentWebTheme.set("url", webTheme.get("url"))
     currentWebTheme.save()
-    currentWebTheme.on "didUpdate", ->
-      currentWebTheme.reload()
