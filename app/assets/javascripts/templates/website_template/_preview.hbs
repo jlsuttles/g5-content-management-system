@@ -1,4 +1,10 @@
 <div>
 <p>Layout: {{ controllers.webLayout.model.name }}</p>
 <p>Theme: {{ controllers.webTheme.model.name }}</p>
+<p>Widgets:</p>
+<ul>
+{{#each widgets}}
+  <li>{{ name }}</li>
+{{/each}}
+</ul>
 </div>

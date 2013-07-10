@@ -38,10 +38,16 @@ G5ClientHub::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :website_templates
-      resources :web_layouts
-      resources :web_themes
-      resources :widgets
+
+      resources :remote_web_layouts, only: [:index]
+      resources :remote_web_themes, only: [:index]
+      resources :remote_widgets, only: [:index]
+
+      resources :website_templates, only: [:show]
+
+      resources :web_layouts, only: [:show, :update]
+      resources :web_themes, only: [:show, :update]
+      resources :widgets, only: [:index, :show]
     end
   end
 end

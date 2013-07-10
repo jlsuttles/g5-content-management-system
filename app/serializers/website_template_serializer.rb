@@ -1,6 +1,8 @@
 class WebsiteTemplateSerializer < ActiveModel::Serializer
-  attributes  :web_layout_id,
-              :web_theme_id
+  attributes  :id,
+              :web_layout_id,
+              :web_theme_id,
+              :widget_ids
 
   def web_layout_id
     object.web_layout.id
