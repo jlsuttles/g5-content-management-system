@@ -6,3 +6,11 @@ G5ClientHub.RemoteWidgetsController = Ember.ArrayController.extend
     widgets.createRecord
       url: remoteWidget.get("url")
     .save()
+
+  currentDragItem: -> (
+    @findProperty "isDragging", true
+  ).property("@each.isDragging").cacheable()
+
+  productsInCart: -> (
+    @filterProperty "isAdded", true
+  ).property("@each.isAdded").cacheable()
