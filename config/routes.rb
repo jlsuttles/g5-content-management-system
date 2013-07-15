@@ -34,14 +34,20 @@ G5ClientHub::Application.routes.draw do
 
   root to: "locations#index"
 
-  namespace :ember do
-    root to: "ember#start"
-  end
+  get "ember", to: "ember#start"
 
   namespace :api do
     namespace :v1 do
-      resources :website_templates
-      resources :web_layouts
+
+      resources :remote_web_layouts, only: [:index]
+      resources :remote_web_themes, only: [:index]
+      resources :remote_widgets, only: [:index]
+
+      resources :website_templates, only: [:show]
+
+      resources :web_layouts, only: [:show, :update]
+      resources :web_themes, only: [:show, :update]
+      resources :widgets, only: [:index, :show, :create, :destroy]
     end
   end
 end

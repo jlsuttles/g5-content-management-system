@@ -28,7 +28,7 @@ class WebTemplatesController < ApplicationController
   def update
     if @web_template.update_attributes(web_template_params)
       respond_to do |format|
-        format.json { render json: @web_template.reload.widgets.last }
+        format.json { render json: @web_template.reload.widgets.last.to_json }
         format.html { redirect_to website_url(@website), notice: "Successfully updated." }
       end
     else
@@ -53,7 +53,8 @@ class WebTemplatesController < ApplicationController
   end
 
   def web_template_params
-    params[web_template_klass.name.underscore]
+    key = web_template_klass.name.underscore
+    params.require(key).permit! if params[key]
   end
 
   def find_website

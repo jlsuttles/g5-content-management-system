@@ -1,4 +1,4 @@
-class WebLayoutSerializer < ActiveModel::Serializer
+class WidgetSerializer < ActiveModel::Serializer
   attributes  :id,
               :name,
               :thumbnail,

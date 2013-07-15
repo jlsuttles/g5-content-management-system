@@ -1,0 +1,20 @@
+<div class="widget-picker thumbnail-field clearfix">
+  <div class="container">
+    <div class="left">
+      <h2>Select Widgets</h2>
+      <ul class="thumbs clearfix">
+        {{#each model}}
+          <li class="thumb">
+            <a href="#" {{ action "addWidget" this }}>
+              <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
+              {{ name }}
+            </a>
+            {{#if id}}(selected){{/if}}
+          </li>
+        {{else}}
+          <li>No Widgets Available</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

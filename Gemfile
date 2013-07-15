@@ -5,15 +5,16 @@ ruby "1.9.3"
 gem "rails", "3.2.13"
 gem "jquery-rails"
 
+gem "strong_parameters"
+
 gem "quiet_assets", "~> 1.0.1"
 gem "bootstrap-sass", "~> 2.1.1.0"
 gem "bourbon"
 gem "foreman", "~> 0.60.2"
 gem "heroku_resque_autoscaler", "~> 0.1.0"
-gem "microformats2", "2.0.0.pre4"
+gem "microformats2", "2.0.0.pre5"
 gem "github_heroku_deployer", "~> 0.2.0"
 gem "g5_sibling_deployer_engine", "~> 0.2"
-gem "newrelic_rpm"
 gem "liquid", "~> 2.4.1"
 gem "ckeditor"
 gem "draper", "~> 1.1.0"
@@ -55,4 +56,5 @@ end
 group :production do
   gem "thin", "~> 1.5.0"
   gem "pg"
+  gem "newrelic_rpm"
 end
