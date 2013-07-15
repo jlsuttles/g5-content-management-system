@@ -1,7 +1,7 @@
 // *************************************
 //
-//   Module
-//   -> Card
+//   Card
+//   ->
 //
 // *************************************
 
@@ -20,7 +20,7 @@
 
 .card-head {
   @extend %group;
-  background-color: #000;
+  background-color: $base-color;
   color: #fff;
   padding: 1em;
   h3 {

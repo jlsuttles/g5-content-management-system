@@ -1,7 +1,7 @@
 // *************************************
 //
-//   Module
-//   -> Switch
+//   Switch
+//   -> Toggle switch
 //
 //  Adapted from bootstrapSwitch v1.2 by Larentis Mattia @spiritualGuru
 //  http://www.larentis.eu/switch/
@@ -22,8 +22,7 @@
   text-align: left;
 }
 .has-switch.switch-mini {
-  width: 72px;
-  min-width: auto;
+  min-width: 60px;
 }
 .has-switch.switch-small {
   min-width: 80px;
@@ -71,8 +70,8 @@
 }
 .has-switch span.switch-mini,
 .has-switch label.switch-mini {
-  padding-bottom: 4px;
-  padding-top: 4px;
+  padding-bottom: 6px;
+  padding-top: 6px;
   font-size: 10px;
   line-height: 9px;
 }
