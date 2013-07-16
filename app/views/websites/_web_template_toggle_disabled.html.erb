@@ -1,4 +1,4 @@
-<div class="switch" data-on="success" data-off="danger">
+<div class="switch switch-mini" data-on="success" data-off="danger">
   <input type="checkbox"
     data-remote-url="<%= send("toggle_disabled_website_#{web_template.type.underscore}_path", website, web_template) %>"
     <%= "checked" unless web_template.disabled? %>

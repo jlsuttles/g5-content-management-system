@@ -1,34 +1,24 @@
-<% content_for :head do
-     javascript_tag("$(function(){ new window.toggleSwitch($('.page-actions .switch')); });")
-   end %>
+<% content_for :bottom do
+   javascript_tag("$(function(){ new window.toggleSwitch($('.page-actions .switch')); });")
+ end %>
 
-<div class="page-title">
-  <h2>
-    <%= "Website: #{@website.name}" %>
-    <%= link_to "Create New Page", new_website_web_page_template_path(@website),
-      class: "btn primary new-page" %>
-  </h2>
+<h2 class="page-title">
+  Location:
+  <%= @website.name %>
+  &mdash; Pages
+  <span class="buttons">
+    <%= link_to "Create New Page", new_website_web_page_template_path(@website), class: "btn" %>
+  </span>
+</h2>
+
+<div class="site-settings page-section l-grid">
+  <%= render partial: "web_template", locals: { website: @website, web_template: @website_template } %>
 </div>
 
-<table class="pages table table-striped">
-  <thead>
-    <tr>
-      <th>Page</th>
-      <th>Layout</th>
-      <th>Theme</th>
-      <th>Widgets</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render partial: "web_template",
-      locals: { website: @website, web_template: @website_template } %>
-
-    <% @web_page_templates.each do |web_page_template| %>
-      <%= render partial: "web_template",
-        locals: { website: @website, web_template: web_page_template } %>
-    <% end %>
-  </tbody>
-</table>
+<div class="site-pages page-section">
+  <% @web_page_templates.each do |web_page_template| %>
+    <%= render partial: "page_template", locals: { website: @website, web_template: web_page_template } %>
+  <% end %>
+</div>
 
 <%= render "widgets/edit_modal" %>

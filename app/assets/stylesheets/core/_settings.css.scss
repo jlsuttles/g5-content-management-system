@@ -1,0 +1,54 @@
+// *************************************
+//
+//   Settings
+//   -> Fonts, Variables
+//
+// *************************************
+
+// -------------------------------------
+//   @font-face
+// -------------------------------------
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+// ----- Colors ----- //
+$base-background: #fff;
+$base-color: #222;
+$base-link-color: $base-color;
+$c-background-a: #f0f0f0;
+$c-background-b: #414142;
+$c-color-a: #f17c4f;
+
+
+
+// ----- Borders ----- //
+$base-border: 1px solid $c-color-a;
+$c-border-a: 1px solid $c-background-b;
+
+// ----- Typography ----- //
+$base-fontFamily: 'Open Sans', sans-serif;
+$base-fontWeight: 400;
+$base-fontSize: 16px;
+$base-lineHeight: 1.5;
+$c-header-fontFamily: $base-fontFamily;
+$c-light: 300;
+$c-semiBold: 600;
+$c-bold: 700;
+
+
+// ----- Layout ----- //
+$base-whitespace: 25px;
+$l-maxWidth: 1230px;
+$l-min-small: 480px;
+$l-min-medium: 768px;
+$l-min-large: 980px;
+$l-min-xlarge: 1200px;
+$l-max-small: 479px;
+$l-max-medium: 767px;
+$l-max-large: 979px;
+$l-max-xlarge: 1199px;

@@ -12,19 +12,18 @@ describe "website requests", js: true do
       visit website_path(@website)
     end
     it "should have content" do
+      page.should have_content 'Home'.upcase
       page.should have_content @client.name.upcase
       page.should have_content @website.name.upcase
-      page.should have_content "Website Template"
-      page.should have_content "Home"
     end
     it "goes to website_templates#edit when I click edit link" do
-      within "table tbody tr:first-child" do
+      within ".site-settings" do
         click_link "Edit"
       end
       current_path.should eq edit_website_website_template_path(@website, @website.website_template)
     end
     it "goes to web_home_templates#edit when I click edit link" do
-      within "table tbody tr.webhometemplate" do
+      within ".site-pages .card:first-child .card-body .buttons" do
         click_link "Edit"
       end
       current_path.should eq edit_website_web_home_template_path(@website, @website.web_home_template)

@@ -1,0 +1,54 @@
+// *************************************
+//
+//   Buttons
+//   ->
+//
+// *************************************
+
+.buttons {
+  .btn {
+    @include respond-to($l-max-medium, max-width) {
+      display: block;
+      margin-bottom: .5em;
+    }
+    & + .btn {
+      @include respond-to($l-min-medium) {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+%btn, .btn {
+  @extend %c-shout;
+  @extend %c-h6;
+  @include transition(background-color 0.1s linear);
+  background-color: $c-color-a;
+  color: #fff;
+  display: inline-block;
+  outline: none;
+  padding: .5em 2em;
+  text-align: center;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    background-color: darken($c-color-a, 10%);
+    color: #fff;
+  }
+}
+
+
+// ----- Modifiers ----- //
+
+.btn--small {
+  @include font-size(12px);
+  font-weight: $c-semiBold;
+}
+
+.btn--a {
+  background-color: $c-background-b;
+  &:hover,
+  &:focus {
+    background-color: darken($c-background-b, 10%);
+  }
+}
