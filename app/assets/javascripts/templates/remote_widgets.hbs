@@ -4,17 +4,30 @@
       <h2>Select Widgets</h2>
       <ul id="choose-widgets" class="clearfix">
         {{#each model}}
-          <li>
-            <a href="#" {{ action "addWidget" this }}>
-              <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
-              {{ name }}
-            </a>
-            {{#if id}}(selected){{/if}}
-          </li>
+          {{#view G5ClientHub.RemoteWidgetView contentBinding="this"}}
+            <li class="thumb">
+              <a href="#" {{ action "addWidget" this }}>
+                <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
+                {{ name }} / {{ content.name }}
+              </a>
+              {{#if id}}(selected){{/if}}
+            </li>
+          {{/view}}
         {{else}}
           <li>No Widgets Available</li>
         {{/each}}
       </ul>
+      {{#view G5ClientHub.RemoteWidgetDropTargetView
+              dragContextBinding="G5ClientHub.RemoteWidgetDropTargetController.currentDragItem"}}
+      Drop Target
+      {{helpText}}
+      {{/view}}
+      <br />
+      {{#each G5ClientHub.WebsiteTemplateWidgetsController}}
+        {{#view G5ClientHub.RemoteWidgetView contentBinding="this"}}
+          {{content.name}}
+        {{/view}}<br />
+      {{/each}}
     </div>
   </div>
 </div>
