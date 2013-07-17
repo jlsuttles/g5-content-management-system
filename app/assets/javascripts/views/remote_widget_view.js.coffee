@@ -1,4 +1,4 @@
-G5ClientHub.RemoteWidgetView = Ember.View.extend(G5ClientHub.Draggable,
+G5ClientHub.RemoteWidgetView = Ember.View.extend G5ClientHub.Draggable,
   tagName: "span"
 
   # .setDragImage (in #dragStart) requires an HTML element as the first argument
@@ -24,4 +24,3 @@ G5ClientHub.RemoteWidgetView = Ember.View.extend(G5ClientHub.Draggable,
 
     # Let the controller know this view is done dragging
     @set "content.isDragging", false
-)

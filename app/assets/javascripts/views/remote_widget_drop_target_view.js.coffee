@@ -1,4 +1,4 @@
-G5ClientHub.RemoteWidgetDropTargetView = Ember.View.extend(G5ClientHub.Droppable,
+G5ClientHub.RemoteWidgetDropTargetView = Ember.View.extend G5ClientHub.Droppable,
   tagName: "div"
   classNames: ["dropTarget"]
   classNameBindings: ["cartAction"]
@@ -30,4 +30,3 @@ G5ClientHub.RemoteWidgetDropTargetView = Ember.View.extend(G5ClientHub.Droppable
       view.set "content.isAdded", not view.getPath("content.isAdded")
 
     @_super event
-)
