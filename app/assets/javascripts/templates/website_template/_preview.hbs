@@ -1,10 +1,17 @@
 <div>
-<p>Layout: {{ webLayout.name }}</p>
-<p>Theme: {{ webTheme.name }}</p>
-<p>Widgets:</p>
-<ul>
-{{#each widgets}}
-  <li>{{ name }} <a href="#" {{ action "removeWidget" this }}>remove</a></li>
-{{/each}}
-</ul>
+  <p>Layout: {{ webLayout.name }}</p>
+  <p>Theme: {{ webTheme.name }}</p>
+  <p>Widgets:</p>
+  <ul>
+  {{#each widgets}}
+    <li>{{ name }} <a href="#" {{ action "removeWidget" this }}>remove</a></li>
+  {{/each}}
+  </ul>
+</div>
+
+<div>
+  {{#view G5ClientHub.LivePreviewView}}
+  <button class="reload">Reload</a>
+  {{/view}}
+  <iframe style="width: 100%; height: 500px" src="/websites/g5-clw-4-north-shore-oahu/web_home_templates/34"></iframe>
 </div>
