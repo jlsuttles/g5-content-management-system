@@ -48,6 +48,7 @@ G5ClientHub::Application.routes.draw do
       resources :web_layouts, only: [:show, :update]
       resources :web_themes, only: [:show, :update]
       resources :widgets, only: [:index, :show, :create, :destroy]
+      resources :locations, only: [:show]
     end
   end
 end
