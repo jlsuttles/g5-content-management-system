@@ -5,7 +5,7 @@
 //
 // *************************************
 
-.fauxTable {
+.faux-table {
   @include respond-to($l-min-large) {
     display: table;
     border-collapse: collapse;
@@ -16,7 +16,7 @@
 
 // ----- Submodules ----- //
 
-.fauxTable-head {
+.faux-table-head {
   @extend %c-shout;
   border-bottom: $c-border-a;
   font-weight: $c-semiBold;
@@ -28,19 +28,19 @@
   }
 }
 
-.fauxTable-body {
+.faux-table-body {
   @include respond-to($l-min-large) {
     display: table-row-group;
   }
 }
 
-.fauxTable-footer {
+.faux-table-footer {
   @include respond-to($l-min-large) {
     display: table-footer-group;
   }
 }
 
-.fauxTable-row {
+.faux-table-row {
   @include respond-to($l-max-large, max-width) {
     left: -#{$base-whitespace};
     padding-left: $base-whitespace;
@@ -53,7 +53,7 @@
   }
 }
 
-.fauxTable-cell {
+.faux-table-cell {
   padding: 1em 0;
   @include respond-to($l-max-large, max-width) {
     &:first-child {
@@ -69,8 +69,8 @@
 
 // ----- Modifiers ----- //
 
-.fauxTable--striped {
-  .fauxTable-row:nth-child(2n+1) {
+.faux-table--striped {
+  .faux-table-row:nth-child(2n+1) {
     background: $c-background-a;
   }
 }
