@@ -1,5 +1,5 @@
 class EmberController < ApplicationController
   def start
-    render layout: "builder"
+    render layout: "ember"
   end
 end
