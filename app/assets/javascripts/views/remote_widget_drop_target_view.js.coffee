@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 G5ClientHub.RemoteWidgetDropTargetView = Ember.View.extend G5ClientHub.Droppable,
   tagName: "div" # create a div
   classNames: ["dropTarget"] # that always has this class
