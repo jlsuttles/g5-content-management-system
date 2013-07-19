@@ -1,12 +1,13 @@
 G5ClientHub.RemoteWidgetDropTargetView = Ember.View.extend G5ClientHub.Droppable,
-  tagName: "div"
-  classNames: ["dropTarget"]
-  classNameBindings: ["cartAction"]
-  helpText: null
+  tagName: "div" # create a div
+  classNames: ["dropTarget"] # that always has this class
+  classNameBindings: ["cartAction"] # and has a class that changes
+  helpText: null # initialize help text
 
   # This will determine which class (if any) you should add to
   # the view when you are in the process of dragging an item.
   cartAction: Ember.computed((key, value) ->
+    console.log "cartAction"
     if Ember.isEmpty(@get("dragContext"))
       @set "helpText", "(Drop Zone)"
       return null
@@ -20,6 +21,7 @@ G5ClientHub.RemoteWidgetDropTargetView = Ember.View.extend G5ClientHub.Droppable
       @set "helpText", "(Drop Zone)"
       null
   ).property("dragContext").cacheable()
+
   drop: (event) ->
     viewId = event.originalEvent.dataTransfer.getData("Text")
     view = Ember.View.views[viewId]

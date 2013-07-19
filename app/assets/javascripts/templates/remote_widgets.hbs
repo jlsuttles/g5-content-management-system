@@ -8,7 +8,7 @@
             <li class="thumb">
               <a href="#" {{ action "addWidget" this }}>
                 <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
-                {{ name }} / {{ content.name }}
+                {{ name }} / {{ view.content.name }}
               </a>
               {{#if id}}(selected){{/if}}
             </li>
@@ -17,13 +17,15 @@
           <li>No Widgets Available</li>
         {{/each}}
       </ul>
+
       {{#view G5ClientHub.RemoteWidgetDropTargetView
               dragContextBinding="G5ClientHub.RemoteWidgetDropTargetController.currentDragItem"}}
-      Drop Target
-      {{helpText}}
+        Drop Target
+        {{helpText}}
       {{/view}}
       <br />
-      {{#each G5ClientHub.WebsiteTemplateWidgetsController}}
+
+      {{#each G5ClientHub.WidgetsController.model}}
         {{#view G5ClientHub.RemoteWidgetView contentBinding="this"}}
           {{content.name}}
         {{/view}}<br />
