@@ -10,7 +10,9 @@ G5ClientHub.RemoteWidgetView = Ember.View.extend G5ClientHub.Draggable,
     src: "http://twitter.com/api/users/profile_image/twitter"
   ).createElement().get("element")
 
+  # Overrides G5ClientHub.Draggable#dragStart
   dragStart: (event) ->
+    console.log "dragStart"
     @_super event
 
     # Let the controller know this view is dragging
@@ -20,7 +22,10 @@ G5ClientHub.RemoteWidgetView = Ember.View.extend G5ClientHub.Draggable,
     dataTransfer = event.originalEvent.dataTransfer
     dataTransfer.setDragImage @get("dragIconElement"), 24, 24
 
+  # Overrides G5ClientHub.Draggable#dragEnd
   dragEnd: (event) ->
+    console.log "dragEnd"
+    @_super event
 
     # Let the controller know this view is done dragging
     @set "content.isDragging", false
