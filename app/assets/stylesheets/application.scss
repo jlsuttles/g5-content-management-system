@@ -57,3 +57,15 @@
 // -------------------------------------
 
 .p-category:before { content: "#" }
+
+.delete-page {
+  border-top: 1px solid #909090;
+  margin-top: 50px;
+  .icon-trash {
+    left: 50%;
+    margin-left: 27px;
+    position: relative;
+    top: -31px;
+  }
+}
+
