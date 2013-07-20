@@ -51,6 +51,7 @@ G5ClientHub::Application.routes.draw do
 
       resources :locations, only: [:show]
       resources :web_home_templates, only: [:show]
+      resources :websites, only: [:show]
     end
   end
 end

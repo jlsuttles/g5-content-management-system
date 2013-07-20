@@ -1,4 +1,5 @@
 G5ClientHub.Location = DS.Model.extend
   webTemplate: DS.belongsTo("G5ClientHub.WebsiteTemplate"),
-  webHomeTemplate: DS.belongsTo("G5ClientHub.WebHomeTemplate"),
+  webHomeTemplateId: DS.attr("string"),
+  websiteId: DS.attr("string"),
   urn: DS.attr("string")
