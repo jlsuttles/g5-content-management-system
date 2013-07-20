@@ -11,6 +11,7 @@ class Location < ActiveRecord::Base
                   :corporate
 
   has_one :website, dependent: :destroy
+  has_one :web_home_template, through: :website
 
   validates :uid, presence: true, uniqueness: true
   validates :urn, presence: true, uniqueness: true, unless: :new_record?
@@ -21,4 +22,5 @@ class Location < ActiveRecord::Base
   def website_id
     website.id if website
   end
+
 end
