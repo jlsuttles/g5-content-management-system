@@ -8,7 +8,7 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
   end
 
   def create
-    @widget = Widget.new(widget_params)
+    @widget = Widget.new(widget_params.merge(section: section))
     if @widget.save
       render json: @widget
     else
@@ -29,5 +29,8 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
 
   def widget_params
     params.require(:widget).permit(:url, :web_template_id)
+  end
+
+  def section
   end
 end
