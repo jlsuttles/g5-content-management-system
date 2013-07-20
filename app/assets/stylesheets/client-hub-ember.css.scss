@@ -364,3 +364,20 @@ nav[role=navigation] {
 .page-fields {
   padding-top: 1em;
 }
+
+.theme-settings {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  li {
+    margin-bottom: .5em;
+  }
+  .primary {
+    margin-top: 1em;
+  }
+}
+
+.preview {
+  iframe {
+    width: 100%;
+  }
+}
