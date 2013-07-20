@@ -24,14 +24,12 @@
       {{/view}}
       <br />
 
-      {{#if anyWidgetsInDropTarget}}
-        {{#each widgetsInDropTarget}}
-          {{#view G5ClientHub.RemoteWidgetView
-            contentBinding="this"}}
-            {{ view.content.name }}
-          {{/view}}<br />
-        {{/each}}
-      {{/if}}
+      {{#each widgetsInDropTarget}}
+        {{#view G5ClientHub.RemoteWidgetView
+          contentBinding="this"}}
+          {{ view.content.name }}
+        {{/view}}<br />
+      {{/each}}
     </div>
   </div>
 </div>

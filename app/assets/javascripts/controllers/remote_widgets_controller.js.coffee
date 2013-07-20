@@ -7,17 +7,19 @@ G5ClientHub.RemoteWidgetsController = Ember.ArrayController.extend
       url: remoteWidget.get("url")
     .save()
 
-  currentDragItem: -> (
+  currentDragItem: ( ->
     console.log "currentDragItem"
     @findProperty "isDragging", true
-  ).property("@each.isDragging").cacheable()
+  ).property("@each.isDragging")
 
-  widgetsInDropTarget: -> (
+  widgetsInDropTarget: ( ->
     console.log "widgetsInDropTarget"
-    @filterProperty "isAdded", true
-  ).property("@each.isAdded").cacheable()
-
-  anyWidgetsInDropTarget: -> (
-    console.log "anyWidgetsInDropTarget"
-    @filterProperty "isAdded", true
-  ).property("@each.isAdded").cacheable()
+    dropTargetItems = @filterProperty "isAdded", true
+    console.log dropTargetItems
+    unless Ember.isEmpty(dropTargetItems)
+      dropTargetItems.sort (a, b) ->
+        if (a.get("name").toLowerCase()) < (b.get("name").toLowerCase())
+          -1
+        else
+          1
+  ).property("@each.isAdded")
