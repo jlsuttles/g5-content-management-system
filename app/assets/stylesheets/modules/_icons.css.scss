@@ -1,0 +1,19 @@
+// *************************************
+//
+//   Icons
+//   ->
+//
+// *************************************
+
+.icon {
+  @extend %ir;
+}
+
+.icon-settings {
+  background: url(gear.png) center no-repeat;
+  bottom: 0;
+  height: 15px;
+  padding: 10px;
+  right: 0;
+  width: 14px;
+}
