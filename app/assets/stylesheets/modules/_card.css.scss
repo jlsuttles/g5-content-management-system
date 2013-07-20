@@ -12,6 +12,19 @@
     @extend %group;
     margin-bottom: 1em;
   }
+  .icon-settings {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.card-container {
+  @include box-sizing(border-box);
+  background-color: $c-background-a;
+  height: em(300px);
+  padding-bottom: 35px;
+  width: 100%;
 }
 
 .card-head {
@@ -31,6 +44,5 @@
 }
 
 .card-body {
-  background-color: $c-background-a;
-  padding: 25px 10px 35px;
+  padding: 25px 10px 0;
 }

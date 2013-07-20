@@ -10,13 +10,14 @@
 }
 
 .icon-settings {
-  background: url(gear.png) center no-repeat;
+  background: url(icon-gear.png) center no-repeat;
+  background-size: 50%;
   bottom: 0;
   height: 15px;
   padding: 10px;
   right: 0;
   width: 14px;
   &:hover {
-    @include animation(spin 2.0s linear infinite forwards);
+    @include animation(spin 3.0s linear infinite forwards);
   }
 }
