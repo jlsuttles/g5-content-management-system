@@ -1,17 +1,20 @@
-<div>
-  <p>Layout: {{ webLayout.name }}</p>
-  <p>Theme: {{ webTheme.name }}</p>
-  <p>Widgets:</p>
-  <ul>
-  {{#each widgets}}
-    <li>{{ name }} <a href="#" {{ action "removeWidget" this }}>remove</a></li>
-  {{/each}}
-  </ul>
+<div class="theme-settings">
+  <div class="container">
+    <p><strong>Layout:</strong> {{ webLayout.name }}</p>
+    <p><strong>Theme:</strong> {{ webTheme.name }}</p>
+    <p><strong>Widgets:</strong></p>
+    <ul>
+    {{#each widgets}}
+      <li>{{ name }} <a href="#" class="btn btn-mini" {{ action "removeWidget" this }}>remove</a></li>
+    {{/each}}
+    </ul>
+
+    {{#view G5ClientHub.ReloadPreviewView}}
+      <button class="reload btn btn-large primary">Reload</a>
+    {{/view}}
+  </div>
 </div>
 
-<div>
-  {{#view G5ClientHub.ReloadPreviewView}}
-  <button class="reload">Reload</a>
-  {{/view}}
+<div class="preview">
   {{view G5ClientHub.iFrameView}}
 </div>
