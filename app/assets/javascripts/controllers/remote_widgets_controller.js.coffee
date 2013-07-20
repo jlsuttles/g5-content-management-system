@@ -8,9 +8,11 @@ G5ClientHub.RemoteWidgetsController = Ember.ArrayController.extend
     .save()
 
   currentDragItem: -> (
+    console.log "currentDragItem"
     @findProperty "isDragging", true
   ).property("@each.isDragging").cacheable()
 
-  productsInCart: -> (
+  widgetsInDropTarget: -> (
+    console.log "widgetsInDropTarget"
     @filterProperty "isAdded", true
   ).property("@each.isAdded").cacheable()
