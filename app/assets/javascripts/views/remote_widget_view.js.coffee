@@ -17,6 +17,7 @@ G5ClientHub.RemoteWidgetView = Ember.View.extend G5ClientHub.Draggable,
 
     # Let the controller know this view is dragging
     @set "content.isDragging", true
+    console.log "set content.isDragging"
 
     # Set the drag image and location relative to the mouse/touch event
     dataTransfer = event.originalEvent.dataTransfer

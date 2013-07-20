@@ -4,13 +4,12 @@
       <h2>Select Widgets</h2>
       <ul id="choose-widgets" class="clearfix">
         {{#each model}}
-          {{#view G5ClientHub.RemoteWidgetView contentBinding="this"}}
+          {{#view G5ClientHub.RemoteWidgetView
+            contentBinding="this"}}
             <li class="thumb">
-              <a href="#" {{ action "addWidget" this }}>
-                <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
-                {{ name }} / {{ view.content.name }}
-              </a>
-              {{#if id}}(selected){{/if}}
+              <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
+              {{ view.content.name }}
+              {{#if view.content.id}}(selected){{/if}}
             </li>
           {{/view}}
         {{else}}
@@ -19,17 +18,20 @@
       </ul>
 
       {{#view G5ClientHub.RemoteWidgetDropTargetView
-              dragContextBinding="G5ClientHub.RemoteWidgetDropTargetController.currentDragItem"}}
+        dragContextBinding="currentDragItem"}}
         Drop Target
-        {{helpText}}
+        {{ view.helpText }}
       {{/view}}
       <br />
 
-      {{#each G5ClientHub.WidgetsController.model}}
-        {{#view G5ClientHub.RemoteWidgetView contentBinding="this"}}
-          {{content.name}}
-        {{/view}}<br />
-      {{/each}}
+      {{#if anyWidgetsInDropTarget}}
+        {{#each widgetsInDropTarget}}
+          {{#view G5ClientHub.RemoteWidgetView
+            contentBinding="this"}}
+            {{ view.content.name }}
+          {{/view}}<br />
+        {{/each}}
+      {{/if}}
     </div>
   </div>
 </div>

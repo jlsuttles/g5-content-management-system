@@ -16,3 +16,8 @@ G5ClientHub.RemoteWidgetsController = Ember.ArrayController.extend
     console.log "widgetsInDropTarget"
     @filterProperty "isAdded", true
   ).property("@each.isAdded").cacheable()
+
+  anyWidgetsInDropTarget: -> (
+    console.log "anyWidgetsInDropTarget"
+    @filterProperty "isAdded", true
+  ).property("@each.isAdded").cacheable()
