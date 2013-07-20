@@ -192,9 +192,15 @@ nav[role=navigation] {
     float: left;
     margin-right: 17px;
     width: 178px;
+    font-family: 'Proxima Nova Extra Condensed', 'helvetica neue', helvetica, arial, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
     &:last-child {
       margin-right: 0;
     }
+  }
+  a {
+    color: $primary-text;
   }
   img {
     padding: 2px;
@@ -234,6 +240,13 @@ nav[role=navigation] {
   background: #fff;
   position: relative;
   z-index: 4;
+  .left {
+    float: left;
+    width: 75%;
+  }
+  .right {
+    float: right;
+  }
   .thumb {
     margin-right: 20px;
   }
@@ -290,6 +303,9 @@ nav[role=navigation] {
   }
   ul {
     width: 850px;
+  }
+  a {
+    color: $primary-text;
   }
 }
 /* styles for unselected widgets */

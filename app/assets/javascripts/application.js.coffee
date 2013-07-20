@@ -15,15 +15,16 @@
 #= require_tree ./application
 
 $ ->
-  $('input[type=color]').spectrum {
-    preferredFormat: "hex",
-    showInput: true
-  }
 
   $('.layout-picker input, .theme-picker input').click ->
     $(this).parent().css('opacity', '1').siblings().css('opacity', '0.7')
 
   window.onload = ->
+    $('input[type=color]').spectrum {
+      preferredFormat: "hex",
+      showInput: true
+    }
+
     $(".theme-picker .jThumbnailScroller").thumbnailScroller
       scrollerType:"clickButtons"
   		scrollerOrientation:"horizontal"
