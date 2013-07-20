@@ -11,10 +11,10 @@ G5ClientHub.RemoteWidgetDropTargetView = Ember.View.extend G5ClientHub.Droppable
     if Ember.isEmpty(@get("dragContext"))
       @set "helpText", "(Drop Zone)"
       return null
-    unless @getPath("dragContext.isAdded")
+    unless @get("dragContext.isAdded")
       @set "helpText", "(Drop to Add)"
       "drop-target-add"
-    else if @getPath("dragContext.isAdded")
+    else if @get("dragContext.isAdded")
       @set "helpText", "(Drop to Remove)"
       "drop-target-remove"
     else
@@ -31,6 +31,6 @@ G5ClientHub.RemoteWidgetDropTargetView = Ember.View.extend G5ClientHub.Droppable
     # Set view properties
     # Must be within `Ember.run.next` to always work
     Ember.run.next this, ->
-      view.set "content.isAdded", not view.getPath("content.isAdded")
+      view.set "content.isAdded", not view.get("content.isAdded")
 
     @_super event
