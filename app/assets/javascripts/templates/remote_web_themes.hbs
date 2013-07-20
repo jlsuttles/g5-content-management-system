@@ -2,19 +2,25 @@
   <div class="container">
     <div class="left">
       <h2>Select a Theme</h2>
-      <ul class="thumbs clearfix">
-        {{#each model}}
-          <li class="thumb">
-            <a href="#" {{ action "update" this }}>
-              <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
-              {{ name }}
-            </a>
-            {{#if id}}(selected){{/if}}
-          </li>
-        {{else}}
-          <li>No Themes Available</li>
-        {{/each}}
-      </ul>
+      <div class="jThumbnailScroller">
+        <div class="jTscrollerContainer">
+          <div class="jTscroller thumbs clearfix">
+            {{#each model}}
+              <div class="thumb">
+                <a href="#" {{ action "update" this }}>
+                  <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
+                </a>
+                {{#if id}}(selected){{/if}}
+              </div>
+            {{else}}
+              <div>No Themes Available</div>
+            {{/each}}
+          </div>
+        </div>
+        <a href="#" class="jTscrollerPrevButton"></a>
+      	<a href="#" class="jTscrollerNextButton"></a>
+      </div>
     </div>
+    {{ render "colorPicker" }}
   </div>
 </div>
