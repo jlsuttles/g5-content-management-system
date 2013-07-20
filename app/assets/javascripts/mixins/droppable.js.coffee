@@ -1,11 +1,11 @@
 G5ClientHub.Droppable = Ember.Mixin.create
-  dropEnter: (event) ->
-    console.log "dropEnter"
+  dragEnter: (event) ->
+    console.log "dragEnter"
     event.preventDefault()
     false
 
-  dropOver: (event) ->
-    console.log "dropOver"
+  dragOver: (event) ->
+    console.log "dragOver"
     event.preventDefault()
     false
 
