@@ -3,3 +3,4 @@ G5ClientHub.RemoteWidget = DS.Model.extend
   thumbnail: DS.attr("string"),
   url: DS.attr("string"),
   isAdded: null
+  isAddedToLogoWidgetsDropTarget: null

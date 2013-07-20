@@ -12,9 +12,9 @@ G5ClientHub.RemoteWidgetsController = Ember.ArrayController.extend
     @findProperty "isDragging", true
   ).property("@each.isDragging")
 
-  widgetsInDropTarget: ( ->
-    console.log "widgetsInDropTarget"
-    dropTargetItems = @filterProperty "isAdded", true
+  widgetsInLogoWidgetsDropTarget: ( ->
+    console.log "widgetsInLogoDropTarget"
+    dropTargetItems = @filterProperty "isAddedToLogoWidgetsDropTarget", true
     console.log dropTargetItems
     unless Ember.isEmpty(dropTargetItems)
       dropTargetItems.sort (a, b) ->
@@ -22,4 +22,4 @@ G5ClientHub.RemoteWidgetsController = Ember.ArrayController.extend
           -1
         else
           1
-  ).property("@each.isAdded")
+  ).property("@each.isAddedToLogoWidgetsDropTarget")

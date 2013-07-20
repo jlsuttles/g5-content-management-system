@@ -17,19 +17,18 @@
         {{/each}}
       </ul>
 
-      {{#view G5ClientHub.RemoteWidgetDropTargetView
+      {{#view G5ClientHub.LogoWidgetsDropTargetView
         dragContextBinding="currentDragItem"}}
-        Drop Target
+        Logo Widgets Drop Target
         {{ view.helpText }}
+        {{#each widgetsInLogoWidgetsDropTarget}}
+          {{#view G5ClientHub.RemoteWidgetView
+            contentBinding="this"}}
+            {{ view.content.name }}
+          {{/view}}
+        {{/each}}
       {{/view}}
-      <br />
 
-      {{#each widgetsInDropTarget}}
-        {{#view G5ClientHub.RemoteWidgetView
-          contentBinding="this"}}
-          {{ view.content.name }}
-        {{/view}}<br />
-      {{/each}}
     </div>
   </div>
 </div>
