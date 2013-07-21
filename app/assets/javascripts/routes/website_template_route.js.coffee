@@ -5,7 +5,6 @@ G5ClientHub.WebsiteTemplateRoute = Ember.Route.extend
     # setup website template associations
     @controllerFor("webLayout").set("model", model.get("webLayout"))
     @controllerFor("webTheme").set("model", model.get("webTheme"))
-    @controllerFor("widgets").set("model", model.get("widgets"))
     @controllerFor("logoWidgets").set("model", model.get("logoWidgets"))
     @controllerFor("phoneWidgets").set("model", model.get("phoneWidgets"))
     @controllerFor("btnWidgets").set("model", model.get("btnWidgets"))
