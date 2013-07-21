@@ -52,7 +52,7 @@ G5ClientHub::Application.routes.draw do
       resources :phone_widgets, only: [:index, :show, :create, :destroy]
       resources :btn_widgets, only: [:index, :show, :create, :destroy]
       resources :nav_widgets, only: [:index, :show, :create, :destroy]
-      resources :adside_widgets, only: [:index, :show, :create, :destroy]
+      resources :aside_widgets, only: [:index, :show, :create, :destroy]
       resources :footer_widgets, only: [:index, :show, :create, :destroy]
 
       resources :locations, only: [:show]
