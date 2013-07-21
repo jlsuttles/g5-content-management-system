@@ -18,10 +18,76 @@
       </ul>
 
       {{#view G5ClientHub.LogoWidgetsDropTargetView
+        contentBinding="logoWidgets"
         dragContextBinding="currentDragItem"}}
-        Logo Widgets Drop Target
+        Logo Widgets
         {{ view.helpText }}
-        {{#each widgetsInLogoWidgetsDropTarget}}
+        {{#each logoWidgets}}
+          {{#view G5ClientHub.RemoteWidgetView
+            contentBinding="this"}}
+            {{ view.content.name }}
+          {{/view}}
+        {{/each}}
+      {{/view}}
+
+      {{#view G5ClientHub.PhoneWidgetsDropTargetView
+        contentBinding="phoneWidgets"
+        dragContextBinding="currentDragItem"}}
+        Phone Widgets
+        {{ view.helpText }}
+        {{#each phoneWidgets}}
+          {{#view G5ClientHub.RemoteWidgetView
+            contentBinding="this"}}
+            {{ view.content.name }}
+          {{/view}}
+        {{/each}}
+      {{/view}}
+
+      {{#view G5ClientHub.BtnWidgetsDropTargetView
+        contentBinding="btnWidgets"
+        dragContextBinding="currentDragItem"}}
+        Btn Widgets
+        {{ view.helpText }}
+        {{#each btnWidgets}}
+          {{#view G5ClientHub.RemoteWidgetView
+            contentBinding="this"}}
+            {{ view.content.name }}
+          {{/view}}
+        {{/each}}
+      {{/view}}
+
+      {{#view G5ClientHub.NavWidgetsDropTargetView
+        contentBinding="navWidgets"
+        dragContextBinding="currentDragItem"}}
+        Nav Widgets
+        {{ view.helpText }}
+        {{#each navWidgets}}
+          {{#view G5ClientHub.RemoteWidgetView
+            contentBinding="this"}}
+            {{ view.content.name }}
+          {{/view}}
+        {{/each}}
+      {{/view}}
+
+      {{#view G5ClientHub.AsideWidgetsDropTargetView
+        contentBinding="asideWidgets"
+        dragContextBinding="currentDragItem"}}
+        Aside Widgets
+        {{ view.helpText }}
+        {{#each asideWidgets}}
+          {{#view G5ClientHub.RemoteWidgetView
+            contentBinding="this"}}
+            {{ view.content.name }}
+          {{/view}}
+        {{/each}}
+      {{/view}}
+
+      {{#view G5ClientHub.FooterWidgetsDropTargetView
+        contentBinding="footerWidgets"
+        dragContextBinding="currentDragItem"}}
+        Footer Widgets
+        {{ view.helpText }}
+        {{#each footerWidgets}}
           {{#view G5ClientHub.RemoteWidgetView
             contentBinding="this"}}
             {{ view.content.name }}
