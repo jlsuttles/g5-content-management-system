@@ -28,6 +28,10 @@ G5ClientHub.PhoneWidgetsDropTargetView = Ember.View.extend G5ClientHub.Droppable
     viewId = event.originalEvent.dataTransfer.getData("Text")
     view = Ember.View.views[viewId]
 
+    @get("content").createRecord
+      url: view.content.get("url")
+    .save()
+
     # Set view properties
     # Must be within `Ember.run.next` to always work
     Ember.run.next this, ->
