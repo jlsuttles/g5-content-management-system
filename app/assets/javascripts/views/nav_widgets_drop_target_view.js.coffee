@@ -1,4 +1,4 @@
-G5ClientHub.NavWidgetDropTargetView = Ember.View.extend G5ClientHub.Droppable,
+G5ClientHub.NavWidgetsDropTargetView = Ember.View.extend G5ClientHub.Droppable,
   tagName: "div" # create a div
   classNames: ["navWidgetsDropTarget"] # that always has this class
   classNameBindings: ["dropTargetAction"] # and has a class that changes
