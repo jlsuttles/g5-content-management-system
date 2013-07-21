@@ -7,7 +7,6 @@ G5ClientHub.LogoWidgetsDropTargetView = Ember.View.extend G5ClientHub.Droppable,
   # This will determine which class (if any) you should add to
   # the view when you are in the process of dragging an item.
   dropTargetAction: Ember.computed((key, value) ->
-    console.log "dropTargetAction"
     if Ember.isEmpty(@get("dragContext"))
       @set "helpText", "(Drop Zone)"
       return null
@@ -24,7 +23,6 @@ G5ClientHub.LogoWidgetsDropTargetView = Ember.View.extend G5ClientHub.Droppable,
 
   # Overrides G5ClientHub.Droppable#drop
   drop: (event) ->
-    console.log "drop"
     viewId = event.originalEvent.dataTransfer.getData("Text")
     view = Ember.View.views[viewId]
 

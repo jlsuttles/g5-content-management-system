@@ -9,7 +9,6 @@ G5ClientHub.RemoteWidgetsController = Ember.ArrayController.extend
   ]
 
   currentDragItem: ( ->
-    console.log "currentDragItem"
     @findProperty "isDragging", true
   ).property("@each.isDragging")
 

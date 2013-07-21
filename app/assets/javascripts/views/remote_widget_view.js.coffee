@@ -12,12 +12,10 @@ G5ClientHub.RemoteWidgetView = Ember.View.extend G5ClientHub.Draggable,
 
   # Overrides G5ClientHub.Draggable#dragStart
   dragStart: (event) ->
-    console.log "dragStart"
     @_super event
 
     # Let the controller know this view is dragging
     @set "content.isDragging", true
-    console.log "set content.isDragging"
 
     # Set the drag image and location relative to the mouse/touch event
     dataTransfer = event.originalEvent.dataTransfer
@@ -25,7 +23,6 @@ G5ClientHub.RemoteWidgetView = Ember.View.extend G5ClientHub.Draggable,
 
   # Overrides G5ClientHub.Draggable#dragEnd
   dragEnd: (event) ->
-    console.log "dragEnd"
     @_super event
 
     # Let the controller know this view is done dragging
