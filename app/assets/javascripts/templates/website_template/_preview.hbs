@@ -2,12 +2,6 @@
   <div class="container">
     <p><strong>Layout:</strong> {{ webLayout.name }}</p>
     <p><strong>Theme:</strong> {{ webTheme.name }}</p>
-    <p><strong>Widgets:</strong></p>
-    <ul>
-    {{#each widgets}}
-      <li>{{ name }} <a href="#" class="btn btn-mini" {{ action "removeWidget" this }}>remove</a></li>
-    {{/each}}
-    </ul>
 
     {{#view G5ClientHub.ReloadPreviewView}}
       <button class="reload btn btn-large primary">Reload</a>
