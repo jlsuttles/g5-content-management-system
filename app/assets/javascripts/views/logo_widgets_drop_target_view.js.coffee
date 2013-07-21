@@ -26,9 +26,14 @@ G5ClientHub.LogoWidgetsDropTargetView = Ember.View.extend G5ClientHub.Droppable,
     viewId = event.originalEvent.dataTransfer.getData("Text")
     view = Ember.View.views[viewId]
 
-    @get("content").createRecord
-      url: view.content.get("url")
-    .save()
+    if view.content.get("id") == null
+      console.log "create record"
+      @get("content").createRecord
+        url: view.content.get("url")
+      .save()
+    else
+      console.log "update record"
+      @set("content", view.content).save()
 
     # Set view properties
     # Must be within `Ember.run.next` to always work
