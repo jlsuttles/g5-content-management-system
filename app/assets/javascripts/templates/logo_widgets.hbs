@@ -1,0 +1,19 @@
+Logo Widgets
+
+{{#view G5ClientHub.LogoWidgetsDropTargetAddView
+  contentBinding="model"
+  dragContextBinding="currentAddItem"}}
+  {{ view.helpText }}
+{{/view}}
+
+{{#view G5ClientHub.LogoWidgetsDropTargetRemoveView
+  contentBinding="model"
+  dragContextBinding="currentDragRemoveItem"}}
+  {{ view.helpText }}
+{{/view}}
+
+{{#each model}}
+  {{#view G5ClientHub.LogoWidgetView contentBinding="this"}}
+    {{ view.content.name }}
+  {{/view}}
+{{/each}}
