@@ -10,6 +10,9 @@ h2 {
     margin-bottom: 1em;
   }
 }
+form {
+  margin: 0;
+}
 .page-title {
   h2 {
     @include clearfix;
@@ -242,7 +245,7 @@ nav[role=navigation] {
   z-index: 4;
   .left {
     float: left;
-    width: 75%;
+    width: 915px;
   }
   .right {
     float: right;
@@ -253,14 +256,15 @@ nav[role=navigation] {
   img {
     margin: 2px 3px 5px;
   }
+  .jThumbnailScroller {
+    width: 915px;
+  }
 }
-.jThumbnailScroller {
-  width: 915px;
-}
+
 .colors {
   position: relative;
   z-index: 100;
-  margin: 1em 0;
+  margin-top: 2.5em;
   width: 210px;
   border: 1px solid #cbcbcb;
   h3 {
@@ -275,6 +279,8 @@ nav[role=navigation] {
     background: #fff;
   }
   .color-field {
+    float: left;
+    width: 50%;
     margin-bottom: 10px;
   }
   .check-field {
@@ -288,6 +294,7 @@ nav[role=navigation] {
     margin-right: 20px;
   }
   label {
+    display: block;
     font-size: 22px;
   }
 }
@@ -300,9 +307,6 @@ nav[role=navigation] {
     display: inline-block;
     font-size: 22px;
     margin-left: 20px;
-  }
-  ul {
-    width: 850px;
   }
   a {
     color: $primary-text;
@@ -338,21 +342,11 @@ nav[role=navigation] {
   font-family: 'Proxima Nova Extra Condensed', 'helvetica neue', helvetica, arial, sans-serif;
   text-transform: uppercase;
 }
-.dropzone {
-  width: 285px;
-  position: absolute;
-  right: 20px;
-  top: 3.6em;
-  z-index: 10;
+.widget-drop-zone {
+  width: 33%;
+  float: left;
 }
 .add-widgets {
-  @include border-box;
-  width: 100%;
-  height: 100px;
-  padding: 10px;
-  margin-bottom: 1em;
-  background: #fff;
-  border: 1px solid #ccc;
   li {
     margin-bottom: .2em;
     cursor: move;
@@ -360,6 +354,14 @@ nav[role=navigation] {
       width: 20px;
     }
   }
+}
+.add-drop-zone,
+.remove-drop-zone {
+  display: inline-block;
+  background: #e1e1e1;
+  padding: .5em;
+  margin-left: 10px;
+  text-align: center;
 }
 .page-fields {
   padding-top: 1em;
