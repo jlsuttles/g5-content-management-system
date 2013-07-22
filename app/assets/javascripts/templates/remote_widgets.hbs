@@ -4,12 +4,10 @@
       <h2>Select Widgets</h2>
       <ul id="choose-widgets" class="clearfix">
         {{#each model}}
-          {{#view G5ClientHub.RemoteWidgetView
-            contentBinding="this"}}
+          {{#view G5ClientHub.DraggableView contentBinding="this"}}
             <li class="thumb">
               <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
               {{ view.content.name }}
-              {{#if view.content.id}}(selected){{/if}}
             </li>
           {{/view}}
         {{else}}

@@ -12,8 +12,13 @@ Logo Widgets
   {{ view.helpText }}
 {{/view}}
 
+<ul class="add-widgets">
 {{#each model}}
-  {{#view G5ClientHub.LogoWidgetView contentBinding="this"}}
-    {{ view.content.name }}
-  {{/view}}
+  <li class="widget">
+    {{#view G5ClientHub.DraggableView contentBinding="this"}}
+      <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
+      {{ view.content.name }}
+    {{/view}}
+  </li>
 {{/each}}
+</ul>

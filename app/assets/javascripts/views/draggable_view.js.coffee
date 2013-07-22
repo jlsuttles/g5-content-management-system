@@ -1,4 +1,4 @@
-G5ClientHub.LogoWidgetView = Ember.View.extend G5ClientHub.Draggable,
+G5ClientHub.DraggableView = Ember.View.extend G5ClientHub.Draggable,
   tagName: "span"
 
   # Overrides G5ClientHub.Draggable#dragStart
