@@ -1,4 +1,10 @@
-<h2>Sidebar</h2>
-{{ partial "dropTargetAdd" }}
-{{ partial "dropTargetRemove" }}
-{{ partial "widgets" }}
+<div class="widget-drop-zone aside-widgets">
+  <h2>Sidebar</h2>
+  <div class="add-drop-zone">
+    {{ partial "dropTargetAdd" }}
+  </div>
+  <div class="remove-drop-zone">
+    {{ partial "dropTargetRemove" }}
+  </div>
+  {{ partial "widgets" }}
+</div>

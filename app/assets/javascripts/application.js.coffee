@@ -25,7 +25,7 @@ $ ->
       showInput: true
     }
 
-    $(".theme-picker .jThumbnailScroller").thumbnailScroller
+    $(".jThumbnailScroller").thumbnailScroller
       scrollerType:"clickButtons"
   		scrollerOrientation:"horizontal"
   		scrollSpeed:2
@@ -38,3 +38,8 @@ $ ->
   		autoScrollingSpeed:2000
   		autoScrollingEasing:"easeInOutQuad"
   		autoScrollingDelay:500
+
+    $(".preview-container").resizable
+        animate: true
+        animateEasing: "swing"
+        animateDuration: 500

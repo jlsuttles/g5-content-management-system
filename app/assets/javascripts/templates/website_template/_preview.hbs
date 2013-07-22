@@ -1,6 +1,5 @@
 <div class="theme-settings">
   <div class="container">
-    <h2>Preview</h2>
     {{#view G5ClientHub.ReloadPreviewView}}
       <button class="reload btn btn-large primary">Reload</a>
     {{/view}}
@@ -8,5 +7,10 @@
 </div>
 
 <div class="preview">
-  {{view G5ClientHub.iFrameView}}
+  <div class="container">
+    <h2>Preview</h2>
+  </div>
+  <div class="preview-container">
+    {{view G5ClientHub.iFrameView}}
+  </div>
 </div>

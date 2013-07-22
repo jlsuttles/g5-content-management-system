@@ -2,8 +2,10 @@
 {{ render "remoteWebThemes" }}
 {{ render "remoteWidgets" }}
 
-{{ render "headerWidgets" }}
-{{ render "asideWidgets" }}
-{{ render "footerWidgets" }}
+<div class="container">
+  {{ render "headerWidgets" }}
+  {{ render "asideWidgets" }}
+  {{ render "footerWidgets" }}
+</div>
 
 {{ partial "websiteTemplate/preview" }}
