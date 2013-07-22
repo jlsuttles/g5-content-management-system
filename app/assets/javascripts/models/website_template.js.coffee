@@ -1,5 +1,6 @@
 G5ClientHub.WebsiteTemplate = DS.Model.extend
   location: DS.belongsTo("G5ClientHub.Location"),
+  website: DS.belongsTo("G5ClientHub.Website"),
 
   webLayout: DS.belongsTo("G5ClientHub.WebLayout"),
   webTheme: DS.belongsTo("G5ClientHub.WebTheme"),

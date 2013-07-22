@@ -4,16 +4,18 @@
     <h3>Theme Colors:</h3>
     <div class="color-fields">
       <div class="check-field">
-        <input type="checkbox">
-        <label>Use Custom Colors</label>
+        <label>
+          {{view G5ClientHub.Checkbox checkedBinding="customColors"}}
+          Use Custom Colors
+        </label>
       </div>
       <div class="color-field">
         <label for="color-1">Primary</label>
-        <input type="color" id="color-1" />
+        {{view G5ClientHub.ColorField valueBinding="primaryColor" id="color-1"}}
       </div>
       <div class="color-field">
         <label for="color-2">Secondary</label>
-        <input type="color" id="color-2" />
+        {{view G5ClientHub.ColorField valueBinding="secondaryColor" id="color-2"}}
       </div>
     </div>
   </div>
