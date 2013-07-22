@@ -5,10 +5,11 @@
     {{#each model}}
       <li class="thumb">
         <a href="#" {{ action "update" this }}>
-          <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
+          {{#view G5ClientHub.RemoteWebLayoutView contentBinding="this"}}
+          <img alt="Thumbnail" {{ bindAttr src="thumbnail" }} {{ bindAttr class="view.isSelected" }}>
           {{ name }}
+          {{/view}}
         </a>
-	      {{#if id}}(selected){{/if}}
       </li>
     {{else}}
       <li>No Layouts Available</li>
