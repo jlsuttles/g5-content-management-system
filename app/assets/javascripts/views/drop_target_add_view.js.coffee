@@ -20,21 +20,26 @@ G5ClientHub.DropTargetAddView = Ember.View.extend G5ClientHub.Droppable,
     # Get the view that was dropped
     viewId = event.originalEvent.dataTransfer.getData("Text")
     view = Ember.View.views[viewId]
+    dropTarget = @get("content")
 
     if view.content.get("id") == null
       console.log "create record"
-      @get("content").createRecord
+      dropTarget.createRecord
         url: view.content.get("url")
       .save()
     else
       console.log "update record"
       # TODO: do nothing if already in this section
       # TODO: update instead of create
-      @get("content").createRecord
+      dropTarget.createRecord
         url: view.content.get("url")
       .save()
       view.content.deleteRecord()
       view.content.save()
+
+    # Reloads iFrame preview
+    url = $('iframe').prop('src')
+    $('iframe').prop('src', url)
 
     # Call G5ClientHub.Droppable#drop
     @_super event

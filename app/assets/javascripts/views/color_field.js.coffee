@@ -2,4 +2,10 @@ G5ClientHub.ColorField = Ember.TextField.extend
   type: "color"
 
   change: ->
-    @get("controller.content").save()
+    colorField = @get("controller.content")
+    colorField.save()
+
+    colorField.on 'didUpdate', ->
+      # Reloads iFrame preview
+      url = $('iframe').prop('src')
+      $('iframe').prop('src', url)
