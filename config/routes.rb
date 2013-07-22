@@ -44,6 +44,9 @@ G5ClientHub::Application.routes.draw do
       resources :remote_widgets, only: [:index]
 
       resources :website_templates, only: [:show]
+      resources :locations, only: [:show]
+      resources :websites, only: [:show, :update]
+      resources :web_home_templates, only: [:show]
 
       resources :web_layouts, only: [:show, :update]
       resources :web_themes, only: [:show, :update]
@@ -54,10 +57,6 @@ G5ClientHub::Application.routes.draw do
       resources :nav_widgets, only: [:index, :show, :create, :destroy]
       resources :aside_widgets, only: [:index, :show, :create, :destroy]
       resources :footer_widgets, only: [:index, :show, :create, :destroy]
-
-      resources :locations, only: [:show]
-      resources :web_home_templates, only: [:show]
-      resources :websites, only: [:show]
     end
   end
 end
