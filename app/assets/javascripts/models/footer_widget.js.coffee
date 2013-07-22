@@ -1,4 +1,4 @@
-G5ClientHub.FooterWidget = DS.Model.extend
+G5ClientHub.FooterWidget = DS.Model.extend G5ClientHub.ReloadIframe,
   webTemplate: DS.belongsTo("G5ClientHub.WebsiteTemplate")
   name: DS.attr("string")
   thumbnail: DS.attr("string")

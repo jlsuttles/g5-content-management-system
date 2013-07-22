@@ -25,9 +25,5 @@ G5ClientHub.DropTargetRemoveView = Ember.View.extend G5ClientHub.Droppable,
     view.content.deleteRecord()
     view.content.save()
 
-    # Reloads iFrame preview
-    url = $('iframe').prop('src')
-    $('iframe').prop('src', url)
-
     # Call G5ClientHub.Droppable#drop
     @_super event
