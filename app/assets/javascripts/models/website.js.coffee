@@ -5,3 +5,7 @@ G5ClientHub.Website = DS.Model.extend
   customColors: DS.attr("boolean")
   primaryColor: DS.attr("string")
   secondaryColor: DS.attr("string")
+
+  didUpdate: ->
+    url = $('iframe').prop('src')
+    $('iframe').prop('src', url)
