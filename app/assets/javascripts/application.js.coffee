@@ -38,3 +38,8 @@ $ ->
   		autoScrollingSpeed:2000
   		autoScrollingEasing:"easeInOutQuad"
   		autoScrollingDelay:500
+
+    $(".preview-container").resizable
+        animate: true
+        animateEasing: "swing"
+        animateDuration: 500
