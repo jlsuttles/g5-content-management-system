@@ -1,6 +1,6 @@
 G5ClientHub.iFrameView = Ember.View.extend
   tagName: 'iframe'
-  attributeBindings: ['src', 'style']
+  attributeBindings: ['src']
   src: ( ->
     rootUrl = '/websites/'
     homeTemplateUrl = '/web_home_templates/'
