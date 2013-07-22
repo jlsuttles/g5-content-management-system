@@ -8,9 +8,10 @@
             {{#each model}}
               <div class="thumb">
                 <a href="#" {{ action "update" this }}>
-                  <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
+                  {{#view G5ClientHub.RemoteWebThemeView contentBinding="this"}}
+                  <img alt="Thumbnail" {{ bindAttr src="thumbnail" }} {{ bindAttr class="view.isSelected" }}>
+                  {{/view}}
                 </a>
-                {{#if id}}(selected){{/if}}
               </div>
             {{else}}
               <div>No Themes Available</div>
