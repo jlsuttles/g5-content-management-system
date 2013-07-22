@@ -1,0 +1,27 @@
+// *************************************
+//
+//   Icons
+//   ->
+//
+// *************************************
+
+.icon {
+  @extend %ir;
+}
+
+.icon-settings {
+  background: url(icon-gear.png) center no-repeat;
+  background-size: 50%;
+  height: 15px;
+  padding: 10px;
+  width: 14px;
+  &:hover {
+    @include animation(spin 3.0s linear infinite forwards);
+  }
+}
+
+.icon-trash {
+  background: #fff url(icon-trash.png) 0 0 no-repeat;
+  height: 63px;
+  width: 55px;
+}

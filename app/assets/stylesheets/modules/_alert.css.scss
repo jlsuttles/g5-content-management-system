@@ -1,0 +1,18 @@
+// *************************************
+//
+//   Alert
+//   ->
+//
+// *************************************
+
+.alert {
+  margin-top: 1em;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.alert-info {
+  background: $c-alert-info;
+  color: darken($c-alert-info, 50%);
+}
