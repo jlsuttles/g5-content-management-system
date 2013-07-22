@@ -311,6 +311,9 @@ nav[role=navigation] {
   a {
     color: $primary-text;
   }
+  .jThumbnailScroller {
+    height: 120px;
+  }
 }
 /* styles for unselected widgets */
 #choose-widgets {

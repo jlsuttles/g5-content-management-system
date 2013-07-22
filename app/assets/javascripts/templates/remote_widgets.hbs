@@ -2,18 +2,24 @@
   <div class="container">
     <div class="left">
       <h2>Select Widgets</h2>
-      <ul id="choose-widgets" class="clearfix">
-        {{#each model}}
-          {{#view G5ClientHub.DraggableView contentBinding="this"}}
-            <li class="thumb">
-              <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
-              {{ view.content.name }}
-            </li>
-          {{/view}}
-        {{else}}
-          <li>No Widgets Available</li>
-        {{/each}}
-      </ul>
+      <div class="jThumbnailScroller">
+        <div class="jTscrollerContainer">
+          <ul id="choose-widgets" class="jTscroller clearfix">
+            {{#each model}}
+              {{#view G5ClientHub.DraggableView contentBinding="this"}}
+                <li class="thumb">
+                  <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
+                  {{ view.content.name }}
+                </li>
+              {{/view}}
+            {{else}}
+              <li>No Widgets Available</li>
+            {{/each}}
+          </ul>
+        </div>
+        <a href="#" class="jTscrollerPrevButton"></a>
+      	<a href="#" class="jTscrollerNextButton"></a>
+      </div>
     </div>
   </div>
 </div>

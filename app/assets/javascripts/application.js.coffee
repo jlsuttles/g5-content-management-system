@@ -25,7 +25,7 @@ $ ->
       showInput: true
     }
 
-    $(".theme-picker .jThumbnailScroller").thumbnailScroller
+    $(".jThumbnailScroller").thumbnailScroller
       scrollerType:"clickButtons"
   		scrollerOrientation:"horizontal"
   		scrollSpeed:2
