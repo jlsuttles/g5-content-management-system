@@ -1,4 +1,4 @@
-G5ClientHub.LogoWidgetsDropTargetAddView = Ember.View.extend G5ClientHub.Droppable,
+G5ClientHub.DropTargetAddView = Ember.View.extend G5ClientHub.Droppable,
   tagName: "span"
   classNames: ["drop-target drop-target-add"]
   classNameBindings: ["dropTargetActive"]

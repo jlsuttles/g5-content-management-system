@@ -1,24 +1,4 @@
 Logo Widgets
-
-{{#view G5ClientHub.LogoWidgetsDropTargetAddView
-  contentBinding="model"
-  dragContextBinding="currentAddItem"}}
-  {{ view.helpText }}
-{{/view}}
-
-{{#view G5ClientHub.LogoWidgetsDropTargetRemoveView
-  contentBinding="model"
-  dragContextBinding="currentDragRemoveItem"}}
-  {{ view.helpText }}
-{{/view}}
-
-<ul class="add-widgets">
-{{#each model}}
-  <li class="widget">
-    {{#view G5ClientHub.DraggableView contentBinding="this"}}
-      <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
-      {{ view.content.name }}
-    {{/view}}
-  </li>
-{{/each}}
-</ul>
+{{ partial "dropTargetAdd" }}
+{{ partial "dropTargetRemove" }}
+{{ partial "widgets" }}

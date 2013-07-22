@@ -1,4 +1,4 @@
-G5ClientHub.LogoWidgetsDropTargetRemoveView = Ember.View.extend G5ClientHub.Droppable,
+G5ClientHub.DropTargetRemoveView = Ember.View.extend G5ClientHub.Droppable,
   tagName: "span"
   classNames: ["drop-target drop-target-remove"]
   classNameBindings: ["dropTargetActive"]
