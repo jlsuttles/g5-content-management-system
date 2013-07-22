@@ -57,4 +57,6 @@ group :production do
   gem "thin", "~> 1.5.0"
   gem "pg"
   gem "newrelic_rpm"
+  gem "dalli"
+  gem "memcachier"
 end

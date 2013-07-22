@@ -1,10 +1,10 @@
 class WebsiteTemplate < WebTemplate
-  has_many :logo_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-logo'], foreign_key: "web_template_id"
-  has_many :phone_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-phone'], foreign_key: "web_template_id"
-  has_many :btn_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-btn'], foreign_key: "web_template_id"
-  has_many :nav_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-nav'], foreign_key: "web_template_id"
-  has_many :aside_widgets,  class_name: "Widget", conditions: ['section = ?', 'drop-target-aside'], foreign_key: "web_template_id"
-  has_many :footer_widgets, class_name: "Widget", conditions: ['section = ?', 'drop-target-footer'], foreign_key: "web_template_id"
+  has_many :logo_widgets, class_name: "Widget", conditions: ['section = ?', Widget::LOGO], foreign_key: "web_template_id"
+  has_many :phone_widgets, class_name: "Widget", conditions: ['section = ?', Widget::PHONE], foreign_key: "web_template_id"
+  has_many :btn_widgets, class_name: "Widget", conditions: ['section = ?', Widget::BTN], foreign_key: "web_template_id"
+  has_many :nav_widgets, class_name: "Widget", conditions: ['section = ?', Widget::NAV], foreign_key: "web_template_id"
+  has_many :aside_widgets,  class_name: "Widget", conditions: ['section = ?', Widget::ASIDE], foreign_key: "web_template_id"
+  has_many :footer_widgets, class_name: "Widget", conditions: ['section = ?', Widget::FOOTER], foreign_key: "web_template_id"
   has_many :widgets, class_name: "Widget", foreign_key: "web_template_id"
 
   after_initialize :assign_defaults

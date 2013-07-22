@@ -4,13 +4,12 @@
       <h2>Select Widgets</h2>
       <ul id="choose-widgets" class="clearfix">
         {{#each model}}
-          <li>
-            <a href="#" {{ action "addWidget" this }}>
-              <img alt="Thumbnail" {{ bindAttr src="thumbnail" }}>
-              {{ name }}
-            </a>
-            {{#if id}}(selected){{/if}}
-          </li>
+          {{#view G5ClientHub.DraggableView contentBinding="this"}}
+            <li class="thumb">
+              <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
+              {{ view.content.name }}
+            </li>
+          {{/view}}
         {{else}}
           <li>No Widgets Available</li>
         {{/each}}

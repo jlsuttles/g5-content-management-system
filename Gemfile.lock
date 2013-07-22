@@ -75,6 +75,7 @@ GEM
     columnize (0.3.6)
     crack (0.3.2)
     daemons (1.1.9)
+    dalli (2.6.4)
     database_cleaner (0.9.1)
     debugger (1.2.4)
       columnize (>= 0.3.1)
@@ -164,6 +165,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memcachier (0.0.2)
     method_source (0.8.1)
     microformats2 (2.0.0.pre5)
       activesupport (~> 3.2.13)
@@ -302,6 +304,7 @@ DEPENDENCIES
   capybara (~> 2.1.0)
   ckeditor
   coffee-rails (~> 3.2.1)
+  dalli
   database_cleaner (~> 0.9.1)
   debugger (~> 1.2.1)
   draper (~> 1.1.0)
@@ -318,6 +321,7 @@ DEPENDENCIES
   jasminerice!
   jquery-rails
   liquid (~> 2.4.1)
+  memcachier
   microformats2 (= 2.0.0.pre5)
   newrelic_rpm
   pg

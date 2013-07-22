@@ -1,6 +1,13 @@
 require_dependency 'liquid_filters'
 
 class Widget < ActiveRecord::Base
+  LOGO =  "drop-target-logo"
+  PHONE = "drop-target-phone"
+  BTN = "drop-target-btn"
+  NAV = "drop-target-nav"
+  ASIDE = "drop-target-aside"
+  FOOTER = "drop-target-footer"
+
   include HasManySettings
   include AfterCreateSetDefaultCallsToAction
   include ComponentGardenable
