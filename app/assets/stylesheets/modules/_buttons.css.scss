@@ -12,9 +12,6 @@
       display: block;
       margin-bottom: .5em;
     }
-    @include respond-to($l-min-medium, min-width) {
-      width: 48%;
-    }
     & + .btn {
       @include respond-to($l-min-medium) {
         margin-left: 2%;
