@@ -40,7 +40,10 @@ G5ClientHub.DraggableWidgetView = G5ClientHub.DraggableView.extend
       dataType: 'json',
       data: $('.modal-body .edit_widget').serialize(),
       # Hide the configuration form if the request is successful
-      success: => $('#modal').modal('hide')
+      success: =>
+        $('#modal').modal('hide')
+        url = $('iframe').prop('src')
+        $('iframe').prop('src', url)
       error: (xhr) =>
         # This is/was needed because of a bug in jQuery, it's actually successful
         if xhr.status == 204
