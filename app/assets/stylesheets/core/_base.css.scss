@@ -32,6 +32,19 @@ ul, ol {
   padding: 0;
 }
 
+label {
+  @include font-size(12px);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#{$all-text-inputs} {
+  @include box-sizing(border-box);
+  @include font-size(14px);
+  font-family: $base-fontFamily;
+  padding: 3px 5px;
+}
+
 
 // -------------------------------------
 //   Inline Content

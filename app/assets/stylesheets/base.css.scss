@@ -1,11 +1,11 @@
 @import "helpers";
 
-@font-face{
-	font-family: 'Proxima Nova Extra Condensed';
-	src: url('proxima_nova_extra_condensed_light-webfont.eot');
-	src: url('proxima_nova_extra_condensed_light-webfont.eot?#iefix') format('embedded-opentype'),
-	     url('proxima_nova_extra_condensed_light-webfont.ttf') format('truetype'),
-	     url('proxima_nova_extra_condensed_light-webfont.svg#webfont') format('svg');
+@font-face {
+  font-family: 'Proxima Nova Extra Condensed';
+  src: url('proxima_nova_extra_condensed_light-webfont.eot');
+  src: url('proxima_nova_extra_condensed_light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('proxima_nova_extra_condensed_light-webfont.ttf') format('truetype'),
+       url('proxima_nova_extra_condensed_light-webfont.svg#webfont') format('svg');
 }
 
 body {
@@ -15,7 +15,7 @@ body {
   padding: 0 0 2em;
 }
 h1, h2, h3, h4, h5, h6, header, label, th {
-  font-family: 'Proxima Nova Extra Condensed', helvetica, arial, sans-serif;
+  font-family: 'Proxima Nova Extra Condensed', 'helvetica neue', helvetica, arial, sans-serif;
   text-transform: uppercase;
 }
 label, th {

@@ -17,19 +17,6 @@ describe "web_page_templates requests", js: true do
         current_path.should eq new_website_web_page_template_path(@website)
       end
     end
-    describe "toggle page disabled" do
-      it "should disable the page when i click the toggle" do
-        visit website_path(@website)
-        first(".webhometemplate").first(".switch").first(".switch-left").click
-        first(".webhometemplate").first(".switch").should have_css(".switch-off")
-      end
-      it "should enable the page when i click the toggle" do
-        @website.web_home_template.update_attribute(:disabled, true)
-        visit website_path(@website)
-        first(".webhometemplate .switch").first(".switch-left").click
-        first(".webhometemplate .switch").should have_css(".switch-on")
-      end
-    end
   end
 
   describe "#edit" do

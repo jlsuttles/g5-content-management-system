@@ -16,7 +16,7 @@
           <%= link_to "Preview", send("website_#{web_template.type.underscore}_path", website, web_template), class: "btn btn--small" %>
         </div>
 
-        <a href="#" title="Page Settings" class="icon icon-settings flip-btn">Page Settings</a>
+        <a href="#" title="Page Settings" class="card-corner flip-btn"><span class="icon icon--settings">Page Settings</span></a>
       </div>
     </div> <!-- end .back -->
 
@@ -29,23 +29,28 @@
       <div class="card-body">
 
         <form class="form">
+
           <div class="form-field">
             <label>Page Name</label>
             <input type="text" />
           </div>
+
           <div class="form-field">
             <label>Page Title</label>
             <input type="text" />
           </div>
+
           <div class="form-field">
             <%= render partial: "web_template_toggle_disabled", locals: { website: website, web_template: web_template } %>
           </div>
+
+          <div class="buttons">
+            <%= link_to "Save", "#", class: "btn btn--small" %>
+            <%= link_to "Cancel", "#", class: "btn btn--a btn--small flip-btn" %>
+          </div>
         </form>
 
-        <div class="buttons">
-          <%= link_to "Save", "#", class: "btn btn--small" %>
-          <%= link_to "Cancel", "#", class: "btn btn--a btn--small flip-btn" %>
-        </div>
+        <a href="#" title="Page Settings" class="card-corner flip-btn"><span class="icon icon--cancel">Page Settings</span></a>
 
       </div>
     </div> <!-- end .back -->
