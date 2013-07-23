@@ -8,10 +8,10 @@ G5ClientHub.DropTargetRemoveView = Ember.View.extend G5ClientHub.Droppable,
   # the view when you are in the process of dragging an item.
   dropTargetActive: ( ->
     if Ember.isEmpty(@get("dragContext"))
-      @set "helpText", "(Remove Zone)"
+      @set "helpText", "Drag here to remove"
       return null
     else
-      @set "helpText", "(Drop to Remove)"
+      @set "helpText", "Drag here to remove"
       "drop-target-active"
   ).property("dragContext")
 

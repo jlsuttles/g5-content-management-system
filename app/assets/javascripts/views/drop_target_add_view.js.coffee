@@ -8,10 +8,10 @@ G5ClientHub.DropTargetAddView = Ember.View.extend G5ClientHub.Droppable,
   # the view when you are in the process of dragging an item.
   dropTargetActive: ( ->
     if Ember.isEmpty(@get("dragContext"))
-      @set "helpText", "(Add Zone)"
+      @set "helpText", "Drag here to add"
       return null
     else
-      @set "helpText", "(Drop to Add)"
+      @set "helpText", "Drag here to add"
       "drop-target-active"
   ).property("dragContext")
 
