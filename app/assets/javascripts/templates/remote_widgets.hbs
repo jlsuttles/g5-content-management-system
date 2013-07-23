@@ -5,16 +5,12 @@
       <div class="jThumbnailScroller">
         <div class="jTscrollerContainer">
           <ul id="choose-widgets" class="jTscroller clearfix">
-            {{#each model}}
-              {{#view G5ClientHub.DraggableView contentBinding="this"}}
-                <li class="thumb">
-                  <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
-                  {{ view.content.name }}
-                </li>
-              {{/view}}
-            {{else}}
-              <li>No Widgets Available</li>
-            {{/each}}
+          {{#each model}}
+            {{#view G5ClientHub.DraggableWidgetView contentBinding="this"}}
+              <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
+              {{ view.content.name }}
+            {{/view}}
+          {{/each}}
           </ul>
         </div>
         <a href="#" class="jTscrollerPrevButton"></a>
