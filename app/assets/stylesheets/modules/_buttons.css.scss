@@ -6,14 +6,18 @@
 // *************************************
 
 .buttons {
+  @extend %group;
   .btn {
     @include respond-to($l-max-medium, max-width) {
       display: block;
       margin-bottom: .5em;
     }
+    @include respond-to($l-min-medium, min-width) {
+      width: 48%;
+    }
     & + .btn {
       @include respond-to($l-min-medium) {
-        margin-left: 5px;
+        margin-left: 2%;
       }
     }
   }
@@ -22,6 +26,7 @@
 %btn, .btn {
   @extend %c-shout;
   @extend %c-h6;
+  @include box-sizing(border-box);
   @include transition(background-color 0.1s linear);
   background-color: $c-color-a;
   color: #fff;

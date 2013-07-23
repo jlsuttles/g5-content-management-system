@@ -7,23 +7,46 @@
 
 .card {
   position: relative;
-  height: em(300px);
+  height: 320px;
   .widgets {
     @extend %group;
     margin-bottom: 1em;
   }
-  .icon-settings {
+  .card-corner {
     position: absolute;
     bottom: 0;
     right: 0;
+    &:after {
+      @include triangle(50px, #f9fafb, down-right);
+      bottom: 0;
+      content: '';
+      position: absolute;
+      right: 0;
+    }
+    .icon {
+      position: relative;
+      z-index: 1;
+    }
+  }
+  form {
+    position: relative;
+    top: -0.6em;
+  }
+  .switch-label {
+    margin-right: $base-whitespace;
+  }
+  input[type=text] {
+    border: none;
+    padding: 3px 5px;
+    width: 100%;
   }
 }
 
 .card-container {
   @include box-sizing(border-box);
   background-color: $c-background-a;
-  height: em(300px);
-  padding-bottom: 35px;
+  height: 320px;
+  padding-bottom: 50px;
   width: 100%;
 }
 
