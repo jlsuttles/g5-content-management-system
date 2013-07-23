@@ -25,7 +25,7 @@ $ ->
 
   window.onload = ->
 
-    $('input[type=color]').spectrum {
+    $('input.color').spectrum {
       preferredFormat: "hex",
       showInput: true
     }
