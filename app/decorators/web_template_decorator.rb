@@ -8,7 +8,7 @@ class WebTemplateDecorator < Draper::Decorator
   end
 
   def url
-    if homepage?
+    if web_home_template?
       "/"
     else
       "/#{slug}.html"

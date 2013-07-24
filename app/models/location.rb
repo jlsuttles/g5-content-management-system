@@ -20,7 +20,6 @@ class Location < ActiveRecord::Base
   before_create :build_website
 
   def website_id
-    website.id if website
+    website.try(:id)
   end
-
 end

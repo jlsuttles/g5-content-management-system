@@ -38,25 +38,26 @@ G5ClientHub::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-
-      resources :remote_web_layouts, only: [:index]
-      resources :remote_web_themes, only: [:index]
-      resources :remote_widgets, only: [:index]
-
-      resources :website_templates, only: [:show]
       resources :locations, only: [:show]
       resources :websites, only: [:show, :update]
-      resources :web_home_templates, only: [:show]
 
+      resources :website_templates, only: [:show]
       resources :web_layouts, only: [:show, :update]
       resources :web_themes, only: [:show, :update]
-
       resources :logo_widgets, only: [:index, :show, :create, :destroy]
       resources :phone_widgets, only: [:index, :show, :create, :destroy]
       resources :btn_widgets, only: [:index, :show, :create, :destroy]
       resources :nav_widgets, only: [:index, :show, :create, :destroy]
       resources :aside_widgets, only: [:index, :show, :create, :destroy]
       resources :footer_widgets, only: [:index, :show, :create, :destroy]
+
+      resources :web_home_templates, only: [:show]
+      resources :web_page_templates, only: [:show]
+      resources :main_widgets, only: [:index, :show, :create, :destroy]
+
+      resources :remote_web_layouts, only: [:index]
+      resources :remote_web_themes, only: [:index]
+      resources :remote_widgets, only: [:index]
     end
   end
 end

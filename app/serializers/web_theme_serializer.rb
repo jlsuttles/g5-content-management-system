@@ -1,7 +1,7 @@
 class WebThemeSerializer < ActiveModel::Serializer
   attributes  :id,
+              :website_template_id,
               :name,
               :thumbnail,
-              :url,
-              :web_template_id
+              :url
 end

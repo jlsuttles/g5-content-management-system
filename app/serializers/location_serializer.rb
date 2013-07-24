@@ -1,14 +1,8 @@
 class LocationSerializer < ActiveModel::Serializer
+  embed :ids, include: true
+
+  has_one :website
+
   attributes  :id,
-              :urn,
-              :web_home_template_id,
-              :website_id
-
-  def web_home_template_id
-    object.web_home_template.id
-  end
-
-  def website_id
-    object.website.id
-  end
+              :urn
 end

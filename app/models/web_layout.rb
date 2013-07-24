@@ -26,8 +26,17 @@ class WebLayout < ActiveRecord::Base
     garden_url + "/components/#{layout}"
   end
 
+  # is this used?
   def website_id
     web_template.website_id if web_template
+  end
+
+  def website_template
+    web_template
+  end
+
+  def website_template_id
+    web_template_id
   end
 
   private

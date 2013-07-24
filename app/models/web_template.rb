@@ -42,20 +42,33 @@ class WebTemplate < ActiveRecord::Base
   scope :created_at_asc, order("created_at ASC")
 
   after_initialize :assign_defaults
-  before_validation :parameterize_title_to_slug, if: :new_record?
+  before_validation :parameterize_title_to_slug
 
   def location
     website.try(:location)
   end
 
-  def website?
-    type == "WebsiteTemplate"
+  def location_id
+    location.try(:id)
   end
 
-  def homepage?
+  def website_id
+    website.try(:id)
+  end
+
+  def web_layout_id
+    web_layout.try(:id)
+  end
+
+  def web_theme_id
+    web_theme.try(:id)
+  end
+
+  def web_home_template?
     type == "WebHomeTemplate"
   end
 
+  # is this used anywhere?
   def remote_widgets
     Widget.all_remote.delete_if do |widget|
       widgets.map(&:name).include? widget.name
