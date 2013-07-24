@@ -1,4 +1,4 @@
-G5ClientHub.WebHomeTemplate = DS.Model.extend
+G5ClientHub.WebPageTemplate = DS.Model.extend
   website: DS.belongsTo("G5ClientHub.Website")
   webLayout: DS.belongsTo("G5ClientHub.WebLayout")
   webTheme: DS.belongsTo("G5ClientHub.WebTheme")
