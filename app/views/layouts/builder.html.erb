@@ -13,15 +13,6 @@
     <header role="banner">
       <div class="container">
         <h1 class="branding"><a href="<%= root_path %>"><span class="logo">G5</span> Client Hub: <strong><%= @client_name %></strong></a></h1>
-
-        <nav role="navigation" class="pull-right">
-          <ul>
-            <%= content_tag :li, link_to("Locations", locations_path) %>
-            <%= content_tag :li, link_to("Leads", ENV["LEADS_SERVICE_HEROKU_URL"]) %>
-            <%= content_tag :li, link_to("Siblings", siblings_path) %>
-            <%= content_tag :li, link_to("Resque", "/resque", target: "_blank") %>
-          </ul>
-        </nav>
       </div>
     </header>
 
