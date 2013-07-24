@@ -22,7 +22,7 @@ G5ClientHub.DropTargetAddView = Ember.View.extend G5ClientHub.Droppable,
     view = Ember.View.views[viewId]
     dropTarget = @get("content")
 
-    if view.content.get("id") == null
+    if view.content.get("id") == view.content.get("name")
       console.log "create record"
       dropTarget.createRecord
         url: view.content.get("url")

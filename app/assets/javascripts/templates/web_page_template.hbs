@@ -8,4 +8,10 @@
   {{ render "footerWidgets" }}
 </div>
 
-{{ partial "websiteTemplate/preview" }}
+<div class="container page-section">
+  {{ render "mainWidgets" }}
+</div>
+
+<div class="preview">
+  {{view G5ClientHub.IframeView contentBinding="this"}}
+</div>
