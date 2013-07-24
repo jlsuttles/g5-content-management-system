@@ -247,7 +247,7 @@ nav[role=navigation] {
 .colors {
   position: relative;
   z-index: 100;
-  margin: 1em 0;
+  margin-top: 2.5em;
   width: 210px;
   border: 1px solid #cbcbcb;
   h3 {
@@ -262,6 +262,8 @@ nav[role=navigation] {
     background: #fff;
   }
   .color-field {
+    float: left;
+    width: 50%;
     margin-bottom: 10px;
   }
   .check-field {
@@ -275,7 +277,11 @@ nav[role=navigation] {
     margin-right: 20px;
   }
   label {
+    display: block;
     font-size: 22px;
+  }
+  input[type=color] {
+    width: 60%;
   }
 }
 .widget-list {

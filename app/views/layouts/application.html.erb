@@ -17,24 +17,6 @@
           <a href="<%= root_path %>"><span class="banner-logo">G5</span> Client Hub: <strong class="banner-subtitle"><%= @client_name %></strong></a>
         </h1>
 
-        <div class="navigation-container collapsable">
-
-          <a class="collapsable-btn" data-toggle="collapse" data-target=".collapsable-content"><span class="bars"><span></span><span></span><span></span></span></a>
-
-          <div id="drop-target-nav" class="collapsable-content">
-            <nav role="navigation" class="banner-navigation navigation">
-              <ul>
-                <%= content_tag :li, link_to("Locations", locations_path) %>
-                <%= content_tag :li, link_to("Leads", ENV["LEADS_SERVICE_HEROKU_URL"]) %>
-                <%= content_tag :li, link_to("Siblings", siblings_path) %>
-                <%= content_tag :li, link_to("Widget Entries", widget_entries_path) %>
-                <%= content_tag :li, link_to("Resque", "/resque", target: "_blank") %>
-              </ul>
-            </nav>
-
-          </div>
-        </div>
-
       </div> <!-- end .l-container -->
     </header>
 
