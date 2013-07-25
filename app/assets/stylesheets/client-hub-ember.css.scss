@@ -210,20 +210,8 @@ nav[role=navigation] {
     color: $primary-text;
   }
   img {
-    padding: 2px;
-    background: #fff;
+    border: 2px solid #fff;
     @include box-shadow(0 2px 5px rgba(0, 0, 0, .45));
-  }
-  input {
-    position: absolute;
-    left: -999em;
-    &:checked + label,
-    &:checked + label img {
-      opacity: 1;
-    }
-    &:checked + label img {
-      background: $alt-text;
-    }
   }
   label {
     margin: 0;
@@ -241,7 +229,7 @@ nav[role=navigation] {
     opacity: 0.7;
   }
   .is-selected {
-    background: #f17c50;
+    border-color: #f17c50;
     opacity: 1;
   }
 }
@@ -272,7 +260,7 @@ nav[role=navigation] {
     opacity: 0.7;
   }
   .is-selected {
-    background: #f17c50;
+    border-color: #f17c50;
     opacity: 1;
   }
   .jThumbnailScroller {
