@@ -28,6 +28,9 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
   private
 
   def widget_params
+    params[klass][:web_template_id] ||= params[klass][:website_template_id]
+    params[klass][:web_template_id] ||= params[klass][:web_home_template_id]
+    params[klass][:web_template_id] ||= params[klass][:web_page_template_id]
     params.require(klass).permit(:url, :web_template_id)
   end
 
