@@ -16,12 +16,6 @@ describe "website requests", js: true do
       page.should have_content @client.name.upcase
       page.should have_content @website.name.upcase
     end
-    it "goes to website_templates#edit when I click edit link" do
-      within ".site-settings" do
-        click_link "Edit"
-      end
-      current_path.should eq edit_website_website_template_path(@website, @website.website_template)
-    end
     it "goes to web_home_templates#edit when I click edit link" do
       within ".site-pages .card:first-child .flipper .front .card-body .buttons" do
         click_link "Edit"
