@@ -7,6 +7,7 @@
   <%= @website.name %>
   &mdash; Pages
   <span class="buttons">
+    <%= link_to "Deploy", deploy_website_path(@website), method: :post, class: "btn" %>
     <%= link_to "Create New Page", new_website_web_page_template_path(@website), class: "btn" %>
   </span>
 </h2>
