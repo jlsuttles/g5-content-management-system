@@ -2,24 +2,30 @@
   <div class="container page-section">
     <div class="left">
       <h2>Select a Theme</h2>
-      <div class="jThumbnailScroller">
-        <div class="jTscrollerContainer">
-          <div class="jTscroller thumbs clearfix">
-            {{#each model}}
-              <div class="thumb">
-                <a href="#" {{ action "update" this }}>
-                  {{#view G5ClientHub.RemoteWebThemeView contentBinding="this"}}
-                  <img alt="Thumbnail" {{ bindAttr src="thumbnail" }} {{ bindAttr class="view.isSelected" }}>
-                  {{ name }}
-                  {{/view}}
-                </a>
-              </div>
-            {{/each}}
+      {{#if model.isUpdating}}
+        Loading...
+      {{else}}
+        {{#view G5ClientHub.ThumbnailScrollerView}}
+        <div class="jThumbnailScroller">
+          <div class="jTscrollerContainer">
+            <div class="jTscroller thumbs clearfix">
+              {{#each model}}
+                <div class="thumb">
+                  <a href="#" {{ action "update" this }}>
+                    {{#view G5ClientHub.RemoteWebThemeView contentBinding="this"}}
+                    <img alt="Thumbnail" {{ bindAttr src="thumbnail" }} {{ bindAttr class="view.isSelected" }}>
+                    {{ name }}
+                    {{/view}}
+                  </a>
+                </div>
+              {{/each}}
+            </div>
           </div>
+          <a href="#" class="jTscrollerPrevButton"></a>
+          <a href="#" class="jTscrollerNextButton"></a>
         </div>
-        <a href="#" class="jTscrollerPrevButton"></a>
-      	<a href="#" class="jTscrollerNextButton"></a>
-      </div>
+        {{/view}}
+      {{/if}}
     </div>
     <!-- color picker -->
     {{ render "website" }}

@@ -2,20 +2,26 @@
   <div class="container page-section">
     <div class="left">
       <h2>Select Widgets</h2>
-      <div class="jThumbnailScroller">
-        <div class="jTscrollerContainer">
-          <ul id="choose-widgets" class="jTscroller clearfix">
-          {{#each model}}
-            {{#view G5ClientHub.DraggableWidgetView contentBinding="this"}}
-              <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
-              {{ view.content.name }}
-            {{/view}}
-          {{/each}}
-          </ul>
+      {{#if model.isUpdating}}
+        Loading...
+      {{else}}
+        {{#view G5ClientHub.ThumbnailScrollerView}}
+        <div class="jThumbnailScroller">
+          <div class="jTscrollerContainer">
+            <ul id="choose-widgets" class="jTscroller clearfix">
+            {{#each model}}
+              {{#view G5ClientHub.DraggableWidgetView contentBinding="this"}}
+                <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
+                {{ view.content.name }}
+              {{/view}}
+            {{/each}}
+            </ul>
+          </div>
+          <a href="#" class="jTscrollerPrevButton"></a>
+          <a href="#" class="jTscrollerNextButton"></a>
         </div>
-        <a href="#" class="jTscrollerPrevButton"></a>
-      	<a href="#" class="jTscrollerNextButton"></a>
-      </div>
+        {{/view}}
+      {{/if}}
     </div>
   </div>
 </div>
