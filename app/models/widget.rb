@@ -7,6 +7,7 @@ class Widget < ActiveRecord::Base
   NAV = "drop-target-nav"
   ASIDE = "drop-target-aside"
   FOOTER = "drop-target-footer"
+  MAIN = "drop-target-main"
 
   include HasManySettings
   include AfterCreateSetDefaultCallsToAction

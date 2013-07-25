@@ -360,13 +360,16 @@ nav[role=navigation] {
 .widget-drop-zone {
   box-sizing: border-box;
   float: left;
-  padding-right: 5%;
-  width: 33%;
+  padding-right: 3%;
+  width: 25%;
 }
-.add-widgets {
-  .aside-widgets & {
+.main-widgets,
+.aside-widgets {
+  .add-widgets {
     padding: 1em 0;
   }
+}
+.add-widgets {
   li {
     margin-bottom: .2em;
     cursor: move;

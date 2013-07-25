@@ -16,10 +16,6 @@
 
   <div class="l-cell buttons">
     <h3 class="template-heading">Actions</h3>
-    <%= link_to "Edit", send("edit_website_#{web_template.type.underscore}_path", website, web_template), class: "btn" %>
-    <%= link_to "Ember Edit", "/ember/#/website_template/#{web_template.id}",  class: "btn" %>
-    <br/>
-    <br/>
     <%= link_to "Deploy", deploy_website_path(website), method: :post, class: "btn" %>
   </div>
 

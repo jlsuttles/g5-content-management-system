@@ -12,7 +12,11 @@
           <%= render web_template.widgets %>
         </ul>
         <div class="buttons">
-          <%= link_to "Edit", send("edit_website_#{web_template.type.underscore}_path", website, web_template), class: "btn btn--small" %>
+          <% if web_template.web_home_template? %>
+            <%= link_to "Edit", "/ember/#/location/#{web_template.location_id}/home/#{web_template.id}",  class: "btn btn--small" %>
+          <% else %>
+            <%= link_to "Edit", "/ember/#/location/#{web_template.location_id}/page/#{web_template.id}",  class: "btn btn--small" %>
+          <% end %>
           <%= link_to "Preview", send("website_#{web_template.type.underscore}_path", website, web_template), class: "btn btn--small" %>
         </div>
 
