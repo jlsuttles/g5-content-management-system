@@ -26,7 +26,7 @@ describe "website requests", js: true do
       within ".site-pages .card:first-child .flipper .front .card-body .buttons" do
         click_link "Edit"
       end
-      current_path.should eq edit_website_web_home_template_path(@website, @website.web_home_template)
+      current_path.should eq "/ember/"
     end
   end
 end
