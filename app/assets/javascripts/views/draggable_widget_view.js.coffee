@@ -1,4 +1,4 @@
-G5ClientHub.DraggableWidgetView = G5ClientHub.DraggableView.extend
+App.DraggableWidgetView = App.DraggableView.extend
   tagName: "li"
   classNames: ["thumb", "widget"]
   classNameBindings: ["dasherizedName"]

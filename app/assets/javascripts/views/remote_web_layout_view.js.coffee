@@ -1,4 +1,4 @@
-G5ClientHub.RemoteWebLayoutView = Ember.View.extend G5ClientHub.Droppable,
+App.RemoteWebLayoutView = Ember.View.extend App.Droppable,
   tagName: "span"
 
   isSelected: ( ->

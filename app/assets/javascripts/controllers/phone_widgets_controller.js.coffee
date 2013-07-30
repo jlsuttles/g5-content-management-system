@@ -1,1 +1,1 @@
-G5ClientHub.PhoneWidgetsController = Ember.ArrayController.extend()
+App.PhoneWidgetsController = Ember.ArrayController.extend()

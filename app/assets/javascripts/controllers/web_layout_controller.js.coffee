@@ -1,1 +1,1 @@
-G5ClientHub.WebLayoutController = Ember.ObjectController.extend()
+App.WebLayoutController = Ember.ObjectController.extend()

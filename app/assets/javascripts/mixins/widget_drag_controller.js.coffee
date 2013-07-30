@@ -1,4 +1,4 @@
-G5ClientHub.WidgetDragController = Ember.Mixin.create
+App.WidgetDragController = Ember.Mixin.create
   needs: ["remoteWidgets"]
 
   currentDragAddItem: ( ->

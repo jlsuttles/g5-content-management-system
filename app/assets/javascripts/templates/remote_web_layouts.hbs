@@ -5,7 +5,7 @@
     {{#each model}}
       <li class="thumb">
         <a href="#" {{ action "update" this }}>
-          {{#view G5ClientHub.RemoteWebLayoutView contentBinding="this"}}
+          {{#view App.RemoteWebLayoutView contentBinding="this"}}
           <img alt="Thumbnail" {{ bindAttr src="thumbnail" }} {{ bindAttr class="view.isSelected" }}>
           {{ name }}
           {{/view}}

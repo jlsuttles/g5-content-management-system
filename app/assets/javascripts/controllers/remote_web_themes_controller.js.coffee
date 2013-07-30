@@ -1,4 +1,4 @@
-G5ClientHub.RemoteWebThemesController = Ember.ArrayController.extend
+App.RemoteWebThemesController = Ember.ArrayController.extend
   needs: ["webTheme"]
 
   update: (webTheme) ->

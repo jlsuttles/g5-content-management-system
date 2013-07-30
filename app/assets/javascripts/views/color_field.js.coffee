@@ -1,4 +1,4 @@
-G5ClientHub.ColorField = Ember.TextField.extend
+App.ColorField = Ember.TextField.extend
   type: "color"
 
   change: ->

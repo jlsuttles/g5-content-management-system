@@ -1,3 +1,3 @@
-G5ClientHub.Location = DS.Model.extend
+App.Location = DS.Model.extend
   urn: DS.attr("string")
-  website: DS.belongsTo("G5ClientHub.Website")
+  website: DS.belongsTo("App.Website")

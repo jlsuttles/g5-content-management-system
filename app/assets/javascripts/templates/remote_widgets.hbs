@@ -5,12 +5,12 @@
       {{#if model.isUpdating}}
         Loading...
       {{else}}
-        {{#view G5ClientHub.ThumbnailScrollerView}}
+        {{#view App.ThumbnailScrollerView}}
         <div class="jThumbnailScroller">
           <div class="jTscrollerContainer">
             <ul id="choose-widgets" class="jTscroller clearfix">
             {{#each model}}
-              {{#view G5ClientHub.DraggableWidgetView contentBinding="this"}}
+              {{#view App.DraggableWidgetView contentBinding="this"}}
                 <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
                 {{ view.content.name }}
               {{/view}}

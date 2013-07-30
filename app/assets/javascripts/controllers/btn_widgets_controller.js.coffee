@@ -1,1 +1,1 @@
-G5ClientHub.BtnWidgetsController = Ember.ArrayController.extend()
+App.BtnWidgetsController = Ember.ArrayController.extend()

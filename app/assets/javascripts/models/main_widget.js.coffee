@@ -1,6 +1,6 @@
-G5ClientHub.MainWidget = DS.Model.extend G5ClientHub.ReloadIframe,
-  webHomeTemplate: DS.belongsTo("G5ClientHub.WebsiteTemplate")
-  webPageTemplate: DS.belongsTo("G5ClientHub.WebPageTemplate")
+App.MainWidget = DS.Model.extend App.ReloadIframe,
+  webHomeTemplate: DS.belongsTo("App.WebsiteTemplate")
+  webPageTemplate: DS.belongsTo("App.WebPageTemplate")
   name: DS.attr("string")
   thumbnail: DS.attr("string")
   url: DS.attr("string")

@@ -1,1 +1,1 @@
-G5ClientHub.WebThemeController = Ember.ObjectController.extend()
+App.WebThemeController = Ember.ObjectController.extend()

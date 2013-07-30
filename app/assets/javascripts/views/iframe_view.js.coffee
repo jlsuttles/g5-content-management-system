@@ -1,4 +1,4 @@
-G5ClientHub.IframeView = Ember.View.extend
+App.IframeView = Ember.View.extend
   tagName: "iframe"
   attributeBindings: ["src"]
 

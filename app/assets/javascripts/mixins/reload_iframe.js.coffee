@@ -1,4 +1,4 @@
-G5ClientHub.ReloadIframe = Ember.Mixin.create
+App.ReloadIframe = Ember.Mixin.create
   reloadIframe: ->
     url = $('iframe').prop('src')
     $('iframe').prop('src', url)
