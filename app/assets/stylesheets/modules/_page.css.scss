@@ -40,6 +40,15 @@
       }
     }
   }
+  .l-double-cell {
+    @media screen and (min-width: $l-min-medium) and (max-width: $l-max-large) {
+      width: 100%;
+    }
+    @include respond-to($l-min-xlarge) {
+      width: 49%;
+      margin-left: 2%;
+    }
+  }
 }
 
 .page-title {
@@ -57,8 +66,9 @@
   }
   @include respond-to($l-min-medium) {
     @include clearfix;
-    .buttons {
+    .btn {
       float: right;
+      margin-left: 5px;
     }
   }
 }
