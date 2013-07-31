@@ -1,5 +1,5 @@
-G5ClientHub.BtnWidget = DS.Model.extend G5ClientHub.ReloadIframe,
-  websiteTemplate: DS.belongsTo("G5ClientHub.WebsiteTemplate")
+App.BtnWidget = DS.Model.extend App.ReloadIframe,
+  websiteTemplate: DS.belongsTo("App.WebsiteTemplate")
   name: DS.attr("string")
   thumbnail: DS.attr("string")
   url: DS.attr("string")

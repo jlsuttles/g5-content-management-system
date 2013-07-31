@@ -1,16 +1,16 @@
-G5ClientHub.DraggableView = Ember.View.extend G5ClientHub.Draggable,
+App.DraggableView = Ember.View.extend App.Draggable,
   tagName: "span"
 
-  # Overrides G5ClientHub.Draggable#dragStart
+  # Overrides App.Draggable#dragStart
   dragStart: (event) ->
     # Let the controller know this view is dragging
     @set "content.isDragging", true
-    # Call G5ClientHub.Draggable#dragStart
+    # Call App.Draggable#dragStart
     @_super event
 
-  # Overrides G5ClientHub.Draggable#dragEnd
+  # Overrides App.Draggable#dragEnd
   dragEnd: (event) ->
     # Let the controller know this view is done dragging
     @set "content.isDragging", false
-    # Call G5ClientHub.Draggable#dragEnd
+    # Call App.Draggable#dragEnd
     @_super event

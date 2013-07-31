@@ -1,5 +1,5 @@
-G5ClientHub.LogoWidget = DS.Model.extend G5ClientHub.ReloadIframe,
-  websiteTemplate: DS.belongsTo("G5ClientHub.WebsiteTemplate")
+App.LogoWidget = DS.Model.extend App.ReloadIframe,
+  websiteTemplate: DS.belongsTo("App.WebsiteTemplate")
   name: DS.attr("string")
   thumbnail: DS.attr("string")
   url: DS.attr("string")

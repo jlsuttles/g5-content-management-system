@@ -1,4 +1,4 @@
-G5ClientHub.ThumbnailScrollerView = Ember.View.extend
+App.ThumbnailScrollerView = Ember.View.extend
   tagName: "div"
   didInsertElement: ->
     $(".jThumbnailScroller").thumbnailScroller
@@ -13,4 +13,3 @@ G5ClientHub.ThumbnailScrollerView = Ember.View.extend
        autoScrollingSpeed:2000
        autoScrollingEasing:"easeInOutQuad"
        autoScrollingDelay:500
-

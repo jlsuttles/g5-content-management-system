@@ -1,4 +1,4 @@
-G5ClientHub.WebPageTemplateRoute = Ember.Route.extend
+App.WebPageTemplateRoute = Ember.Route.extend
   setupController: (controller, model)->
     # setup this controller
     controller.set("model", model)

@@ -5,14 +5,14 @@
       {{#if model.isUpdating}}
         Loading...
       {{else}}
-        {{#view G5ClientHub.ThumbnailScrollerView}}
+        {{#view App.ThumbnailScrollerView}}
         <div class="jThumbnailScroller">
           <div class="jTscrollerContainer">
             <div class="jTscroller thumbs clearfix">
               {{#each model}}
                 <div class="thumb">
                   <a href="#" {{ action "update" this }}>
-                    {{#view G5ClientHub.RemoteWebThemeView contentBinding="this"}}
+                    {{#view App.RemoteWebThemeView contentBinding="this"}}
                     <img alt="Thumbnail" {{ bindAttr src="thumbnail" }} {{ bindAttr class="view.isSelected" }}>
                     {{ name }}
                     {{/view}}

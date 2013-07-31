@@ -1,1 +1,1 @@
-G5ClientHub.WebsiteController = Ember.ObjectController.extend()
+App.WebsiteController = Ember.ObjectController.extend()

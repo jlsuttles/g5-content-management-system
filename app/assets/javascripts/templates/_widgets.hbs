@@ -1,6 +1,6 @@
 <ul class="add-widgets">
 {{#each model}}
-  {{#view G5ClientHub.DraggableWidgetView contentBinding="this"}}
+  {{#view App.DraggableWidgetView contentBinding="this"}}
     <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
     {{ view.content.name }}
   {{/view}}

@@ -1,4 +1,4 @@
-G5ClientHub.LocationRoute = Ember.Route.extend
+App.LocationRoute = Ember.Route.extend
   setupController: (controller, model)->
     # setup this controller
     controller.set("model", model)
@@ -15,6 +15,6 @@ G5ClientHub.LocationRoute = Ember.Route.extend
     @controllerFor("asideWidgets").set("model", model.get("website.websiteTemplate.asideWidgets"))
     @controllerFor("footerWidgets").set("model", model.get("website.websiteTemplate.footerWidgets"))
     # setup remote controllers last
-    @controllerFor("remoteWebLayouts").set("model", G5ClientHub.RemoteWebLayout.find())
-    @controllerFor("remoteWebThemes").set("model", G5ClientHub.RemoteWebTheme.find())
-    @controllerFor("remoteWidgets").set("model", G5ClientHub.RemoteWidget.find())
+    @controllerFor("remoteWebLayouts").set("model", App.RemoteWebLayout.find())
+    @controllerFor("remoteWebThemes").set("model", App.RemoteWebTheme.find())
+    @controllerFor("remoteWidgets").set("model", App.RemoteWidget.find())

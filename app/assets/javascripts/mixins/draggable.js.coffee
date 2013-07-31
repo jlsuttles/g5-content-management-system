@@ -1,4 +1,4 @@
-G5ClientHub.Draggable = Ember.Mixin.create
+App.Draggable = Ember.Mixin.create
   attributeBindings: "draggable"
   draggable: "true"
 

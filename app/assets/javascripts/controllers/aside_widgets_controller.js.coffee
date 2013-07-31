@@ -1,1 +1,1 @@
-G5ClientHub.AsideWidgetsController = Ember.ArrayController.extend G5ClientHub.WidgetDragController, {}
+App.AsideWidgetsController = Ember.ArrayController.extend App.WidgetDragController, {}

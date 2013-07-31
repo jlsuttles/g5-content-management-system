@@ -1,4 +1,4 @@
-G5ClientHub.DropTargetRemoveView = Ember.View.extend G5ClientHub.Droppable,
+App.DropTargetRemoveView = Ember.View.extend App.Droppable,
   tagName: "span"
   classNames: ["drop-target drop-target-remove"]
   classNameBindings: ["dropTargetActive"]
@@ -15,7 +15,7 @@ G5ClientHub.DropTargetRemoveView = Ember.View.extend G5ClientHub.Droppable,
       "drop-target-active"
   ).property("dragContext")
 
-  # Overrides G5ClientHub.Droppable#drop
+  # Overrides App.Droppable#drop
   drop: (event) ->
     # Get the view that was dropped
     viewId = event.originalEvent.dataTransfer.getData("Text")
@@ -25,5 +25,5 @@ G5ClientHub.DropTargetRemoveView = Ember.View.extend G5ClientHub.Droppable,
     view.content.deleteRecord()
     view.content.save()
 
-    # Call G5ClientHub.Droppable#drop
+    # Call App.Droppable#drop
     @_super event

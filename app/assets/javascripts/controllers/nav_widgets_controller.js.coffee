@@ -1,1 +1,1 @@
-G5ClientHub.NavWidgetsController = Ember.ArrayController.extend()
+App.NavWidgetsController = Ember.ArrayController.extend()

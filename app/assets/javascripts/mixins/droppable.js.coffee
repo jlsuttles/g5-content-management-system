@@ -1,4 +1,4 @@
-G5ClientHub.Droppable = Ember.Mixin.create
+App.Droppable = Ember.Mixin.create
   dragEnter: (event) ->
     event.preventDefault()
     false

@@ -1,4 +1,4 @@
-G5ClientHub.ColorPickerView = Ember.View.extend
+App.ColorPickerView = Ember.View.extend
   tagName: "form"
 
   didInsertElement: ->

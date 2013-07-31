@@ -1,4 +1,4 @@
-G5ClientHub.RemoteWebLayoutsController = Ember.ArrayController.extend
+App.RemoteWebLayoutsController = Ember.ArrayController.extend
   needs: ["webLayout"]
 
   update: (webLayout) ->

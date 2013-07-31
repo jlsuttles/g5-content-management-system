@@ -1,4 +1,4 @@
-G5ClientHub.RemoteWebThemeView = Ember.View.extend G5ClientHub.Droppable,
+App.RemoteWebThemeView = Ember.View.extend App.Droppable,
   tagName: "span"
 
   isSelected: ( ->
