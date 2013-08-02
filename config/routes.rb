@@ -11,7 +11,7 @@ G5ClientHub::Application.routes.draw do
       post "deploy"
     end
   end
-  resources :web_template, only: [:show]
+  resources :web_templates, only: [:show]
   resources :widgets, only: [:edit, :update]
   resources :settings, only: [:index]
 
