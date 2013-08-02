@@ -6,6 +6,6 @@ class WebPageTemplateSerializer < WebTemplateSerializer
   attributes :preview_url
 
   def preview_url
-    website_web_page_template_url(object.website, object)
+    web_template_url(object)
   end
 end
