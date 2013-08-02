@@ -17,7 +17,7 @@
           <% else %>
             <%= link_to "Edit", "/ember/#/location/#{web_template.location_id}/page/#{web_template.id}",  class: "btn btn--small" %>
           <% end %>
-          <%= link_to "Preview", send("website_#{web_template.type.underscore}_path", website, web_template), class: "btn btn--small" %>
+          <%= link_to "Preview", web_template_path(web_template), class: "btn btn--small" %>
         </div>
 
         <a href="#" title="Page Settings" class="card-corner flip-btn"><span class="icon icon--settings">Page Settings</span></a>
