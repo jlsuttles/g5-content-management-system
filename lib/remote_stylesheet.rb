@@ -51,7 +51,7 @@ class RemoteStylesheet
   def compile_colors
     FileUtils.mkdir_p(colors_dir)
     open(colors_path, "wb") do |file|
-      file << WebPageTemplatesController.new.render_to_string(
+      file << ApplicationController.new.render_to_string(
       "compiled_pages/stylesheets/colors",
       formats: [:scss],
       layout:  false,
