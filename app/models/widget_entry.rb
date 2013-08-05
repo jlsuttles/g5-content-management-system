@@ -1,8 +1,6 @@
 class WidgetEntry < ActiveRecord::Base
   include HentryableDates
 
-  attr_accessible :widget_id, :content
-
   serialize :categories
 
   belongs_to :widget

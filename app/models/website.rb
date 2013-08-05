@@ -15,11 +15,6 @@ class Website < ActiveRecord::Base
 
   set_urn_prefix "g5-clw"
 
-  attr_accessible :urn,
-                  :custom_colors,
-                  :primary_color,
-                  :secondary_color
-
   belongs_to :location
 
   has_many :web_templates

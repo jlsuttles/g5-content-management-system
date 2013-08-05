@@ -4,13 +4,6 @@ class WebLayout < ActiveRecord::Base
 
   set_garden_url ENV["LAYOUT_GARDEN_URL"]
 
-  attr_accessible :web_template_id,
-                  :url,
-                  :name,
-                  :html,
-                  :thumbnail,
-                  :stylesheets
-
   belongs_to :web_template
   has_one :website, through: :web_template
 

@@ -1,18 +1,6 @@
 class WebTemplate < ActiveRecord::Base
-  include ActiveModel::ForbiddenAttributesProtection
-
   include HasManySettings
   include AfterUpdateSetSettingNavigation
-
-  attr_accessible :website_id,
-                  :name,
-                  :title,
-                  :disabled,
-                  :slug,
-                  :website_attributes,
-                  :web_layout_attributes,
-                  :web_theme_attributes,
-                  :widgets_attributes
 
   belongs_to :website
 
@@ -20,11 +8,6 @@ class WebTemplate < ActiveRecord::Base
   has_one :web_theme  , autosave: true , dependent: :destroy
   # TODO: has_many :widgets, through: :drop_areas
   has_many :widgets   , autosave: true , dependent: :destroy , order: "position asc"
-
-  accepts_nested_attributes_for :website
-  accepts_nested_attributes_for :web_layout , allow_destroy: true
-  accepts_nested_attributes_for :web_theme  , allow_destroy: true
-  accepts_nested_attributes_for :widgets    , allow_destroy: true
 
   validates :title , presence: true
   validates :name  , presence: true
