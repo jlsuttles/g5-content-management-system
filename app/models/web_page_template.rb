@@ -1,34 +1,5 @@
 class WebPageTemplate < WebTemplate
-  has_many :main_widgets,  class_name: "Widget",
-    conditions: ['section = ?', 'drop-target-main'], foreign_key: "web_template_id"
-
-  after_initialize :assign_defaults
-  after_create :create_default_widgets
-
-  def sections
-    %w(drop-target-main)
-  end
-
-  def default_widgets
-    []
-  end
-
   def all_widgets
     widgets + website.try(:website_template).try(:widgets).to_a
-  end
-
-  private
-
-  def assign_defaults
-    self.name  ||= "New Page"
-    self.title ||= name
-    self.slug  ||= title.parameterize
-  end
-
-  def create_default_widgets
-    default_widgets.each do |widget|
-      url = Widget.build_widget_url(widget)
-      widgets.create(url: url, section: "drop-target-main")
-    end
   end
 end

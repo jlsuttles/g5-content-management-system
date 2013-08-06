@@ -10,6 +10,10 @@ module ComponentGardenable
       @garden_url
     end
 
+    def component_url(component_name)
+      "#{garden_url}/components/#{component_name}"
+    end
+
     def microformats_parser
       @microformats_parser ||= Microformats2::Parser.new
     end
