@@ -15,7 +15,7 @@
       </div>
       <div class="faux-table-cell buttons">
         <%= link_to "Edit", website_path(location.website), class: "btn  btn--a" %>
-        <%= link_to "Ember", "/ember/#/websites/#{location.website.urn}", class: "btn  btn--a" %>
+        <%= link_to "Ember", "/ember/#/website/#{website.id}", class: "btn  btn--a" %>
         <%= link_to "View", location.website.heroku_url, class: "btn  btn--a" %>
         <%= link_to "Deploy", deploy_website_path(location.website), method: :post, class: "btn btn--a" %>
       </div>
