@@ -4,7 +4,7 @@ App.LocationRoute = Ember.Route.extend
     controller.set("model", model)
     # setup website controller
     @controllerFor("website").set("model", model.get("website"))
-    # setup webThemeColors color
+    # setup webThemeColors controller
     @controllerFor("webThemeColors").set("model", model.get("website"))
     # setup website.websiteTemplate controllers
     @controllerFor("websiteTemplate").set("model", model.get("websiteTemplate"))
