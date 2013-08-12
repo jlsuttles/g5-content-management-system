@@ -1,0 +1,23 @@
+<div class="right">
+  {{#view App.ColorPickerView}}
+  <div class="colors clearfix">
+    <h3>Theme Colors</h3>
+    <div class="color-fields">
+      <div class="check-field">
+        <label>
+          {{view App.Checkbox checkedBinding="customColors"}}
+          Use Custom Colors
+        </label>
+      </div>
+      <div class="color-field">
+        <label for="color-1">Primary</label>
+        {{view App.ColorField valueBinding="primaryColor" id="color-1" class="color"}}
+      </div>
+      <div class="color-field">
+        <label for="color-2">Secondary</label>
+        {{view App.ColorField valueBinding="secondaryColor" id="color-2" class="color"}}
+      </div>
+    </div>
+  </div>
+  {{/view}}
+</div> <!-- end right -->
