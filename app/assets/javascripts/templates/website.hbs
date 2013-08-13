@@ -10,11 +10,15 @@
   </h2>
 
   <div class="site-settings page-section l-grid">
-    {{ render "pageTemplate" websiteTemplate }}
+    {{ render "siteSettings" websiteTemplate }}
   </div>
 
   <div class="site-pages page-section">
-    {{ render "webPageTemplates" webPageTemplates }}
+    {{ render "sitePages" webHomeTemplate }}
+    {{#each webPageTemplates}}
+      {{ render "sitePages" this }}
+    {{/each}}
+
   </div>
 
   <div class="delete-page">

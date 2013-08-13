@@ -4,3 +4,4 @@ App.WebHomeTemplate = DS.Model.extend
   webTheme: DS.belongsTo("App.WebTheme")
   mainWidgets: DS.hasMany("App.MainWidget")
   previewUrl: DS.attr("string")
+  name: DS.attr("string")
