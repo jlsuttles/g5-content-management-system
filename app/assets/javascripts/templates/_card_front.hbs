@@ -5,16 +5,12 @@
   <div class="card-body">
     <ul class="widgets widgets--large">
       {{#each mainWidgets}}
-        {{ name }}
+        {{ partial "cardWidget" }}
       {{/each}}
     </ul>
     <div class="buttons">
-{{!           <% if web_template.web_home_template? %>
-        <%= link_to "Edit", "/ember/#/location/#{web_template.location_id}/home/#{web_template.id}",  class: "btn btn--small" %>
-      <% else %>
-        <%= link_to "Edit", "/ember/#/location/#{web_template.location_id}/page/#{web_template.id}",  class: "btn btn--small" %>
-      <% end %>
-      <%= link_to "Preview", web_template_path(web_template), class: "btn btn--small" %> }}
+      <a href="#" class="btn btn--small">Edit</a>
+      <a href="#" class="btn btn--small">Preview</a>
     </div>
 
     {{ partial "cardFlip" }}
