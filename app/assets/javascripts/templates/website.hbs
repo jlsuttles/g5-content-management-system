@@ -1,20 +1,19 @@
-<h2 class="page-title">
-  Location:
-  {{ name }}
-  &mdash; Pages
-  <span class="buttons">
-    {{! <%= link_to "Deploy", deploy_website_path(@website), method: :post, class: "btn" %> }}
-  </span>
-</h2>
+<div class="l-container">
+  <h2 class="page-title">
+    Location:
+    {{ name }}
+    &mdash; Pages
+    <span class="buttons">
+      {{! <%= link_to "Deploy", deploy_website_path(@website), method: :post, class: "btn" %> }}
+      {{! <a href="#" class="btn">Deploy</a> }}
+    </span>
+  </h2>
 
-<div class="site-settings page-section l-grid">
-  {{! <%= render partial: "web_template", locals: { website: @website, web_template: @website_template } %> }}
-</div>
+  <div class="site-pages page-section">
+    {{ render "webPageTemplates" webPageTemplates }}
+  </div>
 
-<div class="site-pages page-section">
-  {{render "webPageTemplates" webPageTemplates}}
-</div>
-
-<div class="delete-page">
-  <div class="icon icon--trash"></div>
+  <div class="delete-page">
+    <div class="icon icon--trash"></div>
+  </div>
 </div>
