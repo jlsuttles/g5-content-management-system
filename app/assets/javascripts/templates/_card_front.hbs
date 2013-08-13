@@ -4,7 +4,9 @@
 
   <div class="card-body">
     <ul class="widgets widgets--large">
-      {{! <%= render web_template.widgets %> }}
+      {{#each mainWidgets}}
+        {{ name }}
+      {{/each}}
     </ul>
     <div class="buttons">
 {{!           <% if web_template.web_home_template? %>

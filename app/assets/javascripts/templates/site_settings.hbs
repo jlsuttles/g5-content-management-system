@@ -1,4 +1,3 @@
-{{! <div class="<%= web_template.type.parameterize %>"> }}
 <div>
   <div class="l-cell">
     <img alt="Thumbnail" class="thumb" {{ bindAttr src="webLayout.thumbnail" }} />
@@ -11,8 +10,25 @@
   <div class="l-cell l-double-cell">
     <h3 class="template-heading">Widgets</h3>
     <ul class="widgets widgets--small">
-      {{! <%= render web_template.widgets %> }}
+      <!-- refactor this -->
+      {{#each logoWidgets}}
+        {{ name }}
+      {{/each}}
+      {{#each phoneWidgets}}
+        {{ name }}
+      {{/each}}
+      {{#each btnWidgets}}
+        {{ name }}
+      {{/each}}
+      {{#each navWidgets}}
+        {{ name }}
+      {{/each}}
+      {{#each asideWidgets}}
+        {{ name }}
+      {{/each}}
+      {{#each footerWidgets}}
+        {{ name }}
+      {{/each}}
     </ul>
   </div>
-
 </div>
