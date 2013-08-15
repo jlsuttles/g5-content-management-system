@@ -1,7 +1,7 @@
 <div class="theme-picker thumbnail-field clearfix">
-  <div class="container page-section">
+  <div class="l-container page-section">
     <div class="left">
-      <h2>Select a Theme</h2>
+      <h2 class="page-title">Select a Theme</h2>
       {{#if model.isUpdating}}
         Loading...
       {{else}}
@@ -14,7 +14,6 @@
                   <a href="#" {{ action "update" this }}>
                     {{#view App.RemoteWebThemeView contentBinding="this"}}
                     <img alt="Thumbnail" {{ bindAttr src="thumbnail" }} {{ bindAttr class="view.isSelected" }}>
-                    {{ name }}
                     {{/view}}
                   </a>
                 </div>
