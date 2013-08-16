@@ -7,8 +7,8 @@
   }
   .page-section {
     margin-bottom: 0;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
   }
   .page-title {
     display: inline-block;
@@ -18,10 +18,10 @@
     .thumb {
       @include transition(opacity .2s linear);
       float: left;
-      margin-right: 17px;
+      margin-right: 24px;
       width: 178px;
       text-transform: uppercase;
-      &:last-child {
+      &:last-of-type {
         margin-right: 0;
       }
     }
@@ -60,13 +60,6 @@
   }
   .theme-picker {
     z-index: 4;
-    .left {
-      float: left;
-      width: 935px;
-    }
-    .right {
-      float: right;
-    }
     .thumb {
       margin-right: 20px;
       width: 258px;
@@ -79,49 +72,49 @@
       opacity: 1;
     }
     .jThumbnailScroller {
-      width: 915px;
+      width: 1190px;
       height: 221px;
     }
   }
 
   .colors {
-    position: relative;
-    z-index: 100;
-    margin-top: 3.5em;
-    width: 210px;
-    border: 1px solid #cbcbcb;
-    h3 {
-      @include linear-gradient(#fefefe, #f5f5f5);
-      padding: .5em 1em .4em;
-      margin: 0;
-      border-bottom: 1px solid #cbcbcb;
-    }
-    .color-fields {
-      @extend %group;
-      padding: 10px;
-      background: #fff;
-    }
-    .color-field {
-      float: left;
-      width: 50%;
-      margin-bottom: 10px;
-    }
-    .check-field {
-      margin-bottom: 1em;
-    }
-    .sp-replacer,
+    border-top: 1px solid $c-color-a;
+    margin-top: .5em;
+    padding-top: 1em;
+    h3,
+    .color-fields,
+    .color-field,
+    .check-field,
     label {
       display: inline-block;
     }
-    .sp-replacer {
-      margin-right: 20px;
+    h3,
+    .check-field,
+    .color-field {
+      margin: 0 $base-whitespace 0 0;
+    }
+    h3 {
+      font-weight: $c-semiBold;
     }
     label {
-      display: block;
+      font-weight: $c-semiBold;
+      margin-right: 10px;
     }
     input[type=color] {
       width: 60%;
     }
+  }
+  .sp-replacer {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .sp-preview {
+    border: none;
+    height: 25px;
+  }
+  .sp-dd {
+    display: none;
   }
   .widget-list {
     @include clearfix;
@@ -132,10 +125,9 @@
       margin-left: 20px;
     }
     .jThumbnailScroller {
-      height: 130px;
-      -moz-border-radius: 0;
-      -webkit-border-radius: 0;
       border-radius: 0;
+      height: 130px;
+      width: 1190px;
     }
   }
   /* styles for unselected widgets */

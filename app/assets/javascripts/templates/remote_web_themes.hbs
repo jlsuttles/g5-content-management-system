@@ -1,11 +1,10 @@
 <div class="theme-picker thumbnail-field clearfix">
   <div class="l-container page-section">
-    <div class="left">
-      <h2 class="page-title">Select a Theme</h2>
-      {{#if model.isUpdating}}
-        Loading...
-      {{else}}
-        {{#view App.ThumbnailScrollerView}}
+    <h2 class="page-title">Select a Theme</h2>
+    {{#if model.isUpdating}}
+      <div class="loading">Loading...</div>
+    {{else}}
+      {{#view App.ThumbnailScrollerView}}
         <div class="jThumbnailScroller">
           <div class="jTscrollerContainer">
             <div class="jTscroller thumbs clearfix">
@@ -24,9 +23,8 @@
           <a href="#" class="jTscrollerPrevButton"></a>
           <a href="#" class="jTscrollerNextButton"></a>
         </div>
-        {{/view}}
-      {{/if}}
-    </div>
+      {{/view}}
+    {{/if}}
     {{ render "webThemeColors" }}
   </div>
 </div>
