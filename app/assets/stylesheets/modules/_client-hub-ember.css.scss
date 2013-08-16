@@ -1,0 +1,254 @@
+.builder {
+
+  .l-container {
+    width: 1230px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .page-section {
+    margin-bottom: 0;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+  .page-title {
+    display: inline-block;
+  }
+  .thumbs {
+    @extend %group;
+    .thumb {
+      @include transition(opacity .2s linear);
+      float: left;
+      margin-right: 24px;
+      width: 178px;
+      text-transform: uppercase;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+    img {
+      border: 2px solid #fff;
+      margin-bottom: .5em;
+    }
+  }
+  .thumb {
+    @include font-size(12px);
+  }
+  .layout-picker,
+  .theme-picker,
+  .widget-list {
+    @include standard-shadow;
+    position: relative;
+  }
+  .layout-picker {
+    background: #efefef;
+    z-index: 5;
+    img {
+      opacity: 0.7;
+    }
+    .is-selected {
+      border-color: #f17c50;
+      opacity: 1;
+    }
+  }
+  .jThumbnailScroller .jTscrollerNextButton,
+  .jThumbnailScroller .jTscrollerPrevButton {
+    background-color: #f17c50;
+    border: 2px solid #fff;
+  }
+  .theme-picker {
+    z-index: 4;
+    .thumb {
+      margin-right: 20px;
+      width: 258px;
+    }
+    img {
+      opacity: 0.7;
+    }
+    .is-selected {
+      border-color: #f17c50;
+      opacity: 1;
+    }
+    .jThumbnailScroller {
+      width: 1190px;
+      height: 221px;
+    }
+  }
+
+  .colors {
+    border-top: 1px solid $c-color-a;
+    margin-top: .5em;
+    padding-top: 1em;
+    h3,
+    .color-fields,
+    .color-field,
+    .check-field,
+    label {
+      display: inline-block;
+    }
+    h3,
+    .check-field,
+    .color-field {
+      margin: 0 $base-whitespace 0 0;
+    }
+    h3 {
+      font-weight: $c-semiBold;
+    }
+    label {
+      font-weight: $c-semiBold;
+      margin-right: 10px;
+    }
+    input[type=color] {
+      width: 60%;
+    }
+  }
+  .sp-replacer {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .sp-preview {
+    border: none;
+    height: 25px;
+  }
+  .sp-dd {
+    display: none;
+  }
+  .widget-list {
+    @include clearfix;
+    background: url($linen) 0 0 repeat;
+    .instructions {
+      display: inline-block;
+      font-size: 22px;
+      margin-left: 20px;
+    }
+    .jThumbnailScroller {
+      border-radius: 0;
+      height: 130px;
+      width: 1190px;
+    }
+  }
+  /* styles for unselected widgets */
+  #choose-widgets {
+    li {
+      display: inline-block;
+      vertical-align: top;
+      cursor: move;
+      text-align: center;
+      width: 75px;
+      margin-right: 15px;
+      margin-bottom: .5em;
+      &:nth-of-type(10n+1) {
+        clear: left;
+      }
+      img {
+        margin-bottom: .2em;
+      }
+    }
+    .ui-sortable-helper {
+      text-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 5px 10px rgba(0, 0, 0, .3);
+      img{
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .5), 0 10px 20px rgba(0, 0, 0, .5);
+      }
+    }
+  }
+  .widget-list,
+  .add-widgets {
+    text-transform: uppercase;
+  }
+  .widget-drop-zone {
+    box-sizing: border-box;
+    float: left;
+    padding-right: 3%;
+    width: 25%;
+    h2 {
+      @extend %c-h3;
+    }
+  }
+  .main-widgets,
+  .aside-widgets {
+    .add-widgets {
+      padding: 1em 0;
+    }
+  }
+  .add-widgets {
+    li {
+      margin-bottom: .2em;
+      cursor: move;
+      img {
+        width: 20px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .drop-target-add,
+  .drop-target-remove {
+    text-transform: uppercase;
+    color: #000;
+    background-color: #eee;
+    background-size: 25px;
+    box-sizing: border-box;
+    display: block;
+    padding: 1em 25px 1em 55px;
+    width: 100%;
+    position: relative;
+    opacity: .5;
+    -webkit-transition: opacity 0.8s ease;
+  }
+
+  .drop-target-active {
+    opacity: 1;
+  }
+
+  .drop-target-add {
+    margin-top: -1em;
+    &:before {
+      content: "\002B";
+      color: #000;
+      font-size: 60px;
+      position: absolute;
+      left: 15px;
+      line-height: .5;
+    }
+  }
+
+  .drop-target-remove {
+    background-image:  url(icon-trash.png);
+    background-position: 15px center;
+    background-repeat: no-repeat;
+  }
+
+  .drop-target-active {
+    color: #000;
+  }
+
+  .page-fields {
+    padding-top: 1em;
+  }
+
+  .theme-settings {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    li {
+      margin-bottom: .5em;
+    }
+    .primary {
+      margin-top: 1em;
+    }
+  }
+
+  .preview {
+    display: block;
+    width: 100%;
+    height: 1000px;
+    overflow: hidden;
+    position: relative;
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
