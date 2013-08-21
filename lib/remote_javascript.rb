@@ -2,7 +2,7 @@ require "open-uri"
 
 class RemoteJavascript
   def initialize(remote_path, js_dir=nil)
-    @remote_path = remote_path
+    @remote_path = remote_path || ""
     @js_dir = js_dir
   end
 
@@ -11,7 +11,7 @@ class RemoteJavascript
   end
 
   def js_file_name
-    @file_name ||= @remote_path.split("/").last
+    @file_name ||= @remote_path.split("/").last || ""
   end
 
   def js_file_path
@@ -28,5 +28,7 @@ class RemoteJavascript
       file << open(@remote_path).read
     end
     open(js_file_path).read
+  rescue Errno::EISDIR
+    ""
   end
 end
