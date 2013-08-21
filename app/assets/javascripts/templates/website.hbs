@@ -1,0 +1,25 @@
+<div class="l-container">
+  <h2 class="page-title">
+    Location:
+    {{ name }}
+    &mdash; Pages
+    <span class="buttons">
+      <a href="#" class="btn">Deploy</a>
+    </span>
+  </h2>
+
+  <div class="site-settings page-section l-grid">
+    {{ render "website/websiteTemplate" websiteTemplate }}
+  </div>
+
+  <div class="site-pages page-section">
+    {{ render "website/webPageTemplate" webHomeTemplate }}
+    {{#each webPageTemplates}}
+      {{ render "website/webPageTemplate" this }}
+    {{/each}}
+  </div>
+
+  <div class="delete-page">
+    <div class="icon icon--trash"></div>
+  </div>
+</div>

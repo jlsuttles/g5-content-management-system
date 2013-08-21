@@ -1,0 +1,18 @@
+<div class="card-container front">
+
+  {{ partial "website/webPageTemplateHead" }}
+
+  <div class="card-body">
+    <ul class="widgets widgets--large">
+      {{#each mainWidgets}}
+        {{ partial "website/widget" }}
+      {{/each}}
+    </ul>
+    <div class="buttons">
+      <a href="#" class="btn btn--small">Edit</a>
+      <a href="#" class="btn btn--small">Preview</a>
+    </div>
+
+    {{ partial "website/webPageTemplateFlip" }}
+  </div>
+</div>

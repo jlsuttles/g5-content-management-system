@@ -1,0 +1,32 @@
+<div class="card-container back">
+
+  {{ partial "website/webPageTemplateHead" }}
+
+  <div class="card-body">
+
+    <form class="form">
+
+      <div class="form-field">
+        <label>Page Name</label>
+        <input type="text" />
+      </div>
+
+      <div class="form-field">
+        <label>Page Title</label>
+        <input type="text" />
+      </div>
+
+      <div class="form-field">
+        {{! <%= render partial: "web_template_toggle_disabled", locals: { website: website, web_template: web_template } %> }}
+      </div>
+
+      <div class="buttons">
+        {{! <%= link_to "Save", "#", class: "btn btn--small" %> }}
+        {{! <%= link_to "Cancel", "#", class: "btn btn--a btn--small flip-btn" %> }}
+      </div>
+    </form>
+
+    {{ partial "website/webPageTemplateFlip" }}
+
+  </div>
+</div>

@@ -1,0 +1,1 @@
+App.WebHomeTemplateController = Ember.ObjectController.extend()
