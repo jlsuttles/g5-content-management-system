@@ -9,13 +9,13 @@
   </h2>
 
   <div class="site-settings page-section l-grid">
-    {{ render "siteSettings" websiteTemplate }}
+    {{ render "website/websiteTemplate" websiteTemplate }}
   </div>
 
   <div class="site-pages page-section">
-    {{ render "sitePages" webHomeTemplate }}
+    {{ render "website/webPageTemplate" webHomeTemplate }}
     {{#each webPageTemplates}}
-      {{ render "sitePages" this }}
+      {{ render "website/webPageTemplate" this }}
     {{/each}}
 
   </div>

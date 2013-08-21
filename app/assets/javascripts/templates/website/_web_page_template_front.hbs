@@ -1,11 +1,11 @@
 <div class="card-container front">
 
-  {{ partial "cardHead" }}
+  {{ partial "website/webPageTemplateHead" }}
 
   <div class="card-body">
     <ul class="widgets widgets--large">
       {{#each mainWidgets}}
-        {{ partial "cardWidget" }}
+        {{ partial "website/widget" }}
       {{/each}}
     </ul>
     <div class="buttons">
@@ -13,6 +13,6 @@
       <a href="#" class="btn btn--small">Preview</a>
     </div>
 
-    {{ partial "cardFlip" }}
+    {{ partial "website/webPageTemplateFlip" }}
   </div>
 </div>
