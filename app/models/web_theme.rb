@@ -4,14 +4,6 @@ class WebTheme < ActiveRecord::Base
 
   set_garden_url ENV["THEME_GARDEN_URL"]
 
-  attr_accessible :web_template_id,
-                  :url,
-                  :name,
-                  :stylesheets,
-                  :javascripts,
-                  :thumbnail,
-                  :colors
-
   serialize :stylesheets, Array
   serialize :javascripts, Array
   serialize :colors, Array

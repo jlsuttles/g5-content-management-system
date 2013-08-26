@@ -15,21 +15,6 @@ class Widget < ActiveRecord::Base
 
   set_garden_url ENV["WIDGET_GARDEN_URL"]
 
-  attr_accessible :web_template_id,
-                  :section,
-                  :position,
-                  :url,
-                  :name,
-                  :stylesheets,
-                  :edit_javascript,
-                  :show_javascript,
-                  :lib_javascripts,
-                  :html,
-                  :thumbnail,
-                  :edit_form_html,
-                  :settings_attributes,
-                  :removeable
-
   serialize :stylesheets, Array
   serialize :lib_javascripts, Array
 

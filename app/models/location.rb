@@ -5,11 +5,6 @@ class Location < ActiveRecord::Base
 
   set_urn_prefix "g5-cl"
 
-  attr_accessible :uid,
-                  :urn,
-                  :name,
-                  :corporate
-
   has_one :website, dependent: :destroy
   has_one :web_home_template, through: :website
 

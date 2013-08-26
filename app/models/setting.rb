@@ -14,16 +14,6 @@ class Setting < ActiveRecord::Base
     "Client"
   ]
 
-  attr_accessible :owner_id,
-                  :owner_type,
-                  :website_id,
-                  :name,
-                  :editable,
-                  :value,
-                  :default_value,
-                  :categories,
-                  :priority
-
   serialize :value
   serialize :categories, Array
 
