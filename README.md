@@ -20,7 +20,7 @@ automatically uses sensible defaults for the primary ActiveRecord database.
 $ rake db:setup
 ```
 
-1. Configure your local instance of the widget garden. If you are using Foreman, the simplest way is to create a .env file which sets a WIDGET_GARDEN_URL variable to whatever server you are running locally, e.g. http://0.0.0.0:3001. If you aren't using Foreman you can still set one locally when you start up your server, i.e. 
+1. Configure your local instance of the widget garden. If you are using Foreman, the simplest way is to create a .env file which sets a WIDGET_GARDEN_URL variable to whatever server you are running locally, e.g. http://0.0.0.0:3001. If you aren't using Foreman you can still set one locally when you start up your server, i.e.
 ```bash
 $ WIDGET_GARDEN_URL=http://0.0.0.0:3001 rails s
 ```
@@ -109,17 +109,38 @@ $ git push g5-ch-my-new-feature my-new-feature:master
 ## Specs
 
 Run once.
+
 ```bash
 $ rspec spec
 ```
 
 Keep them running.
+
 ```bash
 $ guard
 ```
 
-Coverage.
+
+## Spec Coverage
+
+The [simplecov](https://github.com/colszowka/simplecov) gem provides code
+coverage for Ruby with a powerful configuration library and automatic merging
+of coverage across test suites.
+
 ```bash
 $ rspec spec
 $ open coverage/index.html
+```
+
+
+## Model & Controller Diagrams
+
+The [railroady](https://github.com/preston/railroady) gem generates Rails model
+and controller UML diagrams as cross-platform .svg files, as well as in the DOT
+language.
+
+```bash
+$ brew install graphviz
+$ rake diagram:all
+$ open doc/*.svg
 ```
