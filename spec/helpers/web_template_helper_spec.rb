@@ -6,14 +6,16 @@ describe WebTemplatesHelper do
   let(:web_layout) { Fabricate(:web_layout) }
   let(:web_theme) { Fabricate(:web_theme) }
   let(:web_home_template) { Fabricate(:web_home_template) }
-  let(:widget) { Fabricate(:widget, section: "drop-target-main") }
+  let(:drop_target) { Fabricate(:drop_target, html_id: "drop-target-main") }
+  let(:widget) { Fabricate(:widget) }
 
   before :each do
     website.website_template = website_template
     website_template.web_layout = web_layout
     website_template.web_theme = web_theme
     website.web_home_template = web_home_template
-    web_home_template.widgets << widget
+    web_home_template.drop_targets << drop_target
+    drop_target.widgets << widget
   end
 
   describe "preview" do

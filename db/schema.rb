@@ -11,13 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523212458) do
+ActiveRecord::Schema.define(:version => 20130806065107) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "drop_targets", :force => true do |t|
+    t.integer  "web_template_id"
+    t.string   "html_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "locations", :force => true do |t|
@@ -40,8 +47,8 @@ ActiveRecord::Schema.define(:version => 20130523212458) do
     t.boolean  "editable",      :default => false
     t.string   "default_value"
     t.integer  "owner_id"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.string   "owner_type"
     t.text     "categories"
     t.integer  "priority"
@@ -144,7 +151,7 @@ ActiveRecord::Schema.define(:version => 20130523212458) do
   create_table "widgets", :force => true do |t|
     t.string   "url"
     t.string   "name"
-    t.integer  "web_template_id"
+    t.integer  "drop_target_id"
     t.integer  "position"
     t.text     "html"
     t.text     "stylesheets"
@@ -159,7 +166,7 @@ ActiveRecord::Schema.define(:version => 20130523212458) do
     t.text     "lib_javascripts"
   end
 
+  add_index "widgets", ["drop_target_id"], :name => "index_widgets_on_web_template_id"
   add_index "widgets", ["name"], :name => "index_widgets_on_name"
-  add_index "widgets", ["web_template_id"], :name => "index_widgets_on_web_template_id"
 
 end

@@ -4,7 +4,8 @@ describe "locations requests", js: true do
   before do
     @client = Fabricate(:client)
     @location = Fabricate(:location)
-    @website = @location.website
+    @website = Fabricate(:website)
+    @location.website = @website
   end
 
   context "#index" do

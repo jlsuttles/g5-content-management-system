@@ -1,16 +1,32 @@
 class WebsiteTemplate < WebTemplate
-  has_many :logo_widgets, class_name: "Widget", conditions: ['section = ?', Widget::LOGO], foreign_key: "web_template_id"
-  has_many :phone_widgets, class_name: "Widget", conditions: ['section = ?', Widget::PHONE], foreign_key: "web_template_id"
-  has_many :btn_widgets, class_name: "Widget", conditions: ['section = ?', Widget::BTN], foreign_key: "web_template_id"
-  has_many :nav_widgets, class_name: "Widget", conditions: ['section = ?', Widget::NAV], foreign_key: "web_template_id"
-  has_many :aside_widgets,  class_name: "Widget", conditions: ['section = ?', Widget::ASIDE], foreign_key: "web_template_id"
-  has_many :footer_widgets, class_name: "Widget", conditions: ['section = ?', Widget::FOOTER], foreign_key: "web_template_id"
-  has_many :widgets, class_name: "Widget", foreign_key: "web_template_id"
+  # TODO: remove when Ember App implements DropTarget
+  def logo_widgets
+    drop_targets.where(html_id: "drop-target-logo").first.try(:widgets)
+  end
 
-  after_initialize :assign_defaults
+  # TODO: remove when Ember App implements DropTarget
+  def btn_widgets
+    drop_targets.where(html_id: "drop-target-btn").first.try(:widgets)
+  end
 
-  def sections
-    %w(drop-target-logo drop-target-phone drop-target-btn drop-target-nav drop-target-aside drop-target-footer)
+  # TODO: remove when Ember App implements DropTarget
+  def phone_widgets
+    drop_targets.where(html_id: "drop-target-phone").first.try(:widgets)
+  end
+
+  # TODO: remove when Ember App implements DropTarget
+  def nav_widgets
+    drop_targets.where(html_id: "drop-target-nav").first.try(:widgets)
+  end
+
+  # TODO: remove when Ember App implements DropTarget
+  def footer_widgets
+    drop_targets.where(html_id: "drop-target-footer").first.try(:widgets)
+  end
+
+  # TODO: remove when Ember App implements DropTarget
+  def aside_widgets
+    drop_targets.where(html_id: "drop-target-aside").first.try(:widgets)
   end
 
   def stylesheets
@@ -69,13 +85,5 @@ class WebsiteTemplate < WebTemplate
     else
       web_theme.try(:secondary_color)
     end
-  end
-
-  private
-
-  def assign_defaults
-    self.name  ||= "Website Template"
-    self.title ||= name
-    self.slug  ||= title.parameterize
   end
 end

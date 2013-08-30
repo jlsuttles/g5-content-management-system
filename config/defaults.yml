@@ -1,0 +1,75 @@
+website:
+  website_template:
+    name: Website Template
+    web_layout:
+      name: main-first-sidebar-left
+    web_theme:
+      name: classic
+    drop_targets:
+      - html_id: drop-target-logo
+        widgets:
+          - name: logo
+      - html_id: drop-target-phone
+        widgets:
+          - name: phone
+      - html_id: drop-target-btn
+        widgets:
+          - name: button
+      - html_id: drop-target-nav
+        widgets:
+          - name: navigation
+      - html_id: drop-target-aside
+        widgets:
+          - name: calls-to-action
+          - name: social-links
+      - html_id: drop-target-footer
+        widgets:
+          - name: navigation
+          - name: contact-info
+          - name: hours
+  web_home_template:
+    name: Home
+    drop_targets:
+      - html_id: drop-target-main
+        widgets:
+          - name: calls-to-action
+          - name: social-links
+  web_page_templates:
+    - name: Amenities
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - name: html
+            - name: calls-to-action
+    - name: Coupon
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - name: coupon
+    - name: Floorplans and Rates
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - name: floorplans
+    - name: Map and Directions
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - name: human-directions
+            - name: html
+    - name: Neighborhood
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - name: html
+            - name: html
+    - name: Photo Gallery
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - name: gallery
+    - name: Residents
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - name: html

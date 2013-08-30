@@ -8,6 +8,7 @@ shared_examples_for HasSettingNavigation do
       let(:navigation) { described_instance.settings.build(name: "navigation") }
       it "finds setting with name navigation" do
         described_instance.save
+        navigation.save
         described_instance.setting_navigation.new_record?.should be_false
       end
     end

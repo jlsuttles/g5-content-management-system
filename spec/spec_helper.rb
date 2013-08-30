@@ -1,13 +1,13 @@
-require 'simplecov'
+require "simplecov"
 SimpleCov.start
 
-ENV["RAILS_ENV"] ||= 'test'
+ENV["RAILS_ENV"] ||= "test"
 require File.expand_path("../../config/environment", __FILE__)
-require 'capybara/rails'
-require 'rspec/rails'
-require 'capybara/rspec'
-require 'database_cleaner'
-require 'webmock/rspec'
+require "capybara/rails"
+require "rspec/rails"
+require "capybara/rspec"
+require "database_cleaner"
+require "webmock/rspec"
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -45,11 +45,6 @@ RSpec.configure do |config|
     Widget.stub(:garden_url) { "spec/support/widgets.html" }
     WebTheme.stub(:garden_url) { "spec/support/themes.html" }
     WebLayout.stub(:garden_url) { "spec/support/layouts.html" }
-
-    Widget.any_instance.stub(:configure_default_web_page_templates)
-    WebPageTemplate.any_instance.stub(:create_default_widgets)
-    Website.any_instance.stub(:create_website_template_defaults)
-    Website.any_instance.stub(:create_web_home_template_defaults)
   end
 end
 

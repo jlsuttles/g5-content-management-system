@@ -1,14 +1,6 @@
 require_dependency 'liquid_filters'
 
 class Widget < ActiveRecord::Base
-  LOGO =  "drop-target-logo"
-  PHONE = "drop-target-phone"
-  BTN = "drop-target-btn"
-  NAV = "drop-target-nav"
-  ASIDE = "drop-target-aside"
-  FOOTER = "drop-target-footer"
-  MAIN = "drop-target-main"
-
   include HasManySettings
   include AfterCreateSetDefaultCallsToAction
   include ComponentGardenable
@@ -18,8 +10,8 @@ class Widget < ActiveRecord::Base
   serialize :stylesheets, Array
   serialize :lib_javascripts, Array
 
-  belongs_to :web_template
-  has_one :website, through: :web_template
+  belongs_to :drop_target
+  has_one :web_template, through: :drop_target
 
   has_many :widget_entries, dependent: :destroy
 
@@ -28,16 +20,14 @@ class Widget < ActiveRecord::Base
 
   validates :url, presence: true
 
-  scope :in_section, lambda { |section| where(section: section) }
   scope :name_like_form, where("widgets.name LIKE '%Form'")
-
-  def self.build_widget_url(widget)
-    # sbs
-    garden_url + "/components/#{widget}"
-  end
 
   def website_id
     web_template.website_id if web_template
+  end
+
+  def html_id
+    drop_target.html_id if drop_target
   end
 
   def liquidized_html

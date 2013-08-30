@@ -3,8 +3,6 @@ require 'spec_helper'
 describe Widget do
   let(:widget) { Fabricate(:widget) }
 
-  it { Widget.in_section("drop-target-aside").should include widget }
-
   describe "remote" do
     let(:remotes) { Widget.all_remote }
     it "has many remote widgets" do
@@ -29,11 +27,6 @@ describe Widget do
     it { widget.edit_form_html.should eq "I'm an edit form!" }
     it { widget.html.should include "I'm a show page!" }
     it { widget.thumbnail.should eq "http://g5-widget-garden.herokuapp.com/static/components/storage-list/images/thumbnail.png"}
-  end
-
-  describe "assign_attributes_from_url with no property groups" do
-    let (:simple_widget) { Fabricate(:simple_widget) }
-    it { simple_widget.name.should eq "Simple Widget" }
   end
 
   describe "on create" do

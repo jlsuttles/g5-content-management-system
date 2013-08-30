@@ -6,8 +6,9 @@ class WebTemplate < ActiveRecord::Base
 
   has_one :web_layout , autosave: true , dependent: :destroy
   has_one :web_theme  , autosave: true , dependent: :destroy
-  # TODO: has_many :widgets, through: :drop_areas
-  has_many :widgets   , autosave: true , dependent: :destroy , order: "position asc"
+
+  has_many :drop_targets, autosave: true, dependent: :destroy
+  has_many :widgets, through: :drop_targets
 
   validates :title , presence: true
   validates :name  , presence: true
@@ -24,8 +25,13 @@ class WebTemplate < ActiveRecord::Base
   scope :navigateable, where("type != ?", "WebsiteTemplate")
   scope :created_at_asc, order("created_at ASC")
 
-  after_initialize :assign_defaults
-  before_validation :parameterize_title_to_slug
+  before_validation :default_title_from_name
+  before_validation :default_slug_from_title
+
+  # TODO: remove when Ember App implements DropTarget
+  def main_widgets
+    drop_targets.where(html_id: "drop-target-main").first.try(:widgets)
+  end
 
   def location
     website.try(:location)
@@ -49,13 +55,6 @@ class WebTemplate < ActiveRecord::Base
 
   def web_home_template?
     type == "WebHomeTemplate"
-  end
-
-  # is this used anywhere?
-  def remote_widgets
-    Widget.all_remote.delete_if do |widget|
-      widgets.map(&:name).include? widget.name
-    end
   end
 
   def stylesheets
@@ -91,14 +90,11 @@ class WebTemplate < ActiveRecord::Base
 
   private
 
-  def assign_defaults
-    self.name  ||= "Web Template"
+  def default_title_from_name
     self.title ||= name
-    self.slug  ||= name.parameterize
-    self.disabled ||= false
   end
 
-  def parameterize_title_to_slug
+  def default_slug_from_title
     self.slug ||= title.parameterize
   end
 end

@@ -1,4 +1,4 @@
 Fabricator :client do
-  name { Faker::Name.name }
   uid { Faker::Internet.domain_name }
+  name { Faker::Name.name }
 end
