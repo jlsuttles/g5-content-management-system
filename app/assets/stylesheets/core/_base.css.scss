@@ -35,12 +35,15 @@ ul, ol {
 label {
   @include font-size(12px);
   cursor: pointer;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
 #{$all-text-inputs} {
   @include box-sizing(border-box);
   @include font-size(14px);
+  border: $c-border-b;
+  display: block;
   font-family: $base-fontFamily;
   padding: 3px 5px;
 }
