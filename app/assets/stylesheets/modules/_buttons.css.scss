@@ -26,6 +26,7 @@
   @include box-sizing(border-box);
   @include transition(background-color 0.1s linear);
   background-color: $c-color-a;
+  border: none;
   color: #fff;
   display: inline-block;
   outline: none;
