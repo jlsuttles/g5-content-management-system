@@ -1,0 +1,76 @@
+// *************************************
+//
+//   Preview
+//   ->
+//
+// *************************************
+
+@import "bourbon";
+@import "core/helpers";
+@import "core/settings";
+
+.preview-banner {
+  @extend %group;
+  @extend %c-shout;
+  background: $base-color;
+  font-family: $base-fontFamily;
+  font-size: 16px;
+  line-height: $base-lineHeight;
+  padding-bottom: em(10px);
+  padding-top: em(10px);
+  position: relative;
+  text-transform: uppercase;
+  .l-container {
+    @extend %group;
+    @include box-sizing(border-box);
+    margin: 0 auto;
+    max-width: $l-maxWidth;
+    padding: 0 percent(10px, 320px);
+    @include respond-to($l-min-large) {
+      padding: 0 percent($base-whitespace);
+    }
+  }
+  h1 {
+    font-family: $base-fontFamily;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .navigation-container {
+    @include respond-to($l-min-large) {
+      float: right;
+    }
+  }
+  .banner-title {
+    color: #fff;
+    float: left;
+    font-size: 16px;
+    font-weight: $base-fontWeight;
+    letter-spacing: em(1px);
+    margin: 0;
+    a {
+      display: inline-block;
+    }
+    @include respond-to($l-min-large) {
+      font-size: 20px;
+    }
+  }
+
+  .banner-logo {
+    @extend %ir;
+    background-image: url(logo.png);
+    height: 27px;
+    vertical-align: middle;
+    width: 30px;
+    margin-right: $base-whitespace / 2;
+    @include respond-to($l-min-xlarge) {
+      margin-right: $base-whitespace;
+    }
+  }
+
+  .banner-subtitle {
+    color: $c-color-a;
+    font-weight: $base-fontWeight;
+  }
+}

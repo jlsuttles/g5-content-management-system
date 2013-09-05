@@ -1,5 +1,15 @@
 <%= content_for :title, web_template.title %>
 <%= content_for :head, stylesheet_link_tag(*web_template.compiled_stylesheets) %>
+<%= content_for :head, stylesheet_link_tag("preview") %>
 <%= content_for :body_classes, "page-#{web_template.slug}"%>
+
+<header class="preview-banner">
+  <div class="l-container">
+    <h1 class="banner-title">
+      <a href="<%= root_path %>"><span class="banner-logo">G5</span></a> Client Hub: <a href="<%= root_path %>"><strong class="banner-subtitle"><%= @client_name %></strong></a> >> <a href="<%= website_path(location.website) %>"><strong class="banner-subtitle"><%= location.name %></strong></a>
+    </h1>
+  </div> <!-- end .l-container -->
+</header>
+
 <%= raw preview(web_template.website, web_template) %>
 <%= content_for :bottom_of_body, javascript_include_tag(*web_template.javascripts) %>
