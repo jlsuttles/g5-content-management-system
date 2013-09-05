@@ -4,6 +4,7 @@
     width: 1230px;
     padding-left: 20px;
     padding-right: 20px;
+    position: relative;
   }
   .page-section {
     margin-bottom: 0;
@@ -39,11 +40,18 @@
   .layout-picker,
   .theme-picker,
   .widget-list {
-    @include standard-shadow;
     position: relative;
   }
+  .btn--toggle {
+    bottom: -2em;
+    position: absolute;
+    right: 20px;
+  }
+  .theme-picker .btn--toggle {
+    background: #fff;
+  }
   .layout-picker {
-    background: #efefef;
+    background: #f8f8f8;
     z-index: 5;
     img {
       opacity: 0.7;
@@ -118,7 +126,7 @@
   }
   .widget-list {
     @include clearfix;
-    background: url($linen) 0 0 repeat;
+    background: #f8f8f8;
     .instructions {
       display: inline-block;
       font-size: 22px;

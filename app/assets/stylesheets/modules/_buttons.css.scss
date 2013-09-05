@@ -40,6 +40,18 @@
   }
 }
 
+.btn-arrow-up {
+  @include triangle(10px, $base-color, up);
+  display: inline-block;
+  margin: 0 .5em .2em;
+}
+
+.btn-arrow-down {
+  @include triangle(10px, $base-color, down);
+  display: inline-block;
+  margin: 0 .5em -.2em;
+}
+
 
 // ----- Modifiers ----- //
 
@@ -54,4 +66,12 @@
   &:focus {
     background-color: darken($c-background-b, 10%);
   }
+}
+
+.btn--toggle {
+  @include font-size(12px);
+  background: #f8f8f8;
+  padding: .25em .5em;
+  text-decoration: none;
+  text-transform: uppercase;
 }
