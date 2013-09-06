@@ -34,7 +34,7 @@
     font-family: $base-fontFamily;
   }
   a {
-    color: #fff;
+    color: $c-color-b;
     text-decoration: none;
   }
   .navigation-container {
@@ -43,7 +43,7 @@
     }
   }
   .banner-title {
-    color: #fff;
+    color: $c-color-b;
     float: left;
     font-size: 16px;
     font-weight: $base-fontWeight;
