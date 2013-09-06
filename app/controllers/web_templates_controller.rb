@@ -4,7 +4,7 @@ class WebTemplatesController < ApplicationController
 
   def show
     render "web_templates/show", layout: "compiled_pages",
-      locals: { website: @website, web_template: @web_template, mode: "preview" }
+      locals: { website: @website, web_template: @web_template, location: @web_template.website.location, mode: "preview" }
   end
 
   def new

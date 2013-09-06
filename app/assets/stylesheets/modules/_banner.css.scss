@@ -25,12 +25,13 @@
 
 .banner-title {
   @include font-size($base-fontSize);
+  color: #fff;
   float: left;
   font-weight: $base-fontWeight;
   letter-spacing: em(1px);
   margin: 0;
   a {
-    display: block;
+    display: inline-block;
   }
   @include respond-to($l-min-large) {
     @include font-size(20px);
