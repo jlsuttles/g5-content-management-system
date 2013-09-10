@@ -20,7 +20,7 @@
           <%= link_to "Preview", web_template_path(web_template), class: "btn btn--small" %>
         </div>
 
-        <a href="#" title="Page Settings" class="card-corner flip-btn"><span class="icon icon--settings">Page Settings</span></a>
+        <a href="#" title="Page Settings" class="card-corner card-flip"><span class="icon icon--settings">Page Settings</span></a>
       </div>
     </div> <!-- end .back -->
 
@@ -49,12 +49,12 @@
           </div>
 
           <div class="buttons">
+            <%= link_to "Cancel", "#", class: "cancel-link card-flip" %>
             <%= link_to "Save", "#", class: "btn btn--small" %>
-            <%= link_to "Cancel", "#", class: "btn btn--a btn--small flip-btn" %>
           </div>
         </form>
 
-        <a href="#" title="Page Settings" class="card-corner flip-btn"><span class="icon icon--cancel">Page Settings</span></a>
+        <a href="#" title="Page Settings" class="card-corner card-flip"><span class="icon icon--cancel">Page Settings</span></a>
 
       </div>
     </div> <!-- end .back -->
