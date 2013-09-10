@@ -144,3 +144,16 @@ $ brew install graphviz
 $ rake diagram:all
 $ open doc/*.svg
 ```
+
+
+## CSS Naming Conventions
+
+Most CSS will go inside the modules folder. A module is simply a reusable chunk of CSS. To create a new module do the following:
+
+1. Create a new file inside the modules folder. It should start with an underscore and contain the module name. Example: _panel.css.scss
+1. The module name is the base class, which contains the basic styles for the module. Example: .panel
+1. If there are multiple words in the base class, use dashes. Example: .my-panel
+1. Any component, or part, of the module is a sub-module. The class should be the module name, a dash, and the sub-module. Example: .panel-title, .panel-footer
+1. For any alternate styles of the module the class should be module name, two dashes, and the alternate style name. Example: .panel--b, .panel--large
+
+
