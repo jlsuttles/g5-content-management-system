@@ -1,8 +1,8 @@
 <%= content_for :title, web_template.title %>
+<%= content_for :head, stylesheet_link_tag(*web_template.compiled_stylesheets) %>
 <% if mode == "preview"%>
   <%= content_for :head, stylesheet_link_tag("preview") %>
 <% end %>
-<%= content_for :head, stylesheet_link_tag(*web_template.compiled_stylesheets) %>
 <%= content_for :body_classes, "page-#{web_template.slug}"%>
 
 <% if mode == "preview"%>
