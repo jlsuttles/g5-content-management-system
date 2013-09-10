@@ -46,7 +46,7 @@ G5ClientHub::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( compiled_pages.js builder.css ember-builder.css ember_app.js)
+  config.assets.precompile += %w( compiled_pages.js builder.css ember-builder.css preview.css ember_app.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
