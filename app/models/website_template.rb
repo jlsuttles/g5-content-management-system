@@ -1,5 +1,10 @@
 class WebsiteTemplate < WebTemplate
   # TODO: remove when Ember App implements DropTarget
+  def head_widgets
+    drop_targets.where(html_id: "drop-target-head").first.try(:widgets)
+  end
+
+  # TODO: remove when Ember App implements DropTarget
   def logo_widgets
     drop_targets.where(html_id: "drop-target-logo").first.try(:widgets)
   end
