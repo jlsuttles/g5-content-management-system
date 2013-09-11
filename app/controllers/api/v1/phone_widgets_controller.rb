@@ -3,8 +3,4 @@ class Api::V1::PhoneWidgetsController < Api::V1::WidgetsController
   def klass
     "phone_widget"
   end
-
-  def section
-    Widget::PHONE
-  end
 end

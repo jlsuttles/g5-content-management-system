@@ -8,7 +8,7 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
   end
 
   def create
-    @widget = Widget.new(widget_params.merge(section: section))
+    @widget = Widget.new(widget_params)
     if @widget.save
       render json: @widget, root: klass
     else
@@ -28,10 +28,14 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
   private
 
   def widget_params
-    params[klass][:web_template_id] ||= params[klass][:website_template_id]
-    params[klass][:web_template_id] ||= params[klass][:web_home_template_id]
-    params[klass][:web_template_id] ||= params[klass][:web_page_template_id]
-    params.require(klass).permit(:url, :web_template_id)
+    # TODO: remove when Ember App implements DropTarget
+    web_template_id ||= params[klass][:website_template_id]
+    web_template_id ||= params[klass][:web_home_template_id]
+    web_template_id ||= params[klass][:web_page_template_id]
+    web_template = WebTemplate.find(web_template_id)
+    drop_target = web_template.drop_targets.find_by_html_id(section)
+    params[klass][:drop_target_id] = drop_target.id
+    params.require(klass).permit(:url, :drop_target_id)
   end
 
   def klass
@@ -39,5 +43,6 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
   end
 
   def section
+    "drop-target-#{klass.split("_").first}"
   end
 end

@@ -3,8 +3,4 @@ class Api::V1::MainWidgetsController < Api::V1::WidgetsController
   def klass
     "main_widget"
   end
-
-  def section
-    Widget::MAIN
-  end
 end
