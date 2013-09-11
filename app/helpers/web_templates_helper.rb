@@ -14,4 +14,8 @@ module WebTemplatesHelper
     # return the modified layout
     html.to_html
   end
+
+  def head_widgets(web_template)
+    web_template.head_widgets.map(&:liquidized_html).join
+  end
 end
