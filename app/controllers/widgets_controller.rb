@@ -12,7 +12,7 @@ class WidgetsController < ApplicationController
 
   def update
     @widget = Widget.find(params[:id])
-    if @widget.update_attributes(params[:widget])
+    if @widget.update_attributes(widget_params)
       respond_with(@widget) do |format|
         format.json { render json: @widget, status: 204}
         format.html { redirect_to web_template_path(@widget.web_template) }
@@ -23,5 +23,9 @@ class WidgetsController < ApplicationController
         format.html { render :edit }
       end
     end
+  end
+
+  def widget_params
+    params.require(:widget).permit(:settings_attributes => [:id, :value])
   end
 end
