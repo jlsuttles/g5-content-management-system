@@ -10,6 +10,7 @@ App.LocationRoute = Ember.Route.extend
     @controllerFor("websiteTemplate").set("model", model.get("websiteTemplate"))
     @controllerFor("webLayout").set("model", model.get("website.websiteTemplate.webLayout"))
     @controllerFor("webTheme").set("model", model.get("website.websiteTemplate.webTheme"))
+    @controllerFor("headWidgets").set("model", model.get("website.websiteTemplate.headWidgets"))
     @controllerFor("logoWidgets").set("model", model.get("website.websiteTemplate.logoWidgets"))
     @controllerFor("phoneWidgets").set("model", model.get("website.websiteTemplate.phoneWidgets"))
     @controllerFor("btnWidgets").set("model", model.get("website.websiteTemplate.btnWidgets"))
