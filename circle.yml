@@ -1,6 +1,6 @@
 ## Customize test commands
 test:
   override:
-    - bundle exec rspec
+    - CODECLIMATE_REPO_TOKEN=dcf473cbaa01c1af3bfeff1b3348686c82936fcca82a0b315e91d6079be38a27 bundle exec rspec
   post:
     - bundle exec guard-jasmine

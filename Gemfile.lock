@@ -64,6 +64,8 @@ GEM
     ckeditor (4.0.2)
       mime-types
       orm_adapter
+    codeclimate-test-reporter (0.0.7)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -304,6 +306,7 @@ DEPENDENCIES
   bourbon (~> 3.1.8)
   capybara (~> 2.1.0)
   ckeditor
+  codeclimate-test-reporter
   coffee-rails (~> 3.2.1)
   dalli
   database_cleaner (~> 0.9.1)

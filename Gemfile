@@ -56,6 +56,8 @@ group :development, :test do
   gem "guard-jasmine"
 end
 
+gem "codeclimate-test-reporter", group: :test, require: nil
+
 group :production do
   gem "thin", "~> 1.5.0"
   gem "pg"
