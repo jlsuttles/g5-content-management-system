@@ -16,9 +16,13 @@
           <h1 class="banner-title">
             <a href="<%= root_path %>"><span class="banner-logo">G5</span></a>
             Client Hub:
-            <a href="<%= root_path %>"><strong class="banner-subtitle"><%= @client_name %></strong></a>
+            <a href="<%= root_path %>">
+              <strong class="banner-subtitle"><%= @client_name %></strong>
+            </a>
             >>
-            <a href="<%= website_path(location.website) %>"><strong class="banner-subtitle"><%= location.name %></strong></a>
+            <a href="<%= website_path(location.website) %>">
+              <strong class="banner-subtitle"><%= location.name %></strong>
+            </a>
           </h1>
         </div> <!-- end .l-container -->
       </header>
