@@ -3,8 +3,4 @@ class Api::V1::LogoWidgetsController < Api::V1::WidgetsController
   def klass
     "logo_widget"
   end
-
-  def section
-    Widget::LOGO
-  end
 end

@@ -3,8 +3,4 @@ class Api::V1::BtnWidgetsController < Api::V1::WidgetsController
   def klass
     "btn_widget"
   end
-
-  def section
-    Widget::BTN
-  end
 end

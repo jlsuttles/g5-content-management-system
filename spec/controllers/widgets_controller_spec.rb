@@ -17,10 +17,6 @@ describe WidgetsController do
 
     describe "HTML" do
       let(:update) { put :update, id: 1, widget: { username: "Bookis" } }
-      it "attempts to update configurations" do
-        widget.should_receive(:update_attributes).once.with({"username" => "Bookis"})
-        update
-      end
       it "returns a 204 on success" do
         widget.stub(:update_attributes) { true }
         update
