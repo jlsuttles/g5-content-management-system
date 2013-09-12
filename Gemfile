@@ -20,6 +20,8 @@ gem "ckeditor"
 gem "draper", "~> 1.1.0"
 
 gem "ember-rails"
+gem "ember-source", "~> 1.0.0"
+gem "ember-data-source", "~> 0.14"
 
 group :assets do
   gem "sass-rails", "~> 3.2.3"
