@@ -2,7 +2,7 @@ source "https://rubygems.org"
 source "https://gems.gemfury.com/88yeKzEGfizstwBaXVqj/"
 ruby "1.9.3"
 
-gem "rails", "3.2.13"
+gem "rails", "~> 3.2.14"
 gem "jquery-rails", "~> 3.0.4"
 gem "jquery-ui-rails", "~> 4.0.5"
 
