@@ -8,5 +8,3 @@ machine:
 test:
   override:
     - bundle exec rspec
-  post:
-    - bundle exec guard-jasmine

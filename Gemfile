@@ -59,11 +59,8 @@ group :development, :test do
   gem "webmock", "~> 1.13.0", require: false
   gem "vcr", "~> 2.6.0", require: false
   # javascript specs
-  gem "jasmine", "~> 1.3.2"
-  gem "jasminerice", :git => "https://github.com/bradphelan/jasminerice.git"
   # guard specs
   gem "guard-rspec", "~> 2.1.0"
-  gem "guard-jasmine", "~> 1.18.3"
   gem "rb-fsevent", "~> 0.9.2"
   # ruby spec coverage
   gem "simplecov", "~> 0.7.1", require: false
