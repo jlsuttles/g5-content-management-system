@@ -6,6 +6,9 @@ website:
     web_theme:
       name: classic
     drop_targets:
+      - html_id: drop-target-head
+        widgets:
+          - name: meta
       - html_id: drop-target-logo
         widgets:
           - name: logo

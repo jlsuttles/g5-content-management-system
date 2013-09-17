@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head id="drop-target-head">
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <meta charset="utf8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%= yield(:head) %>
     <%= javascript_include_tag "/javascripts/modernizr.custom.js" %>
+    <%= stylesheet_link_tag("preview") if mode == "preview" %>
+    <%= yield(:head) %>
   </head>
   <body class="<%= [mode, yield(:body_classes)].join(" ") %>">
+
+    <% if mode == "preview"%>
+      <header class="preview-banner">
+        <div class="l-container">
+          <h1 class="banner-title">
+            <a href="<%= root_path %>"><span class="banner-logo">G5</span></a>
+            Client Hub:
+            <a href="<%= root_path %>">
+              <strong class="banner-subtitle"><%= @client_name %></strong>
+            </a>
+            >>
+            <a href="<%= website_path(location.website) %>">
+              <strong class="banner-subtitle"><%= location.name %></strong>
+            </a>
+          </h1>
+        </div> <!-- end .l-container -->
+      </header>
+    <% end %>
+
     <%= yield %>
 
     <%= javascript_include_tag "/javascripts/jquery-1.8.1.min.js" %>

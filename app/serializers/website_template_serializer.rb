@@ -4,6 +4,7 @@ class WebsiteTemplateSerializer < WebTemplateSerializer
   has_one  :web_layout
   has_one  :web_theme
 
+  has_many :head_widgets
   has_many :logo_widgets
   has_many :phone_widgets
   has_many :btn_widgets

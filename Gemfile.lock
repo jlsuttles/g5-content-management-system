@@ -64,6 +64,8 @@ GEM
     ckeditor (4.0.2)
       mime-types
       orm_adapter
+    codeclimate-test-reporter (0.0.7)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -89,7 +91,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0.3)
-    ember-data-source (0.13)
+    ember-data-source (0.14)
       ember-source
     ember-rails (0.12.0)
       active_model_serializers
@@ -98,8 +100,8 @@ GEM
       ember-source (>= 1.0.0.rc2.2)
       execjs (>= 1.2)
       railties (>= 3.1)
-    ember-source (1.0.0.rc5)
-      handlebars-source (= 1.0.0.rc4)
+    ember-source (1.0.0)
+      handlebars-source (= 1.0.12)
     erubis (2.7.0)
     eventmachine (1.0.3)
     excon (0.25.0)
@@ -140,7 +142,7 @@ GEM
     guard-rspec (2.1.2)
       guard (>= 1.1)
       rspec (~> 2.11)
-    handlebars-source (1.0.0.rc4)
+    handlebars-source (1.0.12)
     heroku-api (0.3.13)
       excon (~> 0.25.0)
     heroku_resque_autoscaler (0.1.1)
@@ -304,12 +306,15 @@ DEPENDENCIES
   bourbon (~> 3.1.8)
   capybara (~> 2.1.0)
   ckeditor
+  codeclimate-test-reporter
   coffee-rails (~> 3.2.1)
   dalli
   database_cleaner (~> 0.9.1)
   debugger (~> 1.2.1)
   draper (~> 1.1.0)
+  ember-data-source (~> 0.14)
   ember-rails
+  ember-source (~> 1.0.0)
   fabrication (~> 2.5.0)
   faker (~> 1.1.2)
   foreman (~> 0.60.2)
@@ -336,7 +341,6 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   selenium-webdriver (~> 2.32.1)
   shoulda-matchers (~> 2.0.0)
-  simplecov
   sqlite3
   strong_parameters
   thin (~> 1.5.0)

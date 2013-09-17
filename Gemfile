@@ -20,6 +20,8 @@ gem "ckeditor"
 gem "draper", "~> 1.1.0"
 
 gem "ember-rails"
+gem "ember-source", "~> 1.0.0"
+gem "ember-data-source", "~> 0.14"
 
 group :assets do
   gem "sass-rails", "~> 3.2.3"
@@ -46,13 +48,14 @@ group :development, :test do
   gem "debugger", "~> 1.2.1"
   gem "fabrication", "~> 2.5.0"
   gem "faker", "~> 1.1.2"
-  gem "simplecov", :require => false
   gem "pry"
   gem "webmock", "~> 1.11.0", :require => false
   gem "jasmine"
   gem "jasminerice", :git => "https://github.com/bradphelan/jasminerice.git"
   gem "guard-jasmine"
 end
+
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :production do
   gem "thin", "~> 1.5.0"
