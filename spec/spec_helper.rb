@@ -18,7 +18,7 @@ RSpec.configure do |config|
   config.include Capybara::DSL, type: :request
 
   config.before(:all, type: :request) do
-    WebMock.disable_net_connect!(:allow_localhost => true)
+    WebMock.disable_net_connect!(:allow_localhost => true, :allow => "codeclimate.com")
   end
 
   config.before(:suite) do
