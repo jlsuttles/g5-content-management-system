@@ -5,8 +5,7 @@ App.TogglePanelView = Ember.View.extend
   href: '#'
 
   click: (e) ->
-    $(this).find('.toggle-panel-text')
-      .toggle()
-      .parent().parent().next()
-      .slideToggle()
-    return false
+    toggleBtn = $(e.currentTarget)
+    toggleBtn.find('.toggle-panel-text').toggle()
+    toggleBtn.siblings().slideToggle()
+    false
