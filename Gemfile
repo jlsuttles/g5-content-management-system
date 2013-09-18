@@ -48,6 +48,7 @@ group :development, :test do
   gem "debugger", "~> 1.2.1"
   gem "fabrication", "~> 2.5.0"
   gem "faker", "~> 1.1.2"
+  gem "simplecov", :require => false
   gem "pry"
   gem "webmock", "~> 1.11.0", :require => false
   gem "jasmine"
