@@ -24,7 +24,6 @@
   @extend %c-shout;
   @extend %c-h6;
   @include box-sizing(border-box);
-  @include transition(background-color 0.1s linear);
   background-color: $c-color-a;
   border: none;
   color: #fff;
@@ -74,4 +73,34 @@
   padding: .25em .5em;
   text-decoration: none;
   text-transform: uppercase;
+  &:hover,
+  &:focus {
+    .btn--toggle-hide:before {
+      border-bottom-color: $c-color-a;
+    }
+    .btn--toggle-show:before {
+      border-top-color: $c-color-a;
+    }
+  }
+}
+
+.btn--toggle-hide,
+.btn--toggle-show {
+  margin-left: 5px;
+  position: relative;
+  &:before {
+    content: '';
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+.btn--toggle-hide:before {
+  @include triangle(10px, $base-color, up);
+  margin-bottom: 2px;
+}
+
+.btn--toggle-show:before {
+  @include triangle(10px, $base-color, down);
+  margin-bottom: -3px;
 }
