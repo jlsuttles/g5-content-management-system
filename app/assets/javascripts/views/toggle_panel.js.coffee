@@ -1,5 +1,5 @@
 App.TogglePanelView = Ember.View.extend
-  tagName: "div"
+  tagName: "a"
 
   didInsertElement: ->
     $(".btn--toggle").on 'click', (e) ->

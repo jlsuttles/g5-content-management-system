@@ -1,12 +1,7 @@
 <div class="layout-picker thumbnail-field">
   <div class="l-container">
 
-    {{#view App.TogglePanelView}}
-      <a href="#" class="btn--toggle">Select Layout
-        <span class="toggle-panel-text btn--toggle-hide">Hide</span>
-        <span class="toggle-panel-text hide btn--toggle-show">Show</span>
-      </a>
-    {{/view}}
+    {{ partial "panelToggleButton" }}
 
     <div id="layouts" class="toggle-content page-section">
       <h2 class="page-title">Select a Layout</h2>
