@@ -45,7 +45,6 @@ group :development, :test do
   gem "shoulda-matchers", "~> 2.0.0"
   gem "guard-rspec", "~> 2.1.0"
   gem "rb-fsevent", "~> 0.9.2"
-  gem "debugger", "~> 1.2.1"
   gem "fabrication", "~> 2.5.0"
   gem "faker", "~> 1.1.2"
   gem "simplecov", :require => false
