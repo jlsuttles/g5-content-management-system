@@ -1,5 +1,5 @@
 <div class="theme-picker thumbnail-field clearfix">
-  <div class="l-container page-section">
+  <div class="l-container">
 
     {{#view App.TogglePanelView contentBinding="this"}}
       <span class="btn-txt">Select Themes</span>
@@ -7,7 +7,7 @@
       <span class="toggle-panel-text hide btn--toggle-show">Show</span>
     {{/view}}
 
-    <div class="toggle-content">
+    <div class="toggle-content page-section">
       <h2 class="page-title">Select a Theme</h2>
       {{#if model.isUpdating}}
         <div class="loading">Loading...</div>

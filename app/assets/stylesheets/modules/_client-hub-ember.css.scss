@@ -43,10 +43,22 @@
     position: relative;
   }
   .btn--toggle {
+    @include box-sizing(border-box);
+    @include transition(right .3s ease);
     bottom: -2em;
     position: absolute;
     right: 20px;
+    width: 175px;
     z-index: 100;
+  }
+  .toggle-1 {
+    right: 20px;
+  }
+  .toggle-2 {
+    right: 200px;
+  }
+  .toggle-3 {
+    right: 380px;
   }
   .theme-picker .btn--toggle {
     background: #fff;

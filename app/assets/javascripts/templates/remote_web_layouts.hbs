@@ -1,5 +1,5 @@
 <div class="layout-picker thumbnail-field">
-  <div class="l-container page-section">
+  <div class="l-container">
 
     {{#view App.TogglePanelView contentBinding="this"}}
       <span class="btn-txt">Select Layouts</span>
@@ -7,7 +7,7 @@
       <span class="toggle-panel-text hide btn--toggle-show">Show</span>
     {{/view}}
 
-    <div id="layouts" class="toggle-content">
+    <div id="layouts" class="toggle-content page-section">
       <h2 class="page-title">Select a Layout</h2>
       {{#if model.isUpdating}}
         <div class="loading">Loading...</div>
