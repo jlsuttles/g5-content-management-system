@@ -26,7 +26,7 @@
   @include box-sizing(border-box);
   background-color: $c-color-a;
   border: none;
-  color: #fff;
+  color: $c-color-b;
   display: inline-block;
   outline: none;
   padding: .5em 2em;
@@ -35,7 +35,7 @@
   &:hover,
   &:focus {
     background-color: darken($c-color-a, 10%);
-    color: #fff;
+    color: $c-color-b;
   }
 }
 
@@ -69,7 +69,7 @@
 
 .btn--toggle {
   @include font-size(12px);
-  background: #f8f8f8;
+  background: $c-background-c;
   padding: .25em .5em;
   text-align: center;
   text-decoration: none;

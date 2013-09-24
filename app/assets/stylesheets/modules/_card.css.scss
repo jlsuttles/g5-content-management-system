@@ -64,7 +64,7 @@
 .card-head {
   @extend %group;
   background-color: $base-color;
-  color: #fff;
+  color: $c-color-b;
   padding: 1em;
   h3 {
     @extend %c-h6;

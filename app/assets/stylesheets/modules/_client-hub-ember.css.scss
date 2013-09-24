@@ -30,7 +30,7 @@
       text-decoration: none;
     }
     img {
-      border: 2px solid #fff;
+      border: 2px solid $c-color-b;
       margin-bottom: .5em;
     }
   }
@@ -61,10 +61,10 @@
     right: 380px;
   }
   .theme-picker .btn--toggle {
-    background: #fff;
+    background: $c-color-b;
   }
   .layout-picker {
-    background: #f8f8f8;
+    background: $c-background-c;
     z-index: 5;
     img {
       opacity: 0.7;
@@ -77,7 +77,7 @@
   .jThumbnailScroller .jTscrollerNextButton,
   .jThumbnailScroller .jTscrollerPrevButton {
     background-color: #f17c50;
-    border: 2px solid #fff;
+    border: 2px solid $c-color-b;
   }
   .theme-picker {
     z-index: 4;
@@ -139,7 +139,7 @@
   }
   .widget-list {
     @include clearfix;
-    background: #f8f8f8;
+    background: $c-background-c;
     .instructions {
       display: inline-block;
       font-size: 22px;
