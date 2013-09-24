@@ -1,6 +1,12 @@
 <div class="widget-list">
-  <div class="l-container page-section">
-    <div class="left">
+  <div class="l-container">
+    {{#view App.TogglePanelView contentBinding="this"}}
+      <span class="btn-txt">Select Widgets</span>
+      <span class="toggle-panel-text btn--toggle-hide">Hide</span>
+      <span class="toggle-panel-text hide btn--toggle-show">Show</span>
+    {{/view}}
+
+    <div class="toggle-content page-section">
       <h2 class="page-title">Select Widgets</h2>
       {{#if model.isUpdating}}
         Loading...

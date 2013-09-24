@@ -1,21 +1,30 @@
 <div class="layout-picker thumbnail-field">
-  <div class="l-container page-section">
-    <h2 class="page-title">Select a Layout</h2>
-    {{#if model.isUpdating}}
-      <div class="loading">Loading...</div>
-    {{else}}
-      <div class="thumbs clearfix">
-      {{#each model}}
-        <div class="thumb">
-          <a href="#" {{ action "update" this }}>
-            {{#view App.RemoteWebLayoutView contentBinding="this"}}
-            <img alt="Thumbnail" {{ bindAttr src="thumbnail" }} {{ bindAttr class="view.isSelected" }}>
-            {{ name }}
-            {{/view}}
-          </a>
+  <div class="l-container">
+
+    {{#view App.TogglePanelView contentBinding="this"}}
+      <span class="btn-txt">Select Layouts</span>
+      <span class="toggle-panel-text btn--toggle-hide">Hide</span>
+      <span class="toggle-panel-text hide btn--toggle-show">Show</span>
+    {{/view}}
+
+    <div id="layouts" class="toggle-content page-section">
+      <h2 class="page-title">Select a Layout</h2>
+      {{#if model.isUpdating}}
+        <div class="loading">Loading...</div>
+      {{else}}
+        <div class="thumbs clearfix">
+        {{#each model}}
+          <div class="thumb">
+            <a href="#" {{ action "update" this }}>
+              {{#view App.RemoteWebLayoutView contentBinding="this"}}
+              <img alt="Thumbnail" {{ bindAttr src="thumbnail" }} {{ bindAttr class="view.isSelected" }}>
+              {{ name }}
+              {{/view}}
+            </a>
+          </div>
+        {{/each}}
         </div>
-      {{/each}}
-      </div>
-    {{/if}}
+      {{/if}}
+    </div>
   </div>
 </div>
