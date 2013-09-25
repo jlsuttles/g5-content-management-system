@@ -16,6 +16,9 @@
 </div>
 
 <div class="site-pages page-section">
+  <div class="page-title">
+    <a href="#" class="btn">Create New Page</a>
+  </div>
   <% @web_page_templates.each do |web_page_template| %>
     <%= render partial: "page_template", locals: { website: @website, web_template: web_page_template } %>
   <% end %>
