@@ -33,7 +33,7 @@ describe "website requests", js: true do
     end
 
     it "goes to ember app when I click edit link" do
-      within ".site-pages .card:first-child .flipper .front .card-body .buttons" do
+      within ".site-pages .card:first-of-type .flipper .front .card-body .buttons" do
         click_link "Edit"
       end
       current_path.should eq "/ember/"
