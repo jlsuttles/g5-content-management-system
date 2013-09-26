@@ -9,12 +9,21 @@ class WebsitesSeeder
   end
 
   def perform(location)
+    client = Client.first
+
     Rails.logger.info "Creating website for location #{location.name}"
     website = location.create_website
+
+    Rails.logger.info "Creating website settings"
+    website.settings.create!(name: "client_urn", value: client.urn)
+    website.settings.create!(name: "location_urn", value: location.urn)
+
     Rails.logger.info "Creating website template"
     create_website_template(website, DEFAULTS["website"]["website_template"])
+
     Rails.logger.info "Creating web home template"
     create_web_home_template(website, DEFAULTS["website"]["web_home_template"])
+
     Rails.logger.info "Creating web page template"
     create_web_page_templates(website, DEFAULTS["website"]["web_page_templates"])
   end
