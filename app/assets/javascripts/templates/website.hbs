@@ -13,10 +13,15 @@
   </div>
 
   <div class="site-pages page-section">
-    {{ render "website/webPageTemplate" webHomeTemplate }}
-    {{#each webPageTemplates}}
-      {{ render "website/webPageTemplate" this }}
-    {{/each}}
+    <div class="page-title">
+      <a href="#" class="btn">Create New Page</a>
+    </div>
+    <div class="cards">
+      {{ render "website/webPageTemplate" webHomeTemplate }}
+      {{#each webPageTemplates}}
+        {{ render "website/webPageTemplate" this }}
+      {{/each}}
+    </cards>
   </div>
 
   <div class="delete-page">
