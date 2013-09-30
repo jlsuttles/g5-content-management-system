@@ -14,13 +14,16 @@
 
   <div class="site-pages page-section">
     <div class="page-title">
-      <a href="#" class="btn">Create New Page</a>
+      {{#linkTo "webPageTemplates.new" class="btn" }}Create New Page{{/linkTo}}
     </div>
     <div class="cards">
-      {{ render "website/webPageTemplate" webHomeTemplate }}
       {{#each webPageTemplates}}
-        {{ render "website/webPageTemplate" this }}
+        {{#unless isNew}}
+          {{ render "website/webPageTemplate" this }}
+        {{/unless}}
       {{/each}}
+
+      {{ outlet "newWebPageTemplate" }}
     </div>
   </div>
 

@@ -8,12 +8,12 @@
 
       <div class="form-field">
         <label>Page Name</label>
-        <input type="text" />
+        {{input value=name}}
       </div>
 
       <div class="form-field">
         <label>Page Title</label>
-        <input type="text" />
+        {{input}}
       </div>
 
       <div class="form-field">
@@ -21,12 +21,13 @@
       </div>
 
       <div class="buttons">
-        {{! <%= link_to "Save", "#", class: "btn btn--small" %> }}
-        {{! <%= link_to "Cancel", "#", class: "btn btn--a btn--small card-flip" %> }}
+        <button {{action save}} class="btn btn--small">Save</button>
+        <button {{action cancel}} class="btn btn--small">Cancel</button>
       </div>
     </form>
-
-    {{ partial "website/webPageTemplateFlip" }}
-
+    
+    {{#unless isNew}}
+      {{ partial "website/webPageTemplateFlip" }}
+    {{/unless}}
   </div>
 </div>

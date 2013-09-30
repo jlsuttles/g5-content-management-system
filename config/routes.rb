@@ -38,7 +38,7 @@ G5ClientHub::Application.routes.draw do
       resources :footer_widgets, only: [:index, :show, :create, :destroy]
 
       resources :web_home_templates, only: [:show]
-      resources :web_page_templates, only: [:show]
+      resources :web_page_templates, only: [:show, :create]
       resources :main_widgets, only: [:index, :show, :create, :destroy]
 
       resources :remote_web_layouts, only: [:index]
