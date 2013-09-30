@@ -1,0 +1,254 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/components/twitter-feed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Mon, 30 Sep 2013 20:09:23 GMT
+      Last-Modified:
+      - Fri, 27 Sep 2013 22:47:55 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      Set-Cookie:
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWQyOTgwOTJmNGQyNWZmZmUzNDRiZDg3ZTE5NjI5YzE3BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWhMQ0xUTkJLN2xnR2doZlJ1TGpmYkEyMG5rVy9WTURVSVFvMFFZVDZRTGc9BjsARg%3D%3D--5816b7afb5747afa48f1b7f9e3c3d1a3afb42493;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 717e908e86c3f9ca9daa02ca514c96be
+      X-Runtime:
+      - '0.064334'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Widget Garden</title>\n
+        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
+        type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
+        \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
+        type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
+        name=\"csrf-param\" />\n<meta content=\"hLCLTNBK7lgGghfRuLjfbA20nkW/VMDUIQo0QYT6QLg=\"
+        name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
+        \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
+        \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
+        \           <!-- .btn-navbar is used as the toggle for collapsed navbar content
+        -->\n            <a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">\n
+        \             <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n
+        \             <span class=\"icon-bar\"></span>\n            </a>\n\n            <!--
+        Be sure to leave the brand out there if you want it shown -->\n            <a
+        class=\"brand\" href=\"/\">G5 Widget Garden</a>\n\n            <!-- Everything
+        you want hidden at 940px or less, place within here -->\n            <div
+        class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
+        \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
+        \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
+        \     <a href=\"http://g5-widget-garden.herokuapp.com/components/twitter-feed\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Twitter Feed</a>\n    </h2>\n    <p
+        class=\"p-summary\">List of twitter posts</p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/images/thumbnail.png</a>\n
+        \       </p>\n\n      <h3>Javascripts</h3>\n\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/javascripts/libs/twitter.js\"
+        class=\"u-g5-lib-javascript u-url\">http://g5-widget-garden.herokuapp.com/javascripts/libs/twitter.js</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/javascripts/show.js\"
+        class=\"u-g5-show-javascript u-url\">http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/javascripts/show.js</a>\n
+        \     </p>\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/stylesheets/twitter-feed.css\"
+        class=\"u-g5-stylesheet u-url\">http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/stylesheets/twitter-feed.css</a>\n
+        \       </p>\n      <ul class=\"unstyled\">\n          <li class=\"e-g5-property-group
+        h-g5-property-group\">\n            <h3><span class=\"p-name\">Twitter Feed</span>Property
+        Group</h3>\n  <p class=\"p-category\">Instance</p>\n  <div class=\"row\">\n
+        \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
+        e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
+        class=\"p-g5-name\">twitter_username</th>\n        </tr>\n          <tr>\n
+        \           <th style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
+        \             true\n            </td>\n          </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
+        \             username\n            </td>\n          </tr>\n      </table>\n
+        \   </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"span5\">\n      <table
+        class=\"table table-striped table-bordered e-g5-property h-g5-property\">\n
+        \       <tr>\n          <th>Name</th>\n          <td class=\"p-g5-name\">twitter_display_avatars</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              true\n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">twitter_tweet_count</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              3\n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n\n
+        \         </li>\n      </ul>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;!--
+        BEGIN EDIT FORM MARKUP --&gt;\n&lt;form&gt;\n  &lt;div class=&quot;form-field&quot;&gt;\n
+        \   {{ widget.twitter_username.id_hidden_field }}\n    &lt;label for=&quot;{{
+        widget.twitter_username.value_field_id }}&quot; &gt;\n      Twitter Username\n
+        \   &lt;/label&gt;\n    &lt;input type=&quot;text&quot;\n      id=&quot;{{
+        widget.twitter_username.value_field_id }}&quot;\n      name=&quot;{{ widget.twitter_username.value_field_name
+        }}&quot;\n      value=&quot;{{ widget.twitter_username.best_value }}&quot;\n
+        \   /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field check-field&quot;&gt;\n
+        \   {{ widget.twitter_display_avatars.id_hidden_field }}\n    &lt;input type=&quot;hidden&quot;\n
+        \     id=&quot;{{ widget.twitter_display_avatars.value_field_id }}_false&quot;\n
+        \     name=&quot;{{ widget.twitter_display_avatars.value_field_name }}&quot;\n
+        \     value=&quot;false&quot;\n    /&gt;\n    &lt;input type=&quot;checkbox&quot;\n
+        \     id=&quot;{{ widget.twitter_display_avatars.value_field_id }}&quot;\n
+        \     name=&quot;{{ widget.twitter_display_avatars.value_field_name }}&quot;\n
+        \     value=&quot;true&quot;\n      {% if web_page.display == &quot;true&quot;
+        %}\n      checked=&quot;checked&quot;\n      {% endif %}\n    /&gt;\n    &lt;label
+        for=&quot;{{ widget.twitter_display_avatars.value_field_id }}&quot;&gt;\n
+        \     Show Avatars\n    &lt;/label&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
+        \   {{ widget.twitter_tweet_count.id_hidden_field }}\n    &lt;label for=&quot;{{
+        widget.twitter_tweet_count.value_field_id }}&quot;&gt;\n      Number of Tweets
+        to Show\n    &lt;/label&gt;\n    &lt;input type=&quot;number&quot;\n      min=&quot;1&quot;\n
+        \     id=&quot;{{ widget.twitter_tweet_count.value_field_id }}&quot;\n      name=&quot;{{
+        widget.twitter_tweet_count.value_field_name }}&quot;\n      value=&quot;{{
+        widget.twitter_tweet_count.best_value }}&quot;\n    /&gt;\n  &lt;/div&gt;\n\n
+        \ &lt;input type=&quot;submit&quot; value=&quot;Save&quot; class=&quot;btn&quot;
+        /&gt;\n&lt;/form&gt;\n\n&lt;!-- END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN
+        SHOW MARKUP --&gt;\n&lt;script id=&quot;twitter-feed-config&quot; type=&quot;application/json&quot;&gt;\n
+        \ {\n    &quot;id&quot;: &quot;{{ widget.twitter_username.best_value }}&quot;,\n
+        \   &quot;count&quot;: {{ widget.twitter_tweet_count.best_value }},\n    &quot;enableLinks&quot;:
+        true,\n    &quot;ignoreReplies&quot;: true,\n    &quot;clearContents&quot;:
+        true,\n    &quot;template&quot;: &quot;{% if widget.twitter_display_avatars.best_value
+        == &#x27;true&#x27; %} &lt;img src=\\\\&#x27;%user_profile_image_url%\\\\&#x27;
+        class=\\\\&#x27;tweet-avatar\\\\&#x27; /&gt; {% endif %} &lt;span class=\\\\&#x27;tweet-text\\\\&#x27;&gt;%text%
+        &lt;a href=\\\\&#x27;http://twitter.com/%user_screen_name%/statuses/%id_str%/\\\\&#x27;
+        class=\\\\&#x27;tweet-date\\\\&#x27;&gt;%time%&lt;/a&gt;&lt;/span&gt;&quot;\n
+        \ };\n&lt;/script&gt;\n\n&lt;div id=&quot;tweets&quot; class=&quot;twitter-feed
+        widget&quot;&gt;\n\n&lt;/div&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
+        \   </div>\n  </body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 30 Sep 2013 20:09:24 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/show.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Content-Type:
+      - text/html
+      Date:
+      - Mon, 30 Sep 2013 20:09:23 GMT
+      Last-Modified:
+      - Fri, 27 Sep 2013 22:47:55 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Content-Digest:
+      - c71048cb02a2d60533ab0354655ba7fdf3f9fd21
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '630'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<script id=\"twitter-feed-config\" type=\"application/json\">\n  {\n
+        \   \"id\": \"{{ widget.twitter_username.best_value }}\",\n    \"count\":
+        {{ widget.twitter_tweet_count.best_value }},\n    \"enableLinks\": true,\n
+        \   \"ignoreReplies\": true,\n    \"clearContents\": true,\n    \"template\":
+        \"{% if widget.twitter_display_avatars.best_value == 'true' %} <img src=\\\\'%user_profile_image_url%\\\\'
+        class=\\\\'tweet-avatar\\\\' /> {% endif %} <span class=\\\\'tweet-text\\\\'>%text%
+        <a href=\\\\'http://twitter.com/%user_screen_name%/statuses/%id_str%/\\\\'
+        class=\\\\'tweet-date\\\\'>%time%</a></span>\"\n  };\n</script>\n\n<div id=\"tweets\"
+        class=\"twitter-feed widget\">\n\n</div>\n"
+    http_version: 
+  recorded_at: Mon, 30 Sep 2013 20:09:24 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/edit.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Content-Type:
+      - text/html
+      Date:
+      - Mon, 30 Sep 2013 20:09:23 GMT
+      Last-Modified:
+      - Fri, 27 Sep 2013 22:47:55 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Content-Digest:
+      - a29d75092ef2d0598075d83f0dee8f78f34d99c8
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '1543'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<form>\n  <div class=\"form-field\">\n    {{ widget.twitter_username.id_hidden_field
+        }}\n    <label for=\"{{ widget.twitter_username.value_field_id }}\" >\n      Twitter
+        Username\n    </label>\n    <input type=\"text\"\n      id=\"{{ widget.twitter_username.value_field_id
+        }}\"\n      name=\"{{ widget.twitter_username.value_field_name }}\"\n      value=\"{{
+        widget.twitter_username.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field
+        check-field\">\n    {{ widget.twitter_display_avatars.id_hidden_field }}\n
+        \   <input type=\"hidden\"\n      id=\"{{ widget.twitter_display_avatars.value_field_id
+        }}_false\"\n      name=\"{{ widget.twitter_display_avatars.value_field_name
+        }}\"\n      value=\"false\"\n    />\n    <input type=\"checkbox\"\n      id=\"{{
+        widget.twitter_display_avatars.value_field_id }}\"\n      name=\"{{ widget.twitter_display_avatars.value_field_name
+        }}\"\n      value=\"true\"\n      {% if web_page.display == \"true\" %}\n
+        \     checked=\"checked\"\n      {% endif %}\n    />\n    <label for=\"{{
+        widget.twitter_display_avatars.value_field_id }}\">\n      Show Avatars\n
+        \   </label>\n  </div>\n\n  <div class=\"form-field\">\n    {{ widget.twitter_tweet_count.id_hidden_field
+        }}\n    <label for=\"{{ widget.twitter_tweet_count.value_field_id }}\">\n
+        \     Number of Tweets to Show\n    </label>\n    <input type=\"number\"\n
+        \     min=\"1\"\n      id=\"{{ widget.twitter_tweet_count.value_field_id }}\"\n
+        \     name=\"{{ widget.twitter_tweet_count.value_field_name }}\"\n      value=\"{{
+        widget.twitter_tweet_count.best_value }}\"\n    />\n  </div>\n\n  <input type=\"submit\"
+        value=\"Save\" class=\"btn\" />\n</form>\n"
+    http_version: 
+  recorded_at: Mon, 30 Sep 2013 20:09:25 GMT
+recorded_with: VCR 2.6.0

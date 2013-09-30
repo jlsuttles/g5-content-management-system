@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Fri, 27 Sep 2013 22:47:55 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Tue, 01 Oct 2013 19:36:47 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 909449af0aa7a1be4c9a33edd0ec39da
+      X-Runtime:
+      - '0.017576'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 01 Oct 2013 19:36:47 GMT
+recorded_with: VCR 2.6.0
