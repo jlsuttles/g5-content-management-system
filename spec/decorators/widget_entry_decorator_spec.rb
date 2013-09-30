@@ -1,7 +1,8 @@
 require 'spec_helper'
 
-describe WidgetEntryDecorator do
-  let(:widget_entry) { Fabricate.build(:widget_entry) }
+describe WidgetEntryDecorator, vcr: VCR_OPTIONS do
+  let(:widget) { Fabricate(:widget) }
+  let(:widget_entry) { Fabricate.build(:widget_entry, widget_id: widget.id) }
   let(:decorated_widget_entry) { WidgetEntryDecorator.decorate(widget_entry) }
 
   describe "#name" do

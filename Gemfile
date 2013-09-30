@@ -52,6 +52,7 @@ group :development, :test do
   gem "fabrication", "~> 2.5.0"
   gem "faker", "~> 1.1.2"
   gem "webmock", "~> 1.13.0", require: false
+  gem "vcr", "~> 2.6.0", require: false
   # javascript specs
   gem "jasmine", "~> 1.3.2"
   gem "jasminerice", :git => "https://github.com/bradphelan/jasminerice.git"

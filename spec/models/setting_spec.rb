@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Setting do
+describe Setting, vcr: VCR_OPTIONS do
   describe "#validation" do
     let(:setting) { Setting.create }
     it "must have a name" do

@@ -1,7 +1,8 @@
 require "spec_helper"
 
-describe "locations requests", js: true do
+describe "locations requests", js: true, vcr: VCR_OPTIONS do
   before do
+    Resque.stub(:enqueue)
     @client = Fabricate(:client)
     @location = Fabricate(:location)
     @website = Fabricate(:website)
@@ -12,13 +13,14 @@ describe "locations requests", js: true do
     before do
       visit locations_path
     end
+
     it "should have content" do
       page.should have_content @client.name.upcase
       page.should have_content @location.name
       page.should have_content @website.name
     end
+
     it "locations#index when I click deploy link" do
-      Resque.stub(:enqueue)
       within ".faux-table .faux-table-row:first-child" do
         click_link "Deploy"
       end

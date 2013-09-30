@@ -1,7 +1,7 @@
 require "spec_helper"
 
 shared_examples_for ComponentGardenable do
-  describe "#garden_microformats" do
+  describe "#garden_microformats", vcr: VCR_OPTIONS do
     it "returns microformats when no error" do
       described_class.garden_microformats.should be_present
     end
@@ -14,7 +14,6 @@ shared_examples_for ComponentGardenable do
     end
 
     it "raises error if there is an OpenURI::HTTPError other than 304" do
-      described_class.garden_microformats
       Microformats2::Parser.any_instance.stub(:parse).
         and_raise(OpenURI::HTTPError.new("400 Not Found", nil))
       expect{ described_class.garden_microformats }.to raise_error(OpenURI::HTTPError)

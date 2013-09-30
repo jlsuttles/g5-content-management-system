@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "website requests", js: true do
+describe "website requests", js: true, vcr: VCR_OPTIONS do
   before do
     @client = Fabricate(:client)
     @location = Fabricate(:location)

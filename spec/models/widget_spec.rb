@@ -1,109 +1,227 @@
-require 'spec_helper'
+require "spec_helper"
 
-describe Widget do
-  let(:widget) { Fabricate(:widget) }
+describe Widget, vcr: VCR_OPTIONS do
 
-  describe "remote" do
-    let(:remotes) { Widget.all_remote }
-    it "has many remote widgets" do
-      remotes.should have_at_least(8).things
-    end
+  describe ".all_remote" do
+    let(:all_remote) { WidgetSupport.all_remote }
 
-    describe "remote to new" do
-      let(:remote) { remotes.first }
-
-      it { remote.should be_an_instance_of Widget }
-      it { remote.name.should_not be_blank }
-      it { remote.url.should_not  be_blank }
+    it "returns 23 widgets with names, urls, and thumbails" do
+      expect(all_remote).to have(23).items
+      all_remote.each do |a_remote|
+        expect(a_remote).to be_an_instance_of Widget
+        expect(a_remote.name).to be_present
+        expect(a_remote.url).to be_present
+        expect(a_remote.thumbnail).to be_present
+      end
     end
   end
 
-  describe "assign_attributes_from_url" do
-    it { widget.name.should eq "Storage List" }
-    it { widget.stylesheets.should have(1).thing }
-    it { widget.edit_javascript.should eq "http://g5-widget-garden.herokuapp.com/static/components/storage-list/javascripts/edit.js" }
-    it { widget.show_javascript.should eq "http://g5-widget-garden.herokuapp.com/static/components/storage-list/javascripts/show.js" }
-    it { widget.lib_javascripts.should eq ["http://g5-widget-garden.herokuapp.com/javascripts/libs/lib.js"] }
-    it { widget.edit_form_html.should eq "I'm an edit form!" }
-    it { widget.html.should include "I'm a show page!" }
-    it { widget.thumbnail.should eq "http://g5-widget-garden.herokuapp.com/static/components/storage-list/images/thumbnail.png"}
+  describe "#assign_attributes_from_url" do
+    describe "any widget" do
+      let(:widget) { Fabricate.build(:widget) }
+
+      before do
+        widget.send(:assign_attributes_from_url)
+      end
+
+      it "assigns a name" do
+        expect(widget.name).to be_present
+      end
+
+      it "assigns a url" do
+        expect(widget.url).to be_present
+      end
+
+      it "assigns a thumbnail" do
+        expect(widget.thumbnail).to be_present
+      end
+
+      it "assigns show html" do
+        expect(widget.html).to be_present
+      end
+
+      it "assigns edit html" do
+        expect(widget.edit_form_html).to be_present
+      end
+
+      it "assigns settings" do
+        expect(widget.settings).to be_present
+      end
+
+      describe "assigns settings attributes" do
+        let(:setting) { widget.settings.first }
+
+        it "assigns name" do
+          expect(setting.name).to be_present
+        end
+
+        it "assigns editable" do
+          expect(setting.editable).to_not be_nil
+        end
+
+        it "assigns default_value" do
+          expect(setting.default_value).to_not be_nil
+        end
+
+        it "assigns categories" do
+          expect(setting.categories).to_not be_nil
+        end
+      end
+    end
+
+    describe "when widget has stylesheets" do
+      let(:widget) { Fabricate.build(:widget, url: WidgetSupport.twitter_feed.url) }
+
+      before do
+        widget.send(:assign_attributes_from_url)
+      end
+
+      it "assigns stylesheets" do
+        expect(widget.stylesheets).to be_present
+      end
+    end
+
+    describe "when widget has show javascript" do
+      let(:widget) { Fabricate.build(:widget, url: WidgetSupport.twitter_feed.url) }
+
+      before do
+        widget.send(:assign_attributes_from_url)
+      end
+
+      it "assigns show javascript" do
+        expect(widget.show_javascript).to be_present
+      end
+    end
+
+    describe "when widget has lib javascripts" do
+      let(:widget) { Fabricate.build(:widget, url: WidgetSupport.twitter_feed.url) }
+
+      before do
+        widget.send(:assign_attributes_from_url)
+      end
+
+      it "assigns lib javascripts" do
+        expect(widget.lib_javascripts).to be_present
+      end
+    end
+
+    describe "when widget has edit javascript" do
+      let(:widget) { Fabricate.build(:widget, url: WidgetSupport.calls_to_action.url) }
+
+      before do
+        widget.send(:assign_attributes_from_url) end
+
+      it "assigns edit javascript" do
+        expect(widget.edit_javascript).to be_present
+      end
+    end
+
+    describe "when no component is found at url" do
+      let(:widget) { Fabricate.build(:widget, url: "http://google.com") }
+
+      it "raises an error" do
+        expect { widget.send(:assign_attributes_from_url) }.to raise_error(
+          StandardError, "No h-g5-component found at url: #{widget.url}")
+      end
+    end
+
+    describe "when OpenURI::HTTPError" do
+      let(:widget) { Fabricate.build(:widget) }
+
+      before do
+        Microformats2.stub(:parse) {
+          raise OpenURI::HTTPError.new("404 Object Not Found", nil)
+        }
+      end
+
+      it "logs a failed request" do
+        Rails.logger.should_receive(:warn).with("404 Object Not Found")
+        widget.send(:assign_attributes_from_url)
+      end
+    end
   end
 
-  describe "on create" do
+  describe "#update_attributes" do
+    let(:widget) { Fabricate(:widget) }
     let(:setting) { widget.settings.first }
 
-    it "assigns a name" do
-      setting.name.should eq "username"
-    end
-    it "assigns categories" do
-      setting.categories.should eq ["Instance"]
-    end
-
-    it "assigns widget attributes to the settings" do
-      expect { widget }.to change(Setting, :count).by(2)
-    end
-  end
-
-  describe "updating widget attributes" do
-    it "updates with nested attributes" do
-      attribute = widget.settings.first
+    it "accepts nested attributes for settings" do
       widget.update_attributes(settings_attributes: {
-        id: attribute.id,
-        value: "TEST"
+        id: setting.id,
+        name: "TEST"
       })
-      attribute.reload
-      attribute.value.should eq "TEST"
+      expect(setting.reload.name).to eq "TEST"
     end
   end
 
   describe "#liquidized_html" do
+    let(:widget) { Fabricate.build(:widget) }
+
     it "does not escape funky characters" do
       widget.html = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-      widget.liquidized_html.should == widget.html
+      expect(widget.liquidized_html).to eq widget.html
     end
   end
 
+
   describe "#create_widget_entry_if_updated" do
+    let(:widget) { Fabricate(:widget) }
+
     context "when no widget entries exist" do
       before do
         widget.widget_entries = []
       end
+
       it "returns a new widget entry" do
-        widget.create_widget_entry_if_updated.should be_kind_of WidgetEntry
+        expect(widget.create_widget_entry_if_updated).to be_kind_of WidgetEntry
       end
     end
+
     context "when widget entries exist" do
       before do
         widget.widget_entries.create
       end
+
       it "returns a new widget entry if the widget has been updated" do
         widget.updated_at = Time.now + 1.day
-        widget.create_widget_entry_if_updated.should be_kind_of WidgetEntry
+        expect(widget.create_widget_entry_if_updated).to be_kind_of WidgetEntry
       end
+
       it "returns nil if the widget has not been updated" do
         widget.updated_at = Time.now - 1.day
-        widget.create_widget_entry_if_updated.should be_nil
+        expect(widget.create_widget_entry_if_updated).to be_nil
       end
     end
   end
 
   describe "#set_default_calls_to_action" do
-    before do
-      Widget.any_instance.stub(:get_edit_form_html)
-      Widget.any_instance.stub(:get_show_html)
-    end
-    let (:cta_widget) { Fabricate(:widget, url: "spec/support/calls_to_action_widget.html")}
 
-    it "assigns the defaults" do
-      settings_values = cta_widget.settings.map(&:value)
-      # These are too high in Bend, OR ;-)
-      cta_widget.get_default_calls_to_action.values.each do |value|
-        settings_values.should include(value)
+    context "calls to action widget" do
+      let (:widget) { Fabricate(:widget, url: WidgetSupport.calls_to_action.url) }
+
+      before do
+        widget.set_default_calls_to_action
+      end
+
+      it "assigns the defaults" do
+        widget.get_default_calls_to_action.values.each do |value|
+          expect(widget.settings.map(&:value)).to include(value)
+        end
       end
     end
 
-    it "does not assign cta widget defaults on a non-cta widget" do
-      widget.should_not_receive(:set_default_calls_to_action)
+    context "not calls to action widget" do
+      let(:widget) { Fabricate(:widget) }
+
+      before do
+        widget.set_default_calls_to_action
+      end
+
+      it "does not assign the defaults" do
+        widget.get_default_calls_to_action.values.each do |value|
+          expect(widget.settings.map(&:value)).not_to include(value)
+        end
+      end
     end
   end
 end

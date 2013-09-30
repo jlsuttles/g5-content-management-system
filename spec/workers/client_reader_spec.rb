@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ClientReader do
+describe ClientReader, vcr: VCR_OPTIONS do
 
   describe "#perform" do
     let(:perform) { ClientReader.perform("spec/support/client.html") }
