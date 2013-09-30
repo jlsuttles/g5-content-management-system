@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/bradphelan/jasminerice.git
-  revision: b5370e3cf2931aa5478e775369afb5ecef1c18b5
+  revision: 091349c27343bfa728b8e5745675f9ddbb7d9699
   specs:
     jasminerice (0.1.0)
       coffee-rails
@@ -38,7 +38,7 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
-    addressable (2.3.4)
+    addressable (2.3.5)
     arel (3.0.2)
     barber (0.4.2)
       ember-source
@@ -61,10 +61,10 @@ GEM
       xpath (~> 2.0)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
-    ckeditor (4.0.2)
+    ckeditor (4.0.6)
       mime-types
       orm_adapter
-    codeclimate-test-reporter (0.0.7)
+    codeclimate-test-reporter (0.1.1)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
@@ -73,8 +73,9 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.2)
-    crack (0.3.2)
+    coffee-script-source (1.6.3)
+    crack (0.4.1)
+      safe_yaml (~> 0.9.0)
     daemons (1.1.9)
     dalli (2.6.4)
     database_cleaner (0.9.1)
@@ -85,24 +86,24 @@ GEM
       request_store (~> 1.0.3)
     ember-data-source (0.14)
       ember-source
-    ember-rails (0.12.0)
+    ember-rails (0.13.0)
       active_model_serializers
       barber (>= 0.4.1)
       ember-data-source
-      ember-source (>= 1.0.0.rc2.2)
+      ember-source
       execjs (>= 1.2)
+      handlebars-source
       railties (>= 3.1)
     ember-source (1.0.0)
       handlebars-source (= 1.0.12)
     erubis (2.7.0)
     eventmachine (1.0.3)
     excon (0.25.3)
-    execjs (1.4.0)
-      multi_json (~> 1.0)
+    execjs (2.0.2)
     fabrication (2.5.4)
     faker (1.1.2)
       i18n (~> 0.5)
-    ffi (1.7.0)
+    ffi (1.9.0)
     foreman (0.60.2)
       thor (>= 0.13.6)
     formatador (0.2.4)
@@ -119,13 +120,13 @@ GEM
       git (~> 1.2.5)
       git-ssh-wrapper (~> 0.1.0)
       heroku-api (~> 0.3.5)
-    guard (1.7.0)
+    guard (1.8.3)
       formatador (>= 0.2.4)
-      listen (>= 0.6.0)
+      listen (~> 1.3)
       lumberjack (>= 1.0.2)
       pry (>= 0.9.10)
       thor (>= 0.14.6)
-    guard-jasmine (1.16.0)
+    guard-jasmine (1.18.3)
       childprocess
       guard (>= 1.1.0)
       multi_json
@@ -149,30 +150,33 @@ GEM
       selenium-webdriver (>= 0.1.3)
     jasmine-core (1.3.1)
     journey (1.0.4)
-    jquery-rails (2.2.1)
+    jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.7.7)
     liquid (2.4.1)
-    listen (0.7.3)
-    lumberjack (1.0.3)
+    listen (1.3.1)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      rb-kqueue (>= 0.2)
+    lumberjack (1.0.4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     memcachier (0.0.2)
-    method_source (0.8.1)
+    method_source (0.8.2)
     microformats2 (2.0.0.pre5)
       activesupport (~> 3.2.13)
       json (~> 1.7.6)
       nokogiri (~> 1.5.6)
     mime-types (1.25)
     multi_json (1.8.0)
-    newrelic_rpm (3.6.4.122)
+    newrelic_rpm (3.6.7.159)
     nokogiri (1.5.10)
     orm_adapter (0.4.0)
-    pg (0.15.0)
+    pg (0.17.0)
     polyglot (0.3.3)
-    pry (0.9.12)
+    pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
@@ -207,6 +211,10 @@ GEM
       thor (>= 0.14.6, < 2.0)
     rake (10.1.0)
     rb-fsevent (0.9.3)
+    rb-inotify (0.9.2)
+      ffi (>= 0.5.0)
+    rb-kqueue (0.2.0)
+      ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
     redis (3.0.4)
@@ -232,15 +240,16 @@ GEM
       railties (>= 3.0)
       rspec (~> 2.11.0)
     rubyzip (0.9.9)
-    sass (3.2.7)
+    safe_yaml (0.9.7)
+    sass (3.2.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    selenium-webdriver (2.32.1)
+    selenium-webdriver (2.35.1)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
-      rubyzip
+      rubyzip (< 1.0.0)
       websocket (~> 1.0.4)
     shoulda-matchers (2.0.0)
       activesupport (>= 3.0.0)
@@ -252,18 +261,18 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
-    slop (3.4.4)
+    slop (3.4.6)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.7)
+    sqlite3 (1.3.8)
     state_machine (1.1.2)
-    strong_parameters (0.1.5)
-      actionpack (~> 3.1)
-      activemodel (~> 3.1)
-      railties (~> 3.1)
+    strong_parameters (0.2.1)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
+      railties (~> 3.0)
     table_cloth (0.2.3)
       actionpack (~> 3.2)
     thin (1.5.1)
@@ -276,12 +285,13 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.37)
-    uglifier (1.3.0)
+    uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    vcr (2.6.0)
     vegas (0.1.11)
       rack (>= 1.0.0)
-    webmock (1.11.0)
+    webmock (1.13.0)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
     websocket (1.0.7)
@@ -298,7 +308,7 @@ DEPENDENCIES
   bourbon (~> 3.1.8)
   capybara (~> 2.1.0)
   ckeditor
-  codeclimate-test-reporter
+  codeclimate-test-reporter (~> 0.1.1)
   coffee-rails (~> 3.2.1)
   dalli
   database_cleaner (~> 0.9.1)
@@ -311,10 +321,10 @@ DEPENDENCIES
   foreman (~> 0.60.2)
   g5_sibling_deployer_engine (~> 0.2.5)
   github_heroku_deployer (~> 0.2.0)
-  guard-jasmine
+  guard-jasmine (~> 1.18.3)
   guard-rspec (~> 2.1.0)
   heroku_resque_autoscaler (~> 0.1.0)
-  jasmine
+  jasmine (~> 1.3.2)
   jasminerice!
   jquery-rails
   liquid (~> 2.4.1)
@@ -322,7 +332,7 @@ DEPENDENCIES
   microformats2 (= 2.0.0.pre5)
   newrelic_rpm
   pg
-  pry
+  pry (~> 0.9.12.2)
   quiet_assets (~> 1.0.1)
   railroady
   rails (= 3.2.13)
@@ -330,11 +340,11 @@ DEPENDENCIES
   rb-fsevent (~> 0.9.2)
   rspec-rails (~> 2.11.4)
   sass-rails (~> 3.2.3)
-  selenium-webdriver (~> 2.32.1)
+  selenium-webdriver (~> 2.35.1)
   shoulda-matchers (~> 2.0.0)
-  simplecov
-  sqlite3
+  simplecov (~> 0.7.1)
+  sqlite3 (~> 1.3.8)
   strong_parameters
   thin (~> 1.5.0)
   uglifier (>= 1.0.3)
-  webmock (~> 1.11.0)
+  webmock (~> 1.13.0)
