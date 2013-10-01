@@ -36,26 +36,34 @@ group :development do
 end
 
 group :development, :test do
-  gem "sqlite3"
+  # debugging
+  gem "pry", "~> 0.9.12.2"
+  # database
+  gem "sqlite3", "~> 1.3.8"
   gem "rails-default-database", "~> 1.0.6"
-  gem "capybara", "~> 2.1.0"
-  gem "selenium-webdriver", "~> 2.32.1"
-  gem "database_cleaner", "~> 0.9.1"
+  # ruby specs
   gem "rspec-rails", "~> 2.11.4"
   gem "shoulda-matchers", "~> 2.0.0"
-  gem "guard-rspec", "~> 2.1.0"
-  gem "rb-fsevent", "~> 0.9.2"
+  # ruby request specs
+  gem "capybara", "~> 2.1.0"
+  gem "selenium-webdriver", "~> 2.35.1"
+  gem "database_cleaner", "~> 0.9.1"
+  # ruby spec support
   gem "fabrication", "~> 2.5.0"
   gem "faker", "~> 1.1.2"
-  gem "simplecov", :require => false
-  gem "pry"
-  gem "webmock", "~> 1.11.0", :require => false
-  gem "jasmine"
+  gem "webmock", "~> 1.13.0", require: false
+  gem "vcr", "~> 2.6.0", require: false
+  # javascript specs
+  gem "jasmine", "~> 1.3.2"
   gem "jasminerice", :git => "https://github.com/bradphelan/jasminerice.git"
-  gem "guard-jasmine"
+  # guard specs
+  gem "guard-rspec", "~> 2.1.0"
+  gem "guard-jasmine", "~> 1.18.3"
+  gem "rb-fsevent", "~> 0.9.2"
+  # ruby spec coverage
+  gem "simplecov", "~> 0.7.1", require: false
+  gem "codeclimate-test-reporter", "~> 0.1.1", require: false
 end
-
-gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :production do
   gem "thin", "~> 1.5.0"

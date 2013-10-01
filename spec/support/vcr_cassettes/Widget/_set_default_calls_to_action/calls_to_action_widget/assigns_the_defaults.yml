@@ -1,0 +1,374 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/components/calls-to-action
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Mon, 30 Sep 2013 20:09:13 GMT
+      Last-Modified:
+      - Fri, 27 Sep 2013 22:47:55 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      Set-Cookie:
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWNhYTdjNzAwYTFmNDI3MDYyOTM3NjZhMjcyMDEyZjU0BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTlVbTZyR3l2N2xyNTM3RFR5NER3NlA3NG9FVWhhMEM0WEVaS1AxZGtRUWM9BjsARg%3D%3D--74e0760c28f86298e6aee448325c8d99725b12ee;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 8cb62270a15f4ff8e71e979639dcbdfa
+      X-Runtime:
+      - '0.075628'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Widget Garden</title>\n
+        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
+        type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
+        \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
+        type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
+        name=\"csrf-param\" />\n<meta content=\"9Um6rGyv7lr537DTy4Dw6P74oEUha0C4XEZKP1dkQQc=\"
+        name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
+        \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
+        \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
+        \           <!-- .btn-navbar is used as the toggle for collapsed navbar content
+        -->\n            <a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">\n
+        \             <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n
+        \             <span class=\"icon-bar\"></span>\n            </a>\n\n            <!--
+        Be sure to leave the brand out there if you want it shown -->\n            <a
+        class=\"brand\" href=\"/\">G5 Widget Garden</a>\n\n            <!-- Everything
+        you want hidden at 940px or less, place within here -->\n            <div
+        class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
+        \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
+        \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
+        \     <a href=\"http://g5-widget-garden.herokuapp.com/components/calls-to-action\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Calls to Action</a>\n    </h2>\n    <p
+        class=\"p-summary\">Up to four calls to action</p>\n      <p>\n        <a
+        href=\"http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/images/thumbnail.png</a>\n
+        \       </p>\n\n      <h3>Javascripts</h3>\n\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/javascripts/edit.js\"
+        class=\"u-g5-edit-javascript u-url\">http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/javascripts/edit.js</a>\n
+        \     </p>\n      <ul class=\"unstyled\">\n          <li class=\"e-g5-property-group
+        h-g5-property-group\">\n            <h3><span class=\"p-name\">Calls to Action</span>Property
+        Group</h3>\n  <p class=\"p-category\">Instance</p>\n  <div class=\"row\">\n
+        \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
+        e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
+        class=\"p-g5-name\">available_calls_to_action</th>\n        </tr>\n          <tr>\n
+        \           <th style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
+        \             false\n            </td>\n          </tr>\n          <tr>\n
+        \           <th style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
+        \             \n            </td>\n          </tr>\n      </table>\n    </div>\n
+        \ </div>\n  <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">cta_one_text</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">cta_one_url</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">cta_two_text</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">cta_two_url</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">cta_three_text</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">cta_three_url</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">cta_four_text</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">cta_four_url</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n\n
+        \         </li>\n      </ul>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;!--
+        BEGIN EDIT FORM MARKUP --&gt;\n&lt;form&gt;\n  &lt;div class=&quot;form-field&quot;&gt;\n
+        \   {{ widget.cta_one_text.id_hidden_field }}\n    &lt;label name=&quot;{{
+        widget.cta_one_text.value_field_name }}&quot;&gt;\n      CTA One Text\n    &lt;/label&gt;\n
+        \   &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.cta_one_text.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.cta_one_text.value_field_name }}&quot;\n
+        \     value=&quot;{{ widget.cta_one_text.best_value }}&quot; /&gt;\n  &lt;/div&gt;\n\n
+        \ &lt;div class=&quot;form-field&quot;&gt;\n    {{ widget.cta_one_url.id_hidden_field
+        }}\n    &lt;label name=&quot;{{ widget.cta_one_url.value_field_name }}&quot;&gt;\n
+        \     CTA One URL\n    &lt;/label&gt;\n    &lt;select\n      id=&quot;{{ widget.cta_one_url.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.cta_one_url.value_field_name }}&quot;\n
+        \   &gt;\n      &lt;option value=&quot;&quot;&gt;Please Select&lt;/option&gt;\n
+        \     {% for cta in widget.available_calls_to_action.best_value %}\n        &lt;option
+        value=&quot;{{ cta[1] }}&quot;\n          {% if widget.cta_one_url.best_value
+        == cta[1] %}selected=&quot;selected&quot;{% endif %}&gt;\n          {{ cta[1]
+        }}\n        &lt;/option&gt;\n      {% endfor %}\n    &lt;/select&gt;\n  &lt;/div&gt;\n\n
+        \ &lt;div class=&quot;form-field&quot;&gt;\n    {{ widget.cta_two_text.id_hidden_field
+        }}\n    &lt;label name=&quot;{{ widget.cta_two_text.value_field_name }}&quot;&gt;\n
+        \     CTA Two Text\n    &lt;/label&gt;\n    &lt;input type=&quot;text&quot;\n
+        \     id=&quot;{{ widget.cta_two_text.value_field_id }}&quot;\n      name=&quot;{{
+        widget.cta_two_text.value_field_name }}&quot;\n      value=&quot;{{ widget.cta_two_text.best_value
+        }}&quot; /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
+        \   {{ widget.cta_two_url.id_hidden_field }}\n    &lt;label name=&quot;{{
+        widget.cta_two_url.value_field_name }}&quot;&gt;\n      CTA Two URL\n    &lt;/label&gt;\n
+        \   &lt;select\n      id=&quot;{{ widget.cta_two_url.value_field_id }}&quot;\n
+        \     name=&quot;{{ widget.cta_two_url.value_field_name }}&quot;\n    &gt;\n
+        \     &lt;option value=&quot;&quot;&gt;Please Select&lt;/option&gt;\n      {%
+        for cta in widget.available_calls_to_action.best_value %}\n        &lt;option
+        value=&quot;{{ cta[1] }}&quot;\n          {% if widget.cta_two_url.best_value
+        == cta[1] %}selected=&quot;selected&quot;{% endif %}&gt;\n          {{ cta[1]
+        }}\n        &lt;/option&gt;\n      {% endfor %}\n    &lt;/select&gt;\n  &lt;/div&gt;\n\n
+        \ &lt;div class=&quot;form-field&quot;&gt;\n    {{ widget.cta_three_text.id_hidden_field
+        }}\n    &lt;label name=&quot;{{ widget.cta_three_text.value_field_name }}&quot;&gt;\n
+        \     CTA Three Text\n    &lt;/label&gt;\n    &lt;input type=&quot;text&quot;\n
+        \     id=&quot;{{ widget.cta_three_text.value_field_id }}&quot;\n      name=&quot;{{
+        widget.cta_three_text.value_field_name }}&quot;\n      value=&quot;{{ widget.cta_three_text.best_value
+        }}&quot; /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
+        \   {{ widget.cta_three_url.id_hidden_field }}\n    &lt;label name=&quot;{{
+        widget.cta_three_url.value_field_name }}&quot;&gt;\n      CTA Three URL\n
+        \   &lt;/label&gt;\n    &lt;select\n      id=&quot;{{ widget.cta_three_url.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.cta_three_url.value_field_name }}&quot;\n
+        \   &gt;\n      &lt;option value=&quot;&quot;&gt;Please Select&lt;/option&gt;\n
+        \     {% for cta in widget.available_calls_to_action.best_value %}\n        &lt;option
+        value=&quot;{{ cta[1] }}&quot;\n          {% if widget.cta_three_url.best_value
+        == cta[1] %}selected=&quot;selected&quot;{% endif %}&gt;\n          {{ cta[1]
+        }}\n        &lt;/option&gt;\n      {% endfor %}\n    &lt;/select&gt;\n  &lt;/div&gt;\n\n
+        \ &lt;div class=&quot;form-field&quot;&gt;\n    {{ widget.cta_four_text.id_hidden_field
+        }}\n    &lt;label name=&quot;{{ widget.cta_four_text.value_field_name }}&quot;&gt;\n
+        \     CTA Four Text\n    &lt;/label&gt;\n    &lt;input type=&quot;text&quot;\n
+        \     id=&quot;{{ widget.cta_four_text.value_field_id }}&quot;\n      name=&quot;{{
+        widget.cta_four_text.value_field_name }}&quot;\n      value=&quot;{{ widget.cta_four_text.best_value
+        }}&quot; /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
+        \   {{ widget.cta_four_url.id_hidden_field }}\n    &lt;label name=&quot;{{
+        widget.cta_four_url.value_field_name }}&quot;&gt;\n      CTA Four URL\n    &lt;/label&gt;\n
+        \   &lt;select\n      id=&quot;{{ widget.cta_four_url.value_field_id }}&quot;\n
+        \     name=&quot;{{ widget.cta_four_url.value_field_name }}&quot;\n    &gt;\n
+        \     &lt;option value=&quot;&quot;&gt;Please Select&lt;/option&gt;\n      {%
+        for cta in widget.available_calls_to_action.best_value %}\n        &lt;option
+        value=&quot;{{ cta[1] }}&quot;\n          {% if widget.cta_four_url.best_value
+        == cta[1] %}selected=&quot;selected&quot;{% endif %}&gt;\n          {{ cta[1]
+        }}\n        &lt;/option&gt;\n      {% endfor %}\n    &lt;/select&gt;\n  &lt;/div&gt;\n\n
+        \ &lt;input type=&quot;submit&quot; value=&quot;Save&quot; class=&quot;btn&quot;
+        /&gt;\n&lt;/form&gt;\n\n&lt;!-- END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN
+        SHOW MARKUP --&gt;\n&lt;nav class=&quot;action-calls widget&quot;&gt;\n  &lt;ul&gt;\n
+        \   {% if widget.cta_one_text.best_value != empty &amp;&amp; widget.cta_one_url.best_value
+        != empty %}\n      &lt;li&gt;\n        &lt;a href=&quot;{{ widget.cta_one_url.best_value
+        | url_encode }}&quot;&gt;{{ widget.cta_one_text.best_value }}&lt;/a&gt;\n
+        \     &lt;/li&gt;\n    {% endif %}\n    {% if widget.cta_two_text.best_value
+        != empty &amp;&amp; widget.cta_two_url.best_value != empty %}\n    &lt;li&gt;\n
+        \     &lt;a href=&quot;{{ widget.cta_two_url.best_value | url_encode }}&quot;&gt;{{
+        widget.cta_two_text.best_value }}&lt;/a&gt;\n    &lt;/li&gt;\n    {% endif
+        %}\n    {% if widget.cta_three_text.best_value != empty &amp;&amp; widget.cta_three_url.best_value
+        != empty %}\n    &lt;li&gt;\n      &lt;a href=&quot;{{ widget.cta_three_url.best_value
+        | url_encode }}&quot;&gt;{{ widget.cta_three_text.best_value }}&lt;/a&gt;\n
+        \   &lt;/li&gt;\n    {% endif %}\n    {% if widget.cta_four_text.best_value
+        != empty &amp;&amp; widget.cta_four_url.best_value != empty %}\n    &lt;li&gt;\n
+        \     &lt;a href=&quot;{{ widget.cta_four_url.best_value | url_encode }}&quot;&gt;{{
+        widget.cta_four_text.best_value }}&lt;/a&gt;\n    &lt;/li&gt;\n    {% endif
+        %}\n  &lt;/ul&gt;\n&lt;/nav&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
+        \   </div>\n  </body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 30 Sep 2013 20:09:15 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/show.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Content-Type:
+      - text/html
+      Date:
+      - Mon, 30 Sep 2013 20:09:14 GMT
+      Last-Modified:
+      - Fri, 27 Sep 2013 22:47:55 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Content-Digest:
+      - f332ca3a888d461a5dec67970e0af5adc719cc96
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '1018'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<nav class=\"action-calls widget\">\n  <ul>\n    {% if widget.cta_one_text.best_value
+        != empty && widget.cta_one_url.best_value != empty %}\n      <li>\n        <a
+        href=\"{{ widget.cta_one_url.best_value | url_encode }}\">{{ widget.cta_one_text.best_value
+        }}</a>\n      </li>\n    {% endif %}\n    {% if widget.cta_two_text.best_value
+        != empty && widget.cta_two_url.best_value != empty %}\n    <li>\n      <a
+        href=\"{{ widget.cta_two_url.best_value | url_encode }}\">{{ widget.cta_two_text.best_value
+        }}</a>\n    </li>\n    {% endif %}\n    {% if widget.cta_three_text.best_value
+        != empty && widget.cta_three_url.best_value != empty %}\n    <li>\n      <a
+        href=\"{{ widget.cta_three_url.best_value | url_encode }}\">{{ widget.cta_three_text.best_value
+        }}</a>\n    </li>\n    {% endif %}\n    {% if widget.cta_four_text.best_value
+        != empty && widget.cta_four_url.best_value != empty %}\n    <li>\n      <a
+        href=\"{{ widget.cta_four_url.best_value | url_encode }}\">{{ widget.cta_four_text.best_value
+        }}</a>\n    </li>\n    {% endif %}\n  </ul>\n</nav>\n"
+    http_version: 
+  recorded_at: Mon, 30 Sep 2013 20:09:15 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/edit.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Content-Type:
+      - text/html
+      Date:
+      - Mon, 30 Sep 2013 20:09:14 GMT
+      Last-Modified:
+      - Fri, 27 Sep 2013 22:47:55 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Content-Digest:
+      - ba711e2b20c8af6f80093803be9f2a0aac673dac
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '3998'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<form>\n  <div class=\"form-field\">\n    {{ widget.cta_one_text.id_hidden_field
+        }}\n    <label name=\"{{ widget.cta_one_text.value_field_name }}\">\n      CTA
+        One Text\n    </label>\n    <input type=\"text\"\n      id=\"{{ widget.cta_one_text.value_field_id
+        }}\"\n      name=\"{{ widget.cta_one_text.value_field_name }}\"\n      value=\"{{
+        widget.cta_one_text.best_value }}\" />\n  </div>\n\n  <div class=\"form-field\">\n
+        \   {{ widget.cta_one_url.id_hidden_field }}\n    <label name=\"{{ widget.cta_one_url.value_field_name
+        }}\">\n      CTA One URL\n    </label>\n    <select\n      id=\"{{ widget.cta_one_url.value_field_id
+        }}\"\n      name=\"{{ widget.cta_one_url.value_field_name }}\"\n    >\n      <option
+        value=\"\">Please Select</option>\n      {% for cta in widget.available_calls_to_action.best_value
+        %}\n        <option value=\"{{ cta[1] }}\"\n          {% if widget.cta_one_url.best_value
+        == cta[1] %}selected=\"selected\"{% endif %}>\n          {{ cta[1] }}\n        </option>\n
+        \     {% endfor %}\n    </select>\n  </div>\n\n  <div class=\"form-field\">\n
+        \   {{ widget.cta_two_text.id_hidden_field }}\n    <label name=\"{{ widget.cta_two_text.value_field_name
+        }}\">\n      CTA Two Text\n    </label>\n    <input type=\"text\"\n      id=\"{{
+        widget.cta_two_text.value_field_id }}\"\n      name=\"{{ widget.cta_two_text.value_field_name
+        }}\"\n      value=\"{{ widget.cta_two_text.best_value }}\" />\n  </div>\n\n
+        \ <div class=\"form-field\">\n    {{ widget.cta_two_url.id_hidden_field }}\n
+        \   <label name=\"{{ widget.cta_two_url.value_field_name }}\">\n      CTA
+        Two URL\n    </label>\n    <select\n      id=\"{{ widget.cta_two_url.value_field_id
+        }}\"\n      name=\"{{ widget.cta_two_url.value_field_name }}\"\n    >\n      <option
+        value=\"\">Please Select</option>\n      {% for cta in widget.available_calls_to_action.best_value
+        %}\n        <option value=\"{{ cta[1] }}\"\n          {% if widget.cta_two_url.best_value
+        == cta[1] %}selected=\"selected\"{% endif %}>\n          {{ cta[1] }}\n        </option>\n
+        \     {% endfor %}\n    </select>\n  </div>\n\n  <div class=\"form-field\">\n
+        \   {{ widget.cta_three_text.id_hidden_field }}\n    <label name=\"{{ widget.cta_three_text.value_field_name
+        }}\">\n      CTA Three Text\n    </label>\n    <input type=\"text\"\n      id=\"{{
+        widget.cta_three_text.value_field_id }}\"\n      name=\"{{ widget.cta_three_text.value_field_name
+        }}\"\n      value=\"{{ widget.cta_three_text.best_value }}\" />\n  </div>\n\n
+        \ <div class=\"form-field\">\n    {{ widget.cta_three_url.id_hidden_field
+        }}\n    <label name=\"{{ widget.cta_three_url.value_field_name }}\">\n      CTA
+        Three URL\n    </label>\n    <select\n      id=\"{{ widget.cta_three_url.value_field_id
+        }}\"\n      name=\"{{ widget.cta_three_url.value_field_name }}\"\n    >\n
+        \     <option value=\"\">Please Select</option>\n      {% for cta in widget.available_calls_to_action.best_value
+        %}\n        <option value=\"{{ cta[1] }}\"\n          {% if widget.cta_three_url.best_value
+        == cta[1] %}selected=\"selected\"{% endif %}>\n          {{ cta[1] }}\n        </option>\n
+        \     {% endfor %}\n    </select>\n  </div>\n\n  <div class=\"form-field\">\n
+        \   {{ widget.cta_four_text.id_hidden_field }}\n    <label name=\"{{ widget.cta_four_text.value_field_name
+        }}\">\n      CTA Four Text\n    </label>\n    <input type=\"text\"\n      id=\"{{
+        widget.cta_four_text.value_field_id }}\"\n      name=\"{{ widget.cta_four_text.value_field_name
+        }}\"\n      value=\"{{ widget.cta_four_text.best_value }}\" />\n  </div>\n\n
+        \ <div class=\"form-field\">\n    {{ widget.cta_four_url.id_hidden_field }}\n
+        \   <label name=\"{{ widget.cta_four_url.value_field_name }}\">\n      CTA
+        Four URL\n    </label>\n    <select\n      id=\"{{ widget.cta_four_url.value_field_id
+        }}\"\n      name=\"{{ widget.cta_four_url.value_field_name }}\"\n    >\n      <option
+        value=\"\">Please Select</option>\n      {% for cta in widget.available_calls_to_action.best_value
+        %}\n        <option value=\"{{ cta[1] }}\"\n          {% if widget.cta_four_url.best_value
+        == cta[1] %}selected=\"selected\"{% endif %}>\n          {{ cta[1] }}\n        </option>\n
+        \     {% endfor %}\n    </select>\n  </div>\n\n  <input type=\"submit\" value=\"Save\"
+        class=\"btn\" />\n</form>\n"
+    http_version: 
+  recorded_at: Mon, 30 Sep 2013 20:09:15 GMT
+recorded_with: VCR 2.6.0

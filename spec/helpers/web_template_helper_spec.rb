@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe WebTemplatesHelper do
+describe WebTemplatesHelper, vcr: VCR_OPTIONS do
   let(:website) { Fabricate(:website) }
   let(:website_template) { Fabricate(:website_template) }
   let(:web_layout) { Fabricate(:web_layout) }
@@ -22,10 +22,10 @@ describe WebTemplatesHelper do
     let(:preview) { helper.preview(website, website.web_home_template) }
 
     it "has layout in html" do
-      preview.should match /single-column/
+      preview.should match /layout/
     end
     it "has widget in html" do
-      preview.should match /storage-list widget/
+      preview.should match /#{widget.name.parameterize}/
     end
   end
 end

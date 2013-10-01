@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Website do
+describe Website, vcr: VCR_OPTIONS do
   describe ".urn_prefix" do
     it "is g5-clw" do
       Website.urn_prefix.should eq "g5-clw"
@@ -124,8 +124,8 @@ describe Website do
         website.website_template.web_theme = web_theme
       end
 
-      it { website.primary_color.should eq "#000000" }
-      it { website.secondary_color.should eq "#ffffff" }
+      it { website.primary_color.should eq web_theme.primary_color }
+      it { website.secondary_color.should eq web_theme.secondary_color }
 
       it do
         website.website_template.stub(:primary_color) { "#121212"}

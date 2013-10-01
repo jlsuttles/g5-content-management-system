@@ -1,52 +1,76 @@
-require 'spec_helper'
+require "spec_helper"
 
-describe WebTheme do
-  before do
-    WebTheme.any_instance.stub(:url) { "spec/support/web_theme.html" }
-  end
-  let(:remote_web_themes) { WebTheme.all_remote }
-  let(:web_theme) { remote_web_themes.first }
+describe WebTheme, vcr: VCR_OPTIONS do
 
-  describe "Remote" do
-    it "reads the HTML feed" do
-      remote_web_themes.should have_at_least(4).things
+  describe ".all_remote" do
+    let(:all_remote) { WebThemeSupport.all_remote }
+
+    it "returns 5 web themes with names, urls, and thumbails" do
+      expect(all_remote).to have(5).items
+      all_remote.each do |a_remote|
+        expect(a_remote).to be_an_instance_of WebTheme
+        expect(a_remote.name).to be_present
+        expect(a_remote.url).to be_present
+        expect(a_remote.thumbnail).to be_present
+      end
     end
   end
 
-  describe "attribute assignment" do
-    it { web_theme.name.should eq "Classic" }
-    it { web_theme.read_attribute(:url).should eq "http://g5-theme-garden.herokuapp.com/components/classic" }
-    it { web_theme.thumbnail.should eq "http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png"}
-  end
+  describe "#assign_attributes_from_url" do
+    describe "when component is found at url" do
+      let(:web_theme) { Fabricate.build(:web_theme) }
 
+      before do
+        web_theme.send(:assign_attributes_from_url)
+      end
 
-  describe "attributes assignment on save" do
-    before { web_theme.save! }
-    it { web_theme.primary_color.should eq "#0095a0"}
-    it { web_theme.secondary_color.should eq "#f68e56"}
-    it { web_theme.stylesheets.should eq ["http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss"]}
-    it { web_theme.javascripts.should be_empty }
-  end
+      it "assigns a name" do
+        expect(web_theme.name).to be_present
+      end
 
-  describe "errors" do
+      it "assigns a url" do
+        expect(web_theme.url).to be_present
+      end
 
-    it "raises an error if no themes can be found" do
-      web_theme.stub(:url) { "spec/support/blank.html" }
-      # Should be Microformats2::NotFound or something.
-      expect { web_theme.save! }.to raise_error StandardError, "No h-g5-component found at url: #{web_theme.url}"
+      it "assigns a thumbnail" do
+        expect(web_theme.thumbnail).to be_present
+      end
+
+      it "assigns primary color" do
+        expect(web_theme.primary_color).to be_present
+      end
+
+      it "assigns secondary color" do
+        expect(web_theme.secondary_color).to be_present
+      end
+
+      it "assigns a stylesheets" do
+        expect(web_theme.stylesheets).to be_present
+      end
     end
 
-  end
+    describe "when no component is found at url" do
+      let(:web_theme) { Fabricate.build(:web_theme, url: "http://google.com") }
 
-  describe "url not found" do
-    before do
-      Microformats2.stub(:parse) {
-        raise OpenURI::HTTPError.new("404 Object Not Found", nil)
-      }
+      it "raises an error" do
+        expect { web_theme.send(:assign_attributes_from_url) }.to raise_error(
+          StandardError, "No h-g5-component found at url: #{web_theme.url}")
+      end
     end
-    it "logs a failed request" do
-      Rails.logger.should_receive(:warn).with("404 Object Not Found")
-      Fabricate(:web_theme)
+
+    describe "when OpenURI::HTTPError" do
+      let(:web_theme) { Fabricate.build(:web_theme) }
+
+      before do
+        Microformats2.stub(:parse) {
+          raise OpenURI::HTTPError.new("404 Object Not Found", nil)
+        }
+      end
+
+      it "logs a failed request" do
+        Rails.logger.should_receive(:warn).with("404 Object Not Found")
+        web_theme.send(:assign_attributes_from_url)
+      end
     end
   end
 end

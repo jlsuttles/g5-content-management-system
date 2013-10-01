@@ -1,3 +1,3 @@
 Fabricator :web_theme do
-  url "spec/support/big_picture_theme.html"
+  url { WebThemeSupport.web_theme.url }
 end

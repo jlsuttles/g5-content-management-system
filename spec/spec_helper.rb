@@ -1,27 +1,39 @@
-require "simplecov"
-SimpleCov.start
-require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
+if ENV["CODECLIMATE_REPO_TOKEN"]
+  require "codeclimate-test-reporter"
+  CodeClimate::TestReporter.start
+else
+  require "simplecov"
+  SimpleCov.start
+end
 
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path("../../config/environment", __FILE__)
-require "capybara/rails"
 require "rspec/rails"
+require "capybara/rails"
 require "capybara/rspec"
 require "database_cleaner"
 require "webmock/rspec"
+require "vcr"
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/support/vcr_cassettes"
+  config.hook_into :webmock
+  config.ignore_hosts "127.0.0.1", "localhost", "codeclimate.com"
+  config.configure_rspec_metadata!
+end
+
+VCR_OPTIONS = { record: :new_episodes, re_record_interval: 7.days }
+
 RSpec.configure do |config|
   config.order = "random"
   config.include Capybara::DSL, type: :request
-
-  config.before(:all, type: :request) do
-    WebMock.disable_net_connect!(:allow_localhost => true, :allow => "codeclimate.com")
-  end
+  # Allows us to  use :vcr rather than :vcr => true
+  # In RSpec 3 this will no longer be necessary
+  config.treat_symbols_as_metadata_keys_with_true_values = true
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
@@ -42,22 +54,4 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
-
-  config.before(:each) do
-    Widget.stub(:garden_url) { "spec/support/widgets.html" }
-    WebTheme.stub(:garden_url) { "spec/support/themes.html" }
-    WebLayout.stub(:garden_url) { "spec/support/layouts.html" }
-  end
-end
-
-def drag_and_drop(source, target)
-  builder = page.driver.browser.action
-  source = source.native
-  target = target.native
-
-  builder.click_and_hold source
-  builder.move_to        target, 1, 11
-  builder.move_to        target
-  builder.release        target
-  builder.perform
 end
