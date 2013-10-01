@@ -10,35 +10,7 @@
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
-  <body class="builder">
-
-    <header role="banner" class="banner">
-      <div class="l-container">
-
-        <h1 class="banner-title">
-          <a href="<%= root_path %>">
-            <span class="banner-logo">G5</span> Client Hub: <strong class="banner-subtitle"><%= @client_name %></strong>
-          </a>
-        </h1>
-
-      </div> <!-- end .l-container -->
-    </header>
-
-    <% flash.each do |name, msg| %>
-      <div class="flash l-container">
-        <%= flash_div name %>
-      </div>
-    <% end %>
-
-
-    <div id="modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Edit Widget</h3>
-      </div>
-      <div class="modal-body">
-      </div>
-    </div>
+  <body>
 
   </body>
 </html>
