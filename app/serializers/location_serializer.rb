@@ -4,5 +4,6 @@ class LocationSerializer < ActiveModel::Serializer
   has_one :website
 
   attributes  :id,
-              :urn
+              :urn,
+              :name
 end
