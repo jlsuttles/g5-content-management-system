@@ -1,3 +1,2 @@
-G5ClientHub::ClientReader.perform(ENV["G5_CLIENT_UID"] || "spec/support/client.html")
+G5ClientHub::ClientReader.perform(ENV["G5_CLIENT_UID"])
 G5ClientHub::WebsitesSeeder.perform
-
