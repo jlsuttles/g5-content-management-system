@@ -1,6 +1,3 @@
-#
-# vendor/assets
-#
 #= require jquery
 #= require jquery_ujs
 #= require bootstrap
@@ -8,10 +5,6 @@
 #= require bootstrapSwitch
 #= require jquery.thumbnailScroller
 #= require ckeditor/init
-#
-# app/assets
-#
-#= require_tree ./application
 
 $ ->
 
