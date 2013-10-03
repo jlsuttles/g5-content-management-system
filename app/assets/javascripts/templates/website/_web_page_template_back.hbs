@@ -17,24 +17,19 @@
       </div>
 
       <div class="form-field">
-        <label for="page-{{!<%= web_template.id %>}}" class="switch-label">Page Status</label>
+        <label class="switch-label">Page Status</label>
         <div class="switch switch-small" data-on="success" data-off="danger">
-          <input type="checkbox"
-            id="page-{{!<%= web_template.id %>}}"
-            {{!<%= "checked" unless web_template.disabled? %>}}
-          />
+          <input type="checkbox" />
         </div>
       </div>
 
       <div class="buttons">
-        <a href="#" class="cancel-link card-flip">Cancel</a>
-        <!-- <button {{action cancel}} class="cancel-link card-flip">Cancel</button> -->
+        {{#view App.CancelPage}}
+          <button {{action cancel}} class="cancel-link card-flip">Cancel</button>
+        {{/view}}
         <button {{action save}} class="btn btn--small">Save</button>
       </div>
     </form>
 
-    {{#unless isNew}}
-      {{ partial "website/webPageTemplateFlip" }}
-    {{/unless}}
   </div>
 </div>
