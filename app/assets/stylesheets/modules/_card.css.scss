@@ -47,7 +47,10 @@
   }
   .cancel-link {
     @include font-size(12px);
+    background: transparent;
+    border: none;
     display: inline-block;
+    text-decoration: underline;
     text-transform: uppercase;
     width: 50%;
   }
