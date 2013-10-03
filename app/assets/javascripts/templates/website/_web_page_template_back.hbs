@@ -5,27 +5,28 @@
   <div class="card-body">
 
     <form class="form">
-
-      <div class="form-field">
+      {{#view App.ValidateEmptyFormField}}
         <label>Page Name</label>
         {{input value=name}}
-      </div>
+      {{/view}}
 
-      <div class="form-field">
+      {{#view App.ValidateEmptyFormField}}
         <label>Page Title</label>
-        {{input}}
-      </div>
+        {{input value=title}}
+      {{/view}}
 
       <div class="form-field">
         <label class="switch-label">Page Status</label>
-        {{ render "pageSwitcher" }}
+        {{ partial "pageSwitcher" }}
       </div>
 
       <div class="buttons">
-        {{#view App.CancelPage}}
+        {{#view App.CardAction}}
           <button {{action cancel}} class="cancel-link card-flip">Cancel</button>
         {{/view}}
-        <button {{action save}} class="btn btn--small">Save</button>
+        {{#view App.CardAction}}
+          <button {{action save model}} class="save btn btn--small" disabled>Save</button>
+        {{/view}}
       </div>
     </form>
 

@@ -14,9 +14,12 @@
 
   <div class="site-pages page-section">
     <div class="page-title">
-      {{#linkTo "webPageTemplates.new" class="btn" }}Create New Page{{/linkTo}}
+      {{#view App.NewPage}}
+        {{#linkTo "webPageTemplates.new" class="btn" }}Create New Page{{/linkTo}}
+      {{/view}}
     </div>
     <div class="cards">
+      {{ render "website/webPageTemplate" webHomeTemplate }}
       {{#each webPageTemplates}}
         {{#unless isNew}}
           {{ render "website/webPageTemplate" this }}

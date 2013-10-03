@@ -7,5 +7,8 @@ App.CardFlipper = Ember.View.extend
 
   click: (e) ->
     toggleBtn = $(e.currentTarget)
+    saveBtn = toggleBtn.parents(".card").find(".save")
+
     toggleBtn.parents(".flip-container").toggleClass "flipped"
-    e.preventDefault()
+    saveBtn.prop("disabled", false)
+    false

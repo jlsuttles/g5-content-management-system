@@ -10,7 +10,7 @@
     </ul>
     <div class="buttons">
       {{#linkTo "webPageTemplate" model.website model class="btn btn--small"}}Edit{{/linkTo}}
-      <a href="#" class="btn btn--small">Preview</a>
+      <a {{bindAttr href="previewUrl"}} class="btn btn--small">Preview</a>
     </div>
 
     {{ partial "website/webPageTemplateFlip" }}

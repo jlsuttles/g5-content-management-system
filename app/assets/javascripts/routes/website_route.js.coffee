@@ -4,5 +4,5 @@ App.WebsiteRoute = Ember.Route.extend
     # setup other controllers
     @controllerFor("location").set("model", model.get("location"))
     @controllerFor("websiteTemplate").set("model", model.get("websiteTemplate"))
-    @controllerFor("webHomeTemplate").set("model", model.get("webHomeTemplate"))
+    @controllerFor("webPageTemplate").set("model", model.get("webPageTemplate"))
     @controllerFor("webHomeTemplate").set("model", model.get("webHomeTemplate"))
