@@ -3,6 +3,8 @@ class WebTemplate < ActiveRecord::Base
   include AfterUpdateSetSettingNavigation
 
   belongs_to :website
+  has_one :website_template, through: :website
+  has_one :website_layout, through: :website_template, source: :web_layout
 
   has_one :web_layout , autosave: true , dependent: :destroy
   has_one :web_theme  , autosave: true , dependent: :destroy
@@ -72,20 +74,25 @@ class WebTemplate < ActiveRecord::Base
     website.try(:website_template).try(:widget_lib_javascripts).to_a
   end
 
-  def compile_path
-    File.join(website.try(:compile_path).to_s, "#{slug}.html")
+  def website_compile_path
+    website.compile_path if website
   end
 
-  def compiled_stylesheets
-    stylesheets.map do |stylesheet|
-      remote_stylesheet = RemoteStylesheet.new(
-       stylesheet,
-       { primary: website.primary_color,
-         secondary: website.secondary_color }
-      )
-      remote_stylesheet.compile
-      remote_stylesheet.css_link_path
-    end
+  def website_colors
+    website.colors if website
+  end
+
+  def compile_path
+    File.join(website_compile_path.to_s, "#{slug}.html")
+  end
+
+  def stylesheets_compiler
+    @stylesheets_compiler ||= StaticWebsite::Compiler::Stylesheets.new(stylesheets, "#{Rails.root}/public", website_colors)
+  end
+
+  def stylesheet_link_paths
+    stylesheets_compiler.compile
+    stylesheets_compiler.link_paths
   end
 
   private

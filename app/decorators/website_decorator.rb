@@ -1,5 +1,7 @@
 class WebsiteDecorator < Draper::Decorator
   delegate_all
+  decorates_association :web_home_template
+  decorates_association :web_page_template
 
   def github_repo
     "git@github.com:G5/static-heroku-app.git"

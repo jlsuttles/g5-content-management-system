@@ -5,8 +5,9 @@
     <meta charset="utf8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= javascript_include_tag "/javascripts/modernizr.custom.js" %>
-    <%= stylesheet_link_tag("preview") if mode == "preview" %>
+    <%= stylesheet_link_tag "web_template" if mode == "preview" %>
     <%= yield(:head) %>
+    <%= yield(:head_widgets) %>
   </head>
   <body class="<%= [mode, yield(:body_classes)].join(" ") %>">
 
@@ -39,7 +40,7 @@
     <!--[if gte IE 6]>
       <%= javascript_include_tag "/javascripts/selectivizr-min.js" %>
     <![endif]-->
-    <%= javascript_include_tag "compiled_pages" if mode == "preview" %>
+    <%= javascript_include_tag "web_template" if mode == "preview" %>
     <%= yield(:bottom_of_body) %>
   </body>
 </html>

@@ -76,8 +76,8 @@ describe Website, vcr: VCR_OPTIONS do
   describe "#deploy" do
     let(:website) { Fabricate(:website) }
 
-    it "calls WebsiteDeployer with urn" do
-      WebsiteDeployer.should_receive(:perform).with(website.urn).once
+    it "calls StaticWebsiteDeployerJob with urn" do
+      StaticWebsiteDeployerJob.should_receive(:perform).with(website.urn).once
       website.deploy
     end
   end
@@ -85,9 +85,9 @@ describe Website, vcr: VCR_OPTIONS do
   describe "#async_deploy" do
     let(:website) { Fabricate(:website) }
 
-    it "enqueues WebsiteDeployer with urn" do
+    it "enqueues StaticWebsiteDeployerJob with urn" do
       Resque.stub(:enqueue)
-      Resque.should_receive(:enqueue).with(WebsiteDeployer, website.urn).once
+      Resque.should_receive(:enqueue).with(StaticWebsiteDeployerJob, website.urn).once
       website.async_deploy
     end
   end

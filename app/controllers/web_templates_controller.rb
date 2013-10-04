@@ -3,8 +3,7 @@ class WebTemplatesController < ApplicationController
     @website = Website.find_by_urn(params[:website_id])
     @web_template = WebTemplate.find(params[:id])
 
-    render "web_templates/show",
-      layout: "compiled_pages",
+    render "web_templates/show", layout: "web_template",
       locals: {
         website: @website,
         web_template: @web_template,

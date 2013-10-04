@@ -1,17 +1,13 @@
-<% content_for :title, web_template.title %>
+<% content_for(:title) { web_template.title } %>
 
-<% content_for :head do %>
-  <%= stylesheet_link_tag(*web_template.compiled_stylesheets) %>
-  <%# TODO: remove when layout includes head drop target%>
-  head_widgets(web_template)
-<% end %>
+<% content_for(:head) {
+    stylesheet_link_tag(*web_template.stylesheet_link_paths) } %>
 
-<% content_for :body_classes do %>
- "page-#{web_template.slug}"
-<% end %>
+<% content_for(:head_widgets) { raw head_widgets(web_template) } %>
 
-<%= raw preview(web_template.website, web_template) %>
+<% content_for(:body_classes) { "page-#{web_template.slug}" } %>
 
-<% content_for :bottom_of_body do %>
-  <%= javascript_include_tag(*web_template.javascripts) %>
-<% end %>
+<%= raw preview(web_template.website_layout, web_template) %>
+
+<% content_for(:bottom_of_body) {
+    javascript_include_tag(*web_template.javascripts) } %>

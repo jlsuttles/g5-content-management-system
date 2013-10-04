@@ -6,7 +6,7 @@ class Website < ActiveRecord::Base
   include AfterCreateUpdateUrn
   include ToParamUrn
 
-  COMPILE_PATH = File.join(Rails.root, "tmp", "compiled_sites")
+  COMPILE_PATH = File.join(Rails.root, "tmp","static_sites")
 
   set_urn_prefix "g5-clw"
 
@@ -41,11 +41,16 @@ class Website < ActiveRecord::Base
   end
 
   def deploy
-    WebsiteDeployer.perform(urn)
+    StaticWebsiteDeployerJob.perform(urn)
   end
 
   def async_deploy
-    Resque.enqueue(WebsiteDeployer, urn)
+    Resque.enqueue(StaticWebsiteDeployerJob, urn)
+  end
+
+  def colors
+    { primary_color: primary_color,
+      secondary_color: secondary_color }
   end
 
   def primary_color
