@@ -22,7 +22,7 @@
 
       <div class="buttons">
         {{#view App.CardAction}}
-          <button {{action cancel}} class="cancel-link card-flip">Cancel</button>
+          <button {{action cancel model}} class="cancel-link card-flip">Cancel</button>
         {{/view}}
         {{#view App.CardAction}}
           <button {{action save model}} class="save btn btn--small" disabled>Save</button>
