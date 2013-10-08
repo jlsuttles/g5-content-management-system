@@ -51,9 +51,9 @@ describe Api::V1::WebThemesController do
 
     context "allowed attributes" do
       it "url" do
-        put :update, id: web_theme.id, web_theme: { url: "spec/support/web_theme.html" }
+        put :update, id: web_theme.id, web_theme: { url: WebThemeSupport.web_theme.url }
         expect(response.status).to eq 200
-        expect(web_theme.reload.url).to eq "spec/support/web_theme.html"
+        expect(web_theme.reload.url).to eq WebThemeSupport.web_theme.url
       end
     end
   end

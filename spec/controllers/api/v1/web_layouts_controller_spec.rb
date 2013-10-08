@@ -51,9 +51,9 @@ describe Api::V1::WebLayoutsController do
 
     context "allowed attributes" do
       it "url" do
-        put :update, id: web_layout.id, web_layout: { url: "spec/support/web_theme.html" }
+        put :update, id: web_layout.id, web_layout: { url: WebLayoutSupport.web_layout.url }
         expect(response.status).to eq 200
-        expect(web_layout.reload.url).to eq "spec/support/web_theme.html"
+        expect(web_layout.reload.url).to eq WebLayoutSupport.web_layout.url
       end
     end
   end

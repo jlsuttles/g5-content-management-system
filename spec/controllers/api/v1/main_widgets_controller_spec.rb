@@ -52,9 +52,9 @@ describe Api::V1::MainWidgetsController do
 
     context "allowed attributes" do
       it "url" do
-        post :create, id: widget.id, main_widget: { url: "spec/support/widget.html" }
+        post :create, id: widget.id, main_widget: { url: WidgetSupport.widget.url }
         expect(response.status).to eq 200
-        expect(widget.reload.url).to eq "spec/support/widget.html"
+        expect(widget.reload.url).to eq WidgetSupport.widget.url
       end
     end
   end
