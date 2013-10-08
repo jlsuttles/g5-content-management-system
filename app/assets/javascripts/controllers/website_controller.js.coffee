@@ -5,5 +5,3 @@ App.WebsiteController = Ember.ObjectController.extend
 
     cancel: ->
       @get('transaction').rollback()
-      @transitionTo('website')
-
