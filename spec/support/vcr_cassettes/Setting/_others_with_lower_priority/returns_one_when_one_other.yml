@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Mon, 30 Sep 2013 20:10:49 GMT
+      - Tue, 08 Oct 2013 22:00:52 GMT
       Last-Modified:
-      - Fri, 27 Sep 2013 22:47:55 GMT
+      - Fri, 04 Oct 2013 22:09:48 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTRlODE4MmM2OGIwNGQ1Njk3MTBhODRhYTUwNzc2ZTYwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUFjRm8rQ05IM0dkN05DUGxSQ0ZuNzBhSG10TzRzeHREaGZEME42bE5DZVU9BjsARg%3D%3D--8b583d60127f519f5cc4d71c05d60a21070cc9e5;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWFiYjllNjY5YzgxZjhjNTY1NGRjY2Y4YTE1OWEyMjRhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVg5YVp2OUFuY1E3UUwyWjFxU2ZlSnZXSkx1eURKZlY5eGFHSWFUSk5jWmM9BjsARg%3D%3D--ca03ffb137283352e83d34fa9dcbdeac7ab5b245;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 46f22bd44a6c8e9fdbe110f339017577
+      - b45283811f59a5611b3b0c7ebf421bbb
       X-Runtime:
-      - '0.108330'
+      - '0.107058'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"AcFo+CNH3Gd7NCPlRCFn70aHmtO4sxtDhfD0N6lNCeU=\"
+        name=\"csrf-param\" />\n<meta content=\"X9aZv9AncQ7QL2Z1qSfeJvWJLuyDJfV9xaGIaTJNcZc=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -392,7 +392,7 @@ http_interactions:
         }}\n  &lt;/p&gt;\n  {% endif %}\n&lt;/div&gt;\n{% endif %}\n\n&lt;!-- END
         SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Mon, 30 Sep 2013 20:10:51 GMT
+  recorded_at: Tue, 08 Oct 2013 22:00:52 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/show.html
@@ -414,9 +414,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Mon, 30 Sep 2013 20:10:50 GMT
+      - Tue, 08 Oct 2013 22:00:52 GMT
       Last-Modified:
-      - Fri, 27 Sep 2013 22:47:55 GMT
+      - Fri, 04 Oct 2013 22:09:48 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -454,7 +454,7 @@ http_interactions:
         tel\" itemprop=\"telephone\">\n    F: {{ widget.contact_info_fax.best_value
         }}\n  </p>\n  {% endif %}\n</div>\n{% endif %}\n"
     http_version: 
-  recorded_at: Mon, 30 Sep 2013 20:10:52 GMT
+  recorded_at: Tue, 08 Oct 2013 22:00:53 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/edit.html
@@ -476,9 +476,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Mon, 30 Sep 2013 20:10:50 GMT
+      - Tue, 08 Oct 2013 22:00:52 GMT
       Last-Modified:
-      - Fri, 27 Sep 2013 22:47:55 GMT
+      - Fri, 04 Oct 2013 22:09:48 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -609,7 +609,7 @@ http_interactions:
         widget.contact_info_fax.best_value }}\"\n    />\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Mon, 30 Sep 2013 20:10:52 GMT
+  recorded_at: Tue, 08 Oct 2013 22:00:53 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/contact-info
@@ -631,20 +631,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Mon, 30 Sep 2013 20:10:51 GMT
+      - Tue, 08 Oct 2013 22:00:53 GMT
       Last-Modified:
-      - Fri, 27 Sep 2013 22:47:55 GMT
+      - Fri, 04 Oct 2013 22:09:48 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTdhNTNmM2EyMmMzZjI3NzY3Zjc2MTM5NmM3MGNhMjNiBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWJLeElwcElQaHZPS2R1YUM2RU9mdG1hbEF1ZU5rTElZS1ZsbEl6WGpXbEE9BjsARg%3D%3D--d65d7c835373e96e1a741c42826b7f5e2df7f733;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQxZjkyZTI3YjcwMzM0MjQ2Y2M2M2MzYjVkYzc3Y2M1BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMThvK2F3Zy9mTnVUdURsdHRPRWlIemliN0FrM3A4TFQ0YlBYRW9UQy9qc2s9BjsARg%3D%3D--ddb876f8b469404d85f913007584032778c3585b;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 1e74fa9e2bc1d93e7808f231cebdbb39
+      - 12a0018a6e43080bb73fae423fd823a6
       X-Runtime:
-      - '0.152406'
+      - '0.150269'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -660,7 +660,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"bKxIppIPhvOKduaC6EOftmalAueNkLIYKVllIzXjWlA=\"
+        name=\"csrf-param\" />\n<meta content=\"8o+awg/fNuTuDlttOEiHzib7Ak3p8LT4bPXEoTC/jsk=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -1002,7 +1002,7 @@ http_interactions:
         }}\n  &lt;/p&gt;\n  {% endif %}\n&lt;/div&gt;\n{% endif %}\n\n&lt;!-- END
         SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Mon, 30 Sep 2013 20:10:53 GMT
+  recorded_at: Tue, 08 Oct 2013 22:00:53 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/show.html
@@ -1024,9 +1024,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Mon, 30 Sep 2013 20:10:52 GMT
+      - Tue, 08 Oct 2013 22:00:53 GMT
       Last-Modified:
-      - Fri, 27 Sep 2013 22:47:55 GMT
+      - Fri, 04 Oct 2013 22:09:48 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1064,7 +1064,7 @@ http_interactions:
         tel\" itemprop=\"telephone\">\n    F: {{ widget.contact_info_fax.best_value
         }}\n  </p>\n  {% endif %}\n</div>\n{% endif %}\n"
     http_version: 
-  recorded_at: Mon, 30 Sep 2013 20:10:53 GMT
+  recorded_at: Tue, 08 Oct 2013 22:00:54 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/edit.html
@@ -1086,9 +1086,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Mon, 30 Sep 2013 20:10:52 GMT
+      - Tue, 08 Oct 2013 22:00:53 GMT
       Last-Modified:
-      - Fri, 27 Sep 2013 22:47:55 GMT
+      - Fri, 04 Oct 2013 22:09:48 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1219,5 +1219,5 @@ http_interactions:
         widget.contact_info_fax.best_value }}\"\n    />\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Mon, 30 Sep 2013 20:10:54 GMT
+  recorded_at: Tue, 08 Oct 2013 22:00:54 GMT
 recorded_with: VCR 2.6.0

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Api::V1::MainWidgetsController do
+describe Api::V1::MainWidgetsController, vcr: VCR_OPTIONS do
   let(:widget) { Fabricate(:widget) }
 
   describe "#show" do

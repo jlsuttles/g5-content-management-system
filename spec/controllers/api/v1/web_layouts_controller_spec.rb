@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Api::V1::WebLayoutsController do
+describe Api::V1::WebLayoutsController, vcr: VCR_OPTIONS do
   let(:web_layout) { Fabricate(:web_layout) }
 
   describe "#show" do

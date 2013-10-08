@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Api::V1::RemoteWebLayoutsController do
+describe Api::V1::RemoteWebLayoutsController, vcr: VCR_OPTIONS do
   describe "#index" do
     it "finds all remote web layouts" do
       WebLayout.should_receive(:all_remote).once

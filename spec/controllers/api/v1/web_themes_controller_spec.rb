@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Api::V1::WebThemesController do
+describe Api::V1::WebThemesController, vcr: VCR_OPTIONS do
   let(:web_theme) { Fabricate(:web_theme) }
 
   describe "#show" do

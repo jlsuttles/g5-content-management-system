@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Api::V1::RemoteWebThemesController do
+describe Api::V1::RemoteWebThemesController, vcr: VCR_OPTIONS do
   describe "#index" do
     it "finds all remote web themes" do
       WebTheme.should_receive(:all_remote).once
