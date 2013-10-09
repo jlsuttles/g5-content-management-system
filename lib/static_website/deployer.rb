@@ -2,17 +2,27 @@ require "static_website/compiler"
 
 module StaticWebsite
   class Deployer
-    attr_reader :website, :compile_path
+    attr_reader :website, :compile_path, :retries
 
     def initialize(website)
       @website = website
       @compile_path = website.compile_path
+      @retries = 0
     end
 
     def deploy
+      @retries = 0
       begin
         deployer.deploy(deployer_options) do |repo|
           cp_r_compile_path(repo)
+        end
+      rescue GithubHerokuDeployer::CommandException,
+             Heroku::API::Errors::ErrorWithResponse => e
+        if should_retry?
+          increment_retries
+          retry
+        else
+          raise e
         end
       ensure
         clean_up
@@ -39,6 +49,14 @@ module StaticWebsite
       # commit changes
       repo.add('.')
       repo.commit_all "Add compiled site"
+    end
+
+    def should_retry?
+      @retries < 3
+    end
+
+    def increment_retries
+      @retries += 1
     end
 
     def clean_up
