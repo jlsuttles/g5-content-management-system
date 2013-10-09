@@ -1,3 +1,3 @@
 App.ToggleBtn = Ember.View.extend
   didInsertElement: ->
-    new window.toggleSwitch($(".switch"))
+    this.$().find('.switch').bootstrapSwitch()
