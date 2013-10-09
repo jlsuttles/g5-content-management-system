@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://g5-widget-garden.herokuapp.com/components/contact-info
+    uri: http://g5-widget-garden.herokuapp.com/components/map
     body:
       encoding: US-ASCII
       string: ''
@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 08 Oct 2013 22:11:58 GMT
+      - Wed, 09 Oct 2013 22:58:32 GMT
       Last-Modified:
-      - Fri, 04 Oct 2013 22:09:48 GMT
+      - Wed, 09 Oct 2013 22:50:48 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWI2MzQ2YWMyNjMyZmY5MTQ2ODUzZWI1Nzc2OTMwOTVhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWs1c3E0QitGZ2ZqZzBsVk5wcmhjTW1LNWRXMkxuQ3JISG5PejN2RGhXTzQ9BjsARg%3D%3D--31acb059bffe86b02c4c184c4045bb9ec6c576a4;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWMzMDU3NGRmZTdhZGJhZjBiNGUxMGZmNmMyZmE5MjdiBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMSthblRzcHA5U0ptRWlveE9kcjJmUS9McGVWUVlzZGlmL2dCWnpJbGZIWG89BjsARg%3D%3D--b3f966a795ad5908f29d6a8839cd43093b3c4be6;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - b2b5f4233ac1fe846095f69cf2028008
+      - 4bdddf85557d8fc56edd8c65988f867e
       X-Runtime:
-      - '0.201165'
+      - '0.099955'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"k5sq4B+Fgfjg0lVNprhcMmK5dW2LnCrHHnOz3vDhWO4=\"
+        name=\"csrf-param\" />\n<meta content=\"+anTspp9SJmEioxOdr2fQ/LpeVQYsdif/gBZzIlfHXo=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -64,338 +64,89 @@ http_interactions:
         class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
         \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
         \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
-        \     <a href=\"http://g5-widget-garden.herokuapp.com/components/contact-info\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Contact Info</a>\n    </h2>\n    <p
-        class=\"p-summary\">Business Contact Information</p>\n      <p>\n        <a
-        href=\"http://g5-widget-garden.herokuapp.com/static/components/contact-info/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/contact-info/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/contact-info/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/contact-info/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-widget-garden.herokuapp.com/static/components/contact-info/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-widget-garden.herokuapp.com/static/components/contact-info/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/contact-info/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-widget-garden.herokuapp.com/static/components/contact-info/images/thumbnail.png</a>\n
-        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/contact-info/stylesheets/contact-info.css\"
-        class=\"u-g5-stylesheet u-url\">http://g5-widget-garden.herokuapp.com/static/components/contact-info/stylesheets/contact-info.css</a>\n
+        \     <a href=\"http://g5-widget-garden.herokuapp.com/components/map\" class=\"u-url
+        u-uid\" rel=\"bookmark\">Map</a>\n    </h2>\n    <p class=\"p-summary\">Google
+        map of business</p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/map/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/map/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/map/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/map/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-widget-garden.herokuapp.com/static/components/map/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-widget-garden.herokuapp.com/static/components/map/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/map/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-widget-garden.herokuapp.com/static/components/map/images/thumbnail.png</a>\n
+        \       </p>\n\n      <h3>Javascripts</h3>\n\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/map/javascripts/show.js\"
+        class=\"u-g5-show-javascript u-url\">http://g5-widget-garden.herokuapp.com/static/components/map/javascripts/show.js</a>\n
+        \     </p>\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/map/stylesheets/map.css\"
+        class=\"u-g5-stylesheet u-url\">http://g5-widget-garden.herokuapp.com/static/components/map/stylesheets/map.css</a>\n
         \       </p>\n      <ul class=\"unstyled\">\n          <li class=\"e-g5-property-group
-        h-g5-property-group\">\n            <h3><span class=\"p-name\">Contact Info</span>Property
+        h-g5-property-group\">\n            <h3><span class=\"p-name\">Map</span>Property
         Group</h3>\n  <p class=\"p-category\">Instance</p>\n  <div class=\"row\">\n
         \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
         e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
-        class=\"p-g5-name\">display_contact_info</th>\n        </tr>\n          <tr>\n
-        \           <th style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
+        class=\"p-g5-name\">map_address</th>\n        </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
         \             true\n            </td>\n          </tr>\n          <tr>\n            <th
         style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
-        \             true\n            </td>\n          </tr>\n      </table>\n    </div>\n
-        \ </div>\n  <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_street</th>\n
+        \             550 NW Franklin Avenue, Bend, OR 97701\n            </td>\n
+        \         </tr>\n      </table>\n    </div>\n  </div>\n  <div class=\"row\">\n
+        \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
+        e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
+        class=\"p-g5-name\">map_type</th>\n        </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
+        \             true\n            </td>\n          </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
+        \             ROADMAP\n            </td>\n          </tr>\n      </table>\n
+        \   </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"span5\">\n      <table
+        class=\"table table-striped table-bordered e-g5-property h-g5-property\">\n
+        \       <tr>\n          <th>Name</th>\n          <td class=\"p-g5-name\">map_allow_pan_zoom</th>\n
         \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
         \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
         \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_street_two</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_hide_street</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_city</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_hide_city</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_state</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_hide_state</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_zip</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_hide_zip</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_country</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_hide_country</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_tel</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_hide_tel</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_fax</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
-        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_info_hide_fax</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              true\n
         \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n\n
         \         </li>\n      </ul>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;!--
-        BEGIN EDIT FORM MARKUP --&gt;\n&lt;form&gt;\n  &lt;div class=&quot;form-field
-        check-field&quot;&gt;\n    {{ widget.display_contact_info.id_hidden_field
-        }}\n    &lt;input type=&quot;hidden&quot;\n      id=&quot;{{ widget.display_contact_info.value_field_id
-        }}_false&quot;\n      name=&quot;{{ widget.display_contact_info.value_field_name
-        }}&quot;\n      value=&quot;false&quot;\n    /&gt;\n    &lt;input type=&quot;checkbox&quot;\n
-        \     id=&quot;{{ widget.display_contact_info.value_field_id }}&quot;\n      name=&quot;{{
-        widget.display_contact_info.value_field_name }}&quot;\n      value=&quot;true&quot;\n
-        \     {% if widget.display_contact_info.best_value == &quot;true&quot; %}\n
+        BEGIN EDIT FORM MARKUP --&gt;\n&lt;form&gt;\n  &lt;div class=&quot;form-field&quot;&gt;\n
+        \   {{ widget.map_address.id_hidden_field }}\n    &lt;label for=&quot;{{ widget.map_address.value_field_id
+        }}&quot; &gt;\n      Address\n    &lt;/label&gt;\n    &lt;input type=&quot;text&quot;\n
+        \     id=&quot;{{ widget.map_address.value_field_id }}&quot;\n      name=&quot;{{
+        widget.map_address.value_field_name }}&quot;\n      value=&quot;{{ widget.map_address.best_value
+        }}&quot;\n    /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field check-field&quot;&gt;\n
+        \   &lt;fieldset&gt;\n      &lt;legend&gt;Map Type&lt;/legend&gt;\n      {{
+        widget.map_type.id_hidden_field }}\n      &lt;input type=&quot;radio&quot;\n
+        \       id=&quot;{{ widget.map_type.value_field_id }}_roadmap&quot;\n        name=&quot;{{
+        widget.map_type.value_field_name }}&quot;\n        value=&quot;ROADMAP&quot;\n
+        \       checked=&quot;checked&quot;\n      /&gt;\n      &lt;label for=&quot;{{
+        widget.map_type.value_field_id }}_roadmap&quot; &gt;\n        Road Map\n      &lt;/label&gt;\n
+        \     &lt;input type=&quot;radio&quot;\n        id=&quot;{{ widget.map_type.value_field_id
+        }}_satellite&quot;\n        name=&quot;{{ widget.map_type.value_field_name
+        }}&quot;\n        value=&quot;SATELLITE&quot;\n        {% if widget.map_type.best_value
+        == &quot;SATELLITE&quot; %}\n        checked=&quot;checked&quot;\n        {%
+        endif %}\n      /&gt;\n      &lt;label for=&quot;{{ widget.map_type.value_field_id
+        }}_satellite&quot; &gt;\n        Satellite\n      &lt;/label&gt;\n    &lt;/fieldset&gt;\n
+        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field check-field&quot;&gt;\n
+        \   {{ widget.map_allow_pan_zoom.id_hidden_field }}\n    &lt;input type=&quot;hidden&quot;\n
+        \     id=&quot;{{ widget.map_allow_pan_zoom.value_field_id }}_false&quot;\n
+        \     name=&quot;{{ widget.map_allow_pan_zoom.value_field_name }}&quot;\n
+        \     value=&quot;false&quot;\n    /&gt;\n    &lt;input type=&quot;checkbox&quot;\n
+        \     id=&quot;{{ widget.map_allow_pan_zoom.value_field_id }}&quot;\n      name=&quot;{{
+        widget.map_allow_pan_zoom.value_field_name }}&quot;\n      value=&quot;true&quot;\n
+        \     {% if widget.map_allow_pan_zoom.best_value == &quot;true&quot; %}\n
         \     checked=&quot;checked&quot;\n      {% endif %}\n    /&gt;\n    &lt;label
-        for=&quot;{{ widget.display_contact_info.value_field_id }}&quot; &gt;\n      Display
-        Contact Info\n    &lt;/label&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
-        \   {{ widget.contact_info_street.id_hidden_field }}\n    &lt;label for=&quot;{{
-        widget.contact_info_street.value_field_id }}&quot; &gt;\n      Street Address\n
-        \   &lt;/label&gt;\n    &lt;input type=&quot;text&quot;\n      id=&quot;{{
-        widget.contact_info_street.value_field_id }}&quot;\n      name=&quot;{{ widget.contact_info_street.value_field_name
-        }}&quot;\n      value=&quot;{{ widget.contact_info_street.best_value }}&quot;\n
-        \   /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
-        \   &lt;label for=&quot;{{ widget.contact_info_street_two.value_field_id }}&quot;
-        &gt;\n      street Address Two\n    &lt;/label&gt;\n    {{ widget.contact_info_street_two.id_hidden_field
-        }}\n    &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.contact_info_street_two.value_field_id
-        }}&quot;\n      name=&quot;{{ widget.contact_info_street_two.value_field_name
-        }}&quot;\n      value=&quot;{{ widget.contact_info_street_two.best_value }}&quot;\n
-        \   /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
-        \   {{ widget.contact_info_city.id_hidden_field }}\n    &lt;label for=&quot;{{
-        widget.contact_info_city.value_field_id }}&quot; &gt;\n      City\n    &lt;/label&gt;\n
-        \   &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.contact_info_city.value_field_id
-        }}&quot;\n      name=&quot;{{ widget.contact_info_city.value_field_name }}&quot;\n
-        \     value=&quot;{{ widget.contact_info_city.best_value }}&quot;\n    /&gt;\n
-        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n    {{ widget.contact_info_state.id_hidden_field
-        }}\n    &lt;label for=&quot;{{ widget.contact_info_state.value_field_id }}&quot;
-        &gt;\n      State\n    &lt;/label&gt;\n    &lt;select\n      id=&quot;{{ widget.contact_info_state.value_field_id
-        }}&quot;\n      name=&quot;{{ widget.contact_info_state.value_field_name }}&quot;\n
-        \   &gt;\n      &lt;option value=&quot;&quot;&gt;Choose a State&lt;/option&gt;\n
-        \     &lt;option {% if widget.contact_info_state.best_value == &quot;AL&quot;
-        %}selected {% endif %}value=&quot;AL&quot;&gt;Alabama&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;AK&quot; %}selected {%
-        endif %}value=&quot;AK&quot;&gt;Alaska&lt;/option&gt;\n      &lt;option {%
-        if widget.contact_info_state.best_value == &quot;AZ&quot; %}selected {% endif
-        %}value=&quot;AZ&quot;&gt;Arizona&lt;/option&gt;\n      &lt;option {% if widget.contact_info_state.best_value
-        == &quot;AR&quot; %}selected {% endif %}value=&quot;AR&quot;&gt;Arkansas&lt;/option&gt;\n
-        \     &lt;option {% if widget.contact_info_state.best_value == &quot;CA&quot;
-        %}selected {% endif %}value=&quot;CA&quot;&gt;California&lt;/option&gt;\n
-        \     &lt;option {% if widget.contact_info_state.best_value == &quot;CO&quot;
-        %}selected {% endif %}value=&quot;CO&quot;&gt;Colorado&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;CT&quot; %}selected {%
-        endif %}value=&quot;CT&quot;&gt;Connecticut&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;DE&quot; %}selected {%
-        endif %}value=&quot;DE&quot;&gt;Delaware&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;DC&quot; %}selected {%
-        endif %}value=&quot;DC&quot;&gt;District Of Columbia&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;FL&quot; %}selected {%
-        endif %}value=&quot;FL&quot;&gt;Florida&lt;/option&gt;\n      &lt;option {%
-        if widget.contact_info_state.best_value == &quot;GA&quot; %}selected {% endif
-        %}value=&quot;GA&quot;&gt;Georgia&lt;/option&gt;\n      &lt;option {% if widget.contact_info_state.best_value
-        == &quot;HI&quot; %}selected {% endif %}value=&quot;HI&quot;&gt;Hawaii&lt;/option&gt;\n
-        \     &lt;option {% if widget.contact_info_state.best_value == &quot;ID&quot;
-        %}selected {% endif %}value=&quot;ID&quot;&gt;Idaho&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;IL&quot; %}selected {%
-        endif %}value=&quot;IL&quot;&gt;Illinois&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;IN&quot; %}selected {%
-        endif %}value=&quot;IN&quot;&gt;Indiana&lt;/option&gt;\n      &lt;option {%
-        if widget.contact_info_state.best_value == &quot;IA&quot; %}selected {% endif
-        %}value=&quot;IA&quot;&gt;Iowa&lt;/option&gt;\n      &lt;option {% if widget.contact_info_state.best_value
-        == &quot;KS&quot; %}selected {% endif %}value=&quot;KS&quot;&gt;Kansas&lt;/option&gt;\n
-        \     &lt;option {% if widget.contact_info_state.best_value == &quot;KY&quot;
-        %}selected {% endif %}value=&quot;KY&quot;&gt;Kentucky&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;LA&quot; %}selected {%
-        endif %}value=&quot;LA&quot;&gt;Louisiana&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;ME&quot; %}selected {%
-        endif %}value=&quot;ME&quot;&gt;Maine&lt;/option&gt;\n      &lt;option {%
-        if widget.contact_info_state.best_value == &quot;MD&quot; %}selected {% endif
-        %}value=&quot;MD&quot;&gt;Maryland&lt;/option&gt;\n      &lt;option {% if
-        widget.contact_info_state.best_value == &quot;MA&quot; %}selected {% endif
-        %}value=&quot;MA&quot;&gt;Massachusetts&lt;/option&gt;\n      &lt;option {%
-        if widget.contact_info_state.best_value == &quot;MI&quot; %}selected {% endif
-        %}value=&quot;MI&quot;&gt;Michigan&lt;/option&gt;\n      &lt;option {% if
-        widget.contact_info_state.best_value == &quot;MN&quot; %}selected {% endif
-        %}value=&quot;MN&quot;&gt;Minnesota&lt;/option&gt;\n      &lt;option {% if
-        widget.contact_info_state.best_value == &quot;MS&quot; %}selected {% endif
-        %}value=&quot;MS&quot;&gt;Mississippi&lt;/option&gt;\n      &lt;option {%
-        if widget.contact_info_state.best_value == &quot;MO&quot; %}selected {% endif
-        %}value=&quot;MO&quot;&gt;Missouri&lt;/option&gt;\n      &lt;option {% if
-        widget.contact_info_state.best_value == &quot;MT&quot; %}selected {% endif
-        %}value=&quot;MT&quot;&gt;Montana&lt;/option&gt;\n      &lt;option {% if widget.contact_info_state.best_value
-        == &quot;NE&quot; %}selected {% endif %}value=&quot;NE&quot;&gt;Nebraska&lt;/option&gt;\n
-        \     &lt;option {% if widget.contact_info_state.best_value == &quot;NV&quot;
-        %}selected {% endif %}value=&quot;NV&quot;&gt;Nevada&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;NH&quot; %}selected {%
-        endif %}value=&quot;NH&quot;&gt;New Hampshire&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;NJ&quot; %}selected {%
-        endif %}value=&quot;NJ&quot;&gt;New Jersey&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;NM&quot; %}selected {%
-        endif %}value=&quot;NM&quot;&gt;New Mexico&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;NY&quot; %}selected {%
-        endif %}value=&quot;NY&quot;&gt;New York&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;NC&quot; %}selected {%
-        endif %}value=&quot;NC&quot;&gt;North Carolina&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;ND&quot; %}selected {%
-        endif %}value=&quot;ND&quot;&gt;North Dakota&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;OH&quot; %}selected {%
-        endif %}value=&quot;OH&quot;&gt;Ohio&lt;/option&gt;\n      &lt;option {% if
-        widget.contact_info_state.best_value == &quot;OK&quot; %}selected {% endif
-        %}value=&quot;OK&quot;&gt;Oklahoma&lt;/option&gt;\n      &lt;option {% if
-        widget.contact_info_state.best_value == &quot;OR&quot; %}selected {% endif
-        %}value=&quot;OR&quot;&gt;Oregon&lt;/option&gt;\n      &lt;option {% if widget.contact_info_state.best_value
-        == &quot;PA&quot; %}selected {% endif %}value=&quot;PA&quot;&gt;Pennsylvania&lt;/option&gt;\n
-        \     &lt;option {% if widget.contact_info_state.best_value == &quot;RI&quot;
-        %}selected {% endif %}value=&quot;RI&quot;&gt;Rhode Island&lt;/option&gt;\n
-        \     &lt;option {% if widget.contact_info_state.best_value == &quot;SC&quot;
-        %}selected {% endif %}value=&quot;SC&quot;&gt;South Carolina&lt;/option&gt;\n
-        \     &lt;option {% if widget.contact_info_state.best_value == &quot;SD&quot;
-        %}selected {% endif %}value=&quot;SD&quot;&gt;South Dakota&lt;/option&gt;\n
-        \     &lt;option {% if widget.contact_info_state.best_value == &quot;TN&quot;
-        %}selected {% endif %}value=&quot;TN&quot;&gt;Tennessee&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;TX&quot; %}selected {%
-        endif %}value=&quot;TX&quot;&gt;Texas&lt;/option&gt;\n      &lt;option {%
-        if widget.contact_info_state.best_value == &quot;UT&quot; %}selected {% endif
-        %}value=&quot;UT&quot;&gt;Utah&lt;/option&gt;\n      &lt;option {% if widget.contact_info_state.best_value
-        == &quot;VT&quot; %}selected {% endif %}value=&quot;VT&quot;&gt;Vermont&lt;/option&gt;\n
-        \     &lt;option {% if widget.contact_info_state.best_value == &quot;VA&quot;
-        %}selected {% endif %}value=&quot;VA&quot;&gt;Virginia&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;WA&quot; %}selected {%
-        endif %}value=&quot;WA&quot;&gt;Washington&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;WV&quot; %}selected {%
-        endif %}value=&quot;WV&quot;&gt;West Virginia&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;WI&quot; %}selected {%
-        endif %}value=&quot;WI&quot;&gt;Wisconsin&lt;/option&gt;\n      &lt;option
-        {% if widget.contact_info_state.best_value == &quot;WY&quot; %}selected {%
-        endif %}value=&quot;WY&quot;&gt;Wyoming&lt;/option&gt;\n    &lt;/select&gt;\n
-        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n    {{ widget.contact_info_zip.id_hidden_field
-        }}\n    &lt;label for=&quot;{{ widget.contact_info_zip.value_field_id }}&quot;
-        &gt;\n      zip\n    &lt;/label&gt;\n    &lt;input type=&quot;text&quot;\n
-        \     id=&quot;{{ widget.contact_info_zip.value_field_id }}&quot;\n      name=&quot;{{
-        widget.contact_info_zip.value_field_name }}&quot;\n      value=&quot;{{ widget.contact_info_zip.best_value
-        }}&quot;\n    /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
-        \   {{ widget.contact_info_country.id_hidden_field }}\n    &lt;label for=&quot;{{
-        widget.contact_info_country.value_field_id }}&quot; &gt;\n      country\n
-        \   &lt;/label&gt;\n    &lt;input type=&quot;text&quot;\n      id=&quot;{{
-        widget.contact_info_country.value_field_id }}&quot;\n      name=&quot;{{ widget.contact_info_country.value_field_name
-        }}&quot;\n      value=&quot;{{ widget.contact_info_country.best_value }}&quot;\n
-        \   /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
-        \   {{ widget.contact_info_tel.id_hidden_field }}\n    &lt;label for=&quot;{{
-        widget.contact_info_tel.value_field_id }}&quot; &gt;\n      tel\n    &lt;/label&gt;\n
-        \   &lt;input type=&quot;tel&quot;\n      id=&quot;{{ widget.contact_info_tel.value_field_id
-        }}&quot;\n      name=&quot;{{ widget.contact_info_tel.value_field_name }}&quot;\n
-        \     value=&quot;{{ widget.contact_info_tel.best_value }}&quot;\n    /&gt;\n
-        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n    {{ widget.contact_info_fax.id_hidden_field
-        }}\n    &lt;label for=&quot;{{ widget.contact_info_fax.value_field_id }}&quot;
-        &gt;\n      fax\n    &lt;/label&gt;\n    &lt;input type=&quot;tel&quot;\n
-        \     id=&quot;{{ widget.contact_info_fax.value_field_id }}&quot;\n      name=&quot;{{
-        widget.contact_info_fax.value_field_name }}&quot;\n      value=&quot;{{ widget.contact_info_fax.best_value
-        }}&quot;\n    /&gt;\n  &lt;/div&gt;\n\n  &lt;input type=&quot;submit&quot;
+        for=&quot;{{ widget.map_allow_pan_zoom.value_field_id }}&quot; &gt;\n      map_allow
+        Panning and Zooming\n    &lt;/label&gt;\n  &lt;/div&gt;\n\n  &lt;input type=&quot;submit&quot;
         value=&quot;Save&quot; class=&quot;btn&quot; /&gt;\n&lt;/form&gt;\n\n&lt;!--
-        END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n{% if widget.display_contact_info.best_value
-        == &quot;true&quot; %}\n&lt;div class=&quot;contact-info h-card vcard widget&quot;
-        itemscope itemtype=&quot;http://schema.org/LocalBusiness&quot;&gt;\n  &lt;p
-        class=&quot;h-adr p-adr adr&quot; itemscope itemtype=&quot;http://schema.org/PostalAddress&quot;&gt;\n
-        \   {% if widget.contact_info_street.best_value != empty %}\n    &lt;span
-        class=&quot;p-street-address street-address&quot; itemprop=&quot;streetAddress&quot;&gt;\n
-        \     {{ widget.contact_info_street.best_value}}\n    &lt;/span&gt;\n    {%
-        endif %}\n\n    {% if widget.contact_info_street_two.best_value != empty %}\n
-        \   &lt;span class=&quot;p-street-address street-address&quot; itemprop=&quot;streetAddress&quot;&gt;\n
-        \     {{ widget.contact_info_street_two.best_value}}\n    &lt;/span&gt;\n
-        \   {% endif %}\n\n    {% if widget.contact_info_city.best_value != empty
-        %}\n    &lt;span class=&quot;p-locality locality&quot; itemprop=&quot;addressLocality&quot;&gt;\n
-        \     {{ widget.contact_info_city.best_value }}&lt;/span&gt;,\n    {% endif
-        %}\n\n    {% if widget.contact_info_state.best_value != empty %}\n    &lt;span
-        class=&quot;p-region region&quot; itemprop=&quot;addressRegion&quot;&gt;\n
-        \     {{ widget.contact_info_state.best_value }}\n    &lt;/span&gt;\n    {%
-        endif %}\n\n    {% if widget.contact_info_zip.best_value != empty %}\n    &lt;span
-        class=&quot;p-postal-code postal-code&quot; itemprop=&quot;postalCode&quot;&gt;\n
-        \     {{ widget.contact_info_zip.best_value }}\n    &lt;/span&gt;\n    {%
-        endif %}\n\n    {% if widget.contact_info_country.best_value != empty %}\n
-        \   &lt;span class=&quot;p-country-name country-name&quot; itemprop=&quot;addressCountry&quot;&gt;\n
-        \     {{ widget.contact_info_country.best_value }}\n    &lt;/span&gt;\n    {%
-        endif %}\n  &lt;/p&gt;\n\n  {% if widget.contact_info_tel.best_value != empty
-        %}\n  &lt;p class=&quot;p-tel tel&quot; itemprop=&quot;telephone&quot;&gt;\n
-        \   T: &lt;a href=&quot;tel:{{ widget.contact_info_tel.best_value }}&quot;&gt;{{
-        widget.contact_info_tel.best_value }}&lt;/a&gt;\n  &lt;/p&gt;\n  {% endif
-        %}\n\n  {% if widget.contact_info_fax.best_value != empty %}\n  &lt;p class=&quot;p-tel
-        tel&quot; itemprop=&quot;telephone&quot;&gt;\n    F: {{ widget.contact_info_fax.best_value
-        }}\n  &lt;/p&gt;\n  {% endif %}\n&lt;/div&gt;\n{% endif %}\n\n&lt;!-- END
-        SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
+        END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n&lt;script
+        id=&quot;map-config&quot; type=&quot;application/json&quot;&gt;\n  {\n    &quot;panZoom&quot;:
+        {{ widget.map_allow_pan_zoom.best_value }},\n    &quot;address&quot;: &quot;{{
+        widget.map_address.best_value }}&quot;,\n    &quot;mapType&quot;: &quot;{{
+        widget.map_type.best_value }}&quot;\n  }\n&lt;/script&gt;\n\n&lt;div id=&quot;map-canvas&quot;
+        class=&quot;widget map&quot;&gt;&lt;/div&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
+        \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 08 Oct 2013 22:11:59 GMT
+  recorded_at: Wed, 09 Oct 2013 22:58:30 GMT
 - request:
     method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/show.html
+    uri: http://g5-widget-garden.herokuapp.com/static/components/map/show.html
     body:
       encoding: US-ASCII
       string: ''
@@ -414,50 +165,30 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 08 Oct 2013 22:11:59 GMT
+      - Wed, 09 Oct 2013 22:58:32 GMT
       Last-Modified:
-      - Fri, 04 Oct 2013 22:09:48 GMT
+      - Wed, 09 Oct 2013 22:50:48 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
-      - 006035d639fba8d5802ed22e0edba6f3039a97b4
+      - 32d86e520746bd687f068b1fd8b7607226125c1c
       X-Rack-Cache:
       - stale, valid, store
       Content-Length:
-      - '1909'
+      - '278'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "{% if widget.display_contact_info.best_value == \"true\" %}\n<div
-        class=\"contact-info h-card vcard widget\" itemscope itemtype=\"http://schema.org/LocalBusiness\">\n
-        \ <p class=\"h-adr p-adr adr\" itemscope itemtype=\"http://schema.org/PostalAddress\">\n
-        \   {% if widget.contact_info_street.best_value != empty %}\n    <span class=\"p-street-address
-        street-address\" itemprop=\"streetAddress\">\n      {{ widget.contact_info_street.best_value}}\n
-        \   </span>\n    {% endif %}\n\n    {% if widget.contact_info_street_two.best_value
-        != empty %}\n    <span class=\"p-street-address street-address\" itemprop=\"streetAddress\">\n
-        \     {{ widget.contact_info_street_two.best_value}}\n    </span>\n    {%
-        endif %}\n\n    {% if widget.contact_info_city.best_value != empty %}\n    <span
-        class=\"p-locality locality\" itemprop=\"addressLocality\">\n      {{ widget.contact_info_city.best_value
-        }}</span>,\n    {% endif %}\n\n    {% if widget.contact_info_state.best_value
-        != empty %}\n    <span class=\"p-region region\" itemprop=\"addressRegion\">\n
-        \     {{ widget.contact_info_state.best_value }}\n    </span>\n    {% endif
-        %}\n\n    {% if widget.contact_info_zip.best_value != empty %}\n    <span
-        class=\"p-postal-code postal-code\" itemprop=\"postalCode\">\n      {{ widget.contact_info_zip.best_value
-        }}\n    </span>\n    {% endif %}\n\n    {% if widget.contact_info_country.best_value
-        != empty %}\n    <span class=\"p-country-name country-name\" itemprop=\"addressCountry\">\n
-        \     {{ widget.contact_info_country.best_value }}\n    </span>\n    {% endif
-        %}\n  </p>\n\n  {% if widget.contact_info_tel.best_value != empty %}\n  <p
-        class=\"p-tel tel\" itemprop=\"telephone\">\n    T: <a href=\"tel:{{ widget.contact_info_tel.best_value
-        }}\">{{ widget.contact_info_tel.best_value }}</a>\n  </p>\n  {% endif %}\n\n
-        \ {% if widget.contact_info_fax.best_value != empty %}\n  <p class=\"p-tel
-        tel\" itemprop=\"telephone\">\n    F: {{ widget.contact_info_fax.best_value
-        }}\n  </p>\n  {% endif %}\n</div>\n{% endif %}\n"
+      string: ! "<script id=\"map-config\" type=\"application/json\">\n  {\n    \"panZoom\":
+        {{ widget.map_allow_pan_zoom.best_value }},\n    \"address\": \"{{ widget.map_address.best_value
+        }}\",\n    \"mapType\": \"{{ widget.map_type.best_value }}\"\n  }\n</script>\n\n<div
+        id=\"map-canvas\" class=\"widget map\"></div>\n"
     http_version: 
-  recorded_at: Tue, 08 Oct 2013 22:11:59 GMT
+  recorded_at: Wed, 09 Oct 2013 22:58:31 GMT
 - request:
     method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/edit.html
+    uri: http://g5-widget-garden.herokuapp.com/static/components/map/edit.html
     body:
       encoding: US-ASCII
       string: ''
@@ -476,138 +207,46 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 08 Oct 2013 22:11:59 GMT
+      - Wed, 09 Oct 2013 22:58:32 GMT
       Last-Modified:
-      - Fri, 04 Oct 2013 22:09:48 GMT
+      - Wed, 09 Oct 2013 22:50:48 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
-      - 227dd6c46dbe0d3e1420b5a2d2e9d7521e13f59b
+      - b7d2d7be753052af2da95417e4b0636d6e921b42
       X-Rack-Cache:
       - stale, valid, store
       Content-Length:
-      - '9800'
+      - '1923'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<form>\n  <div class=\"form-field check-field\">\n    {{ widget.display_contact_info.id_hidden_field
-        }}\n    <input type=\"hidden\"\n      id=\"{{ widget.display_contact_info.value_field_id
-        }}_false\"\n      name=\"{{ widget.display_contact_info.value_field_name }}\"\n
-        \     value=\"false\"\n    />\n    <input type=\"checkbox\"\n      id=\"{{
-        widget.display_contact_info.value_field_id }}\"\n      name=\"{{ widget.display_contact_info.value_field_name
-        }}\"\n      value=\"true\"\n      {% if widget.display_contact_info.best_value
-        == \"true\" %}\n      checked=\"checked\"\n      {% endif %}\n    />\n    <label
-        for=\"{{ widget.display_contact_info.value_field_id }}\" >\n      Display
-        Contact Info\n    </label>\n  </div>\n\n  <div class=\"form-field\">\n    {{
-        widget.contact_info_street.id_hidden_field }}\n    <label for=\"{{ widget.contact_info_street.value_field_id
-        }}\" >\n      Street Address\n    </label>\n    <input type=\"text\"\n      id=\"{{
-        widget.contact_info_street.value_field_id }}\"\n      name=\"{{ widget.contact_info_street.value_field_name
-        }}\"\n      value=\"{{ widget.contact_info_street.best_value }}\"\n    />\n
-        \ </div>\n\n  <div class=\"form-field\">\n    <label for=\"{{ widget.contact_info_street_two.value_field_id
-        }}\" >\n      street Address Two\n    </label>\n    {{ widget.contact_info_street_two.id_hidden_field
-        }}\n    <input type=\"text\"\n      id=\"{{ widget.contact_info_street_two.value_field_id
-        }}\"\n      name=\"{{ widget.contact_info_street_two.value_field_name }}\"\n
-        \     value=\"{{ widget.contact_info_street_two.best_value }}\"\n    />\n
-        \ </div>\n\n  <div class=\"form-field\">\n    {{ widget.contact_info_city.id_hidden_field
-        }}\n    <label for=\"{{ widget.contact_info_city.value_field_id }}\" >\n      City\n
-        \   </label>\n    <input type=\"text\"\n      id=\"{{ widget.contact_info_city.value_field_id
-        }}\"\n      name=\"{{ widget.contact_info_city.value_field_name }}\"\n      value=\"{{
-        widget.contact_info_city.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field\">\n
-        \   {{ widget.contact_info_state.id_hidden_field }}\n    <label for=\"{{ widget.contact_info_state.value_field_id
-        }}\" >\n      State\n    </label>\n    <select\n      id=\"{{ widget.contact_info_state.value_field_id
-        }}\"\n      name=\"{{ widget.contact_info_state.value_field_name }}\"\n    >\n
-        \     <option value=\"\">Choose a State</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"AL\" %}selected {% endif %}value=\"AL\">Alabama</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"AK\" %}selected {% endif %}value=\"AK\">Alaska</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"AZ\" %}selected
-        {% endif %}value=\"AZ\">Arizona</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"AR\" %}selected {% endif %}value=\"AR\">Arkansas</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"CA\" %}selected {% endif %}value=\"CA\">California</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"CO\" %}selected
-        {% endif %}value=\"CO\">Colorado</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"CT\" %}selected {% endif %}value=\"CT\">Connecticut</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"DE\" %}selected {% endif %}value=\"DE\">Delaware</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"DC\" %}selected
-        {% endif %}value=\"DC\">District Of Columbia</option>\n      <option {% if
-        widget.contact_info_state.best_value == \"FL\" %}selected {% endif %}value=\"FL\">Florida</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"GA\" %}selected
-        {% endif %}value=\"GA\">Georgia</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"HI\" %}selected {% endif %}value=\"HI\">Hawaii</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"ID\" %}selected {% endif %}value=\"ID\">Idaho</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"IL\" %}selected
-        {% endif %}value=\"IL\">Illinois</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"IN\" %}selected {% endif %}value=\"IN\">Indiana</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"IA\" %}selected {% endif %}value=\"IA\">Iowa</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"KS\" %}selected
-        {% endif %}value=\"KS\">Kansas</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"KY\" %}selected {% endif %}value=\"KY\">Kentucky</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"LA\" %}selected {% endif %}value=\"LA\">Louisiana</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"ME\" %}selected
-        {% endif %}value=\"ME\">Maine</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"MD\" %}selected {% endif %}value=\"MD\">Maryland</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"MA\" %}selected {% endif %}value=\"MA\">Massachusetts</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"MI\" %}selected
-        {% endif %}value=\"MI\">Michigan</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"MN\" %}selected {% endif %}value=\"MN\">Minnesota</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"MS\" %}selected {% endif %}value=\"MS\">Mississippi</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"MO\" %}selected
-        {% endif %}value=\"MO\">Missouri</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"MT\" %}selected {% endif %}value=\"MT\">Montana</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"NE\" %}selected {% endif %}value=\"NE\">Nebraska</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"NV\" %}selected
-        {% endif %}value=\"NV\">Nevada</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"NH\" %}selected {% endif %}value=\"NH\">New Hampshire</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"NJ\" %}selected {% endif %}value=\"NJ\">New
-        Jersey</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"NM\" %}selected {% endif %}value=\"NM\">New Mexico</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"NY\" %}selected {% endif %}value=\"NY\">New
-        York</option>\n      <option {% if widget.contact_info_state.best_value ==
-        \"NC\" %}selected {% endif %}value=\"NC\">North Carolina</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"ND\" %}selected {% endif %}value=\"ND\">North
-        Dakota</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"OH\" %}selected {% endif %}value=\"OH\">Ohio</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"OK\" %}selected {% endif %}value=\"OK\">Oklahoma</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"OR\" %}selected
-        {% endif %}value=\"OR\">Oregon</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"PA\" %}selected {% endif %}value=\"PA\">Pennsylvania</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"RI\" %}selected {% endif %}value=\"RI\">Rhode
-        Island</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"SC\" %}selected {% endif %}value=\"SC\">South Carolina</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"SD\" %}selected {% endif %}value=\"SD\">South
-        Dakota</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"TN\" %}selected {% endif %}value=\"TN\">Tennessee</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"TX\" %}selected {% endif %}value=\"TX\">Texas</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"UT\" %}selected
-        {% endif %}value=\"UT\">Utah</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"VT\" %}selected {% endif %}value=\"VT\">Vermont</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"VA\" %}selected {% endif %}value=\"VA\">Virginia</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"WA\" %}selected
-        {% endif %}value=\"WA\">Washington</option>\n      <option {% if widget.contact_info_state.best_value
-        == \"WV\" %}selected {% endif %}value=\"WV\">West Virginia</option>\n      <option
-        {% if widget.contact_info_state.best_value == \"WI\" %}selected {% endif %}value=\"WI\">Wisconsin</option>\n
-        \     <option {% if widget.contact_info_state.best_value == \"WY\" %}selected
-        {% endif %}value=\"WY\">Wyoming</option>\n    </select>\n  </div>\n\n  <div
-        class=\"form-field\">\n    {{ widget.contact_info_zip.id_hidden_field }}\n
-        \   <label for=\"{{ widget.contact_info_zip.value_field_id }}\" >\n      zip\n
-        \   </label>\n    <input type=\"text\"\n      id=\"{{ widget.contact_info_zip.value_field_id
-        }}\"\n      name=\"{{ widget.contact_info_zip.value_field_name }}\"\n      value=\"{{
-        widget.contact_info_zip.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field\">\n
-        \   {{ widget.contact_info_country.id_hidden_field }}\n    <label for=\"{{
-        widget.contact_info_country.value_field_id }}\" >\n      country\n    </label>\n
-        \   <input type=\"text\"\n      id=\"{{ widget.contact_info_country.value_field_id
-        }}\"\n      name=\"{{ widget.contact_info_country.value_field_name }}\"\n
-        \     value=\"{{ widget.contact_info_country.best_value }}\"\n    />\n  </div>\n\n
-        \ <div class=\"form-field\">\n    {{ widget.contact_info_tel.id_hidden_field
-        }}\n    <label for=\"{{ widget.contact_info_tel.value_field_id }}\" >\n      tel\n
-        \   </label>\n    <input type=\"tel\"\n      id=\"{{ widget.contact_info_tel.value_field_id
-        }}\"\n      name=\"{{ widget.contact_info_tel.value_field_name }}\"\n      value=\"{{
-        widget.contact_info_tel.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field\">\n
-        \   {{ widget.contact_info_fax.id_hidden_field }}\n    <label for=\"{{ widget.contact_info_fax.value_field_id
-        }}\" >\n      fax\n    </label>\n    <input type=\"tel\"\n      id=\"{{ widget.contact_info_fax.value_field_id
-        }}\"\n      name=\"{{ widget.contact_info_fax.value_field_name }}\"\n      value=\"{{
-        widget.contact_info_fax.best_value }}\"\n    />\n  </div>\n\n  <input type=\"submit\"
-        value=\"Save\" class=\"btn\" />\n</form>\n"
+      string: ! "<form>\n  <div class=\"form-field\">\n    {{ widget.map_address.id_hidden_field
+        }}\n    <label for=\"{{ widget.map_address.value_field_id }}\" >\n      Address\n
+        \   </label>\n    <input type=\"text\"\n      id=\"{{ widget.map_address.value_field_id
+        }}\"\n      name=\"{{ widget.map_address.value_field_name }}\"\n      value=\"{{
+        widget.map_address.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field
+        check-field\">\n    <fieldset>\n      <legend>Map Type</legend>\n      {{
+        widget.map_type.id_hidden_field }}\n      <input type=\"radio\"\n        id=\"{{
+        widget.map_type.value_field_id }}_roadmap\"\n        name=\"{{ widget.map_type.value_field_name
+        }}\"\n        value=\"ROADMAP\"\n        checked=\"checked\"\n      />\n      <label
+        for=\"{{ widget.map_type.value_field_id }}_roadmap\" >\n        Road Map\n
+        \     </label>\n      <input type=\"radio\"\n        id=\"{{ widget.map_type.value_field_id
+        }}_satellite\"\n        name=\"{{ widget.map_type.value_field_name }}\"\n
+        \       value=\"SATELLITE\"\n        {% if widget.map_type.best_value == \"SATELLITE\"
+        %}\n        checked=\"checked\"\n        {% endif %}\n      />\n      <label
+        for=\"{{ widget.map_type.value_field_id }}_satellite\" >\n        Satellite\n
+        \     </label>\n    </fieldset>\n  </div>\n\n  <div class=\"form-field check-field\">\n
+        \   {{ widget.map_allow_pan_zoom.id_hidden_field }}\n    <input type=\"hidden\"\n
+        \     id=\"{{ widget.map_allow_pan_zoom.value_field_id }}_false\"\n      name=\"{{
+        widget.map_allow_pan_zoom.value_field_name }}\"\n      value=\"false\"\n    />\n
+        \   <input type=\"checkbox\"\n      id=\"{{ widget.map_allow_pan_zoom.value_field_id
+        }}\"\n      name=\"{{ widget.map_allow_pan_zoom.value_field_name }}\"\n      value=\"true\"\n
+        \     {% if widget.map_allow_pan_zoom.best_value == \"true\" %}\n      checked=\"checked\"\n
+        \     {% endif %}\n    />\n    <label for=\"{{ widget.map_allow_pan_zoom.value_field_id
+        }}\" >\n      map_allow Panning and Zooming\n    </label>\n  </div>\n\n  <input
+        type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 08 Oct 2013 22:12:00 GMT
+  recorded_at: Wed, 09 Oct 2013 22:58:31 GMT
 recorded_with: VCR 2.6.0

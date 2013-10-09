@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 08 Oct 2013 22:01:27 GMT
+      - Wed, 09 Oct 2013 22:59:32 GMT
       Last-Modified:
-      - Fri, 04 Oct 2013 22:09:48 GMT
+      - Wed, 09 Oct 2013 22:50:48 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQ5OGQ3NDUyMmNkZDYzY2Y2MjVmZDQ0YTQ0NGMyNzI3BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUtGZ1FtV2dIRmpQSmFNSngvbDVSNHZSb2RWczRmTEJRK1Fsd29PaGo5REU9BjsARg%3D%3D--868e15f3668740eff35b870e2289114ce1a25e01;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWM3ZTcwNDQ0MDZkMGM0MWY4NWJmODg4YWYxZGMxZjYyBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUQ1ekVWV0loYllDb3lucEE0RGxJbVdXQWxaajZWMzQyVUl2WElkRktaQzQ9BjsARg%3D%3D--2c2df94935dfca073d33b07fc7dab49670a7782d;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 86d1a24dd20bd9aa4f2f3b811fa7ffba
+      - a194b9f4c74f6d62e73e1bc6a7da14e2
       X-Runtime:
-      - '0.060825'
+      - '0.146468'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"KFgQmWgHFjPJaMJx/l5R4vRodVs4fLBQ+QlwoOhj9DE=\"
+        name=\"csrf-param\" />\n<meta content=\"D5zEVWIhbYCoynpA4DlImWWAlZj6V342UIvXIdFKZC4=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -215,24 +215,24 @@ http_interactions:
         \ &lt;input type=&quot;submit&quot; value=&quot;Save&quot; class=&quot;btn&quot;
         /&gt;\n&lt;/form&gt;\n\n&lt;!-- END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN
         SHOW MARKUP --&gt;\n&lt;nav class=&quot;action-calls widget&quot;&gt;\n  &lt;ul&gt;\n
-        \   {% if widget.cta_one_text.best_value != empty &amp;&amp; widget.cta_one_url.best_value
-        != empty %}\n      &lt;li&gt;\n        &lt;a href=&quot;{{ widget.cta_one_url.best_value
+        \   {% if widget.cta_one_text.best_value != &quot;&quot; &amp;&amp; widget.cta_one_url.best_value
+        != &quot;&quot; %}\n      &lt;li&gt;\n        &lt;a href=&quot;{{ widget.cta_one_url.best_value
         | url_encode }}&quot;&gt;{{ widget.cta_one_text.best_value }}&lt;/a&gt;\n
         \     &lt;/li&gt;\n    {% endif %}\n    {% if widget.cta_two_text.best_value
-        != empty &amp;&amp; widget.cta_two_url.best_value != empty %}\n    &lt;li&gt;\n
-        \     &lt;a href=&quot;{{ widget.cta_two_url.best_value | url_encode }}&quot;&gt;{{
-        widget.cta_two_text.best_value }}&lt;/a&gt;\n    &lt;/li&gt;\n    {% endif
-        %}\n    {% if widget.cta_three_text.best_value != empty &amp;&amp; widget.cta_three_url.best_value
-        != empty %}\n    &lt;li&gt;\n      &lt;a href=&quot;{{ widget.cta_three_url.best_value
-        | url_encode }}&quot;&gt;{{ widget.cta_three_text.best_value }}&lt;/a&gt;\n
-        \   &lt;/li&gt;\n    {% endif %}\n    {% if widget.cta_four_text.best_value
-        != empty &amp;&amp; widget.cta_four_url.best_value != empty %}\n    &lt;li&gt;\n
-        \     &lt;a href=&quot;{{ widget.cta_four_url.best_value | url_encode }}&quot;&gt;{{
-        widget.cta_four_text.best_value }}&lt;/a&gt;\n    &lt;/li&gt;\n    {% endif
-        %}\n  &lt;/ul&gt;\n&lt;/nav&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
-        \   </div>\n  </body>\n</html>\n"
+        != &quot;&quot; &amp;&amp; widget.cta_two_url.best_value != &quot;&quot; %}\n
+        \   &lt;li&gt;\n      &lt;a href=&quot;{{ widget.cta_two_url.best_value |
+        url_encode }}&quot;&gt;{{ widget.cta_two_text.best_value }}&lt;/a&gt;\n    &lt;/li&gt;\n
+        \   {% endif %}\n    {% if widget.cta_three_text.best_value != &quot;&quot;
+        &amp;&amp; widget.cta_three_url.best_value != &quot;&quot; %}\n    &lt;li&gt;\n
+        \     &lt;a href=&quot;{{ widget.cta_three_url.best_value | url_encode }}&quot;&gt;{{
+        widget.cta_three_text.best_value }}&lt;/a&gt;\n    &lt;/li&gt;\n    {% endif
+        %}\n    {% if widget.cta_four_text.best_value != &quot;&quot; &amp;&amp; widget.cta_four_url.best_value
+        != &quot;&quot; %}\n    &lt;li&gt;\n      &lt;a href=&quot;{{ widget.cta_four_url.best_value
+        | url_encode }}&quot;&gt;{{ widget.cta_four_text.best_value }}&lt;/a&gt;\n
+        \   &lt;/li&gt;\n    {% endif %}\n  &lt;/ul&gt;\n&lt;/nav&gt;\n\n&lt;!-- END
+        SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 08 Oct 2013 22:01:28 GMT
+  recorded_at: Wed, 09 Oct 2013 22:59:31 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/show.html
@@ -254,36 +254,36 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 08 Oct 2013 22:01:27 GMT
+      - Wed, 09 Oct 2013 22:59:33 GMT
       Last-Modified:
-      - Fri, 04 Oct 2013 22:09:48 GMT
+      - Wed, 09 Oct 2013 22:50:48 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
-      - f332ca3a888d461a5dec67970e0af5adc719cc96
+      - 34363127446cceb92f392e0fdcf7c37447b0d528
       X-Rack-Cache:
       - stale, valid, store
       Content-Length:
-      - '1018'
+      - '994'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
       string: ! "<nav class=\"action-calls widget\">\n  <ul>\n    {% if widget.cta_one_text.best_value
-        != empty && widget.cta_one_url.best_value != empty %}\n      <li>\n        <a
+        != \"\" && widget.cta_one_url.best_value != \"\" %}\n      <li>\n        <a
         href=\"{{ widget.cta_one_url.best_value | url_encode }}\">{{ widget.cta_one_text.best_value
         }}</a>\n      </li>\n    {% endif %}\n    {% if widget.cta_two_text.best_value
-        != empty && widget.cta_two_url.best_value != empty %}\n    <li>\n      <a
-        href=\"{{ widget.cta_two_url.best_value | url_encode }}\">{{ widget.cta_two_text.best_value
+        != \"\" && widget.cta_two_url.best_value != \"\" %}\n    <li>\n      <a href=\"{{
+        widget.cta_two_url.best_value | url_encode }}\">{{ widget.cta_two_text.best_value
         }}</a>\n    </li>\n    {% endif %}\n    {% if widget.cta_three_text.best_value
-        != empty && widget.cta_three_url.best_value != empty %}\n    <li>\n      <a
+        != \"\" && widget.cta_three_url.best_value != \"\" %}\n    <li>\n      <a
         href=\"{{ widget.cta_three_url.best_value | url_encode }}\">{{ widget.cta_three_text.best_value
         }}</a>\n    </li>\n    {% endif %}\n    {% if widget.cta_four_text.best_value
-        != empty && widget.cta_four_url.best_value != empty %}\n    <li>\n      <a
-        href=\"{{ widget.cta_four_url.best_value | url_encode }}\">{{ widget.cta_four_text.best_value
+        != \"\" && widget.cta_four_url.best_value != \"\" %}\n    <li>\n      <a href=\"{{
+        widget.cta_four_url.best_value | url_encode }}\">{{ widget.cta_four_text.best_value
         }}</a>\n    </li>\n    {% endif %}\n  </ul>\n</nav>\n"
     http_version: 
-  recorded_at: Tue, 08 Oct 2013 22:01:28 GMT
+  recorded_at: Wed, 09 Oct 2013 22:59:31 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/edit.html
@@ -305,9 +305,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 08 Oct 2013 22:01:28 GMT
+      - Wed, 09 Oct 2013 22:59:33 GMT
       Last-Modified:
-      - Fri, 04 Oct 2013 22:09:48 GMT
+      - Wed, 09 Oct 2013 22:50:48 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -370,5 +370,5 @@ http_interactions:
         \     {% endfor %}\n    </select>\n  </div>\n\n  <input type=\"submit\" value=\"Save\"
         class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 08 Oct 2013 22:01:28 GMT
+  recorded_at: Wed, 09 Oct 2013 22:59:31 GMT
 recorded_with: VCR 2.6.0
