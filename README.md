@@ -109,6 +109,16 @@ of CSS. To create a new module do the following:
    dashes, and the alternate style name. Example: `.panel--b`, `.panel--large`
 
 
+## Client Location Sites
+
+- `app/views/layouts/web_template.html.erb` is the layout file
+- `app/views/web_templates/show.html.erb` is used to render each page
+- `app/assets/stylesheets/web_template.scss` is for __preview mode only__
+- `app/assets/javascripts/web_template.js.coffee` is for __preview mode only__
+- `app/views/web_templates/stylesheets.scss` is for preview & deployed mode
+- `public/javascripts/` if for preview & deployed mode
+
+
 ## Authors
 
   * Jessica Lynn Suttles / [@jlsuttles](https://github.com/jlsuttles)
