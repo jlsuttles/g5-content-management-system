@@ -1,0 +1,19 @@
+{{ #view App.Header }}
+
+  <h1 class="banner-title">
+    <a href="/">
+      <span class="banner-logo">G5</span>
+      <span>Client Hub:</span>
+      <strong class="banner-subtitle">{{ controllers.client.name }}</strong>
+    </a>
+    <span>
+    {{#if controllers.location}}
+      <span>&nbsp;&raquo;&nbsp;</span>
+      {{#link-to 'location' controllers.location}}
+        <strong class="banner-subtitle">{{controllers.location.name}}</strong>
+      {{/link-to}}
+    {{/if}}
+    </span>
+  </h1>
+
+{{/view}}

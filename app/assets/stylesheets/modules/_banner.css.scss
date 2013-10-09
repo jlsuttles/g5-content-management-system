@@ -16,14 +16,10 @@
     color: $c-color-b;
     text-decoration: none;
   }
-  .navigation-container {
-    @include respond-to($l-min-large) {
-      float: right;
-    }
-  }
 }
 
 .banner-title {
+  @extend %group;
   @include font-size($base-fontSize);
   color: $c-color-b;
   float: left;
