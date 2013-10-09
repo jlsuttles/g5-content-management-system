@@ -4,7 +4,9 @@ class WebHomeTemplateSerializer < WebTemplateSerializer
   has_many :main_widgets
 
   attributes :preview_url,
-             :name
+             :name,
+             :title,
+             :disabled
 
   def preview_url
     web_template_url(object)

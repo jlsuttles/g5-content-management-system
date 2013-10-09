@@ -1,0 +1,159 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://g5-theme-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Fri, 27 Sep 2013 18:56:27 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Tue, 08 Oct 2013 22:11:51 GMT
+      Server:
+      - thin 1.5.0 codename Knife
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 036205cb7fa000c0274945526524df95
+      X-Runtime:
+      - '0.006647'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 08 Oct 2013 22:11:52 GMT
+- request:
+    method: get
+    uri: http://g5-theme-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Fri, 27 Sep 2013 18:56:27 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Tue, 08 Oct 2013 22:11:52 GMT
+      Server:
+      - thin 1.5.0 codename Knife
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - e6fcd0d9327fd4015b82387b62fcfa26
+      X-Runtime:
+      - '0.014570'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 08 Oct 2013 22:11:53 GMT
+- request:
+    method: get
+    uri: http://g5-theme-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Fri, 27 Sep 2013 18:56:27 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Tue, 08 Oct 2013 22:11:52 GMT
+      Server:
+      - thin 1.5.0 codename Knife
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 1b6f02410068147f954ee78470ad3d40
+      X-Runtime:
+      - '0.003278'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 08 Oct 2013 22:11:53 GMT
+- request:
+    method: get
+    uri: http://g5-theme-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Fri, 27 Sep 2013 18:56:27 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Tue, 08 Oct 2013 22:11:52 GMT
+      Server:
+      - thin 1.5.0 codename Knife
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 856ef12d65bda949e2b6e386a1b4cdde
+      X-Runtime:
+      - '0.003422'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 08 Oct 2013 22:11:53 GMT
+recorded_with: VCR 2.6.0

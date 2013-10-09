@@ -9,8 +9,8 @@
       {{/each}}
     </ul>
     <div class="buttons">
-      <a href="#" class="btn btn--small">Edit</a>
-      <a href="#" class="btn btn--small">Preview</a>
+      {{#linkTo "webPageTemplate" model.website model class="btn btn--small"}}Edit{{/linkTo}}
+      <a {{bindAttr href="previewUrl"}} class="btn btn--small">Preview</a>
     </div>
 
     {{ partial "website/webPageTemplateFlip" }}

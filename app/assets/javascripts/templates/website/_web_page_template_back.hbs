@@ -5,28 +5,30 @@
   <div class="card-body">
 
     <form class="form">
-
-      <div class="form-field">
+      {{#view App.ValidateEmptyFormField}}
         <label>Page Name</label>
-        <input type="text" />
-      </div>
+        {{input value=name}}
+      {{/view}}
 
-      <div class="form-field">
+      {{#view App.ValidateEmptyFormField}}
         <label>Page Title</label>
-        <input type="text" />
-      </div>
+        {{input value=title}}
+      {{/view}}
 
       <div class="form-field">
-        {{! <%= render partial: "web_template_toggle_disabled", locals: { website: website, web_template: web_template } %> }}
+        <label class="switch-label">Page Status</label>
+        {{ partial "pageSwitcher" }}
       </div>
 
       <div class="buttons">
-        {{! <%= link_to "Save", "#", class: "btn btn--small" %> }}
-        {{! <%= link_to "Cancel", "#", class: "btn btn--a btn--small card-flip" %> }}
+        {{#view App.CardAction}}
+          <button {{action cancel model}} class="cancel-link card-flip">Cancel</button>
+        {{/view}}
+        {{#view App.CardAction}}
+          <button {{action save model}} class="save btn btn--small" disabled>Save</button>
+        {{/view}}
       </div>
     </form>
-
-    {{ partial "website/webPageTemplateFlip" }}
 
   </div>
 </div>

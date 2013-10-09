@@ -16,6 +16,11 @@
     @include respond-to($l-min-medium, min-width) {
       width: 48%;
     }
+    &[disabled] {
+      opacity: 0.5;
+      cursor: default;
+      pointer-events: none;
+    }
   }
   form {
     position: relative;
@@ -28,6 +33,9 @@
     border: none;
     padding: 3px 5px;
     width: 100%;
+    &.error {
+      border: 1px solid #FF0000;
+    }
   }
   .card-corner {
     position: absolute;
@@ -47,7 +55,10 @@
   }
   .cancel-link {
     @include font-size(12px);
+    background: transparent;
+    border: none;
     display: inline-block;
+    text-decoration: underline;
     text-transform: uppercase;
     width: 50%;
   }
@@ -67,6 +78,7 @@
   color: $c-color-b;
   padding: 1em;
   h3 {
+    overflow: visible;
     @extend %c-h6;
     @extend %ellipsis;
     @extend %l-pullLeft;

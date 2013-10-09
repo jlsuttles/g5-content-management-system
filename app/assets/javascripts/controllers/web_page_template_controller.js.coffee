@@ -1,0 +1,1 @@
+App.WebPageTemplateController = Ember.ObjectController.extend()

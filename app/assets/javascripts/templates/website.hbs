@@ -13,10 +13,21 @@
   </div>
 
   <div class="site-pages page-section">
-    {{ render "website/webPageTemplate" webHomeTemplate }}
-    {{#each webPageTemplates}}
-      {{ render "website/webPageTemplate" this }}
-    {{/each}}
+    <div class="page-title">
+      {{#view App.NewPage}}
+        {{#linkTo "webPageTemplates.new" class="btn" }}Create New Page{{/linkTo}}
+      {{/view}}
+    </div>
+    <div class="cards">
+      {{ render "website/webPageTemplate" webHomeTemplate }}
+      {{#each webPageTemplates}}
+        {{#unless isNew}}
+          {{ render "website/webPageTemplate" this }}
+        {{/unless}}
+      {{/each}}
+
+      {{ outlet "newWebPageTemplate" }}
+    </div>
   </div>
 
   <div class="delete-page">

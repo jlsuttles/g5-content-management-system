@@ -5,9 +5,8 @@ App.RemoteWebLayoutsController = Ember.ArrayController.extend
     @get("controllers.webLayout.model")
   ).property("controllers.webLayout.model")
 
-  actions: {
+  actions:
     update: (webLayout) ->
       currentWebLayout = @get("controllers.webLayout.model")
       currentWebLayout.set("url", webLayout.get("url"))
       currentWebLayout.save()
-  }

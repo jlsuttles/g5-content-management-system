@@ -4,7 +4,7 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
   end
 
   def show
-    render json: Widget.find(params[:id])
+    render json: Widget.find(params[:id]), root: klass
   end
 
   def create
@@ -32,9 +32,9 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
     web_template_id ||= params[klass][:website_template_id]
     web_template_id ||= params[klass][:web_home_template_id]
     web_template_id ||= params[klass][:web_page_template_id]
-    web_template = WebTemplate.find(web_template_id)
-    drop_target = web_template.drop_targets.find_by_html_id(section)
-    params[klass][:drop_target_id] = drop_target.id
+    web_template = WebTemplate.find(web_template_id) if web_template_id
+    drop_target = web_template.drop_targets.find_by_html_id(section) if web_template
+    params[klass][:drop_target_id] ||= drop_target.id if drop_target
     params.require(klass).permit(:url, :drop_target_id)
   end
 
