@@ -45,6 +45,7 @@ group :development, :test do
   gem "shoulda-matchers", "~> 2.0.0"
   # ruby request specs
   gem "capybara", "~> 2.1.0"
+  gem "launchy"
   gem "selenium-webdriver", "~> 2.35.1"
   gem "database_cleaner", "~> 0.9.1"
   # ruby spec support

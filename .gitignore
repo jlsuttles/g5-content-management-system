@@ -36,6 +36,3 @@ coverage
 
 # Ignore railroady
 doc/*.svg
-
-# Ignore vcr cassettes that always record new episodes
-spec/support/vcr_cassettes/web_template_requests/
