@@ -76,10 +76,10 @@
   text-transform: uppercase;
   &:hover,
   &:focus {
-    .btn--toggle-hide:before {
+    .btn--toggle-hide:after {
       border-bottom-color: $c-color-a;
     }
-    .btn--toggle-show:before {
+    .btn--toggle-show:after {
       border-top-color: $c-color-a;
     }
   }
@@ -87,21 +87,21 @@
 
 .btn--toggle-hide,
 .btn--toggle-show {
-  margin-left: 5px;
+  margin-right: 5px;
   position: relative;
-  &:before {
+  &:after {
     content: '';
     display: inline-block;
-    margin-right: 10px;
+    margin-left: 10px;
   }
 }
 
-.btn--toggle-hide:before {
+.btn--toggle-hide:after {
   @include triangle(10px, $base-color, up);
   margin-bottom: 2px;
 }
 
-.btn--toggle-show:before {
+.btn--toggle-show:after {
   @include triangle(10px, $base-color, down);
   margin-bottom: -3px;
 }
