@@ -1,4 +1,4 @@
-class WebsitesSeeder
+class WebsiteSeederJob
   extend HerokuResqueAutoscaler if Rails.env.production?
   @queue = :seeder
 
@@ -12,7 +12,7 @@ class WebsitesSeeder
     @location = location
   end
 
-  def perform(location)
-    DefaultWebsiteSeeder.new(@location).seed
+  def perform
+    WebsiteSeeder.new(@location).seed
   end
 end

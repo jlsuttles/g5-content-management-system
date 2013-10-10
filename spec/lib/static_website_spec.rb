@@ -16,7 +16,7 @@ describe StaticWebsite, vcr: { record: :new_episodes }, type: "deployment" do
   before do
     @client = Fabricate(:client)
     @location = Fabricate(:location)
-    DefaultWebsiteSeeder.new(@location).seed
+    WebsiteSeeder.new(@location).seed
   end
 
   it "compiles and deploys website" do

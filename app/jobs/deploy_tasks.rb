@@ -1,10 +1,10 @@
 class DeployTasks
   extend HerokuResqueAutoscaler if Rails.env.production?
-  @queue = :deploy
+  @queue = :deploy_tasks
 
   def self.perform(client_uid)
     # ClientReader must be performed before WebsiteSeeder
     ClientReader.perform(client_uid)
-    WebsitesSeeder.perform
+    WebsiteSeederJob.perform
   end
 end
