@@ -26,6 +26,7 @@ describe StaticWebsite::Compiler::RemoteFile do
 
       it "compiles compile directory" do
         subject.compile_directory.should_receive(:compile).once
+        subject.stub(:write_to_file)
         subject.compile
       end
 
