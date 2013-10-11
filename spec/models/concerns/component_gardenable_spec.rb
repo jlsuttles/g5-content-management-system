@@ -5,10 +5,9 @@ class Component
   set_garden_url ENV["WIDGET_GARDEN_URL"]
 end
 
-describe ComponentGardenable, vcr: VCR_OPTIONS do
+describe ComponentGardenable, vcr: { record: :new_episodes } do
   describe "#garden_microformats" do
     it "returns microformats when no error" do
-      Component.garden_microformats
       Component.garden_microformats.should be_present
     end
 
