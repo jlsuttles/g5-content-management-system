@@ -1,10 +1,11 @@
 website:
+
   website_template:
     name: Website Template
     web_layout:
-      name: main-first-sidebar-left
+      name: main-first-sidebar-right
     web_theme:
-      name: classic
+      name: high-rise
     drop_targets:
       - html_id: drop-target-head
         widgets:
@@ -24,55 +25,87 @@ website:
       - html_id: drop-target-aside
         widgets:
           - name: calls-to-action
+          - name: contact-info
           - name: social-links
+          - name: photo
+          - name: html
+          - name: coupon
       - html_id: drop-target-footer
         widgets:
           - name: navigation
           - name: contact-info
           - name: hours
+
   web_home_template:
     name: Home
     drop_targets:
       - html_id: drop-target-main
         widgets:
-          - name: calls-to-action
-          - name: social-links
+          - name: photo
+          - name: html
+
   web_page_templates:
     - name: Amenities
       drop_targets:
         - html_id: drop-target-main
           widgets:
             - name: html
-            - name: calls-to-action
+            - name: photo
+            - name: photo
+
     - name: Coupon
       drop_targets:
         - html_id: drop-target-main
           widgets:
             - name: coupon
+
     - name: Floorplans and Rates
       drop_targets:
         - html_id: drop-target-main
           widgets:
             - name: floorplans
-    - name: Map and Directions
+
+    - name: Directions
       drop_targets:
         - html_id: drop-target-main
           widgets:
-            - name: human-directions
-            - name: html
-    - name: Neighborhood
-      drop_targets:
-        - html_id: drop-target-main
-          widgets:
-            - name: html
-            - name: html
+            - name: directions
+
     - name: Photo Gallery
       drop_targets:
         - html_id: drop-target-main
           widgets:
             - name: gallery
-    - name: Residents
+
+    - name: Request Info
       drop_targets:
         - html_id: drop-target-main
           widgets:
             - name: html
+            - name: request-info-form
+
+    - name: Social
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - name: html
+            - name: blog-feed
+            - name: twitter-feed
+
+    - name: Social
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - name: html
+            - name: blog-feed
+            - name: twitter-feed
+
+    - name: Neighborhood
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - name: html
+            - name: photo
+            - name: photo
+            - name: html
+
