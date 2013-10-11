@@ -17,6 +17,7 @@ gem "g5_sibling_deployer_engine", "~> 0.2.5"
 gem "liquid", "~> 2.4.1"
 gem "ckeditor"
 gem "draper", "~> 1.1.0"
+gem "coffee-script"
 
 gem "ember-rails"
 gem "ember-source", "~> 1.0.0"
