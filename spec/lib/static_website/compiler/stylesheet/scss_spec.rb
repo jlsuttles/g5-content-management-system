@@ -30,6 +30,7 @@ describe StaticWebsite::Compiler::Stylesheet::Scss do
 
       it "compiles compile directory" do
         subject.compile_directory.should_receive(:compile).once
+        subject.stub(:render_to_file)
         subject.compile
       end
 
