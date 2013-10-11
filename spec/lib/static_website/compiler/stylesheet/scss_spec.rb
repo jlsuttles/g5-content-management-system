@@ -28,6 +28,11 @@ describe StaticWebsite::Compiler::Stylesheet::Scss do
         remove_path(subject.compile_path)
       end
 
+      it "compiles compile directory" do
+        subject.compile_directory.should_receive(:compile).once
+        subject.compile
+      end
+
       it "writes file to compile path" do
         expect(File.exists?(subject.compile_path)).to be_false
         subject.compile
