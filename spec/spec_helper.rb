@@ -31,9 +31,14 @@ VCR_OPTIONS = { record: :new_episodes, re_record_interval: 7.days }
 RSpec.configure do |config|
   config.order = "random"
   config.include Capybara::DSL, type: :request
+
   # Allows us to  use :vcr rather than :vcr => true
   # In RSpec 3 this will no longer be necessary
   config.treat_symbols_as_metadata_keys_with_true_values = true
+
+  # The integration deployment tests can be run with:
+  # rspec -t type:deployment
+  config.filter_run_excluding type: "deployment"
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)

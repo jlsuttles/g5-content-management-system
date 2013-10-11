@@ -5,8 +5,8 @@ describe Widget, vcr: VCR_OPTIONS do
   describe ".all_remote" do
     let(:all_remote) { WidgetSupport.all_remote }
 
-    it "returns 23 widgets with names, urls, and thumbails" do
-      expect(all_remote).to have(23).items
+    it "returns 34 widgets with names, urls, and thumbails" do
+      expect(all_remote).to have(34).items
       all_remote.each do |a_remote|
         expect(a_remote).to be_an_instance_of Widget
         expect(a_remote.name).to be_present

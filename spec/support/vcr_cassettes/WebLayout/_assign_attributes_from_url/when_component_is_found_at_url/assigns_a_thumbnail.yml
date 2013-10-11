@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 08 Oct 2013 21:59:58 GMT
+      - Wed, 09 Oct 2013 22:59:40 GMT
       Last-Modified:
       - Wed, 24 Jul 2013 19:54:58 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWJiMWYyMGNiYzFhNDA2MGM0ZTA2ZDc3NzM3YTQxY2JmBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVN4RTEyTmt1akVsK1V2UkNUNkthRm45M2xId3BmVk5FZDFMbXgzQ20xaWc9BjsARg%3D%3D--b024b8bc0018014076d364b96728895977d4e74f;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWZmMjVlMjVmZjYzMzQwNzQzY2M4MGJmMDhkNTE1NmIwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUhibi95cEVoLzNUUGpkTC9DMWtOYnF5a3VqcnE5Uk5NdmlMOTZDYjN1Y0k9BjsARg%3D%3D--8037418bd5ecfbccdc569295c52f7e93291d09e4;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 167bfb122af459ba9afa61ea1e9ca002
+      - dcf102633bd8bf4c2a1f0ef1a3d9c5d3
       X-Runtime:
-      - '0.017431'
+      - '0.017909'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"SxE12NkujEl+UvRCT6KaFn93lHwpfVNEd1Lmx3Cm1ig=\"
+        name=\"csrf-param\" />\n<meta content=\"Hbn/ypEh/3TPjdL/C1kNbqykujrq9RNMviL96Cb3ucI=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -96,5 +96,5 @@ http_interactions:
         \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 08 Oct 2013 21:59:58 GMT
+  recorded_at: Wed, 09 Oct 2013 22:59:39 GMT
 recorded_with: VCR 2.6.0

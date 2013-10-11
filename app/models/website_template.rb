@@ -39,13 +39,13 @@ class WebsiteTemplate < WebTemplate
   end
 
   def layout_stylesheets
-    compiled_pages_stylesheets +
+    local_stylesheets +
       web_layout_stylesheets +
       web_theme_stylesheets
   end
 
-  def compiled_pages_stylesheets
-    [File.join(Rails.root, "app", "views", "compiled_pages", "stylesheets.scss")]
+  def local_stylesheets
+    [File.join(Rails.root, "app", "views", "web_templates", "stylesheets.scss")]
   end
 
   def web_layout_stylesheets

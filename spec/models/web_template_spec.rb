@@ -58,11 +58,11 @@ describe WebTemplate do
     end
   end
 
-  describe "#compiled_stylesheets" do
+  describe "#stylesheet_link_paths" do
     let(:web_template) { Fabricate.build(:web_template) }
 
-    it "has a collection of compiled stylesheets" do
-      web_template.compiled_stylesheets.should be_kind_of(Array)
+    it "has a collection of stylesheets link paths" do
+      web_template.stylesheet_link_paths.should be_kind_of(Array)
     end
   end
 end

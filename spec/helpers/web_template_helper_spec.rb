@@ -19,7 +19,7 @@ describe WebTemplatesHelper, vcr: VCR_OPTIONS do
   end
 
   describe "preview" do
-    let(:preview) { helper.preview(website, website.web_home_template) }
+    let(:preview) { helper.preview(web_layout, web_home_template) }
 
     it "has layout in html" do
       preview.should match /layout/

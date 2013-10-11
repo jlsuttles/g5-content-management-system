@@ -10,7 +10,6 @@ gem "strong_parameters"
 gem "quiet_assets", "~> 1.0.1"
 gem "bootstrap-sass", "~> 2.1.1.0"
 gem "bourbon", "~> 3.1.8"
-gem "foreman", "~> 0.60.2"
 gem "heroku_resque_autoscaler", "~> 0.1.0"
 gem "microformats2", "2.0.0.pre5"
 gem "github_heroku_deployer", "~> 0.2.0"
@@ -46,6 +45,7 @@ group :development, :test do
   gem "shoulda-matchers", "~> 2.0.0"
   # ruby request specs
   gem "capybara", "~> 2.1.0"
+  gem "launchy"
   gem "selenium-webdriver", "~> 2.35.1"
   gem "database_cleaner", "~> 0.9.1"
   # ruby spec support

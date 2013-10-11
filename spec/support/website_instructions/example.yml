@@ -1,0 +1,39 @@
+website:
+  website_template:
+    name: Example Website Template
+    web_layout:
+      name: main-first-sidebar-left
+    web_theme:
+      name: classic
+    drop_targets:
+      - html_id: drop-target-head
+        widgets:
+          - name: meta
+      - html_id: drop-target-logo
+        widgets:
+          - name: logo
+      - html_id: drop-target-phone
+        widgets:
+          - name: phone
+      - html_id: drop-target-btn
+        widgets:
+          - name: button
+      - html_id: drop-target-nav
+        widgets:
+          - name: navigation
+      - html_id: drop-target-aside
+        widgets:
+          - name: calls-to-action
+          - name: social-links
+      - html_id: drop-target-footer
+        widgets:
+          - name: navigation
+          - name: contact-info
+          - name: hours
+  web_page_templates:
+    - name: Example Page
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - name: html
+            - name: social-links
