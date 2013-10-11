@@ -5,10 +5,29 @@
     <meta charset="utf8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= javascript_include_tag "/javascripts/modernizr.custom.js" %>
+    <%= stylesheet_link_tag "web_template" if mode == "preview" %>
     <%= yield(:head) %>
     <%= yield(:head_widgets) %>
   </head>
   <body class="<%= [mode, yield(:body_classes)].join(" ") %>">
+
+    <% if mode == "preview"%>
+      <header class="preview-banner">
+        <div class="l-container">
+          <h1 class="banner-title">
+            <a href="<%= root_path %>"><span class="banner-logo">G5</span></a>
+            Client Hub:
+            <a href="<%= root_path %>">
+              <strong class="banner-subtitle"><%= @client_name %></strong>
+            </a>
+            >>
+            <a href="<%= website_path(location.website) %>">
+              <strong class="banner-subtitle"><%= location.name %></strong>
+            </a>
+          </h1>
+        </div> <!-- end .l-container -->
+      </header>
+    <% end %>
 
     <%= yield %>
 
