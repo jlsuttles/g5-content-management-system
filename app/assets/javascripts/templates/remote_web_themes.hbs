@@ -14,18 +14,18 @@
         {{#view App.ThumbnailScrollerView}}
           <div class="jThumbnailScroller">
             <div class="jTscrollerContainer">
-              <ul class="jTscroller thumbs clearfix">
+              <div class="jTscroller thumbs clearfix">
                 {{#each model}}
-                  <li class="thumb">
+                  <div class="thumb">
                     <a href="#" {{ action "update" this }}>
                       {{#view App.RemoteWebThemeView contentBinding="this"}}
                       <img alt="Thumbnail" {{ bindAttr src="thumbnail" }} {{ bindAttr class="view.isSelected" }}>
                       {{ name }}
                       {{/view}}
                     </a>
-                  </li>
+                  </div>
                 {{/each}}
-              </ul>
+              </div>
             </div>
             <a href="#" class="jTscrollerPrevButton"></a>
             <a href="#" class="jTscrollerNextButton"></a>
