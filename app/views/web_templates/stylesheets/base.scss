@@ -52,7 +52,7 @@ form label {
 
 @media (min-width: 980px) {
   .collapsable-btn {
-    display: none;
+    display: none !important;
   }
   .collapsable-content {
     height: auto !important;
