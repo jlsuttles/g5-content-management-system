@@ -9,7 +9,11 @@
       {{/each}}
     </ul>
     <div class="buttons">
-      {{#linkTo "webPageTemplate" model.website model class="btn btn--small"}}Edit{{/linkTo}}
+      {{#if isWebHomeTemplate}}
+        {{#linkTo "webHomeTemplate" model.website model class="btn btn--small"}}Edit{{/linkTo}}
+      {{else}}
+        {{#linkTo "webPageTemplate" model.website model class="btn btn--small"}}Edit{{/linkTo}}
+      {{/if}}
       <a {{bindAttr href="previewUrl"}} class="btn btn--small">Preview</a>
     </div>
 
