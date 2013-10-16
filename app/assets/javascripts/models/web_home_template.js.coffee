@@ -7,3 +7,4 @@ App.WebHomeTemplate = DS.Model.extend
   name: DS.attr("string")
   title: DS.attr("string")
   disabled: DS.attr("boolean")
+  isWebHomeTemplate: true
