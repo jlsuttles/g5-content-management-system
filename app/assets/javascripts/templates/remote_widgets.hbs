@@ -14,7 +14,7 @@
         <div class="jThumbnailScroller">
           <div class="jTscrollerContainer">
             <ul id="choose-widgets" class="jTscroller clearfix">
-            {{#each model}}
+            {{#each this}}
               {{#view App.DraggableWidgetView contentBinding="this"}}
                 <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
                 {{ view.content.name }}

@@ -1,5 +1,5 @@
 App.RemoteWidgetsController = Ember.ArrayController.extend
-  sortProperties: ['name']
+  sortProperties: ["name"]
   sortAscending: true
 
   currentDragItem: ( ->
