@@ -153,6 +153,21 @@
       width: 1190px;
     }
   }
+  .widgets--list-view {
+    li {
+      cursor: move;
+      display: inline-block;
+      margin-bottom: 5px;
+      width: 234px;
+    }
+    img {
+      display: inline-block;
+      margin-right: 1em;
+      vertical-align: middle;
+      width: 32px;
+    }
+  }
+
   /* styles for unselected widgets */
   #choose-widgets {
     li {

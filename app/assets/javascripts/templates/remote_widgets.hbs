@@ -10,8 +10,18 @@
       {{#if model.isUpdating}}
         Loading...
       {{else}}
+
+        <ul class="widgets--list-view">
+          {{#each this}}
+            {{#view App.DraggableWidgetView contentBinding="this"}}
+              <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
+              {{ view.content.name }}
+            {{/view}}
+          {{/each}}
+        </ul>
+
         {{#view App.ThumbnailScrollerView}}
-        <div class="jThumbnailScroller">
+        <div class="jThumbnailScroller" style="display: none">
           <div class="jTscrollerContainer">
             <ul id="choose-widgets" class="jTscroller clearfix">
             {{#each this}}
