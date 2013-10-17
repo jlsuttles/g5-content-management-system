@@ -153,6 +153,9 @@
       width: 1190px;
     }
   }
+  .toggle-widget-view {
+    float: right;
+  }
   .widgets--list-view {
     li {
       cursor: move;
@@ -295,6 +298,5 @@
   background: url(ajax-loader.gif) center no-repeat;
   height: 225px;
   overflow: hidden;
-  text-indent: -999em;
   width: 100%;
 }

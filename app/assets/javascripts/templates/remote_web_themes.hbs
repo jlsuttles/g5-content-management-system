@@ -12,24 +12,22 @@
         <div class="loading">Loading...</div>
       {{else}}
         {{#view App.ThumbnailScrollerView}}
-          <div class="jThumbnailScroller">
-            <div class="jTscrollerContainer">
-              <div class="jTscroller thumbs clearfix">
-                {{#each model}}
-                  <div class="thumb">
-                    <a href="#" {{ action "update" this }}>
-                      {{#view App.RemoteWebThemeView contentBinding="this"}}
-                      <img alt="Thumbnail" {{ bindAttr src="thumbnail" }} {{ bindAttr class="view.isSelected" }}>
-                      {{ name }}
-                      {{/view}}
-                    </a>
-                  </div>
-                {{/each}}
-              </div>
+          <div class="jTscrollerContainer">
+            <div class="jTscroller thumbs clearfix">
+              {{#each model}}
+                <div class="thumb">
+                  <a href="#" {{ action "update" this }}>
+                    {{#view App.RemoteWebThemeView contentBinding="this"}}
+                    <img alt="Thumbnail" {{ bindAttr src="thumbnail" }} {{ bindAttr class="view.isSelected" }}>
+                    {{ name }}
+                    {{/view}}
+                  </a>
+                </div>
+              {{/each}}
             </div>
-            <a href="#" class="jTscrollerPrevButton"></a>
-            <a href="#" class="jTscrollerNextButton"></a>
           </div>
+          <a href="#" class="jTscrollerPrevButton"></a>
+          <a href="#" class="jTscrollerNextButton"></a>
         {{/view}}
       {{/if}}
       {{ render "webThemeColors" }}
