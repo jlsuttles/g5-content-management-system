@@ -144,7 +144,7 @@
     background: $c-background-c;
     .instructions {
       display: inline-block;
-      font-size: 22px;
+      font-size: 18px;
       margin-left: 20px;
     }
     .jThumbnailScroller {
@@ -289,4 +289,12 @@
       height: 100%;
     }
   }
+}
+
+.loading {
+  background: url(ajax-loader.gif) center no-repeat;
+  height: 225px;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 100%;
 }

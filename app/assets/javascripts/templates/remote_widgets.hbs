@@ -7,8 +7,9 @@
 
     <div class="toggle-content page-section">
       <h2 class="page-title">Select Widgets</h2>
+      <span class="instructions">Drag widgets onto drop areas below</span>
       {{#if model.isUpdating}}
-        Loading...
+        <div class="loading">Loading...</div>
       {{else}}
 
         <ul class="widgets--list-view">
