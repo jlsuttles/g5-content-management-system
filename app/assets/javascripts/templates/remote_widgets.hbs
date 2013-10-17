@@ -6,12 +6,28 @@
     {{/view}}
 
     <div class="toggle-content page-section">
+      {{#view App.WidgetViewToggle contentBinding="this"}}
+        <span class="toggle-widget-text">Grid View</span>
+        <span class="toggle-widget-text hide">List View</span>
+      {{/view}}
       <h2 class="page-title">Select Widgets</h2>
+      <span class="instructions">Drag widgets onto drop areas below</span>
       {{#if model.isUpdating}}
-        Loading...
+        <div class="loading">Loading...</div>
       {{else}}
-        {{#view App.ThumbnailScrollerView}}
-        <div class="jThumbnailScroller">
+
+
+        <ul class="widgets--list-view widget-view">
+          {{#each this}}
+            {{#view App.DraggableWidgetView contentBinding="this"}}
+              <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
+              {{ view.content.name }}
+            {{/view}}
+          {{/each}}
+        </ul>
+
+        <div class="widget-view visuallyhidden">
+          {{#view App.ThumbnailScrollerView}}
           <div class="jTscrollerContainer">
             <ul id="choose-widgets" class="jTscroller clearfix">
             {{#each this}}
@@ -24,8 +40,8 @@
           </div>
           <a href="#" class="jTscrollerPrevButton"></a>
           <a href="#" class="jTscrollerNextButton"></a>
+          {{/view}}
         </div>
-        {{/view}}
       {{/if}}
     </div>
   </div>

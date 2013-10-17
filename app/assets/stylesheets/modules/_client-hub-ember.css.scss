@@ -144,7 +144,7 @@
     background: $c-background-c;
     .instructions {
       display: inline-block;
-      font-size: 22px;
+      font-size: 18px;
       margin-left: 20px;
     }
     .jThumbnailScroller {
@@ -153,6 +153,24 @@
       width: 1190px;
     }
   }
+  .toggle-widget-view {
+    float: right;
+  }
+  .widgets--list-view {
+    li {
+      cursor: move;
+      display: inline-block;
+      margin-bottom: 5px;
+      width: 234px;
+    }
+    img {
+      display: inline-block;
+      margin-right: 1em;
+      vertical-align: middle;
+      width: 32px;
+    }
+  }
+
   /* styles for unselected widgets */
   #choose-widgets {
     li {
@@ -274,4 +292,11 @@
       height: 100%;
     }
   }
+}
+
+.loading {
+  background: url(ajax-loader.gif) center no-repeat;
+  height: 225px;
+  overflow: hidden;
+  width: 100%;
 }
