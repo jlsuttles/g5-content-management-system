@@ -1,9 +1,12 @@
 require_dependency 'liquid_filters'
 
 class Widget < ActiveRecord::Base
+  include RankedModel
   include HasManySettings
   include AfterCreateSetDefaultCallsToAction
   include ComponentGardenable
+
+  ranks :display_order, with_same: :drop_target_id
 
   set_garden_url ENV["WIDGET_GARDEN_URL"]
 
