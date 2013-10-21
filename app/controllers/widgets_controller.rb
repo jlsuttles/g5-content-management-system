@@ -26,6 +26,6 @@ class WidgetsController < ApplicationController
   end
 
   def widget_params
-    params.require(:widget).permit(:settings_attributes => [:id, :value])
+    params.require(:widget).permit!
   end
 end
