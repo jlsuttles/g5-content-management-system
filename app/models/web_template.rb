@@ -10,7 +10,7 @@ class WebTemplate < ActiveRecord::Base
   has_one :web_theme  , autosave: true , dependent: :destroy
 
   has_many :drop_targets, autosave: true, dependent: :destroy
-  has_many :widgets, through: :drop_targets
+  has_many :widgets, through: :drop_targets, order: "display_order ASC"
 
   validates :title , presence: true
   validates :name  , presence: true
