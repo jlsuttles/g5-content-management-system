@@ -19,6 +19,7 @@ gem "liquid", "~> 2.4.1"
 gem "ckeditor"
 gem "draper", "~> 1.1.0"
 gem "coffee-script"
+gem "ranked-model"
 
 gem "ember-rails"
 gem "ember-source", "~> 1.0.0"
