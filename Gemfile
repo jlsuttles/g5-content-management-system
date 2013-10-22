@@ -59,6 +59,7 @@ group :development, :test do
   gem "webmock", "~> 1.13.0", require: false
   gem "vcr", "~> 2.6.0", require: false
   # javascript specs
+  gem "teaspoon", "~> 0.7.5"
   # guard specs
   gem "guard-rspec", "~> 2.1.0"
   gem "rb-fsevent", "~> 0.9.2"

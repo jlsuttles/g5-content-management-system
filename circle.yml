@@ -7,4 +7,5 @@ machine:
 ## Customize test commands
 test:
   override:
-    - bundle exec rspec
+    - bundle exec rspec # Runs all the Ruby tests
+    - bundle exec teaspoon # Runs all the Jasmine tests
