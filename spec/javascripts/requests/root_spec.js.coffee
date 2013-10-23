@@ -1,18 +1,14 @@
-describe "Root", ->
-
-  beforeEach ->
+module "Root Integration Tests",
+  setup: ->
     App.reset()
 
-  describe "when location exists", ->
+test "Page title", ->
+  expect 1
+  visit("/").then ->
+    equal find(".page-title").length, 1, "one .page-title is displayed"
 
-    beforeEach ->
-      Ember.run =>
-        @location = App.Location.createRecord(id: 1, name: "test")
-
-    afterEach ->
-      Ember.run =>
-        @location.destroy()
-
-    it "has location name", ->
-      visit("/ember").then ->
-        expect(find(".location")).toBe(true)
+test "Location", ->
+  expect 1
+  visit("/").then ->
+    console.log find(".faux-table-row").length
+    ok find(".faux-table-row").length, "at least one .faux-table-row is displayed"
