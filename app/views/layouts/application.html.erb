@@ -2,47 +2,13 @@
 <html>
   <head>
     <meta charset="utf8" />
-    <title>G5 Client Hub: <%= @client_name %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G5 Client Hub: <%= @client_name %></title>
     <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "ember_app" %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
-  <body>
-
-    <header role="banner" class="banner">
-      <div class="l-container">
-
-        <h1 class="banner-title">
-          <a href="<%= root_path %>"><span class="banner-logo">G5</span></a> Client Hub: <a href="<%= root_path %>"><strong class="banner-subtitle"><%= @client_name %></strong></a>
-          <% if @website %>
-            >>
-            <a href="<%= website_path(@website) %>">
-              <strong class="banner-subtitle"><%= @website.name %></strong>
-            </a>
-          <% end %>
-        </h1>
-
-      </div> <!-- end .l-container -->
-    </header>
-
-    <% flash.each do |name, msg| %>
-      <div class="flash l-container">
-        <%= flash_div name %>
-      </div>
-    <% end %>
-
-    <section role="main" class="page">
-
-      <div class="l-container">
-
-        <%= yield %>
-
-      </div> <!-- end .l-container -->
-
-    </section>
-
-    <%= javascript_include_tag "application" %>
-    <%= yield(:bottom) %>
-  </body>
+  <body></body>
 </html>

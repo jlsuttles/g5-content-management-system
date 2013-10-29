@@ -3,8 +3,12 @@ require 'resque/server'
 G5ClientHub::Application.routes.draw do
   mount Resque::Server, :at => "/resque"
 
-  root to: "ember#start"
+  root to: "locations#index"
 
+  get '/website/:id/', to: 'locations#index'
+  get '/location/:id/home/:id', to: 'locations#index'
+  get '/location/:id/page/:id', to: 'locations#index'
+  
   resources :locations, only: [:index]
   resources :websites, only: [:show] do
     member do
@@ -17,8 +21,6 @@ G5ClientHub::Application.routes.draw do
 
   resources :widget_entries, only: [:index, :show]
   resources :tags, only: [:show]
-
-  get "ember", to: "ember#start"
 
   namespace :api do
     namespace :v1 do
