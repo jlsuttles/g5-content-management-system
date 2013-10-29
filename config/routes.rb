@@ -3,7 +3,7 @@ require 'resque/server'
 G5ClientHub::Application.routes.draw do
   mount Resque::Server, :at => "/resque"
 
-  root to: "locations#index"
+  root to: "ember#start"
 
   resources :locations, only: [:index]
   resources :websites, only: [:show] do
