@@ -6,64 +6,25 @@ Teaspoon.defer = true
 setTimeout(Teaspoon.execute, 1000)
 
 ((window) ->
+  # Use Fixtures Adapter for App.Store
+  App.Store = DS.Store.extend
+    revision: 13,
+    adapter: DS.FixtureAdapter.create()
+
   # Move Ember App to an element on the page so it can be seen while testing.
   window.document.write('
-    <div id="ember-testing-container">
-      <div id="ember-testing"></div>
-    </div>
+    <div id="ember-testing-container"> <div id="ember-testing"></div> </div>
     <style>
       #ember-testing-container {
-        position: absolute;
-        background: white;
-        bottom: 0;
-        right: 0;
-        width: 640px;
-        height: 384px;
-        overflow: auto;
-        z-index: 9999;
-        border: 1px solid #ccc;
-      }
+        position: absolute; background: white; bottom: 0; right: 0; width:
+        640px; height: 384px; overflow: auto; z-index: 9999; border: 1px solid
+        #ccc; }
       #ember-testing { zoom: 50%; }
     </style>
   ')
   App.rootElement = "#ember-testing"
 
-  # Setup Ember App for testing.
+  # Setup Ember App for integration testing
   App.setupForTesting()
   App.injectTestHelpers()
 )(window)
-
-# Setup fixtures
-<%
-  module MyUtilities
-    class Base
-
-      # Convert keys from ruby object to camelized strings. e.g:
-      # :hello_there_world becomes "helloThereWorld"
-      def self.camelize_keys(object)
-        r = {}
-        object.to_hash.each do |k,v|
-          r[k.to_s.camelize(:lower)] = v
-        end
-        r
-      end
-
-    end
-  end
-
-  client = Fabricate(:client)
-  location = Fabricate(:location)
-  instructions = YAML.load_file("#{Rails.root}/spec/support/website_instructions/example.yml")
-  website = WebsiteSeeder.new(location, instructions["website"]).seed
-
-  @locations = []
-  Location.all.each do |location|
-    location_hash = LocationSerializer.new(location).as_json
-    @locations << MyUtilities::Base.camelize_keys(location_hash[:location]).to_json
-    puts "*"*80
-    puts location.to_s
-  end
-%>
-
-locations = <%= @locations %>
-App.Location.FIXTURES = locations
