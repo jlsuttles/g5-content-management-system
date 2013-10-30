@@ -1,7 +1,7 @@
 require "vcr"
 
 class EmberFixtureGenerator
-  FIXTURE_PATH = Rails.root.join("spec", "javascripts", "support", "fixtures.json")
+  FIXTURE_PATH = Rails.root.join("spec", "javascripts", "fixtures", "fixtures.json")
 
   def self.generate
     # Perform in test ENV
@@ -16,11 +16,11 @@ class EmberFixtureGenerator
     require "json"
 
     VCR.configure do |config|
-      config.cassette_library_dir = "spec/support/vcr_cassettes"
+      config.cassette_library_dir = "spec/javascripts/support/vcr_cassettes"
       config.hook_into :webmock
     end
 
-    VCR.use_cassette("javascripts/spec_helper") do
+    VCR.use_cassette("spec_helper") do
       # Create records in Rails DB
       ClientReader.perform(ENV["G5_CLIENT_UID"])
       WebsiteSeederJob.perform
@@ -31,20 +31,14 @@ class EmberFixtureGenerator
     # set in this file.
     Rails.application.routes.default_url_options[:host] = "test.com"
 
-    # Create attribute hash Ember FIXTURES can use
-    @locations = []
-    Location.all.each do |location|
-      # serialize with ActiveModelSerializers
-      location_serialize = LocationSerializer.new(location).as_json
-      # remove the root key ':location' and any other root keys
-      # location_hash = location_serialize[:location]
-      location_hash = location_serialize[:location]
-      # camelize keys to work with Ember FIXTURES
-      @locations << camelize_keys(location_hash) if location_hash
-    end
+    # serialize client with ActiveModelSerializers
+    client_hash = ClientSerializer.new(Client.first).as_json
+    # camelize keys to work with Ember FIXTURES
+    client_hash_camelized = camelize_keys(client_hash)
 
     open(FIXTURE_PATH, "w") do |file|
-      file.write @locations.to_json
+      # file.write client_hash_camelized.to_json
+      file.write JSON.pretty_generate(client_hash_camelized)
     end
   end
 
@@ -52,10 +46,25 @@ class EmberFixtureGenerator
   # :hello_there_world becomes "helloThereWorld"
   def self.camelize_keys(object)
     r = {}
+    # object = {"locations":[{},{}]}
     object.to_hash.each do |k,v|
-      r[k.to_s.camelize(:lower)] = v
+      # v = [{},{}]
+      if v.is_a? Array
+        r[k.to_s.camelize(:lower)] = v.map do |vv|
+          rrr = {}
+          # vv = {"id":88}
+          vv.to_hash.each do |kkk,vvv|
+            rrr[kkk.to_s.camelize(:lower)] = vvv
+          end
+          rrr
+        end
+      else
+          if vv.is_a? Array
+            # vv = ["id", 88]
+            rrr[] << vv[0].to_s.camelize(:lower) => vv[1]
+          else
+      end
     end
     r
   end
-
 end

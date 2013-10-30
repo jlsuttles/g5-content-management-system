@@ -2,7 +2,15 @@ fixture.preload("fixtures.json")
 
 module "Root Integration Tests",
   setup: ->
-    App.Location.FIXTURES = fixture.load("fixtures.json")[0]
+    fixtures = fixture.load("fixtures.json")[0]
+    console.log fixtures["client"]
+    # App.Client.FIXTURES = [fixtures["client"]]
+    App.Location.FIXTURES = fixtures["locations"]
+    App.Website.FIXTURES = fixtures["websites"]
+    App.WebsiteTemplate.FIXTURES = fixtures["website_templates"]
+    App.WebPageTemplate.FIXTURES = fixtures["web_page_templates"]
+    App.WebHomeTemplate.FIXTURES = fixtures["web_home_templates"]
+    App.MainWidget.FIXTURES = fixtures["main_widgets"]
     App.reset()
 
 test "Page title", ->
