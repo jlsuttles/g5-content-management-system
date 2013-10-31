@@ -38,6 +38,8 @@ group :development do
 end
 
 group :development, :test do
+  # secrets
+  gem "dotenv-rails", "~> 0.9.0"
   # debugging
   gem "pry", "~> 0.9.12.2"
   # database
