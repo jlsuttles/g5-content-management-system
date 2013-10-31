@@ -9,7 +9,6 @@ describe "locations requests", js: true, vcr: VCR_OPTIONS do
     @client = Fabricate(:client)
     @location = Fabricate(:location)
     @website = Fabricate(:website, location_id: @location.id)
-
     @location.reload
   end
 
@@ -29,7 +28,7 @@ describe "locations requests", js: true, vcr: VCR_OPTIONS do
       end
     end
 
-    it "'Deploy' link redirects back to the root path" do
+    it "'Deploy' link redirects back to root path" do
       within LOCATION_SELECTOR do
         click_link "Deploy"
       end
@@ -53,14 +52,11 @@ describe "locations requests", js: true, vcr: VCR_OPTIONS do
 
     it "'View' link goes to Heroku App" do
       pending("capybara can't find the 'view' link because the href is being populated via bindAttr")
-
       within LOCATION_SELECTOR do
-        click_on "View"
+        click_link "View"
       end
 
       expect(page).to have_content("Heroku | No such app")
-
-      expect(current_path).to eq(root_path)
     end
   end
 end
