@@ -24,7 +24,6 @@
 dump.rdb
 
 # Ignore repo files
-.env
 .ruby-version
 
 # Ignore sassy stuff
@@ -39,3 +38,6 @@ doc/*.svg
 
 # Ignore vcr_cassettes that always record new episodes
 spec/support/vcr_cassettes/ComponentGardenable
+
+# Ignore environment specific env
+.env.*
