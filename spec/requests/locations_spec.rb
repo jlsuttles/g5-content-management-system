@@ -1,30 +1,67 @@
 require "spec_helper"
 
+LOCATION_SELECTOR = ".faux-table .faux-table-row"
+
 describe "locations requests", js: true, vcr: VCR_OPTIONS do
   before do
     Resque.stub(:enqueue)
+
     @client = Fabricate(:client)
     @location = Fabricate(:location)
-    @website = Fabricate(:website)
-    @location.website = @website
+    @website = Fabricate(:website, location_id: @location.id)
+
+    @location.reload
   end
 
   context "#index" do
     before do
-      visit locations_path
+      visit root_path
     end
 
-    it "should have content" do
-      page.should have_content @client.name.upcase
-      page.should have_content @location.name
-      page.should have_content @website.name
+    it "Client and location names are displayed" do
+      within "header" do
+        # CSS upcases this name, so we also upcase
+        expect(page).to have_content(@client.name.upcase)
+      end
+
+      within LOCATION_SELECTOR do
+        expect(page).to have_content(@location.name)
+      end
     end
 
-    it "locations#index when I click deploy link" do
-      within ".faux-table .faux-table-row:first-child" do
+    it "'Deploy' link redirects back to the root path" do
+      within LOCATION_SELECTOR do
         click_link "Deploy"
       end
-      current_path.should eq locations_path
+
+      expect(current_path).to eq(root_path)
+    end
+
+    it "'Edit' link goes to Ember App" do
+      within LOCATION_SELECTOR do
+        click_link "Edit"
+      end
+
+      within "header" do
+        # CSS upcases these names, so we also upcase
+        expect(page).to have_content(@client.name.upcase)
+        expect(page).to have_content(@location.name.upcase)
+      end
+
+      expect(current_path).to eq("/website/#{@website.id}")
+    end
+
+    it "'View' link goes to Heroku App" do
+      pending
+
+      within LOCATION_SELECTOR do
+        # Capybara can't find the link because the href is being populated via bindAttr
+        click_on "View"
+      end
+
+      expect(page).to have_content("Heroku | No such app")
+
+      expect(current_path).to eq(root_path)
     end
   end
 end
