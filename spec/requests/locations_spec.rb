@@ -52,10 +52,9 @@ describe "locations requests", js: true, vcr: VCR_OPTIONS do
     end
 
     it "'View' link goes to Heroku App" do
-      pending
+      pending("capybara can't find the 'view' link because the href is being populated via bindAttr")
 
       within LOCATION_SELECTOR do
-        # Capybara can't find the link because the href is being populated via bindAttr
         click_on "View"
       end
 
