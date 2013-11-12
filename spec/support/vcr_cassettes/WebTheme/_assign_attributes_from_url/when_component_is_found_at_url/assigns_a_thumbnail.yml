@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://g5-theme-garden.herokuapp.com/components/classic
+    uri: http://g5-theme-garden.herokuapp.com/components/big-picture
     body:
       encoding: US-ASCII
       string: ''
@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 09 Oct 2013 22:59:06 GMT
+      - Tue, 12 Nov 2013 20:17:31 GMT
       Last-Modified:
-      - Fri, 27 Sep 2013 18:56:27 GMT
+      - Wed, 06 Nov 2013 22:15:25 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY5MWVjMmQ1Y2NiYzI1YWUyYWQ2NjA3YWJkYjRlNzU3BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWZYVEhiY01QaHpVMnEzY2dJMnB6N1d3V2x4TVFyR1Mvck1tL3RSMENjc009BjsARg%3D%3D--303509cbac4ab3a11056428388fa2c79de40254a;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTAwYTc0NTVmYTdmYTE0ZTM4MjAxZjJmODI1NzUxZmI1BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTFnUzU3OCtjSFlNclQvNHY4WnJXTktYV0NUUEltREkxOXlidVl1cDFjelE9BjsARg%3D%3D--694e049d9be0d1c0e3220dde652beeb67b3f8d86;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 8507f9bd99c3f221e0cdbec62b8a6492
+      - f2bff721eee4176a3e7b96516a38dc0d
       X-Runtime:
-      - '0.016714'
+      - '0.033019'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"fXTHbcMPhzU2q3cgI2pz7WwWlxMQrGS/rMm/tR0CcsM=\"
+        name=\"csrf-param\" />\n<meta content=\"1gS578+cHYMrT/4v8ZrWNKXWCTPImDI19ybuYup1czQ=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -63,22 +63,22 @@ http_interactions:
         you want hidden at 940px or less, place within here -->\n            <div
         class=\"nav-collapse\">\n            </div>\n\n          </div>\n        </div>\n
         \     </div>\n\n\n      <article class=\"h-g5-component well\">\n  <header>\n
-        \   <h2 class=\"p-name\">\n      <a href=\"http://g5-theme-garden.herokuapp.com/components/classic\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Classic</a>\n    </h2>\n    <p class=\"p-summary\">Tasteful
-        and classic</p>\n      <p>\n        <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Colors</h3>\n        <p class=\"p-g5-color\">#0095a0</p>\n
-        \       <p class=\"p-g5-color\">#f68e56</p>\n      <h3>Images</h3>\n        <p>\n
-        \         <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png</a>\n
-        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss\"
-        class=\"u-g5-stylesheet u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss</a>\n
+        \   <h2 class=\"p-name\">\n      <a href=\"http://g5-theme-garden.herokuapp.com/components/big-picture\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Big Picture</a>\n    </h2>\n    <p
+        class=\"p-summary\">Features large photos</p>\n      <p>\n        <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Colors</h3>\n        <p class=\"p-g5-color\">#283f54</p>\n
+        \       <p class=\"p-g5-color\">#dfb803</p>\n      <h3>Images</h3>\n        <p>\n
+        \         <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/stylesheets/big-picture.scss\"
+        class=\"u-g5-stylesheet u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/stylesheets/big-picture.scss</a>\n
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 22:59:05 GMT
+  recorded_at: Tue, 12 Nov 2013 20:17:32 GMT
 recorded_with: VCR 2.6.0

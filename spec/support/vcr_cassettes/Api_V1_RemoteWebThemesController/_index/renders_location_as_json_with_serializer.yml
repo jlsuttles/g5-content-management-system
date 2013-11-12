@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       If-Modified-Since:
-      - Fri, 27 Sep 2013 18:56:27 GMT
+      - Wed, 06 Nov 2013 22:15:25 GMT
       Accept:
       - ! '*/*'
       User-Agent:
@@ -21,15 +21,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Wed, 09 Oct 2013 23:00:20 GMT
+      - Tue, 12 Nov 2013 20:17:32 GMT
       Server:
       - thin 1.5.0 codename Knife
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 0608821dfb3b4cd18b38af8caf7cf156
+      - 882fbbb5868618b2be969e9a5884d595
       X-Runtime:
-      - '0.004777'
+      - '0.006187'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -38,7 +38,7 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 23:00:18 GMT
+  recorded_at: Tue, 12 Nov 2013 20:17:33 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/
@@ -47,7 +47,7 @@ http_interactions:
       string: ''
     headers:
       If-Modified-Since:
-      - Fri, 27 Sep 2013 18:56:27 GMT
+      - Wed, 06 Nov 2013 22:15:25 GMT
       Accept:
       - ! '*/*'
       User-Agent:
@@ -60,15 +60,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Wed, 09 Oct 2013 23:00:20 GMT
+      - Tue, 12 Nov 2013 20:17:33 GMT
       Server:
       - thin 1.5.0 codename Knife
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 8aa3bab6b456db6cca66de71a7638fc2
+      - 9e7d86b84f6acd86a834ea9807095314
       X-Runtime:
-      - '0.003821'
+      - '0.007195'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -77,7 +77,7 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 23:00:19 GMT
+  recorded_at: Tue, 12 Nov 2013 20:17:33 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/
@@ -86,7 +86,7 @@ http_interactions:
       string: ''
     headers:
       If-Modified-Since:
-      - Fri, 27 Sep 2013 18:56:27 GMT
+      - Wed, 06 Nov 2013 22:15:25 GMT
       Accept:
       - ! '*/*'
       User-Agent:
@@ -99,15 +99,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Wed, 09 Oct 2013 23:00:20 GMT
+      - Tue, 12 Nov 2013 20:17:33 GMT
       Server:
       - thin 1.5.0 codename Knife
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 26760ad28599f40549dd90820cba6fc0
+      - e14ce5a1d88cc4ea763197c98086dc28
       X-Runtime:
-      - '0.003573'
+      - '0.005116'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -116,7 +116,7 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 23:00:19 GMT
+  recorded_at: Tue, 12 Nov 2013 20:17:33 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/
@@ -125,7 +125,7 @@ http_interactions:
       string: ''
     headers:
       If-Modified-Since:
-      - Fri, 27 Sep 2013 18:56:27 GMT
+      - Wed, 06 Nov 2013 22:15:25 GMT
       Accept:
       - ! '*/*'
       User-Agent:
@@ -138,15 +138,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Wed, 09 Oct 2013 23:00:21 GMT
+      - Tue, 12 Nov 2013 20:17:33 GMT
       Server:
       - thin 1.5.0 codename Knife
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 4e405fe781bcbf14c648c2ef16dfb7e9
+      - e63c9b18c74ed650cc69082e9c798ba0
       X-Runtime:
-      - '0.004206'
+      - '0.007001'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -155,5 +155,5 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 23:00:19 GMT
+  recorded_at: Tue, 12 Nov 2013 20:17:33 GMT
 recorded_with: VCR 2.6.0

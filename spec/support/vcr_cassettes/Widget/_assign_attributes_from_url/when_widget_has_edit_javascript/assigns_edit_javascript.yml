@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 09 Oct 2013 22:59:32 GMT
+      - Tue, 12 Nov 2013 20:17:53 GMT
       Last-Modified:
-      - Wed, 09 Oct 2013 22:50:48 GMT
+      - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWM3ZTcwNDQ0MDZkMGM0MWY4NWJmODg4YWYxZGMxZjYyBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUQ1ekVWV0loYllDb3lucEE0RGxJbVdXQWxaajZWMzQyVUl2WElkRktaQzQ9BjsARg%3D%3D--2c2df94935dfca073d33b07fc7dab49670a7782d;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTBhMTIwYzUxNjlmNGQyOGU2ZGJkZmY5MWUyOTlhYTAxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVJoZVJJbTI3TkNQZURjaVQ2Q3RZQVJiKzZRZHhLUHZrUDBJOWZ1clMwSEU9BjsARg%3D%3D--21e7b9fc9732b04054cd03f6ca625f94b469dd52;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - a194b9f4c74f6d62e73e1bc6a7da14e2
+      - e00cff1fcaf50488cab7510d73c4f3e5
       X-Runtime:
-      - '0.146468'
+      - '0.171471'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"D5zEVWIhbYCoynpA4DlImWWAlZj6V342UIvXIdFKZC4=\"
+        name=\"csrf-param\" />\n<meta content=\"RheRIm27NCPeDciT6CtYARb+6QdxKPvkP0I9furS0HE=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -232,7 +232,7 @@ http_interactions:
         \   &lt;/li&gt;\n    {% endif %}\n  &lt;/ul&gt;\n&lt;/nav&gt;\n\n&lt;!-- END
         SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 22:59:31 GMT
+  recorded_at: Tue, 12 Nov 2013 20:17:53 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/show.html
@@ -254,15 +254,15 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 09 Oct 2013 22:59:33 GMT
+      - Tue, 12 Nov 2013 20:17:53 GMT
       Last-Modified:
-      - Wed, 09 Oct 2013 22:50:48 GMT
+      - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
       - 34363127446cceb92f392e0fdcf7c37447b0d528
       X-Rack-Cache:
-      - stale, valid, store
+      - miss, store
       Content-Length:
       - '994'
       Connection:
@@ -283,7 +283,7 @@ http_interactions:
         widget.cta_four_url.best_value | url_encode }}\">{{ widget.cta_four_text.best_value
         }}</a>\n    </li>\n    {% endif %}\n  </ul>\n</nav>\n"
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 22:59:31 GMT
+  recorded_at: Tue, 12 Nov 2013 20:17:54 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/edit.html
@@ -305,15 +305,15 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 09 Oct 2013 22:59:33 GMT
+      - Tue, 12 Nov 2013 20:17:54 GMT
       Last-Modified:
-      - Wed, 09 Oct 2013 22:50:48 GMT
+      - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
       - ba711e2b20c8af6f80093803be9f2a0aac673dac
       X-Rack-Cache:
-      - stale, valid, store
+      - miss, store
       Content-Length:
       - '3998'
       Connection:
@@ -370,5 +370,5 @@ http_interactions:
         \     {% endfor %}\n    </select>\n  </div>\n\n  <input type=\"submit\" value=\"Save\"
         class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 22:59:31 GMT
+  recorded_at: Tue, 12 Nov 2013 20:17:54 GMT
 recorded_with: VCR 2.6.0
