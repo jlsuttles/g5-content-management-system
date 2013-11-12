@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://g5-layout-garden.herokuapp.com/components/aside-first-single-column
+    uri: http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-left
     body:
       encoding: US-ASCII
       string: ''
@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 09 Oct 2013 22:59:39 GMT
+      - Tue, 12 Nov 2013 20:18:18 GMT
       Last-Modified:
-      - Wed, 24 Jul 2013 19:54:58 GMT
+      - Wed, 06 Nov 2013 23:51:31 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY0ZGU2YTRiNzVjZjUyYzg2Mjg0NDhlYzZlOWMzMWUwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTFmTCtmcHdpZzFGM1ZCVko1aE1oWnRPTjlqWG5iTkpaNUcvdVZLUUZicEE9BjsARg%3D%3D--cd1ed043d4fbd3839dc1ad4ad3dfec4fd1314fb0;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyYzRlYmJiMWM5ZWU0MDBjOGM3NDUyNWJmNTg0YTM5BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUdTV0M4cVRtNEF6WTNPQU9tb0J5K0NoOGZNamsvY3B4QnBjWjUrZjFISmM9BjsARg%3D%3D--f5d62e1b7fa7818a465e651151319e3c49543c5b;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 6a18f2ba4be1666e9f88cc9f13a3d627
+      - 48645a0b640165b4145d2c0d8a46cf7f
       X-Runtime:
-      - '0.035911'
+      - '0.016789'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"1fL+fpwig1F3VBVJ5hMhZtON9jXnbNJZ5G/uVKQFbpA=\"
+        name=\"csrf-param\" />\n<meta content=\"GSWC8qTm4AzY3OAOmoBy+Ch8fMjk/cpxBpcZ5+f1HJc=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -64,19 +64,21 @@ http_interactions:
         class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
         \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
         \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
-        \     <a href=\"http://g5-layout-garden.herokuapp.com/components/aside-first-single-column\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Aside First Single Column</a>\n    </h2>\n
-        \   <p class=\"p-summary\">Single column layout, sidebar on top of main in
-        mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png</a>\n
-        \       </p>\n\n\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
-        class=&quot;single-column layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
+        \     <a href=\"http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-left\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Main First Sidebar Left</a>\n    </h2>\n
+        \   <p class=\"p-summary\">Sidebar left layout. Main section on top of sidebar
+        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css\"
+        class=\"u-g5-stylesheet u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css</a>\n
+        \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
+        class=&quot;layout-side-left layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
         class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
         place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
         collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
@@ -89,12 +91,12 @@ http_interactions:
         class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
         \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
         class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
-        \         &lt;aside role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;&lt;section
-        role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;\n&lt;/div&gt;\n
+        \         &lt;section role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;&lt;aside
+        role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;\n&lt;/div&gt;\n
         \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
         id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
         \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 22:59:38 GMT
+  recorded_at: Tue, 12 Nov 2013 20:18:18 GMT
 recorded_with: VCR 2.6.0

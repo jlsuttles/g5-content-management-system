@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://g5-layout-garden.herokuapp.com/components/aside-first-single-column
+    uri: http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-left
     body:
       encoding: US-ASCII
       string: ''
@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 09 Oct 2013 22:58:51 GMT
+      - Tue, 12 Nov 2013 20:20:42 GMT
       Last-Modified:
-      - Wed, 24 Jul 2013 19:54:58 GMT
+      - Wed, 06 Nov 2013 23:51:31 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTVhOGE0NWVkMDA5MzQyNGY5YWQwM2NhNGRiODc4ZDgxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWQ2ZnBTSUJuOG1KUnorRENNaUx1N1Y5RmVBVFRSOFgvdlZ6U1h2bkxDZk09BjsARg%3D%3D--283d08d6d5d1dbc4fca0310bc48181d2b8209fe2;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTUxNGE5YmQyNmYzYjRhODAxNTUxOWZlMmMzZDcwZmRhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTRhaEZQK3pBZVV1VS9vc201TE0vZHQzdXRWWEpVcVhtY2I3ejQ2NWIwbVE9BjsARg%3D%3D--f58b4621abd312a3d9fa7ab0a400b7dcf2bd6ee6;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 5f0f0415674deb0fce2a79be85bcfe45
+      - da99c5b53482bf4f7b9d5b9de21e50de
       X-Runtime:
-      - '0.210286'
+      - '0.015749'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"d6fpSIBn8mJRz+DCMiLu7V9FeATTR8X/vVzSXvnLCfM=\"
+        name=\"csrf-param\" />\n<meta content=\"4ahFP+zAeUuU/osm5LM/dt3utVXJUqXmcb7z465b0mQ=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -64,19 +64,21 @@ http_interactions:
         class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
         \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
         \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
-        \     <a href=\"http://g5-layout-garden.herokuapp.com/components/aside-first-single-column\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Aside First Single Column</a>\n    </h2>\n
-        \   <p class=\"p-summary\">Single column layout, sidebar on top of main in
-        mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png</a>\n
-        \       </p>\n\n\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
-        class=&quot;single-column layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
+        \     <a href=\"http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-left\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Main First Sidebar Left</a>\n    </h2>\n
+        \   <p class=\"p-summary\">Sidebar left layout. Main section on top of sidebar
+        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css\"
+        class=\"u-g5-stylesheet u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css</a>\n
+        \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
+        class=&quot;layout-side-left layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
         class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
         place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
         collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
@@ -89,17 +91,17 @@ http_interactions:
         class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
         \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
         class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
-        \         &lt;aside role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;&lt;section
-        role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;\n&lt;/div&gt;\n
+        \         &lt;section role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;&lt;aside
+        role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;\n&lt;/div&gt;\n
         \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
         id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
         \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 22:58:50 GMT
+  recorded_at: Tue, 12 Nov 2013 20:20:42 GMT
 - request:
     method: get
-    uri: http://g5-layout-garden.herokuapp.com/components/aside-first-single-column
+    uri: http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-left
     body:
       encoding: US-ASCII
       string: ''
@@ -118,20 +120,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 09 Oct 2013 22:58:52 GMT
+      - Tue, 12 Nov 2013 20:20:42 GMT
       Last-Modified:
-      - Wed, 24 Jul 2013 19:54:58 GMT
+      - Wed, 06 Nov 2013 23:51:31 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQ4NjQ4ZTBjZTBmMjRkYzY4YjRiNDNhOTNjMGI1NGYyBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXg0LzNzYUpld1FNY280UXN3R241d3cwUkRBWUluOUVqK3hhQ0lXc0EweEU9BjsARg%3D%3D--ed1fb388cbd36128cfe5fecac9c324ab6ee8b3f2;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTRkYjUxYjU5Yzc5MTgxMGQ2OTczMzNiN2RmZTM0NDA2BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMW0vQjBDQXByU3dkYklLTkVuMHY3N2xqL3FyYjl0RGUyc0RlWVpSNVVMTkE9BjsARg%3D%3D--340b61662a032e150f5572d2fbec24d7c65f1ef2;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 26a99780256b8d586315f3400e663c86
+      - c0048e982114be73ab54b62e8e4802a7
       X-Runtime:
-      - '0.037589'
+      - '0.016146'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -147,7 +149,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"x4/3saJewQMco4QswGn5ww0RDAYIn9Ej+xaCIWsA0xE=\"
+        name=\"csrf-param\" />\n<meta content=\"m/B0CAprSwdbIKNEn0v77lj/qrb9tDe2sDeYZR5ULNA=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -161,19 +163,21 @@ http_interactions:
         class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
         \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
         \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
-        \     <a href=\"http://g5-layout-garden.herokuapp.com/components/aside-first-single-column\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Aside First Single Column</a>\n    </h2>\n
-        \   <p class=\"p-summary\">Single column layout, sidebar on top of main in
-        mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png</a>\n
-        \       </p>\n\n\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
-        class=&quot;single-column layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
+        \     <a href=\"http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-left\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Main First Sidebar Left</a>\n    </h2>\n
+        \   <p class=\"p-summary\">Sidebar left layout. Main section on top of sidebar
+        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css\"
+        class=\"u-g5-stylesheet u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css</a>\n
+        \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
+        class=&quot;layout-side-left layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
         class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
         place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
         collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
@@ -186,17 +190,17 @@ http_interactions:
         class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
         \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
         class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
-        \         &lt;aside role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;&lt;section
-        role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;\n&lt;/div&gt;\n
+        \         &lt;section role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;&lt;aside
+        role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;\n&lt;/div&gt;\n
         \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
         id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
         \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 22:58:51 GMT
+  recorded_at: Tue, 12 Nov 2013 20:20:42 GMT
 - request:
     method: get
-    uri: http://g5-theme-garden.herokuapp.com/components/classic
+    uri: http://g5-theme-garden.herokuapp.com/components/big-picture
     body:
       encoding: US-ASCII
       string: ''
@@ -215,20 +219,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 09 Oct 2013 22:58:53 GMT
+      - Tue, 12 Nov 2013 20:20:43 GMT
       Last-Modified:
-      - Fri, 27 Sep 2013 18:56:27 GMT
+      - Wed, 06 Nov 2013 22:15:25 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTFlMDRhOGM2ZGY1NzBkYWQ3ZmJlNzA2ODA4NGY2ZjNiBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXhoOXBSS1FkNXpwS2FXbGJXZlVRZnI4eWc3Y21NUWo2WDlNV0hJSTkwM2M9BjsARg%3D%3D--7f9c70c903cc4bf43bdb4719576db30b01e46b7e;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTc0MDQwYTI5NjJlNDRlYmYyNmQ4MGQyY2NjZWVmNDVmBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXpoMVFEd1NGdEgvdWoyZkRVaHBKT0JmR1ZES05wbFZHNWtHV3MyUUsxSlk9BjsARg%3D%3D--d2c520dca5225bd312085d0bfadfa65c33b9941a;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - f8e0f3423c69f2ae14ae8559d250c905
+      - 43b96288fa543ecea6503f56376f18cb
       X-Runtime:
-      - '0.018011'
+      - '0.045616'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -244,7 +248,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"xh9pRKQd5zpKaWlbWfUQfr8yg7cmMQj6X9MWHII903c=\"
+        name=\"csrf-param\" />\n<meta content=\"zh1QDwSFtH/uj2fDUhpJOBfGVDKNplVG5kGWs2QK1JY=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -257,27 +261,27 @@ http_interactions:
         you want hidden at 940px or less, place within here -->\n            <div
         class=\"nav-collapse\">\n            </div>\n\n          </div>\n        </div>\n
         \     </div>\n\n\n      <article class=\"h-g5-component well\">\n  <header>\n
-        \   <h2 class=\"p-name\">\n      <a href=\"http://g5-theme-garden.herokuapp.com/components/classic\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Classic</a>\n    </h2>\n    <p class=\"p-summary\">Tasteful
-        and classic</p>\n      <p>\n        <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Colors</h3>\n        <p class=\"p-g5-color\">#0095a0</p>\n
-        \       <p class=\"p-g5-color\">#f68e56</p>\n      <h3>Images</h3>\n        <p>\n
-        \         <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png</a>\n
-        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss\"
-        class=\"u-g5-stylesheet u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss</a>\n
+        \   <h2 class=\"p-name\">\n      <a href=\"http://g5-theme-garden.herokuapp.com/components/big-picture\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Big Picture</a>\n    </h2>\n    <p
+        class=\"p-summary\">Features large photos</p>\n      <p>\n        <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Colors</h3>\n        <p class=\"p-g5-color\">#283f54</p>\n
+        \       <p class=\"p-g5-color\">#dfb803</p>\n      <h3>Images</h3>\n        <p>\n
+        \         <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/stylesheets/big-picture.scss\"
+        class=\"u-g5-stylesheet u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/stylesheets/big-picture.scss</a>\n
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 22:58:51 GMT
+  recorded_at: Tue, 12 Nov 2013 20:20:43 GMT
 - request:
     method: get
-    uri: http://g5-theme-garden.herokuapp.com/components/classic
+    uri: http://g5-theme-garden.herokuapp.com/components/big-picture
     body:
       encoding: US-ASCII
       string: ''
@@ -296,20 +300,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 09 Oct 2013 22:58:53 GMT
+      - Tue, 12 Nov 2013 20:20:43 GMT
       Last-Modified:
-      - Fri, 27 Sep 2013 18:56:27 GMT
+      - Wed, 06 Nov 2013 22:15:25 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTgxMjIwYzYxMjI1MGM5ZGUzYjAwOTVhNGNlN2IxZjcxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXdlNTNITVB2a0EvdGdLLzNieFlTR0crU1Mvb0M2Y0RPaW54Nk01ZUlDb1k9BjsARg%3D%3D--2c0158a26d088731b2ffde90319d97634b6ae078;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWFlZWFhMDZiMTc0Zjk1ZGI5NDExMGU0OWRmNTg2ZTdhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWFFVlVienFXNDQvaUN3WWx3TEZuZ1hHK3FlSXNVQWtFNm45Tmpnc3ZyQzg9BjsARg%3D%3D--9ca9bf0a639f874d71f2bc97118e892b5f11fd4f;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 923152762e8474cb578ebbf75d57c638
+      - 0e5096dc8d4a5969b91261710aa2a1a9
       X-Runtime:
-      - '0.018759'
+      - '0.046029'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -325,7 +329,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"we53HMPvkA/tgK/3bxYSGG+SS/oC6cDOinx6M5eICoY=\"
+        name=\"csrf-param\" />\n<meta content=\"aEVUbzqW44/iCwYlwLFngXG+qeIsUAkE6n9NjgsvrC8=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -338,27 +342,27 @@ http_interactions:
         you want hidden at 940px or less, place within here -->\n            <div
         class=\"nav-collapse\">\n            </div>\n\n          </div>\n        </div>\n
         \     </div>\n\n\n      <article class=\"h-g5-component well\">\n  <header>\n
-        \   <h2 class=\"p-name\">\n      <a href=\"http://g5-theme-garden.herokuapp.com/components/classic\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Classic</a>\n    </h2>\n    <p class=\"p-summary\">Tasteful
-        and classic</p>\n      <p>\n        <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Colors</h3>\n        <p class=\"p-g5-color\">#0095a0</p>\n
-        \       <p class=\"p-g5-color\">#f68e56</p>\n      <h3>Images</h3>\n        <p>\n
-        \         <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/images/thumbnail.png</a>\n
-        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss\"
-        class=\"u-g5-stylesheet u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss</a>\n
+        \   <h2 class=\"p-name\">\n      <a href=\"http://g5-theme-garden.herokuapp.com/components/big-picture\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Big Picture</a>\n    </h2>\n    <p
+        class=\"p-summary\">Features large photos</p>\n      <p>\n        <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Colors</h3>\n        <p class=\"p-g5-color\">#283f54</p>\n
+        \       <p class=\"p-g5-color\">#dfb803</p>\n      <h3>Images</h3>\n        <p>\n
+        \         <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/stylesheets/big-picture.scss\"
+        class=\"u-g5-stylesheet u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/stylesheets/big-picture.scss</a>\n
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 22:58:52 GMT
+  recorded_at: Tue, 12 Nov 2013 20:20:43 GMT
 - request:
     method: get
-    uri: http://g5-widget-garden.herokuapp.com/components/map
+    uri: http://g5-widget-garden.herokuapp.com/components/contact-form
     body:
       encoding: US-ASCII
       string: ''
@@ -377,20 +381,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 09 Oct 2013 22:58:54 GMT
+      - Tue, 12 Nov 2013 20:20:44 GMT
       Last-Modified:
-      - Wed, 09 Oct 2013 22:50:48 GMT
+      - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTk4MWJmY2QwYzI2ZWM5NjM3MTQ3Mzk1ODJkZGY0MDFhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVRObkNFY2NNdkVSeE9mM01nYldjaG1JU3VRb010SXdHbHdmeTdGWXVaNXM9BjsARg%3D%3D--8ec6874d8fa0b3a393a99cc0f9e2065d3646ea4b;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWM5NTJiYTE4NGM5MjBhMWVhMGM4YjM2MDE4YzJmYzM0BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTZ2WnIySFpVMmlWaENnWThWUXRJTXJvZ3RUSlpkRE4vaTFHVHdkbkFzNWM9BjsARg%3D%3D--6f4ab8a895d8971ce8b63f6d4c0ef9d9e213f841;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - fd9fbf235cfa2c53747c619e3ee5ad22
+      - 02da24456befdcbf587275af035985c1
       X-Runtime:
-      - '0.039513'
+      - '0.074656'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -406,7 +410,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"TNnCEccMvERxOf3MgbWchmISuQoMtIwGlwfy7FYuZ5s=\"
+        name=\"csrf-param\" />\n<meta content=\"6vZr2HZU2iVhCgY8VQtIMrogtTJZdDN/i1GTwdnAs5c=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -420,41 +424,66 @@ http_interactions:
         class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
         \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
         \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
-        \     <a href=\"http://g5-widget-garden.herokuapp.com/components/map\" class=\"u-url
-        u-uid\" rel=\"bookmark\">Map</a>\n    </h2>\n    <p class=\"p-summary\">Google
-        map of business</p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/map/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/map/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/map/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/map/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-widget-garden.herokuapp.com/static/components/map/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-widget-garden.herokuapp.com/static/components/map/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/map/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-widget-garden.herokuapp.com/static/components/map/images/thumbnail.png</a>\n
-        \       </p>\n\n      <h3>Javascripts</h3>\n\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/map/javascripts/show.js\"
-        class=\"u-g5-show-javascript u-url\">http://g5-widget-garden.herokuapp.com/static/components/map/javascripts/show.js</a>\n
-        \     </p>\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/map/stylesheets/map.css\"
-        class=\"u-g5-stylesheet u-url\">http://g5-widget-garden.herokuapp.com/static/components/map/stylesheets/map.css</a>\n
+        \     <a href=\"http://g5-widget-garden.herokuapp.com/components/contact-form\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Contact Form</a>\n    </h2>\n    <p
+        class=\"p-summary\">Form to get user contact info</p>\n      <p>\n        <a
+        href=\"http://g5-widget-garden.herokuapp.com/static/components/contact-form/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/contact-form/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/contact-form/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/contact-form/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-widget-garden.herokuapp.com/static/components/contact-form/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-widget-garden.herokuapp.com/static/components/contact-form/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/contact-form/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-widget-garden.herokuapp.com/static/components/contact-form/images/thumbnail.png</a>\n
+        \       </p>\n\n      <h3>Javascripts</h3>\n\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/javascripts/libs/h5validate.js\"
+        class=\"u-g5-lib-javascript u-url\">http://g5-widget-garden.herokuapp.com/javascripts/libs/h5validate.js</a>\n
+        \     </p>\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/contact-form/stylesheets/style.css\"
+        class=\"u-g5-stylesheet u-url\">http://g5-widget-garden.herokuapp.com/static/components/contact-form/stylesheets/style.css</a>\n
         \       </p>\n      <ul class=\"unstyled\">\n          <li class=\"e-g5-property-group
-        h-g5-property-group\">\n            <h3><span class=\"p-name\">Map</span>Property
+        h-g5-property-group\">\n            <h3><span class=\"p-name\">contact_form</span>Property
         Group</h3>\n  <p class=\"p-category\">Instance</p>\n  <div class=\"row\">\n
         \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
         e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
-        class=\"p-g5-name\">map_address</th>\n        </tr>\n          <tr>\n            <th
-        style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
+        class=\"p-g5-name\">contact_submission_url</th>\n        </tr>\n          <tr>\n
+        \           <th style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
         \             true\n            </td>\n          </tr>\n          <tr>\n            <th
         style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
-        \             550 NW Franklin Avenue, Bend, OR 97701\n            </td>\n
-        \         </tr>\n      </table>\n    </div>\n  </div>\n  <div class=\"row\">\n
-        \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
-        e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
-        class=\"p-g5-name\">map_type</th>\n        </tr>\n          <tr>\n            <th
-        style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
-        \             true\n            </td>\n          </tr>\n          <tr>\n            <th
-        style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
-        \             ROADMAP\n            </td>\n          </tr>\n      </table>\n
-        \   </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"span5\">\n      <table
-        class=\"table table-striped table-bordered e-g5-property h-g5-property\">\n
-        \       <tr>\n          <th>Name</th>\n          <td class=\"p-g5-name\">map_allow_pan_zoom</th>\n
+        \             \n            </td>\n          </tr>\n      </table>\n    </div>\n
+        \ </div>\n  <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_display_name</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              true\n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_display_email</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              true\n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_display_phone</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              true\n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_display_address</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              true\n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">contact_display_message</th>\n
         \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
         \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
         \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
@@ -462,47 +491,108 @@ http_interactions:
         \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n\n
         \         </li>\n      </ul>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;!--
         BEGIN EDIT FORM MARKUP --&gt;\n&lt;form&gt;\n  &lt;div class=&quot;form-field&quot;&gt;\n
-        \   {{ widget.map_address.id_hidden_field }}\n    &lt;label for=&quot;{{ widget.map_address.value_field_id
-        }}&quot; &gt;\n      Address\n    &lt;/label&gt;\n    &lt;input type=&quot;text&quot;\n
-        \     id=&quot;{{ widget.map_address.value_field_id }}&quot;\n      name=&quot;{{
-        widget.map_address.value_field_name }}&quot;\n      value=&quot;{{ widget.map_address.best_value
-        }}&quot;\n    /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field check-field&quot;&gt;\n
-        \   &lt;fieldset&gt;\n      &lt;legend&gt;Map Type&lt;/legend&gt;\n      {{
-        widget.map_type.id_hidden_field }}\n      &lt;input type=&quot;radio&quot;\n
-        \       id=&quot;{{ widget.map_type.value_field_id }}_roadmap&quot;\n        name=&quot;{{
-        widget.map_type.value_field_name }}&quot;\n        value=&quot;ROADMAP&quot;\n
-        \       checked=&quot;checked&quot;\n      /&gt;\n      &lt;label for=&quot;{{
-        widget.map_type.value_field_id }}_roadmap&quot; &gt;\n        Road Map\n      &lt;/label&gt;\n
-        \     &lt;input type=&quot;radio&quot;\n        id=&quot;{{ widget.map_type.value_field_id
-        }}_satellite&quot;\n        name=&quot;{{ widget.map_type.value_field_name
-        }}&quot;\n        value=&quot;SATELLITE&quot;\n        {% if widget.map_type.best_value
-        == &quot;SATELLITE&quot; %}\n        checked=&quot;checked&quot;\n        {%
-        endif %}\n      /&gt;\n      &lt;label for=&quot;{{ widget.map_type.value_field_id
-        }}_satellite&quot; &gt;\n        Satellite\n      &lt;/label&gt;\n    &lt;/fieldset&gt;\n
-        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field check-field&quot;&gt;\n
-        \   {{ widget.map_allow_pan_zoom.id_hidden_field }}\n    &lt;input type=&quot;hidden&quot;\n
-        \     id=&quot;{{ widget.map_allow_pan_zoom.value_field_id }}_false&quot;\n
-        \     name=&quot;{{ widget.map_allow_pan_zoom.value_field_name }}&quot;\n
-        \     value=&quot;false&quot;\n    /&gt;\n    &lt;input type=&quot;checkbox&quot;\n
-        \     id=&quot;{{ widget.map_allow_pan_zoom.value_field_id }}&quot;\n      name=&quot;{{
-        widget.map_allow_pan_zoom.value_field_name }}&quot;\n      value=&quot;true&quot;\n
-        \     {% if widget.map_allow_pan_zoom.best_value == &quot;true&quot; %}\n
-        \     checked=&quot;checked&quot;\n      {% endif %}\n    /&gt;\n    &lt;label
-        for=&quot;{{ widget.map_allow_pan_zoom.value_field_id }}&quot; &gt;\n      map_allow
-        Panning and Zooming\n    &lt;/label&gt;\n  &lt;/div&gt;\n\n  &lt;input type=&quot;submit&quot;
-        value=&quot;Save&quot; class=&quot;btn&quot; /&gt;\n&lt;/form&gt;\n\n&lt;!--
-        END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n&lt;script
-        id=&quot;map-config&quot; type=&quot;application/json&quot;&gt;\n  {\n    &quot;panZoom&quot;:
-        {{ widget.map_allow_pan_zoom.best_value }},\n    &quot;address&quot;: &quot;{{
-        widget.map_address.best_value }}&quot;,\n    &quot;mapType&quot;: &quot;{{
-        widget.map_type.best_value }}&quot;\n  }\n&lt;/script&gt;\n\n&lt;div id=&quot;map-canvas&quot;
-        class=&quot;widget map&quot;&gt;&lt;/div&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
+        \   &lt;label for=&quot;{{ widget.contact_submission_url.value_field_id }}&quot;
+        &gt;\n      Submission URL\n    &lt;/label&gt;\n    {{ widget.contact_submission_url.id_hidden_field
+        }}\n    &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.contact_submission_url.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.contact_submission_url.value_field_name
+        }}&quot;\n      value=&quot;{{ widget.contact_submission_url.best_value |
+        url_encode }}&quot;\n    /&gt;\n  &lt;/div&gt;\n  &lt;fieldset&gt;\n    &lt;legend&gt;Choose
+        fields to include in form&lt;/legend&gt;\n\n    &lt;div class=&quot;form-field
+        check-field&quot;&gt;\n      {{ widget.contact_display_name.id_hidden_field
+        }}\n      &lt;input type=&quot;hidden&quot;\n        id=&quot;{{ widget.contact_display_name.value_field_id
+        }}_false&quot;\n        name=&quot;{{ widget.contact_display_name.value_field_name
+        }}&quot;\n        value=&quot;false&quot;\n      /&gt;\n      &lt;input type=&quot;checkbox&quot;\n
+        \       id=&quot;{{ widget.contact_display_name.value_field_id }}&quot;\n
+        \       name=&quot;{{ widget.contact_display_name.value_field_name }}&quot;\n
+        \       value=&quot;true&quot;\n        {% if widget.contact_display_name.best_value
+        == &quot;true&quot; %}\n        checked=&quot;checked&quot;\n        {% endif
+        %}\n      /&gt;\n      &lt;label for=&quot;{{ widget.contact_display_name.value_field_id
+        }}&quot; &gt;\n        Name\n      &lt;/label&gt;\n    &lt;/div&gt;\n\n    &lt;div
+        class=&quot;form-field check-field&quot;&gt;\n      {{ widget.contact_display_email.id_hidden_field
+        }}\n      &lt;input type=&quot;hidden&quot;\n        id=&quot;{{ widget.contact_display_email.value_field_id
+        }}_false&quot;\n        name=&quot;{{ widget.contact_display_email.value_field_name
+        }}&quot;\n        value=&quot;false&quot;\n      /&gt;\n      &lt;input type=&quot;checkbox&quot;\n
+        \       id=&quot;{{ widget.contact_display_email.value_field_id }}&quot;\n
+        \       name=&quot;{{ widget.contact_display_email.value_field_name }}&quot;\n
+        \       value=&quot;true&quot;\n        {% if widget.contact_display_email.best_value
+        == &quot;true&quot; %}\n        checked=&quot;checked&quot;\n        {% endif
+        %}\n      /&gt;\n      &lt;label for=&quot;{{ widget.contact_display_email.value_field_id
+        }}&quot; &gt;\n        Email\n      &lt;/label&gt;\n    &lt;/div&gt;\n\n    &lt;div
+        class=&quot;form-field check-field&quot;&gt;\n      {{ widget.contact_display_phone.id_hidden_field
+        }}\n      &lt;input type=&quot;hidden&quot;\n        id=&quot;{{ widget.contact_display_phone.value_field_id
+        }}_false&quot;\n        name=&quot;{{ widget.contact_display_phone.value_field_name
+        }}&quot;\n        value=&quot;false&quot;\n      /&gt;\n      &lt;input type=&quot;checkbox&quot;\n
+        \       id=&quot;{{ widget.contact_display_phone.value_field_id }}&quot;\n
+        \       name=&quot;{{ widget.contact_display_phone.value_field_name }}&quot;\n
+        \       value=&quot;true&quot;\n        {% if widget.contact_display_phone.best_value
+        == &quot;true&quot; %}\n        checked=&quot;checked&quot;\n        {% endif
+        %}\n      /&gt;\n      &lt;label for=&quot;{{ widget.contact_display_phone.value_field_id
+        }}&quot; &gt;\n        Phone Number\n      &lt;/label&gt;\n    &lt;/div&gt;\n\n
+        \   &lt;div class=&quot;form-field check-field&quot;&gt;\n      {{ widget.contact_display_address.id_hidden_field
+        }}\n      &lt;input type=&quot;hidden&quot;\n        id=&quot;{{ widget.contact_display_address.value_field_id
+        }}_false&quot;\n        name=&quot;{{ widget.contact_display_address.value_field_name
+        }}&quot;\n        value=&quot;false&quot;\n      /&gt;\n      &lt;input type=&quot;checkbox&quot;\n
+        \       id=&quot;{{ widget.contact_display_address.value_field_id }}&quot;\n
+        \       name=&quot;{{ widget.contact_display_address.value_field_name }}&quot;\n
+        \       value=&quot;true&quot;\n        {% if widget.contact_display_address.best_value
+        == &quot;true&quot; %}\n        checked=&quot;checked&quot;\n        {% endif
+        %}\n      /&gt;\n      &lt;label for=&quot;{{ widget.contact_display_address.value_field_id
+        }}&quot; &gt;\n        Address\n      &lt;/label&gt;\n    &lt;/div&gt;\n    &lt;div
+        class=&quot;form-field check-field&quot;&gt;\n      {{ widget.contact_display_message.id_hidden_field
+        }}\n      &lt;input type=&quot;hidden&quot;\n        id=&quot;{{ widget.contact_display_message.value_field_id
+        }}_false&quot;\n        name=&quot;{{ widget.contact_display_message.value_field_name
+        }}&quot;\n        value=&quot;false&quot;\n      /&gt;\n      &lt;input type=&quot;checkbox&quot;\n
+        \       id=&quot;{{ widget.contact_display_message.value_field_id }}&quot;\n
+        \       name=&quot;{{ widget.contact_display_message.value_field_name }}&quot;\n
+        \       value=&quot;true&quot;\n        {% if widget.contact_display_message.best_value
+        == &quot;true&quot; %}\n        checked=&quot;checked&quot;\n        {% endif
+        %}\n      /&gt;\n      &lt;label for=&quot;{{ widget.contact_display_message.value_field_id
+        }}&quot; &gt;\n        Message\n      &lt;/label&gt;\n    &lt;/div&gt;\n\n
+        \ &lt;/fieldset&gt;\n  &lt;input type=&quot;submit&quot; value=&quot;Save&quot;
+        class=&quot;btn&quot; /&gt;\n&lt;/form&gt;\n\n&lt;!-- END EDIT FORM MARKUP
+        --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n&lt;div id=&quot;success&quot;
+        class=&quot;submit_response&quot;&gt;GREAT SUCCESS!&lt;/div&gt;\n&lt;div id=&quot;failure&quot;
+        class=&quot;submit_response&quot;&gt;IZE NOT NICE!&lt;/div&gt;\n&lt;div class=&quot;contact
+        widget&quot;&gt;\n  &lt;p class=&quot;heading&quot;&gt;Contact Us&lt;/p&gt;\n
+        \ &lt;form id=&quot;contact-form&quot; class=&quot;form&quot; action=&quot;{{
+        widget.contact_submission_url.best_value | url_encode }}&quot; method=&quot;POST&quot;&gt;\n
+        \   {% if widget.contact_display_name.best_value == &quot;true&quot; %}\n
+        \     &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;\n
+        \       &lt;input type=&quot;text&quot; name=&quot;contact[name]&quot; id=&quot;name&quot;
+        data-h5-errorid=&quot;invalid_name&quot; title=&quot;Required: Please provide
+        your name&quot; required=&quot;&quot;&gt;\n        &lt;div id=&quot;invalid_name&quot;
+        class=&quot;ui-state-error message&quot;&gt;Required: Please provide your
+        name.&lt;/div&gt;&lt;/div&gt;\n    {% endif %}\n\n    {% if widget.contact_display_email.best_value
+        == &quot;true&quot; %}\n      &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label
+        for=&quot;contact-email&quot;&gt;Email&lt;/label&gt;\n        &lt;input id=&quot;contact-email&quot;
+        type=&quot;email&quot; name=&quot;contact[email]&quot; title=&quot;Required:
+        Please provide your email address&quot; data-h5-errorid=&quot;invalid_email&quot;
+        id=&quot;email&quot; pattern=&quot;^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$&quot;
+        required=&quot;&quot; /&gt;\n        &lt;div id=&quot;invalid_email&quot;
+        class=&quot;ui-state-error message&quot;&gt;Required: Please provide your
+        email.&lt;/div&gt;\n      &lt;/div&gt;\n\n    {% endif %}\n\n    {% if widget.contact_display_phone.best_value
+        == &quot;true&quot; %}\n      &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label
+        for=&quot;contact-phone&quot;&gt;Phone&lt;/label&gt;\n        &lt;input type=&quot;text&quot;
+        id=&quot;contact-phone&quot; name=&quot;contact[form]&quot; /&gt;\n      &lt;/div&gt;\n
+        \   {% endif %}\n\n    {% if widget.contact_display_address.best_value ==
+        &quot;true&quot; %}\n      &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label
+        for=&quot;contact-address&quot;&gt;Address&lt;/label&gt;\n        &lt;input
+        type=&quot;text&quot; id=&quot;contact-address&quot; name=&quot;contact[address]&quot;
+        /&gt;\n      &lt;/div&gt;\n    {% endif %}\n\n    {% if widget.contact_display_message.best_value
+        == &quot;true&quot; %}\n      &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label
+        for=&quot;contact-message&quot;&gt;Message&lt;/label&gt;\n        &lt;textarea
+        id=&quot;contact-message&quot; name=&quot;contact[message]&quot; data-h5-errorid=&quot;invalid_message&quot;
+        title=&quot;Required: Please leave us a message&quot; required=&quot;&quot;&gt;&lt;/textarea&gt;\n
+        \       &lt;div id=&quot;invalid_message&quot; class=&quot;ui-state-error
+        message&quot;&gt;Required: Please leave us a message.&lt;/div&gt;\n      &lt;/div&gt;\n\n
+        \   {% endif %}\n\n    &lt;input type=&quot;submit&quot; best_value=&quot;Send&quot;
+        /&gt;\n  &lt;/form&gt;\n&lt;/div&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 22:58:52 GMT
+  recorded_at: Tue, 12 Nov 2013 20:20:45 GMT
 - request:
     method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/map/show.html
+    uri: http://g5-widget-garden.herokuapp.com/static/components/contact-form/show.html
     body:
       encoding: US-ASCII
       string: ''
@@ -521,30 +611,55 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 09 Oct 2013 22:58:54 GMT
+      - Tue, 12 Nov 2013 20:20:45 GMT
       Last-Modified:
-      - Wed, 09 Oct 2013 22:50:48 GMT
+      - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
-      - 32d86e520746bd687f068b1fd8b7607226125c1c
+      - 08e2926591bc51a3655090b96213ddeb691f6d2f
       X-Rack-Cache:
       - stale, valid, store
       Content-Length:
-      - '278'
+      - '2240'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<script id=\"map-config\" type=\"application/json\">\n  {\n    \"panZoom\":
-        {{ widget.map_allow_pan_zoom.best_value }},\n    \"address\": \"{{ widget.map_address.best_value
-        }}\",\n    \"mapType\": \"{{ widget.map_type.best_value }}\"\n  }\n</script>\n\n<div
-        id=\"map-canvas\" class=\"widget map\"></div>\n"
+      string: ! "<div id=\"success\" class=\"submit_response\">GREAT SUCCESS!</div>\n<div
+        id=\"failure\" class=\"submit_response\">IZE NOT NICE!</div>\n<div class=\"contact
+        widget\">\n  <p class=\"heading\">Contact Us</p>\n  <form id=\"contact-form\"
+        class=\"form\" action=\"{{ widget.contact_submission_url.best_value | url_encode
+        }}\" method=\"POST\">\n    {% if widget.contact_display_name.best_value ==
+        \"true\" %}\n      <div class=\"form-field\">\n        <label for=\"name\">Name</label>\n
+        \       <input type=\"text\" name=\"contact[name]\" id=\"name\" data-h5-errorid=\"invalid_name\"
+        title=\"Required: Please provide your name\" required=\"\">\n        <div
+        id=\"invalid_name\" class=\"ui-state-error message\">Required: Please provide
+        your name.</div></div>\n    {% endif %}\n\n    {% if widget.contact_display_email.best_value
+        == \"true\" %}\n      <div class=\"form-field\">\n        <label for=\"contact-email\">Email</label>\n
+        \       <input id=\"contact-email\" type=\"email\" name=\"contact[email]\"
+        title=\"Required: Please provide your email address\" data-h5-errorid=\"invalid_email\"
+        id=\"email\" pattern=\"^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$\" required=\"\"
+        />\n        <div id=\"invalid_email\" class=\"ui-state-error message\">Required:
+        Please provide your email.</div>\n      </div>\n\n    {% endif %}\n\n    {%
+        if widget.contact_display_phone.best_value == \"true\" %}\n      <div class=\"form-field\">\n
+        \       <label for=\"contact-phone\">Phone</label>\n        <input type=\"text\"
+        id=\"contact-phone\" name=\"contact[form]\" />\n      </div>\n    {% endif
+        %}\n\n    {% if widget.contact_display_address.best_value == \"true\" %}\n
+        \     <div class=\"form-field\">\n        <label for=\"contact-address\">Address</label>\n
+        \       <input type=\"text\" id=\"contact-address\" name=\"contact[address]\"
+        />\n      </div>\n    {% endif %}\n\n    {% if widget.contact_display_message.best_value
+        == \"true\" %}\n      <div class=\"form-field\">\n        <label for=\"contact-message\">Message</label>\n
+        \       <textarea id=\"contact-message\" name=\"contact[message]\" data-h5-errorid=\"invalid_message\"
+        title=\"Required: Please leave us a message\" required=\"\"></textarea>\n
+        \       <div id=\"invalid_message\" class=\"ui-state-error message\">Required:
+        Please leave us a message.</div>\n      </div>\n\n    {% endif %}\n\n    <input
+        type=\"submit\" best_value=\"Send\" />\n  </form>\n</div>\n"
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 22:58:53 GMT
+  recorded_at: Tue, 12 Nov 2013 20:20:45 GMT
 - request:
     method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/map/edit.html
+    uri: http://g5-widget-garden.herokuapp.com/static/components/contact-form/edit.html
     body:
       encoding: US-ASCII
       string: ''
@@ -563,46 +678,73 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 09 Oct 2013 22:58:54 GMT
+      - Tue, 12 Nov 2013 20:20:48 GMT
       Last-Modified:
-      - Wed, 09 Oct 2013 22:50:48 GMT
+      - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
-      - b7d2d7be753052af2da95417e4b0636d6e921b42
+      - f5228e45386038d99876dc59c452acad5e69b15d
       X-Rack-Cache:
       - stale, valid, store
       Content-Length:
-      - '1923'
+      - '4136'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<form>\n  <div class=\"form-field\">\n    {{ widget.map_address.id_hidden_field
-        }}\n    <label for=\"{{ widget.map_address.value_field_id }}\" >\n      Address\n
-        \   </label>\n    <input type=\"text\"\n      id=\"{{ widget.map_address.value_field_id
-        }}\"\n      name=\"{{ widget.map_address.value_field_name }}\"\n      value=\"{{
-        widget.map_address.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field
-        check-field\">\n    <fieldset>\n      <legend>Map Type</legend>\n      {{
-        widget.map_type.id_hidden_field }}\n      <input type=\"radio\"\n        id=\"{{
-        widget.map_type.value_field_id }}_roadmap\"\n        name=\"{{ widget.map_type.value_field_name
-        }}\"\n        value=\"ROADMAP\"\n        checked=\"checked\"\n      />\n      <label
-        for=\"{{ widget.map_type.value_field_id }}_roadmap\" >\n        Road Map\n
-        \     </label>\n      <input type=\"radio\"\n        id=\"{{ widget.map_type.value_field_id
-        }}_satellite\"\n        name=\"{{ widget.map_type.value_field_name }}\"\n
-        \       value=\"SATELLITE\"\n        {% if widget.map_type.best_value == \"SATELLITE\"
-        %}\n        checked=\"checked\"\n        {% endif %}\n      />\n      <label
-        for=\"{{ widget.map_type.value_field_id }}_satellite\" >\n        Satellite\n
-        \     </label>\n    </fieldset>\n  </div>\n\n  <div class=\"form-field check-field\">\n
-        \   {{ widget.map_allow_pan_zoom.id_hidden_field }}\n    <input type=\"hidden\"\n
-        \     id=\"{{ widget.map_allow_pan_zoom.value_field_id }}_false\"\n      name=\"{{
-        widget.map_allow_pan_zoom.value_field_name }}\"\n      value=\"false\"\n    />\n
-        \   <input type=\"checkbox\"\n      id=\"{{ widget.map_allow_pan_zoom.value_field_id
-        }}\"\n      name=\"{{ widget.map_allow_pan_zoom.value_field_name }}\"\n      value=\"true\"\n
-        \     {% if widget.map_allow_pan_zoom.best_value == \"true\" %}\n      checked=\"checked\"\n
-        \     {% endif %}\n    />\n    <label for=\"{{ widget.map_allow_pan_zoom.value_field_id
-        }}\" >\n      map_allow Panning and Zooming\n    </label>\n  </div>\n\n  <input
+      string: ! "<form>\n  <div class=\"form-field\">\n    <label for=\"{{ widget.contact_submission_url.value_field_id
+        }}\" >\n      Submission URL\n    </label>\n    {{ widget.contact_submission_url.id_hidden_field
+        }}\n    <input type=\"text\"\n      id=\"{{ widget.contact_submission_url.value_field_id
+        }}\"\n      name=\"{{ widget.contact_submission_url.value_field_name }}\"\n
+        \     value=\"{{ widget.contact_submission_url.best_value | url_encode }}\"\n
+        \   />\n  </div>\n  <fieldset>\n    <legend>Choose fields to include in form</legend>\n\n
+        \   <div class=\"form-field check-field\">\n      {{ widget.contact_display_name.id_hidden_field
+        }}\n      <input type=\"hidden\"\n        id=\"{{ widget.contact_display_name.value_field_id
+        }}_false\"\n        name=\"{{ widget.contact_display_name.value_field_name
+        }}\"\n        value=\"false\"\n      />\n      <input type=\"checkbox\"\n
+        \       id=\"{{ widget.contact_display_name.value_field_id }}\"\n        name=\"{{
+        widget.contact_display_name.value_field_name }}\"\n        value=\"true\"\n
+        \       {% if widget.contact_display_name.best_value == \"true\" %}\n        checked=\"checked\"\n
+        \       {% endif %}\n      />\n      <label for=\"{{ widget.contact_display_name.value_field_id
+        }}\" >\n        Name\n      </label>\n    </div>\n\n    <div class=\"form-field
+        check-field\">\n      {{ widget.contact_display_email.id_hidden_field }}\n
+        \     <input type=\"hidden\"\n        id=\"{{ widget.contact_display_email.value_field_id
+        }}_false\"\n        name=\"{{ widget.contact_display_email.value_field_name
+        }}\"\n        value=\"false\"\n      />\n      <input type=\"checkbox\"\n
+        \       id=\"{{ widget.contact_display_email.value_field_id }}\"\n        name=\"{{
+        widget.contact_display_email.value_field_name }}\"\n        value=\"true\"\n
+        \       {% if widget.contact_display_email.best_value == \"true\" %}\n        checked=\"checked\"\n
+        \       {% endif %}\n      />\n      <label for=\"{{ widget.contact_display_email.value_field_id
+        }}\" >\n        Email\n      </label>\n    </div>\n\n    <div class=\"form-field
+        check-field\">\n      {{ widget.contact_display_phone.id_hidden_field }}\n
+        \     <input type=\"hidden\"\n        id=\"{{ widget.contact_display_phone.value_field_id
+        }}_false\"\n        name=\"{{ widget.contact_display_phone.value_field_name
+        }}\"\n        value=\"false\"\n      />\n      <input type=\"checkbox\"\n
+        \       id=\"{{ widget.contact_display_phone.value_field_id }}\"\n        name=\"{{
+        widget.contact_display_phone.value_field_name }}\"\n        value=\"true\"\n
+        \       {% if widget.contact_display_phone.best_value == \"true\" %}\n        checked=\"checked\"\n
+        \       {% endif %}\n      />\n      <label for=\"{{ widget.contact_display_phone.value_field_id
+        }}\" >\n        Phone Number\n      </label>\n    </div>\n\n    <div class=\"form-field
+        check-field\">\n      {{ widget.contact_display_address.id_hidden_field }}\n
+        \     <input type=\"hidden\"\n        id=\"{{ widget.contact_display_address.value_field_id
+        }}_false\"\n        name=\"{{ widget.contact_display_address.value_field_name
+        }}\"\n        value=\"false\"\n      />\n      <input type=\"checkbox\"\n
+        \       id=\"{{ widget.contact_display_address.value_field_id }}\"\n        name=\"{{
+        widget.contact_display_address.value_field_name }}\"\n        value=\"true\"\n
+        \       {% if widget.contact_display_address.best_value == \"true\" %}\n        checked=\"checked\"\n
+        \       {% endif %}\n      />\n      <label for=\"{{ widget.contact_display_address.value_field_id
+        }}\" >\n        Address\n      </label>\n    </div>\n    <div class=\"form-field
+        check-field\">\n      {{ widget.contact_display_message.id_hidden_field }}\n
+        \     <input type=\"hidden\"\n        id=\"{{ widget.contact_display_message.value_field_id
+        }}_false\"\n        name=\"{{ widget.contact_display_message.value_field_name
+        }}\"\n        value=\"false\"\n      />\n      <input type=\"checkbox\"\n
+        \       id=\"{{ widget.contact_display_message.value_field_id }}\"\n        name=\"{{
+        widget.contact_display_message.value_field_name }}\"\n        value=\"true\"\n
+        \       {% if widget.contact_display_message.best_value == \"true\" %}\n        checked=\"checked\"\n
+        \       {% endif %}\n      />\n      <label for=\"{{ widget.contact_display_message.value_field_id
+        }}\" >\n        Message\n      </label>\n    </div>\n\n  </fieldset>\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 09 Oct 2013 22:58:53 GMT
+  recorded_at: Tue, 12 Nov 2013 20:20:48 GMT
 recorded_with: VCR 2.6.0
