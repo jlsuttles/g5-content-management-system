@@ -1,31 +1,24 @@
 require "spec_helper"
 
-LOCATION_SELECTOR = ".faux-table .faux-table-row"
+LOCATION_SELECTOR = ".faux-table .faux-table-row:first-of-type"
 
-describe "locations requests", js: true, vcr: VCR_OPTIONS do
-  before do
-    Resque.stub(:enqueue)
-
-    @client = Fabricate(:client)
-    @location = Fabricate(:location)
-    @website = Fabricate(:website, location_id: @location.id)
-    @location.reload
-  end
-
-  context "#index" do
+describe "Integration '/'", js: true, vcr: VCR_OPTIONS do
+  describe "Lists all locations" do
     before do
+      Resque.stub(:enqueue)
+
+      @client = Fabricate(:client)
+      @location = Fabricate(:location)
+      @website = Fabricate(:website, location_id: @location.id)
+      @location.reload
+
       visit root_path
     end
 
     it "Client and location names are displayed" do
-      within "header" do
-        # CSS upcases this name, so we also upcase
-        expect(page).to have_content(@client.name.upcase)
-      end
-
-      within LOCATION_SELECTOR do
-        expect(page).to have_content(@location.name)
-      end
+      # CSS upcases this name, so we also upcase
+      expect(page).to have_content(@client.name.upcase)
+      expect(page).to have_content(@location.name)
     end
 
     it "'Deploy' link redirects back to root path" do

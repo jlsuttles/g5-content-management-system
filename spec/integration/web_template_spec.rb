@@ -21,7 +21,6 @@
 
 require "spec_helper"
 
-
 def set_setting(web_template, widget_name, setting_name, setting_value)
   widget = web_template.widgets.where(name: widget_name).first
   raise "Did not find '#{widget_name}' widget for web template '#{web_template.name}'" unless widget
@@ -30,28 +29,30 @@ def set_setting(web_template, widget_name, setting_name, setting_value)
   setting.update_attributes(value: setting_value)
 end
 
-describe "web_template requests", js: true, vcr: VCR_OPTIONS do
-  before do
-    @client = Fabricate(:client)
-    @location = Fabricate(:location)
-  end
-
-  describe "example web page template" do
+describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
+  describe "Renders preview of compiled web template" do
     before do
-      @instructions = YAML.load_file("#{Rails.root}/spec/support/website_instructions/example.yml")
-      @website = WebsiteSeeder.new(@location, @instructions["website"]).seed
-      @web_page_template = @website.web_page_templates.first
-      set_setting(@web_page_template, "Social Links", "twitter_username", "jlsuttles")
-      visit web_template_path(@web_page_template.id)
+      @client = Fabricate(:client)
+      @location = Fabricate(:location)
     end
 
-    it "displays name" do
-      expect(page).to have_content @web_page_template.name.upcase
-    end
+    describe "website_instructions/example.yml" do
+      before do
+        @instructions = YAML.load_file("#{Rails.root}/spec/support/website_instructions/example.yml")
+        @website = WebsiteSeeder.new(@location, @instructions["website"]).seed
+        @web_page_template = @website.web_page_templates.first
+        set_setting(@web_page_template, "Social Links", "twitter_username", "jlsuttles")
+        visit web_template_path(@web_page_template.id)
+      end
 
-    it "has a link to twitter with the set username" do
-      page.should have_selector "a[href='http://www.twitter.com/jlsuttles']"
-      # page.save_screenshot('screenshot.png')
+      it "displays name" do
+        expect(page).to have_content @web_page_template.name.upcase
+      end
+
+      it "has a link to twitter with the set username" do
+        page.should have_selector "a[href='http://www.twitter.com/jlsuttles']"
+        # page.save_screenshot('screenshot.png')
+      end
     end
   end
 end
