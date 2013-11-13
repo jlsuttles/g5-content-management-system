@@ -1,7 +1,5 @@
 require "spec_helper"
 
-LOCATION_SELECTOR = ".faux-table .faux-table-row:first-of-type"
-
 describe "Integration '/'", js: true, vcr: VCR_OPTIONS do
   describe "Lists all locations" do
     before do
