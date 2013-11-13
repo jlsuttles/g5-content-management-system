@@ -2,7 +2,7 @@ source "https://rubygems.org"
 source "https://gems.gemfury.com/88yeKzEGfizstwBaXVqj/"
 ruby "1.9.3"
 
-gem "rails", "3.2.13"
+gem "rails", "~> 3.2.14"
 gem "jquery-rails", "~> 3.0.4"
 gem "jquery-ui-rails", "~> 4.0.5"
 
@@ -59,11 +59,9 @@ group :development, :test do
   gem "webmock", "~> 1.13.0", require: false
   gem "vcr", "~> 2.6.0", require: false
   # javascript specs
-  gem "jasmine", "~> 1.3.2"
-  gem "jasminerice", :git => "https://github.com/bradphelan/jasminerice.git"
+  gem "teaspoon", "~> 0.7.5"
   # guard specs
   gem "guard-rspec", "~> 2.1.0"
-  gem "guard-jasmine", "~> 1.18.3"
   gem "rb-fsevent", "~> 0.9.2"
   # ruby spec coverage
   gem "simplecov", "~> 0.7.1", require: false

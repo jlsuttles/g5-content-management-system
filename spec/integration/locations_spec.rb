@@ -1,35 +1,27 @@
 require "spec_helper"
 
-LOCATION_SELECTOR = ".faux-table .faux-table-row"
+LOCATION_SELECTOR = ".faux-table .faux-table-row:first-of-type"
 
-describe "locations requests", js: true, vcr: VCR_OPTIONS do
-  before do
-    Resque.stub(:enqueue)
-
-    @client = Fabricate(:client)
-    @location = Fabricate(:location)
-    @website = Fabricate(:website, location_id: @location.id)
-
-    @location.reload
-  end
-
-  context "#index" do
+describe "Integration '/'", js: true, vcr: VCR_OPTIONS do
+  describe "Lists all locations" do
     before do
+      Resque.stub(:enqueue)
+
+      @client = Fabricate(:client)
+      @location = Fabricate(:location)
+      @website = Fabricate(:website, location_id: @location.id)
+      @location.reload
+
       visit root_path
     end
 
     it "Client and location names are displayed" do
-      within "header" do
-        # CSS upcases this name, so we also upcase
-        expect(page).to have_content(@client.name.upcase)
-      end
-
-      within LOCATION_SELECTOR do
-        expect(page).to have_content(@location.name)
-      end
+      # CSS upcases this name, so we also upcase
+      expect(page).to have_content(@client.name.upcase)
+      expect(page).to have_content(@location.name)
     end
 
-    it "'Deploy' link redirects back to the root path" do
+    it "'Deploy' link redirects back to root path" do
       within LOCATION_SELECTOR do
         click_link "Deploy"
       end
@@ -53,14 +45,11 @@ describe "locations requests", js: true, vcr: VCR_OPTIONS do
 
     it "'View' link goes to Heroku App" do
       pending("capybara can't find the 'view' link because the href is being populated via bindAttr")
-
       within LOCATION_SELECTOR do
-        click_on "View"
+        click_link "View"
       end
 
       expect(page).to have_content("Heroku | No such app")
-
-      expect(current_path).to eq(root_path)
     end
   end
 end

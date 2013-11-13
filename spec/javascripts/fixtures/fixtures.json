@@ -1,0 +1,1001 @@
+{
+  "locations": [
+    {
+      "id": 120,
+      "urn": "g5-cl-120-hollywood",
+      "name": "Hollywood",
+      "websiteId": 103
+    },
+    {
+      "id": 121,
+      "urn": "g5-cl-121-north-shore-oahu",
+      "name": "North Shore Oahu",
+      "websiteId": 104
+    }
+  ],
+  "websites": [
+    {
+      "id": 103,
+      "locationId": 120,
+      "name": "Hollywood",
+      "customColors": false,
+      "primaryColor": "#92babb",
+      "secondaryColor": "#db6251",
+      "websiteTemplateId": 813,
+      "webHomeTemplateId": 814,
+      "webPageTemplateIds": [
+        815,
+        816,
+        817,
+        818,
+        819,
+        820,
+        821,
+        822,
+        823
+      ]
+    },
+    {
+      "id": 104,
+      "locationId": 121,
+      "name": "North Shore Oahu",
+      "customColors": false,
+      "primaryColor": "#92babb",
+      "secondaryColor": "#db6251",
+      "websiteTemplateId": 824,
+      "webHomeTemplateId": 825,
+      "webPageTemplateIds": [
+        826,
+        827,
+        828,
+        829,
+        830,
+        831,
+        832,
+        833,
+        834
+      ]
+    }
+  ],
+  "websiteTemplates": [
+    {
+      "id": 813,
+      "websiteId": 103,
+      "webLayoutId": 102,
+      "webThemeId": 101,
+      "headWidgetIds": [
+        2690
+      ],
+      "logoWidgetIds": [
+        2691
+      ],
+      "phoneWidgetIds": [
+        2692
+      ],
+      "btnWidgetIds": [
+        2693
+      ],
+      "navWidgetIds": [
+        2694
+      ],
+      "asideWidgetIds": [
+        2695,
+        2696,
+        2697,
+        2698,
+        2699,
+        2700
+      ],
+      "footerWidgetIds": [
+        2701,
+        2702,
+        2703
+      ]
+    },
+    {
+      "id": 824,
+      "websiteId": 104,
+      "webLayoutId": 103,
+      "webThemeId": 102,
+      "headWidgetIds": [
+        2725
+      ],
+      "logoWidgetIds": [
+        2726
+      ],
+      "phoneWidgetIds": [
+        2727
+      ],
+      "btnWidgetIds": [
+        2728
+      ],
+      "navWidgetIds": [
+        2729
+      ],
+      "asideWidgetIds": [
+        2730,
+        2731,
+        2732,
+        2733,
+        2734,
+        2735
+      ],
+      "footerWidgetIds": [
+        2736,
+        2737,
+        2738
+      ]
+    }
+  ],
+  "webLayouts": [
+    {
+      "id": 102,
+      "websiteTemplateId": 813,
+      "name": "Main First Sidebar Right",
+      "thumbnail": "http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/images/thumbnail.png",
+      "url": "http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-right"
+    },
+    {
+      "id": 103,
+      "websiteTemplateId": 824,
+      "name": "Main First Sidebar Right",
+      "thumbnail": "http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/images/thumbnail.png",
+      "url": "http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-right"
+    }
+  ],
+  "webThemes": [
+    {
+      "id": 101,
+      "websiteTemplateId": 813,
+      "name": "High Rise",
+      "thumbnail": "http://g5-theme-garden.herokuapp.com/static/components/high-rise/images/thumbnail.png",
+      "url": "http://g5-theme-garden.herokuapp.com/components/high-rise"
+    },
+    {
+      "id": 102,
+      "websiteTemplateId": 824,
+      "name": "High Rise",
+      "thumbnail": "http://g5-theme-garden.herokuapp.com/static/components/high-rise/images/thumbnail.png",
+      "url": "http://g5-theme-garden.herokuapp.com/components/high-rise"
+    }
+  ],
+  "headWidgets": [
+    {
+      "id": 2690,
+      "dropTargetId": 1377,
+      "name": "Meta",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/meta/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/meta",
+      "section": null
+    },
+    {
+      "id": 2725,
+      "dropTargetId": 1394,
+      "name": "Meta",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/meta/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/meta",
+      "section": null
+    }
+  ],
+  "logoWidgets": [
+    {
+      "id": 2691,
+      "dropTargetId": 1378,
+      "name": "Logo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/logo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/logo",
+      "section": null
+    },
+    {
+      "id": 2726,
+      "dropTargetId": 1395,
+      "name": "Logo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/logo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/logo",
+      "section": null
+    }
+  ],
+  "phoneWidgets": [
+    {
+      "id": 2692,
+      "dropTargetId": 1379,
+      "name": "Phone Number",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/phone/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/phone",
+      "section": null
+    },
+    {
+      "id": 2727,
+      "dropTargetId": 1396,
+      "name": "Phone Number",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/phone/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/phone",
+      "section": null
+    }
+  ],
+  "btnWidgets": [
+    {
+      "id": 2693,
+      "dropTargetId": 1380,
+      "name": "Button",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/button/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/button",
+      "section": null
+    },
+    {
+      "id": 2728,
+      "dropTargetId": 1397,
+      "name": "Button",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/button/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/button",
+      "section": null
+    }
+  ],
+  "navWidgets": [
+    {
+      "id": 2694,
+      "dropTargetId": 1381,
+      "name": "Navigation",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/navigation/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/navigation",
+      "section": null
+    },
+    {
+      "id": 2729,
+      "dropTargetId": 1398,
+      "name": "Navigation",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/navigation/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/navigation",
+      "section": null
+    }
+  ],
+  "asideWidgets": [
+    {
+      "id": 2695,
+      "dropTargetId": 1382,
+      "name": "Calls to Action",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/calls-to-action",
+      "section": null
+    },
+    {
+      "id": 2696,
+      "dropTargetId": 1382,
+      "name": "Contact Info",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/contact-info/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/contact-info",
+      "section": null
+    },
+    {
+      "id": 2697,
+      "dropTargetId": 1382,
+      "name": "Social Links",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/social-links/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/social-links",
+      "section": null
+    },
+    {
+      "id": 2698,
+      "dropTargetId": 1382,
+      "name": "Photo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/photo",
+      "section": null
+    },
+    {
+      "id": 2699,
+      "dropTargetId": 1382,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2700,
+      "dropTargetId": 1382,
+      "name": "Coupon",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/coupon/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/coupon",
+      "section": null
+    },
+    {
+      "id": 2730,
+      "dropTargetId": 1399,
+      "name": "Calls to Action",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/calls-to-action",
+      "section": null
+    },
+    {
+      "id": 2731,
+      "dropTargetId": 1399,
+      "name": "Contact Info",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/contact-info/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/contact-info",
+      "section": null
+    },
+    {
+      "id": 2732,
+      "dropTargetId": 1399,
+      "name": "Social Links",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/social-links/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/social-links",
+      "section": null
+    },
+    {
+      "id": 2733,
+      "dropTargetId": 1399,
+      "name": "Photo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/photo",
+      "section": null
+    },
+    {
+      "id": 2734,
+      "dropTargetId": 1399,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2735,
+      "dropTargetId": 1399,
+      "name": "Coupon",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/coupon/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/coupon",
+      "section": null
+    }
+  ],
+  "footerWidgets": [
+    {
+      "id": 2701,
+      "dropTargetId": 1383,
+      "name": "Navigation",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/navigation/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/navigation",
+      "section": null
+    },
+    {
+      "id": 2702,
+      "dropTargetId": 1383,
+      "name": "Contact Info",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/contact-info/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/contact-info",
+      "section": null
+    },
+    {
+      "id": 2703,
+      "dropTargetId": 1383,
+      "name": "Hours",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/hours/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/hours",
+      "section": null
+    },
+    {
+      "id": 2736,
+      "dropTargetId": 1400,
+      "name": "Navigation",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/navigation/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/navigation",
+      "section": null
+    },
+    {
+      "id": 2737,
+      "dropTargetId": 1400,
+      "name": "Contact Info",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/contact-info/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/contact-info",
+      "section": null
+    },
+    {
+      "id": 2738,
+      "dropTargetId": 1400,
+      "name": "Hours",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/hours/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/hours",
+      "section": null
+    }
+  ],
+  "webHomeTemplates": [
+    {
+      "id": 814,
+      "websiteId": 103,
+      "previewUrl": "http://test.com/web_templates/814",
+      "name": "Home",
+      "title": "Home",
+      "disabled": null,
+      "mainWidgetIds": [
+        2704,
+        2705
+      ]
+    },
+    {
+      "id": 825,
+      "websiteId": 104,
+      "previewUrl": "http://test.com/web_templates/825",
+      "name": "Home",
+      "title": "Home",
+      "disabled": null,
+      "mainWidgetIds": [
+        2739,
+        2740
+      ]
+    }
+  ],
+  "mainWidgets": [
+    {
+      "id": 2704,
+      "dropTargetId": 1384,
+      "name": "Photo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/photo",
+      "section": null
+    },
+    {
+      "id": 2705,
+      "dropTargetId": 1384,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2706,
+      "dropTargetId": 1385,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2707,
+      "dropTargetId": 1385,
+      "name": "Photo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/photo",
+      "section": null
+    },
+    {
+      "id": 2708,
+      "dropTargetId": 1385,
+      "name": "Photo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/photo",
+      "section": null
+    },
+    {
+      "id": 2709,
+      "dropTargetId": 1386,
+      "name": "Coupon",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/coupon/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/coupon",
+      "section": null
+    },
+    {
+      "id": 2710,
+      "dropTargetId": 1387,
+      "name": "Floorplans",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/floorplans/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/floorplans",
+      "section": null
+    },
+    {
+      "id": 2711,
+      "dropTargetId": 1388,
+      "name": "Directions",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/directions/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/directions",
+      "section": null
+    },
+    {
+      "id": 2712,
+      "dropTargetId": 1389,
+      "name": "Gallery",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/gallery/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/gallery",
+      "section": null
+    },
+    {
+      "id": 2713,
+      "dropTargetId": 1390,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2714,
+      "dropTargetId": 1390,
+      "name": "Request Info Form",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/request-info-form/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/request-info-form",
+      "section": null
+    },
+    {
+      "id": 2715,
+      "dropTargetId": 1391,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2716,
+      "dropTargetId": 1391,
+      "name": "Blog Feed",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/blog-feed/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/blog-feed",
+      "section": null
+    },
+    {
+      "id": 2717,
+      "dropTargetId": 1391,
+      "name": "Twitter Feed",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/twitter-feed",
+      "section": null
+    },
+    {
+      "id": 2718,
+      "dropTargetId": 1392,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2719,
+      "dropTargetId": 1392,
+      "name": "Blog Feed",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/blog-feed/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/blog-feed",
+      "section": null
+    },
+    {
+      "id": 2720,
+      "dropTargetId": 1392,
+      "name": "Twitter Feed",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/twitter-feed",
+      "section": null
+    },
+    {
+      "id": 2721,
+      "dropTargetId": 1393,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2722,
+      "dropTargetId": 1393,
+      "name": "Photo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/photo",
+      "section": null
+    },
+    {
+      "id": 2723,
+      "dropTargetId": 1393,
+      "name": "Photo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/photo",
+      "section": null
+    },
+    {
+      "id": 2724,
+      "dropTargetId": 1393,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2739,
+      "dropTargetId": 1401,
+      "name": "Photo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/photo",
+      "section": null
+    },
+    {
+      "id": 2740,
+      "dropTargetId": 1401,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2741,
+      "dropTargetId": 1402,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2742,
+      "dropTargetId": 1402,
+      "name": "Photo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/photo",
+      "section": null
+    },
+    {
+      "id": 2743,
+      "dropTargetId": 1402,
+      "name": "Photo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/photo",
+      "section": null
+    },
+    {
+      "id": 2744,
+      "dropTargetId": 1403,
+      "name": "Coupon",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/coupon/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/coupon",
+      "section": null
+    },
+    {
+      "id": 2745,
+      "dropTargetId": 1404,
+      "name": "Floorplans",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/floorplans/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/floorplans",
+      "section": null
+    },
+    {
+      "id": 2746,
+      "dropTargetId": 1405,
+      "name": "Directions",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/directions/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/directions",
+      "section": null
+    },
+    {
+      "id": 2747,
+      "dropTargetId": 1406,
+      "name": "Gallery",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/gallery/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/gallery",
+      "section": null
+    },
+    {
+      "id": 2748,
+      "dropTargetId": 1407,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2749,
+      "dropTargetId": 1407,
+      "name": "Request Info Form",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/request-info-form/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/request-info-form",
+      "section": null
+    },
+    {
+      "id": 2750,
+      "dropTargetId": 1408,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2751,
+      "dropTargetId": 1408,
+      "name": "Blog Feed",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/blog-feed/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/blog-feed",
+      "section": null
+    },
+    {
+      "id": 2752,
+      "dropTargetId": 1408,
+      "name": "Twitter Feed",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/twitter-feed",
+      "section": null
+    },
+    {
+      "id": 2753,
+      "dropTargetId": 1409,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2754,
+      "dropTargetId": 1409,
+      "name": "Blog Feed",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/blog-feed/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/blog-feed",
+      "section": null
+    },
+    {
+      "id": 2755,
+      "dropTargetId": 1409,
+      "name": "Twitter Feed",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/twitter-feed",
+      "section": null
+    },
+    {
+      "id": 2756,
+      "dropTargetId": 1410,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    },
+    {
+      "id": 2757,
+      "dropTargetId": 1410,
+      "name": "Photo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/photo",
+      "section": null
+    },
+    {
+      "id": 2758,
+      "dropTargetId": 1410,
+      "name": "Photo",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/photo",
+      "section": null
+    },
+    {
+      "id": 2759,
+      "dropTargetId": 1410,
+      "name": "HTML",
+      "thumbnail": "http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png",
+      "url": "http://g5-widget-garden.herokuapp.com/components/html",
+      "section": null
+    }
+  ],
+  "webPageTemplates": [
+    {
+      "id": 815,
+      "websiteId": 103,
+      "previewUrl": "http://test.com/web_templates/815",
+      "name": "Amenities",
+      "title": "Amenities",
+      "disabled": null,
+      "mainWidgetIds": [
+        2706,
+        2707,
+        2708
+      ]
+    },
+    {
+      "id": 816,
+      "websiteId": 103,
+      "previewUrl": "http://test.com/web_templates/816",
+      "name": "Coupon",
+      "title": "Coupon",
+      "disabled": null,
+      "mainWidgetIds": [
+        2709
+      ]
+    },
+    {
+      "id": 817,
+      "websiteId": 103,
+      "previewUrl": "http://test.com/web_templates/817",
+      "name": "Floorplans and Rates",
+      "title": "Floorplans and Rates",
+      "disabled": null,
+      "mainWidgetIds": [
+        2710
+      ]
+    },
+    {
+      "id": 818,
+      "websiteId": 103,
+      "previewUrl": "http://test.com/web_templates/818",
+      "name": "Directions",
+      "title": "Directions",
+      "disabled": null,
+      "mainWidgetIds": [
+        2711
+      ]
+    },
+    {
+      "id": 819,
+      "websiteId": 103,
+      "previewUrl": "http://test.com/web_templates/819",
+      "name": "Photo Gallery",
+      "title": "Photo Gallery",
+      "disabled": null,
+      "mainWidgetIds": [
+        2712
+      ]
+    },
+    {
+      "id": 820,
+      "websiteId": 103,
+      "previewUrl": "http://test.com/web_templates/820",
+      "name": "Request Info",
+      "title": "Request Info",
+      "disabled": null,
+      "mainWidgetIds": [
+        2713,
+        2714
+      ]
+    },
+    {
+      "id": 821,
+      "websiteId": 103,
+      "previewUrl": "http://test.com/web_templates/821",
+      "name": "Social",
+      "title": "Social",
+      "disabled": null,
+      "mainWidgetIds": [
+        2715,
+        2716,
+        2717
+      ]
+    },
+    {
+      "id": 822,
+      "websiteId": 103,
+      "previewUrl": "http://test.com/web_templates/822",
+      "name": "Social",
+      "title": "Social",
+      "disabled": null,
+      "mainWidgetIds": [
+        2718,
+        2719,
+        2720
+      ]
+    },
+    {
+      "id": 823,
+      "websiteId": 103,
+      "previewUrl": "http://test.com/web_templates/823",
+      "name": "Neighborhood",
+      "title": "Neighborhood",
+      "disabled": null,
+      "mainWidgetIds": [
+        2721,
+        2722,
+        2723,
+        2724
+      ]
+    },
+    {
+      "id": 826,
+      "websiteId": 104,
+      "previewUrl": "http://test.com/web_templates/826",
+      "name": "Amenities",
+      "title": "Amenities",
+      "disabled": null,
+      "mainWidgetIds": [
+        2741,
+        2742,
+        2743
+      ]
+    },
+    {
+      "id": 827,
+      "websiteId": 104,
+      "previewUrl": "http://test.com/web_templates/827",
+      "name": "Coupon",
+      "title": "Coupon",
+      "disabled": null,
+      "mainWidgetIds": [
+        2744
+      ]
+    },
+    {
+      "id": 828,
+      "websiteId": 104,
+      "previewUrl": "http://test.com/web_templates/828",
+      "name": "Floorplans and Rates",
+      "title": "Floorplans and Rates",
+      "disabled": null,
+      "mainWidgetIds": [
+        2745
+      ]
+    },
+    {
+      "id": 829,
+      "websiteId": 104,
+      "previewUrl": "http://test.com/web_templates/829",
+      "name": "Directions",
+      "title": "Directions",
+      "disabled": null,
+      "mainWidgetIds": [
+        2746
+      ]
+    },
+    {
+      "id": 830,
+      "websiteId": 104,
+      "previewUrl": "http://test.com/web_templates/830",
+      "name": "Photo Gallery",
+      "title": "Photo Gallery",
+      "disabled": null,
+      "mainWidgetIds": [
+        2747
+      ]
+    },
+    {
+      "id": 831,
+      "websiteId": 104,
+      "previewUrl": "http://test.com/web_templates/831",
+      "name": "Request Info",
+      "title": "Request Info",
+      "disabled": null,
+      "mainWidgetIds": [
+        2748,
+        2749
+      ]
+    },
+    {
+      "id": 832,
+      "websiteId": 104,
+      "previewUrl": "http://test.com/web_templates/832",
+      "name": "Social",
+      "title": "Social",
+      "disabled": null,
+      "mainWidgetIds": [
+        2750,
+        2751,
+        2752
+      ]
+    },
+    {
+      "id": 833,
+      "websiteId": 104,
+      "previewUrl": "http://test.com/web_templates/833",
+      "name": "Social",
+      "title": "Social",
+      "disabled": null,
+      "mainWidgetIds": [
+        2753,
+        2754,
+        2755
+      ]
+    },
+    {
+      "id": 834,
+      "websiteId": 104,
+      "previewUrl": "http://test.com/web_templates/834",
+      "name": "Neighborhood",
+      "title": "Neighborhood",
+      "disabled": null,
+      "mainWidgetIds": [
+        2756,
+        2757,
+        2758,
+        2759
+      ]
+    }
+  ],
+  "client": [
+    {
+      "id": 69
+    },
+    {
+      "urn": "client.html"
+    },
+    {
+      "name": "Farmhouse"
+    },
+    {
+      "locationIds": [
+        120,
+        121
+      ]
+    }
+  ]
+}
