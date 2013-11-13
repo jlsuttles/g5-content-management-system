@@ -30,6 +30,13 @@ website:
           - name: navigation
           - name: contact-info
           - name: hours
+  web_home_template:
+    name: Home
+    drop_targets:
+      - html_id: drop-target-main
+        widgets:
+          - name: photo
+          - name: html
   web_page_templates:
     - name: Example Page
       drop_targets:
