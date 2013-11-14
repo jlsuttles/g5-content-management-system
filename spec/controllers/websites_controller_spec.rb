@@ -4,7 +4,7 @@ describe WebsitesController do
   let(:website) { Fabricate(:website) }
 
   before(:each) do
-    Website.stub(:find_by_urn).and_return(website)
+    Website.stub(:find).and_return(website)
   end
 
   describe "#show" do
