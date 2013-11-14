@@ -17,7 +17,7 @@
         <div class="faux-table-cell buttons">
           {{#link-to "website" this.website class="btn btn--a" }}Edit{{/link-to}}
           <a {{bindAttr href="this.website.webHomeTemplate.previewUrl"}} class="btn btn--a">View</a>
-          <a href="#" class="btn btn--a">Deploy</a>
+          <a {{action deploy this}} href="#" class="btn btn--a">Deploy</a>
         </div>
       </li>
       {{/each}}

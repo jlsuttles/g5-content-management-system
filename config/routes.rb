@@ -8,9 +8,9 @@ G5ClientHub::Application.routes.draw do
   get '/website/:id/', to: 'locations#index'
   get '/location/:id/home/:id', to: 'locations#index'
   get '/location/:id/page/:id', to: 'locations#index'
-  
+
   resources :locations, only: [:index]
-  resources :websites, only: [:show] do
+  resources :websites, only: [] do
     member do
       post "deploy"
     end
