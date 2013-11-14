@@ -26,10 +26,10 @@ describe WebsitesController do
   end
 
   describe "#deploy" do
-    it "redirects to locations" do
+    it "redirects to root" do
       Resque.stub(:enqueue).and_return(true)
       post :deploy, id: 1
-      response.should redirect_to locations_path
+      response.should redirect_to root_path
     end
   end
 end
