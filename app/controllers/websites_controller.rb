@@ -6,8 +6,8 @@ class WebsitesController < ApplicationController
   end
 
   def deploy
-    @website = Website.find_by_urn(params[:id])
+    @website = Website.find(params[:id])
     @website.async_deploy
-    redirect_to locations_path, notice: "Deploying website #{@website.name}."
+    redirect_to root_path, notice: "Deploying website #{@website.name}."
   end
 end
