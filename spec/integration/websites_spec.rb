@@ -29,7 +29,7 @@ describe "Integration '/website/:id'", js: true, vcr: VCR_OPTIONS do
         click_link "Edit"
       end
 
-      current_path.should eq "/location/#{@location.id}/home/#{@web_home_template.id}"
+      current_path.should eq "/location/#{@web_home_template.location.id}/home/#{@web_home_template.id}"
     end
 
     it "Page 'Edit' link goes to '/location/:location_id/page/:page_id'" do
@@ -37,7 +37,7 @@ describe "Integration '/website/:id'", js: true, vcr: VCR_OPTIONS do
         click_link "Edit"
       end
 
-      current_path.should eq "/location/#{@location.id}/page/#{@web_page_template.id}"
+      current_path.should eq "/location/#{@web_page_template.location.id}/page/#{@web_page_template.id}"
     end
   end
 end

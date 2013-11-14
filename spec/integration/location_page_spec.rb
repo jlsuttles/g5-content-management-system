@@ -19,7 +19,6 @@ describe "Integration '/location/:location_id/page/:page_id'", js: true, vcr: VC
 
     it "Updates database" do
       within ".main-widgets" do
-        # Given .main-widgets has exactly two .widget
         widget1 = find(".widget:first-of-type")
         widget2 = find(".widget:last-of-type")
         expect(@widget2.display_order > @widget1.display_order).to be_true
@@ -49,7 +48,6 @@ describe "Integration '/location/:location_id/page/:page_id'", js: true, vcr: VC
 
     it "Updates database" do
       within ".aside-widgets" do
-        # Given .aside-widgets has exactly two .widget
         widget1 = find(".widget:first-of-type")
         widget2 = find(".widget:last-of-type")
         expect(@widget2.display_order > @widget1.display_order).to be_true
