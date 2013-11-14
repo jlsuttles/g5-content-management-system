@@ -13,16 +13,19 @@ describe "Integration '/location/:location_id/page/:page_id'", js: true, vcr: VC
       @widget2.update_attribute :display_order, :last
 
       visit_web_page_template
+      # HACK: Shouldn't have to do this, Capybara should be scrolling.
+      page.execute_script("window.scrollTo(0,1000);")
     end
 
     it "Updates database" do
       within ".main-widgets" do
         # Given .main-widgets has exactly two .widget
-        widget1 = all(".widget").first
-        widget2 = all(".widget").last
+        widget1 = find(".widget:first-of-type")
+        widget2 = find(".widget:last-of-type")
         expect(@widget2.display_order > @widget1.display_order).to be_true
-        widget2.drag_to(widget1)
-        expect(@widget2.display_order < @widget1.display_order).to be_true
+        drag_and_drop(widget1, widget2)
+        sleep 1
+        expect(@widget2.reload.display_order < @widget1.reload.display_order).to be_true
       end
     end
   end
@@ -40,16 +43,20 @@ describe "Integration '/location/:location_id/page/:page_id'", js: true, vcr: VC
       @widget2.update_attribute :display_order, :last
 
       visit_web_page_template
+      # HACK: Shouldn't have to do this, Capybara should be scrolling.
+      page.execute_script("window.scrollTo(0,1000);")
     end
 
     it "Updates database" do
       within ".aside-widgets" do
-        # Given .main-widgets has exactly two .widget
-        widget1 = all(".widget").first
-        widget2 = all(".widget").last
+        # Given .aside-widgets has exactly two .widget
+        widget1 = find(".widget:first-of-type")
+        widget2 = find(".widget:last-of-type")
         expect(@widget2.display_order > @widget1.display_order).to be_true
         widget2.drag_to(widget1)
-        expect(@widget2.display_order < @widget1.display_order).to be_true
+        drag_and_drop(widget1, widget2)
+        sleep 1
+        expect(@widget2.reload.display_order < @widget1.reload.display_order).to be_true
       end
     end
   end

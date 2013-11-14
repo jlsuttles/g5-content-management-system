@@ -5,5 +5,7 @@ class WidgetSerializer < ActiveModel::Serializer
               :name,
               :thumbnail,
               :url,
-              :section
+              :section,
+              :display_order,
+              :display_order_position
 end

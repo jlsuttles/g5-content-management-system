@@ -16,6 +16,15 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
     end
   end
 
+  def update
+    @widget = Widget.find(params[:id])
+    if @widget.update_attributes(widget_params)
+      render json: @widget, root: klass
+    else
+      render json: @widget.errors, root: klass, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @widget = Widget.find(params[:id])
     if @widget.destroy
@@ -35,7 +44,7 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
     web_template = WebTemplate.find(web_template_id) if web_template_id
     drop_target = web_template.drop_targets.find_by_html_id(section) if web_template
     params[klass][:drop_target_id] ||= drop_target.id if drop_target
-    params.require(klass).permit(:url, :drop_target_id)
+    params.require(klass).permit(:url, :drop_target_id, :display_order_position)
   end
 
   def klass
