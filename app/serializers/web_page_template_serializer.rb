@@ -6,9 +6,14 @@ class WebPageTemplateSerializer < WebTemplateSerializer
   attributes :preview_url,
              :name,
              :title,
-             :disabled
+             :disabled,
+             :slug
 
   def preview_url
     web_template_url(object)
+  end
+
+  def slug
+    object.name.parameterize
   end
 end
