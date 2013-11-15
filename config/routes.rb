@@ -43,9 +43,8 @@ G5ClientHub::Application.routes.draw do
     end
   end
 
-  get "/location/:id/home/:id", to: "locations#index"
-  get "/location/:id/page/:id", to: "locations#index"
-  get "/:id", to: "locations#index"
+  get "/:location_slug/:web_page_template_slug", to: "locations#index"
+  get "/:website_slug", to: "locations#index"
   
   root to: "locations#index"
 end
