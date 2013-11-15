@@ -1,13 +1,7 @@
-require 'resque/server'
+require "resque/server"
 
 G5ClientHub::Application.routes.draw do
   mount Resque::Server, :at => "/resque"
-
-  root to: "locations#index"
-
-  get '/website/:id/', to: 'locations#index'
-  get '/location/:id/home/:id', to: 'locations#index'
-  get '/location/:id/page/:id', to: 'locations#index'
 
   resources :locations, only: [:index]
   resources :websites, only: [] do
@@ -48,4 +42,10 @@ G5ClientHub::Application.routes.draw do
       resources :remote_widgets, only: [:index]
     end
   end
+
+  get "/location/:id/home/:id", to: "locations#index"
+  get "/location/:id/page/:id", to: "locations#index"
+  get "/:id", to: "locations#index"
+  
+  root to: "locations#index"
 end
