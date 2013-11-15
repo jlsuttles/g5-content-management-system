@@ -5,3 +5,6 @@ App.WebsiteRoute = Ember.Route.extend
     @controllerFor("websiteTemplate").set("model", model.get("websiteTemplate"))
     @controllerFor("webHomeTemplate").set("model", model.get("webHomeTemplate"))
     @controllerFor("webPageTemplates").set("model", model.get("webPageTemplates"))
+
+  serialize: (model) ->
+    website_slug: model.get "slug"
