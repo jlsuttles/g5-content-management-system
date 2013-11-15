@@ -1,12 +1,31 @@
 require "spec_helper"
 
-describe "Integration '/website/:id'", js: true, vcr: VCR_OPTIONS do
+describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
   describe "Lists all web templates" do
     before do
       @client, @location, @website = seed
       @web_home_template = @website.web_home_template
       @web_page_template = @website.web_page_templates.first
       visit_website
+# LOCATION_SELECTOR = ".faux-table .faux-table-row:first-of-type .buttons"
+# PAGE_SELECTOR = ".cards .card:first-of-type"
+
+# describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
+#   describe "Lists all web templates" do
+#     before do
+#       ClientReader.perform(ENV["G5_CLIENT_UID"])
+#       WebsiteSeederJob.perform
+
+#       @client = Client.first
+#       @location = Location.first
+#       @website = @location.website
+#       @web_home_template = @website.web_home_template
+
+#       visit root_path
+
+#       within LOCATION_SELECTOR do
+#         click_link "Edit"
+#       end
     end
 
     it "Displays client, location, and page names" do
@@ -24,20 +43,21 @@ describe "Integration '/website/:id'", js: true, vcr: VCR_OPTIONS do
       end
     end
 
-    it "Home 'Edit' link goes to '/location/:location_id/home/:home_id'" do
+    it "Home 'Edit' link goes to '/:location_slug/:home_slug'" do
       within WEB_HOME_SELECTOR do
         click_link "Edit"
       end
 
-      current_path.should eq "/location/#{@web_home_template.location.id}/home/#{@web_home_template.id}"
+      current_path.should eq "/#{@web_home_template.location.slug}/#{@web_home_template.slug}"
     end
 
-    it "Page 'Edit' link goes to '/location/:location_id/page/:page_id'" do
+    it "Page 'Edit' link goes to '/:location_slug/:page_slug'" do
       within WEB_PAGE_SELECTOR do
         click_link "Edit"
       end
 
-      current_path.should eq "/location/#{@web_page_template.location.id}/page/#{@web_page_template.id}"
+      # Capybara.default_wait_time = 5
+      current_path.should eq "/#{@website.slug}/#{@web_home_template.slug}"
     end
   end
 end
