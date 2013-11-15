@@ -51,7 +51,6 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
 
       it "has a link to twitter with the set username" do
         page.should have_selector "a[href='http://www.twitter.com/jlsuttles']"
-        # page.save_screenshot('screenshot.png')
       end
     end
   end
