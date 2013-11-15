@@ -5,6 +5,7 @@ App.WebHomeTemplate = DS.Model.extend
   mainWidgets: DS.hasMany("App.MainWidget")
   previewUrl: DS.attr("string")
   name: DS.attr("string")
+  slug: DS.attr("string")
   title: DS.attr("string")
   disabled: DS.attr("boolean")
   isWebHomeTemplate: true
