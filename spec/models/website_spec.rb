@@ -49,6 +49,16 @@ describe Website, vcr: VCR_OPTIONS do
     end
   end
 
+  describe "#slug" do
+    let(:website) { Fabricate.build(:website) }
+    let(:location) { Fabricate.build(:location) }
+
+    it "uses location's name parameterized" do
+      website.location = location
+      website.slug.should eq location.name.parameterize
+    end
+  end
+
   describe "#compile_path" do
     let(:website) { Fabricate(:website) }
 
