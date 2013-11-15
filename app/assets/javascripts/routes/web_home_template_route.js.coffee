@@ -15,3 +15,6 @@ App.WebHomeTemplateRoute = Ember.Route.extend
     @controllerFor("navWidgets").set("model", model.get("website.websiteTemplate.navWidgets"))
     @controllerFor("asideWidgets").set("model", model.get("website.websiteTemplate.asideWidgets"))
     @controllerFor("footerWidgets").set("model", model.get("website.websiteTemplate.footerWidgets"))
+
+  serialize: (model) ->
+    web_home_template_slug: model.get("slug")
