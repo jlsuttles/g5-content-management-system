@@ -29,7 +29,7 @@ class Website < ActiveRecord::Base
   end
 
   def slug
-    name.parameterize
+    name.try(:parameterize)
   end
 
   def compile_path
