@@ -28,6 +28,10 @@ class Website < ActiveRecord::Base
     location.try(:name)
   end
 
+  def slug
+    name.parameterize
+  end
+
   def compile_path
     File.join(COMPILE_PATH, urn)
   end
