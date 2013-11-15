@@ -2,11 +2,16 @@ App.DraggableWidgetView = App.DraggableView.extend
   tagName: "li"
   classNames: ["thumb", "widget"]
   classNameBindings: ["dasherizedName"]
+  attributeBindings: ["id:data-id"]
 
   dasherizedName: ( ->
     name = @get("content.name")
     name.dasherize() if name
   ).property("content.name")
+
+  id: ( ->
+    id = @get("content.id")
+  ).property("content.id")
 
   click: (event) ->
     if @get("content.id")

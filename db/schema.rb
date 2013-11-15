@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131021180956) do
+ActiveRecord::Schema.define(:version => 20131021215057) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"

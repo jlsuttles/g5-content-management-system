@@ -4,3 +4,5 @@ App.AsideWidget = DS.Model.extend App.ReloadIframe,
   thumbnail: DS.attr("string")
   url: DS.attr("string")
   section: DS.attr("string")
+  displayOrder: DS.attr("number")
+  displayOrderPosition: DS.attr("number")

@@ -21,24 +21,24 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 12 Nov 2013 20:19:02 GMT
+      - Thu, 14 Nov 2013 02:37:52 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWMwOWU5M2RiOTMyZDMyZTRiYmNiNWEwZmE2NDU0ZDUyBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVQ1UGdTV0Q2QUQ4TTExMWVIOTdZbGR3d1hUZEhjRGsyUjlPV3dCUGdxTjA9BjsARg%3D%3D--745adade80e10b53c59b714058e9a30ff9116db7;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWYxYmE3Y2Y3YjFjMGQyZmIxOTgxYzVmYWIzNmY4MTVmBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXhZMUYrOS9CUG5nUklPLzdnSTlTek16Myszc0lqa2dELzFRQ3pIWWVSUnM9BjsARg%3D%3D--32e5fa2d1637c1899edf6da1f0a8046326162cd4;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 45b209e009593bd559c4cf0480ae1299
+      - 85d7ba1c6a3a1cd3db01fc452ee4cb92
       X-Runtime:
-      - '0.069932'
+      - '0.116732'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '15656'
       Connection:
       - keep-alive
     body:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"T5PgSWD6AD8M111eH97YldwwXTdHcDk2R9OWwBPgqN0=\"
+        name=\"csrf-param\" />\n<meta content=\"xY1F+9/BPngRIO/7gI9SzMz3+3sIjkgD/1QCzHYeRRs=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -229,7 +229,7 @@ http_interactions:
         /&gt;\n  &lt;/form&gt;\n&lt;/div&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 12 Nov 2013 20:19:02 GMT
+  recorded_at: Thu, 14 Nov 2013 02:37:45 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-form/show.html
@@ -251,7 +251,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 12 Nov 2013 20:19:03 GMT
+      - Thu, 14 Nov 2013 02:37:52 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -296,7 +296,7 @@ http_interactions:
         Please leave us a message.</div>\n      </div>\n\n    {% endif %}\n\n    <input
         type=\"submit\" best_value=\"Send\" />\n  </form>\n</div>\n"
     http_version: 
-  recorded_at: Tue, 12 Nov 2013 20:19:03 GMT
+  recorded_at: Thu, 14 Nov 2013 02:37:45 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-form/edit.html
@@ -318,7 +318,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 12 Nov 2013 20:19:03 GMT
+      - Thu, 14 Nov 2013 02:37:53 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -386,5 +386,5 @@ http_interactions:
         }}\" >\n        Message\n      </label>\n    </div>\n\n  </fieldset>\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 12 Nov 2013 20:19:03 GMT
+  recorded_at: Thu, 14 Nov 2013 02:37:46 GMT
 recorded_with: VCR 2.6.0
