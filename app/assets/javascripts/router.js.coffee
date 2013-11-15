@@ -1,7 +1,7 @@
 App.Router.map ->
   @resource "locations", path: "/"
 
-  @resource "website", path: "/website/:website_id", ->
+  @resource "website", path: "/:website_slug", ->
     @resource "webPageTemplates", ->
       @route "new"
 
