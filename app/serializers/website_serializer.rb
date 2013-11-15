@@ -6,6 +6,7 @@ class WebsiteSerializer < ActiveModel::Serializer
   has_many :web_page_templates
 
   attributes  :id,
+              :slug,
               :location_id,
               :name,
               :custom_colors,
