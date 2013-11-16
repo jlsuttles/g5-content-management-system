@@ -40,12 +40,20 @@ class WebTheme < ActiveRecord::Base
     end
   end
 
+  def primary_color=(value)
+    self.custom_primary_color = value
+  end
+
   def secondary_color
     if custom_colors? && custom_secondary_color
       custom_secondary_color
     else
       colors[1]
     end
+  end
+
+  def secondary_color=(value)
+    self.custom_secondary_color = value
   end
 
   private

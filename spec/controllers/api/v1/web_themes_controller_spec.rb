@@ -55,6 +55,24 @@ describe Api::V1::WebThemesController, vcr: VCR_OPTIONS do
         expect(response.status).to eq 200
         expect(web_theme.reload.url).to eq WebThemeSupport.web_theme.url
       end
+
+      it "custom_colors" do
+        put :update, id: web_theme.id, web_theme: { custom_colors: true }
+        expect(response.status).to eq 200
+        expect(web_theme.reload.custom_colors).to eq true
+      end
+
+      it "primary_color" do
+        put :update, id: web_theme.id, web_theme: { primary_color: "#custom-color" }
+        expect(response.status).to eq 200
+        expect(web_theme.reload.custom_primary_color).to eq "#custom-color"
+      end
+
+      it "secondary_color" do
+        put :update, id: web_theme.id, web_theme: { secondary_color: "#custom-color" }
+        expect(response.status).to eq 200
+        expect(web_theme.reload.custom_secondary_color).to eq "#custom-color"
+      end
     end
   end
 end

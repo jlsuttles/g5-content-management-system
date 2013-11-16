@@ -3,5 +3,8 @@ class WebThemeSerializer < ActiveModel::Serializer
               :website_template_id,
               :name,
               :thumbnail,
-              :url
+              :url,
+              :custom_colors,
+              :primary_color,
+              :secondary_color
 end
