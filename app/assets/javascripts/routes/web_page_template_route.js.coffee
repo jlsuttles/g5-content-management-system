@@ -29,8 +29,6 @@ App.WebPageTemplateRoute = Ember.Route.extend
     controller.set("model", model)
     # setup website controller
     @controllerFor("website").set("model", model.get("website"))
-    # setup webThemeColors controller
-    @controllerFor("webThemeColors").set("model", model.get("website"))
     # setup mainWidgets controller
     @controllerFor("mainWidgets").set("model", model.get("mainWidgets"))
     # setup website.websiteTemplate controllers

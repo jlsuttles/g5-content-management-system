@@ -5,7 +5,4 @@ App.Website = DS.Model.extend App.ReloadIframe,
   webPageTemplates: DS.hasMany("App.WebPageTemplate")
   name: DS.attr("string")
   slug: DS.attr("string")
-  customColors: DS.attr("boolean")
-  primaryColor: DS.attr("string")
-  secondaryColor: DS.attr("string")
   herokuUrl: DS.attr("string")
