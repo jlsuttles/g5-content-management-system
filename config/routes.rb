@@ -20,7 +20,7 @@ G5ClientHub::Application.routes.draw do
     namespace :v1 do
       resources :clients, only: [:show]
       resources :locations, only: [:index, :show]
-      resources :websites, only: [:show, :update]
+      resources :websites, only: [:index, :show, :update]
 
       resources :website_templates, only: [:show]
       resources :web_layouts, only: [:show, :update]

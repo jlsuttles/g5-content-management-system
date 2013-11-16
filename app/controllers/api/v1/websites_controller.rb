@@ -1,4 +1,9 @@
 class Api::V1::WebsitesController < Api::V1::ApplicationController
+  def index
+    website = Website.find_by_slug(params[:slug])
+    render json: website
+  end
+
   def show
     render json: Website.find(params[:id])
   end
