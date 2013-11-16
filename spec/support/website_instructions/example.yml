@@ -38,7 +38,13 @@ website:
           - name: photo
           - name: html
   web_page_templates:
-    - name: Example Page
+    - name: Example Page 1
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - name: html
+            - name: social-links
+    - name: Example Page 2
       drop_targets:
         - html_id: drop-target-main
           widgets:

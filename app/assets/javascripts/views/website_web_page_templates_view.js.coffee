@@ -1,4 +1,4 @@
-App.MainWidgetsView = Ember.View.extend
+App.WebsiteWebPageTemplatesView = Ember.View.extend
   didInsertElement: ->
     controller = @get("controller")
     @$(".sortable").sortable

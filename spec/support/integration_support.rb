@@ -1,6 +1,6 @@
-LOCATION_SELECTOR = ".faux-table .faux-table-row:first-of-type .buttons"
-WEB_HOME_SELECTOR = ".cards .card:first-of-type"
-WEB_PAGE_SELECTOR = ".cards .card:last-of-type"
+LOCATION_SELECTOR = ".location:first-of-type"
+WEB_HOME_SELECTOR = ".web-home-template:first-of-type"
+WEB_PAGE_SELECTOR = ".web-page-template:first-of-type"
 
 def drag_and_drop(source, target)
   builder = page.driver.browser.action
