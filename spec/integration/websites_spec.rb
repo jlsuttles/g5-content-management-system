@@ -7,25 +7,6 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       @web_home_template = @website.web_home_template
       @web_page_template = @website.web_page_templates.first
       visit_website
-# LOCATION_SELECTOR = ".faux-table .faux-table-row:first-of-type .buttons"
-# PAGE_SELECTOR = ".cards .card:first-of-type"
-
-# describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
-#   describe "Lists all web templates" do
-#     before do
-#       ClientReader.perform(ENV["G5_CLIENT_UID"])
-#       WebsiteSeederJob.perform
-
-#       @client = Client.first
-#       @location = Location.first
-#       @website = @location.website
-#       @web_home_template = @website.web_home_template
-
-#       visit root_path
-
-#       within LOCATION_SELECTOR do
-#         click_link "Edit"
-#       end
     end
 
     it "Displays client, location, and page names" do
