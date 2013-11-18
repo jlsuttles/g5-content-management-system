@@ -17,7 +17,7 @@ $ ->
     e.preventDefault()
 
   window.setTimeout (->
-    $(".alert").css "opacity", 0
+    $(".alert").addClass 'hide-alert'
   ), 3000
 
   window.setTimeout (->
