@@ -23,4 +23,4 @@ App.LocationRoute = Ember.Route.extend
     @controllerFor("remoteWidgets").set("model", App.RemoteWidget.find())
 
   serialize: (model) ->
-    location_slug: model.get("location.website.slug")
+    location_slug: model.get "location.website.slug"
