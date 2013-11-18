@@ -16,6 +16,14 @@ $ ->
     $(this).parents(".flip-container").toggleClass "flipped"
     e.preventDefault()
 
+  window.setTimeout (->
+    $(".alert").css "opacity", 0
+  ), 3000
+
+  window.setTimeout (->
+    $(".alert").remove()
+  ), 3500
+
   window.onload = ->
 
     $('input.color').spectrum {
