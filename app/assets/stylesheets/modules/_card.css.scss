@@ -7,7 +7,24 @@
 
 .card {
   position: relative;
+  float: left;
   height: 320px;
+  margin-bottom: $base-whitespace;
+  @media screen and (min-width: $l-min-medium) and (max-width: $l-max-large) {
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  @media screen and (min-width: $l-min-large) and (max-width: $l-max-xlarge) {
+    width: 31.33%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  @include respond-to($l-min-xlarge) {
+    width: 24%;
+    margin-left: .5%;
+    margin-left: .5%;
+  }
   .widgets {
     @extend %group;
     margin-bottom: 1em;
