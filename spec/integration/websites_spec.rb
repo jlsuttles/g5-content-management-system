@@ -24,7 +24,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       end
     end
 
-    it "Home 'Edit' link goes to '/:location_slug/:home_slug'" do
+    it "Home 'Edit' link goes to '/:website_slug/:home_slug'" do
       within WEB_HOME_SELECTOR do
         click_link "Edit"
       end
@@ -32,7 +32,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       current_path.should eq "/#{@web_home_template.website.slug}/#{@web_home_template.slug}"
     end
 
-    it "Page 'Edit' link goes to '/:location_slug/:page_slug'" do
+    it "Page 'Edit' link goes to '/:website_slug/:page_slug'" do
       within WEB_PAGE_SELECTOR do
         click_link "Edit"
       end
