@@ -6,10 +6,18 @@
 // *************************************
 
 .alert {
-  margin-top: 1em;
-  overflow: hidden;
+  @include transition(opacity 0.5s ease-out);
+  opacity: '1';
+  padding: .5em;
   text-align: center;
   text-transform: uppercase;
+  p {
+    margin: 0;
+  }
+}
+
+.hide-alert {
+  opacity: 0;
 }
 
 .alert-info {
