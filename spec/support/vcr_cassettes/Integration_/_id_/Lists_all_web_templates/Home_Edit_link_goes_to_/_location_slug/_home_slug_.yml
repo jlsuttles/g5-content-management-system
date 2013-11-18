@@ -2,6 +2,84 @@
 http_interactions:
 - request:
     method: get
+    uri: http://g5-theme-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Wed, 06 Nov 2013 22:15:25 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Mon, 18 Nov 2013 19:29:35 GMT
+      Server:
+      - thin 1.5.0 codename Knife
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 2d197d1a43fadca199a2b5a23b075273
+      X-Runtime:
+      - '0.004188'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Mon, 18 Nov 2013 19:29:35 GMT
+- request:
+    method: get
+    uri: http://g5-theme-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Wed, 06 Nov 2013 22:15:25 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Mon, 18 Nov 2013 19:29:35 GMT
+      Server:
+      - thin 1.5.0 codename Knife
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 8159d69ce06829bef4d4bd351b19dba1
+      X-Runtime:
+      - '0.003677'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Mon, 18 Nov 2013 19:29:36 GMT
+- request:
+    method: get
     uri: http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-left
     body:
       encoding: US-ASCII
@@ -21,20 +99,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:36 GMT
+      - Mon, 18 Nov 2013 19:29:35 GMT
       Last-Modified:
       - Wed, 06 Nov 2013 23:51:31 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWU2NGVjZTg2ZGNjZTY0ZDQyZWNhODJlNjM2OTg4ZDU2BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWJPK2lra0U5eTBvSG04TnZzclJKMVVvUEx0Y0pXQk9hMGJWZStubUhEdnc9BjsARg%3D%3D--dbbaa2f3de461138f673629fc256a28a1d30c19f;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTI2YjY0NWFhM2MzNWIxOTlhODY1NzI5N2ZkODQxZDljBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUxjMjVueTZ0T2VNQmJnbW0wQ1oxYTJPV3ppajhvMGJhL1ZPWk9lVXludmc9BjsARg%3D%3D--5cd16c280a1059fd479e273ff5c9d642f0332ca4;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - de0d01899b10ed79ffa97c452e528297
+      - 02ad1ccd44c689d77a48a2446dba08a5
       X-Runtime:
-      - '0.061120'
+      - '0.041472'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +128,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"bO+ikkE9y0oHm8NvsrRJ1UoPLtcJWBOa0bVe+nmHDvw=\"
+        name=\"csrf-param\" />\n<meta content=\"Lc25ny6tOeMBbgmm0CZ1a2OWzij8o0ba/VOZOeUynvg=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -98,7 +176,46 @@ http_interactions:
         \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:36 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:36 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Tue, 12 Nov 2013 19:59:11 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Mon, 18 Nov 2013 19:29:35 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 4296b79f852bae48506072e8ba45f178
+      X-Runtime:
+      - '0.005212'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Mon, 18 Nov 2013 19:29:36 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/components/classic
@@ -120,20 +237,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:36 GMT
+      - Mon, 18 Nov 2013 19:29:35 GMT
       Last-Modified:
       - Wed, 06 Nov 2013 22:15:25 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTNiOGU1YjFhZDdkOWJhZDhjZGU2OTVkMzUzNDgwZjIxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUlaSms1UE12ZmtmVWpaN2tDd1VvcW9iTDNyZGtJTEhZVGk0YlFwRS9tQnM9BjsARg%3D%3D--eaffd0eb37d2e9fc8d3802b988e1c2e26f8e4adc;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTk4OWQ3ZDQ0NjcxMmM3YWFhMDIxOTg5MGNmMDdhMDFlBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMW1xTVlGM0xlb0N1UnFwbGZxSWdXMUIrL1lUVVgyazVLS0syUzJWWlZLWm89BjsARg%3D%3D--f65c32cda5c25c786a59619a94c45367076694ad;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 3ad872813188d1267a88469ab19c65fb
+      - d613cf5e2695c3b489fcb255a9fb9ac1
       X-Runtime:
-      - '0.020125'
+      - '0.017986'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -149,7 +266,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"IZJk5PMvfkfUjZ7kCwUoqobL3rdkILHYTi4bQpE/mBs=\"
+        name=\"csrf-param\" />\n<meta content=\"mqMYF3LeoCuRqplfqIgW1B+/YTUX2k5KKK2S2VZVKZo=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -179,7 +296,46 @@ http_interactions:
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:37 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:36 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Tue, 12 Nov 2013 19:59:11 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Mon, 18 Nov 2013 19:29:36 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - a164fa065ff8783691135033f3f69309
+      X-Runtime:
+      - '0.004942'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Mon, 18 Nov 2013 19:29:36 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/meta
@@ -201,20 +357,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:37 GMT
+      - Mon, 18 Nov 2013 19:29:36 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTgzZDkwZGNhMzMwY2U1OTA2NjRkMDM4MjA0YjJhZDkxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWwySE1tM1E2RU1hMHc2aG01dGlsK1BnT3RXMytIRm9lUVRyL1FhRmZTbkk9BjsARg%3D%3D--a863efd2d25cc26d1afca96fe940056b43e12d73;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcwNDg2Nzk3NmMzMmY0NWZhYjI2Y2IwYmUyYzhmMWU4BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXd5UisvYjkzWnhhbk1aODIyYVAwL215K0dvdmtXYlNPaFJmYTA5dUZmZU09BjsARg%3D%3D--543ff7193f791695c07b44662470b98137d856d9;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - c38dbb3a968594ff368a570a55c2e1d4
+      - 5d8d7ba3e44c373c08dcbb48510d2beb
       X-Runtime:
-      - '0.025508'
+      - '0.091579'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -230,7 +386,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"l2HMm3Q6EMa0w6hm5til+PgOtW3+HFoeQTr/QaFfSnI=\"
+        name=\"csrf-param\" />\n<meta content=\"wyR+/b93ZxanMZ822aP0/my+GovkWbSOhRfa09uFfeM=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -292,7 +448,7 @@ http_interactions:
         }}&quot; /&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:37 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:36 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/meta/show.html
@@ -314,7 +470,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:37 GMT
+      - Mon, 18 Nov 2013 19:29:36 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -337,7 +493,7 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:37 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:37 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/meta/edit.html
@@ -359,7 +515,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:37 GMT
+      - Mon, 18 Nov 2013 19:29:36 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -385,7 +541,7 @@ http_interactions:
         }}\"\n      value=\"{{ widget.meta_description.best_value }}\"\n    />\n  </div>\n\n
         \ <input type=\"submit\" value=\"Save\" />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:37 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:37 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/logo
@@ -407,20 +563,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:37 GMT
+      - Mon, 18 Nov 2013 19:29:37 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTM1MzY0ZTI5MTViNDlmNWYyYTllMjdmNWJmNzNlZTE3BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXBETFFWSUc0TEg5TG0vcGh6YjVHbGVqRG50a0hybWxJK01OR1BnOGx6OU09BjsARg%3D%3D--d2fd11629f2b636ea1f9cb9708deff2c62c8f680;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWZhMTM0NjMxYjI5YzViODA3OWFiYWRhOGRjNmQ5YmQ0BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUIzS0QxTFdQdytEOVM4Z2xubGNLTi80NkhSdVl4OVJMQkJvTTJGaFVOeUE9BjsARg%3D%3D--1b8c8c753ac1bb0bd9e218ab35aee7fb2e9411eb;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - ad9e25e3afc3c61a065785d1cfe103ef
+      - 9da57f0a59013fa7e6eeb52d44753061
       X-Runtime:
-      - '0.048042'
+      - '0.034786'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -436,7 +592,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"pDLQVIG4LH9Lm/phzb5GlejDntkHrmlI+MNGPg8lz9M=\"
+        name=\"csrf-param\" />\n<meta content=\"B3KD1LWPw+D9S8glnlcKN/46HRuYx9RLBBoM2FhUNyA=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -518,7 +674,7 @@ http_interactions:
         itemprop=&quot;logo&quot; /&gt;\n  &lt;/a&gt;\n&lt;/h1&gt;\n{% endif %}\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:38 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:37 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/logo/show.html
@@ -540,7 +696,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:38 GMT
+      - Mon, 18 Nov 2013 19:29:37 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -561,7 +717,7 @@ http_interactions:
         src=\"{{ widget.logo_url.best_value | url_encode }}\" alt=\"{{ widget.business_name.best_value
         }}\" itemprop=\"logo\" />\n  </a>\n</h1>\n{% endif %}\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:38 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:38 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/logo/edit.html
@@ -583,7 +739,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:38 GMT
+      - Mon, 18 Nov 2013 19:29:37 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -617,7 +773,7 @@ http_interactions:
         }}\"\n      value=\"{{ widget.logo_url.best_value | url_encode }}\"\n    />\n
         \ </div>\n  <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:38 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:38 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/phone
@@ -639,20 +795,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:38 GMT
+      - Mon, 18 Nov 2013 19:29:38 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTg3YTIxYzI2OTM2OTUzMDMzNDg2OGIyYTRjMmVlNDMzBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMU5VUHR2Z0tYeWZ0cHVDRHlFOEJTNDVDdDVXWXdmMjFOMVRVYzZFNXAxTkE9BjsARg%3D%3D--1819d5f20df55605d4b28bc4b9bb56945f4aef54;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRiNWU5YTZkZWFlN2JlMDY2NTgwNDhiMTM0NGQ1YWYzBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVMybkJhU0U5REdVT1Z2alg2cWxhSHpRbFQ5Sm4vVkYxckZXZWk1TkFhUHM9BjsARg%3D%3D--5fd9a712224c84615cb1b901a31968b9e146bea1;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - d78b6f7d2b9a153a1117bb01e9a4f4c3
+      - a8ae9b4d79f243a19566b9169ca07ea1
       X-Runtime:
-      - '0.073625'
+      - '0.047914'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -668,7 +824,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"NUPtvgKXyftpuCDyE8BS45Ct5WYwf21N1TUc6E5p1NA=\"
+        name=\"csrf-param\" />\n<meta content=\"S2nBaSE9DGUOVvjX6qlaHzQlT9Jn/VF1rFWei5NAaPs=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -768,7 +924,7 @@ http_interactions:
         widget.phone_number.best_value }}&lt;/span&gt;\n&lt;/a&gt;\n{% endif %}\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:38 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:38 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/phone/show.html
@@ -790,7 +946,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:38 GMT
+      - Mon, 18 Nov 2013 19:29:38 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -813,7 +969,7 @@ http_interactions:
         \ <span class=\"p-tel tel\" itemprop=\"telephone\">{{ widget.phone_number.best_value
         }}</span>\n</a>\n{% endif %}"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:39 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:38 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/phone/edit.html
@@ -835,7 +991,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:39 GMT
+      - Mon, 18 Nov 2013 19:29:38 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -874,7 +1030,7 @@ http_interactions:
         }}\" >\n      Display Phone Number\n    </label>\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:39 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:39 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/button
@@ -896,20 +1052,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:39 GMT
+      - Mon, 18 Nov 2013 19:29:39 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTA0MTlmZmU3NTgzM2U5ZmEzODU0MjgwNjUzYjJjZDkyBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXg2dTAxb3hSbU9lZzRaZDNLMVZBcnhUZ2orcWhyQTJBY3NxRVd5cFIxMFU9BjsARg%3D%3D--c4c5988779a180b09e605fe94ffc6c6163b720a2;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcxOTg5Y2Y5ZGMwMzZmNWI3MjdhYmE2NzE1ZWI0YzMyBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVpXU21vWUVtK3BqTlYxdU85Q3dpdXhWSmtCVWg1QzVpcDk5VVZHeWNIU1E9BjsARg%3D%3D--7560cd05edf5ca084831c4d072f06b20c9a5486f;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 9560ce1c728d23a3a5a50946dcde1835
+      - b658771200e1ca995f5e8762a9c461f4
       X-Runtime:
-      - '0.040768'
+      - '0.036972'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -925,7 +1081,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"x6u01oxRmOeg4Zd3K1VArxTgj+qhrA2AcsqEWypR10U=\"
+        name=\"csrf-param\" />\n<meta content=\"ZWSmoYEm+pjNV1uO9CwiuxVJkBUh5C5ip99UVGycHSQ=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -1005,7 +1161,7 @@ http_interactions:
         \ &lt;/a&gt;\n{% endif %}\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:39 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:39 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/button/show.html
@@ -1027,7 +1183,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:39 GMT
+      - Mon, 18 Nov 2013 19:29:39 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -1046,7 +1202,7 @@ http_interactions:
         widget.button_url.best_value | url_encode }}\" class=\"btn widget\">\n    {{
         widget.button_label.best_value }}\n  </a>\n{% endif %}"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:40 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:39 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/button/edit.html
@@ -1068,7 +1224,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:40 GMT
+      - Mon, 18 Nov 2013 19:29:39 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -1103,7 +1259,7 @@ http_interactions:
         \   </label>\n  </div>\n\n  <input type=\"submit\" value=\"Save\" class=\"btn\"
         />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:40 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:40 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/navigation
@@ -1125,20 +1281,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:40 GMT
+      - Mon, 18 Nov 2013 19:29:39 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJThlMzVlY2Y1NTNiNjIwNjkxODVjMzViNmU4NWE5NWRkBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXNWNHlQb0xHa2ZQN3E2ck0xSFh4RW5JRi9YVXI1OUVQUzNYbTlmUzFLc1k9BjsARg%3D%3D--ed9cbf3e456d50add9d171a0b30e896ca73e76b6;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWJiNmVhYjY3OGQ2MzUyY2NhYzE1Mjk1MzZjY2IwMWQ5BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVZjUXhSRlFhcjRaNm85bVVUN0xGdVlKWGVVMGVkbDMxeml6NmRtQ3hhMmM9BjsARg%3D%3D--954c68f9bbb3f55d129f7a9fb90a53af8940b888;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 9635fd167f82bb671987dc62e6dd8989
+      - b490039fff5bfadb72eecb59e941564b
       X-Runtime:
-      - '0.029856'
+      - '0.076248'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -1154,7 +1310,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"sV4yPoLGkfP7q6rM1HXxEnIF/XUr59EPS3Xm9fS1KsY=\"
+        name=\"csrf-param\" />\n<meta content=\"VcQxRFQar4Z6o9mUT7LFuYJXeU0edl31ziz6dmCxa2c=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -1235,7 +1391,7 @@ http_interactions:
         %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:40 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:40 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/navigation/show.html
@@ -1257,7 +1413,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:40 GMT
+      - Mon, 18 Nov 2013 19:29:40 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -1278,7 +1434,7 @@ http_interactions:
         | url_encode }}\">{{ web_page.title }}</a></li>\n      {% endif %}\n    {%
         endfor %}\n  </ul>\n</nav>\n{% endif %}\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:40 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:40 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/navigation/edit.html
@@ -1300,7 +1456,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:40 GMT
+      - Mon, 18 Nov 2013 19:29:40 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -1339,7 +1495,7 @@ http_interactions:
         \       </li>\n        {% endfor %}\n      </ul>\n    </div>\n  </fieldset>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:41 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:41 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/calls-to-action
@@ -1361,20 +1517,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:41 GMT
+      - Mon, 18 Nov 2013 19:29:40 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTA4ZTYwYmEyZjEzMWE1M2VkOTExMDc4ODFlNGY2MDZhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVlCcExjby9Vb0hNVFh4S2Vjd0FqS3QxdEovS0FsTCtXa1FnbjI0OXZZM3c9BjsARg%3D%3D--c07e645b678967721c304643d5f1771c681d72ec;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWYxN2IwMGMwZDRhNzY4MGIxZDQwMTdmZDY5MzEzYTFlBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMW1JRm90VjZjeW84eDVVWVprK2VLV2hxSXZPZjVqN3hzR0Z0TVFXRmlnME09BjsARg%3D%3D--af68a38f830e0c2f759c6e65b336f21c3c7ca18c;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 4e0fc95be5f9806fc272ee68b63d0a14
+      - d78101b2d045c3b00067837565e896f5
       X-Runtime:
-      - '0.083873'
+      - '0.095759'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -1390,7 +1546,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"YBpLco/UoHMTXxKecwAjKt1tJ/KAlL+WkQgn249vY3w=\"
+        name=\"csrf-param\" />\n<meta content=\"mIFotV6cyo8x5UYZk+eKWhqIvOf5j7xsGFtMQWFig0M=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -1572,7 +1728,7 @@ http_interactions:
         \   &lt;/li&gt;\n    {% endif %}\n  &lt;/ul&gt;\n&lt;/nav&gt;\n\n&lt;!-- END
         SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:41 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:41 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/show.html
@@ -1594,7 +1750,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:41 GMT
+      - Mon, 18 Nov 2013 19:29:41 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -1623,7 +1779,7 @@ http_interactions:
         widget.cta_four_url.best_value | url_encode }}\">{{ widget.cta_four_text.best_value
         }}</a>\n    </li>\n    {% endif %}\n  </ul>\n</nav>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:41 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:41 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/edit.html
@@ -1645,7 +1801,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:41 GMT
+      - Mon, 18 Nov 2013 19:29:41 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -1710,7 +1866,7 @@ http_interactions:
         \     {% endfor %}\n    </select>\n  </div>\n\n  <input type=\"submit\" value=\"Save\"
         class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:42 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:42 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/social-links
@@ -1732,20 +1888,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:42 GMT
+      - Mon, 18 Nov 2013 19:29:42 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTFjY2U3YzNiMDBiZmNhMDU3YzJkNDAxZDNiY2RiOGM3BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVdQRXVabzlqc0tPZ3gxa29yRjV1QkhncUxEaGhEeDZ4RlJvWFUwc1F0ZEU9BjsARg%3D%3D--35c777af798dd08a6cf9d01a93bff6caf7949901;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTkzOGQ3YmVmMDRhZGJkMDY3NmQxOGQ1YjBkODI2ODZmBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVJmZjdhN3Uvd3U5bkJiNTd5SzBxeVUzRHlKQ3FZcnR3dHJla2xRd0xTbzQ9BjsARg%3D%3D--98d014961e5a3c45ccee1e846559db1de5299572;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 9e4d90d7f387d04ded80211079bdcd74
+      - 38f5465203858870c69d48d2d06f23ab
       X-Runtime:
-      - '0.099433'
+      - '0.145767'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -1761,7 +1917,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"WPEuZo9jsKOgx1korF5uBHgqLDhhDx6xFRoXU0sQtdE=\"
+        name=\"csrf-param\" />\n<meta content=\"Rff7a7u/wu9nBb57yK0qyU3DyJCqYrtwtreklQwLSo4=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -1950,7 +2106,7 @@ http_interactions:
         rel=&quot;me&quot;&gt;YouTube&lt;/a&gt;\n  {% endif %}\n\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:42 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:42 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/show.html
@@ -1972,7 +2128,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:42 GMT
+      - Mon, 18 Nov 2013 19:29:42 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -2013,7 +2169,7 @@ http_interactions:
         }}\" class=\"youtube\" title=\"YouTube\" rel=\"me\">YouTube</a>\n  {% endif
         %}\n\n</div>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:42 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:42 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/edit.html
@@ -2035,7 +2191,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:42 GMT
+      - Mon, 18 Nov 2013 19:29:42 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -2096,7 +2252,7 @@ http_interactions:
         widget.youtube_username.best_value }}\"\n      />\n    </div>\n\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:43 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:43 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/navigation
@@ -2118,20 +2274,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:43 GMT
+      - Mon, 18 Nov 2013 19:29:43 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTk4NTMwYjNmMjFlNjVkZTZlZDU4ZmM3YjQ1YTc2YWMzBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTk0dEloU2ovV1d4Z3IyVzA2NFl5MVVQNFdPWUV4WDgxbmFCbThxczBBdnM9BjsARg%3D%3D--92827085c6b789c835f90930fca424a1d9a1c3b7;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTE1ZGIyNGYwMjdlMzhhZTMxOGNjNjE3ZTRjYzMzNGJjBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWlibzc3L29yTDZhMVdtM0E1SDh4MVBzdnBqOUdrZlhOSEpZMVl2V0lHNTQ9BjsARg%3D%3D--dc89be5ae88ee95b3305aa869b3ef27de91b2987;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 15fc5e575c7bb9673782b4ba2b50f563
+      - 62395700993e4b32845b4d328508a6a4
       X-Runtime:
-      - '0.030243'
+      - '0.116769'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -2147,7 +2303,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"94tIhSj/WWxgr2W064Yy1UP4WOYExX81naBm8qs0Avs=\"
+        name=\"csrf-param\" />\n<meta content=\"ibo77/orL6a1Wm3A5H8x1Psvpj9GkfXNHJY1YvWIG54=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -2228,7 +2384,7 @@ http_interactions:
         %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:43 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:43 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/navigation/show.html
@@ -2250,7 +2406,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:43 GMT
+      - Mon, 18 Nov 2013 19:29:43 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -2271,7 +2427,7 @@ http_interactions:
         | url_encode }}\">{{ web_page.title }}</a></li>\n      {% endif %}\n    {%
         endfor %}\n  </ul>\n</nav>\n{% endif %}\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:43 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:43 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/navigation/edit.html
@@ -2293,7 +2449,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:43 GMT
+      - Mon, 18 Nov 2013 19:29:43 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -2332,7 +2488,7 @@ http_interactions:
         \       </li>\n        {% endfor %}\n      </ul>\n    </div>\n  </fieldset>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:43 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:44 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/contact-info
@@ -2354,20 +2510,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:44 GMT
+      - Mon, 18 Nov 2013 19:29:44 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTY2ZThhMDRkNjk1OTFkYTMyNWI3NTE2M2IyMjcxMGJlBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXFHM0tiZkxVc3VoZFE1TFNHRnNOM3JKOVUxdkcvZ1pkSER6cVp6ZW9JTGM9BjsARg%3D%3D--603e0daeae7bdcb02076ab63085c70aae6baa2fa;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTgxNjYwZjZiNGRiNjQ2NTA3ZGZmZTdjNWNlNjlkZDIzBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXB4RWhoZ2dMcFV1UnFmT3oyMmZKQ1h5SEkranBRZDJ6MHV6bkc1SHc1aHM9BjsARg%3D%3D--8603de3028f05fbdd4dd446d74066cd77b76f063;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 91fd62bd24c9704d9547e6d2b83bd0c4
+      - 1bc1ebdb8eb802d20a90fd3320b25c2a
       X-Runtime:
-      - '0.097858'
+      - '0.261933'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -2383,7 +2539,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"qG3KbfLUsuhdQ5LSGFsN3rJ9U1vG/gZdHDzqZzeoILc=\"
+        name=\"csrf-param\" />\n<meta content=\"pxEhhggLpUuRqfOz22fJCXyHI+jpQd2z0uznG5Hw5hs=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -2726,7 +2882,7 @@ http_interactions:
         endif %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:44 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:44 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/show.html
@@ -2748,7 +2904,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:44 GMT
+      - Mon, 18 Nov 2013 19:29:44 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -2788,7 +2944,7 @@ http_interactions:
         tel\" itemprop=\"telephone\">\n    F: {{ widget.contact_info_fax.best_value
         }}\n  </p>\n  {% endif %}\n</div>\n{% endif %}\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:44 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:45 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/edit.html
@@ -2810,7 +2966,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:44 GMT
+      - Mon, 18 Nov 2013 19:29:44 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -2943,7 +3099,7 @@ http_interactions:
         widget.contact_info_fax.best_value }}\"\n    />\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:44 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:45 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/hours
@@ -2965,20 +3121,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:45 GMT
+      - Mon, 18 Nov 2013 19:29:45 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWVmYzU2NGVhYjk5M2RlOTA1NzM5NzRkODE1YTMxOTAzBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMStBMGpVQnpkTFdGd0g5bTJuZVJBemJCZzkxaUVEQk44d29sdVBmMUF2WWM9BjsARg%3D%3D--28e3ccb08743a35432724d0e6bc8c634157e31d8;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTk4MTEyYzQ3YTVmY2ZmNWQzYTdjNmRhNzY0NTcyMTFjBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUtoUUFTS3FuM1JZQlZIZ0VXTmNYZEZQbWRpN3Fibm5CRVhEMHNERnBqcG89BjsARg%3D%3D--d8ac1a68bc6723705672d2a1237cf8346a9f54e5;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 0cf056d9befcaba332e6ac64212a4f23
+      - d00ec716bb4722ddbb82361c9d969818
       X-Runtime:
-      - '0.035364'
+      - '0.032100'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -2994,7 +3150,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"+A0jUBzdLWFwH9m2neRAzbBg91iEDBN8woluPf1AvYc=\"
+        name=\"csrf-param\" />\n<meta content=\"KhQASKqn3RYBVHgEWNcXdFPmdi7qbnnBEXD0sDFpjpo=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -3060,7 +3216,7 @@ http_interactions:
         }}\n&lt;/div&gt;\n{% endif %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:45 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:45 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/hours/show.html
@@ -3082,7 +3238,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:45 GMT
+      - Mon, 18 Nov 2013 19:29:45 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -3100,7 +3256,7 @@ http_interactions:
       string: ! "{% if widget.display_hours.best_value == \"true\" %}\n<div class=\"hours
         widget\">\n  {{ widget.hours.best_value }}\n</div>\n{% endif %}\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:45 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:45 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/hours/edit.html
@@ -3122,7 +3278,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:45 GMT
+      - Mon, 18 Nov 2013 19:29:45 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -3151,7 +3307,260 @@ http_interactions:
         }}</textarea>\n  </div>\n\n  <input type=\"submit\" value=\"Save\" class=\"btn\"
         />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:45 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:46 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/components/photo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Mon, 18 Nov 2013 19:29:45 GMT
+      Last-Modified:
+      - Tue, 12 Nov 2013 19:59:11 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      Set-Cookie:
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWQ4MWQyMDMyMjI3ZWQ3MzBhZTA1NDUwN2U2YTk4Zjk3BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUVDSy9na1VNbEdZU1BPeFdWN3Y4Q3plWElMMWFlbUxoQkhuQ3BSRmtXZWc9BjsARg%3D%3D--84707ea3a32c2be478226ba42bc4748f28912807;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - eb67640aa595b0afe5a66923c5c4dd09
+      X-Runtime:
+      - '0.037002'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Widget Garden</title>\n
+        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
+        type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
+        \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
+        type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
+        name=\"csrf-param\" />\n<meta content=\"ECK/gkUMlGYSPOxWV7v8CzeXIL1aemLhBHnCpRFkWeg=\"
+        name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
+        \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
+        \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
+        \           <!-- .btn-navbar is used as the toggle for collapsed navbar content
+        -->\n            <a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">\n
+        \             <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n
+        \             <span class=\"icon-bar\"></span>\n            </a>\n\n            <!--
+        Be sure to leave the brand out there if you want it shown -->\n            <a
+        class=\"brand\" href=\"/\">G5 Widget Garden</a>\n\n            <!-- Everything
+        you want hidden at 940px or less, place within here -->\n            <div
+        class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
+        \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
+        \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
+        \     <a href=\"http://g5-widget-garden.herokuapp.com/components/photo\" class=\"u-url
+        u-uid\" rel=\"bookmark\">Photo</a>\n    </h2>\n    <p class=\"p-summary\">A
+        single image</p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/photo/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/photo/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/photo/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/photo/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/photo/stylesheets/photo.css\"
+        class=\"u-g5-stylesheet u-url\">http://g5-widget-garden.herokuapp.com/static/components/photo/stylesheets/photo.css</a>\n
+        \       </p>\n      <ul class=\"unstyled\">\n          <li class=\"e-g5-property-group
+        h-g5-property-group\">\n            <h3><span class=\"p-name\">Photo</span>Property
+        Group</h3>\n  <p class=\"p-category\">Instance</p>\n  <div class=\"row\">\n
+        \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
+        e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
+        class=\"p-g5-name\">photo_url</th>\n        </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
+        \             true\n            </td>\n          </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
+        \             http://placehold.it/600x400&amp;text=IMAGE+PLACEHOLDER\n            </td>\n
+        \         </tr>\n      </table>\n    </div>\n  </div>\n  <div class=\"row\">\n
+        \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
+        e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
+        class=\"p-g5-name\">photo_caption</th>\n        </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
+        \             true\n            </td>\n          </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
+        \             \n            </td>\n          </tr>\n      </table>\n    </div>\n
+        \ </div>\n  <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">photo_alignment</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              photo-block\n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n\n
+        \         </li>\n      </ul>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;!--
+        BEGIN EDIT FORM MARKUP --&gt;\n&lt;form&gt;\n  &lt;div class=&quot;form-field&quot;&gt;\n
+        \   {{ widget.photo_url.id_hidden_field }}\n    &lt;label for=&quot;{{ widget.photo_url.value_field_id
+        }}&quot; &gt;\n      URL\n    &lt;/label&gt;\n    &lt;input type=&quot;text&quot;\n
+        \     id=&quot;{{ widget.photo_url.value_field_id }}&quot;\n      name=&quot;{{
+        widget.photo_url.value_field_name }}&quot;\n      value=&quot;{{ widget.photo_url.best_value
+        | url_encode }}&quot;\n    /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
+        \   {{ widget.photo_caption.id_hidden_field }}\n    &lt;label for=&quot;{{
+        widget.photo_caption.value_field_id }}&quot; &gt;\n      Caption\n    &lt;/label&gt;\n
+        \   &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.photo_caption.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.photo_caption.value_field_name }}&quot;\n
+        \     value=&quot;{{ widget.photo_caption.best_value }}&quot;\n    /&gt;\n
+        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field check-field&quot;&gt;\n
+        \   &lt;fieldset&gt;\n    &lt;legend&gt;Photo Alignment&lt;/legend&gt;\n      {{
+        widget.photo_alignment.id_hidden_field }}\n      &lt;input type=&quot;radio&quot;\n
+        \       id=&quot;{{ widget.photo_alignment.value_field_id }}_left&quot;\n
+        \       name=&quot;{{ widget.photo_alignment.value_field_name }}&quot;\n        value=&quot;photo-left&quot;\n
+        \       checked=&quot;checked&quot;\n      /&gt;\n      &lt;label for=&quot;{{
+        widget.photo_alignment.value_field_id }}_left&quot; &gt;\n        Left\n      &lt;/label&gt;\n
+        \     &lt;input type=&quot;radio&quot;\n        id=&quot;{{ widget.photo_alignment.value_field_id
+        }}_right&quot;\n        name=&quot;{{ widget.photo_alignment.value_field_name
+        }}&quot;\n        value=&quot;photo-right&quot;\n        {% if widget.photo_alignment.best_value
+        == &quot;photo-right&quot; %}\n        checked=&quot;checked&quot;\n        {%
+        endif %}\n      /&gt;\n      &lt;label for=&quot;{{ widget.photo_alignment.value_field_id
+        }}_right&quot; &gt;\n        Right\n      &lt;/label&gt;\n      &lt;input
+        type=&quot;radio&quot;\n        id=&quot;{{ widget.photo_alignment.value_field_id
+        }}_block&quot;\n        name=&quot;{{ widget.photo_alignment.value_field_name
+        }}&quot;\n        value=&quot;photo-block&quot;\n        {% if widget.photo_alignment.best_value
+        == &quot;photo-block&quot; %}\n        checked=&quot;checked&quot;\n        {%
+        endif %}\n      /&gt;\n      &lt;label for=&quot;{{ widget.photo_alignment.value_field_id
+        }}_block&quot; &gt;\n        Block\n      &lt;/label&gt;\n    &lt;/fieldset&gt;\n
+        \ &lt;/div&gt;\n\n  &lt;input type=&quot;submit&quot; value=&quot;Save&quot;
+        class=&quot;btn&quot; /&gt;\n&lt;/form&gt;\n\n&lt;!-- END EDIT FORM MARKUP
+        --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n&lt;figure class=&quot;photo {{
+        widget.photo_alignment.best_value }} widget h-media&quot; itemscope itemtype=&quot;http://schema.org/Photograph&quot;&gt;\n
+        \ &lt;img class=&quot;u-photo&quot; src=&quot;{{ widget.photo_url.best_value
+        | url_encode }}&quot; itemprop=&quot;image&quot; /&gt;\n  {% if widget.photo_caption.best_value
+        != &quot;&quot; %}\n    &lt;figcaption class=&quot;p-name&quot; itemprop=&quot;description&quot;&gt;{{
+        widget.photo_caption.best_value }}&lt;/figcaption&gt;\n  {% endif %}\n&lt;/figure&gt;\n\n&lt;!--
+        END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 18 Nov 2013 19:29:46 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/photo/show.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Content-Type:
+      - text/html
+      Date:
+      - Mon, 18 Nov 2013 19:29:46 GMT
+      Last-Modified:
+      - Tue, 12 Nov 2013 19:59:11 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Content-Digest:
+      - 61a213928396f36592da96eddc7787170c1f665f
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '402'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<figure class=\"photo {{ widget.photo_alignment.best_value }} widget
+        h-media\" itemscope itemtype=\"http://schema.org/Photograph\">\n  <img class=\"u-photo\"
+        src=\"{{ widget.photo_url.best_value | url_encode }}\" itemprop=\"image\"
+        />\n  {% if widget.photo_caption.best_value != \"\" %}\n    <figcaption class=\"p-name\"
+        itemprop=\"description\">{{ widget.photo_caption.best_value }}</figcaption>\n
+        \ {% endif %}\n</figure>\n"
+    http_version: 
+  recorded_at: Mon, 18 Nov 2013 19:29:46 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/photo/edit.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Content-Type:
+      - text/html
+      Date:
+      - Mon, 18 Nov 2013 19:29:46 GMT
+      Last-Modified:
+      - Tue, 12 Nov 2013 19:59:11 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Content-Digest:
+      - b0910733969d760b7f8ea64536b8b813daac5e6d
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '2062'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<form>\n  <div class=\"form-field\">\n    {{ widget.photo_url.id_hidden_field
+        }}\n    <label for=\"{{ widget.photo_url.value_field_id }}\" >\n      URL\n
+        \   </label>\n    <input type=\"text\"\n      id=\"{{ widget.photo_url.value_field_id
+        }}\"\n      name=\"{{ widget.photo_url.value_field_name }}\"\n      value=\"{{
+        widget.photo_url.best_value | url_encode }}\"\n    />\n  </div>\n\n  <div
+        class=\"form-field\">\n    {{ widget.photo_caption.id_hidden_field }}\n    <label
+        for=\"{{ widget.photo_caption.value_field_id }}\" >\n      Caption\n    </label>\n
+        \   <input type=\"text\"\n      id=\"{{ widget.photo_caption.value_field_id
+        }}\"\n      name=\"{{ widget.photo_caption.value_field_name }}\"\n      value=\"{{
+        widget.photo_caption.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field
+        check-field\">\n    <fieldset>\n    <legend>Photo Alignment</legend>\n      {{
+        widget.photo_alignment.id_hidden_field }}\n      <input type=\"radio\"\n        id=\"{{
+        widget.photo_alignment.value_field_id }}_left\"\n        name=\"{{ widget.photo_alignment.value_field_name
+        }}\"\n        value=\"photo-left\"\n        checked=\"checked\"\n      />\n
+        \     <label for=\"{{ widget.photo_alignment.value_field_id }}_left\" >\n
+        \       Left\n      </label>\n      <input type=\"radio\"\n        id=\"{{
+        widget.photo_alignment.value_field_id }}_right\"\n        name=\"{{ widget.photo_alignment.value_field_name
+        }}\"\n        value=\"photo-right\"\n        {% if widget.photo_alignment.best_value
+        == \"photo-right\" %}\n        checked=\"checked\"\n        {% endif %}\n
+        \     />\n      <label for=\"{{ widget.photo_alignment.value_field_id }}_right\"
+        >\n        Right\n      </label>\n      <input type=\"radio\"\n        id=\"{{
+        widget.photo_alignment.value_field_id }}_block\"\n        name=\"{{ widget.photo_alignment.value_field_name
+        }}\"\n        value=\"photo-block\"\n        {% if widget.photo_alignment.best_value
+        == \"photo-block\" %}\n        checked=\"checked\"\n        {% endif %}\n
+        \     />\n      <label for=\"{{ widget.photo_alignment.value_field_id }}_block\"
+        >\n        Block\n      </label>\n    </fieldset>\n  </div>\n\n  <input type=\"submit\"
+        value=\"Save\" class=\"btn\" />\n</form>\n"
+    http_version: 
+  recorded_at: Mon, 18 Nov 2013 19:29:46 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/html
@@ -3173,20 +3582,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:45 GMT
+      - Mon, 18 Nov 2013 19:29:46 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTliODNiMGQ4OThlMmE0NDM4ZmIxNmQ5NTA4ZjQwZWU2BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUhTakE0ZmpjQ25LZmRHN2NIK1JHZXVVU2pyNFFuWE40bkphSWRnUU4zdnc9BjsARg%3D%3D--d428c584da8c7f01d47f39ba98d5de72deca69d5;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTVmNzAzZjc5OTRlMjA1NmQzYmM3MGIzYjQ0ZDc5YTY5BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTJEdmtpUXlJcCtQT0RCRnIxblFQVnJNek42dzkweFA0MEpmYmFGaGE3LzQ9BjsARg%3D%3D--b197525397ac4faa6faae2f19a1a0f9a42eb3fc2;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 853de5c1635f61fea3a0bbda8d2e953a
+      - 889b847d84e88ee501f5f124515b27bc
       X-Runtime:
-      - '0.022567'
+      - '0.063325'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -3202,7 +3611,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"HSjA4fjcCnKfdG7cH+RGeuUSjr4QnXN4nJaIdgQN3vw=\"
+        name=\"csrf-param\" />\n<meta content=\"2DvkiQyIp+PODBFr1nQPVrMzN6w90xP40JfbaFha7/4=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -3251,7 +3660,7 @@ http_interactions:
         widget&quot;&gt;\n  {{ widget.text.best_value }}\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:46 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:47 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/show.html
@@ -3273,7 +3682,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:46 GMT
+      - Mon, 18 Nov 2013 19:29:47 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -3290,7 +3699,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! "<div class=\"html widget\">\n  {{ widget.text.best_value }}\n</div>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:46 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:47 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/edit.html
@@ -3312,7 +3721,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:46 GMT
+      - Mon, 18 Nov 2013 19:29:47 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -3333,7 +3742,189 @@ http_interactions:
         }}\"\n     >\n      {{ widget.text.best_value }}\n    </textarea>\n  </div>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:46 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:47 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/components/html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Mon, 18 Nov 2013 19:29:47 GMT
+      Last-Modified:
+      - Tue, 12 Nov 2013 19:59:11 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      Set-Cookie:
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTVhYjI2N2U1NWJmYTZmMjRiYmI1NGZmYzc4YTdlZjkzBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWVoeFByU0hVR0VXSnQ5YkRncFJUbGtxdjNHcE1iMjdTcjJLb2lIazFiVkk9BjsARg%3D%3D--44459b3ff9d5326d16b0970dee0d112b6974bfa7;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - ac260141f795eaf0d6b94391f40952a9
+      X-Runtime:
+      - '0.029260'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Widget Garden</title>\n
+        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
+        type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
+        \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
+        type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
+        name=\"csrf-param\" />\n<meta content=\"ehxPrSHUGEWJt9bDgpRTlkqv3GpMb27Sr2KoiHk1bVI=\"
+        name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
+        \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
+        \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
+        \           <!-- .btn-navbar is used as the toggle for collapsed navbar content
+        -->\n            <a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">\n
+        \             <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n
+        \             <span class=\"icon-bar\"></span>\n            </a>\n\n            <!--
+        Be sure to leave the brand out there if you want it shown -->\n            <a
+        class=\"brand\" href=\"/\">G5 Widget Garden</a>\n\n            <!-- Everything
+        you want hidden at 940px or less, place within here -->\n            <div
+        class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
+        \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
+        \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
+        \     <a href=\"http://g5-widget-garden.herokuapp.com/components/html\" class=\"u-url
+        u-uid\" rel=\"bookmark\">HTML</a>\n    </h2>\n    <p class=\"p-summary\">A
+        word editor for adding text, lists, links, and headings</p>\n      <p>\n        <a
+        href=\"http://g5-widget-garden.herokuapp.com/static/components/html/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/html/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/html/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/html/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <ul class=\"unstyled\">\n          <li class=\"e-g5-property-group
+        h-g5-property-group\">\n            <h3><span class=\"p-name\">html</span>Property
+        Group</h3>\n  <p class=\"p-category\">Instance</p>\n  <div class=\"row\">\n
+        \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
+        e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
+        class=\"p-g5-name\">text</th>\n        </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
+        \             true\n            </td>\n          </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
+        \             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+        odio nibh, euismod a, lobortis in, laoreet eu, eros. Praesent lorem risus,
+        commodo sit amet, viverra in, sagittis nec, justo.\n            </td>\n          </tr>\n
+        \     </table>\n    </div>\n  </div>\n\n          </li>\n      </ul>\n  </header>\n
+        \ <hr>\n\n  <pre><code class=\"e-content\">&lt;!-- BEGIN EDIT FORM MARKUP
+        --&gt;\n&lt;form&gt;\n  &lt;div class=&quot;form-field&quot;&gt;\n    {{ widget.text.id_hidden_field
+        }}\n    &lt;label for=&quot;{{ widget.text.value_field_id }}&quot; &gt;\n
+        \     Enter text\n    &lt;/label&gt;\n    &lt;textarea\n      id=&quot;ckeditor&quot;\n
+        \     name=&quot;{{ widget.text.value_field_name }}&quot;\n     &gt;\n      {{
+        widget.text.best_value }}\n    &lt;/textarea&gt;\n  &lt;/div&gt;\n  &lt;input
+        type=&quot;submit&quot; value=&quot;Save&quot; class=&quot;btn&quot; /&gt;\n&lt;/form&gt;\n\n&lt;!--
+        END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n&lt;div class=&quot;html
+        widget&quot;&gt;\n  {{ widget.text.best_value }}\n&lt;/div&gt;\n\n&lt;!--
+        END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 18 Nov 2013 19:29:48 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/html/show.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Content-Type:
+      - text/html
+      Date:
+      - Mon, 18 Nov 2013 19:29:47 GMT
+      Last-Modified:
+      - Tue, 12 Nov 2013 19:59:11 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Content-Digest:
+      - 027476d4c3818d351c78906a7b0d854bafe5edf1
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '64'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<div class=\"html widget\">\n  {{ widget.text.best_value }}\n</div>\n"
+    http_version: 
+  recorded_at: Mon, 18 Nov 2013 19:29:48 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/html/edit.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Content-Type:
+      - text/html
+      Date:
+      - Mon, 18 Nov 2013 19:29:48 GMT
+      Last-Modified:
+      - Tue, 12 Nov 2013 19:59:11 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Content-Digest:
+      - b73f2b9fff9595a9263b1f670b515eb8b07bd4b2
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '362'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<form>\n  <div class=\"form-field\">\n    {{ widget.text.id_hidden_field
+        }}\n    <label for=\"{{ widget.text.value_field_id }}\" >\n      Enter text\n
+        \   </label>\n    <textarea\n      id=\"ckeditor\"\n      name=\"{{ widget.text.value_field_name
+        }}\"\n     >\n      {{ widget.text.best_value }}\n    </textarea>\n  </div>\n
+        \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
+    http_version: 
+  recorded_at: Mon, 18 Nov 2013 19:29:48 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/social-links
@@ -3355,20 +3946,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:46 GMT
+      - Mon, 18 Nov 2013 19:29:48 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWI3M2JjYjE1MWRhOWNjNjMyOTMyZWI1Nzk3MjIxY2EzBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWdNNW9kV3VGMHNITGFHaTJUcGk5aVphaGJpTWxVSldjK0c5ZWNWc3R2WHc9BjsARg%3D%3D--d9b832e3e1231ecde4b1135b498e2b1d88deac8d;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTY3MDUzYWUxZTEzMzQ5ZTgzNzRkYzM0MWQ2NjA5YjczBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVlCRmdnY29DVDJDK09Kb0JCZkFWVzZKOXY3dDd5aVJGdEdPOE1zYzN3TUE9BjsARg%3D%3D--e597b34e149509f7dac78c6bf0ea03721a4b1abc;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 57fe225647f2e6ad053b19f366c18d49
+      - e53310c03a1a3562c8285154bff00eec
       X-Runtime:
-      - '0.101388'
+      - '0.065446'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -3384,7 +3975,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"gM5odWuF0sHLaGi2Tpi9iZahbiMlUJWc+G9ecVstvXw=\"
+        name=\"csrf-param\" />\n<meta content=\"YBFggcoCT2C+OJoBBfAVW6J9v7t7yiRFtGO8Msc3wMA=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -3573,7 +4164,7 @@ http_interactions:
         rel=&quot;me&quot;&gt;YouTube&lt;/a&gt;\n  {% endif %}\n\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:47 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:48 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/show.html
@@ -3595,7 +4186,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:47 GMT
+      - Mon, 18 Nov 2013 19:29:48 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -3636,7 +4227,7 @@ http_interactions:
         }}\" class=\"youtube\" title=\"YouTube\" rel=\"me\">YouTube</a>\n  {% endif
         %}\n\n</div>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:47 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:49 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/edit.html
@@ -3658,7 +4249,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Wed, 13 Nov 2013 05:50:47 GMT
+      - Mon, 18 Nov 2013 19:29:48 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -3719,14 +4310,16 @@ http_interactions:
         widget.youtube_username.best_value }}\"\n      />\n    </div>\n\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:47 GMT
+  recorded_at: Mon, 18 Nov 2013 19:29:49 GMT
 - request:
     method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/stylesheets/social-links.css
+    uri: http://g5-layout-garden.herokuapp.com/
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      If-Modified-Since:
+      - ''
       Accept:
       - ! '*/*'
       User-Agent:
@@ -3736,822 +4329,286 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Age:
-      - '0'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       Content-Type:
-      - text/css
+      - text/html; charset=utf-8
       Date:
-      - Wed, 13 Nov 2013 05:50:47 GMT
-      Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
-      Server:
-      - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - db51f377394b9d74f129f57b5242db3b6a45371b
-      X-Rack-Cache:
-      - stale, valid, store
-      Content-Length:
-      - '66'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! ".social-links a {\n  display: inline-block;\n  margin-right: 5px;\n}\n"
-    http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:47 GMT
-- request:
-    method: get
-    uri: http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Age:
-      - '0'
-      Content-Type:
-      - text/css
-      Date:
-      - Wed, 13 Nov 2013 05:50:48 GMT
+      - Mon, 18 Nov 2013 19:32:34 GMT
       Last-Modified:
       - Wed, 06 Nov 2013 23:51:31 GMT
       Server:
       - thin 1.5.0 codename Knife
-      X-Content-Digest:
-      - b1ea26401884e82b4209a6ce13d45a6865812602
+      Set-Cookie:
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTI5ZTk5YmRlZjc3ZGMxZjhhODliMTRjZTJhZTEwNDlhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXNia3FlYXlYcUVMOFZySm1pWEJpTmZ4enFibFhONTNzZFlPbG45WUlzbEE9BjsARg%3D%3D--c69b439a16cb82106819c89239274d92db15ec48;
+        path=/; HttpOnly
       X-Rack-Cache:
-      - stale, valid, store
-      Content-Length:
-      - '351'
+      - miss
+      X-Request-Id:
+      - 11a2ab9fa593e39ef3160c5ef13dafc5
+      X-Runtime:
+      - '0.085483'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "@media (min-width: 980px) {\n  .wrapper:before,\n  .wrapper:after
-        {\n    display: table;\n    line-height: 0;\n    content: \"\";\n  }\n  .wrapper:after
-        {\n    clear: both;\n  }\n  .layout-side-left section[role=main] {\n    float:
-        right;\n  }\n  .layout-side-left aside[role=complementary] {\n    float: left;\n
-        \ }\n  footer[role=contentinfo] {\n    clear: both;\n  }\n}\n"
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Layout Garden</title>\n
+        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
+        type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
+        \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
+        type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
+        name=\"csrf-param\" />\n<meta content=\"sbkqeayXqEL8VrJmiXBiNfxzqblXN53sdYOln9YIslA=\"
+        name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
+        \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
+        class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
+        .btn-navbar is used as the toggle for collapsed navbar content -->\n            <a
+        class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">\n
+        \             <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n
+        \             <span class=\"icon-bar\"></span>\n            </a>\n\n            <!--
+        Be sure to leave the brand out there if you want it shown -->\n            <a
+        class=\"brand\" href=\"/\">G5 Layout Garden</a>\n\n            <!-- Everything
+        you want hidden at 940px or less, place within here -->\n            <div
+        class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
+        \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
+        \       <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
+        \     <a href=\"http://g5-layout-garden.herokuapp.com/components/main-first-single-column\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Main First Single Column</a>\n    </h2>\n
+        \   <p class=\"p-summary\">Single column layout, main section on top of sidebar
+        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/images/thumbnail.png</a>\n
+        \       </p>\n\n\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
+        class=&quot;single-column layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
+        class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
+        place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
+        collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
+        \             &lt;span id=&quot;drop-target-phone&quot;&gt;&lt;!-- phone widget
+        here --&gt;&lt;/span&gt;\n              &lt;span id=&quot;drop-target-btn&quot;&gt;&lt;!--
+        btn widget here --&gt;&lt;/span&gt;\n              &lt;a class=&quot;collapsable-btn
+        btn&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.collapsable-content&quot;&gt;&lt;span
+        class=&quot;text&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;bars&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;\n
+        \           &lt;/div&gt;\n\n            &lt;div id=&quot;drop-target-nav&quot;
+        class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
+        \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
+        class=&quot;wrapper&quot;&gt;\n\n        &lt;section role=&quot;main&quot;
+        id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;&lt;aside role=&quot;complementary&quot;
+        id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;\n&lt;/div&gt;\n\n      &lt;footer
+        role=&quot;contentinfo&quot;&gt;&lt;div id=&quot;drop-target-footer&quot;
+        class=&quot;content&quot;&gt;&lt;/div&gt;\n      &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n
+        \ <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
+        \     <a href=\"http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-left\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Main First Sidebar Left</a>\n    </h2>\n
+        \   <p class=\"p-summary\">Sidebar left layout. Main section on top of sidebar
+        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css\"
+        class=\"u-g5-stylesheet u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css</a>\n
+        \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
+        class=&quot;layout-side-left layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
+        class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
+        place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
+        collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
+        \             &lt;span id=&quot;drop-target-phone&quot;&gt;&lt;!-- phone widget
+        here --&gt;&lt;/span&gt;\n              &lt;span id=&quot;drop-target-btn&quot;&gt;&lt;!--
+        btn widget here --&gt;&lt;/span&gt;\n              &lt;a class=&quot;collapsable-btn
+        btn&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.collapsable-content&quot;&gt;&lt;span
+        class=&quot;text&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;bars&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;\n
+        \           &lt;/div&gt;\n\n            &lt;div id=&quot;drop-target-nav&quot;
+        class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
+        \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
+        class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
+        \         &lt;section role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;&lt;aside
+        role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;\n&lt;/div&gt;\n
+        \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
+        id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
+        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n  <article
+        class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n      <a
+        href=\"http://g5-layout-garden.herokuapp.com/components/aside-first-single-column\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Aside First Single Column</a>\n    </h2>\n
+        \   <p class=\"p-summary\">Single column layout, sidebar on top of main in
+        mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png</a>\n
+        \       </p>\n\n\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
+        class=&quot;single-column layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
+        class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
+        place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
+        collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
+        \             &lt;span id=&quot;drop-target-phone&quot;&gt;&lt;!-- phone widget
+        here --&gt;&lt;/span&gt;\n              &lt;span id=&quot;drop-target-btn&quot;&gt;&lt;!--
+        btn widget here --&gt;&lt;/span&gt;\n              &lt;a class=&quot;collapsable-btn
+        btn&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.collapsable-content&quot;&gt;&lt;span
+        class=&quot;text&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;bars&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;\n
+        \           &lt;/div&gt;\n\n            &lt;div id=&quot;drop-target-nav&quot;
+        class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
+        \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
+        class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
+        \         &lt;aside role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;&lt;section
+        role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;\n&lt;/div&gt;\n
+        \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
+        id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
+        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n  <article
+        class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n      <a
+        href=\"http://g5-layout-garden.herokuapp.com/components/aside-first-sidebar-right\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Aside First Sidebar Right</a>\n    </h2>\n
+        \   <p class=\"p-summary\">Sidebar right layout. Aside section on top of main
+        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/stylesheets/layout-side-right.css\"
+        class=\"u-g5-stylesheet u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/stylesheets/layout-side-right.css</a>\n
+        \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
+        class=&quot;layout-side-right layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
+        class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
+        place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
+        collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
+        \             &lt;span id=&quot;drop-target-phone&quot;&gt;&lt;!-- phone widget
+        here --&gt;&lt;/span&gt;\n              &lt;span id=&quot;drop-target-btn&quot;&gt;&lt;!--
+        btn widget here --&gt;&lt;/span&gt;\n              &lt;a class=&quot;collapsable-btn
+        btn&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.collapsable-content&quot;&gt;&lt;span
+        class=&quot;text&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;bars&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;\n
+        \           &lt;/div&gt;\n\n            &lt;div id=&quot;drop-target-nav&quot;
+        class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
+        \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
+        class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
+        \         &lt;aside role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;&lt;section
+        role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;\n&lt;/div&gt;\n
+        \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
+        id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
+        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n  <article
+        class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n      <a
+        href=\"http://g5-layout-garden.herokuapp.com/components/aside-first-sidebar-left\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Aside First Sidebar Left</a>\n    </h2>\n
+        \   <p class=\"p-summary\">Sidebar left layout. Aside section on top of main
+        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/stylesheets/layout-side-left.css\"
+        class=\"u-g5-stylesheet u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/stylesheets/layout-side-left.css</a>\n
+        \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
+        class=&quot;layout-side-left layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
+        class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
+        place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
+        collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
+        \             &lt;span id=&quot;drop-target-phone&quot;&gt;&lt;!-- phone widget
+        here --&gt;&lt;/span&gt;\n              &lt;span id=&quot;drop-target-btn&quot;&gt;&lt;!--
+        btn widget here --&gt;&lt;/span&gt;\n              &lt;a class=&quot;collapsable-btn
+        btn&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.collapsable-content&quot;&gt;&lt;span
+        class=&quot;text&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;bars&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;\n
+        \           &lt;/div&gt;\n\n            &lt;div id=&quot;drop-target-nav&quot;
+        class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
+        \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
+        class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
+        \         &lt;aside role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;&lt;section
+        role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;\n&lt;/div&gt;\n
+        \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
+        id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
+        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n  <article
+        class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n      <a
+        href=\"http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-right\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Main First Sidebar Right</a>\n    </h2>\n
+        \   <p class=\"p-summary\">Sidebar right layout. Main section on top of sidebar
+        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/stylesheets/layout-side-right.css\"
+        class=\"u-g5-stylesheet u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/stylesheets/layout-side-right.css</a>\n
+        \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
+        class=&quot;layout-side-right layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
+        class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
+        place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
+        collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
+        \             &lt;span id=&quot;drop-target-phone&quot;&gt;&lt;!-- phone widget
+        here --&gt;&lt;/span&gt;\n              &lt;span id=&quot;drop-target-btn&quot;&gt;&lt;!--
+        btn widget here --&gt;&lt;/span&gt;\n              &lt;a class=&quot;collapsable-btn
+        btn&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.collapsable-content&quot;&gt;&lt;span
+        class=&quot;text&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;bars&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;\n
+        \           &lt;/div&gt;\n\n            &lt;div id=&quot;drop-target-nav&quot;
+        class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
+        \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
+        class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
+        \         &lt;section role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;&lt;aside
+        role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;\n&lt;/div&gt;\n
+        \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
+        id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
+        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
+        \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:48 GMT
+  recorded_at: Mon, 18 Nov 2013 19:32:34 GMT
 - request:
     method: get
-    uri: http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss
+    uri: http://g5-layout-garden.herokuapp.com/
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      If-Modified-Since:
+      - Wed, 06 Nov 2013 23:51:31 GMT
       Accept:
       - ! '*/*'
       User-Agent:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
-      Age:
-      - '0'
-      Content-Type:
-      - text/plain
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       Date:
-      - Wed, 13 Nov 2013 05:50:49 GMT
-      Last-Modified:
-      - Wed, 06 Nov 2013 22:15:25 GMT
+      - Mon, 18 Nov 2013 19:32:34 GMT
       Server:
       - thin 1.5.0 codename Knife
-      X-Content-Digest:
-      - 6dde5a2371783dea0a8380fbf9dfca7535fd666d
-      X-Rack-Cache:
-      - stale, valid, store
-      Content-Length:
-      - '13789'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! "@import 'colors.scss';\n@import 'https://fonts.googleapis.com/css?family=Cinzel:400,700,900';\n\n/*\nTABLE
-        OF CONTENTS\n-------------------------------------------\nINCLUDED IN CLIENT
-        HUB:\n  - normalize\n  - special styles\n\nTHIS FILE:\n  - helpers/mixins\n
-        \ - sass variables\n  - base styles\n  - layout\n  - header/footer\n  - main/aside\n
-        \ - widgets\n  - media queries\n*/\n\n// HELPERS =======================\n@mixin
-        font-size($value) {\n  font-size: $value + px;\n  font-size: ($value / 10)
-        + rem;\n}\n@mixin box-shadow($properties) {\n  box-shadow:         $properties;\n
-        \ -moz-box-shadow:    $properties;\n  -webkit-box-shadow: $properties;\n}\n@mixin
-        stripes($color1, $color2, $size) {\n  background-image: -webkit-linear-gradient(right
-        bottom, $color1 15%, $color2 15%, $color2 50%, $color1 50%, $color1 65%, $color2
-        65%);\n  background-image: -moz-linear-gradient(right bottom, $color1 15%,
-        $color2 15%, $color2 50%, $color1 50%, $color1 65%, $color2 65%);\n  background-image:
-        -ms-linear-gradient(right bottom, $color1 15%, $color2 15%, $color2 50%, $color1
-        50%, $color1 65%, $color2 65%);\n  background-image: -o-linear-gradient(right
-        bottom, $color1 15%, $color2 15%, $color2 50%, $color1 50%, $color1 65%, $color2
-        65%);\n  background-image: linear-gradient(right bottom, $color1 15%, $color2
-        15%, $color2 50%, $color1 50%, $color1 65%, $color2 65%);\n  background-size:
-        $size $size;\n}\n@mixin border-box {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing:
-        border-box;\n  box-sizing: border-box;\n}\n@mixin image-replacement {\n  display:
-        inline-block;\n  text-indent : -999em;\n  white-space : nowrap;\n  overflow
-        : hidden;\n}\n@mixin clearfix {\n  &:after {\n    content: \"\";\n    display:
-        table;\n    clear: both;\n  }\n}\n.hidden {\n  display: none;\n  visibility:
-        hidden;\n}\n\n\n// VARIABLES\n$text: #504e4e;\n$sans-serif: arial, helvetica,
-        sans-serif;\n$serif: 'Cinzel', serif;\n$dots: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAPCAIAAAHt9hMZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6N0RBOEYzNTNEQkE5MTFFMTgwMkJFNjk4ODI1NkM0ODEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6N0RBOEYzNTREQkE5MTFFMTgwMkJFNjk4ODI1NkM0ODEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3REE4RjM1MURCQTkxMUUxODAyQkU2OTg4MjU2QzQ4MSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3REE4RjM1MkRCQTkxMUUxODAyQkU2OTg4MjU2QzQ4MSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ph88gYkAAAB1SURBVHjaYnjz5s1/MAAyGIEUAwwABBADRAxIIoQBAghVAQwwvX37FsJCZgAEEEI/MgOHCQzYABO6iWAAEEDYTcBuAHaHYWOQYioD0QAggLCHAbGhQr7VTMR4mQRfD5S9AAFGQqxQP0lQ2S8kuJGB2mBk+hoAwlXWrXM6SBoAAAAASUVORK5CYII=';\n\n$static-assets-url:
-        'http://g5-widget-garden.herokuapp.com/static/images';\n\n// GENERAL =========================\nhtml
-        {\n  height: 100%;\n  font-size: 62.5%;\n}\nbody {\n  background: #fff url($dots)
-        0 0 repeat;\n  color: $text;\n  font-size: 16px;\n  font-family: $sans-serif;\n
-        \ min-height: 100%;\n  position: relative;\n}\nh1, h2, h3, h4, h5, h6 {\n
-        \ font-weight: normal;\n  margin-top: 0;\n}\nh2,\n.widget .heading {\n  @include
-        font-size(24);\n  border-bottom: 1px solid $secondaryColor;\n  color: $secondaryColor;\n
-        \ text-transform: uppercase;\n}\nheader[role=banner],\nh1, h2, h3, h4, h5,
-        h6,\n.action-calls,\n.widget .heading {\n  font-family: $serif;\n  font-weight:
-        400;\n}\na {\n  color: $primaryColor;\n  &:hover,\n  &:focus {\n    text-decoration:
-        underline;\n  }\n}\nform {\n  .field {\n    margin-bottom: 1em;\n  }\n  textarea,\n
-        \ input:not([type=submit]) {\n    padding: .3em .5em .2em;\n  }\n}\ninput,\nlabel
-        {\n  @include font-size(18);\n}\ninput:not([type=submit]),\ntextarea {\n  @include
-        border-box;\n  background: #e1e1e1;\n  border: none;\n  width: 100%;\n  font-family:
-        $sans-serif;\n}\ninput[type=checkbox],\ninput[type=radio] {\n  width: auto;\n}\ntextarea
-        {\n  height: 5em;\n}\nlabel {\n  font-family: $serif;\n}\n\n// LAYOUT ========================\n.wrapper
-        .content,\nheader[role=banner] {\n  max-width: 1600px;\n  width: 100%;\n}\n.wrapper
-        .content {\n  @include clearfix;\n}\nheader[role=banner],\nsection[role=main],\naside[role=complementary],\nfooter[role=contentinfo],\n.wrapper
-        {\n  @include border-box;\n  position: relative;\n}\nheader[role=banner],\nfooter[role=contentinfo],\nsection[role=main],\naside[role=complementary]
-        {\n  padding-left: 2.5%;\n  padding-right: 2.5%;\n}\nsection[role=main],\naside[role=complementary]
-        {\n  padding-bottom: 2em;\n}\nfooter[role=contentinfo] {\n  max-width: 1184px;\n}\n\n//
-        HEADER/FOOTER STYLES =========================\nheader[role=banner] {\n  @include
-        clearfix;\n  margin-bottom: 1em;\n  position: relative;\n  text-transform:
-        uppercase;\n  h1 {\n    margin: 0 auto;\n    width: 75%;\n  }\n  .tel {\n
-        \   display: none !important;\n  }\n}\n#drop-target-logo {\n  @include clearfix;\n
-        \ overflow: hidden;\n}\nfooter[role=contentinfo] {\n  @include font-size(12);\n
-        \ clear: both;\n  color: $primaryColor;\n  padding-bottom: 1em;\n  padding-top:
-        3.5em;\n  position: relative;\n  text-transform: uppercase;\n  &:before {\n
-        \   @include stripes($primaryColor, transparent, 4px);\n    content: '';\n
-        \   display: block;\n    height: 10px;\n    left: 2.5%;\n    position: absolute;\n
-        \   top: 10px;\n    width: 95%;\n  }\n  &:after {\n    background: $primaryColor;\n
-        \   content: '';\n    display: block;\n    height: 2px;\n    left: 2.5%;\n
-        \   position: absolute;\n    top: 24px;\n    width: 95%;\n  }\n  nav {\n    margin-bottom:
-        1em;\n    li,\n    ul a {\n      display: inline;\n    }\n  }\n  li:first-child
-        a {\n    padding-left: 0;\n  }\n  li:before {\n    color: $primaryColor;\n
-        \   content: '|';\n    padding: 0 .5em;\n  }\n  li:first-child:before {\n
-        \   content: '';\n    padding: 0;\n  }\n}\n\n// NAVIGATION ========================\n.collapsable-btn
-        {\n  background: $secondaryColor;\n  cursor: pointer;\n  padding: .2em .4em;\n
-        \ .text {\n    display: none;\n  }\n  .bars span {\n    border-bottom: 1px
-        solid #fff;\n    display: block;\n    margin: .35em 0;\n    width: 1.2em;\n
-        \ }\n  &:first-child {\n    margin-top: 0;\n  }\n}\n\n\n// WIDGET STYLES =======================\n.btn,\ninput[type=submit]
-        {\n  background: $secondaryColor;\n  color: #fff;\n  padding: .3em .5em;\n
-        \ border: none;\n  cursor: pointer;\n}\nsection[role=main] .widget {\n  margin-bottom:
-        2em;\n}\n.social-links {\n  a {\n    background: url(#{$static-assets-url}/social-icons.png)
-        no-repeat;\n    width: 44px;\n    height: 44px;\n    text-indent: -999em;\n
-        \   overflow: hidden;\n  }\n  a:last-child {\n    margin-right: 0;\n  }\n
-        \ .twitter {\n    background-position: 0 0;\n  }\n  .tumblr {\n    background-position:
-        0 -60px;\n  }\n  .facebook {\n    background-position: 0 -120px;\n  }\n  .instagram
-        {\n    background-position: 0 -180px;\n  }\n  .vimeo {\n    background-position:
-        0 -240px;\n  }\n  .yelp {\n    background-position: 0 -300px;\n  }\n  .foursquare
-        {\n    background-position: 0 -360px;\n  }\n  .pinterest {\n    background-position:
-        0 -420px;\n  }\n  .youtube {\n    background-position: 0 -480px;\n  }\n}\n.floorplans
-        {\n  .color {\n    color: $primaryColor;\n  }\n}\n.floorplan-container {\n
-        \ background: #fff;\n}\n.floorplan-btn {\n  &:hover,\n  &:focus {\n    border-color:
-        #888;\n    text-decoration: none;\n  }\n}\n.floorplan-img {\n  width: 10%;\n}\n.gallery
-        {\n  .photo {\n    margin: 2em 0 1em;\n  }\n  img {\n    display: block;\n
-        \ }\n}\n.gallery-navigation {\n  a {\n    margin: 0 1em 1em 0;\n  }\n  span
-        {\n    background: $primaryColor;\n    border-radius: 50%;\n    cursor: pointer;\n
-        \   display: inline-block;\n    height: 12px;\n    overflow: hidden;\n    text-indent:
-        -999em;\n    width: 12px;\n  }\n}\n.twitter-feed,\n.blog-feed {\n  @include
-        font-size(14);\n}\naside[role=complementary] {\n  .widget {\n    margin-top:
-        2em;\n  }\n  .contact-info {\n    color: #707070;\n    font-family: $serif;\n
-        \   text-align: center;\n    text-transform: uppercase;\n    p {\n      border-top:
-        1px dotted #707070;\n      padding: .5em;\n      &:first-child {\n        border-top:
-        none;\n      }\n    }\n  }\n}\n.coupon {\n  h2 {\n    @include font-size(18);\n
-        \   border-bottom-color: $secondaryColor;\n    color: $secondaryColor;\n    padding-bottom:
-        .5em;\n    margin-bottom: 2em;\n    text-align: center;\n  }\n  .coupon-logo
-        {\n    display: block;\n    max-width: 60%;\n    margin: 1em auto 2em;\n  }\n
-        \ .p-name {\n    @include font-size(14);\n  }\n  .p-street-address,\n  .p-tel
-        {\n    display: block;\n  }\n  .btn {\n    @include border-box;\n    @include
-        font-size(14);\n    display: inline-block;\n    text-decoration: none;\n    margin:
-        0;\n    padding: .4em;\n    text-align: center;\n  }\n  .coupon-print {\n
-        \   width: 100%;\n    margin-bottom: 1%;\n  }\n  .coupon-email,\n  .coupon-text
-        {\n    width: 49.5%;\n  }\n  .coupon-email {\n    margin-right: 1%;\n  }\n}\n\n@media
-        (min-width: 768px) {\n  .coupon-info,\n  .coupon-map {\n    @include border-box;\n
-        \   float: left;\n    width: 50%;\n  }\n  [role=main] {\n    .coupon {\n      @include
-        clearfix;\n      .coupon-info {\n        padding-right: 1%;\n      }\n      .coupon-map
-        {\n        padding-left: 1%;\n      }\n      h2 {\n        @include font-size(26);\n
-        \     }\n      .btn {\n        @include font-size(16);\n      }\n    }\n  }\n}\n\n//
-        SMALLER THAN DESKTOP =====================\n@media (max-width: 979px) {\n
-        \ header[role=banner] {\n    @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.5));\n
-        \   background: #efedee;\n    h1 {\n      margin: 2em auto 1em;\n    }\n    .buttons
-        {\n      position: absolute;\n      right: 2.5%;\n      top: .375em;\n    }\n
-        \   .btn {\n      display: inline-block;\n      margin-left: .5em;\n      vertical-align:
-        top;\n    }\n  }\n  header[role=banner] nav,\n  .action-calls {\n    background:
-        $primaryColor;\n    text-align: center;\n    a {\n      @include font-size(18);\n
-        \     color: #fff;\n      display: block;\n      padding: .5em;\n    }\n    li
-        {\n      border-top: 1px solid;\n      border-top-color: #fff;\n      border-top-color:
-        rgba(255, 255, 255, .5);\n      &:first-child {\n        border-top: none;\n
-        \     }\n    }\n  }\n}\n\n// IPAD AND LARGER =====================\n@media
-        (min-width: 768px) {\n  input:not([type=submit]),\n  textarea {\n    width:
-        50%;\n  }\n  input[type=checkbox],\n  input[type=radio] {\n    width: auto;\n
-        \ }\n  header[role=banner] {\n    padding-top: 1em;\n    h1 {\n      float:
-        left;\n      margin: 0;\n    }\n    nav {\n      clear: left;\n    }\n  }\n
-        \ footer[role=contentinfo] {\n    .copyright,\n    .dxm {\n      clear: right;\n
-        \     float: right;\n    }\n    .widget:not(.navigation) {\n      float: left;\n
-        \     margin-right: 40px;\n    }\n    .navigation {\n      li {\n        display:
-        inline-block;\n        &:before {\n          content: '/';\n        }\n        &:first-child:before
-        {\n          content: '';\n        }\n      }\n    }\n  }\n}\n\n\n// SMALL
-        DESKTOP AND LARGER =====================\n@media (min-width: 980px) {\n  body:before
-        {\n    @include box-shadow(1px 0 3px rgba(0, 0, 0, .3));\n    background:
-        #efedee;\n    bottom: 0;\n    content: '';\n    display: block;\n    left:
-        0;\n    position: absolute;\n    top: 0;\n    width: 26%;\n    max-width:
-        416px;\n  }\n  h2,\n  .widget .heading {\n    @include font-size(24);\n  }\n
-        \ header[role=banner] {\n    padding: 40px 0 0;\n    h1 {\n      position:
-        absolute;\n      left: 2.5%;\n      top: 3.5em;\n      width: 22%;\n      z-index:
-        10;\n      a {\n        margin: 0;\n      }\n    }\n    &:before {\n      @include
-        box-shadow(0 1px 4px -1px rgba(0, 0, 0, .5));\n      background: $primaryColor;\n
-        \     bottom: 0;\n      content: '';\n      display: block;\n      left: 0;\n
-        \     padding-right: 15px;\n      position: absolute;\n      top: 40px;\n
-        \     width: 26%;\n      z-index: 10;\n    }\n    .buttons {\n      display:
-        none;\n    }\n    nav {\n      @include border-box;\n      @include box-shadow(0
-        1px 4px -1px rgba(0, 0, 0, .5));\n      background: $primaryColor;\n      left:
-        26%;\n      padding: .5em .5em .5em 30px;\n      position: relative;\n      top:
-        15px;\n      width: 74%;\n      a {\n        color: #fff;\n        padding:
-        0 1em;\n      }\n      a:hover,\n      a:focus {\n        text-decoration:
-        underline;\n      }\n      &:before {\n        border: 15px solid transparent;\n
-        \       border-left-color: rgba(0, 0, 0, .8);\n        bottom: 0;\n        content:
-        '';\n        display: block;\n        height: 0;\n        left: 0;\n        position:
-        absolute;\n        width: 0;\n      }\n      li {\n        border-top: none;\n
-        \       display: inline-block;\n      }\n    }\n  }\n  .footer li:before {\n
-        \   color: $primaryColor;\n  }\n  section[role=main] {\n    padding: 2em 2.5%
-        1em;\n    overflow: hidden;\n    width: 74%;\n  }\n  aside[role=complementary]
-        {\n    background: transparent;\n    padding-top: 150px;\n    width: 26%;\n
-        \ }\n  footer[role=contentinfo] {\n    margin-left: 26%;\n    width: 74%;\n
-        \   .content {\n      @include clearfix;\n    }\n  }\n  .action-calls {\n
-        \   background: #fff;\n    border-radius: 10px;\n    font-size: 18px;\n    a
-        {\n      border-top: 1px solid $primaryColor;\n      display: block;\n      padding:
-        .5em 1em;\n      &:hover,\n      &:focus {\n        background: $primaryColor;\n
-        \       color: #fff;\n        text-decoration: none;\n      }\n    }\n    li:first-child
-        a {\n      border-top: none;\n      &:hover,\n      &:focus {\n        border-radius:
-        10px 10px 0 0;\n      }\n    }\n    li:nth-child(4n) a:hover,\n      li:nth-child(4n)
-        a:focus {\n      border-radius: 0 0 10px 10px;\n    }\n  }\n  .gallery-navigation
-        a {\n    margin-right: .2em;\n  }\n}\n@media (min-width: 1600px) {\n  footer[role=contentinfo]
-        {\n    margin-left: 416px;\n    width: 1184px;\n  }\n  section[role=main]
-        {\n    width: 1184px;\n  }\n  aside[role=complementary] {\n    width: 416px;\n
-        \ }\n}\n"
-    http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:49 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/stylesheets/social-links.css
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Age:
-      - '0'
-      Content-Type:
-      - text/css
-      Date:
-      - Wed, 13 Nov 2013 05:50:49 GMT
-      Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
-      Server:
-      - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - db51f377394b9d74f129f57b5242db3b6a45371b
-      X-Rack-Cache:
-      - stale, valid, store
-      Content-Length:
-      - '66'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! ".social-links a {\n  display: inline-block;\n  margin-right: 5px;\n}\n"
-    http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:50 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/stylesheets/contact-info.css
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Age:
-      - '0'
-      Content-Type:
-      - text/css
-      Date:
-      - Wed, 13 Nov 2013 05:50:50 GMT
-      Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
-      Server:
-      - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - 7a6e8abe04328b26bc9e5ebca437f60f35a1b454
-      X-Rack-Cache:
-      - stale, valid, store
-      Content-Length:
-      - '194'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! ".contact-info .p-organization-name,\n.contact-info .h-adr,\n.contact-info
-        .p-street-address,\n.contact-info .p-tel,\n.contact-info .p-url,\n {\n  display:
-        block;\n}\n.contact-info p {\n  margin-top: 0;\n}"
-    http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:50 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/hours/stylesheets/hours.css
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Age:
-      - '0'
-      Content-Type:
-      - text/css
-      Date:
-      - Wed, 13 Nov 2013 05:50:50 GMT
-      Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
-      Server:
-      - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - 73794a32b048ba25b65eab0fb806a6debe958cd0
-      X-Rack-Cache:
-      - stale, valid, store
-      Content-Length:
-      - '30'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! ".hours p {\n  margin-top: 0;\n}\n"
-    http_version: 
-  recorded_at: Wed, 13 Nov 2013 05:50:50 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/components/photo
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - text/html; charset=utf-8
-      Date:
-      - Mon, 18 Nov 2013 19:29:11 GMT
-      Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
-      Server:
-      - thin 1.5.1 codename Straight Razor
-      Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWFlMWFlYWJjMTBkYTliYjljNTAzYzQ3ZDQ4MjJmYzBkBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUxjTFdidHdlbzZpc0ZaUTZsY2tqblN0c2puNzN4d0E1anJCalU0N2hWSzg9BjsARg%3D%3D--98b0d4a2eeff4325c8b7d93b80630999cca694c5;
-        path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 74dcc10e87ad0780494c9fb59dc640ea
+      - 824bb633292255437dec091d972abf6b
       X-Runtime:
-      - '0.122108'
+      - '0.004775'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Transfer-Encoding:
-      - chunked
       Connection:
       - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Widget Garden</title>\n
-        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
-        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
-        type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
-        \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
-        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
-        type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"LcLWbtweo6isFZQ6lckjnStsjn73xwA5jrBjU47hVK8=\"
-        name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
-        \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
-        \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
-        \           <!-- .btn-navbar is used as the toggle for collapsed navbar content
-        -->\n            <a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">\n
-        \             <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n
-        \             <span class=\"icon-bar\"></span>\n            </a>\n\n            <!--
-        Be sure to leave the brand out there if you want it shown -->\n            <a
-        class=\"brand\" href=\"/\">G5 Widget Garden</a>\n\n            <!-- Everything
-        you want hidden at 940px or less, place within here -->\n            <div
-        class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
-        \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
-        \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
-        \     <a href=\"http://g5-widget-garden.herokuapp.com/components/photo\" class=\"u-url
-        u-uid\" rel=\"bookmark\">Photo</a>\n    </h2>\n    <p class=\"p-summary\">A
-        single image</p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/photo/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/photo/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/photo/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/photo/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-widget-garden.herokuapp.com/static/components/photo/images/thumbnail.png</a>\n
-        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/photo/stylesheets/photo.css\"
-        class=\"u-g5-stylesheet u-url\">http://g5-widget-garden.herokuapp.com/static/components/photo/stylesheets/photo.css</a>\n
-        \       </p>\n      <ul class=\"unstyled\">\n          <li class=\"e-g5-property-group
-        h-g5-property-group\">\n            <h3><span class=\"p-name\">Photo</span>Property
-        Group</h3>\n  <p class=\"p-category\">Instance</p>\n  <div class=\"row\">\n
-        \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
-        e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
-        class=\"p-g5-name\">photo_url</th>\n        </tr>\n          <tr>\n            <th
-        style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
-        \             true\n            </td>\n          </tr>\n          <tr>\n            <th
-        style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
-        \             http://placehold.it/600x400&amp;text=IMAGE+PLACEHOLDER\n            </td>\n
-        \         </tr>\n      </table>\n    </div>\n  </div>\n  <div class=\"row\">\n
-        \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
-        e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
-        class=\"p-g5-name\">photo_caption</th>\n        </tr>\n          <tr>\n            <th
-        style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
-        \             true\n            </td>\n          </tr>\n          <tr>\n            <th
-        style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
-        \             \n            </td>\n          </tr>\n      </table>\n    </div>\n
-        \ </div>\n  <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
-        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
-        \         <th>Name</th>\n          <td class=\"p-g5-name\">photo_alignment</th>\n
-        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
-        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
-        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
-        Value</th>\n            <td class=\"p-g5-default-value\">\n              photo-block\n
-        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n\n
-        \         </li>\n      </ul>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;!--
-        BEGIN EDIT FORM MARKUP --&gt;\n&lt;form&gt;\n  &lt;div class=&quot;form-field&quot;&gt;\n
-        \   {{ widget.photo_url.id_hidden_field }}\n    &lt;label for=&quot;{{ widget.photo_url.value_field_id
-        }}&quot; &gt;\n      URL\n    &lt;/label&gt;\n    &lt;input type=&quot;text&quot;\n
-        \     id=&quot;{{ widget.photo_url.value_field_id }}&quot;\n      name=&quot;{{
-        widget.photo_url.value_field_name }}&quot;\n      value=&quot;{{ widget.photo_url.best_value
-        | url_encode }}&quot;\n    /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
-        \   {{ widget.photo_caption.id_hidden_field }}\n    &lt;label for=&quot;{{
-        widget.photo_caption.value_field_id }}&quot; &gt;\n      Caption\n    &lt;/label&gt;\n
-        \   &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.photo_caption.value_field_id
-        }}&quot;\n      name=&quot;{{ widget.photo_caption.value_field_name }}&quot;\n
-        \     value=&quot;{{ widget.photo_caption.best_value }}&quot;\n    /&gt;\n
-        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field check-field&quot;&gt;\n
-        \   &lt;fieldset&gt;\n    &lt;legend&gt;Photo Alignment&lt;/legend&gt;\n      {{
-        widget.photo_alignment.id_hidden_field }}\n      &lt;input type=&quot;radio&quot;\n
-        \       id=&quot;{{ widget.photo_alignment.value_field_id }}_left&quot;\n
-        \       name=&quot;{{ widget.photo_alignment.value_field_name }}&quot;\n        value=&quot;photo-left&quot;\n
-        \       checked=&quot;checked&quot;\n      /&gt;\n      &lt;label for=&quot;{{
-        widget.photo_alignment.value_field_id }}_left&quot; &gt;\n        Left\n      &lt;/label&gt;\n
-        \     &lt;input type=&quot;radio&quot;\n        id=&quot;{{ widget.photo_alignment.value_field_id
-        }}_right&quot;\n        name=&quot;{{ widget.photo_alignment.value_field_name
-        }}&quot;\n        value=&quot;photo-right&quot;\n        {% if widget.photo_alignment.best_value
-        == &quot;photo-right&quot; %}\n        checked=&quot;checked&quot;\n        {%
-        endif %}\n      /&gt;\n      &lt;label for=&quot;{{ widget.photo_alignment.value_field_id
-        }}_right&quot; &gt;\n        Right\n      &lt;/label&gt;\n      &lt;input
-        type=&quot;radio&quot;\n        id=&quot;{{ widget.photo_alignment.value_field_id
-        }}_block&quot;\n        name=&quot;{{ widget.photo_alignment.value_field_name
-        }}&quot;\n        value=&quot;photo-block&quot;\n        {% if widget.photo_alignment.best_value
-        == &quot;photo-block&quot; %}\n        checked=&quot;checked&quot;\n        {%
-        endif %}\n      /&gt;\n      &lt;label for=&quot;{{ widget.photo_alignment.value_field_id
-        }}_block&quot; &gt;\n        Block\n      &lt;/label&gt;\n    &lt;/fieldset&gt;\n
-        \ &lt;/div&gt;\n\n  &lt;input type=&quot;submit&quot; value=&quot;Save&quot;
-        class=&quot;btn&quot; /&gt;\n&lt;/form&gt;\n\n&lt;!-- END EDIT FORM MARKUP
-        --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n&lt;figure class=&quot;photo {{
-        widget.photo_alignment.best_value }} widget h-media&quot; itemscope itemtype=&quot;http://schema.org/Photograph&quot;&gt;\n
-        \ &lt;img class=&quot;u-photo&quot; src=&quot;{{ widget.photo_url.best_value
-        | url_encode }}&quot; itemprop=&quot;image&quot; /&gt;\n  {% if widget.photo_caption.best_value
-        != &quot;&quot; %}\n    &lt;figcaption class=&quot;p-name&quot; itemprop=&quot;description&quot;&gt;{{
-        widget.photo_caption.best_value }}&lt;/figcaption&gt;\n  {% endif %}\n&lt;/figure&gt;\n\n&lt;!--
-        END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
-    http_version: 
-  recorded_at: Mon, 18 Nov 2013 19:29:12 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/photo/show.html
     body:
       encoding: US-ASCII
       string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Age:
-      - '0'
-      Content-Type:
-      - text/html
-      Date:
-      - Mon, 18 Nov 2013 19:29:12 GMT
-      Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
-      Server:
-      - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - 61a213928396f36592da96eddc7787170c1f665f
-      X-Rack-Cache:
-      - stale, valid, store
-      Content-Length:
-      - '402'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! "<figure class=\"photo {{ widget.photo_alignment.best_value }} widget
-        h-media\" itemscope itemtype=\"http://schema.org/Photograph\">\n  <img class=\"u-photo\"
-        src=\"{{ widget.photo_url.best_value | url_encode }}\" itemprop=\"image\"
-        />\n  {% if widget.photo_caption.best_value != \"\" %}\n    <figcaption class=\"p-name\"
-        itemprop=\"description\">{{ widget.photo_caption.best_value }}</figcaption>\n
-        \ {% endif %}\n</figure>\n"
     http_version: 
-  recorded_at: Mon, 18 Nov 2013 19:29:12 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/photo/edit.html
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Age:
-      - '0'
-      Content-Type:
-      - text/html
-      Date:
-      - Mon, 18 Nov 2013 19:29:12 GMT
-      Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
-      Server:
-      - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - b0910733969d760b7f8ea64536b8b813daac5e6d
-      X-Rack-Cache:
-      - stale, valid, store
-      Content-Length:
-      - '2062'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! "<form>\n  <div class=\"form-field\">\n    {{ widget.photo_url.id_hidden_field
-        }}\n    <label for=\"{{ widget.photo_url.value_field_id }}\" >\n      URL\n
-        \   </label>\n    <input type=\"text\"\n      id=\"{{ widget.photo_url.value_field_id
-        }}\"\n      name=\"{{ widget.photo_url.value_field_name }}\"\n      value=\"{{
-        widget.photo_url.best_value | url_encode }}\"\n    />\n  </div>\n\n  <div
-        class=\"form-field\">\n    {{ widget.photo_caption.id_hidden_field }}\n    <label
-        for=\"{{ widget.photo_caption.value_field_id }}\" >\n      Caption\n    </label>\n
-        \   <input type=\"text\"\n      id=\"{{ widget.photo_caption.value_field_id
-        }}\"\n      name=\"{{ widget.photo_caption.value_field_name }}\"\n      value=\"{{
-        widget.photo_caption.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field
-        check-field\">\n    <fieldset>\n    <legend>Photo Alignment</legend>\n      {{
-        widget.photo_alignment.id_hidden_field }}\n      <input type=\"radio\"\n        id=\"{{
-        widget.photo_alignment.value_field_id }}_left\"\n        name=\"{{ widget.photo_alignment.value_field_name
-        }}\"\n        value=\"photo-left\"\n        checked=\"checked\"\n      />\n
-        \     <label for=\"{{ widget.photo_alignment.value_field_id }}_left\" >\n
-        \       Left\n      </label>\n      <input type=\"radio\"\n        id=\"{{
-        widget.photo_alignment.value_field_id }}_right\"\n        name=\"{{ widget.photo_alignment.value_field_name
-        }}\"\n        value=\"photo-right\"\n        {% if widget.photo_alignment.best_value
-        == \"photo-right\" %}\n        checked=\"checked\"\n        {% endif %}\n
-        \     />\n      <label for=\"{{ widget.photo_alignment.value_field_id }}_right\"
-        >\n        Right\n      </label>\n      <input type=\"radio\"\n        id=\"{{
-        widget.photo_alignment.value_field_id }}_block\"\n        name=\"{{ widget.photo_alignment.value_field_name
-        }}\"\n        value=\"photo-block\"\n        {% if widget.photo_alignment.best_value
-        == \"photo-block\" %}\n        checked=\"checked\"\n        {% endif %}\n
-        \     />\n      <label for=\"{{ widget.photo_alignment.value_field_id }}_block\"
-        >\n        Block\n      </label>\n    </fieldset>\n  </div>\n\n  <input type=\"submit\"
-        value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
-  recorded_at: Mon, 18 Nov 2013 19:29:12 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/components/html
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - text/html; charset=utf-8
-      Date:
-      - Mon, 18 Nov 2013 19:29:12 GMT
-      Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
-      Server:
-      - thin 1.5.1 codename Straight Razor
-      Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTk5MGYyZjIxNzFmNjkzNzk4MzYxNWEyYTViNDFlZmU5BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTBIQTRIbGswVVZXSi8wZ0NxbEwvMjJLQ256WnBFS3BkbElXZlV3L2cxN2c9BjsARg%3D%3D--8fd51fa4bd72eef0c0ff6a26b6ed562a5fb61437;
-        path=/; HttpOnly
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - e467a9d9b1f1e71d9357beb8202f6a7d
-      X-Runtime:
-      - '0.080227'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Widget Garden</title>\n
-        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
-        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
-        type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
-        \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
-        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
-        type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"0HA4Hlk0UVWJ/0gCqlL/22KCnzZpEKpdlIWfUw/g17g=\"
-        name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
-        \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
-        \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
-        \           <!-- .btn-navbar is used as the toggle for collapsed navbar content
-        -->\n            <a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">\n
-        \             <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n
-        \             <span class=\"icon-bar\"></span>\n            </a>\n\n            <!--
-        Be sure to leave the brand out there if you want it shown -->\n            <a
-        class=\"brand\" href=\"/\">G5 Widget Garden</a>\n\n            <!-- Everything
-        you want hidden at 940px or less, place within here -->\n            <div
-        class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
-        \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
-        \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
-        \     <a href=\"http://g5-widget-garden.herokuapp.com/components/html\" class=\"u-url
-        u-uid\" rel=\"bookmark\">HTML</a>\n    </h2>\n    <p class=\"p-summary\">A
-        word editor for adding text, lists, links, and headings</p>\n      <p>\n        <a
-        href=\"http://g5-widget-garden.herokuapp.com/static/components/html/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/html/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/html/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/html/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png</a>\n
-        \       </p>\n\n\n      <ul class=\"unstyled\">\n          <li class=\"e-g5-property-group
-        h-g5-property-group\">\n            <h3><span class=\"p-name\">html</span>Property
-        Group</h3>\n  <p class=\"p-category\">Instance</p>\n  <div class=\"row\">\n
-        \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
-        e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
-        class=\"p-g5-name\">text</th>\n        </tr>\n          <tr>\n            <th
-        style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
-        \             true\n            </td>\n          </tr>\n          <tr>\n            <th
-        style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
-        \             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-        odio nibh, euismod a, lobortis in, laoreet eu, eros. Praesent lorem risus,
-        commodo sit amet, viverra in, sagittis nec, justo.\n            </td>\n          </tr>\n
-        \     </table>\n    </div>\n  </div>\n\n          </li>\n      </ul>\n  </header>\n
-        \ <hr>\n\n  <pre><code class=\"e-content\">&lt;!-- BEGIN EDIT FORM MARKUP
-        --&gt;\n&lt;form&gt;\n  &lt;div class=&quot;form-field&quot;&gt;\n    {{ widget.text.id_hidden_field
-        }}\n    &lt;label for=&quot;{{ widget.text.value_field_id }}&quot; &gt;\n
-        \     Enter text\n    &lt;/label&gt;\n    &lt;textarea\n      id=&quot;ckeditor&quot;\n
-        \     name=&quot;{{ widget.text.value_field_name }}&quot;\n     &gt;\n      {{
-        widget.text.best_value }}\n    &lt;/textarea&gt;\n  &lt;/div&gt;\n  &lt;input
-        type=&quot;submit&quot; value=&quot;Save&quot; class=&quot;btn&quot; /&gt;\n&lt;/form&gt;\n\n&lt;!--
-        END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n&lt;div class=&quot;html
-        widget&quot;&gt;\n  {{ widget.text.best_value }}\n&lt;/div&gt;\n\n&lt;!--
-        END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
-    http_version: 
-  recorded_at: Mon, 18 Nov 2013 19:29:13 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/html/show.html
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Age:
-      - '0'
-      Content-Type:
-      - text/html
-      Date:
-      - Mon, 18 Nov 2013 19:29:13 GMT
-      Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
-      Server:
-      - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - 027476d4c3818d351c78906a7b0d854bafe5edf1
-      X-Rack-Cache:
-      - stale, valid, store
-      Content-Length:
-      - '64'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! "<div class=\"html widget\">\n  {{ widget.text.best_value }}\n</div>\n"
-    http_version: 
-  recorded_at: Mon, 18 Nov 2013 19:29:13 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/html/edit.html
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Age:
-      - '0'
-      Content-Type:
-      - text/html
-      Date:
-      - Mon, 18 Nov 2013 19:29:13 GMT
-      Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
-      Server:
-      - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - b73f2b9fff9595a9263b1f670b515eb8b07bd4b2
-      X-Rack-Cache:
-      - stale, valid, store
-      Content-Length:
-      - '362'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! "<form>\n  <div class=\"form-field\">\n    {{ widget.text.id_hidden_field
-        }}\n    <label for=\"{{ widget.text.value_field_id }}\" >\n      Enter text\n
-        \   </label>\n    <textarea\n      id=\"ckeditor\"\n      name=\"{{ widget.text.value_field_name
-        }}\"\n     >\n      {{ widget.text.best_value }}\n    </textarea>\n  </div>\n
-        \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
-  recorded_at: Mon, 18 Nov 2013 19:29:13 GMT
+  recorded_at: Mon, 18 Nov 2013 19:32:35 GMT
 recorded_with: VCR 2.6.0

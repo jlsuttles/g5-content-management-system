@@ -48,7 +48,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         click_link "Edit"
       end
 
-      current_path.should eq "/#{@web_home_template.location.slug}/#{@web_home_template.slug}"
+      current_path.should eq "/#{@web_home_template.website.slug}/#{@web_home_template.slug}"
     end
 
     it "Page 'Edit' link goes to '/:location_slug/:page_slug'" do
@@ -56,8 +56,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         click_link "Edit"
       end
 
-      # Capybara.default_wait_time = 5
-      current_path.should eq "/#{@website.slug}/#{@web_home_template.slug}"
+      current_path.should eq "/#{@website.slug}/#{@web_page_template.slug}"
     end
   end
 end
