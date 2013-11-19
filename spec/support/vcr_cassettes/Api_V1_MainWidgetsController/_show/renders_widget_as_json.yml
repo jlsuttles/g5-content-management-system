@@ -387,4 +387,43 @@ http_interactions:
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
   recorded_at: Thu, 14 Nov 2013 02:37:46 GMT
+- request:
+    method: get
+    uri: http://g5-theme-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Wed, 06 Nov 2013 22:15:25 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Tue, 19 Nov 2013 01:54:59 GMT
+      Server:
+      - thin 1.5.0 codename Knife
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 2ce45e4dfbce894c1d9e696acafe696c
+      X-Runtime:
+      - '0.003200'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 19 Nov 2013 01:55:00 GMT
 recorded_with: VCR 2.6.0
