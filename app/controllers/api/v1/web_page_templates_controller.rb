@@ -1,4 +1,8 @@
 class Api::V1::WebPageTemplatesController < Api::V1::ApplicationController
+  def index
+    render json: WebPageTemplate.all
+  end
+
   def create
     @web_page_template = WebPageTemplate.new(web_page_template_params)
     @main_drop_target = @web_page_template.drop_targets.build(html_id: "drop-target-main")

@@ -8,6 +8,18 @@ describe Api::V1::WebPageTemplatesController do
     web_page_template.drop_targets << main_drop_target
   end
 
+  describe "#index" do
+    before do
+      WebPageTemplateSerializer.new(web_page_template)
+    end
+
+    it "renders websites as json" do
+      get :index
+      expect(response.status).to eq 200
+      pending("response.body JSON equals WebPageTemplate.all (after ran through the serializer and as JSON)")
+    end
+  end
+
   describe "#show" do
     it "finds web page template" do
       WebPageTemplate.should_receive(:find).with(web_page_template.id.to_s).once
