@@ -1,14 +1,16 @@
-{{ render "remoteWebLayouts" }}
-{{ render "remoteWebThemes" }}
-{{ render "remoteWidgets" }}
+<div class="builder">
+  {{ render "remoteWebLayouts" }}
+  {{ render "remoteWebThemes" }}
+  {{ render "remoteWidgets" }}
 
-<div class="l-container page-section">
-  {{ render "headerWidgets" }}
-  {{ render "mainWidgets" }}
-  {{ render "asideWidgets" }}
-  {{ render "footerWidgets" }}
-</div>
+  <div class="l-container page-section">
+    {{ render "headerWidgets" }}
+    {{ render "mainWidgets" }}
+    {{ render "asideWidgets" }}
+    {{ render "footerWidgets" }}
+  </div>
 
-<div class="preview">
-  {{view App.IframeView contentBinding="this"}}
+  <div class="preview">
+    {{view App.IframeView contentBinding="this"}}
+  </div>
 </div>

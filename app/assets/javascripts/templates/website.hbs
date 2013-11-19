@@ -15,6 +15,7 @@
     </div>
     <div class="cards">
       {{ render "website/webPageTemplate" webHomeTemplate }}
+
       {{#each webPageTemplates}}
         {{#unless isNew}}
           {{ render "website/webPageTemplate" this }}
