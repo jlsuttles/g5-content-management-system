@@ -32,10 +32,6 @@ class Website < ActiveRecord::Base
     name.try(:parameterize)
   end
 
-  def self.find_by_slug(slug)
-    all.select {|w| w.slug == slug }
-  end
-
   def compile_path
     File.join(COMPILE_PATH, urn)
   end

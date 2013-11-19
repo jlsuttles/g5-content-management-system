@@ -1,7 +1,6 @@
 class Api::V1::WebsitesController < Api::V1::ApplicationController
   def index
-    website = Website.find_by_slug(params[:slug])
-    render json: website
+    render json: Website.all
   end
 
   def show
