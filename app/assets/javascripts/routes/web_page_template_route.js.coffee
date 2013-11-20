@@ -3,10 +3,7 @@ App.WebPageTemplateRoute = Ember.Route.extend
     websiteSlug = params["website_slug"]
     webPageTemplateSlug = params["web_page_template_slug"]
     websites = App.Website.find({})
-
-    # This is a temporary fix until we can figure out how to create an empty
-    # Ember RecordArray.
-    webPageTemplates = websites
+    webPageTemplates = new DS.AdapterPopulatedRecordArray()
 
     websites.one "didLoad", ->
       website = null
