@@ -6,6 +6,8 @@ App.WebHomeTemplateRoute = Ember.Route.extend
     @controllerFor("website").set("model", model.get("website"))
     # setup webThemeColors controller
     @controllerFor("webThemeColors").set("model", model.get("website"))
+    # setup mainWidgets controller
+    @controllerFor("mainWidgets").set("model", model.get("mainWidgets"))
     # setup website.websiteTemplate controllers
     @controllerFor("websiteTemplate").set("model", model.get("websiteTemplate"))
     @controllerFor("webLayout").set("model", model.get("website.websiteTemplate.webLayout"))
