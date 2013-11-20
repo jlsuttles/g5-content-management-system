@@ -38,7 +38,7 @@ describe "Integration '/'", js: true, vcr: VCR_OPTIONS do
         expect(page).to have_content(@location.name.upcase)
       end
 
-      expect(current_path).to eq("/website/#{@website.id}")
+      expect(current_path).to eq("/#{@website.slug}")
     end
 
     it "'View' link goes to Heroku App" do

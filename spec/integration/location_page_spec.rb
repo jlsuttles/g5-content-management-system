@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "Integration '/location/:location_id/page/:page_id'", js: true, vcr: VCR_OPTIONS do
+describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: VCR_OPTIONS do
   describe "Main widgets are drag and drop sortable" do
     before do
       @client, @location, @website = seed

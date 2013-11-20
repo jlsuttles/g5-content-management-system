@@ -8,6 +8,7 @@ class WebsiteSerializer < ActiveModel::Serializer
   attributes  :id,
               :location_id,
               :name,
+              :slug,
               :custom_colors,
               :primary_color,
               :secondary_color

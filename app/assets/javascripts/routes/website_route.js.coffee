@@ -1,7 +1,19 @@
 App.WebsiteRoute = Ember.Route.extend
-  setupController: (controller, model)->
+  model: (params) ->
+    slug = params["website_slug"]
+    websites = App.Website.find({})
+    websites.one "didLoad", ->
+      website = null
+      websites.forEach (x) -> website = x if x.get("slug") is slug
+      websites.resolve website
+    websites
+
+  setupController: (controller, model) ->
     controller.set("model", model)
     # setup other controllers
     @controllerFor("websiteTemplate").set("model", model.get("websiteTemplate"))
     @controllerFor("webHomeTemplate").set("model", model.get("webHomeTemplate"))
     @controllerFor("webPageTemplates").set("model", model.get("webPageTemplates"))
+
+  serialize: (model) ->
+    website_slug: model.get "slug"

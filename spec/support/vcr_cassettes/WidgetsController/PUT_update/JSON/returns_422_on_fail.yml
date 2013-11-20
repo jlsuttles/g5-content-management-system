@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 12 Nov 2013 20:19:11 GMT
+      - Wed, 20 Nov 2013 09:26:00 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWE0MDFlZTAwNzQ3YTQ3NjQ2ZDg2YjQwOGIwMWNhMDYxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXJMa0J1NnA3R2FSU1hXbHJSbTl5OEwvOUdmVFRzOU1vYWlKOFVibTJQblU9BjsARg%3D%3D--e916b418aa60567411a60c948f5b20d715501e47;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTBhYzYzMmE4OWMxMTFkMzI5MGU1MTc1Yjg2NWRkYTZmBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTBEMm96RS9nT1RlL24zTUdXZGM0ZDBIK2NneXBGeDQ2ODJMMlVhY285K0U9BjsARg%3D%3D--3b6b048e39205829d678671fc0ab116dcf7f48eb;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 47e1ba14f96b0c6431032bca43c9da87
+      - 0b6e67cb873728da960b5f5e48d40996
       X-Runtime:
-      - '0.056202'
+      - '0.050883'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"rLkBu6p7GaRSXWlrRm9y8L/9GfTTs9MoaiJ8Ubm2PnU=\"
+        name=\"csrf-param\" />\n<meta content=\"0D2ozE/gOTe/n3MGWdc4d0H+cgypFx4682L2Uaco9+E=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -229,7 +229,7 @@ http_interactions:
         /&gt;\n  &lt;/form&gt;\n&lt;/div&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 12 Nov 2013 20:19:11 GMT
+  recorded_at: Wed, 20 Nov 2013 09:26:00 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-form/show.html
@@ -251,7 +251,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 12 Nov 2013 20:19:12 GMT
+      - Wed, 20 Nov 2013 09:26:00 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -296,7 +296,7 @@ http_interactions:
         Please leave us a message.</div>\n      </div>\n\n    {% endif %}\n\n    <input
         type=\"submit\" best_value=\"Send\" />\n  </form>\n</div>\n"
     http_version: 
-  recorded_at: Tue, 12 Nov 2013 20:19:12 GMT
+  recorded_at: Wed, 20 Nov 2013 09:26:00 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-form/edit.html
@@ -318,7 +318,7 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 12 Nov 2013 20:19:13 GMT
+      - Wed, 20 Nov 2013 09:26:01 GMT
       Last-Modified:
       - Tue, 12 Nov 2013 19:59:11 GMT
       Server:
@@ -386,5 +386,5 @@ http_interactions:
         }}\" >\n        Message\n      </label>\n    </div>\n\n  </fieldset>\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 12 Nov 2013 20:19:13 GMT
+  recorded_at: Wed, 20 Nov 2013 09:26:01 GMT
 recorded_with: VCR 2.6.0

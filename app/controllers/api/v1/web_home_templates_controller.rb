@@ -1,4 +1,8 @@
 class Api::V1::WebHomeTemplatesController < Api::V1::ApplicationController
+  def index
+    render json: WebHomeTemplate.all
+  end
+
   def show
     render json: WebHomeTemplate.find(params[:id])
   end

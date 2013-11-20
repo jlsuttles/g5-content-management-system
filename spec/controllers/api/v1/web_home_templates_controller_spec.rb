@@ -8,6 +8,18 @@ describe Api::V1::WebHomeTemplatesController do
     web_home_template.drop_targets << main_drop_target
   end
 
+  describe "#index" do
+    before do
+      WebHomeTemplateSerializer.new(web_home_template)
+    end
+
+    it "renders websites as json" do
+      get :index
+      expect(response.status).to eq 200
+      pending("response.body JSON equals WebHomeTemplate.all (after ran through the serializer and as JSON)")
+    end
+  end
+
   describe "#show" do
     it "finds web home template" do
       WebHomeTemplate.should_receive(:find).with(web_home_template.id.to_s).once
