@@ -1,6 +1,6 @@
 App.WebPageTemplateRoute = Ember.Route.extend
   model: (params) ->
-    webPageTemplates = App.WebHomeTemplate.find({slug: params["web_page_template_slug"]})
+    webPageTemplates = App.WebPageTemplate.find({slug: params["web_page_template_slug"]})
 
     webPageTemplates.one "didLoad", ->
       webPageTemplates.resolve webPageTemplates.get("firstObject")
