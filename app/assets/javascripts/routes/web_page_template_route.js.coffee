@@ -15,6 +15,10 @@ App.WebPageTemplateRoute = Ember.Route.extend
       websites.forEach (x) -> website = x if x.get("slug") is websiteSlug
       website.get("webPageTemplates").forEach (x) -> webPageTemplate = x if x.get("slug") is webPageTemplateSlug
 
+      unless webPageTemplate?
+        webHomeTemplate = website.get("webHomeTemplate")
+        webPageTemplate = webHomeTemplate if webHomeTemplate.get("slug") is webPageTemplateSlug
+
       webPageTemplates.resolve webPageTemplate
 
     webPageTemplates
