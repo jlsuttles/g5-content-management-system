@@ -1,8 +1,11 @@
 App.WebsiteRoute = Ember.Route.extend
   model: (params) ->
-    websites = App.Website.find({slug: params["website_slug"]})
+    slug = params["website_slug"]
+    websites = App.Website.find({})
     websites.one "didLoad", ->
-      websites.resolve websites.get("firstObject")
+      website = null
+      websites.forEach (x) -> website = x if x.get("slug") is slug
+      websites.resolve website
     websites
 
   setupController: (controller, model) ->
