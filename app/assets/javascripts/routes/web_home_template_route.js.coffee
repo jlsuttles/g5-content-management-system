@@ -1,12 +1,5 @@
 App.WebHomeTemplateRoute = Ember.Route.extend
-  model: (params) ->
-    webHomeTemplates = App.WebHomeTemplate.find({slug: params["web_home_template_slug"]})
-
-    webHomeTemplates.one "didLoad", ->
-      webHomeTemplates.resolve webHomeTemplates.get("firstObject")
-    webHomeTemplates
-
-  setupController: (controller, model)->
+  setupController: (controller, model) ->
     # setup this controller
     controller.set("model", model)
     # setup website controller

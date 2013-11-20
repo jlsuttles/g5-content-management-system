@@ -23,6 +23,10 @@ App.WebPageTemplateRoute = Ember.Route.extend
 
     webPageTemplates
 
+  afterModel: (webPageTemplate, transition) ->
+    if webPageTemplate.get("isWebHomeTemplate")?
+      @transitionTo "webHomeTemplate", webPageTemplate
+
   setupController: (controller, model)->
     # setup this controller
     controller.set("model", model)
