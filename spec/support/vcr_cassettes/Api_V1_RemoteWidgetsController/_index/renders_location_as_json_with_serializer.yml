@@ -21,15 +21,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Tue, 12 Nov 2013 20:20:48 GMT
+      - Wed, 20 Nov 2013 09:25:55 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 5d1b7b9a7d7f67bfccf1eb04feba76d8
+      - 3cc6eb87af5da74f919c095e201dcceb
       X-Runtime:
-      - '0.007525'
+      - '0.004498'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -38,7 +38,7 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 12 Nov 2013 20:20:48 GMT
+  recorded_at: Wed, 20 Nov 2013 09:25:55 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/
@@ -60,15 +60,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Tue, 12 Nov 2013 20:20:48 GMT
+      - Wed, 20 Nov 2013 09:25:55 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 6680da2a432c4eff745c7aef2e0ff2ea
+      - a7fb5a5f5903916a437fd02fd2aefd42
       X-Runtime:
-      - '0.004528'
+      - '0.003720'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -77,7 +77,7 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 12 Nov 2013 20:20:49 GMT
+  recorded_at: Wed, 20 Nov 2013 09:25:55 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/
@@ -99,15 +99,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Tue, 12 Nov 2013 20:20:49 GMT
+      - Wed, 20 Nov 2013 09:25:55 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - d1fe866a2fb723cee315d42e9ba9be2a
+      - 6da0382fa438523c4609250e14614809
       X-Runtime:
-      - '0.003436'
+      - '0.003998'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -116,7 +116,7 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 12 Nov 2013 20:20:49 GMT
+  recorded_at: Wed, 20 Nov 2013 09:25:55 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/
@@ -138,15 +138,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Tue, 12 Nov 2013 20:20:49 GMT
+      - Wed, 20 Nov 2013 09:25:56 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 4864567d66a79e3815d83a8c3a90fc02
+      - e9677fa0a0e2d502dde3f43184d6cd3c
       X-Runtime:
-      - '0.005777'
+      - '0.003726'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -155,5 +155,5 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 12 Nov 2013 20:20:49 GMT
+  recorded_at: Wed, 20 Nov 2013 09:25:56 GMT
 recorded_with: VCR 2.6.0
