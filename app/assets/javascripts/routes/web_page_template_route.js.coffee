@@ -1,9 +1,22 @@
 App.WebPageTemplateRoute = Ember.Route.extend
   model: (params) ->
-    webPageTemplates = App.WebPageTemplate.find({slug: params["web_page_template_slug"]})
+    websiteSlug = params["website_slug"]
+    webPageTemplateSlug = params["web_page_template_slug"]
+    websites = App.Website.find({})
 
-    webPageTemplates.one "didLoad", ->
-      webPageTemplates.resolve webPageTemplates.get("firstObject")
+    # This is a temporary fix until we can figure out how to create an empty
+    # Ember RecordArray.
+    webPageTemplates = websites
+
+    websites.one "didLoad", ->
+      website = null
+      webPageTemplate = null
+
+      websites.forEach (x) -> website = x if x.get("slug") is websiteSlug
+      website.get("webPageTemplates").forEach (x) -> webPageTemplate = x if x.get("slug") is webPageTemplateSlug
+
+      webPageTemplates.resolve webPageTemplate
+
     webPageTemplates
 
   setupController: (controller, model)->
