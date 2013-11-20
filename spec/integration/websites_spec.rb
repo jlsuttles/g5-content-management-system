@@ -53,17 +53,15 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
 
       visit_website
       # HACK: Shouldn't have to do this, Capybara should be scrolling.
-      page.execute_script("window.scrollTo(0,1000);")
+      scroll_to(page, ".sortable")
     end
 
     it "Updates database" do
-        sleep 1
       within ".sortable" do
         web_page_template1 = find(".sortable-item:first-of-type")
         web_page_template2 = find(".sortable-item:last-of-type")
-        sleep 1
         expect(@web_page_template2.display_order > @web_page_template1.display_order).to be_true
-        sleep 1
+        web_page_template2.drag_to(web_page_template1)
         drag_and_drop(web_page_template1, web_page_template2)
         sleep 1
         expect(@web_page_template2.reload.display_order < @web_page_template1.reload.display_order).to be_true

@@ -2,6 +2,16 @@ LOCATION_SELECTOR = ".location:first-of-type"
 WEB_HOME_SELECTOR = ".web-home-template:first-of-type"
 WEB_PAGE_SELECTOR = ".web-page-template:first-of-type"
 
+def scroll_to(page, selector)
+  page.execute_script <<-EOS
+(function($) {
+  return $("html, body").animate({
+    scrollTop: $('#{selector}').offset().top + "px"
+  }, "fast");
+})(jQuery);
+  EOS
+end
+
 def drag_and_drop(source, target)
   builder = page.driver.browser.action
   source = source.native
