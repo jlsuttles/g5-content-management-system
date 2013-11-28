@@ -6,3 +6,5 @@ App.WebPageTemplate = DS.Model.extend
   slug: DS.attr("string")
   title: DS.attr("string")
   disabled: DS.attr("boolean")
+  displayOrder: DS.attr("number")
+  displayOrderPosition: DS.attr("number")

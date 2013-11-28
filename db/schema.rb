@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131021215057) do
+ActiveRecord::Schema.define(:version => 20131116032227) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -104,13 +104,14 @@ ActiveRecord::Schema.define(:version => 20131021215057) do
   create_table "web_templates", :force => true do |t|
     t.integer  "website_id"
     t.string   "name"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.string   "slug"
-    t.boolean  "template",   :default => false
+    t.boolean  "template",      :default => false
     t.string   "title"
     t.string   "type"
     t.boolean  "disabled"
+    t.integer  "display_order"
   end
 
   add_index "web_templates", ["website_id"], :name => "index_web_templates_on_website_id"

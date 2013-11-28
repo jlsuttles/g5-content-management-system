@@ -1,6 +1,9 @@
 class WebTemplate < ActiveRecord::Base
+  include RankedModel
   include HasManySettings
   include AfterUpdateSetSettingNavigation
+
+  ranks :display_order, with_same: :website_id
 
   belongs_to :website
   has_one :website_template, through: :website

@@ -5,7 +5,7 @@ App.AsideWidgetsView = Ember.View.extend
       update: (event, ui) ->
         # Save the new display order position
         indexes = {}
-        $(this).find(".widget").each (index) ->
+        $(this).find(".sortable-item").each (index) ->
           indexes[$(this).data("id")] = index
         # Tell controller to update models with new positions
         controller.updateSortOrder indexes

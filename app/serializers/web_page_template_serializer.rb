@@ -7,7 +7,8 @@ class WebPageTemplateSerializer < WebTemplateSerializer
              :name,
              :title,
              :disabled,
-             :slug
+             :slug,
+             :display_order
 
   def preview_url
     web_template_url(object)

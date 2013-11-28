@@ -14,14 +14,8 @@
       {{/view}}
     </div>
     <div class="cards">
-      {{ render "website/webPageTemplate" webHomeTemplate }}
-
-      {{#each webPageTemplates}}
-        {{#unless isNew}}
-          {{ render "website/webPageTemplate" this }}
-        {{/unless}}
-      {{/each}}
-
+      {{ render "website/webHomeTemplate" webHomeTemplate }}
+      {{ render "website/webPageTemplates" webPageTemplates }}
       {{ outlet "newWebPageTemplate" }}
     </div>
   </div>

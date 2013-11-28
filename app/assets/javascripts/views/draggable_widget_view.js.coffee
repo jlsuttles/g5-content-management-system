@@ -1,6 +1,6 @@
 App.DraggableWidgetView = App.DraggableView.extend
   tagName: "li"
-  classNames: ["thumb", "widget"]
+  classNames: ["thumb", "widget", "sortable-item"]
   classNameBindings: ["dasherizedName"]
   attributeBindings: ["id:data-id"]
 

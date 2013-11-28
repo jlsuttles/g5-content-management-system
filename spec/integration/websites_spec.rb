@@ -40,4 +40,32 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       current_path.should eq "/#{@website.slug}/#{@web_page_template.slug}"
     end
   end
+
+  describe "Web page templates are drag and drop sortable" do
+    before do
+      @client, @location, @website = seed
+      @web_page_template1 = @website.web_page_templates.first
+      @web_page_template2 = @website.web_page_templates.last
+
+      # Make sure widgets are ordered first and last
+      @web_page_template1.update_attribute :display_order, :first
+      @web_page_template2.update_attribute :display_order, :last
+
+      visit_website
+      # HACK: Shouldn't have to do this, Capybara should be scrolling.
+      scroll_to(page, ".sortable")
+    end
+
+    it "Updates database" do
+      within ".sortable" do
+        web_page_template1 = find(".sortable-item:first-of-type")
+        web_page_template2 = find(".sortable-item:last-of-type")
+        expect(@web_page_template2.display_order > @web_page_template1.display_order).to be_true
+        web_page_template2.drag_to(web_page_template1)
+        drag_and_drop(web_page_template1, web_page_template2)
+        sleep 1
+        expect(@web_page_template2.reload.display_order < @web_page_template1.reload.display_order).to be_true
+      end
+    end
+  end
 end
