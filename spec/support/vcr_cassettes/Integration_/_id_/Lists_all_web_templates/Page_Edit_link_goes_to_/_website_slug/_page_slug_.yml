@@ -2,6 +2,123 @@
 http_interactions:
 - request:
     method: get
+    uri: http://g5-theme-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Wed, 06 Nov 2013 22:15:25 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Tue, 19 Nov 2013 01:54:36 GMT
+      Server:
+      - thin 1.5.0 codename Knife
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - e63fa08f993debfab728950b9fca87dc
+      X-Runtime:
+      - '0.003074'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 19 Nov 2013 01:54:36 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Tue, 12 Nov 2013 19:59:11 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Tue, 19 Nov 2013 01:54:37 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - fd8e4665b3fef3ba5e3de77d8c192236
+      X-Runtime:
+      - '0.004031'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 19 Nov 2013 01:54:37 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      If-Modified-Since:
+      - Tue, 12 Nov 2013 19:59:11 GMT
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Date:
+      - Tue, 19 Nov 2013 01:54:37 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 321e2413542d58a98fc61d733583e136
+      X-Runtime:
+      - '0.004175'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ''
+    http_version: 
+  recorded_at: Tue, 19 Nov 2013 01:54:38 GMT
+- request:
+    method: get
     uri: http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-left
     body:
       encoding: US-ASCII
@@ -21,20 +138,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:18 GMT
+      - Thu, 28 Nov 2013 23:26:53 GMT
       Last-Modified:
       - Wed, 06 Nov 2013 23:51:31 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTc4NjM3NDY4MDliODk2ZmM1ZWUxYmI3MjNkZWRhZmNiBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWg5cng3UWdJU04rcit0Q3pHS1lpWTU1SEc2TlU5TVQxMXIwczZWTFZPcDg9BjsARg%3D%3D--0176a5d2f7e161e56ed2ae53dab8b7ae6c20b8c3;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTAxNjMxZjc4ZDlmNjE0ZjBlNWM2YjNlOGQzZjNkN2IzBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVhqSWxJMGJHYW9aSHAzNk0yWVRVQ21vUW9aWGhpYmIrak9oWVlnazRwcWc9BjsARg%3D%3D--a1507427a46542adc1010c18abfa71fe8a1d678f;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 63c6dcaeb4fa4b99f62b892b145ad54f
+      - 77400b51ca9959be3febcedee0a1e263
       X-Runtime:
-      - '0.019074'
+      - '0.014209'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +167,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"h9rx7QgISN+r+tCzGKYiY55HG6NU9MT11r0s6VLVOp8=\"
+        name=\"csrf-param\" />\n<meta content=\"XjIlI0bGaoZHp36M2YTUCmoQoZXhibb+jOhYYgk4pqg=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -98,7 +215,7 @@ http_interactions:
         \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:19 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:00 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/components/classic
@@ -120,20 +237,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:19 GMT
+      - Thu, 28 Nov 2013 23:26:53 GMT
       Last-Modified:
       - Wed, 06 Nov 2013 22:15:25 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTBhN2UwNjkxMzZiNzIxMjEwZjQ0NWFiYmI1MTFkZDIwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXg1dDc2SXFDQXlUbHM2MUtVZjlSaWIzVE9MWU1OejR0b0FYbUlnV0gvd1E9BjsARg%3D%3D--f01ce52d51a16ac4ec227761a65e409d627c7674;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTEyNzZjNmQyYTZmOWRjNjMyZDZkZjg0M2FiYTBlNTU0BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTArQm4wcGM4NUxmTFRUZkhOYVNTdDVEQzUrdHNRSnVFRlFkMVhIUStuTEE9BjsARg%3D%3D--42b46032f35aa8514a623e6fcf9b5a382d3b24fc;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 93da783966fa9f1ab4e85d61d156ff2b
+      - cd34451976ba76cb7328afc0528a85eb
       X-Runtime:
-      - '0.020074'
+      - '0.015515'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -149,7 +266,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"x5t76IqCAyTls61KUf9Rib3TOLYMNz4toAXmIgWH/wQ=\"
+        name=\"csrf-param\" />\n<meta content=\"0+Bn0pc85LfLTTfHNaSSt5DC5+tsQJuEFQd1XHQ+nLA=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -179,7 +296,7 @@ http_interactions:
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:19 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:00 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/meta
@@ -201,20 +318,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:19 GMT
+      - Thu, 28 Nov 2013 23:26:54 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWIxZmRkNGQ2NzhlYWZmYjgyNDljODk2ODhjOTQ5MjNhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWg0SWFqaHR3ZlR0UnBYMTdzRWNrekNEL1JER09JZVFMZWJiU21qNDFzNzA9BjsARg%3D%3D--fe47e3257f79e2afee309b5106aedf3b104e11b1;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTU2YjgyYmJjMzgwMmNkYmQ2MTE2NjExMzQ5Mjk1MDc2BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUUvRjhQcnV2TlVublBERmNyRXlLRkw1QWhVY0swK0NSN2pyb0FrUSs4eVk9BjsARg%3D%3D--03953f26f8e61a046f56b7c6472acdbae70cadbf;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 924a357b235ebfc4307f027a83eceea5
+      - f31c4fb097f5293cb146eaa3118770a7
       X-Runtime:
-      - '0.058133'
+      - '0.089177'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -230,7 +347,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"h4IajhtwfTtRpX17sEckzCD/RDGOIeQLebbSmj41s70=\"
+        name=\"csrf-param\" />\n<meta content=\"E/F8PruvNUnnPDFcrEyKFL5AhUcK0+CR7jroAkQ+8yY=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -292,7 +409,7 @@ http_interactions:
         }}&quot; /&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:19 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:01 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/meta/show.html
@@ -314,9 +431,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:19 GMT
+      - Thu, 28 Nov 2013 23:26:54 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -337,7 +454,7 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:20 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:01 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/meta/edit.html
@@ -359,9 +476,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:19 GMT
+      - Thu, 28 Nov 2013 23:26:54 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -385,7 +502,7 @@ http_interactions:
         }}\"\n      value=\"{{ widget.meta_description.best_value }}\"\n    />\n  </div>\n\n
         \ <input type=\"submit\" value=\"Save\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:20 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:01 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/logo
@@ -407,20 +524,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:20 GMT
+      - Thu, 28 Nov 2013 23:26:54 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWZkMDlkZWQwZDFiZmQ4MWZhOTQ4OTNmYmE4YTM3OGRjBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVRqdlM5Y3Y1bmRrZFlHUllLYzlNclNISCtXTGhVTEhKS2V2dFBTdGRxaUk9BjsARg%3D%3D--34c18f36ae28a521b1081adc9511acbba5092832;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTYwMzc3ZTg3ZjExODk0NGNjMzQ4NzhiMTJlZTRjZTk0BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWxmcjkrRXBpVk1WQnZyd291a2VPeHJrZEVteFc1blk3aStmUS9iZFg1SEE9BjsARg%3D%3D--27024fc8e7f151cb0a0d3f8b43d1696c92383e01;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - f88083da33340e4af71c603c72f7771b
+      - bdb8e29148635e010a3594d0d00c41ee
       X-Runtime:
-      - '0.083278'
+      - '0.067359'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -436,7 +553,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"TjvS9cv5ndkdYGRYKc9MrSHH+WLhULHJKevtPStdqiI=\"
+        name=\"csrf-param\" />\n<meta content=\"lfr9+EpiVMVBvrwoukeOxrkdEmxW5nY7i+fQ/bdX5HA=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -518,7 +635,7 @@ http_interactions:
         itemprop=&quot;logo&quot; /&gt;\n  &lt;/a&gt;\n&lt;/h1&gt;\n{% endif %}\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:20 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:01 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/logo/show.html
@@ -540,9 +657,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:20 GMT
+      - Thu, 28 Nov 2013 23:26:55 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -561,7 +678,7 @@ http_interactions:
         src=\"{{ widget.logo_url.best_value | url_encode }}\" alt=\"{{ widget.business_name.best_value
         }}\" itemprop=\"logo\" />\n  </a>\n</h1>\n{% endif %}\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:21 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:02 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/logo/edit.html
@@ -583,9 +700,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:20 GMT
+      - Thu, 28 Nov 2013 23:26:55 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -617,7 +734,7 @@ http_interactions:
         }}\"\n      value=\"{{ widget.logo_url.best_value | url_encode }}\"\n    />\n
         \ </div>\n  <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:21 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:02 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/phone
@@ -639,20 +756,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:21 GMT
+      - Thu, 28 Nov 2013 23:26:55 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWJlYTY3MjFlNjg2ZDRlYzQzNjZjNjA0MzcyNDAxMjNiBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXlxOVFNQksrWnBjNXFNQ2NqV3k2OXhOSVp5Z1E3SUw5eDE2SzB3RzhRbnM9BjsARg%3D%3D--cadb99e503f13bbab68cc15534a6bce486b17d2a;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQ3ZTViYmY2MmNmMThiZjZmOWYxNmFkYWIxNDUzNTRiBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWV3YXlvK2E2M1l6TFlWcVAyUzRWSE1FVlNLOWQyY1lWazhmYk9lTURIdzQ9BjsARg%3D%3D--667faa2d6e730a70d7bee0820740b58040ae9f25;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - fe51d81d12247f427947795ee49bb54a
+      - f01303a05fade25bb75056234e04c5d0
       X-Runtime:
-      - '0.068344'
+      - '0.058148'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -668,7 +785,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"yq9QMBK+Zpc5qMCcjWy69xNIZygQ7IL9x16K0wG8Qns=\"
+        name=\"csrf-param\" />\n<meta content=\"ewayo+a63YzLYVqP2S4VHMEVSK9d2cYVk8fbOeMDHw4=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -768,7 +885,7 @@ http_interactions:
         widget.phone_number.best_value }}&lt;/span&gt;\n&lt;/a&gt;\n{% endif %}\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:21 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:02 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/phone/show.html
@@ -790,9 +907,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:21 GMT
+      - Thu, 28 Nov 2013 23:26:55 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -813,7 +930,7 @@ http_interactions:
         \ <span class=\"p-tel tel\" itemprop=\"telephone\">{{ widget.phone_number.best_value
         }}</span>\n</a>\n{% endif %}"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:21 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:02 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/phone/edit.html
@@ -835,9 +952,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:21 GMT
+      - Thu, 28 Nov 2013 23:26:56 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -874,7 +991,7 @@ http_interactions:
         }}\" >\n      Display Phone Number\n    </label>\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:22 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:02 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/button
@@ -896,20 +1013,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:22 GMT
+      - Thu, 28 Nov 2013 23:26:56 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTFmYTg1NTBkNGM0NjgxNTI1ZjlhNjg1YmE1ZTE5ODFmBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVVDclJ0empXZ3pKNTJ6MGRxMmFURXRQYWFXTU5hcXFXbVFWQ1FzeldEWHc9BjsARg%3D%3D--1c1757b54dcb91fcac17df615c81a07a494174b8;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTNkMjNkYTRlYjM4YzIzMDVkMGUyNGI5M2E0MTg2MjI5BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUNZY2ZkdFFSZzRRQVVveWNndmVNQlRKK211MTJIV0tvbDRpTm01cVpPNW89BjsARg%3D%3D--7c1ea4979f41950a0ec6069f816374d6a3ab40f1;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 965de67d44bf2ccb26ad033ae31454f4
+      - 48b075ac4c54eb0f1f1ede7fe697862a
       X-Runtime:
-      - '0.127523'
+      - '0.040535'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -925,7 +1042,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"UCrRtzjWgzJ52z0dq2aTEtPaaWMNaqqWmQVCQszWDXw=\"
+        name=\"csrf-param\" />\n<meta content=\"CYcfdtQRg4QAUoycgveMBTJ+mu12HWKol4iNm5qZO5o=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -1005,7 +1122,7 @@ http_interactions:
         \ &lt;/a&gt;\n{% endif %}\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:22 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:03 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/button/show.html
@@ -1027,9 +1144,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:22 GMT
+      - Thu, 28 Nov 2013 23:26:56 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1046,7 +1163,7 @@ http_interactions:
         widget.button_url.best_value | url_encode }}\" class=\"btn widget\">\n    {{
         widget.button_label.best_value }}\n  </a>\n{% endif %}"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:22 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:03 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/button/edit.html
@@ -1068,9 +1185,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:22 GMT
+      - Thu, 28 Nov 2013 23:26:56 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1103,7 +1220,7 @@ http_interactions:
         \   </label>\n  </div>\n\n  <input type=\"submit\" value=\"Save\" class=\"btn\"
         />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:23 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:03 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/navigation
@@ -1125,20 +1242,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:23 GMT
+      - Thu, 28 Nov 2013 23:26:57 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQ2NzYyNTM2ODZkYjE3YjQyN2MwYWRmYjU2YzU5NDlkBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMU9NbGNXa0FEdjgrL08wTW03VHZQK0pTc2k3NWcrSlJMd2FxQzNsS09hSHM9BjsARg%3D%3D--7bda86668ba82dd03b46e8d664631c6909acb7d2;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTYwYjUxYzMwNzg5OTU5NDUwM2QwODYyZjk4MzIzZThjBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUdhVHJJdEJCUVFuMDB5K1NMamlQc0V2NVBSaS9ucUsvK0tlcm5xRTg0Rlk9BjsARg%3D%3D--b374a87f8ca328edd3e449db1f3b7e2241a8476d;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - d5825891e9e837e6cc6ae92a93fd9f61
+      - d9da1ead78a9a2aca9103cc26e975c82
       X-Runtime:
-      - '0.095597'
+      - '0.073315'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -1154,7 +1271,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"OMlcWkADv8+/O0Mm7TvP+JSsi75g+JRLwaqC3lKOaHs=\"
+        name=\"csrf-param\" />\n<meta content=\"GaTrItBBQQn00y+SLjiPsEv5PRi/nqK/+KernqE84FY=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -1235,7 +1352,7 @@ http_interactions:
         %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:23 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:04 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/navigation/show.html
@@ -1257,9 +1374,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:23 GMT
+      - Thu, 28 Nov 2013 23:26:57 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1278,7 +1395,7 @@ http_interactions:
         | url_encode }}\">{{ web_page.title }}</a></li>\n      {% endif %}\n    {%
         endfor %}\n  </ul>\n</nav>\n{% endif %}\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:23 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:04 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/navigation/edit.html
@@ -1300,9 +1417,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:23 GMT
+      - Thu, 28 Nov 2013 23:26:57 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1339,7 +1456,7 @@ http_interactions:
         \       </li>\n        {% endfor %}\n      </ul>\n    </div>\n  </fieldset>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:23 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:04 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/calls-to-action
@@ -1361,20 +1478,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:23 GMT
+      - Thu, 28 Nov 2013 23:26:57 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTE1YmJiMzM5NzgyNmQyM2EwMjJhYzhkMGNmNjA5N2NlBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVY3OFI1S3Y3ajJCeTc2MldYWTlCTkdidG5JRzVCZ3Y3dGdhaU9QNjJLWlU9BjsARg%3D%3D--ce54083217b406d533ab03e2e0ab346ce62312b8;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTkwZDAwYTg0Yzk2M2EyYWM0MjgyZWU3YTIyZTgxMWU2BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTBGbUZkczZXbGFtRDBhdHpXUU9QbXRhTldvdHRpYmNaMTdqRnllNDNHWEU9BjsARg%3D%3D--9dfa760b12374be78ccb0704b3fe83802e58491f;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 5c1c3c7ac544a47046264b411e1e14a3
+      - decb131e437421b6606f32e919fbfc65
       X-Runtime:
-      - '0.086447'
+      - '0.066686'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -1390,7 +1507,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"V78R5Kv7j2By762WXY9BNGbtnIG5Bgv7tgaiOP62KZU=\"
+        name=\"csrf-param\" />\n<meta content=\"0FmFds6WlamD0atzWQOPmtaNWottibcZ17jFye43GXE=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -1572,7 +1689,7 @@ http_interactions:
         \   &lt;/li&gt;\n    {% endif %}\n  &lt;/ul&gt;\n&lt;/nav&gt;\n\n&lt;!-- END
         SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:24 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:04 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/show.html
@@ -1594,9 +1711,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:24 GMT
+      - Thu, 28 Nov 2013 23:26:58 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1623,7 +1740,7 @@ http_interactions:
         widget.cta_four_url.best_value | url_encode }}\">{{ widget.cta_four_text.best_value
         }}</a>\n    </li>\n    {% endif %}\n  </ul>\n</nav>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:24 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:05 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/calls-to-action/edit.html
@@ -1645,9 +1762,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:24 GMT
+      - Thu, 28 Nov 2013 23:26:58 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1710,7 +1827,7 @@ http_interactions:
         \     {% endfor %}\n    </select>\n  </div>\n\n  <input type=\"submit\" value=\"Save\"
         class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:24 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:05 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/social-links
@@ -1732,20 +1849,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:24 GMT
+      - Thu, 28 Nov 2013 23:26:58 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTEyYTllODMxZTc2ODY0MjViMjJlNTg3MmY4YzliODc0BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTF2Q3lhcnV3RnExQnNQekZweUIrUWJTQmRBVXNOcFkyd2tCNVg5SGJ6dzQ9BjsARg%3D%3D--1a1a3f5995d435f351d39bef45bc61737f5520ff;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQ5MjFmYjNhM2Y1MmFiOTAwODQ4ZTlmMzNlMzU2MjU1BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUxYQmw4NDltakxVUi9USGQ0UTZ4M2VtYkRLK3lKbUlIaFFqYXdNTk5aUlk9BjsARg%3D%3D--ee748aec8873c619ac63c13874d0f5aefaa4a2cb;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 5bf138047322474668cc887271c5279e
+      - d3f6803659e5a751fb5f1a2e2bd2ebbc
       X-Runtime:
-      - '0.148645'
+      - '0.118420'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -1761,7 +1878,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"1vCyaruwFq1BsPzFpyB+QbSBdAUsNpY2wkB5X9Hbzw4=\"
+        name=\"csrf-param\" />\n<meta content=\"LXBl849mjLUR/THd4Q6x3embDK+yJmIHhQjawMNNZRY=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -1950,7 +2067,7 @@ http_interactions:
         rel=&quot;me&quot;&gt;YouTube&lt;/a&gt;\n  {% endif %}\n\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:25 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:05 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/show.html
@@ -1972,9 +2089,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:25 GMT
+      - Thu, 28 Nov 2013 23:26:59 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -2013,7 +2130,7 @@ http_interactions:
         }}\" class=\"youtube\" title=\"YouTube\" rel=\"me\">YouTube</a>\n  {% endif
         %}\n\n</div>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:25 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:06 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/edit.html
@@ -2035,9 +2152,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:25 GMT
+      - Thu, 28 Nov 2013 23:26:59 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -2096,7 +2213,7 @@ http_interactions:
         widget.youtube_username.best_value }}\"\n      />\n    </div>\n\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:26 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:06 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/navigation
@@ -2118,20 +2235,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:26 GMT
+      - Thu, 28 Nov 2013 23:26:59 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWM3YThmOGQ1YTI4YjQzODcxYzRmOGQxMGViMTFiYWFhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXhPYVdsUVNKU0RhOUNWc09mNTc3WFJMbTFNSkpHQWtJVVhyUy9qNzl2Qkk9BjsARg%3D%3D--e6b3a1eb4b86329b47e97f2824c44ff9abe0293d;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWVjZTc0NzczMDIyNjY3MzBlZTdhODY3YTEwMDkzYjYzBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVoyK2JUVm9oVExHVUhqb215ai82MjRNUjcrQmhjSEdERHc5RHRyYmZiOTg9BjsARg%3D%3D--ebf4e10a935fc974ef79e5777d67c612c3efd227;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 4bdebe55485066c04868d43069f3b5fd
+      - bc97594db483115c0438662dbdc3775f
       X-Runtime:
-      - '0.332280'
+      - '0.039362'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -2147,7 +2264,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"xOaWlQSJSDa9CVsOf577XRLm1MJJGAkIUXrS/j79vBI=\"
+        name=\"csrf-param\" />\n<meta content=\"Z2+bTVohTLGUHjomyj/624MR7+BhcHGDDw9Dtrbfb98=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -2228,7 +2345,7 @@ http_interactions:
         %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:26 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:06 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/navigation/show.html
@@ -2250,9 +2367,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:26 GMT
+      - Thu, 28 Nov 2013 23:26:59 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -2271,7 +2388,7 @@ http_interactions:
         | url_encode }}\">{{ web_page.title }}</a></li>\n      {% endif %}\n    {%
         endfor %}\n  </ul>\n</nav>\n{% endif %}\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:26 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:06 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/navigation/edit.html
@@ -2293,9 +2410,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:26 GMT
+      - Thu, 28 Nov 2013 23:27:00 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -2332,7 +2449,7 @@ http_interactions:
         \       </li>\n        {% endfor %}\n      </ul>\n    </div>\n  </fieldset>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:27 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:06 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/contact-info
@@ -2354,20 +2471,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:27 GMT
+      - Thu, 28 Nov 2013 23:27:00 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWU3NjFlNDA5MGJmMWE3ZTMwYjNhMTIxMzRjMzM2YzYxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUVlSG1vYUFteHVNcGJ4UDNkZzlHLzcvNEsvVkVwRkJNUVdJbWwwQU5CY0E9BjsARg%3D%3D--e42fd83fac361f463e5d0a911ba9706cd92963e7;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWMwZWNkNDJmOGM1YzNjOTZlMmNhMGNjOTZhMGJlYzU2BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVRYTmwzR3FWMGpKNEs5ZjJYVisyem9ENEg5QllveVNGVWQ0QnBWRzN2cTA9BjsARg%3D%3D--3aff0321a338039f987afbd1c16fd1e8a2160d5e;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 7ceaaecb5ebd0f28996a57eb6ef5b3d9
+      - ddf97fb0fd5c45d853315beb7c032867
       X-Runtime:
-      - '0.184636'
+      - '0.157195'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -2383,7 +2500,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"EeHmoaAmxuMpbxP3dg9G/7/4K/VEpFBMQWIml0ANBcA=\"
+        name=\"csrf-param\" />\n<meta content=\"TXNl3GqV0jJ4K9f2XV+2zoD4H9BYoySFUd4BpVG3vq0=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -2726,7 +2843,7 @@ http_interactions:
         endif %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:27 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:07 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/show.html
@@ -2748,9 +2865,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:27 GMT
+      - Thu, 28 Nov 2013 23:27:00 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -2788,7 +2905,7 @@ http_interactions:
         tel\" itemprop=\"telephone\">\n    F: {{ widget.contact_info_fax.best_value
         }}\n  </p>\n  {% endif %}\n</div>\n{% endif %}\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:27 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:07 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/edit.html
@@ -2810,9 +2927,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:27 GMT
+      - Thu, 28 Nov 2013 23:27:01 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -2943,7 +3060,7 @@ http_interactions:
         widget.contact_info_fax.best_value }}\"\n    />\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:28 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:07 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/hours
@@ -2965,20 +3082,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:29 GMT
+      - Thu, 28 Nov 2013 23:27:01 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY4OTc1MWQ5YmM4OTI3YzgwZjY4NGFhMjUyNjc3ZDA3BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVN1eSt5ekdYRTdaV1BrN08wY3VWZVZDNC94VVRtUzhQa0hYMkJtcGZFQlU9BjsARg%3D%3D--e17a4fc9af8e9159d1a125c9cdd3f2bb645d030d;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY1NTgxMTcwMTE4NzU5OGVhODZhMDc3NGI3MTJkM2ZhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWtyQ2hpaU16Tnh2ZDljbUpUU1FseGxBSGZmZjBESmp2Y2xKaDFrSncvd1E9BjsARg%3D%3D--c3e79f54897c005909e2f0664b7e52671f997fa6;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 460f6e78b7e28a0e563a7d6b87fa7c7b
+      - 02239e9ad10011aa246ac0d0f9dc24e4
       X-Runtime:
-      - '0.841853'
+      - '0.037676'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -2994,7 +3111,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"Suy+yzGXE7ZWPk7O0cuVeVC4/xUTmS8PkHX2BmpfEBU=\"
+        name=\"csrf-param\" />\n<meta content=\"krChiiMzNxvd9cmJTSQlxlAHfff0DJjvclJh1kJw/wQ=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -3060,7 +3177,7 @@ http_interactions:
         }}\n&lt;/div&gt;\n{% endif %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:29 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:08 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/hours/show.html
@@ -3082,9 +3199,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:29 GMT
+      - Thu, 28 Nov 2013 23:27:01 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3100,7 +3217,7 @@ http_interactions:
       string: ! "{% if widget.display_hours.best_value == \"true\" %}\n<div class=\"hours
         widget\">\n  {{ widget.hours.best_value }}\n</div>\n{% endif %}\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:29 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:08 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/hours/edit.html
@@ -3122,9 +3239,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:29 GMT
+      - Thu, 28 Nov 2013 23:27:01 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3151,7 +3268,7 @@ http_interactions:
         }}</textarea>\n  </div>\n\n  <input type=\"submit\" value=\"Save\" class=\"btn\"
         />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:29 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:08 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/photo
@@ -3173,20 +3290,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:29 GMT
+      - Thu, 28 Nov 2013 23:27:02 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWIyYzE0MmY2NDJmZDgzMTA2NzM3NDk2MWZjOWZiYTYyBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUZSUkFHMnNZUFg2TWRoblNBUytXbW9BOU12K0ViY1hXWlliMG04RnJsSDA9BjsARg%3D%3D--19fc3bf1972a6c788abe91cc64132a2e5dcece14;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWQ1NTI1YTQxMTVjOGMyODY4NDE2YWU4Y2E3OGI3NjUxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXNHNDlHTzN6dEZkU1lSRlpTM1dvRWg2YVJRTE56NmQxQVM3NStHOHI4WkU9BjsARg%3D%3D--cf46c8a28bc8c31d9671d5909f7483ab1f36cb8c;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 06d91111a3148f886fce131eb2595cbb
+      - 869bd075dd101b8cd9d30fe49e4cd4d0
       X-Runtime:
-      - '0.053721'
+      - '0.040145'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -3202,7 +3319,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"FRRAG2sYPX6MdhnSAS+WmoA9Mv+EbcXWZYb0m8FrlH0=\"
+        name=\"csrf-param\" />\n<meta content=\"sG49GO3ztFdSYRFZS3WoEh6aRQLNz6d1AS75+G8r8ZE=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -3295,7 +3412,7 @@ http_interactions:
         widget.photo_caption.best_value }}&lt;/figcaption&gt;\n  {% endif %}\n&lt;/figure&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:30 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:08 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/photo/show.html
@@ -3317,9 +3434,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:30 GMT
+      - Thu, 28 Nov 2013 23:27:02 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3339,7 +3456,7 @@ http_interactions:
         itemprop=\"description\">{{ widget.photo_caption.best_value }}</figcaption>\n
         \ {% endif %}\n</figure>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:30 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:09 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/photo/edit.html
@@ -3361,9 +3478,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:30 GMT
+      - Thu, 28 Nov 2013 23:27:02 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3404,7 +3521,7 @@ http_interactions:
         >\n        Block\n      </label>\n    </fieldset>\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:30 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:09 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/html
@@ -3426,20 +3543,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:30 GMT
+      - Thu, 28 Nov 2013 23:27:02 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY4ZGRmM2M0YzAzNDI2MDlmMDY4NGI4NmY0MTkwYmYyBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXl4S0k1NDhJTHRScG9jQ0tZNDgvMys1allMQTJmbmtVWE1qRHpybzN3akU9BjsARg%3D%3D--139fe3727d20f8a2dfd8ea161d089562e669a07a;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJkYzIxMmE0ZDVlYTUxMWNiZDg1MWViOTFhZTYwNDI2BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTIwcnE1SzBuMkUwQ3dXRlovN2ZBTDljYldQM0hxY3FEQlpoMHdkN1lwVXc9BjsARg%3D%3D--15fc258736ba76532cd034aa9eb3eaeb7286e4ab;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - a56c690559635ea6df6de3e50c9bc70d
+      - dcab96cc07881c2070477309aadb389e
       X-Runtime:
-      - '0.192471'
+      - '0.065040'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -3455,7 +3572,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"yxKI548ILtRpocCKY48/3+5jYLA2fnkUXMjDzro3wjE=\"
+        name=\"csrf-param\" />\n<meta content=\"20rq5K0n2E0CwWFZ/7fAL9cbWP3HqcqDBZh0wd7YpUw=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -3504,7 +3621,7 @@ http_interactions:
         widget&quot;&gt;\n  {{ widget.text.best_value }}\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:31 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:09 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/show.html
@@ -3526,9 +3643,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:30 GMT
+      - Thu, 28 Nov 2013 23:27:03 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3543,7 +3660,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! "<div class=\"html widget\">\n  {{ widget.text.best_value }}\n</div>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:31 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:10 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/edit.html
@@ -3565,9 +3682,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:31 GMT
+      - Thu, 28 Nov 2013 23:27:03 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3586,7 +3703,7 @@ http_interactions:
         }}\"\n     >\n      {{ widget.text.best_value }}\n    </textarea>\n  </div>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:31 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:10 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/html
@@ -3608,20 +3725,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:31 GMT
+      - Thu, 28 Nov 2013 23:27:03 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTg3NmNmNDE0MGUxMTU5NDBlNGZiYTIxNDBlMWYyODkxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVc1ME5zbEJGUm1lbXlORGlKNUxuOHp6amN4eG82TVdBVFRJL3J1Um51elU9BjsARg%3D%3D--db4b4a4642e9dafa9eb901b93a6c9645df9963ca;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY5MGM0MGU0OTg0ZjYyYjUwMjI4ZWQ0MzdjYzI5N2VkBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWE1cEFyWGdYMmlxZU9GcGxUR1pVTXYwTDgzbzZjSTQxNU80Yk1JdGR0SDA9BjsARg%3D%3D--e0c71bb9774d017341447d9d7085fea8a710be2a;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 5554b32b5706258dec77fd3e8a747df9
+      - 18760ba9142d4e790935aa1b870a504f
       X-Runtime:
-      - '0.179609'
+      - '0.023695'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -3637,7 +3754,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"W50NslBFRmemyNDiJ5Ln8zzjcxxo6MWATTI/ruRnuzU=\"
+        name=\"csrf-param\" />\n<meta content=\"a5pArXgX2iqeOFplTGZUMv0L83o6cI415O4bMItdtH0=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -3686,7 +3803,7 @@ http_interactions:
         widget&quot;&gt;\n  {{ widget.text.best_value }}\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:32 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:10 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/show.html
@@ -3708,9 +3825,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:31 GMT
+      - Thu, 28 Nov 2013 23:27:04 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3725,7 +3842,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! "<div class=\"html widget\">\n  {{ widget.text.best_value }}\n</div>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:32 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:10 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/edit.html
@@ -3747,9 +3864,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:32 GMT
+      - Thu, 28 Nov 2013 23:27:04 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3768,7 +3885,7 @@ http_interactions:
         }}\"\n     >\n      {{ widget.text.best_value }}\n    </textarea>\n  </div>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:32 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:11 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/social-links
@@ -3790,20 +3907,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Tue, 19 Nov 2013 01:54:32 GMT
+      - Thu, 28 Nov 2013 23:27:04 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWExNDBiODQ0NTUwMzc5MjlmM2I5ZDY5ZjVmMzMyODNhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXkraktEOUhrUmEvbUEvKyt6eCtsbWtTenlPeHhFdGZaSTJheVVZd3E3Vms9BjsARg%3D%3D--1696efd7c0070fe1d886b0ff310acbd5aa359d01;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTU0MGQwZTliMzE0YTgzMGY2Yzc1ZmExNmE1NmFjMmUxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVFFa0hvRVFCQUZqenQvTGNTeWxSNDRhUENCQUlCSCsyb000SDIwcFdwS009BjsARg%3D%3D--ec940aa13ea3cceff4f7eb031c1b05e84ee6190b;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - ed4e12c0429fd6465ad55ba8e32ee43a
+      - 24c94c680abb7e69438af129e4c43263
       X-Runtime:
-      - '0.163533'
+      - '0.077715'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -3819,7 +3936,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"y+jKD9HkRa/mA/++zx+lmkSzyOxxEtfZI2ayUYwq7Vk=\"
+        name=\"csrf-param\" />\n<meta content=\"QEkHoEQBAFjzt/LcSylR44aPCBAIBH+2oM4H20pWpKM=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -4008,7 +4125,7 @@ http_interactions:
         rel=&quot;me&quot;&gt;YouTube&lt;/a&gt;\n  {% endif %}\n\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:32 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:11 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/show.html
@@ -4030,9 +4147,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:33 GMT
+      - Thu, 28 Nov 2013 23:27:05 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -4071,7 +4188,7 @@ http_interactions:
         }}\" class=\"youtube\" title=\"YouTube\" rel=\"me\">YouTube</a>\n  {% endif
         %}\n\n</div>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:33 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:11 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/edit.html
@@ -4093,9 +4210,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Tue, 19 Nov 2013 01:54:33 GMT
+      - Thu, 28 Nov 2013 23:27:05 GMT
       Last-Modified:
-      - Tue, 12 Nov 2013 19:59:11 GMT
+      - Wed, 27 Nov 2013 21:53:04 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -4154,7 +4271,575 @@ http_interactions:
         widget.youtube_username.best_value }}\"\n      />\n    </div>\n\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:34 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:12 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/components/html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Thu, 28 Nov 2013 23:27:05 GMT
+      Last-Modified:
+      - Wed, 27 Nov 2013 21:53:04 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      Set-Cookie:
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRmNGY1ZWNjNmEwZTE5NzU1MWRjOWRlZDIwODE2M2FlBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTdsRHh0Y01tRGprMTIwYmp2WGl5YlRQSXVpN2xNaWxRNkk1eXVUN3h2MTg9BjsARg%3D%3D--d00bddc1743a40bf612b0c5169b4666ff771d995;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 555ecb0d83f3361d6a655b79a5167003
+      X-Runtime:
+      - '0.062955'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Widget Garden</title>\n
+        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
+        type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
+        \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
+        type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
+        name=\"csrf-param\" />\n<meta content=\"7lDxtcMmDjk120bjvXiybTPIui7lMilQ6I5yuT7xv18=\"
+        name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
+        \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
+        \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
+        \           <!-- .btn-navbar is used as the toggle for collapsed navbar content
+        -->\n            <a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">\n
+        \             <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n
+        \             <span class=\"icon-bar\"></span>\n            </a>\n\n            <!--
+        Be sure to leave the brand out there if you want it shown -->\n            <a
+        class=\"brand\" href=\"/\">G5 Widget Garden</a>\n\n            <!-- Everything
+        you want hidden at 940px or less, place within here -->\n            <div
+        class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
+        \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
+        \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
+        \     <a href=\"http://g5-widget-garden.herokuapp.com/components/html\" class=\"u-url
+        u-uid\" rel=\"bookmark\">HTML</a>\n    </h2>\n    <p class=\"p-summary\">A
+        word editor for adding text, lists, links, and headings</p>\n      <p>\n        <a
+        href=\"http://g5-widget-garden.herokuapp.com/static/components/html/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/html/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/html/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/html/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <ul class=\"unstyled\">\n          <li class=\"e-g5-property-group
+        h-g5-property-group\">\n            <h3><span class=\"p-name\">html</span>Property
+        Group</h3>\n  <p class=\"p-category\">Instance</p>\n  <div class=\"row\">\n
+        \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
+        e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
+        class=\"p-g5-name\">text</th>\n        </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
+        \             true\n            </td>\n          </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
+        \             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+        odio nibh, euismod a, lobortis in, laoreet eu, eros. Praesent lorem risus,
+        commodo sit amet, viverra in, sagittis nec, justo.\n            </td>\n          </tr>\n
+        \     </table>\n    </div>\n  </div>\n\n          </li>\n      </ul>\n  </header>\n
+        \ <hr>\n\n  <pre><code class=\"e-content\">&lt;!-- BEGIN EDIT FORM MARKUP
+        --&gt;\n&lt;form&gt;\n  &lt;div class=&quot;form-field&quot;&gt;\n    {{ widget.text.id_hidden_field
+        }}\n    &lt;label for=&quot;{{ widget.text.value_field_id }}&quot; &gt;\n
+        \     Enter text\n    &lt;/label&gt;\n    &lt;textarea\n      id=&quot;ckeditor&quot;\n
+        \     name=&quot;{{ widget.text.value_field_name }}&quot;\n     &gt;\n      {{
+        widget.text.best_value }}\n    &lt;/textarea&gt;\n  &lt;/div&gt;\n  &lt;input
+        type=&quot;submit&quot; value=&quot;Save&quot; class=&quot;btn&quot; /&gt;\n&lt;/form&gt;\n\n&lt;!--
+        END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n&lt;div class=&quot;html
+        widget&quot;&gt;\n  {{ widget.text.best_value }}\n&lt;/div&gt;\n\n&lt;!--
+        END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
+    http_version: 
+  recorded_at: Thu, 28 Nov 2013 23:27:12 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/html/show.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Content-Type:
+      - text/html
+      Date:
+      - Thu, 28 Nov 2013 23:27:05 GMT
+      Last-Modified:
+      - Wed, 27 Nov 2013 21:53:04 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Content-Digest:
+      - 027476d4c3818d351c78906a7b0d854bafe5edf1
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '64'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<div class=\"html widget\">\n  {{ widget.text.best_value }}\n</div>\n"
+    http_version: 
+  recorded_at: Thu, 28 Nov 2013 23:27:12 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/html/edit.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Content-Type:
+      - text/html
+      Date:
+      - Thu, 28 Nov 2013 23:27:06 GMT
+      Last-Modified:
+      - Wed, 27 Nov 2013 21:53:04 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Content-Digest:
+      - b73f2b9fff9595a9263b1f670b515eb8b07bd4b2
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '362'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<form>\n  <div class=\"form-field\">\n    {{ widget.text.id_hidden_field
+        }}\n    <label for=\"{{ widget.text.value_field_id }}\" >\n      Enter text\n
+        \   </label>\n    <textarea\n      id=\"ckeditor\"\n      name=\"{{ widget.text.value_field_name
+        }}\"\n     >\n      {{ widget.text.best_value }}\n    </textarea>\n  </div>\n
+        \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
+    http_version: 
+  recorded_at: Thu, 28 Nov 2013 23:27:12 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/components/social-links
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Thu, 28 Nov 2013 23:27:06 GMT
+      Last-Modified:
+      - Wed, 27 Nov 2013 21:53:04 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      Set-Cookie:
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWYwYTg2ODg0NTFjMzA3MTZmNGUzMmZmZWE1MGEzNDVhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTVocUlhanphMUg0Tm9jOXdqY1ZIYmFtN3lNcWt2RHF3WU5PdFFkUGFldlU9BjsARg%3D%3D--57963d9ab1a125981934c6b2f8d35fb23c7dab6b;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 545e2a860c558ca0d2ecf18e560e64be
+      X-Runtime:
+      - '0.068133'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Widget Garden</title>\n
+        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
+        type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
+        \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
+        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
+        type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
+        name=\"csrf-param\" />\n<meta content=\"5hqIajza1H4Noc9wjcVHbam7yMqkvDqwYNOtQdPaevU=\"
+        name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
+        \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
+        \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
+        \           <!-- .btn-navbar is used as the toggle for collapsed navbar content
+        -->\n            <a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">\n
+        \             <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n
+        \             <span class=\"icon-bar\"></span>\n            </a>\n\n            <!--
+        Be sure to leave the brand out there if you want it shown -->\n            <a
+        class=\"brand\" href=\"/\">G5 Widget Garden</a>\n\n            <!-- Everything
+        you want hidden at 940px or less, place within here -->\n            <div
+        class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
+        \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
+        \     <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
+        \     <a href=\"http://g5-widget-garden.herokuapp.com/components/social-links\"
+        class=\"u-url u-uid\" rel=\"bookmark\">Social Links</a>\n    </h2>\n    <p
+        class=\"p-summary\">List of links to business&#x27;s social sites</p>\n      <p>\n
+        \       <a href=\"http://g5-widget-garden.herokuapp.com/static/components/social-links/edit.html\"
+        class=\"u-g5-edit-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/social-links/edit.html</a>\n
+        \     </p>\n      <p>\n        <a href=\"http://g5-widget-garden.herokuapp.com/static/components/social-links/show.html\"
+        class=\"u-g5-show-template u-url\">http://g5-widget-garden.herokuapp.com/static/components/social-links/show.html</a>\n
+        \     </p>\n    <p>\n      <a href=\"http://g5-widget-garden.herokuapp.com/static/components/social-links/images/thumbnail.png\"
+        class=\"u-photo u-url\">http://g5-widget-garden.herokuapp.com/static/components/social-links/images/thumbnail.png</a>\n
+        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/social-links/images/thumbnail.png\"
+        class=\"u-g5-image u-url\">http://g5-widget-garden.herokuapp.com/static/components/social-links/images/thumbnail.png</a>\n
+        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-widget-garden.herokuapp.com/static/components/social-links/stylesheets/social-links.css\"
+        class=\"u-g5-stylesheet u-url\">http://g5-widget-garden.herokuapp.com/static/components/social-links/stylesheets/social-links.css</a>\n
+        \       </p>\n      <ul class=\"unstyled\">\n          <li class=\"e-g5-property-group
+        h-g5-property-group\">\n            <h3><span class=\"p-name\">Social Links</span>Property
+        Group</h3>\n  <p class=\"p-category\">Instance</p>\n  <div class=\"row\">\n
+        \   <div class=\"span5\">\n      <table class=\"table table-striped table-bordered
+        e-g5-property h-g5-property\">\n        <tr>\n          <th>Name</th>\n          <td
+        class=\"p-g5-name\">twitter_username</th>\n        </tr>\n          <tr>\n
+        \           <th style=\"width:40%\">Editable</th>\n            <td class=\"p-g5-editable\">\n
+        \             true\n            </td>\n          </tr>\n          <tr>\n            <th
+        style=\"width:40%\">Default Value</th>\n            <td class=\"p-g5-default-value\">\n
+        \             \n            </td>\n          </tr>\n      </table>\n    </div>\n
+        \ </div>\n  <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">facebook_url</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">yelp_username</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">pinterest_username</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">foursquare_url</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">tumblr_username</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">instagram_username</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">vimeo_username</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n
+        \ <div class=\"row\">\n    <div class=\"span5\">\n      <table class=\"table
+        table-striped table-bordered e-g5-property h-g5-property\">\n        <tr>\n
+        \         <th>Name</th>\n          <td class=\"p-g5-name\">youtube_username</th>\n
+        \       </tr>\n          <tr>\n            <th style=\"width:40%\">Editable</th>\n
+        \           <td class=\"p-g5-editable\">\n              true\n            </td>\n
+        \         </tr>\n          <tr>\n            <th style=\"width:40%\">Default
+        Value</th>\n            <td class=\"p-g5-default-value\">\n              \n
+        \           </td>\n          </tr>\n      </table>\n    </div>\n  </div>\n\n
+        \         </li>\n      </ul>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;!--
+        BEGIN EDIT FORM MARKUP --&gt;\n&lt;form&gt;\n  &lt;div class=&quot;form-field&quot;&gt;\n
+        \   &lt;label for=&quot;{{ widget.twitter_username.value_field_id }}&quot;
+        &gt;\n      Twitter Username\n    &lt;/label&gt;\n    {{ widget.twitter_username.id_hidden_field
+        }}\n    &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.twitter_username.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.twitter_username.value_field_name }}&quot;\n
+        \     value=&quot;{{ widget.twitter_username.best_value }}&quot;\n    /&gt;\n
+        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n    &lt;label
+        for=&quot;{{ widget.facebook_url.value_field_id }}&quot; &gt;\n      Facebook
+        URL\n    &lt;/label&gt;\n    {{ widget.facebook_url.id_hidden_field }}\n    &lt;input
+        type=&quot;text&quot;\n      id=&quot;{{ widget.facebook_url.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.facebook_url.value_field_name }}&quot;\n
+        \     value=&quot;{{ widget.facebook_url.best_value | url_encode }}&quot;\n
+        \   /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
+        \   &lt;label for=&quot;{{ widget.yelp_username.value_field_id }}&quot; &gt;\n
+        \     Yelp Username\n    &lt;/label&gt;\n    {{ widget.yelp_username.id_hidden_field
+        }}\n    &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.yelp_username.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.yelp_username.value_field_name }}&quot;\n
+        \     value=&quot;{{ widget.yelp_username.best_value }}&quot;\n    /&gt;\n
+        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n    &lt;label
+        for=&quot;{{ widget.foursquare_url.value_field_id }}&quot; &gt;\n      Foursquare
+        URL\n    &lt;/label&gt;\n    {{ widget.foursquare_url.id_hidden_field }}\n
+        \   &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.foursquare_url.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.foursquare_url.value_field_name }}&quot;\n
+        \     value=&quot;{{ widget.foursquare_url.best_value | url_encode }}&quot;\n
+        \   /&gt;\n  &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n
+        \   &lt;label for=&quot;{{ widget.pinterest_username.value_field_id }}&quot;
+        &gt;\n      Pinterest Username\n    &lt;/label&gt;\n    {{ widget.pinterest_username.id_hidden_field
+        }}\n    &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.pinterest_username.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.pinterest_username.value_field_name }}&quot;\n
+        \     value=&quot;{{ widget.pinterest_username.best_value }}&quot;\n    /&gt;\n
+        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n    &lt;label
+        for=&quot;{{ widget.tumblr_username.value_field_id }}&quot; &gt;\n      Tumblr
+        Username\n    &lt;/label&gt;\n    {{ widget.tumblr_username.id_hidden_field
+        }}\n    &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.tumblr_username.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.tumblr_username.value_field_name }}&quot;\n
+        \     value=&quot;{{ widget.tumblr_username.best_value }}&quot;\n    /&gt;\n
+        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n    &lt;label
+        for=&quot;{{ widget.instagram_username.value_field_id }}&quot; &gt;\n      Instagram
+        Username\n    &lt;/label&gt;\n    {{ widget.instagram_username.id_hidden_field
+        }}\n    &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.instagram_username.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.instagram_username.value_field_name }}&quot;\n
+        \     value=&quot;{{ widget.instagram_username.best_value }}&quot;\n    /&gt;\n
+        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n    &lt;label
+        for=&quot;{{ widget.vimeo_username.value_field_id }}&quot; &gt;\n      Vimeo
+        Username\n    &lt;/label&gt;\n    {{ widget.vimeo_username.id_hidden_field
+        }}\n    &lt;input type=&quot;text&quot;\n      id=&quot;{{ widget.vimeo_username.value_field_id
+        }}&quot;\n      name=&quot;{{ widget.vimeo_username.value_field_name }}&quot;\n
+        \     value=&quot;{{ widget.vimeo_username.best_value }}&quot;\n    /&gt;\n
+        \ &lt;/div&gt;\n\n  &lt;div class=&quot;form-field&quot;&gt;\n      &lt;label
+        for=&quot;{{ widget.youtube_username.value_field_id }}&quot; &gt;\n        YouTube
+        Username\n      &lt;/label&gt;\n      {{ widget.youtube_username.id_hidden_field
+        }}\n      &lt;input type=&quot;text&quot;\n        id=&quot;{{ widget.youtube_username.value_field_id
+        }}&quot;\n        name=&quot;{{ widget.youtube_username.value_field_name }}&quot;\n
+        \       value=&quot;{{ widget.youtube_username.best_value }}&quot;\n      /&gt;\n
+        \   &lt;/div&gt;\n\n  &lt;input type=&quot;submit&quot; value=&quot;Save&quot;
+        class=&quot;btn&quot; /&gt;\n&lt;/form&gt;\n\n&lt;!-- END EDIT FORM MARKUP
+        --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n&lt;div class=&quot;social-links
+        widget&quot;&gt;\n\n  {% if widget.facebook_url.best_value != &quot;&quot;
+        \ %}\n    &lt;a href=&quot;{{ widget.facebook_url.best_value | url_encode
+        }}&quot; class=&quot;facebook&quot; title=&quot;Facebook&quot; rel=&quot;me&quot;&gt;Facebook&lt;/a&gt;\n
+        \ {% endif %}\n\n  {% if widget.twitter_username.best_value != &quot;&quot;
+        \ %}\n    &lt;a href=&quot;http://www.twitter.com/{{ widget.twitter_username.best_value
+        | url_encode }}&quot; class=&quot;twitter&quot; title=&quot;Twitter&quot;
+        rel=&quot;me&quot;&gt;Twitter&lt;/a&gt;\n  {% endif %}\n\n  {% if widget.yelp_username.best_value
+        != &quot;&quot;  %}\n    &lt;a href=&quot;http://www.yelp.com/biz/{{ widget.yelp_username.best_value
+        | url_encode }}&quot; class=&quot;yelp&quot; title=&quot;Yelp&quot; rel=&quot;me&quot;&gt;Yelp&lt;/a&gt;\n
+        \ {% endif %}\n\n  {% if widget.foursquare_url.best_value != &quot;&quot;
+        %}\n    &lt;a href=&quot;{{ widget.foursquare_url.best_value | url_encode
+        }}&quot; class=&quot;foursquare&quot; title=&quot;Foursquare&quot; rel=&quot;me&quot;&gt;Foursquare&lt;/a&gt;\n
+        \ {% endif %}\n\n  {% if widget.pinterest_username.best_value != &quot;&quot;
+        \ %}\n    &lt;a href=&quot;http://www.pinterest.com/{{ widget.pinterest_username.best_value
+        | url_encode }}&quot; class=&quot;pinterest&quot; title=&quot;Pinterest&quot;
+        rel=&quot;me&quot;&gt;Pinterest&lt;/a&gt;\n  {% endif %}\n\n  {% if widget.tumblr_username.best_value
+        != &quot;&quot;  %}\n    &lt;a href=&quot;http://{{ widget.tumblr_username.best_value
+        | url_encode }}.tumblr.com/&quot; class=&quot;tumblr&quot; title=&quot;Tumblr&quot;
+        rel=&quot;me&quot;&gt;Tumblr&lt;/a&gt;\n  {% endif %}\n\n  {% if widget.instagram_username.best_value
+        != &quot;&quot;  %}\n    &lt;a href=&quot;http://www.instagram.com/{{ widget.instagram_username.best_value
+        | url_encode }}&quot; class=&quot;instagram&quot; title=&quot;Instagram&quot;
+        rel=&quot;me&quot;&gt;Instagram&lt;/a&gt;\n  {% endif %}\n\n  {% if widget.vimeo_username.best_value
+        != &quot;&quot;  %}\n    &lt;a href=&quot;http://www.vimeo.com/{{ widget.vimeo_username.best_value
+        | url_encode }}&quot; class=&quot;vimeo&quot; title=&quot;Vimeo&quot; rel=&quot;me&quot;&gt;Vimeo&lt;/a&gt;\n
+        \ {% endif %}\n\n  {% if widget.youtube_username.best_value != &quot;&quot;
+        \ %}\n    &lt;a href=&quot;http://www.youtube.com/{{ widget.youtube_username.best_value
+        | url_encode }}&quot; class=&quot;youtube&quot; title=&quot;YouTube&quot;
+        rel=&quot;me&quot;&gt;YouTube&lt;/a&gt;\n  {% endif %}\n\n&lt;/div&gt;\n\n&lt;!--
+        END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
+    http_version: 
+  recorded_at: Thu, 28 Nov 2013 23:27:13 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/show.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Content-Type:
+      - text/html
+      Date:
+      - Thu, 28 Nov 2013 23:27:08 GMT
+      Last-Modified:
+      - Wed, 27 Nov 2013 21:53:04 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Content-Digest:
+      - 2bb6b9f7e188591e1b5fd48d70763d321a90cb49
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '1892'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<div class=\"social-links widget\">\n\n  {% if widget.facebook_url.best_value
+        != \"\"  %}\n    <a href=\"{{ widget.facebook_url.best_value | url_encode
+        }}\" class=\"facebook\" title=\"Facebook\" rel=\"me\">Facebook</a>\n  {% endif
+        %}\n\n  {% if widget.twitter_username.best_value != \"\"  %}\n    <a href=\"http://www.twitter.com/{{
+        widget.twitter_username.best_value | url_encode }}\" class=\"twitter\" title=\"Twitter\"
+        rel=\"me\">Twitter</a>\n  {% endif %}\n\n  {% if widget.yelp_username.best_value
+        != \"\"  %}\n    <a href=\"http://www.yelp.com/biz/{{ widget.yelp_username.best_value
+        | url_encode }}\" class=\"yelp\" title=\"Yelp\" rel=\"me\">Yelp</a>\n  {%
+        endif %}\n\n  {% if widget.foursquare_url.best_value != \"\" %}\n    <a href=\"{{
+        widget.foursquare_url.best_value | url_encode }}\" class=\"foursquare\" title=\"Foursquare\"
+        rel=\"me\">Foursquare</a>\n  {% endif %}\n\n  {% if widget.pinterest_username.best_value
+        != \"\"  %}\n    <a href=\"http://www.pinterest.com/{{ widget.pinterest_username.best_value
+        | url_encode }}\" class=\"pinterest\" title=\"Pinterest\" rel=\"me\">Pinterest</a>\n
+        \ {% endif %}\n\n  {% if widget.tumblr_username.best_value != \"\"  %}\n    <a
+        href=\"http://{{ widget.tumblr_username.best_value | url_encode }}.tumblr.com/\"
+        class=\"tumblr\" title=\"Tumblr\" rel=\"me\">Tumblr</a>\n  {% endif %}\n\n
+        \ {% if widget.instagram_username.best_value != \"\"  %}\n    <a href=\"http://www.instagram.com/{{
+        widget.instagram_username.best_value | url_encode }}\" class=\"instagram\"
+        title=\"Instagram\" rel=\"me\">Instagram</a>\n  {% endif %}\n\n  {% if widget.vimeo_username.best_value
+        != \"\"  %}\n    <a href=\"http://www.vimeo.com/{{ widget.vimeo_username.best_value
+        | url_encode }}\" class=\"vimeo\" title=\"Vimeo\" rel=\"me\">Vimeo</a>\n  {%
+        endif %}\n\n  {% if widget.youtube_username.best_value != \"\"  %}\n    <a
+        href=\"http://www.youtube.com/{{ widget.youtube_username.best_value | url_encode
+        }}\" class=\"youtube\" title=\"YouTube\" rel=\"me\">YouTube</a>\n  {% endif
+        %}\n\n</div>\n"
+    http_version: 
+  recorded_at: Thu, 28 Nov 2013 23:27:14 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/edit.html
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Content-Type:
+      - text/html
+      Date:
+      - Thu, 28 Nov 2013 23:27:08 GMT
+      Last-Modified:
+      - Wed, 27 Nov 2013 21:53:04 GMT
+      Server:
+      - thin 1.5.1 codename Straight Razor
+      X-Content-Digest:
+      - 0431bf8372a5ec38f65e42dda0b4f4c28f4e5180
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '3556'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "<form>\n  <div class=\"form-field\">\n    <label for=\"{{ widget.twitter_username.value_field_id
+        }}\" >\n      Twitter Username\n    </label>\n    {{ widget.twitter_username.id_hidden_field
+        }}\n    <input type=\"text\"\n      id=\"{{ widget.twitter_username.value_field_id
+        }}\"\n      name=\"{{ widget.twitter_username.value_field_name }}\"\n      value=\"{{
+        widget.twitter_username.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field\">\n
+        \   <label for=\"{{ widget.facebook_url.value_field_id }}\" >\n      Facebook
+        URL\n    </label>\n    {{ widget.facebook_url.id_hidden_field }}\n    <input
+        type=\"text\"\n      id=\"{{ widget.facebook_url.value_field_id }}\"\n      name=\"{{
+        widget.facebook_url.value_field_name }}\"\n      value=\"{{ widget.facebook_url.best_value
+        | url_encode }}\"\n    />\n  </div>\n\n  <div class=\"form-field\">\n    <label
+        for=\"{{ widget.yelp_username.value_field_id }}\" >\n      Yelp Username\n
+        \   </label>\n    {{ widget.yelp_username.id_hidden_field }}\n    <input type=\"text\"\n
+        \     id=\"{{ widget.yelp_username.value_field_id }}\"\n      name=\"{{ widget.yelp_username.value_field_name
+        }}\"\n      value=\"{{ widget.yelp_username.best_value }}\"\n    />\n  </div>\n\n
+        \ <div class=\"form-field\">\n    <label for=\"{{ widget.foursquare_url.value_field_id
+        }}\" >\n      Foursquare URL\n    </label>\n    {{ widget.foursquare_url.id_hidden_field
+        }}\n    <input type=\"text\"\n      id=\"{{ widget.foursquare_url.value_field_id
+        }}\"\n      name=\"{{ widget.foursquare_url.value_field_name }}\"\n      value=\"{{
+        widget.foursquare_url.best_value | url_encode }}\"\n    />\n  </div>\n\n  <div
+        class=\"form-field\">\n    <label for=\"{{ widget.pinterest_username.value_field_id
+        }}\" >\n      Pinterest Username\n    </label>\n    {{ widget.pinterest_username.id_hidden_field
+        }}\n    <input type=\"text\"\n      id=\"{{ widget.pinterest_username.value_field_id
+        }}\"\n      name=\"{{ widget.pinterest_username.value_field_name }}\"\n      value=\"{{
+        widget.pinterest_username.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field\">\n
+        \   <label for=\"{{ widget.tumblr_username.value_field_id }}\" >\n      Tumblr
+        Username\n    </label>\n    {{ widget.tumblr_username.id_hidden_field }}\n
+        \   <input type=\"text\"\n      id=\"{{ widget.tumblr_username.value_field_id
+        }}\"\n      name=\"{{ widget.tumblr_username.value_field_name }}\"\n      value=\"{{
+        widget.tumblr_username.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field\">\n
+        \   <label for=\"{{ widget.instagram_username.value_field_id }}\" >\n      Instagram
+        Username\n    </label>\n    {{ widget.instagram_username.id_hidden_field }}\n
+        \   <input type=\"text\"\n      id=\"{{ widget.instagram_username.value_field_id
+        }}\"\n      name=\"{{ widget.instagram_username.value_field_name }}\"\n      value=\"{{
+        widget.instagram_username.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field\">\n
+        \   <label for=\"{{ widget.vimeo_username.value_field_id }}\" >\n      Vimeo
+        Username\n    </label>\n    {{ widget.vimeo_username.id_hidden_field }}\n
+        \   <input type=\"text\"\n      id=\"{{ widget.vimeo_username.value_field_id
+        }}\"\n      name=\"{{ widget.vimeo_username.value_field_name }}\"\n      value=\"{{
+        widget.vimeo_username.best_value }}\"\n    />\n  </div>\n\n  <div class=\"form-field\">\n
+        \     <label for=\"{{ widget.youtube_username.value_field_id }}\" >\n        YouTube
+        Username\n      </label>\n      {{ widget.youtube_username.id_hidden_field
+        }}\n      <input type=\"text\"\n        id=\"{{ widget.youtube_username.value_field_id
+        }}\"\n        name=\"{{ widget.youtube_username.value_field_name }}\"\n        value=\"{{
+        widget.youtube_username.best_value }}\"\n      />\n    </div>\n\n  <input
+        type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
+    http_version: 
+  recorded_at: Thu, 28 Nov 2013 23:27:15 GMT
 - request:
     method: get
     uri: http://g5-layout-garden.herokuapp.com/
@@ -4176,15 +4861,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Tue, 19 Nov 2013 01:54:35 GMT
+      - Thu, 28 Nov 2013 23:27:33 GMT
       Server:
       - thin 1.5.0 codename Knife
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 9a7bde16db251e3d263ff05bd44d926e
+      - ae85d0754ec38f42f6f3b69ae41f63ac
       X-Runtime:
-      - '0.090544'
+      - '0.004098'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -4193,7 +4878,7 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:36 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:40 GMT
 - request:
     method: get
     uri: http://g5-layout-garden.herokuapp.com/
@@ -4215,15 +4900,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Tue, 19 Nov 2013 01:54:36 GMT
+      - Thu, 28 Nov 2013 23:27:33 GMT
       Server:
       - thin 1.5.0 codename Knife
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - b37437b66f2890e4a457d450f01973bb
+      - a4559323af8c37ddab55f5aabad7e9cb
       X-Runtime:
-      - '0.004277'
+      - '0.003113'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -4232,7 +4917,7 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:36 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:40 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/
@@ -4254,15 +4939,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Tue, 19 Nov 2013 01:54:36 GMT
+      - Thu, 28 Nov 2013 23:27:33 GMT
       Server:
       - thin 1.5.0 codename Knife
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - a0a8f950bf6673e940307dd191acafd0
+      - d32c9908a5f58562a55a106f33a4e84b
       X-Runtime:
-      - '0.003877'
+      - '0.014317'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -4271,122 +4956,5 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:36 GMT
-- request:
-    method: get
-    uri: http://g5-theme-garden.herokuapp.com/
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      If-Modified-Since:
-      - Wed, 06 Nov 2013 22:15:25 GMT
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 304
-      message: Not Modified
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Date:
-      - Tue, 19 Nov 2013 01:54:36 GMT
-      Server:
-      - thin 1.5.0 codename Knife
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - e63fa08f993debfab728950b9fca87dc
-      X-Runtime:
-      - '0.003074'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ''
-    http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:36 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      If-Modified-Since:
-      - Tue, 12 Nov 2013 19:59:11 GMT
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 304
-      message: Not Modified
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Date:
-      - Tue, 19 Nov 2013 01:54:37 GMT
-      Server:
-      - thin 1.5.1 codename Straight Razor
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - fd8e4665b3fef3ba5e3de77d8c192236
-      X-Runtime:
-      - '0.004031'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ''
-    http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:37 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      If-Modified-Since:
-      - Tue, 12 Nov 2013 19:59:11 GMT
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 304
-      message: Not Modified
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Date:
-      - Tue, 19 Nov 2013 01:54:37 GMT
-      Server:
-      - thin 1.5.1 codename Straight Razor
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 321e2413542d58a98fc61d733583e136
-      X-Runtime:
-      - '0.004175'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ''
-    http_version: 
-  recorded_at: Tue, 19 Nov 2013 01:54:38 GMT
+  recorded_at: Thu, 28 Nov 2013 23:27:40 GMT
 recorded_with: VCR 2.6.0
