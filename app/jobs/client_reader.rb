@@ -17,6 +17,7 @@ class ClientReader
       location = location.format
       Location.create!(
         uid: location.uid.to_s,
+        urn: location.uid.to_s.split("/").last,
         name: location.name.to_s
       )
     end if client.respond_to?(:orgs)

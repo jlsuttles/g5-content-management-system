@@ -23,10 +23,6 @@ shared_examples_for AfterCreateUpdateUrn do
   end
 end
 
-describe Location do
-  it_behaves_like AfterCreateUpdateUrn
-end
-
 describe Website do
   it_behaves_like AfterCreateUpdateUrn
 end

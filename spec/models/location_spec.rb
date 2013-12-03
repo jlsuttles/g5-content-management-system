@@ -1,12 +1,6 @@
 require "spec_helper"
 
 describe Location do
-  describe ".urn_prefix" do
-    it "is g5-cl" do
-      Location.urn_prefix.should eq "g5-cl"
-    end
-  end
-
   describe "validations" do
     it "should have a valid fabricator" do
       Fabricate.build(:location).should be_valid
@@ -17,8 +11,8 @@ describe Location do
     it "should require name" do
       Fabricate.build(:location, name: "").should_not be_valid
     end
-    it "should not require urn on new records" do
-      Fabricate.build(:location, urn: "").should be_valid
+    it "should require urn" do
+      Fabricate.build(:location, urn: "").should_not be_valid
     end
   end
 
