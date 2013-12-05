@@ -8,3 +8,4 @@ App.Website = DS.Model.extend App.ReloadIframe,
   customColors: DS.attr("boolean")
   primaryColor: DS.attr("string")
   secondaryColor: DS.attr("string")
+  herokuUrl: DS.attr("string")
