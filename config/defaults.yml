@@ -35,6 +35,9 @@ website:
           - name: navigation
           - name: contact-info
           - name: hours
+      - html_id: drop-target-bottom
+        widget:
+          - name: analytics
 
   web_home_template:
     name: Home

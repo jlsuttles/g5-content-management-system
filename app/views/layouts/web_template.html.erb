@@ -23,5 +23,6 @@
     <![endif]-->
     <%= javascript_include_tag "web_template" if mode == "preview" %>
     <%= yield(:bottom_of_body) %>
+    <div id="drop-target-bottom"></div>
   </body>
 </html>
