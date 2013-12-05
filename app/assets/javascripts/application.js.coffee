@@ -9,10 +9,32 @@
 
 $ ->
   
+  #= Allows CKEditor modal to play nice with Bootstrap modal
   $.fn.modal.Constructor::enforceFocus = ->
-    modal_this = this
+    modalThis = this
+    
     $(document).on "focusin.modal", (e) ->
-      modal_this.$element.focus()  if modal_this.$element[0] isnt e.target and not modal_this.$element.has(e.target).length and not $(e.target.parentNode).hasClass("cke_dialog_ui_input_select") and not $(e.target.parentNode).hasClass("cke_dialog_ui_input_text")
+      
+      element = modalThis.$element
+      target = e.target
+      
+      shouldFocus = (element, target) ->
+        
+        elementIsNotTarget = ->
+          element[0] isnt target
+          
+        elementHasNoTarget = ->
+          not element.has(target).length
+          
+        parentIsNotSelect = ->
+          not $(target.parentNode).hasClass("cke_dialog_ui_input_select")
+          
+        parentIsText = ->
+          $(target.parentNode).hasClass("cke_dialog_ui_input_text")
+
+        elementIsNotTarget and elementHasNoTarget and parentIsNotSelect and not parentIsText
+
+      element.focus()  if shouldFocus(element, target)
   
 
   $('.layout-picker input, .theme-picker input').click ->
