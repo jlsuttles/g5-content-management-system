@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Thu, 28 Nov 2013 23:24:26 GMT
+      - Thu, 05 Dec 2013 23:25:23 GMT
       Last-Modified:
-      - Wed, 06 Nov 2013 22:15:25 GMT
+      - Thu, 05 Dec 2013 21:06:17 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTk3ZTVkNWRiZjBhY2E0N2E4NTAyZGNkZmE5NDBjMzk0BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUpHYS9EbmlmMCtJSUtxMzQwQnUwOVQ5aHpBbnVIdzMvYzlNcjY4UXQrMXM9BjsARg%3D%3D--227ec7be18908b93d4e78a9caf05823d19c1a178;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTNjMWNlMDQ5MDhkOThlZDYzNTY0ZTI1NzNjNTRkNjNlBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXFiWnNUTU50bm9mSm5mRTR0SE1FY0lHNnpNQi83WEVUNlNmMXE5QjNNVGs9BjsARg%3D%3D--3089caccc67b7779e7370c243e545a40234f8bf4;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 4124368055349645427ffb998c93a402
+      - 07beb89757610e7695edd5cde8132170
       X-Runtime:
-      - '0.018911'
+      - '0.018744'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"JGa/Dnif0+IIKq340Bu09T9hzAnuHw3/c9Mr68Qt+1s=\"
+        name=\"csrf-param\" />\n<meta content=\"qbZsTMNtnofJnfE4tHMEcIG6zMB/7XET6Sf1q9B3MTk=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -80,7 +80,7 @@ http_interactions:
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Thu, 28 Nov 2013 23:24:33 GMT
+  recorded_at: Thu, 05 Dec 2013 23:25:22 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/components/big-picture
@@ -102,20 +102,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Thu, 28 Nov 2013 23:24:27 GMT
+      - Thu, 05 Dec 2013 23:25:24 GMT
       Last-Modified:
-      - Wed, 06 Nov 2013 22:15:25 GMT
+      - Thu, 05 Dec 2013 21:06:17 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTFlZTcwNjc0ZTYwMWMxMDQ2NDRiZmJmNzZiYzNiOGI2BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTNoSTRLcGw5UW5RaXM0RE9Qek1VdEdnWHVXMExPM2NSM00wTDNXU29FaUk9BjsARg%3D%3D--e74f4013a92ca82f76b706eecc07a3647936fd5d;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTBhMjVmMmJjODkyZmE3NWUyZGY5NTAxMjE1NGJjY2Q2BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVpzVXJ1S0NsMzJDS2hHaWhTdjc5RG41b1FzTkNXV0htRENCbFJ2emcyY0k9BjsARg%3D%3D--7f460f5cbc79c515a16b3acb58e14fc0fb8f808c;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 2469a73218f0c396afaeda5be44d7514
+      - 782782eab1caffcb882b9cabfd6b24d2
       X-Runtime:
-      - '0.023212'
+      - '0.022724'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -131,7 +131,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"3hI4Kpl9QnQis4DOPzMUtGgXuW0LO3cR3M0L3WSoEiI=\"
+        name=\"csrf-param\" />\n<meta content=\"ZsUruKCl32CKhGihSv79Dn5oQsNCWWHmDCBlRvzg2cI=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -161,5 +161,5 @@ http_interactions:
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Thu, 28 Nov 2013 23:24:33 GMT
+  recorded_at: Thu, 05 Dec 2013 23:25:22 GMT
 recorded_with: VCR 2.6.0
