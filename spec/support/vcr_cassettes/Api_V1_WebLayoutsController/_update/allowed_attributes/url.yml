@@ -21,24 +21,24 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Thu, 28 Nov 2013 23:25:23 GMT
+      - Thu, 05 Dec 2013 23:49:21 GMT
       Last-Modified:
-      - Wed, 06 Nov 2013 23:51:31 GMT
+      - Fri, 29 Nov 2013 00:15:37 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTBjZGFiNjZiYTc0MjRmZThhYTc2MzRkODE2NzJlZDNiBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVN0N2FYS01Xd3FPNy9uekJIYXoralB1UzVVZWN0Q0VZSHcweTR1V2JVUWs9BjsARg%3D%3D--3a59b493c24e407206160afd8a7d591a39ac44fe;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTE3MDAyMWRjN2VhNDhlY2QyZGE3NTY5MTk5ODAwZDAzBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTRRZG9GaWNhZkFTMFU1elBqVkhuVTE5YWxRMTI5NEhUR2UrZ0tLRW9HNHM9BjsARg%3D%3D--25e89ef834d65af5393fb34b91153b56f40376c4;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - beb22a2bbb7da9d50daf9a31d1208772
+      - ead4c26f666b33c5e57da7db256d49ee
       X-Runtime:
-      - '0.015118'
+      - '0.055658'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Content-Length:
-      - '5088'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"St7aXKMWwqO7/nzBHaz+jPuS5UectCEYHw0y4uWbUQk=\"
+        name=\"csrf-param\" />\n<meta content=\"4QdoFicafAS0U5zPjVHnU19alQ1294HTGe+gKKEoG4s=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -98,7 +98,7 @@ http_interactions:
         \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Thu, 28 Nov 2013 23:25:29 GMT
+  recorded_at: Thu, 05 Dec 2013 23:49:19 GMT
 - request:
     method: get
     uri: http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-left
@@ -120,20 +120,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Thu, 28 Nov 2013 23:25:23 GMT
+      - Thu, 05 Dec 2013 23:49:21 GMT
       Last-Modified:
-      - Wed, 06 Nov 2013 23:51:31 GMT
+      - Fri, 29 Nov 2013 00:15:37 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTMxNGVjMmM5OWMxODNjMDMyMDYwMjgxZTdjYjQwMDcxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMW1uOXArYk9WV0VCaXVQNmpicHFZejhYTDdhY1UxOVhwaUhpbWtMZGh1cVk9BjsARg%3D%3D--69f150e28fcfc5fdf56c1de9b622bf58c0e4299a;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWNlMWRjODA5ZDU4N2QwMTkwOWRhMmIwMDc1NjFmODA5BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTFjQW8zTU8zRExlNG5NUkl4bVNuUW1Qajg2Q0RXNjNjdG11ZzVReTNHU0U9BjsARg%3D%3D--b809a972d1b7269a7cfc46fd93fc75becce366b4;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 25e8c979fab54598bb5adf83f8387341
+      - e26f5bd471e82cc339aaeae7e4aacdd9
       X-Runtime:
-      - '0.014952'
+      - '0.060759'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -149,7 +149,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"mn9p+bOVWEBiuP6jbpqYz8XL7acU19XpiHimkLdhuqY=\"
+        name=\"csrf-param\" />\n<meta content=\"1cAo3MO3DLe4nMRIxmSnQmPj86CDW63ctmug5Qy3GSE=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -197,5 +197,5 @@ http_interactions:
         \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Thu, 28 Nov 2013 23:25:30 GMT
+  recorded_at: Thu, 05 Dec 2013 23:49:20 GMT
 recorded_with: VCR 2.6.0
