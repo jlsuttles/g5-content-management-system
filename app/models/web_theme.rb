@@ -50,6 +50,6 @@ class WebTheme < ActiveRecord::Base
       raise "No h-g5-component found at url: #{url}"
     end
   rescue OpenURI::HTTPError => e
-    logger.warn e.message
+    Rails.logger.warn e.message
   end
 end
