@@ -35,7 +35,7 @@ describe Api::V1::WebPageTemplatesController do
   describe "#create" do
     context "when create succeeds" do
       it "responds 200 OK" do
-        post :create, web_page_template: { name: "name", website_id: Fabricate(:website).id }
+        post :create, web_page_template: { name: "name" }
         expect(response.status).to eq 200
       end
 
