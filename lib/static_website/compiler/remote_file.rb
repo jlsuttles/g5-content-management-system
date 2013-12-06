@@ -28,7 +28,7 @@ module StaticWebsite
         end if compile_path
       rescue OpenURI::HTTPError => e
         if e.message.include?("404")
-          logger.warn e.message
+          Rails.logger.warn e.message
         else
           raise e
         end
