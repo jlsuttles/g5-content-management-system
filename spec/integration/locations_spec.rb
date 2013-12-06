@@ -42,7 +42,9 @@ describe "Integration '/'", js: true, vcr: VCR_OPTIONS do
     end
 
     it "'View' link goes to Heroku App" do
-      pending("capybara can't find the 'view' link because the href is being populated via bindAttr")
+      # Wait for href to be populated
+      sleep 1
+
       within LOCATION_SELECTOR do
         click_link "View"
       end

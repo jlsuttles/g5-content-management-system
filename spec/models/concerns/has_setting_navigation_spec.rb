@@ -31,6 +31,7 @@ shared_examples_for HasSettingNavigation do
         described_instance.web_page_templates << web_page_template
         described_instance.save(validate: false)
       end
+
       it "returns hashes with to liquid defined" do
         described_instance.web_page_templates_to_hashes.sample.should be_a(HashWithToLiquid)
       end

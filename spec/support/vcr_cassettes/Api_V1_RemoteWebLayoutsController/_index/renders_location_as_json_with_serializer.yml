@@ -47,259 +47,37 @@ http_interactions:
       string: ''
     headers:
       If-Modified-Since:
-      - Wed, 06 Nov 2013 23:51:31 GMT
+      - Fri, 29 Nov 2013 00:15:37 GMT
       Accept:
       - ! '*/*'
       User-Agent:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Content-Type:
-      - text/html; charset=utf-8
       Date:
-      - Tue, 03 Dec 2013 22:01:49 GMT
-      Last-Modified:
-      - Fri, 29 Nov 2013 00:15:37 GMT
+      - Thu, 05 Dec 2013 23:59:46 GMT
       Server:
       - thin 1.5.0 codename Knife
-      Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTVjNzgzZjk2ZGJkMTNjODIwYjdkZTNjYWJhYjU1YWFkBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMS9oVWdjZEs1czJ6VllCeUUrY2lCL3pyTTI1K2pmR1FaTXVPTmp0QzJBTEE9BjsARg%3D%3D--94bc82cd6d6d963a5349f4ae43e3959b7f60861d;
-        path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 83f17f44e73a42f2fa1de5b786f6e198
+      - 3b8af9f6c00a635c6b6be366eb81689c
       X-Runtime:
-      - '0.505206'
+      - '0.004407'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Transfer-Encoding:
-      - chunked
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Layout Garden</title>\n
-        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
-        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
-        type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
-        \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
-        media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
-        type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"/hUgcdK5s2zVYByE+ciB/zrM25+jfGQZMuONjtC2ALA=\"
-        name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
-        \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
-        class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
-        .btn-navbar is used as the toggle for collapsed navbar content -->\n            <a
-        class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">\n
-        \             <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n
-        \             <span class=\"icon-bar\"></span>\n            </a>\n\n            <!--
-        Be sure to leave the brand out there if you want it shown -->\n            <a
-        class=\"brand\" href=\"/\">G5 Layout Garden</a>\n\n            <!-- Everything
-        you want hidden at 940px or less, place within here -->\n            <div
-        class=\"nav-collapse\">\n              <ul class=\"nav\">\n              </ul>\n
-        \           </div>\n\n          </div>\n        </div>\n      </div>\n\n\n
-        \       <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
-        \     <a href=\"http://g5-layout-garden.herokuapp.com/components/main-first-single-column\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Main First Single Column</a>\n    </h2>\n
-        \   <p class=\"p-summary\">Single column layout, main section on top of sidebar
-        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-single-column/images/thumbnail.png</a>\n
-        \       </p>\n\n\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
-        class=&quot;single-column layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
-        class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
-        place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
-        collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
-        \             &lt;span id=&quot;drop-target-phone&quot;&gt;&lt;!-- phone widget
-        here --&gt;&lt;/span&gt;\n              &lt;span id=&quot;drop-target-btn&quot;&gt;&lt;!--
-        btn widget here --&gt;&lt;/span&gt;\n              &lt;a class=&quot;collapsable-btn
-        btn&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.collapsable-content&quot;&gt;&lt;span
-        class=&quot;text&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;bars&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;\n
-        \           &lt;/div&gt;\n\n            &lt;div id=&quot;drop-target-nav&quot;
-        class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
-        \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
-        class=&quot;wrapper&quot;&gt;\n\n        &lt;section role=&quot;main&quot;
-        id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;&lt;aside role=&quot;complementary&quot;
-        id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;\n&lt;/div&gt;\n\n      &lt;footer
-        role=&quot;contentinfo&quot;&gt;&lt;div id=&quot;drop-target-footer&quot;
-        class=&quot;content&quot;&gt;&lt;/div&gt;\n      &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n
-        \ <article class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n
-        \     <a href=\"http://g5-layout-garden.herokuapp.com/components/aside-first-sidebar-right\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Aside First Sidebar Right</a>\n    </h2>\n
-        \   <p class=\"p-summary\">Sidebar right layout. Aside section on top of main
-        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/images/thumbnail.png</a>\n
-        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/stylesheets/layout-side-right.css\"
-        class=\"u-g5-stylesheet u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-right/stylesheets/layout-side-right.css</a>\n
-        \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
-        class=&quot;layout-side-right layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
-        class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
-        place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
-        collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
-        \             &lt;span id=&quot;drop-target-phone&quot;&gt;&lt;!-- phone widget
-        here --&gt;&lt;/span&gt;\n              &lt;span id=&quot;drop-target-btn&quot;&gt;&lt;!--
-        btn widget here --&gt;&lt;/span&gt;\n              &lt;a class=&quot;collapsable-btn
-        btn&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.collapsable-content&quot;&gt;&lt;span
-        class=&quot;text&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;bars&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;\n
-        \           &lt;/div&gt;\n\n            &lt;div id=&quot;drop-target-nav&quot;
-        class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
-        \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
-        class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
-        \         &lt;aside role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;&lt;section
-        role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;\n&lt;/div&gt;\n
-        \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
-        id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
-        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n  <article
-        class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n      <a
-        href=\"http://g5-layout-garden.herokuapp.com/components/aside-first-single-column\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Aside First Single Column</a>\n    </h2>\n
-        \   <p class=\"p-summary\">Single column layout, sidebar on top of main in
-        mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-single-column/images/thumbnail.png</a>\n
-        \       </p>\n\n\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
-        class=&quot;single-column layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
-        class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
-        place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
-        collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
-        \             &lt;span id=&quot;drop-target-phone&quot;&gt;&lt;!-- phone widget
-        here --&gt;&lt;/span&gt;\n              &lt;span id=&quot;drop-target-btn&quot;&gt;&lt;!--
-        btn widget here --&gt;&lt;/span&gt;\n              &lt;a class=&quot;collapsable-btn
-        btn&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.collapsable-content&quot;&gt;&lt;span
-        class=&quot;text&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;bars&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;\n
-        \           &lt;/div&gt;\n\n            &lt;div id=&quot;drop-target-nav&quot;
-        class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
-        \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
-        class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
-        \         &lt;aside role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;&lt;section
-        role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;\n&lt;/div&gt;\n
-        \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
-        id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
-        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n  <article
-        class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n      <a
-        href=\"http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-right\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Main First Sidebar Right</a>\n    </h2>\n
-        \   <p class=\"p-summary\">Sidebar right layout. Main section on top of sidebar
-        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/images/thumbnail.png</a>\n
-        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/stylesheets/layout-side-right.css\"
-        class=\"u-g5-stylesheet u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/stylesheets/layout-side-right.css</a>\n
-        \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
-        class=&quot;layout-side-right layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
-        class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
-        place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
-        collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
-        \             &lt;span id=&quot;drop-target-phone&quot;&gt;&lt;!-- phone widget
-        here --&gt;&lt;/span&gt;\n              &lt;span id=&quot;drop-target-btn&quot;&gt;&lt;!--
-        btn widget here --&gt;&lt;/span&gt;\n              &lt;a class=&quot;collapsable-btn
-        btn&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.collapsable-content&quot;&gt;&lt;span
-        class=&quot;text&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;bars&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;\n
-        \           &lt;/div&gt;\n\n            &lt;div id=&quot;drop-target-nav&quot;
-        class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
-        \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
-        class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
-        \         &lt;section role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;&lt;aside
-        role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;\n&lt;/div&gt;\n
-        \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
-        id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
-        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n  <article
-        class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n      <a
-        href=\"http://g5-layout-garden.herokuapp.com/components/aside-first-sidebar-left\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Aside First Sidebar Left</a>\n    </h2>\n
-        \   <p class=\"p-summary\">Sidebar left layout. Aside section on top of main
-        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/images/thumbnail.png</a>\n
-        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/stylesheets/layout-side-left.css\"
-        class=\"u-g5-stylesheet u-url\">http://g5-layout-garden.herokuapp.com/static/components/aside-first-sidebar-left/stylesheets/layout-side-left.css</a>\n
-        \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
-        class=&quot;layout-side-left layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
-        class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
-        place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
-        collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
-        \             &lt;span id=&quot;drop-target-phone&quot;&gt;&lt;!-- phone widget
-        here --&gt;&lt;/span&gt;\n              &lt;span id=&quot;drop-target-btn&quot;&gt;&lt;!--
-        btn widget here --&gt;&lt;/span&gt;\n              &lt;a class=&quot;collapsable-btn
-        btn&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.collapsable-content&quot;&gt;&lt;span
-        class=&quot;text&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;bars&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;\n
-        \           &lt;/div&gt;\n\n            &lt;div id=&quot;drop-target-nav&quot;
-        class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
-        \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
-        class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
-        \         &lt;aside role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;&lt;section
-        role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;\n&lt;/div&gt;\n
-        \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
-        id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
-        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n  <article
-        class=\"h-g5-component well\">\n  <header>\n    <h2 class=\"p-name\">\n      <a
-        href=\"http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-left\"
-        class=\"u-url u-uid\" rel=\"bookmark\">Main First Sidebar Left</a>\n    </h2>\n
-        \   <p class=\"p-summary\">Sidebar left layout. Main section on top of sidebar
-        in mobile</p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/edit.html\"
-        class=\"u-g5-edit-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/edit.html</a>\n
-        \     </p>\n      <p>\n        <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/show.html\"
-        class=\"u-g5-show-template u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/show.html</a>\n
-        \     </p>\n    <p>\n      <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png\"
-        class=\"u-photo u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png</a>\n
-        \   </p>\n      <h3>Images</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png\"
-        class=\"u-g5-image u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/images/thumbnail.png</a>\n
-        \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css\"
-        class=\"u-g5-stylesheet u-url\">http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css</a>\n
-        \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\">&lt;div
-        class=&quot;layout-side-left layout&quot;&gt;\n\n      &lt;header role=&quot;banner&quot;&gt;&lt;div
-        class=&quot;content&quot;&gt;\n\n          &lt;div id=&quot;drop-target-logo&quot;&gt;&lt;!--
-        place logo widget here --&gt;&lt;/div&gt;\n\n          &lt;div class=&quot;navigation-container
-        collapsable&quot;&gt;\n\n            &lt;div class=&quot;buttons&quot;&gt;\n
-        \             &lt;span id=&quot;drop-target-phone&quot;&gt;&lt;!-- phone widget
-        here --&gt;&lt;/span&gt;\n              &lt;span id=&quot;drop-target-btn&quot;&gt;&lt;!--
-        btn widget here --&gt;&lt;/span&gt;\n              &lt;a class=&quot;collapsable-btn
-        btn&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.collapsable-content&quot;&gt;&lt;span
-        class=&quot;text&quot;&gt;Menu&lt;/span&gt;&lt;span class=&quot;bars&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;\n
-        \           &lt;/div&gt;\n\n            &lt;div id=&quot;drop-target-nav&quot;
-        class=&quot;collapsable-content&quot;&gt;&lt;!-- nav widget here --&gt;&lt;/div&gt;\n\n
-        \         &lt;/div&gt;\n        &lt;/div&gt;\n      &lt;/header&gt;&lt;div
-        class=&quot;wrapper&quot;&gt;\n        &lt;div class=&quot;content&quot;&gt;\n\n
-        \         &lt;section role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;&lt;aside
-        role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;\n&lt;/div&gt;\n
-        \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
-        id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
-        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
-        \ </body>\n</html>\n"
+      string: ''
     http_version: 
-  recorded_at: Tue, 03 Dec 2013 22:01:52 GMT
+  recorded_at: Thu, 05 Dec 2013 23:59:45 GMT
 - request:
     method: get
     uri: http://g5-layout-garden.herokuapp.com/
@@ -321,15 +99,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Tue, 03 Dec 2013 22:01:49 GMT
+      - Thu, 05 Dec 2013 23:59:46 GMT
       Server:
       - thin 1.5.0 codename Knife
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - fa0f1328d7bdbc630643ef0458104b69
+      - b55ca8c10b2fba9b92feffba945bc5cf
       X-Runtime:
-      - '0.008577'
+      - '0.014858'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -338,7 +116,7 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 03 Dec 2013 22:01:52 GMT
+  recorded_at: Thu, 05 Dec 2013 23:59:45 GMT
 - request:
     method: get
     uri: http://g5-layout-garden.herokuapp.com/
@@ -360,15 +138,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Tue, 03 Dec 2013 22:01:50 GMT
+      - Thu, 05 Dec 2013 23:59:47 GMT
       Server:
       - thin 1.5.0 codename Knife
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 3e71f7b4f82e477bb950d3940b9e3794
+      - f922c06cf644d9a954f4487bb2a601f3
       X-Runtime:
-      - '0.022993'
+      - '0.029180'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -377,7 +155,7 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 03 Dec 2013 22:01:53 GMT
+  recorded_at: Thu, 05 Dec 2013 23:59:46 GMT
 - request:
     method: get
     uri: http://g5-layout-garden.herokuapp.com/
@@ -399,15 +177,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Date:
-      - Tue, 03 Dec 2013 22:01:50 GMT
+      - Thu, 05 Dec 2013 23:59:47 GMT
       Server:
       - thin 1.5.0 codename Knife
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - f4fc3e152ef142ba12ebfebc883e805f
+      - 3f3e1a5b6cb1a193ae55943e5cb6ef62
       X-Runtime:
-      - '0.004163'
+      - '0.008743'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Connection:
@@ -416,5 +194,5 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     http_version: 
-  recorded_at: Tue, 03 Dec 2013 22:01:53 GMT
+  recorded_at: Thu, 05 Dec 2013 23:59:46 GMT
 recorded_with: VCR 2.6.0
