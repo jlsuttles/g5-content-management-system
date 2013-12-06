@@ -26,6 +26,12 @@ module StaticWebsite
         open(compile_path, "wb") do |file|
           file << open(remote_path).read
         end if compile_path
+      rescue OpenURI::HTTPError => e
+        if e.message.include?("404")
+          logger.warn e.message
+        else
+          raise e
+        end
       end
     end
   end
