@@ -165,6 +165,21 @@ $ open coverage/index.html
 ```
 
 
+## Deployment Specs
+
+1. Set deployment ENV variables in `.env.test`. Deploy to your personal Heroku
+   account, not G5's.
+
+    ```bash
+    HEROKU_USERNAME=your-username
+    HEROKU_API_KEY=your-api-key
+    ID_RSA=your-private-key
+    ```
+
+1. By default deployment specs are not run, you have to specifically run them
+   with `rspec -t type:deployment`
+
+
 ## Model & Controller Diagrams
 
 The [railroady](https://github.com/preston/railroady) gem generates Rails model
