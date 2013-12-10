@@ -35,11 +35,7 @@
 }
 
 .banner-logo {
-  @extend %ir;
-  background-image: url(logo.png);
-  height: 27px;
   vertical-align: middle;
-  width: 30px;
   margin-right: $base-whitespace / 2;
   @include respond-to($l-min-xlarge) {
     margin-right: $base-whitespace;
