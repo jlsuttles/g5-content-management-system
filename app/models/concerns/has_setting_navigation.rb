@@ -25,7 +25,7 @@ module HasSettingNavigation
   end
 
   def navigateable_web_templates
-    web_templates.navigateable.created_at_asc.decorate
+    web_templates.navigateable.rank(:display_order).decorate
   end
 
   def navigateable_web_templates_to_hashes
