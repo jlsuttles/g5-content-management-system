@@ -44,7 +44,7 @@ module StaticWebsite
       @repo_dir = repo.dir.to_s
       # copy static website into repo
       `cp -r #{compile_path}/* #{repo.dir}`
-      # copy publish javascripts into repo
+      # copy public javascripts into repo
       `cp #{File.join(Rails.root, "public", "javascripts")}/* #{repo.dir}/javascripts/`
       # commit changes
       repo.add('.')
