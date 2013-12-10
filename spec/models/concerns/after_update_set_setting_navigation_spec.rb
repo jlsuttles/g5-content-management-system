@@ -4,8 +4,8 @@ shared_examples_for AfterUpdateSetSettingNavigation do
   let(:described_instance) { described_class.new }
 
   describe ".after_create" do
-    it "calls #set_setting_navigation" do
-      described_instance.should_receive(:set_setting_navigation)
+    it "calls #update_navigation_settings" do
+      described_instance.should_receive(:update_navigation_settings)
       described_instance.save(validate: false)
     end
   end
@@ -14,16 +14,16 @@ shared_examples_for AfterUpdateSetSettingNavigation do
     before do
       described_instance.save(validate: false)
     end
-    context "title changed" do
-      it "calls #set_setting_navigation" do
-        described_instance.should_receive(:set_setting_navigation)
-        described_instance.update_attribute(:title, "new title")
+    context "name changed" do
+      it "calls #update_navigation_settings" do
+        described_instance.should_receive(:update_navigation_settings)
+        described_instance.update_attribute(:name, "new name")
       end
     end
-    context "title did not change" do
-      it "does not call #set_setting_navigation" do
-        described_instance.should_not_receive(:set_setting_navigation)
-        described_instance.update_attribute(:name, "new name")
+    context "name did not change" do
+      it "does not call #update_navigation_settings" do
+        described_instance.should_not_receive(:update_navigation_settings)
+        described_instance.update_attribute(:title, "new title")
       end
     end
   end

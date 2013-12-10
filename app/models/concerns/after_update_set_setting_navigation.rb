@@ -2,13 +2,13 @@ module AfterUpdateSetSettingNavigation
   extend ActiveSupport::Concern
 
   included do
-    after_create :set_setting_navigation
-    after_update :set_setting_navigation, if: :title_changed?
+    after_create :update_navigation_settings
+    after_update :update_navigation_settings, if: :name_changed?
   end
 
   private
 
-  def set_setting_navigation
-    website.try(:set_setting_navigation)
+  def update_navigation_settings
+    website.try(:update_navigation_settings)
   end
 end

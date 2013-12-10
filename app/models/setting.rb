@@ -1,6 +1,8 @@
 require_dependency "hash_with_to_liquid"
 
 class Setting < ActiveRecord::Base
+  include SettingNavigation
+
   PRIORITIZED_OWNERS = [
     "Widget",
     "WebTemplate",
@@ -22,9 +24,6 @@ class Setting < ActiveRecord::Base
 
   before_create :set_priority
   after_create :set_website_id
-  # TODO: does this fire twice?
-  before_update :update_self, if: :collection?
-  after_update  :update_next, if: :collection?
 
   validates :name, presence: true
   validates :owner, presence: true
@@ -41,10 +40,6 @@ class Setting < ActiveRecord::Base
   scope :where_priority_lt, lambda { |priority| where("priority < ?", priority) }
   scope :for_website, lambda { |wid| where(website_id: wid) }
   scope :for_no_website, where("website_id IS NULL")
-
-  def collection?
-    categories.include?("collection")
-  end
 
   # TODO: rename to best_value to value
   # TODO: rename value to my_value or something
@@ -78,44 +73,6 @@ class Setting < ActiveRecord::Base
     query = query.where_priority_gt(priority)
   end
 
-  def next_with_higher_priority
-    others_with_higher_priority.first
-  end
-
-  def next_with_lower_priority
-    others_with_lower_priority.first
-  end
-
-  def merge_value_with_lower_priority(other)
-    if other_value = other.try(:value)
-      if value
-        new_value = []
-        other_value.each_with_index do |other_partial_value, index|
-          if my_partial_value = value.is_a?(Array) ? value[index] : value[index.to_s]
-            other_partial_value["display"] = my_partial_value["display"]
-          end
-          new_value << HashWithToLiquid[other_partial_value]
-        end
-        self.value = new_value
-      else
-        self.value = other_value
-      end
-    end
-    self
-  end
-
-  def merge_value_with_lower_priority!(other)
-    merge_value_with_lower_priority(other).save
-  end
-
-  def merge_next_value_with_lower_priority
-    merge_value_with_lower_priority(next_with_lower_priority)
-  end
-
-  def merge_next_value_with_lower_priority!
-    merge_next_value_with_lower_priority.save
-  end
-
   private
 
   def set_website_id
@@ -125,13 +82,5 @@ class Setting < ActiveRecord::Base
 
   def set_priority
     self.priority ||= PRIORITIZED_OWNERS.index(owner_type)
-  end
-
-  def update_self
-    merge_next_value_with_lower_priority
-  end
-
-  def update_next
-    next_with_higher_priority.try :merge_next_value_with_lower_priority!
   end
 end
