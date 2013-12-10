@@ -38,6 +38,10 @@ class WebTemplate < ActiveRecord::Base
     drop_targets.where(html_id: "drop-target-main").first.try(:widgets)
   end
 
+  def client
+    Client.first
+  end
+
   def location
     website.try(:location)
   end
@@ -86,7 +90,7 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def compile_path
-    File.join(website_compile_path.to_s, "#{slug}.html")
+    File.join(website_compile_path.to_s, client.vertical, location.state, location.city, slug, "index.html")
   end
 
   def stylesheets_compiler
