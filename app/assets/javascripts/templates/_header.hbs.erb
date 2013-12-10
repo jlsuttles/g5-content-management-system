@@ -1,0 +1,22 @@
+<header role="banner" class="banner">
+  <div class="l-container">
+
+    <h1 class="banner-title">
+      <a href="/">
+        <img class="banner-logo" src="<%= asset_path("logo.png") %>" alt="G5" /> Client Hub:
+      </a>
+
+      <a href="/">
+        <strong class="banner-subtitle">{{controllers.client.name}}</strong>
+      </a>
+
+      {{#if controllers.website}}
+        &raquo;
+        {{#link-to "website" controllers.website}}
+          <strong class="banner-subtitle">{{controllers.website.name}}</strong>
+        {{/link-to}}
+      {{/if}}
+    </h1>
+
+  </div> <!-- end .l-container -->
+</header>

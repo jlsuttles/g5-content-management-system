@@ -1,16 +1,4 @@
-<header role="banner" class="banner">
-  <div class="l-container">
-
-    <h1 class="banner-title"><a href="/"><span class="banner-logo">G5</span>
-      Client Hub: <strong class="banner-subtitle">{{ controllers.client.name }}</strong></a>
-      {{#if controllers.website}}
-        >>
-        {{#link-to 'website' controllers.website}}<strong class="banner-subtitle">{{controllers.website.name}}</strong>{{/link-to}}
-      {{/if}}
-    </h1>
-
-  </div> <!-- end .l-container -->
-</header>
+{{ partial header }}
 
 <div id="modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
