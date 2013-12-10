@@ -68,7 +68,7 @@
 ### Client Location Deployment
 
 1. [Create a new private key and add it to
-   Github.](https://help.github.com/articles/generating-ssh-keys)
+   GitHub.](https://help.github.com/articles/generating-ssh-keys)
 
 1. [Also add your private key to
    Heroku.](https://devcenter.heroku.com/articles/keys)
@@ -163,6 +163,25 @@ Coverage.
 $ rspec
 $ open coverage/index.html
 ```
+
+
+## Deployment Specs
+
+1. Set deployment ENV variables in `.env.test`. Deploy to your personal Heroku
+   account, not G5's.
+
+    ```bash
+    HEROKU_USERNAME=your-username
+    HEROKU_API_KEY=your-api-key
+    ID_RSA=your-private-key
+    ```
+
+    __ProTip™:__ See [this dotenv issue](https://github.com/bkeepers/dotenv/issues/21) if you're having issues formatting your ID_RSA.
+
+1. By default deployment specs are not run, you have to specifically run them
+   with `rspec -t type:deployment`
+
+   __ProTip™:__ If you're getting a 422 on the Heroku deploy, try [verifying your Heroku account](https://devcenter.heroku.com/articles/account-verification).
 
 
 ## Model & Controller Diagrams
