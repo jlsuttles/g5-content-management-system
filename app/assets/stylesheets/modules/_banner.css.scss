@@ -27,7 +27,7 @@
   letter-spacing: em(1px);
   margin: 0;
   a {
-    display: inline-block;
+    display: inline;
   }
   @include respond-to($l-min-large) {
     @include font-size(20px);
