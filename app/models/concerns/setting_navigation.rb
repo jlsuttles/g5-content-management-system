@@ -23,24 +23,32 @@ module SettingNavigation
     website.widget_settings.navigation
   end
 
+  # should be called on website setting, not widget setting
   def update_widget_navigation_settings
     widget_navigation_settings.map(&:update_widget_navigation_setting).map(&:save)
   end
 
+  # should be called on widget setting, not website setting
   def update_widget_navigation_setting
-    unless value
-      self.value = website_navigation_setting.value
+    if value
+      self.value = create_new_value(website_navigation_setting.value, value)
     else
-      new_value = []
-      website_navigation_setting.value.each_with_index do |website_partial_value, index|
-        # when widget setting is updated, comes back as hash, not array
-        unless (widget_partial_value = value.is_a?(Array) ? value[index] : value[index.to_s]).nil?
-          website_partial_value["display"] = widget_partial_value["display"]
-        end
-        new_value << HashWithToLiquid[website_partial_value]
-      end
-      self.value = new_value
+      self.value = website_navigation_setting.value
     end
     self
+  end
+
+  def create_new_value(website_value, widget_value)
+    new_value = []
+    website_value.each_with_index do |website_partial_value, index|
+      # when widget setting is updated, comes back as hash, not array
+      widget_partial_value = widget_value.is_a?(Array) ? widget_value[index] : widget_value[index.to_s]
+      # widget_partial_value could be false, so can't check presence
+      unless widget_partial_value.nil?
+        website_partial_value["display"] = widget_partial_value["display"]
+      end
+      new_value << HashWithToLiquid[website_partial_value]
+    end
+    new_value
   end
 end
