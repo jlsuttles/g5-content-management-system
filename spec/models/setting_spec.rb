@@ -20,17 +20,17 @@ describe Setting, vcr: VCR_OPTIONS do
     end
   end
 
-  describe "#collection?" do
-    let(:collection_setting) { Fabricate(:setting, categories: ["collection"]) }
-    let(:instance_setting) { Fabricate(:setting, categories: ["instance"]) }
+  # describe "#collection?" do
+  #   let(:collection_setting) { Fabricate(:setting, categories: ["collection"]) }
+  #   let(:instance_setting) { Fabricate(:setting, categories: ["instance"]) }
 
-    it "returns true when categories includes collection" do
-      collection_setting.collection?.should be_true
-    end
-    it "returns false when categories doesn't includes collection" do
-      instance_setting.collection?.should be_false
-    end
-  end
+  #   it "returns true when categories includes collection" do
+  #     collection_setting.collection?.should be_true
+  #   end
+  #   it "returns false when categories doesn't includes collection" do
+  #     instance_setting.collection?.should be_false
+  #   end
+  # end
 
   describe "#best_value" do
     let(:web_template) { Fabricate.build(:web_template) }
@@ -131,64 +131,64 @@ describe Setting, vcr: VCR_OPTIONS do
     end
   end
 
-  describe "#merge_value_with_lower_priority" do
-    let(:setting0) { Fabricate(:setting, name: "same", priority: 0,
-    value: {"0"=>{"display"=>false}}
-    )}
-    let(:setting1) { Fabricate(:setting, name: "same",
-      value: [
-        {"display"=>true, "title"=>"Homepage", "url"=>"/homepage"},
-        {"display"=>true, "title"=>"New Page", "url"=>"/new-page"}
-      ]
-    )}
-    let(:expected_value) {[
-      {"display"=>false, "title"=>"Homepage", "url"=>"/homepage"},
-      {"display"=>true, "title"=>"New Page", "url"=>"/new-page"}
-    ]}
-    it "does the expected thing" do
-      setting0.merge_value_with_lower_priority(setting1).value.should eq expected_value
-    end
-  end
+  # describe "#merge_value_with_lower_priority" do
+  #   let(:setting0) { Fabricate(:setting, name: "same", priority: 0,
+  #   value: {"0"=>{"display"=>false}}
+  #   )}
+  #   let(:setting1) { Fabricate(:setting, name: "same",
+  #     value: [
+  #       {"display"=>true, "title"=>"Homepage", "url"=>"/homepage"},
+  #       {"display"=>true, "title"=>"New Page", "url"=>"/new-page"}
+  #     ]
+  #   )}
+  #   let(:expected_value) {[
+  #     {"display"=>false, "title"=>"Homepage", "url"=>"/homepage"},
+  #     {"display"=>true, "title"=>"New Page", "url"=>"/new-page"}
+  #   ]}
+  #   it "does the expected thing" do
+  #     setting0.merge_value_with_lower_priority(setting1).value.should eq expected_value
+  #   end
+  # end
 
-  describe "#merge_value_with_lower_priority" do
-    let(:setting0) { Fabricate(:setting, name: "same", priority: 0,
-      value: [
-        {"display"=>false, "title"=>"Homepage", "url"=>"/homepage"},
-      ]
-    )}
-    let(:setting1) { Fabricate(:setting, name: "same",
-      value: [
-        {"display"=>true, "title"=>"Homepage", "url"=>"/homepage"},
-        {"display"=>true, "title"=>"New Page", "url"=>"/new-page"}
-      ]
-    )}
-    let(:expected_value) {[
-      {"display"=>false, "title"=>"Homepage", "url"=>"/homepage"},
-      {"display"=>true, "title"=>"New Page", "url"=>"/new-page"}
-    ]}
-    it "does the expected thing" do
-      setting0.merge_value_with_lower_priority(setting1).value.should eq expected_value
-    end
-  end
+  # describe "#merge_value_with_lower_priority" do
+  #   let(:setting0) { Fabricate(:setting, name: "same", priority: 0,
+  #     value: [
+  #       {"display"=>false, "title"=>"Homepage", "url"=>"/homepage"},
+  #     ]
+  #   )}
+  #   let(:setting1) { Fabricate(:setting, name: "same",
+  #     value: [
+  #       {"display"=>true, "title"=>"Homepage", "url"=>"/homepage"},
+  #       {"display"=>true, "title"=>"New Page", "url"=>"/new-page"}
+  #     ]
+  #   )}
+  #   let(:expected_value) {[
+  #     {"display"=>false, "title"=>"Homepage", "url"=>"/homepage"},
+  #     {"display"=>true, "title"=>"New Page", "url"=>"/new-page"}
+  #   ]}
+  #   it "does the expected thing" do
+  #     setting0.merge_value_with_lower_priority(setting1).value.should eq expected_value
+  #   end
+  # end
 
-  describe "#merge_value_with_lower_priority" do
-    let(:setting0) { Fabricate(:setting, name: "same",
-      value: [
-        {"display"=>false, "title"=>"Old Title", "url"=>"/old-title"},
-      ]
-    )}
-    let(:setting1) { Fabricate(:setting, name: "same",
-      value: [
-        {"display"=>true, "title"=>"New Title", "url"=>"/new-title"},
-        {"display"=>true, "title"=>"New Page", "url"=>"/new-page"}
-      ]
-    )}
-    let(:expected_value) {[
-      {"display"=>false, "title"=>"New Title", "url"=>"/new-title"},
-      {"display"=>true, "title"=>"New Page", "url"=>"/new-page"}
-    ]}
-    it "only updates display" do
-      setting0.merge_value_with_lower_priority(setting1).value.should eq expected_value
-    end
-  end
+  # describe "#merge_value_with_lower_priority" do
+  #   let(:setting0) { Fabricate(:setting, name: "same",
+  #     value: [
+  #       {"display"=>false, "title"=>"Old Title", "url"=>"/old-title"},
+  #     ]
+  #   )}
+  #   let(:setting1) { Fabricate(:setting, name: "same",
+  #     value: [
+  #       {"display"=>true, "title"=>"New Title", "url"=>"/new-title"},
+  #       {"display"=>true, "title"=>"New Page", "url"=>"/new-page"}
+  #     ]
+  #   )}
+  #   let(:expected_value) {[
+  #     {"display"=>false, "title"=>"New Title", "url"=>"/new-title"},
+  #     {"display"=>true, "title"=>"New Page", "url"=>"/new-page"}
+  #   ]}
+  #   it "only updates display" do
+  #     setting0.merge_value_with_lower_priority(setting1).value.should eq expected_value
+  #   end
+  # end
 end

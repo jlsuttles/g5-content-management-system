@@ -17,6 +17,7 @@ class Website < ActiveRecord::Base
   has_many :web_page_templates, dependent: :destroy, order: "display_order ASC"
   has_many :web_templates
   has_many :widgets, through: :web_templates
+  has_many :widget_settings, through: :widgets, source: :settings
 
   validates :urn, presence: true, uniqueness: true, unless: :new_record?
 
