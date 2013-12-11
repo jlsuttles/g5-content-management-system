@@ -35,6 +35,7 @@ describe StaticWebsite::Compiler::WebTemplates do
     context "when web template is present" do
       let(:model) { Fabricate(:web_template) }
       let(:subject) { StaticWebsite::Compiler::WebTemplates.new(nil) }
+      let!(:client) { Fabricate(:client) }
 
       it "compiles web template" do
         StaticWebsite::Compiler::WebTemplate.any_instance.should_receive(:compile).once

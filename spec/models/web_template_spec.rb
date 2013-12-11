@@ -52,6 +52,7 @@ describe WebTemplate do
 
   describe "#compile_path" do
     let(:web_template) { Fabricate(:web_template) }
+    let!(:client) { Fabricate(:client) }
 
     it "includes slug" do
       web_template.compile_path.should include web_template.slug

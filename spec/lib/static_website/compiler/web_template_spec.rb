@@ -4,6 +4,7 @@ describe StaticWebsite::Compiler::WebTemplate do
   describe "#compile" do
     let(:web_template) { Fabricate(:web_template) }
     let(:subject) { StaticWebsite::Compiler::WebTemplate.new(web_template) }
+    let!(:client) { Fabricate(:client) }
 
     it "compiles view" do
       subject.view.should_receive(:compile).once
@@ -33,6 +34,7 @@ describe StaticWebsite::Compiler::WebTemplate do
       let(:web_layout) { Fabricate(:web_layout) }
       let(:web_template) { Fabricate(:web_page_template) }
       let(:subject) { StaticWebsite::Compiler::WebTemplate.new(web_template) }
+      let!(:client) { Fabricate(:client) }
 
       before do
         FileUtils.rm(compile_path, force: true) if File.exists?(compile_path)
