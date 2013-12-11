@@ -1,2 +1,11 @@
 @import "base";
 @import "normalize";
+
+.dxm {
+  background: url(http://g5-widget-garden.herokuapp.com/static/images/dxm.png) no-repeat;
+  display: block;
+  height: 23px;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 100px;
+}
