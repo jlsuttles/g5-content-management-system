@@ -13,6 +13,6 @@ class Client < ActiveRecord::Base
   end
 
   def vertical_slug
-    self.vertical.parameterize
+    vertical.try(:parameterize).to_s
   end
 end

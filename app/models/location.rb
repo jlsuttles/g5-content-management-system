@@ -13,10 +13,10 @@ class Location < ActiveRecord::Base
   end
 
   def city_slug
-    self.city.parameterize
+    city.try(:parameterize).to_s
   end
 
   def state_slug
-    self.state.parameterize
+    state.try(:parameterize).to_s
   end
 end
