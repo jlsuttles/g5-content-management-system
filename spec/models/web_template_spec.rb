@@ -51,7 +51,9 @@ describe WebTemplate do
   end
 
   describe "#compile_path" do
-    let(:web_template) { Fabricate(:web_template) }
+    let(:location) { Fabricate(:location) }
+    let(:website) { Fabricate(:website, location_id: location.id) }
+    let(:web_template) { Fabricate(:web_template, website_id: website.id) }
     let!(:client) { Fabricate(:client) }
 
     it "includes slug" do
