@@ -39,15 +39,14 @@ module SettingNavigation
   end
 
   def create_new_value(website_value, widget_value)
-    new_value = []
-    website_value.each_with_index do |website_partial_value, index|
-      # when widget setting is updated, comes back as hash, not array
-      widget_partial_value = widget_value.is_a?(Array) ? widget_value[index] : widget_value[index.to_s]
+    new_value = {}
+    website_value.each_pair do |key, website_partial_value|
+      widget_partial_value = widget_value[key]
       # widget_partial_value could be false, so can't check presence
       unless widget_partial_value.nil?
         website_partial_value["display"] = widget_partial_value["display"]
       end
-      new_value << HashWithToLiquid[website_partial_value]
+      new_value[key] = HashWithToLiquid[website_partial_value]
     end
     new_value
   end

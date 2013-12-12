@@ -22,24 +22,30 @@ shared_examples_for HasSettingNavigation do
 
   describe "#navigateable_web_templates_to_hashes" do
     context "has no web pages" do
-      it "returns an empty array" do
-        described_instance.navigateable_web_templates_to_hashes.should eq []
+      it "returns an empty Hash" do
+        described_instance.navigateable_web_templates_to_hashes.should eq({})
       end
     end
     context "has web pages" do
       let!(:web_page_template) { Fabricate(:web_page_template, website: described_instance) }
+      before do
+        @result = described_instance.navigateable_web_templates_to_hashes
+      end
 
+      it "uses web template id string as key" do
+        @result.keys.first.should eq web_page_template.id.to_s
+      end
       it "returns hashes with to liquid defined" do
-        described_instance.navigateable_web_templates_to_hashes.sample.should be_a(HashWithToLiquid)
+        @result.values.sample.should be_a(HashWithToLiquid)
       end
       it "hashes have key 'display'" do
-        described_instance.navigateable_web_templates_to_hashes.sample["display"].should_not be_nil
+        @result.values.first["display"].should_not be_nil
       end
-      it "hashes have key 'title'" do
-        described_instance.navigateable_web_templates_to_hashes.sample["title"].should_not be_nil
+      it "hashes have key 'name'" do
+        @result.values.sample["name"].should_not be_nil
       end
       it "hashes have key 'url'" do
-        described_instance.navigateable_web_templates_to_hashes.sample["url"].should_not be_nil
+        @result.values.sample["url"].should_not be_nil
       end
     end
   end
