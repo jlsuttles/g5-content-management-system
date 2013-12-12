@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20131212023403) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "vertical"
   end
 
   create_table "drop_targets", :force => true do |t|
@@ -37,6 +38,8 @@ ActiveRecord::Schema.define(:version => 20131212023403) do
     t.string   "primary_color",   :default => "#000000"
     t.string   "secondary_color", :default => "#ffffff"
     t.boolean  "custom_colors",   :default => false,     :null => false
+    t.string   "state"
+    t.string   "city"
   end
 
   add_index "locations", ["urn"], :name => "index_locations_on_urn"

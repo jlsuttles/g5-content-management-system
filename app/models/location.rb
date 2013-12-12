@@ -12,11 +12,11 @@ class Location < ActiveRecord::Base
     website.try(:id)
   end
 
-  def city
-    "city"
+  def city_slug
+    city.try(:parameterize).to_s
   end
 
-  def state
-    "state"
+  def state_slug
+    state.try(:parameterize).to_s
   end
 end

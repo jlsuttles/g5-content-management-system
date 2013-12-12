@@ -90,7 +90,7 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def compile_path
-    File.join(website_compile_path.to_s, client.vertical, location.state, location.city, slug, "index.html")
+    File.join(website_compile_path.to_s, client.vertical_slug, location.state_slug, location.city_slug, slug, "index.html")
   end
 
   def stylesheets_compiler
