@@ -20,8 +20,8 @@ class ClientReader
         uid: location.uid.to_s,
         urn: location.uid.to_s.split("/").last,
         name: location.name.to_s,
-        state: client.adr.formats.first.region.to_s,
-        city: client.adr.formats.first.locality.to_s
+        state: location.adr.format.region.to_s,
+        city: location.adr.format.locality.to_s
       )
     end if client.respond_to?(:orgs)
   end
