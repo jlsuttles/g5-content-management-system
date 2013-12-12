@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131211011456) do
+ActiveRecord::Schema.define(:version => 20131212023403) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(:version => 20131211011456) do
     t.boolean  "template",      :default => false
     t.string   "title"
     t.string   "type"
-    t.boolean  "disabled"
+    t.boolean  "enabled"
     t.integer  "display_order"
   end
 

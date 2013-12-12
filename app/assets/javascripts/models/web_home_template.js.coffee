@@ -5,5 +5,5 @@ App.WebHomeTemplate = DS.Model.extend
   name: DS.attr("string")
   slug: DS.attr("string")
   title: DS.attr("string")
-  disabled: DS.attr("boolean")
+  enabled: DS.attr("boolean")
   isWebHomeTemplate: true

@@ -17,15 +17,23 @@
 
       <div class="form-field">
         <label class="switch-label">Page Status</label>
-        {{ partial "pageSwitcher" }}
+        {{#view App.ToggleBtn}}
+          <div class="switch switch-small" data-on="success" data-off="danger">
+            {{input type="checkbox" checked=enabled}}
+          </div>
+        {{/view}}
       </div>
 
       <div class="buttons">
         {{#view App.CardAction}}
-          <button {{action cancel model}} class="cancel-link card-flip">Cancel</button>
+          <button {{action cancel model}} class="cancel-link card-flip">
+            Cancel
+          </button>
         {{/view}}
         {{#view App.CardAction}}
-          <button {{action save model}} class="save btn btn--small" disabled>Save</button>
+          <button {{action save model}} class="save btn btn--small" disabled>
+            Save
+          </button>
         {{/view}}
       </div>
     </form>

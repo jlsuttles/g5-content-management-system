@@ -31,6 +31,6 @@ class Api::V1::WebPageTemplatesController < Api::V1::ApplicationController
 
   def web_page_template_params
     params.require(:web_page_template).permit(:website_id, :name, :title,
-    :disabled, :display_order_position)
+    :enabled, :display_order_position)
   end
 end
