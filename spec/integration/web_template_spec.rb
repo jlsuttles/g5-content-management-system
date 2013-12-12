@@ -41,6 +41,7 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
         @instructions = YAML.load_file("#{Rails.root}/spec/support/website_instructions/example.yml")
         @website = WebsiteSeeder.new(@location, @instructions["website"]).seed
         @web_page_template = @website.web_page_templates.first
+        @web_page_template.update_attribute(:enabled, true)
         set_setting(@web_page_template, "Social Links", "twitter_username", "jlsuttles")
         visit web_template_path(@web_page_template.id)
       end
