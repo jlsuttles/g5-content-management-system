@@ -79,10 +79,10 @@ describe Api::V1::WebHomeTemplatesController do
         expect(web_home_template.reload.read_attribute(:title)).to eq "title"
       end
 
-      it "disabled" do
-        put :update, id: web_home_template.id, web_home_template: { disabled: true }
+      it "enabled" do
+        put :update, id: web_home_template.id, web_home_template: { enabled: true }
         expect(response.status).to eq 200
-        expect(web_home_template.reload.read_attribute(:disabled)).to eq true
+        expect(web_home_template.reload.read_attribute(:enabled)).to eq true
       end
     end
   end

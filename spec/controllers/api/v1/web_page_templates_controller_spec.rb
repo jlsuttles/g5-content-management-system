@@ -110,10 +110,10 @@ describe Api::V1::WebPageTemplatesController do
         expect(web_page_template.reload.read_attribute(:title)).to eq "title"
       end
 
-      it "disabled" do
-        put :update, id: web_page_template.id, web_page_template: { disabled: true }
+      it "enabled" do
+        put :update, id: web_page_template.id, web_page_template: { enabled: true }
         expect(response.status).to eq 200
-        expect(web_page_template.reload.read_attribute(:disabled)).to eq true
+        expect(web_page_template.reload.read_attribute(:enabled)).to eq true
       end
     end
   end

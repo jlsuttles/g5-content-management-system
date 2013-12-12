@@ -6,7 +6,7 @@ class WebHomeTemplateSerializer < WebTemplateSerializer
   attributes :preview_url,
              :name,
              :title,
-             :disabled,
+             :enabled,
              :slug
 
   def preview_url

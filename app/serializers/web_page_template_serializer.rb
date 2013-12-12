@@ -6,7 +6,7 @@ class WebPageTemplateSerializer < WebTemplateSerializer
   attributes :preview_url,
              :name,
              :title,
-             :disabled,
+             :enabled,
              :slug,
              :display_order
 
