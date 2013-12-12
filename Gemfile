@@ -51,7 +51,7 @@ group :development, :test do
   # ruby request specs
   gem "capybara", "~> 2.1.0"
   gem "launchy"
-  gem "selenium-webdriver", "~> 2.35.1"
+  gem "selenium-webdriver", "~> 2.35"
   gem "database_cleaner", "~> 0.9.1"
   # ruby spec support
   gem "fabrication", "~> 2.5.0"
