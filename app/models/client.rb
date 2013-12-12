@@ -12,7 +12,7 @@ class Client < ActiveRecord::Base
     Location.all
   end
 
-  def vertical
-    "vertical"
+  def vertical_slug
+    self.vertical.parameterize
   end
 end
