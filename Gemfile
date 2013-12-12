@@ -55,7 +55,7 @@ group :development, :test do
   gem "database_cleaner", "~> 0.9.1"
   # ruby spec support
   gem "fabrication", "~> 2.5.0"
-  gem "faker", "~> 1.1.2"
+  gem "faker"
   gem "webmock", "~> 1.13.0", require: false
   gem "vcr", "~> 2.6.0", require: false
   # javascript specs
