@@ -9,7 +9,8 @@ class ClientReader
     Client.destroy_all
     Client.create!(
       uid: client_uid,
-      name: client.name.to_s
+      name: client.name.to_s,
+      vertical: client.g5_vertical.to_s
     )
 
     Location.destroy_all
@@ -18,7 +19,9 @@ class ClientReader
       Location.create!(
         uid: location.uid.to_s,
         urn: location.uid.to_s.split("/").last,
-        name: location.name.to_s
+        name: location.name.to_s,
+        state: client.adr.formats.first.region.to_s,
+        city: client.adr.formats.first.locality.to_s
       )
     end if client.respond_to?(:orgs)
   end
