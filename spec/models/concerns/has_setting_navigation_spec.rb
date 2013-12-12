@@ -26,7 +26,7 @@ shared_examples_for HasSettingNavigation do
       end
     end
     context "has web pages" do
-      let!(:web_page_template) { Fabricate(:web_page_template, :website => described_instance) }
+      let!(:web_page_template) { Fabricate(:web_page_template, website: described_instance) }
 
       it "returns hashes with to liquid defined" do
         described_instance.web_page_templates_to_hashes.sample.should be_a(HashWithToLiquid)
