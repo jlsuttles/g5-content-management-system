@@ -10,7 +10,7 @@ module AfterUpdateSetSettingNavigation
   private
 
   def should_update_navigation_settings?
-    name_changed? || display_order_changed?
+    name_changed? || display_order_changed? || enabled_changed?
   end
 
   def update_navigation_settings
