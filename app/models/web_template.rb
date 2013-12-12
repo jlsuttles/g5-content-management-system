@@ -27,7 +27,7 @@ class WebTemplate < ActiveRecord::Base
   scope :home, where(name: "Home")
   scope :enabled, where(enabled: true)
   scope :disabled, where(enabled: false)
-  scope :navigateable, where("type != ?", "WebsiteTemplate")
+  scope :navigateable, enabled.where("type != ?", "WebsiteTemplate")
   scope :created_at_asc, order("created_at ASC")
 
   before_validation :default_title_from_name
