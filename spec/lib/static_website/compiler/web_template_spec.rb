@@ -2,8 +2,11 @@ require "spec_helper"
 
 describe StaticWebsite::Compiler::WebTemplate do
   describe "#compile" do
-    let(:web_template) { Fabricate(:web_template) }
+    let(:location) { Fabricate(:location) }
+    let(:website) { Fabricate(:website, location_id: location.id) }
+    let(:web_template) { Fabricate(:web_template, website_id: website.id) }
     let(:subject) { StaticWebsite::Compiler::WebTemplate.new(web_template) }
+    let!(:client) { Fabricate(:client) }
 
     it "compiles view" do
       subject.view.should_receive(:compile).once
@@ -31,8 +34,11 @@ describe StaticWebsite::Compiler::WebTemplate do
     context "when compile path is present", vcr: VCR_OPTIONS do
       let(:compile_path) { File.join(Rails.root, "tmp", "spec", "web_template", "show.html") }
       let(:web_layout) { Fabricate(:web_layout) }
-      let(:web_template) { Fabricate(:web_page_template) }
+      let(:location) { Fabricate(:location) }
+      let(:website) { Fabricate(:website, location_id: location.id) }
+      let(:web_template) { Fabricate(:web_page_template, website_id: website.id) }
       let(:subject) { StaticWebsite::Compiler::WebTemplate.new(web_template) }
+      let!(:client) { Fabricate(:client) }
 
       before do
         FileUtils.rm(compile_path, force: true) if File.exists?(compile_path)

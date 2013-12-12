@@ -11,4 +11,12 @@ class Location < ActiveRecord::Base
   def website_id
     website.try(:id)
   end
+
+  def city
+    "city"
+  end
+
+  def state
+    "state"
+  end
 end

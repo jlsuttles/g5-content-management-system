@@ -11,4 +11,8 @@ class Client < ActiveRecord::Base
   def locations
     Location.all
   end
+
+  def vertical
+    "vertical"
+  end
 end

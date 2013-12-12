@@ -16,6 +16,7 @@ module StaticWebsite
 
       def compile
         compile_directory.compile
+        clean_up
         javascripts.compile
         stylesheets.compile
         web_home_template.compile
