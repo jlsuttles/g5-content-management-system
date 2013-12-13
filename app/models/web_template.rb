@@ -30,7 +30,7 @@ class WebTemplate < ActiveRecord::Base
   scope :navigateable, enabled.where("type != ?", "WebsiteTemplate")
   scope :created_at_asc, order("created_at ASC")
 
-  after_initialize :default_enabled_to_true
+  before_validation :default_enabled_to_true
   before_validation :default_title_from_name
   before_validation :default_slug_from_title
 
@@ -108,8 +108,6 @@ class WebTemplate < ActiveRecord::Base
   def default_enabled_to_true
     # ||= does not work here because enabled is a boolean
     self.enabled = true if enabled.nil?
-  rescue ActiveRecord::MissingAttributeError
-    # this should only happen on Model.exists?() call. It can be safely ignored.
   end
 
   def default_title_from_name
