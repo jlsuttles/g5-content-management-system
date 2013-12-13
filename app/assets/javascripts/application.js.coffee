@@ -45,7 +45,7 @@ $ ->
     e.preventDefault()
 
   window.setTimeout (->
-    $(".alert").addClass 'hide-alert'
+    $(".alert").slideUp()
   ), 3000
 
   window.setTimeout (->
