@@ -108,6 +108,8 @@ class WebTemplate < ActiveRecord::Base
   def default_enabled_to_true
     # ||= does not work here because enabled is a boolean
     self.enabled = true if enabled.nil?
+  rescue ActiveRecord::MissingAttributeError
+    # this should only happen on Model.exists?() call. It can be safely ignored.
   end
 
   def default_title_from_name
