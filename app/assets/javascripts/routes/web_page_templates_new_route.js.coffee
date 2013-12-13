@@ -3,7 +3,8 @@ App.WebPageTemplatesNewRoute = Ember.Route.extend
     website = @controllerFor("website").get("model")
 
     controller.set "model", App.WebPageTemplate.createRecord
+      enabled: true,
       website: website
 
   renderTemplate: ->
-    this.render outlet: "newWebPageTemplate"
+    @render outlet: "newWebPageTemplate"
