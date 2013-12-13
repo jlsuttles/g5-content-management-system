@@ -27,7 +27,7 @@ shared_examples_for HasSettingNavigation do
       end
     end
     context "has web pages" do
-      let!(:web_page_template) { Fabricate(:web_page_template, website: described_instance, enabled: true) }
+      let!(:web_page_template) { Fabricate(:web_page_template, website: described_instance) }
       before do
         @result = described_instance.navigateable_web_templates_to_hashes
       end

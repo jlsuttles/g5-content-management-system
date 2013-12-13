@@ -30,6 +30,7 @@ class WebTemplate < ActiveRecord::Base
   scope :navigateable, enabled.where("type != ?", "WebsiteTemplate")
   scope :created_at_asc, order("created_at ASC")
 
+  before_validation :default_enabled_to_true
   before_validation :default_title_from_name
   before_validation :default_slug_from_title
 
@@ -103,6 +104,11 @@ class WebTemplate < ActiveRecord::Base
   end
 
   private
+
+  def default_enabled_to_true
+    # ||= does not work here because enabled is a boolean
+    self.enabled = true if enabled.nil?
+  end
 
   def default_title_from_name
     self.title ||= name
