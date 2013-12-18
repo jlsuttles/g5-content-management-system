@@ -2,9 +2,10 @@ module StaticWebsite
   module Compiler
     class HTAccess
 
-      def initialize(website, web_template_models)
+      def initialize(website)
         @website_compile_path = website.compile_path
-        @web_template_models = web_template_models
+        @web_home_template = website.web_home_template
+        @web_page_templates = website.web_page_templates
       end
 
       def compile_path
@@ -21,17 +22,21 @@ module StaticWebsite
       end
 
       def render_htaccess
-        redirects = []
+        # array of redirect patterns after being formatted for htaccess
+        redirect_rules = []
+        templates = (@web_page_templates + [@web_home_template]).compact
 
-        @web_template_models.each do |web_template_model|
-          redirect = "\tRewriteRule ^#{web_template_model.slug}.html /#{File.join(web_template_model.client.vertical_slug, web_template_model.location.state_slug, web_template_model.location.city_slug, web_template_model.slug, "index.html")}/ [R=301,L]"
-
-          redirects << redirect
-        end if @web_template_models
+        templates.each do |template|
+          if template.redirect_patterns
+            template.redirect_patterns.split.each do |pattern|
+              redirect_rules << "\tRewriteRule ^#{pattern} #{template.htaccess_substitution} [R=301,L]"
+            end
+          end
+        end
 
         htaccess_contents = ["<IfModule mod_rewrite.c>",
                             "\tRewriteEngine On",
-                            redirects,
+                            redirect_rules,
                             "\tRewriteCond %{REQUEST_FILENAME} !-d",
                             "\tRewriteCond %{REQUEST_FILENAME} !-f",
                             "\tRewriteRule ^(.*)$ index.php?/$1 [QSA,L]",

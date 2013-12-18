@@ -50,7 +50,7 @@ module StaticWebsite
       end
 
       def htaccess
-        @htaccess ||= HTAccess.new(website, website.web_page_templates)
+        @htaccess ||= HTAccess.new(website)
       end
     end
   end
