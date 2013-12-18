@@ -3,6 +3,7 @@ require "static_website/compiler/javascripts"
 require "static_website/compiler/stylesheets"
 require "static_website/compiler/web_template"
 require "static_website/compiler/web_templates"
+require "static_website/compiler/htaccess"
 
 module StaticWebsite
   module Compiler
@@ -21,6 +22,7 @@ module StaticWebsite
         stylesheets.compile
         web_home_template.compile
         web_page_templates.compile
+        htaccess.compile
       end
 
       def clean_up
@@ -45,6 +47,10 @@ module StaticWebsite
 
       def web_page_templates
         @web_page_templates ||= WebTemplates.new(website.web_page_templates)
+      end
+
+      def htaccess
+        @htaccess ||= HTAccess.new(website)
       end
     end
   end

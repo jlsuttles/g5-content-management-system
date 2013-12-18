@@ -6,4 +6,8 @@ class WebPageTemplate < WebTemplate
   def head_widgets
     website.try(:website_template).try(:head_widgets).to_a
   end
+
+  def htaccess_substitution
+    File.join(client.vertical_slug, location.state_slug, location.city_slug, slug, "index.html")
+  end
 end

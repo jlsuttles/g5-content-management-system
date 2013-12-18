@@ -10,4 +10,8 @@ class WebHomeTemplate < WebTemplate
   def compile_path
     File.join(website_compile_path.to_s, "index.html") if website_compile_path
   end
+
+  def htaccess_substitution
+    "/"
+  end
 end
