@@ -15,6 +15,10 @@ class WebsiteSeeder
     Rails.logger.info "Creating website settings"
     website.settings.create!(name: "client_urn", value: client.urn)
     website.settings.create!(name: "location_urn", value: location.urn)
+    website.settings.create!(name: "location_street_address", value: location.street_address)
+    website.settings.create!(name: "location_city", value: location.city)
+    website.settings.create!(name: "location_state", value: location.state)
+    website.settings.create!(name: "location_postal_code", value: location.postal_code)
 
     Rails.logger.info "Creating website template"
     create_website_template(website, instructions["website_template"])

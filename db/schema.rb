@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131212023403) do
+ActiveRecord::Schema.define(:version => 20131218184521) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(:version => 20131212023403) do
     t.boolean  "custom_colors",   :default => false,     :null => false
     t.string   "state"
     t.string   "city"
+    t.string   "street_address"
+    t.string   "postal_code"
   end
 
   add_index "locations", ["urn"], :name => "index_locations_on_urn"
@@ -164,9 +166,9 @@ ActiveRecord::Schema.define(:version => 20131212023403) do
     t.string   "thumbnail"
     t.string   "section"
     t.text     "edit_form_html"
-    t.boolean  "removeable"
     t.string   "edit_javascript"
     t.string   "show_javascript"
+    t.boolean  "removeable"
     t.text     "lib_javascripts"
   end
 
