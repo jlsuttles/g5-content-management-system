@@ -3,6 +3,7 @@ class ClientReader
   @queue = :reader
 
   def self.perform(client_uid)
+<<<<<<< HEAD
     clients = Microformats2.parse(client_uid)
 <<<<<<< HEAD
     client = clients.first
@@ -52,5 +53,43 @@ class ClientReader
       location.save
     end if first_client.respond_to?(:orgs)
 >>>>>>> update client & location in client_reader instead of destroying
+=======
+    uf2_client = Microformats2.parse(client_uid).first
+
+    current_client = Client.first
+
+    if current_client && current_client.uid != client_uid
+      current_client.destroy
+    else
+      Client.find_or_create_by_uid(
+        uid: client_uid,
+        name: uf2_client.name.to_s,
+        vertical: uf2_client.g5_vertical.to_s
+      )
+    end
+
+    current_locations = Locations.all
+    uf2_location_uids = []
+
+    uf2_client.orgs.each do |location|
+
+      uf2_location = uf2_location.format
+      uf2_location_uids << uf2_location.uid.to_s
+
+       Location.find_or_create_by_uid(
+        uid: uf2_location.uid.to_s,
+        urn: uf2_location.uid.to_s.split("/").last,
+        name: uf2_location.name.to_s,
+        state: uf2_location.adr.try(:format).try(:region).to_s,
+        city: uf2_location.adr.try(:format).try(:locality).to_s
+      )
+    end if uf2_client.respond_to?(:orgs)
+
+    current_locations.each do |current_location|
+     unless uf2_location_uids.include? current_location.uid
+      current_location.destroy
+     end
+    end
+>>>>>>> Create or update clients and locations
   end
 end
