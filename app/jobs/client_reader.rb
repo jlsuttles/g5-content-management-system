@@ -79,7 +79,7 @@ class ClientReader
     )
 
     # Grab all of the current locations out of the database.
-    current_locations = Locations.all
+    current_locations = Location.all
     # Start a list of the location UIDs that are part of the microformats2
     # represtation of the client. We will use this later to clean up locations
     # from the database that should not be there.
