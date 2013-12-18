@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(:version => 20131218215222) do
     t.boolean  "custom_colors",   :default => false,     :null => false
     t.string   "state"
     t.string   "city"
-    t.string   "redirects"
   end
 
   add_index "locations", ["urn"], :name => "index_locations_on_urn"
