@@ -40,7 +40,6 @@ module StaticWebsite
 
         htaccess_contents = ["<IfModule mod_rewrite.c>",
                             "\tRewriteEngine On",
-                            "\tRewriteRule ^#{pattern} #{template.htaccess_substitution} [R=301,L]",
                             empty_folders,
                             redirect_rules,
                             "\tRewriteCond %{REQUEST_FILENAME} !-d",
