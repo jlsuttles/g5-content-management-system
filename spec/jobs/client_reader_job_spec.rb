@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe ClientReader, vcr: VCR_OPTIONS do
+describe ClientReaderJob, vcr: VCR_OPTIONS do
 
   describe "#perform" do
-    let(:perform) { ClientReader.perform("spec/support/client.html") }
+    let(:perform) { ClientReaderJob.perform("spec/support/client.html") }
 
     it "creates 1 client" do
       expect { perform }.to change(Client, :count).by(1)
