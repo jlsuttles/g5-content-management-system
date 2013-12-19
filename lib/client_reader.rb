@@ -12,7 +12,7 @@ class ClientReader
     current_client = Client.first
 
     # If the current client in the database has a different UID than the one we
-    # are trying to seed from, destroy all clients because we only expec their
+    # are trying to seed from, destroy all clients because we only expect there
     # to be one in the database and we are about to create a new one.
     Client.destroy_all if current_client && current_client.uid != @client_uid
 
@@ -25,7 +25,6 @@ class ClientReader
       vertical: uf2_client.g5_vertical.to_s
     )
 
-    # Grab all of the current locations out of the database.
     current_locations = Location.all
     # Start a list of the location UIDs that are part of the microformats2
     # represtation of the client. We will use this later to clean up locations
