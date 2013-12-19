@@ -4,7 +4,7 @@ class DeployTasks
 
   def self.perform(client_uid)
     # ClientReader must be performed before WebsiteSeeder
-    ClientReader.perform(client_uid)
+    ClientReaderJob.perform(client_uid)
     WebsiteSeederJob.perform
   end
 end
