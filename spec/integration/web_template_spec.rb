@@ -45,12 +45,24 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
         visit web_template_path(@web_page_template.id)
       end
 
-      it "displays name" do
-        expect(page).to have_content @web_page_template.name.upcase
       end
 
-      it "has a link to twitter with the set username" do
-        page.should have_selector "a[href='http://www.twitter.com/jlsuttles']"
+      it "displays name in navigation widget in nav section" do
+        within "#drop-target-nav .widget.navigation" do
+          expect(page).to have_content @web_page_template.name.upcase
+        end
+      end
+
+      it "displays name in navigation widget in footer section" do
+        within "#drop-target-footer .widget.navigation" do
+          expect(page).to have_content @web_page_template.name.upcase
+        end
+      end
+
+      it "has a link to twitter with the set username in social links widget" do
+        within "#drop-target-main .social-links.widget" do
+          page.should have_selector "a[href='http://www.twitter.com/jlsuttles']"
+        end
       end
     end
   end
