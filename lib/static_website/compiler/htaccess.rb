@@ -34,8 +34,17 @@ module StaticWebsite
           end
         end
 
+        if @web_home_template
+          empty_folders = ["\tRewriteRule ^#{File.join(@web_home_template.client.vertical_slug)} #{@web_home_template.htaccess_substitution} [R=301,L]",
+                           "\tRewriteRule ^#{File.join(@web_home_template.client.vertical_slug, @web_home_template.location.state_slug)} #{@web_home_template.htaccess_substitution} [R=301,L]",
+                           "\tRewriteRule ^#{File.join(@web_home_template.client.vertical_slug, @web_home_template.location.state_slug, @web_home_template.location.city_slug)} #{@web_home_template.htaccess_substitution} [R=301,L]"]
+        else
+          empty_folders = []
+        end
+
         htaccess_contents = ["<IfModule mod_rewrite.c>",
                             "\tRewriteEngine On",
+                            empty_folders,
                             redirect_rules,
                             "\tRewriteCond %{REQUEST_FILENAME} !-d",
                             "\tRewriteCond %{REQUEST_FILENAME} !-f",
