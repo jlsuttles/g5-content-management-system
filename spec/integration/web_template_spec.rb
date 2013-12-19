@@ -45,6 +45,10 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
         visit web_template_path(@web_page_template.id)
       end
 
+      it "has web template title in title tag" do
+        expect(page).to have_title @web_page_template.title
+      end
+
       end
 
       it "displays name in navigation widget in nav section" do
