@@ -1,0 +1,21 @@
+<div class="l-container">
+  <h2 class="page-title">
+    Redirect Manager
+    {{#link-to "website" model class="btn"}}Back{{/link-to}}
+  </h2>
+
+  <div class="faux-table faux-table--striped">
+
+    <div class="faux-table-head">
+      <span class="faux-table-cell">Page Name</span>
+      <span class="faux-table-cell">Redirect Rules</span>
+    </div> <!-- end .faux-table-head -->
+
+    <ul class="faux-table-body">
+      {{ render "redirectManagerRow" webHomeTemplate }}
+      {{#each webPageTemplates}}
+        {{ render "redirectManagerRow" this }}
+      {{/each}}
+    </div> <!-- end .faux-table-body -->
+  </div> <!-- end .faux-table -->
+</div>

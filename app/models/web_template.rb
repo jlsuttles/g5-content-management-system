@@ -34,6 +34,8 @@ class WebTemplate < ActiveRecord::Base
   before_validation :default_title_from_name
   before_validation :default_slug_from_title
 
+  before_save :format_redirect_patterns
+
   # TODO: remove when Ember App implements DropTarget
   def main_widgets
     drop_targets.where(html_id: "drop-target-main").first.try(:widgets)
@@ -116,5 +118,9 @@ class WebTemplate < ActiveRecord::Base
 
   def default_slug_from_title
     self.slug ||= title.parameterize
+  end
+
+  def format_redirect_patterns
+    self.redirect_patterns = redirect_patterns.split.uniq.join("\n") if redirect_patterns
   end
 end
