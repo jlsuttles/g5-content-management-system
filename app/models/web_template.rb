@@ -121,6 +121,6 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def format_redirect_patterns
-    self.redirect_patterns = redirect_patterns.split.uniq.join("\n")
+    self.redirect_patterns = redirect_patterns.split.uniq.join("\n") if redirect_patterns
   end
 end
