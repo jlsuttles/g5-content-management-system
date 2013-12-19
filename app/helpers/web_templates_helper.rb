@@ -7,8 +7,14 @@ module WebTemplatesHelper
       # find html element by id
       html_section = html.at_css("##{html_id}")
       if html_section
-        widget_html = widgets.map(&:liquidized_html).join
-        html_section.inner_html = widget_html
+        if html_id == "drop-target-main"
+          # put page title in h1 tag at top of main drop target
+          inner_html = "<h1>#{web_template.title}</h1>"
+        else
+          inner_html =""
+        end
+        inner_html += widgets.map(&:liquidized_html).join
+        html_section.inner_html = inner_html
       end
     end
     # return the modified layout

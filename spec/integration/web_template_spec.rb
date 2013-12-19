@@ -49,6 +49,10 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
         expect(page).to have_title @web_page_template.title
       end
 
+      it "displays title in h1 tag in main section" do
+        within "#drop-target-main h1" do
+          expect(page).to have_content @web_page_template.title
+        end
       end
 
       it "displays name in navigation widget in nav section" do
