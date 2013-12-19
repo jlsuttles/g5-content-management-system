@@ -7,7 +7,8 @@ class WebHomeTemplateSerializer < WebTemplateSerializer
              :name,
              :title,
              :enabled,
-             :slug
+             :slug,
+             :redirect_patterns
 
   def preview_url
     web_template_url(object)

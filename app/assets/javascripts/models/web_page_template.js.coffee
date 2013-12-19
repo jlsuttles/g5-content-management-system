@@ -5,6 +5,7 @@ App.WebPageTemplate = DS.Model.extend
   name: DS.attr("string")
   slug: DS.attr("string")
   title: DS.attr("string")
+  redirect_patterns: DS.attr("string")
   enabled: DS.attr("boolean")
   displayOrder: DS.attr("number")
   displayOrderPosition: DS.attr("number")
