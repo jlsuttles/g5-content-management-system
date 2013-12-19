@@ -34,9 +34,9 @@ module StaticWebsite
           end
         end
 
-        empty_folders = ["\tRewriteRule ^/ File.join(client.vertical_slug) [R=301,L]",
-                         "\tRewriteRule ^/ File.join(client.vertical_slug, location.state_slug) [R=301,L]",
-                         "\tRewriteRule ^/ File.join(client.vertical_slug, location.state_slug, location.city_slug) [R=301,L]"]
+        empty_folders = ["\tRewriteRule ^#{File.join(client.vertical_slug)} #{@web_home_template.htaccess_substitution} [R=301,L]",
+                         "\tRewriteRule ^#{File.join(client.vertical_slug, location.state_slug)} #{@web_home_template.htaccess_substitution} [R=301,L]",
+                         "\tRewriteRule ^#{File.join(client.vertical_slug, location.state_slug, location.city_slug)} #{@web_home_template.htaccess_substitution} [R=301,L]"]
 
         htaccess_contents = ["<IfModule mod_rewrite.c>",
                             "\tRewriteEngine On",
