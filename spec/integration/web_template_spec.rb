@@ -45,12 +45,33 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
         visit web_template_path(@web_page_template.id)
       end
 
-      it "displays name" do
-        expect(page).to have_content @web_page_template.name.upcase
+      it "has web template title in title tag" do
+        expect(page).to have_title @web_page_template.title
       end
 
-      it "has a link to twitter with the set username" do
-        page.should have_selector "a[href='http://www.twitter.com/jlsuttles']"
+      it "displays title in h1 tag in main section" do
+        within "#drop-target-main h1" do
+          expect(page).to have_content @web_page_template.title
+        end
+      end
+
+      it "displays name in navigation widget in nav section" do
+        pending "Capybara finds the selector locally but not on CI."
+        within "#drop-target-nav .navigation.widget" do
+          expect(page).to have_content @web_page_template.name.upcase
+        end
+      end
+
+      it "displays name in navigation widget in footer section" do
+        within "#drop-target-footer .navigation.widget" do
+          expect(page).to have_content @web_page_template.name.upcase
+        end
+      end
+
+      it "has a link to twitter with the set username in social links widget" do
+        within "#drop-target-main .social-links.widget" do
+          page.should have_selector "a[href='http://www.twitter.com/jlsuttles']"
+        end
       end
     end
   end
