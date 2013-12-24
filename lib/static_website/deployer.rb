@@ -42,10 +42,12 @@ module StaticWebsite
     def cp_r_compile_path(repo)
       # save repo dir so we can remove it later
       @repo_dir = repo.dir.to_s
+
       # copy static website into repo
-      `cp -r #{compile_path}/* #{repo.dir}`
+      FileUtils.cp_r(compile_path + "/.", @repo_dir)
       # copy public javascripts into repo
-      `cp #{File.join(Rails.root, "public", "javascripts")}/* #{repo.dir}/javascripts/`
+      FileUtils.cp_r(File.join(Rails.root, "public", "javascripts") + "/.", @repo_dir + "/javascripts")
+
       # commit changes
       repo.add('.')
       repo.commit_all "Add compiled site"
