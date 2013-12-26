@@ -26,6 +26,11 @@ form input,
 form label {
   display: block;
 }
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
 .dxm {
   width: 100px;
   height: 23px;
