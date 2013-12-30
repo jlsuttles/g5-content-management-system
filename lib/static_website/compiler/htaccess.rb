@@ -29,7 +29,7 @@ module StaticWebsite
         templates.each do |template|
           if template.redirect_patterns
             template.redirect_patterns.split.each do |pattern|
-              redirect_rules << "\tRewriteRule ^#{pattern} /#{template.htaccess_substitution}/ [R=301,L]"
+              redirect_rules << "\tRewriteRule ^#{pattern} #{template.htaccess_substitution} [R=301,L]"
             end
           end
         end

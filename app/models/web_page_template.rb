@@ -8,6 +8,6 @@ class WebPageTemplate < WebTemplate
   end
 
   def htaccess_substitution
-    File.join(client.vertical_slug, location.state_slug, location.city_slug, slug)
+    ["/", File.join(client.vertical_slug, location.state_slug, location.city_slug, slug), "/"].join
   end
 end
