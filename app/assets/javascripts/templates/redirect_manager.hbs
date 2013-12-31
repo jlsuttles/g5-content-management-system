@@ -16,6 +16,9 @@
       {{#each webPageTemplates}}
         {{ render "redirectManagerRow" this }}
       {{/each}}
+      <div class="faux-table-cell buttons">
+        <button class="btn" {{action save this}}>Submit</button>
+      </div>
     </div> <!-- end .faux-table-body -->
   </div> <!-- end .faux-table -->
 </div>
