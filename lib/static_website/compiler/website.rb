@@ -4,6 +4,8 @@ require "static_website/compiler/stylesheets"
 require "static_website/compiler/web_template"
 require "static_website/compiler/web_templates"
 require "static_website/compiler/htaccess"
+require "static_website/compiler/sitemap"
+require "static_website/compiler/robots"
 
 module StaticWebsite
   module Compiler
@@ -23,6 +25,8 @@ module StaticWebsite
         web_home_template.compile
         web_page_templates.compile
         htaccess.compile
+        sitemap.compile
+        robots.compile
       end
 
       def clean_up
@@ -51,6 +55,14 @@ module StaticWebsite
 
       def htaccess
         @htaccess ||= HTAccess.new(website)
+      end
+
+      def sitemap
+        @sitemap ||= Sitemap.new(website)
+      end
+
+      def robots
+        @robots ||= Robots.new(website)
       end
     end
   end
