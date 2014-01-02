@@ -1,7 +1,6 @@
-<div class="l-container">
+<div class="redirects l-container">
   <h2 class="page-title">
     Redirect Manager
-    {{#link-to "website" model class="btn"}}Back{{/link-to}}
   </h2>
 
   <div class="faux-table faux-table--striped">
@@ -16,9 +15,7 @@
       {{#each webPageTemplates}}
         {{ render "redirectManagerRow" this }}
       {{/each}}
-      <div class="faux-table-cell buttons">
-        <button class="btn" {{action save this}}>Submit</button>
-      </div>
-    </div> <!-- end .faux-table-body -->
+    </ul> <!-- end .faux-table-body -->
   </div> <!-- end .faux-table -->
+  <button class="save-redirects btn l-pullRight" {{action save this}}>Submit</button>
 </div>

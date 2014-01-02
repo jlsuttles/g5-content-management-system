@@ -15,6 +15,7 @@ body {
   font-family: $base-fontFamily;
   font-size: 100%;
   line-height: $base-lineHeight;
+  padding-bottom: 1em;
 }
 
 
@@ -56,16 +57,20 @@ fieldset {
   }
 }
 
-#{$all-text-inputs} {
+#{$all-text-inputs},
+textarea {
   @include box-sizing(border-box);
   @include font-size(14px);
   display: block;
   font-family: $base-fontFamily;
   padding: 3px 5px;
+  @include placeholder {
+    @include font-size(12px);
+  }
 }
 
 textarea {
-  display: block;
+  width: 100%;
 }
 
 select {
