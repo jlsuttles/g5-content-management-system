@@ -24,10 +24,10 @@ App.WebHomeTemplateRoute = Ember.Route.extend
     @controllerFor("remoteWebThemes").set("model", App.RemoteWebTheme.find())
     @controllerFor("remoteWidgets").set("model", App.RemoteWidget.find())
 
-    @setBreadcrumb(@controllerFor("webHomeTemplate").get("model").get("title"))
+    @setBreadcrumb(@controllerFor("webHomeTemplate").get("model").get("name"))
 
-  setBreadcrumb: (title) ->
-    $('.page-name').show().find('strong').text(title)
+  setBreadcrumb: (name) ->
+    $('.page-name').show().find('strong').text(name)
 
   deactivate: ->
     $('.page-name').hide()
