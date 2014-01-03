@@ -63,3 +63,9 @@ h1 {
   text-transform: uppercase;
 }
 
+%c-important, .c-important {
+  background: $base-color;
+  color: $c-color-b;
+  padding: .5em;
+}
+

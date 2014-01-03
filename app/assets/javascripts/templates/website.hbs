@@ -20,8 +20,45 @@
       {{ outlet "newWebPageTemplate" }}
     </div>
   </div>
+</div>
 
-  <div class="delete-page">
-    <div class="icon icon--trash"></div>
+<div id="trash">
+  <div class="icon icon--trash"></div>
+  
+  <div class="l-container">
+    <div id="deleted-pages" class="cards">
+      
+      <!-- PLACE DELETED PAGE/CARDS HERE -->
+      <div class="card">
+        <div class="card-container front">
+          <div class="card-head">
+            <h3>Home</h3>
+          </div>
+          <div class="card-body">
+            <ul class="widgets widgets--large">
+              <li>
+                <img src="http://g5-widget-garden.herokuapp.com/static/components/directions/images/thumbnail.png" />
+              </li>
+              <li>
+                <img src="http://g5-widget-garden.herokuapp.com/static/components/html/images/thumbnail.png" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>      
+    </div>
+  </div>
+  
+  <!-- REMOVE CLASS 'HIDDEN' TO SHOW LIGHTBOX -->
+  <div id="empty-trash" class="lightbox lightbox-overlay hidden">
+    <div class="lightbox-body">
+      <h2>Empty the Trash</h2>
+      <p>This is immediate and permanent. There is no undo.</p>
+      <p class="c-important">Are you sure?</p>
+      <div class="buttons">
+        <a href="#" class="btn--text">Cancel</a>
+        <a href="#" class="btn">Yes</a>
+      </div>
+    </div>
   </div>
 </div>
