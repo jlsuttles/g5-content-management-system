@@ -123,22 +123,8 @@ header[role=banner] {
     background: url(logo.png) 0 0 no-repeat;
   }
 }
-.branding,
-nav[role=navigation] {
+.branding {
   font-size: 24px;
-}
-nav[role=navigation] {
-  margin: 0;
-  padding: 0;
-  li, a {
-    display: inline-block;
-  }
-  a {
-    padding: .5em 1em;
-  }
-  li:last-child a {
-    padding-right: 0;
-  }
 }
 
 

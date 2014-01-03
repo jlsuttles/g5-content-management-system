@@ -5,25 +5,37 @@
 //
 // *************************************
 
+[role=navigation] {
+  margin-bottom: 1.5em;
+}
+
 .navigation {
+  @include clearfix;
+  margin-left: -.5em;
+  margin-right: -.5em;
   a {
+    @include font-size(12px);
     display: block;
-    padding: .5em 0;
-  }
-  @include respond-to($l-max-large, max-width) {
-    text-align: center;
+    padding: .5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    &.active {
+      color: $c-color-c;
+    }
   }
   @include respond-to($l-min-medium) {
     li, a {
-      display: inline-block;
+      float: left;
+      line-height: 1;
+    }
+    li {
+      border-left: 1px solid $base-color;
+      &:first-child {
+        border-left: none;
+      }
     }
     a {
-      padding: 0 1em;
-    }
-  }
-  @include respond-to($l-min-xlarge) {
-    a {
-      padding: 0 2em;
+      padding: 0 .5em;
     }
   }
 }
