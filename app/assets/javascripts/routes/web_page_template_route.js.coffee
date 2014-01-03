@@ -49,6 +49,14 @@ App.WebPageTemplateRoute = Ember.Route.extend
     @controllerFor("remoteWebThemes").set("model", App.RemoteWebTheme.find())
     @controllerFor("remoteWidgets").set("model", App.RemoteWidget.find())
 
+    @setBreadcrumb(@controllerFor("webPageTemplate").get("model").get("title"))
+
+  setBreadcrumb: (title) ->
+    $('.page-name').show().find('strong').text(title)
+
+  deactivate: ->
+    $('.page-name').hide()
+
   serialize: (model) ->
     website_slug: model.get("website.slug")
     web_page_template_slug: model.get("slug")
