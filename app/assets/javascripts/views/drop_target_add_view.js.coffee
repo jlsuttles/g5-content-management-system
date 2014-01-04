@@ -1,4 +1,4 @@
-App.DropTargetAddView = Ember.View.extend App.Droppable,
+App.DropTargetAddView = Ember.View.extend JQ.Droppable,
   tagName: "span"
   classNames: ["drop-target drop-target-add"]
   classNameBindings: ["dropTargetActive"]
@@ -15,7 +15,6 @@ App.DropTargetAddView = Ember.View.extend App.Droppable,
       "drop-target-active"
   ).property("dragContext")
 
-  # Overrides App.Droppable#drop
   drop: (event) ->
     # Get the view that was dropped
     viewId = event.originalEvent.dataTransfer.getData("Text")
@@ -36,6 +35,3 @@ App.DropTargetAddView = Ember.View.extend App.Droppable,
       .save()
       view.content.deleteRecord()
       view.content.save()
-
-    # Call App.Droppable#drop
-    @_super event

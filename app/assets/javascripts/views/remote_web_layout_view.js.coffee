@@ -1,4 +1,4 @@
-App.RemoteWebLayoutView = Ember.View.extend App.Droppable,
+App.RemoteWebLayoutView = Ember.View.extend
   tagName: "span"
 
   isSelected: ( ->

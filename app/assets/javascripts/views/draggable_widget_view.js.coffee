@@ -1,4 +1,4 @@
-App.DraggableWidgetView = App.DraggableView.extend
+App.DraggableWidgetView = Ember.View.extend JQ.Draggable,
   tagName: "li"
   classNames: ["thumb", "widget", "sortable-item"]
   classNameBindings: ["dasherizedName"]
@@ -66,4 +66,3 @@ App.DraggableWidgetView = App.DraggableView.extend
       errors["errors"]["base"][0] +
       "</div>"
     $('#modal .modal-body').prepend error
-
