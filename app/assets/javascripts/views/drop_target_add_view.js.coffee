@@ -15,9 +15,9 @@ App.DropTargetAddView = Ember.View.extend JQ.Droppable,
       "drop-target-active"
   ).property("dragContext")
 
-  drop: (event) ->
+  drop: (event, ui) ->
     # Get the view that was dropped
-    viewId = event.originalEvent.dataTransfer.getData("Text")
+    viewId = ui.draggable.attr("id")
     view = Ember.View.views[viewId]
     dropTarget = @get("content")
 

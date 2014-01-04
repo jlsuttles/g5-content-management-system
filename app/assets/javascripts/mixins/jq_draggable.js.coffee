@@ -7,10 +7,10 @@ JQ.Draggable = Ember.Mixin.create JQ.Base,
   "snap", "snapMode", "snapTolerance", "stack", "zIndex"]
   uiEvents: ["create", "drag", "start", "stop"]
 
-  start: (event) ->
-    dataTransfer = event.originalEvent.dataTransfer
-    dataTransfer.setData("Text", @get("elementId"))
+  start: (event, ui) ->
     @set "content.isDragging", true
 
-  stop: (event) ->
+  stop: (event, ui) ->
+    # TODO: need preventDefault?
+    event.preventDefault()
     @set "content.isDragging", false

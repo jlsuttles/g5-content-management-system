@@ -16,10 +16,8 @@ App.DropTargetRemoveView = Ember.View.extend JQ.Droppable,
   ).property("dragContext")
 
   drop: (event, ui) ->
-    console.log event
-    console.log ui
     # Get the view that was dropped
-    viewId = event.originalEvent.dataTransfer.getData("Text")
+    viewId = ui.draggable.attr("id")
     view = Ember.View.views[viewId]
 
     # Destroy the content that was dropped
