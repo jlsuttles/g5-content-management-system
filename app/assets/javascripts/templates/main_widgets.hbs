@@ -3,7 +3,7 @@
   <div class="add-drop-zone">
     {{ partial "dropTargetAdd" }}
   </div>
-  {{ partial "widgets" }}
+  {{ view App.SortableWidgetsView contentBinding="this" }}
   <div class="remove-drop-zone">
     {{ partial "dropTargetRemove" }}
   </div>

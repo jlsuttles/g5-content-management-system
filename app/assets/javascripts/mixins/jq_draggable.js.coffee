@@ -8,7 +8,8 @@ JQ.Draggable = Ember.Mixin.create JQ.Base,
   uiEvents: ["create", "drag", "start", "stop"]
 
   start: (event) ->
-    event.originalEvent.dataTransfer.setData('Text', @get('elementId'))
+    dataTransfer = event.originalEvent.dataTransfer
+    dataTransfer.setData("Text", @get("elementId"))
     @set "content.isDragging", true
 
   stop: (event) ->
