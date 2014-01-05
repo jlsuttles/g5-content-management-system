@@ -1,7 +1,8 @@
-App.DropTargetRemoveView = Ember.View.extend JQ.Droppable,
+App.WidgetsRemoveView = Ember.View.extend JQ.Droppable,
   tagName: "span"
   classNames: ["drop-target drop-target-remove"]
   classNameBindings: ["dropTargetActive"]
+  templateName: ["_widgets_remove"]
   helpText: null
 
   # This will determine which class (if any) you should add to

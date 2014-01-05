@@ -1,7 +1,8 @@
-App.DropTargetAddView = Ember.View.extend JQ.Droppable,
+App.WidgetsAddView = Ember.View.extend JQ.Droppable,
   tagName: "span"
   classNames: ["drop-target drop-target-add"]
   classNameBindings: ["dropTargetActive"]
+  templateName: ["_widgets_add"]
   helpText: null
 
   # This will determine which class (if any) you should add to

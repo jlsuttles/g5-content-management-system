@@ -1,10 +1,10 @@
 <div class="widget-drop-zone aside-widgets">
   <h2>Sidebar</h2>
   <div class="add-drop-zone">
-    {{ partial "dropTargetAdd" }}
+    {{ view App.WidgetsAddView contentBinding="this" }}
   </div>
-  {{ view App.SortableWidgetsView contentBinding="this" }}
+  {{ view App.WidgetsListView contentBinding="this" }}
   <div class="remove-drop-zone">
-    {{ partial "dropTargetRemove" }}
+    {{ view App.WidgetsRemoveView contentBinding="this" }}
   </div>
 </div>

@@ -4,7 +4,7 @@ App.RemoteWidgetView = Ember.View.extend JQ.Draggable,
   classNameBindings: ["dasherizedName"]
   templateName: "_remote_widget"
   # JQ.Draggable options
-  revert: "invalid"
+  revert: true
 
   dasherizedName: ( ->
     name = @get("content.name")
