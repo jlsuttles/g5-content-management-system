@@ -15,3 +15,6 @@ JQ.Sortable = Ember.Mixin.create JQ.Base,
       indexes[$(this).data("id")] = index
     # Tell controller to update models with new positions
     @get("controller").updateSortOrder indexes
+    # TODO: Call sortable again?
+    console.log @$()
+    @$().sortable()

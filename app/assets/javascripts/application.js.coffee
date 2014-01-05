@@ -8,10 +8,6 @@
 #= require ckeditor/init
 
 $ ->
-  # add the dataTransfer property for use with the native `drop` event
-  # to capture information about files dropped into the browser window
-  $.event.props.push("dataTransfer")
-
   #= Allows CKEditor modal to play nice with Bootstrap modal
   $.fn.modal.Constructor::enforceFocus = ->
     modalThis = this

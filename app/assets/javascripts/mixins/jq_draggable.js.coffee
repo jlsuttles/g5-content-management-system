@@ -11,6 +11,4 @@ JQ.Draggable = Ember.Mixin.create JQ.Base,
     @set "content.isDragging", true
 
   stop: (event, ui) ->
-    # TODO: need preventDefault?
-    event.preventDefault()
     @set "content.isDragging", false

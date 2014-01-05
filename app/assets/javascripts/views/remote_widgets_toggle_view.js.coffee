@@ -1,4 +1,4 @@
-App.WidgetViewToggle = Ember.View.extend
+App.RemoteWidgetsToggleView = Ember.View.extend
   tagName: "a"
   classNames: ["toggle-widget-view", "btn", "btn--small"]
   attributeBindings: ['href']
