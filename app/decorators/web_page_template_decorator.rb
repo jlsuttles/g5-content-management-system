@@ -8,6 +8,6 @@ class WebPageTemplateDecorator < Draper::Decorator
   end
 
   def url
-    "/#{client.vertical_slug}/#{location.state_slug}/#{location.city_slug}/#{slug}/"
+    "/#{slug}.html"
   end
 end

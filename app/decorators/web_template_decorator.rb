@@ -11,7 +11,7 @@ class WebTemplateDecorator < Draper::Decorator
     if web_home_template?
       "/"
     else
-      "/#{slug}.html"
+      "/#{client.vertical_slug}/#{location.state_slug}/#{location.city_slug}/#{slug}/"
     end
   end
 end
