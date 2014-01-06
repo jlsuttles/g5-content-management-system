@@ -4,6 +4,10 @@ App.WidgetsAddView = Ember.View.extend JQ.Droppable,
   classNameBindings: ["dropTargetActive"]
   templateName: ["_widgets_add"]
   helpText: null
+  # JQ.Droppable uiOptions
+  accept: ".remote-widget"
+  activeClass: "drop-target-active"
+  hoverClass: "drop-target-hover"
 
   # This will determine which class (if any) you should add to
   # the view when you are in the process of dragging an item.
