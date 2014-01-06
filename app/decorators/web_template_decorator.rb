@@ -12,11 +12,11 @@ class WebTemplateDecorator < Draper::Decorator
   end
 
   def city
-    location.try(:state_slug)
+    location.try(:city_slug)
   end
 
   def state
-    location.try(:city_slug)
+    location.try(:state_slug)
   end
 
   def url
