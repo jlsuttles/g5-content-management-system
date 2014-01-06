@@ -7,11 +7,23 @@ class WebTemplateDecorator < Draper::Decorator
     true
   end
 
+  def vertical
+    client.try(:vertical_slug)
+  end
+
+  def city
+    location.try(:state_slug)
+  end
+
+  def state
+    location.try(:city_slug)
+  end
+
   def url
     if web_home_template?
       "/"
     else
-      "/#{client.vertical_slug}/#{location.state_slug}/#{location.city_slug}/#{slug}/"
+      "/#{vertical}/#{state}/#{city}/#{slug}/"
     end
   end
 end
