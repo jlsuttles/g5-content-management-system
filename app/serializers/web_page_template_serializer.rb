@@ -9,7 +9,8 @@ class WebPageTemplateSerializer < WebTemplateSerializer
              :enabled,
              :slug,
              :display_order,
-             :redirect_patterns
+             :redirect_patterns,
+             :in_trash
 
   def preview_url
     web_template_url(object)

@@ -1,7 +1,7 @@
 {{#each}}
   {{#unless isNew}}
-    {{#unless inTrash}}
+    {{#if inTrash}}
       {{view App.WebsiteWebPageTemplateView contentBinding="this"}}
-    {{/unless}}
+    {{/if}}
   {{/unless}}
 {{/each}}

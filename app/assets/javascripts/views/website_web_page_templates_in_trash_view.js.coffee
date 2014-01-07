@@ -1,6 +1,6 @@
-App.WebsiteWebPageTemplatesView = Ember.View.extend JQ.Sortable,
-  classNames: ["web-page-templates"]
-  connectWith: ".web-page-templates-in-trash"
+App.WebsiteWebPageTemplatesInTrashView = Ember.View.extend JQ.Sortable,
+  classNames: ["web-page-templates-in-trash"]
+  connectWith: ".web-page-templates"
 
   # JQ.Sortable uiEvent
   update: (event, ui) ->
@@ -9,7 +9,7 @@ App.WebsiteWebPageTemplatesView = Ember.View.extend JQ.Sortable,
       # Get the dropped Ember view
       droppedViewId = ui.draggable.attr("id")
       droppedView = Ember.View.views[droppedViewId]
-      # Set view not in trash
+      # Set view in trash
       droppedView.content.set("inTrash", true)
       droppedView.content.save()
 
