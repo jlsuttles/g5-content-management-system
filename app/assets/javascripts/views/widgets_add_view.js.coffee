@@ -20,22 +20,15 @@ App.WidgetsAddView = Ember.View.extend JQ.Droppable,
 
   # JQ.Droppable uiEvent
   drop: (event, ui) ->
-    # Get the view that was dropped
-    viewId = ui.draggable.attr("id")
-    view = Ember.View.views[viewId]
-    dropTarget = @get("content")
+    # Make sure ui is present before continuing
+    return unless ui?
+    # Get the dropped Ember view
+    droppedViewId = ui.draggable.attr("id")
+    droppedView = Ember.View.views[droppedViewId]
+    widgets = @get("content")
+    console.log @get("content")
 
-    if view.content.get("id") is view.content.get("name")
-      console.log "create record"
-      dropTarget.createRecord
-        url: view.content.get("url")
-      .save()
-    else
-      console.log "update record"
-      # TODO: do nothing if already in this section
-      # TODO: update instead of create
-      dropTarget.createRecord
-        url: view.content.get("url")
-      .save()
-      view.content.deleteRecord()
-      view.content.save()
+    # Create a new record
+    widgets.createRecord
+      url: droppedView.content.get("url")
+    .save()
