@@ -4,6 +4,8 @@ App.WidgetsRemoveView = Ember.View.extend JQ.Droppable,
   classNameBindings: ["dropTargetActive"]
   templateName: ["_widgets_remove"]
   helpText: null
+  # JQ.Droppable uiOptions
+  accept: ".existing-widget"
 
   # This will determine which class (if any) you should add to
   # the view when you are in the process of dragging an item.
@@ -16,6 +18,7 @@ App.WidgetsRemoveView = Ember.View.extend JQ.Droppable,
       "drop-target-active"
   ).property("dragContext")
 
+  # JQ.Droppable uiEvent
   drop: (event, ui) ->
     # Get the view that was dropped
     viewId = ui.draggable.attr("id")

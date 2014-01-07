@@ -6,9 +6,3 @@ JQ.Draggable = Ember.Mixin.create JQ.Base,
   "revertDuration", "scope", "scroll", "scrollSensitivity", "scrollSpeed",
   "snap", "snapMode", "snapTolerance", "stack", "zIndex"]
   uiEvents: ["create", "drag", "start", "stop"]
-
-  start: (event, ui) ->
-    @set "content.isDragging", true
-
-  stop: (event, ui) ->
-    @set "content.isDragging", false

@@ -1,6 +1,6 @@
 App.RemoteWidgetView = Ember.View.extend JQ.Draggable,
   tagName: "li"
-  classNames: ["thumb", "widget", "remote-widget"]
+  classNames: ["thumb", "widget", "new-widget"]
   classNameBindings: ["dasherizedName"]
   templateName: "_remote_widget"
   # JQ.Draggable uiOptions
@@ -11,3 +11,11 @@ App.RemoteWidgetView = Ember.View.extend JQ.Draggable,
     name = @get("content.name")
     name.dasherize() if name
   ).property("content.name")
+
+  # JQ.Draggable uiEvent
+  start: (event, ui) ->
+    @set "content.isDragging", true
+
+  # JQ.Draggable uiEvent
+  stop: (event, ui) ->
+    @set "content.isDragging", false

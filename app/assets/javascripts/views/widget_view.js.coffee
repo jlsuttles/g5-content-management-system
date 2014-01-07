@@ -1,6 +1,6 @@
 App.WidgetView = Ember.View.extend
   tagName: "li"
-  classNames: ["thumb", "widget"]
+  classNames: ["thumb", "widget", "existing-widget"]
   classNameBindings: ["dasherizedName"]
   attributeBindings: ["id:data-id"]
   templateName: "_widget"

@@ -7,14 +7,3 @@ JQ.Sortable = Ember.Mixin.create JQ.Base,
   "scrollSpeed", "tolerance", "zIndex"]
   uiEvents: ["activate", "beforeStop", "change", "create", "deactivate", "out",
   "over", "receive", "remove", "sort", "start", "stop", "update"]
-
-  update: (event) ->
-    # Save the new display order position
-    indexes = {}
-    $(this).find(".sortable-item").each (index) ->
-      indexes[$(this).data("id")] = index
-    # Tell controller to update models with new positions
-    @get("controller").updateSortOrder indexes
-    # TODO: Call sortable again?
-    console.log @$()
-    @$().sortable()
