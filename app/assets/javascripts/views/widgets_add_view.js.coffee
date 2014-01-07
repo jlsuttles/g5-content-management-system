@@ -3,7 +3,6 @@ App.WidgetsAddView = Ember.View.extend JQ.Droppable,
   classNames: ["drop-target drop-target-add"]
   classNameBindings: ["dropTargetActive"]
   templateName: ["_widgets_add"]
-  helpText: null
   # JQ.Droppable uiOptions
   accept: ".new-widget"
 
@@ -11,10 +10,8 @@ App.WidgetsAddView = Ember.View.extend JQ.Droppable,
   # the view when you are in the process of dragging an item.
   dropTargetActive: ( ->
     if Ember.isEmpty(@get("dragContext"))
-      @set "helpText", "Drag here to add"
       return null
     else
-      @set "helpText", "Drag here to add"
       "drop-target-active"
   ).property("dragContext")
 
