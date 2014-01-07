@@ -25,8 +25,8 @@ App.WidgetsAddView = Ember.View.extend JQ.Droppable,
     # Get the dropped Ember view
     droppedViewId = ui.draggable.attr("id")
     droppedView = Ember.View.views[droppedViewId]
-    url = droppedView.content.get("url")
     # Create new record using url
+    url = droppedView.content.get("url")
     @get("content").createRecord
       url: url
     .save()
