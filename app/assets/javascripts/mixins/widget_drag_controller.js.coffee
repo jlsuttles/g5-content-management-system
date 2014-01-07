@@ -8,8 +8,3 @@ App.WidgetDragController = Ember.Mixin.create
   currentDragRemoveItem: ( ->
     @findProperty "isDragging", true
   ).property("@each.isDragging")
-
-  # TODO: if any other widget controllers are dragging
-  # currentMoveItem: ( ->
-  #   @get("controllers.phoneWidgets.currentRemoveItem")
-  # ).property("controllers.phoneWidgets.currentRemoveItem")

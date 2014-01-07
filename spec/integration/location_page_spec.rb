@@ -1,61 +1,123 @@
 require "spec_helper"
 
 describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: VCR_OPTIONS do
-  describe "Main widgets are drag and drop sortable" do
-    before do
-      @client, @location, @website = seed
-      @web_page_template = @website.web_page_templates.first
-      @widget1 = @web_page_template.main_widgets.first
-      @widget2 = @web_page_template.main_widgets.last
+  before do
+    @client, @location, @website = seed
+    @web_page_template = @website.web_page_templates.first
+  end
 
-      # Make sure widgets are ordered first and last
-      @widget1.update_attribute :display_order, :first
-      @widget2.update_attribute :display_order, :last
+  describe "Main widgets" do
+    describe "Are drag and drop addable" do
+      before do
+        visit_web_page_template
+      end
 
-      visit_web_page_template
-      # HACK: Shouldn't have to do this, Capybara should be scrolling.
-      scroll_to(page, ".main-widgets .sortable")
+      it "Creates a new widget in the database" do
+        remote_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
+        drop_target_add = find(".main-widgets .drop-target-add:first-of-type")
+        expect do
+          drag_and_drop(remote_widget, drop_target_add)
+          sleep 1
+        end.to change{ @web_page_template.reload.main_widgets.count }.by(1)
+      end
     end
 
-    it "Updates database" do
-      within ".main-widgets .sortable" do
-        widget1 = find(".sortable-item:first-of-type")
-        widget2 = find(".sortable-item:last-of-type")
-        expect(@widget2.display_order > @widget1.display_order).to be_true
-        widget2.drag_to(widget1)
-        drag_and_drop(widget1, widget2)
-        sleep 1
-        expect(@widget2.reload.display_order < @widget1.reload.display_order).to be_true
+    describe "Are drag and drop sortable" do
+      before do
+        @widget1 = @web_page_template.main_widgets.first
+        @widget2 = @web_page_template.main_widgets.last
+
+        # Make sure widgets are ordered first and last
+        @widget1.update_attribute :display_order, :first
+        @widget2.update_attribute :display_order, :last
+
+        visit_web_page_template
+      end
+
+      it "Updates display order in database" do
+        within ".main-widgets" do
+          widget1 = find(".widget:first-of-type")
+          widget2 = find(".widget:last-of-type")
+          expect(@widget2.display_order > @widget1.display_order).to be_true
+          drag_and_drop(widget1, widget2)
+          sleep 1
+          expect(@widget2.reload.display_order < @widget1.reload.display_order).to be_true
+        end
+      end
+    end
+
+    describe "Are drag and drop removeable" do
+      before do
+        visit_web_page_template
+      end
+
+      it "Destroys an existing widget in the database" do
+        main_widget = find(".main-widgets .widget:first-of-type")
+        drop_target_remove = find(".main-widgets .drop-target-remove:first-of-type")
+        expect do
+          drag_and_drop(main_widget, drop_target_remove)
+          sleep 1
+        end.to change{ @web_page_template.reload.main_widgets.count }.by(-1)
       end
     end
   end
 
-  describe "Sidebar widgets are drag and drop sortable" do
+  describe "Sidebar widgets" do
     before do
-      @client, @location, @website = seed
       @website_template = @website.website_template
-      @widget1 = @website_template.aside_widgets.first
-      @widget2 = @website_template.aside_widgets.last
-      @web_page_template = @website.web_page_templates.first
-
-      # Make sure widgets are ordered first and last
-      @widget1.update_attribute :display_order, :first
-      @widget2.update_attribute :display_order, :last
-
-      visit_web_page_template
-      # HACK: Shouldn't have to do this, Capybara should be scrolling.
-      scroll_to(page, ".aside-widgets .sortable")
     end
 
-    it "Updates database" do
-      within ".aside-widgets .sortable" do
-        widget1 = find(".sortable-item:first-of-type")
-        widget2 = find(".sortable-item:last-of-type")
-        expect(@widget2.display_order > @widget1.display_order).to be_true
-        widget2.drag_to(widget1)
-        drag_and_drop(widget1, widget2)
-        sleep 1
-        expect(@widget2.reload.display_order < @widget1.reload.display_order).to be_true
+    describe "Are drag and drop addable" do
+      before do
+        visit_web_page_template
+      end
+
+      it "Creates a new widget in the database" do
+        remote_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
+        drop_target_add = find(".aside-widgets .drop-target-add:first-of-type")
+        expect do
+          drag_and_drop(remote_widget, drop_target_add)
+          sleep 1
+        end.to change{ @website_template.reload.aside_widgets.count }.by(1)
+      end
+    end
+
+    describe "Are drag and drop sortable" do
+      before do
+        @widget1 = @website_template.aside_widgets.first
+        @widget2 = @website_template.aside_widgets.last
+
+        # Make sure widgets are ordered first and last
+        @widget1.update_attribute :display_order, :first
+        @widget2.update_attribute :display_order, :last
+
+        visit_web_page_template
+      end
+
+      it "Updates display order in database" do
+        within ".aside-widgets" do
+          widget1 = find(".widget:first-of-type")
+          widget2 = find(".widget:last-of-type")
+          expect(@widget2.display_order > @widget1.display_order).to be_true
+          drag_and_drop(widget1, widget2)
+          sleep 1
+          expect(@widget2.reload.display_order < @widget1.reload.display_order).to be_true
+        end
+      end
+    end
+
+    describe "Are drag and drop removeable" do
+      before do
+        visit_web_page_template
+      end
+
+      it "Destroys an existing widget in the database" do
+        aside_widget = find(".aside-widgets .widget:first-of-type")
+        drop_target_remove = find(".aside-widgets .drop-target-remove:first-of-type")
+        expect do
+          drag_and_drop(aside_widget, drop_target_remove)
+          sleep 1
+        end.to change{ @website_template.reload.aside_widgets.count }.by(-1)
       end
     end
   end

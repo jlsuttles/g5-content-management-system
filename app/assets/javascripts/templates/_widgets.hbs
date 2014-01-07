@@ -1,8 +1,5 @@
-<ul class="add-widgets sortable">
+<ul class="add-widgets">
 {{#each model}}
-  {{#view App.DraggableWidgetView contentBinding="this"}}
-    <img alt="Thumbnail" {{ bindAttr src="view.content.thumbnail" }} />
-    {{ view.content.name }}
-  {{/view}}
+  {{ view App.WidgetView contentBinding="this" }}
 {{/each}}
 </ul>

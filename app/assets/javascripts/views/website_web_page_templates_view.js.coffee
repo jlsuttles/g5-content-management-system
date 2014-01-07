@@ -1,11 +1,11 @@
-App.WebsiteWebPageTemplatesView = Ember.View.extend
-  didInsertElement: ->
-    controller = @get("controller")
-    @$(".sortable").sortable
-      update: (event, ui) ->
-        # Save the new display order position
-        indexes = {}
-        $(this).find(".sortable-item").each (index) ->
-          indexes[$(this).data("id")] = index
-        # Tell controller to update models with new positions
-        controller.updateSortOrder indexes
+App.WebsiteWebPageTemplatesView = Ember.View.extend JQ.Sortable,
+  classNames: ["web-page-templates"]
+
+  # JQ.Sortable uiEvent
+  update: (event) ->
+    # Save the new display order position
+    indexes = {}
+    @$(".web-page-template").each (index) ->
+      indexes[$(this).data("id")] = index
+    # Tell controller to update models with new positions
+    @get("controller").updateSortOrder indexes

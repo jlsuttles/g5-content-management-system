@@ -1,8 +1,9 @@
-App.DraggableWidgetView = App.DraggableView.extend
+App.WidgetView = Ember.View.extend
   tagName: "li"
-  classNames: ["thumb", "widget", "sortable-item"]
+  classNames: ["thumb", "widget", "existing-widget"]
   classNameBindings: ["dasherizedName"]
   attributeBindings: ["id:data-id"]
+  templateName: "_widget"
 
   dasherizedName: ( ->
     name = @get("content.name")
@@ -66,4 +67,3 @@ App.DraggableWidgetView = App.DraggableView.extend
       errors["errors"]["base"][0] +
       "</div>"
     $('#modal .modal-body').prepend error
-
