@@ -1,4 +1,6 @@
 App.WebsiteWebPageTemplatesView = Ember.View.extend JQ.Sortable,
+  classNames: ["web-page-templates"]
+
   # JQ.Sortable uiEvent
   update: (event) ->
     # Save the new display order position

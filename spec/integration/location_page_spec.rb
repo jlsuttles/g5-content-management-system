@@ -13,16 +13,13 @@ describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: 
       @widget2.update_attribute :display_order, :last
 
       visit_web_page_template
-      # HACK: Shouldn't have to do this, Capybara should be scrolling.
-      scroll_to(page, ".main-widgets .sortable")
     end
 
     it "Updates database" do
-      within ".main-widgets .sortable" do
-        widget1 = find(".sortable-item:first-of-type")
-        widget2 = find(".sortable-item:last-of-type")
+      within ".main-widgets" do
+        widget1 = find(".widget:first-of-type")
+        widget2 = find(".widget:last-of-type")
         expect(@widget2.display_order > @widget1.display_order).to be_true
-        widget2.drag_to(widget1)
         drag_and_drop(widget1, widget2)
         sleep 1
         expect(@widget2.reload.display_order < @widget1.reload.display_order).to be_true
@@ -43,16 +40,13 @@ describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: 
       @widget2.update_attribute :display_order, :last
 
       visit_web_page_template
-      # HACK: Shouldn't have to do this, Capybara should be scrolling.
-      scroll_to(page, ".aside-widgets .sortable")
     end
 
     it "Updates database" do
-      within ".aside-widgets .sortable" do
-        widget1 = find(".sortable-item:first-of-type")
-        widget2 = find(".sortable-item:last-of-type")
+      within ".aside-widgets" do
+        widget1 = find(".widget:first-of-type")
+        widget2 = find(".widget:last-of-type")
         expect(@widget2.display_order > @widget1.display_order).to be_true
-        widget2.drag_to(widget1)
         drag_and_drop(widget1, widget2)
         sleep 1
         expect(@widget2.reload.display_order < @widget1.reload.display_order).to be_true
