@@ -1,10 +1,10 @@
 <div class="widget-drop-zone main-widgets">
   <h2>Main</h2>
   <div class="add-drop-zone">
-    {{ view App.WidgetsAddView contentBinding="content" }}
+    {{view App.WidgetsAddView contentBinding="content" dragContextBinding="currentDragAddItem"}}
   </div>
-  {{ view App.WidgetsListView contentBinding="content" }}
+  {{view App.WidgetsListView contentBinding="content"}}
   <div class="remove-drop-zone">
-    {{ view App.WidgetsRemoveView contentBinding="content" }}
+    {{view App.WidgetsRemoveView contentBinding="content" dragContextBinding="currentDragRemoveItem"}}
   </div>
 </div>
