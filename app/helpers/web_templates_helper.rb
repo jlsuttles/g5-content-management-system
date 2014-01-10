@@ -7,7 +7,7 @@ module WebTemplatesHelper
       # find html element by id
       html_section = html.at_css("##{html_id}")
       if html_section
-        if html_id == "drop-target-main"
+        if html_id == "drop-target-main" && web_template.title != "Home"
           # put page title in h1 tag at top of main drop target
           inner_html = "<h1>#{web_template.title}</h1>"
         else
