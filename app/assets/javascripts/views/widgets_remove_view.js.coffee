@@ -15,5 +15,4 @@ App.WidgetsRemoveView = Ember.View.extend JQ.Droppable,
     droppedViewId = ui.draggable.attr("id")
     droppedView = Ember.View.views[droppedViewId]
     # Destroy the dropped view's content
-    droppedView.get("content").deleteRecord()
-    droppedView.get("content").save()
+    droppedView.set("content.isRemoved", true)

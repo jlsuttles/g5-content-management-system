@@ -8,7 +8,7 @@ App.WidgetsListView = Ember.CollectionView.extend JQ.Sortable,
   revert: true
 
   # JQ.Sortable uiEvent
-  update: (event) ->
+  stop: (event) ->
     # Save the new display order position
     indexes = {}
     @$(".widget").each (index) ->
