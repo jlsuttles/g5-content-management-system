@@ -15,6 +15,6 @@ describe WebsiteDecorator do
     website.heroku_repo.should match /git@heroku\.com:g5-clw-\d+-/
   end
   it "has a heroku url" do
-    website.heroku_url.should match /https:\/\/g5-clw-\d+-/
+    website.heroku_url.should match /http:\/\/g5-clw-\d+-/
   end
 end
