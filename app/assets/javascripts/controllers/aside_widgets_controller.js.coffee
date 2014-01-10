@@ -1,4 +1,4 @@
-App.AsideWidgetsController = Ember.ArrayController.extend App.WidgetDragController,
+App.AsideWidgetsController = Ember.ArrayController.extend
   sortProperties: ["displayOrder"]
 
   updateSortOrder: (indexes) ->
