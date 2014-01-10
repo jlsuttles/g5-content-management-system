@@ -70,9 +70,9 @@ describe Api::V1::MainWidgetsController, vcr: VCR_OPTIONS do
         expect(response.status).to eq 200
       end
 
-      it "renders widget as json" do
+      it "renders nil as json" do
         delete :destroy, id: widget.id
-        expect(response.body).to eq WidgetSerializer.new(widget, root: :main_widget).to_json
+        expect(response.body).to eq nil.to_json
       end
     end
 
