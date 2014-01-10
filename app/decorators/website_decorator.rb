@@ -16,6 +16,6 @@ class WebsiteDecorator < Draper::Decorator
   end
 
   def heroku_url
-    "https://#{heroku_app_name}.herokuapp.com"
+    "http://#{heroku_app_name}.herokuapp.com"
   end
 end
