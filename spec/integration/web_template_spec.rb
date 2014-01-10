@@ -54,6 +54,14 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
           expect(page).to have_content @web_page_template.title
         end
       end
+      
+      it "does not display title on home page" do
+        @web_home_template = @website.web_home_template
+        visit web_template_path(@web_home_template.id)
+        within ".page-home #drop-target-main" do
+          expect(page).to_not have_selector("h1")
+        end
+      end
 
       it "displays name in navigation widget in nav section" do
         pending "Capybara finds the selector locally but not on CI."
