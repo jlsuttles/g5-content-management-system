@@ -59,6 +59,22 @@ describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: 
           sleep 1
         end.to change{ @web_page_template.reload.main_widgets.count }.by(-1)
       end
+
+      it "Destroys multiple existing widgets in the database" do
+        drop_target_remove = find(".main-widgets .drop-target-remove:first-of-type")
+        expect do
+          # For some reason the first drag and drop does not drag far enough to
+          # actually drop in the right place. This should really only do 2 drag
+          # and drops but 3 makes it work. It works with only 2 when doing it
+          # manually.
+          drag_and_drop(find(".main-widgets .widget:first-of-type"), drop_target_remove)
+          sleep 1
+          drag_and_drop(find(".main-widgets .widget:first-of-type"), drop_target_remove)
+          sleep 1
+          drag_and_drop(find(".main-widgets .widget:first-of-type"), drop_target_remove)
+          sleep 1
+        end.to change{ @web_page_template.reload.main_widgets.count }.by(-2)
+      end
     end
   end
 
@@ -118,6 +134,22 @@ describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: 
           drag_and_drop(aside_widget, drop_target_remove)
           sleep 1
         end.to change{ @website_template.reload.aside_widgets.count }.by(-1)
+      end
+
+      it "Destroys multiple existing widgets in the database" do
+        drop_target_remove = find(".aside-widgets .drop-target-remove:first-of-type")
+        expect do
+          # For some reason the first drag and drop does not drag far enough to
+          # actually drop in the right place. This should really only do 2 drag
+          # and drops but 3 makes it work. It works with only 2 when doing it
+          # manually.
+          drag_and_drop(find(".aside-widgets .widget:first-of-type"), drop_target_remove)
+          sleep 1
+          drag_and_drop(find(".aside-widgets .widget:first-of-type"), drop_target_remove)
+          sleep 1
+          drag_and_drop(find(".aside-widgets .widget:first-of-type"), drop_target_remove)
+          sleep 1
+        end.to change{ @website_template.reload.aside_widgets.count }.by(-2)
       end
     end
   end
