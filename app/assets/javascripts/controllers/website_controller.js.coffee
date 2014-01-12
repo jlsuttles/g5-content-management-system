@@ -8,3 +8,10 @@ App.WebsiteController = Ember.ObjectController.extend
       false
     confirmEmptyTrash: ->
       @set "confirmEmptyTrash", not @get("confirmEmptyTrash")
+    emptyTrash: ->
+      @beginPropertyChanges()
+      @get("webPageTemplates").filterBy("inTrash", true).forEach (item) ->
+        item.deleteRecord()
+      @endPropertyChanges()
+      @get("store").save()
+      @set "confirmEmptyTrash", false

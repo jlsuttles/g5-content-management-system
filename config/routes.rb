@@ -34,7 +34,7 @@ G5ClientHub::Application.routes.draw do
       resources :footer_widgets, only: [:index, :show, :create, :destroy]
 
       resources :web_home_templates, only: [:index, :show, :update]
-      resources :web_page_templates, only: [:index, :show, :create, :update]
+      resources :web_page_templates, only: [:index, :show, :create, :update, :destroy]
       resources :main_widgets, only: [:index, :show, :create, :update, :destroy]
 
       resources :remote_web_layouts, only: [:index]
@@ -45,6 +45,6 @@ G5ClientHub::Application.routes.draw do
 
   get "/:location_slug/:web_page_template_slug", to: "locations#index"
   get "/:website_slug", to: "locations#index"
-  
+
   root to: "locations#index"
 end

@@ -27,6 +27,15 @@ class Api::V1::WebPageTemplatesController < Api::V1::ApplicationController
     end
   end
 
+  def destroy
+    @web_page_template = WebPageTemplate.find(params[:id])
+    if @web_page_template.destroy
+      render json: nil, status: :ok
+    else
+      render json: @web_page_template.errors, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def web_page_template_params
