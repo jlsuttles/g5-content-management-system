@@ -23,7 +23,9 @@
 </div>
 
 <div id="trash">
-  <div class="icon icon--trash"></div>
+  <a href="#" {{action confirmEmptyTrash}}>
+    <div class="icon icon--trash"></div>
+  </a>
 
   <div class="l-container">
     <div id="deleted-pages" class="cards">
@@ -31,8 +33,7 @@
     </div>
   </div>
 
-  <!-- REMOVE CLASS 'HIDDEN' TO SHOW LIGHTBOX -->
-  <div id="empty-trash" class="lightbox lightbox-overlay hidden">
+  {{#view App.WebsiteWebPageTemplatesEmptyTrashView}}
     <div class="lightbox-body">
       <h2>Empty the Trash</h2>
       <p>This is immediate and permanent. There is no undo.</p>
@@ -42,5 +43,5 @@
         <a href="#" class="btn">Yes</a>
       </div>
     </div>
-  </div>
+  {{/view}}
 </div>
