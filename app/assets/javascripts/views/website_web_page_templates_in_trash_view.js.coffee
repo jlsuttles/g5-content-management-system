@@ -5,7 +5,7 @@ App.WebsiteWebPageTemplatesInTrashView = Ember.View.extend JQ.Sortable,
   # JQ.Sortable uiEvent
   update: (event, ui) ->
     # Make sure ui is present before continuing
-    if ui?
+    if ui? and ui.draggable?
       # Get the dropped Ember view
       droppedViewId = ui.draggable.attr("id")
       droppedView = Ember.View.views[droppedViewId]
