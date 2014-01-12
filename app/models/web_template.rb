@@ -116,6 +116,8 @@ class WebTemplate < ActiveRecord::Base
   def default_in_trash_to_false
     # ||= does not work here because in_trash is a boolean
     self.in_trash = false if in_trash.nil?
+    # return true to continue validation
+    true
   end
 
   def default_title_from_name
