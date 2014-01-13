@@ -85,4 +85,6 @@
 .web-page-templates-in-trash {
   @include clearfix;
   position: relative;
+  min-height: 100px;
+  background: red;
 }
