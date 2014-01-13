@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140107062257) do
+ActiveRecord::Schema.define(:version => 20140112212711) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -32,12 +32,9 @@ ActiveRecord::Schema.define(:version => 20140107062257) do
     t.string   "uid"
     t.string   "name"
     t.boolean  "corporate"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "urn"
-    t.string   "primary_color",   :default => "#000000"
-    t.string   "secondary_color", :default => "#ffffff"
-    t.boolean  "custom_colors",   :default => false,     :null => false
     t.string   "state"
     t.string   "city"
     t.string   "street_address"
@@ -127,12 +124,15 @@ ActiveRecord::Schema.define(:version => 20140107062257) do
     t.string   "url"
     t.string   "name"
     t.integer  "web_template_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "thumbnail"
     t.text     "stylesheets"
     t.text     "javascripts"
     t.text     "colors"
+    t.boolean  "custom_colors"
+    t.string   "custom_primary_color"
+    t.string   "custom_secondary_color"
   end
 
   add_index "web_themes", ["web_template_id"], :name => "index_web_themes_on_web_template_id"
@@ -140,11 +140,8 @@ ActiveRecord::Schema.define(:version => 20140107062257) do
   create_table "websites", :force => true do |t|
     t.integer  "location_id"
     t.string   "urn"
-    t.boolean  "custom_colors",   :default => false,     :null => false
-    t.string   "primary_color",   :default => "#000000"
-    t.string   "secondary_color", :default => "#ffffff"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "websites", ["location_id"], :name => "index_websites_on_location_id"

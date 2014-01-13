@@ -27,12 +27,33 @@ class WebTheme < ActiveRecord::Base
     web_template_id
   end
 
+  def display_colors
+    { primary_color: primary_color,
+      secondary_color: secondary_color }
+  end
+
   def primary_color
-    colors[0]
+    if custom_colors? && custom_primary_color
+      custom_primary_color
+    else
+      colors[0]
+    end
+  end
+
+  def primary_color=(value)
+    self.custom_primary_color = value
   end
 
   def secondary_color
-    colors[1]
+    if custom_colors? && custom_secondary_color
+      custom_secondary_color
+    else
+      colors[1]
+    end
+  end
+
+  def secondary_color=(value)
+    self.custom_secondary_color = value
   end
 
   private

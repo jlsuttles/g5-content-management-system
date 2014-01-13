@@ -9,9 +9,6 @@ class WebsiteSerializer < ActiveModel::Serializer
               :location_id,
               :name,
               :slug,
-              :custom_colors,
-              :primary_color,
-              :secondary_color,
               :heroku_url
 
   def heroku_url

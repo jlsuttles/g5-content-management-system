@@ -102,50 +102,18 @@ describe Website, vcr: VCR_OPTIONS do
     end
   end
 
-  describe "Colors" do
-    let(:website) { Fabricate(:website) }
+  describe "#colors" do
+    let(:website) { Fabricate.build(:website) }
+    let (:website_template) { Fabricate.build(:website_template) }
 
-    describe "Default" do
-      it { website.primary_color.should eq "#000000" }
-      it { website.secondary_color.should eq "#ffffff" }
+    before do
+      website.website_template = website_template
+      website_template.stub(:colors) { "colors!" }
     end
 
-    describe "Custom" do
-      let(:website_template) { Fabricate(:website_template) }
-      let(:web_theme) { Fabricate(:web_theme) }
-
-      before do
-        website.website_template = website_template
-        website.website_template.web_theme = web_theme
-        website.stub(:custom_colors?) { true }
-        website.stub(:read_attribute) { "#111111" }
-      end
-
-      it { website.primary_color.should eq "#111111" }
-      it { website.secondary_color.should eq "#111111" }
-    end
-
-    describe "Website Template" do
-      let(:website_template) { Fabricate(:website_template) }
-      let(:web_theme) { Fabricate(:web_theme) }
-
-      before do
-        website.website_template = website_template
-        website.website_template.web_theme = web_theme
-      end
-
-      it { website.primary_color.should eq web_theme.primary_color }
-      it { website.secondary_color.should eq web_theme.secondary_color }
-
-      it do
-        website.website_template.stub(:primary_color) { "#121212"}
-        website.primary_color.should eq "#121212"
-      end
-
-      it do
-        website.website_template.stub(:secondary_color) { "#212121"}
-        website.secondary_color.should eq "#212121"
-      end
+    it "asks website_template for colors" do
+      website_template.should_receive(:colors).exactly(2).times
+      expect(website.colors).to eq(website_template.colors)
     end
   end
 end

@@ -54,23 +54,6 @@ class Website < ActiveRecord::Base
   end
 
   def colors
-    { primary_color: primary_color,
-      secondary_color: secondary_color }
-  end
-
-  def primary_color
-    if custom_colors?
-      read_attribute(:primary_color)
-    else
-      website_template.try(:primary_color) || "#000000"
-    end
-  end
-
-  def secondary_color
-    if custom_colors?
-      read_attribute(:secondary_color)
-    else
-      website_template.try(:secondary_color) || "#ffffff"
-    end
+    website_template.try(:colors)
   end
 end

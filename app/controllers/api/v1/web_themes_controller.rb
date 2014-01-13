@@ -15,6 +15,6 @@ class Api::V1::WebThemesController < Api::V1::ApplicationController
   private
 
   def web_theme_params
-    params.require(:web_theme).permit(:url)
+    params.require(:web_theme).permit(:url, :custom_colors, :primary_color, :secondary_color)
   end
 end

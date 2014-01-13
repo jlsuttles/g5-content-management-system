@@ -73,4 +73,50 @@ describe WebTheme, vcr: VCR_OPTIONS do
       end
     end
   end
+
+  describe "Colors" do
+    describe "Default Colors" do
+      describe "When custom colors are nil" do
+        let(:web_theme) { Fabricate(:web_theme,
+          custom_colors: nil,
+          custom_primary_color: nil,
+          custom_secondary_color: nil) }
+
+        it { web_theme.primary_color.should eq(web_theme.colors[0]) }
+        it { web_theme.secondary_color.should eq(web_theme.colors[1]) }
+      end
+
+      describe "When custom colors are present" do
+        let(:web_theme) { Fabricate(:web_theme,
+          custom_colors: nil,
+          custom_primary_color: "#custom-primary",
+          custom_secondary_color: "#custom-secondary") }
+
+        it { web_theme.primary_color.should eq(web_theme.colors[0]) }
+        it { web_theme.secondary_color.should eq(web_theme.colors[1]) }
+      end
+    end
+
+    describe "Custom Colors" do
+      describe "When custom colors are nil" do
+        let(:web_theme) { Fabricate(:web_theme,
+          custom_colors: true,
+          custom_primary_color: nil,
+          custom_secondary_color: nil) }
+
+        it { web_theme.primary_color.should eq(web_theme.colors[0]) }
+        it { web_theme.secondary_color.should eq(web_theme.colors[1]) }
+      end
+
+      describe "When custom colors are present" do
+        let(:web_theme) { Fabricate(:web_theme,
+          custom_colors: true,
+          custom_primary_color: "#custom-primary",
+          custom_secondary_color: "#custom-secondary") }
+
+        it { web_theme.primary_color.should eq "#custom-primary" }
+        it { web_theme.secondary_color.should eq "#custom-secondary" }
+      end
+    end
+  end
 end

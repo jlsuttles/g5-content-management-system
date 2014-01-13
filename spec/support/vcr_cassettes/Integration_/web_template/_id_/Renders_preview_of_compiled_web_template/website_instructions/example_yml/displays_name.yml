@@ -259,7 +259,7 @@ http_interactions:
         id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
         \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Wed, 13 Nov 2013 05:54:29 GMT
 - request:
     method: get
@@ -298,7 +298,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Wed, 13 Nov 2013 05:54:29 GMT
 - request:
     method: get
@@ -445,7 +445,7 @@ http_interactions:
         class=\"u-g5-stylesheet u-url\">http://g5-theme-garden.herokuapp.com/static/components/boxes/stylesheets/boxes.scss</a>\n
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Wed, 13 Nov 2013 05:54:30 GMT
 - request:
     method: get
@@ -484,7 +484,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Wed, 13 Nov 2013 05:54:30 GMT
 - request:
     method: get
@@ -4543,7 +4543,7 @@ http_interactions:
         widget.contact_info_fax.best_value }}\n  &lt;/p&gt;\n  {% endif %}\n&lt;/div&gt;\n{%
         endif %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Wed, 13 Nov 2013 05:54:33 GMT
 - request:
     method: get
@@ -4582,7 +4582,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Wed, 13 Nov 2013 05:54:35 GMT
 - request:
     method: get
@@ -4682,7 +4682,7 @@ http_interactions:
         \       &lt;div class=&quot;content&quot;&gt;\n          &lt;a href=&quot;http://getg5.com&quot;
         class=&quot;dxm&quot;&gt;DXM by G5&lt;/a&gt;\n        &lt;/div&gt;\n      &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:34 GMT
 - request:
     method: get
@@ -4763,7 +4763,7 @@ http_interactions:
         class=\"u-g5-stylesheet u-url\">http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss</a>\n
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:35 GMT
 - request:
     method: get
@@ -4876,7 +4876,7 @@ http_interactions:
         name=&quot;description&quot; content=&quot;{{ widget.meta_description.best_value
         }}&quot; /&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:35 GMT
 - request:
     method: get
@@ -4921,7 +4921,7 @@ http_interactions:
         />
 
 '
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:35 GMT
 - request:
     method: get
@@ -4969,7 +4969,7 @@ http_interactions:
         widget.meta_description.value_field_id }}\"\n      name=\"{{ widget.meta_description.value_field_name
         }}\"\n      value=\"{{ widget.meta_description.best_value }}\"\n    />\n  </div>\n\n
         \ <input type=\"submit\" value=\"Save\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:35 GMT
 - request:
     method: get
@@ -5102,7 +5102,7 @@ http_interactions:
         | url_encode }}&quot; alt=&quot;{{ widget.business_name.best_value }}&quot;
         itemprop=&quot;logo&quot; /&gt;\n  &lt;/a&gt;\n&lt;/h1&gt;\n{% endif %}\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:36 GMT
 - request:
     method: get
@@ -5145,7 +5145,7 @@ http_interactions:
         widget u-url\" href=\"/\" itemprop=\"url\">\n    <img class=\"u-logo p-name\"
         src=\"{{ widget.logo_url.best_value | url_encode }}\" alt=\"{{ widget.business_name.best_value
         }}\" itemprop=\"logo\" />\n  </a>\n</h1>\n{% endif %}\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:36 GMT
 - request:
     method: get
@@ -5201,7 +5201,7 @@ http_interactions:
         widget.logo_url.value_field_id }}\"\n      name=\"{{ widget.logo_url.value_field_name
         }}\"\n      value=\"{{ widget.logo_url.best_value | url_encode }}\"\n    />\n
         \ </div>\n  <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:37 GMT
 - request:
     method: get
@@ -5352,7 +5352,7 @@ http_interactions:
         \ &lt;span class=&quot;p-tel tel&quot; itemprop=&quot;telephone&quot;&gt;{{
         widget.phone_number.best_value }}&lt;/span&gt;\n&lt;/a&gt;\n{% endif %}\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:37 GMT
 - request:
     method: get
@@ -5397,7 +5397,7 @@ http_interactions:
         widget h-card vcard\" itemscope itemtype=\"http://schema.org/LocalBusiness\">\n
         \ <span class=\"p-tel tel\" itemprop=\"telephone\">{{ widget.phone_number.best_value
         }}</span>\n</a>\n{% endif %}"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:37 GMT
 - request:
     method: get
@@ -5458,7 +5458,7 @@ http_interactions:
         \     {% endif %}\n    />\n    <label for=\"{{ widget.display_phone.value_field_id
         }}\" >\n      Display Phone Number\n    </label>\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:38 GMT
 - request:
     method: get
@@ -5589,7 +5589,7 @@ http_interactions:
         class=&quot;btn widget&quot;&gt;\n    {{ widget.button_label.best_value }}\n
         \ &lt;/a&gt;\n{% endif %}\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:38 GMT
 - request:
     method: get
@@ -5630,7 +5630,7 @@ http_interactions:
       string: ! "{% if widget.display_button.best_value == \"true\" %}\n  <a href=\"{{
         widget.button_url.best_value | url_encode }}\" class=\"btn widget\">\n    {{
         widget.button_label.best_value }}\n  </a>\n{% endif %}"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:38 GMT
 - request:
     method: get
@@ -5687,7 +5687,7 @@ http_interactions:
         for=\"{{ widget.display_button.value_field_id }}\" >\n      Display Button\n
         \   </label>\n  </div>\n\n  <input type=\"submit\" value=\"Save\" class=\"btn\"
         />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:38 GMT
 - request:
     method: get
@@ -5819,7 +5819,7 @@ http_interactions:
         \     {% endif %}\n    {% endfor %}\n  &lt;/ul&gt;\n&lt;/nav&gt;\n{% endif
         %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:39 GMT
 - request:
     method: get
@@ -5862,7 +5862,7 @@ http_interactions:
         \     {% if web_page[1].display != \"false\" %}\n      <li><a href=\"{{ web_page[1].url
         | url_encode }}\">{{ web_page[1].name }}</a></li>\n      {% endif %}\n    {%
         endfor %}\n  </ul>\n</nav>\n{% endif %}\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:39 GMT
 - request:
     method: get
@@ -5923,7 +5923,7 @@ http_interactions:
         }}_{{ web_page[0] }}_display\">\n            {{ web_page[1].name }}\n          </label>\n
         \       </li>\n        {% endfor %}\n      </ul>\n    </div>\n  </fieldset>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:39 GMT
 - request:
     method: get
@@ -6156,7 +6156,7 @@ http_interactions:
         | url_encode }}&quot;&gt;{{ widget.cta_four_text.best_value }}&lt;/a&gt;\n
         \   &lt;/li&gt;\n    {% endif %}\n  &lt;/ul&gt;\n&lt;/nav&gt;\n\n&lt;!-- END
         SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:40 GMT
 - request:
     method: get
@@ -6207,7 +6207,7 @@ http_interactions:
         != \"\" && widget.cta_four_url.best_value != \"\" %}\n    <li>\n      <a href=\"{{
         widget.cta_four_url.best_value | url_encode }}\">{{ widget.cta_four_text.best_value
         }}</a>\n    </li>\n    {% endif %}\n  </ul>\n</nav>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:40 GMT
 - request:
     method: get
@@ -6294,7 +6294,7 @@ http_interactions:
         == cta[1] %}selected=\"selected\"{% endif %}>\n          {{ cta[1] }}\n        </option>\n
         \     {% endfor %}\n    </select>\n  </div>\n\n  <input type=\"submit\" value=\"Save\"
         class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:40 GMT
 - request:
     method: get
@@ -6534,7 +6534,7 @@ http_interactions:
         | url_encode }}&quot; class=&quot;youtube&quot; title=&quot;YouTube&quot;
         rel=&quot;me&quot;&gt;YouTube&lt;/a&gt;\n  {% endif %}\n\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:41 GMT
 - request:
     method: get
@@ -6598,7 +6598,7 @@ http_interactions:
         href=\"http://www.youtube.com/{{ widget.youtube_username.best_value | url_encode
         }}\" class=\"youtube\" title=\"YouTube\" rel=\"me\">YouTube</a>\n  {% endif
         %}\n\n</div>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:41 GMT
 - request:
     method: get
@@ -6682,7 +6682,7 @@ http_interactions:
         }}\"\n        name=\"{{ widget.youtube_username.value_field_name }}\"\n        value=\"{{
         widget.youtube_username.best_value }}\"\n      />\n    </div>\n\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:42 GMT
 - request:
     method: get
@@ -6814,7 +6814,7 @@ http_interactions:
         \     {% endif %}\n    {% endfor %}\n  &lt;/ul&gt;\n&lt;/nav&gt;\n{% endif
         %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:42 GMT
 - request:
     method: get
@@ -6857,7 +6857,7 @@ http_interactions:
         \     {% if web_page[1].display != \"false\" %}\n      <li><a href=\"{{ web_page[1].url
         | url_encode }}\">{{ web_page[1].name }}</a></li>\n      {% endif %}\n    {%
         endfor %}\n  </ul>\n</nav>\n{% endif %}\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:42 GMT
 - request:
     method: get
@@ -6918,7 +6918,7 @@ http_interactions:
         }}_{{ web_page[0] }}_display\">\n            {{ web_page[1].name }}\n          </label>\n
         \       </li>\n        {% endfor %}\n      </ul>\n    </div>\n  </fieldset>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:42 GMT
 - request:
     method: get
@@ -7312,7 +7312,7 @@ http_interactions:
         widget.contact_info_fax.best_value }}\n  &lt;/p&gt;\n  {% endif %}\n&lt;/div&gt;\n{%
         endif %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:43 GMT
 - request:
     method: get
@@ -7374,7 +7374,7 @@ http_interactions:
         \ {% if widget.contact_info_fax.best_value != \"\" %}\n  <p class=\"p-tel
         tel\" itemprop=\"telephone\">\n    F: {{ widget.contact_info_fax.best_value
         }}\n  </p>\n  {% endif %}\n</div>\n{% endif %}\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:43 GMT
 - request:
     method: get
@@ -7529,7 +7529,7 @@ http_interactions:
         }}\"\n      name=\"{{ widget.contact_info_fax.value_field_name }}\"\n      value=\"{{
         widget.contact_info_fax.best_value }}\"\n    />\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:44 GMT
 - request:
     method: get
@@ -7646,7 +7646,7 @@ http_interactions:
         == &quot;true&quot; %}\n&lt;div class=&quot;hours widget&quot;&gt;\n  {{ widget.hours.best_value
         }}\n&lt;/div&gt;\n{% endif %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:44 GMT
 - request:
     method: get
@@ -7686,7 +7686,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! "{% if widget.display_hours.best_value == \"true\" %}\n<div class=\"hours
         widget\">\n  {{ widget.hours.best_value }}\n</div>\n{% endif %}\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:44 GMT
 - request:
     method: get
@@ -7737,7 +7737,7 @@ http_interactions:
         \     name=\"{{ widget.hours.value_field_name }}\"\n    >{{ widget.hours.best_value
         }}</textarea>\n  </div>\n\n  <input type=\"submit\" value=\"Save\" class=\"btn\"
         />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:45 GMT
 - request:
     method: get
@@ -7881,7 +7881,7 @@ http_interactions:
         != &quot;&quot; %}\n    &lt;figcaption class=&quot;p-name&quot; itemprop=&quot;description&quot;&gt;{{
         widget.photo_caption.best_value }}&lt;/figcaption&gt;\n  {% endif %}\n&lt;/figure&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:45 GMT
 - request:
     method: get
@@ -7925,7 +7925,7 @@ http_interactions:
         />\n  {% if widget.photo_caption.best_value != \"\" %}\n    <figcaption class=\"p-name\"
         itemprop=\"description\">{{ widget.photo_caption.best_value }}</figcaption>\n
         \ {% endif %}\n</figure>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:46 GMT
 - request:
     method: get
@@ -7990,7 +7990,7 @@ http_interactions:
         \     />\n      <label for=\"{{ widget.photo_alignment.value_field_id }}_block\"
         >\n        Block\n      </label>\n    </fieldset>\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:46 GMT
 - request:
     method: get
@@ -8090,7 +8090,7 @@ http_interactions:
         END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n&lt;div class=&quot;html
         widget&quot;&gt;\n  {{ widget.text.best_value }}\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:46 GMT
 - request:
     method: get
@@ -8129,7 +8129,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! "<div class=\"html widget\">\n  {{ widget.text.best_value }}\n</div>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:46 GMT
 - request:
     method: get
@@ -8172,7 +8172,7 @@ http_interactions:
         \   </label>\n    <textarea\n      id=\"ckeditor\"\n      name=\"{{ widget.text.value_field_name
         }}\"\n     >\n      {{ widget.text.best_value }}\n    </textarea>\n  </div>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:47 GMT
 - request:
     method: get
@@ -8272,7 +8272,7 @@ http_interactions:
         END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n&lt;div class=&quot;html
         widget&quot;&gt;\n  {{ widget.text.best_value }}\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:47 GMT
 - request:
     method: get
@@ -8311,7 +8311,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! "<div class=\"html widget\">\n  {{ widget.text.best_value }}\n</div>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:47 GMT
 - request:
     method: get
@@ -8354,7 +8354,7 @@ http_interactions:
         \   </label>\n    <textarea\n      id=\"ckeditor\"\n      name=\"{{ widget.text.value_field_name
         }}\"\n     >\n      {{ widget.text.best_value }}\n    </textarea>\n  </div>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:48 GMT
 - request:
     method: get
@@ -8594,7 +8594,7 @@ http_interactions:
         | url_encode }}&quot; class=&quot;youtube&quot; title=&quot;YouTube&quot;
         rel=&quot;me&quot;&gt;YouTube&lt;/a&gt;\n  {% endif %}\n\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:48 GMT
 - request:
     method: get
@@ -8658,7 +8658,7 @@ http_interactions:
         href=\"http://www.youtube.com/{{ widget.youtube_username.best_value | url_encode
         }}\" class=\"youtube\" title=\"YouTube\" rel=\"me\">YouTube</a>\n  {% endif
         %}\n\n</div>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:49 GMT
 - request:
     method: get
@@ -8742,7 +8742,7 @@ http_interactions:
         }}\"\n        name=\"{{ widget.youtube_username.value_field_name }}\"\n        value=\"{{
         widget.youtube_username.best_value }}\"\n      />\n    </div>\n\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:50 GMT
 - request:
     method: get
@@ -8842,7 +8842,7 @@ http_interactions:
         END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN SHOW MARKUP --&gt;\n&lt;div class=&quot;html
         widget&quot;&gt;\n  {{ widget.text.best_value }}\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:50 GMT
 - request:
     method: get
@@ -8881,7 +8881,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! "<div class=\"html widget\">\n  {{ widget.text.best_value }}\n</div>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:51 GMT
 - request:
     method: get
@@ -8924,7 +8924,7 @@ http_interactions:
         \   </label>\n    <textarea\n      id=\"ckeditor\"\n      name=\"{{ widget.text.value_field_name
         }}\"\n     >\n      {{ widget.text.best_value }}\n    </textarea>\n  </div>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:51 GMT
 - request:
     method: get
@@ -9164,7 +9164,7 @@ http_interactions:
         | url_encode }}&quot; class=&quot;youtube&quot; title=&quot;YouTube&quot;
         rel=&quot;me&quot;&gt;YouTube&lt;/a&gt;\n  {% endif %}\n\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:52 GMT
 - request:
     method: get
@@ -9228,7 +9228,7 @@ http_interactions:
         href=\"http://www.youtube.com/{{ widget.youtube_username.best_value | url_encode
         }}\" class=\"youtube\" title=\"YouTube\" rel=\"me\">YouTube</a>\n  {% endif
         %}\n\n</div>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:52 GMT
 - request:
     method: get
@@ -9312,7 +9312,7 @@ http_interactions:
         }}\"\n        name=\"{{ widget.youtube_username.value_field_name }}\"\n        value=\"{{
         widget.youtube_username.best_value }}\"\n      />\n    </div>\n\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:52 GMT
 - request:
     method: get
@@ -9351,7 +9351,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! ".social-links a {\n  display: inline-block;\n  margin-right: 5px;\n}\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:53 GMT
 - request:
     method: get
@@ -9394,7 +9394,7 @@ http_interactions:
         {\n    clear: both;\n  }\n  .layout-side-left section[role=main] {\n    float:
         right;\n  }\n  .layout-side-left aside[role=complementary] {\n    float: left;\n
         \ }\n  footer[role=contentinfo] {\n    clear: both;\n  }\n}\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:53 GMT
 - request:
     method: get
@@ -9599,7 +9599,7 @@ http_interactions:
         {\n    margin-left: 416px;\n    width: 1184px;\n  }\n  section[role=main]
         {\n    width: 1184px;\n  }\n  aside[role=complementary] {\n    width: 416px;\n
         \ }\n}\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:54 GMT
 - request:
     method: get
@@ -9638,7 +9638,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! ".social-links a {\n  display: inline-block;\n  margin-right: 5px;\n}\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:54 GMT
 - request:
     method: get
@@ -9679,7 +9679,7 @@ http_interactions:
       string: ! ".contact-info .p-organization-name,\n.contact-info .h-adr,\n.contact-info
         .p-street-address,\n.contact-info .p-tel,\n.contact-info .p-url,\n {\n  display:
         block;\n}\n.contact-info p {\n  margin-top: 0;\n}"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:55 GMT
 - request:
     method: get
@@ -9718,6 +9718,6 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! ".hours p {\n  margin-top: 0;\n}\n"
-    http_version: 
+    http_version:
   recorded_at: Thu, 12 Dec 2013 03:02:55 GMT
 recorded_with: VCR 2.6.0

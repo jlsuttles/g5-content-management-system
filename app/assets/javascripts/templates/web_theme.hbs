@@ -1,4 +1,4 @@
-{{#view App.ColorPickerView contentBinding="this"}}
+{{#view App.ColorPickerView}}
   <div class="colors clearfix">
     <h3>Customize Colors:</h3>
     <div class="color-fields">
@@ -10,11 +10,13 @@
         </label>
       </div>
       <div class="color-field">
+        {{ primaryColor }}
         {{view App.ColorField valueBinding="primaryColor"
           contentBinding="content" id="color-1" class="color"}}
         <label for="color-1">Primary</label>
       </div>
       <div class="color-field">
+        {{ secondaryColor }}
         {{view App.ColorField valueBinding="secondaryColor"
           contentBinding="content" id="color-2" class="color"}}
         <label for="color-2">Secondary</label>
