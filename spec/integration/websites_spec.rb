@@ -43,6 +43,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
 
   describe "Web page templates are drag and drop sortable" do
     before do
+      pending("Drag and drop specs fail intermittently.")
       @client, @location, @website = seed
       @web_page_template1 = @website.web_page_templates.first
       @web_page_template2 = @website.web_page_templates.last
@@ -68,7 +69,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
 
   describe "Web page templates can be dragged to the trash" do
     before do
-      pending("Capybara can't handle this. It passes if page is manually zoomed out.")
+      pending("Drag and drop specs fail intermittently.")
       @client, @location, @website = seed
       visit_website
     end
@@ -85,7 +86,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
 
   describe "Web page templates can be dragged out of the trash" do
     before do
-      pending("Capybara can't handle this. It passes if page is manually zoomed out.")
+      pending("Drag and drop specs fail intermittently.")
       @client, @location, @website = seed
       @website.web_page_templates.first.update_attribute(:in_trash, true)
       visit_website
