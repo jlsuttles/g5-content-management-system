@@ -26,12 +26,12 @@
 
       <div class="buttons">
         {{#view App.CardAction}}
-          <button {{action cancel model}} class="cancel-link card-flip">
+          <button {{action cancel this}} class="cancel-link card-flip">
             Cancel
           </button>
         {{/view}}
         {{#view App.CardAction}}
-          <button {{action save model}} class="save btn btn--small" disabled>
+          <button {{action save this}} class="save btn btn--small" disabled>
             Save
           </button>
         {{/view}}
