@@ -105,17 +105,6 @@ describe Widget, vcr: VCR_OPTIONS do
       end
     end
 
-    describe "when widget has edit javascript" do
-      let(:widget) { Fabricate.build(:widget, url: WidgetSupport.calls_to_action.url) }
-
-      before do
-        widget.send(:assign_attributes_from_url) end
-
-      it "assigns edit javascript" do
-        expect(widget.edit_javascript).to be_present
-      end
-    end
-
     describe "when no component is found at url" do
       let(:widget) { Fabricate.build(:widget, url: "http://google.com") }
 
@@ -190,37 +179,6 @@ describe Widget, vcr: VCR_OPTIONS do
       it "returns nil if the widget has not been updated" do
         widget.updated_at = Time.now - 1.day
         expect(widget.create_widget_entry_if_updated).to be_nil
-      end
-    end
-  end
-
-  describe "#set_default_calls_to_action" do
-
-    context "calls to action widget" do
-      let (:widget) { Fabricate(:widget, url: WidgetSupport.calls_to_action.url) }
-
-      before do
-        widget.set_default_calls_to_action
-      end
-
-      it "assigns the defaults" do
-        widget.get_default_calls_to_action.values.each do |value|
-          expect(widget.settings.map(&:value)).to include(value)
-        end
-      end
-    end
-
-    context "not calls to action widget" do
-      let(:widget) { Fabricate(:widget) }
-
-      before do
-        widget.set_default_calls_to_action
-      end
-
-      it "does not assign the defaults" do
-        widget.get_default_calls_to_action.values.each do |value|
-          expect(widget.settings.map(&:value)).not_to include(value)
-        end
       end
     end
   end
