@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Thu, 05 Dec 2013 23:25:31 GMT
+      - Mon, 13 Jan 2014 22:38:33 GMT
       Last-Modified:
-      - Fri, 29 Nov 2013 00:15:37 GMT
+      - Wed, 11 Dec 2013 21:54:28 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRjMzhjNTllYjE3OGZjZjA3ZDc0MWU3YWJmYzkxOTFlBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWRPWVhqdmlrK2cxbktoVjVodW5MNzRLbitzaVp5ZmhzcjIrdGI2TmpBdGc9BjsARg%3D%3D--f2ba3c526c7cb3a567b052e01457c64ffc749147;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTZlN2IwMWZkZDE2ZjA0NjIxM2FiZjU2YjI2MjVjZWIwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWJHZlk3eUNuSFY3Y1pVc2R2R0h4MEtDZ3BndjhGdTNOK2JEYTJMUzVqYUU9BjsARg%3D%3D--68f5e45bfcf547fd0c74f781531c0d6d3900fa97;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 7374caa82899be23fc7f0a827ae86d85
+      - 870586a8559829722f5f3b5654b8a338
       X-Runtime:
-      - '0.033811'
+      - '0.014882'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"dOYXjvik+g1nKhV5hunL74Kn+siZyfhsr2+tb6NjAtg=\"
+        name=\"csrf-param\" />\n<meta content=\"bGfY7yCnHV7cZUsdvGHx0KCgpgv8Fu3N+bDa2LS5jaE=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -95,10 +95,11 @@ http_interactions:
         role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;\n&lt;/div&gt;\n
         \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
         id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
-        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
-        \ </body>\n</html>\n"
+        \       &lt;div class=&quot;content&quot;&gt;\n          &lt;a href=&quot;http://getg5.com&quot;
+        class=&quot;dxm&quot;&gt;DXM by G5&lt;/a&gt;\n        &lt;/div&gt;\n      &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n
+        \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Thu, 05 Dec 2013 23:25:30 GMT
+  recorded_at: Mon, 13 Jan 2014 22:38:33 GMT
 - request:
     method: get
     uri: http://g5-layout-garden.herokuapp.com/components/aside-first-sidebar-left
@@ -120,20 +121,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Thu, 05 Dec 2013 23:25:32 GMT
+      - Mon, 13 Jan 2014 22:38:33 GMT
       Last-Modified:
-      - Fri, 29 Nov 2013 00:15:37 GMT
+      - Wed, 11 Dec 2013 21:54:28 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQ0Zjk4N2QyYzQ4OTI1ODM2NmI4OTVlYmI2NmIwOWU1BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXRUcDlTOUltRDI5eXlYSVFNeS9zZWovTFJCdTlkanB5MVh0LzdXR2VIVVE9BjsARg%3D%3D--cbf4b7bf8324e2ebb289e5cc02053b4e9267c901;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQ1MjJhNTE5YmNkMWJlZjJlN2IwZGYzZjI5YjExNzdhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXIwc3Z0SE5Tb3RBZFkzazdCdTFhU0RadjF5c2h0TVlxeDFSc3lKbnhlMHM9BjsARg%3D%3D--ffd1ec5e7acbe5ef1ea518f4f384b4674eabe0db;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 519fc35478a7bb9cca5c51646837fa5d
+      - 01e8ff60a51cce8c066c2a1b60ed3216
       X-Runtime:
-      - '0.109601'
+      - '0.015835'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -149,7 +150,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"tTp9S9ImD29yyXIQMy/sej/LRBu9djpy1Xt/7WGeHUQ=\"
+        name=\"csrf-param\" />\n<meta content=\"r0svtHNSotAdY3k7Bu1aSDZv1yshtMYqx1RsyJnxe0s=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -194,8 +195,9 @@ http_interactions:
         role=&quot;main&quot; id=&quot;drop-target-main&quot;&gt;&lt;/section&gt;\n&lt;/div&gt;\n
         \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
         id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
-        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
-        \ </body>\n</html>\n"
+        \       &lt;div class=&quot;content&quot;&gt;\n          &lt;a href=&quot;http://getg5.com&quot;
+        class=&quot;dxm&quot;&gt;DXM by G5&lt;/a&gt;\n        &lt;/div&gt;\n      &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n
+        \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Thu, 05 Dec 2013 23:25:30 GMT
+  recorded_at: Mon, 13 Jan 2014 22:38:33 GMT
 recorded_with: VCR 2.6.0
