@@ -60,20 +60,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Thu, 12 Dec 2013 03:01:27 GMT
+      - Fri, 10 Jan 2014 22:12:30 GMT
       Last-Modified:
-      - Thu, 12 Dec 2013 02:00:23 GMT
+      - Fri, 10 Jan 2014 20:14:33 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWNmNWE5MzU0OTU2MTA2OTlkOWZhMWNjZmExYWY0YTMzBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWV6dzRtQU5ZaFBaWGJQNE13Z00xN2tseGYxSHJqUlJLL1BxTzV1ajVIOTA9BjsARg%3D%3D--316fab7a25fc4c5da756ae65d093fb5aed9aa543;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTMzYjE3NTQ1OWZhY2I4YmRjNDM3NWNjYmMxZTY5YTY5BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVBCcjFiM29CZk9ud0ovb2xjZWpFLzA3eUx4WHJ1ZkU5dGVPS2JlTlBObWc9BjsARg%3D%3D--efe5df7589fb772c0afd43963248a6a1726525e7;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - bf414d75eb71a0eb3a8098f2522fbb5a
+      - e5bb76b81ef613c780251aacf30d93a0
       X-Runtime:
-      - '0.090153'
+      - '0.103570'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -89,7 +89,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"ezw4mANYhPZXbP4MwgM17klxf1HrjRRK/PqO5uj5H90=\"
+        name=\"csrf-param\" />\n<meta content=\"PBr1b3oBfOnwJ/olcejE/07yLxXrufE9teOKbeNPNmg=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -236,16 +236,16 @@ http_interactions:
         \ &lt;form id=&quot;contact-form&quot; class=&quot;form&quot; action=&quot;{{
         widget.contact_submission_url.best_value | url_encode }}&quot; method=&quot;POST&quot;&gt;\n
         \   {% if widget.contact_display_name.best_value == &quot;true&quot; %}\n
-        \     &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;\n
-        \       &lt;input type=&quot;text&quot; name=&quot;contact[name]&quot; id=&quot;name&quot;
-        data-h5-errorid=&quot;invalid_name&quot; title=&quot;Required: Please provide
-        your name&quot; required=&quot;&quot;&gt;\n        &lt;div id=&quot;invalid_name&quot;
-        class=&quot;ui-state-error message&quot;&gt;Required: Please provide your
-        name.&lt;/div&gt;&lt;/div&gt;\n    {% endif %}\n\n    {% if widget.contact_display_email.best_value
-        == &quot;true&quot; %}\n      &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label
-        for=&quot;contact-email&quot;&gt;Email&lt;/label&gt;\n        &lt;input id=&quot;contact-email&quot;
-        type=&quot;email&quot; name=&quot;contact[email]&quot; title=&quot;Required:
-        Please provide your email address&quot; data-h5-errorid=&quot;invalid_email&quot;
+        \     &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label for=&quot;name&quot;&gt;Full
+        Name&lt;/label&gt;\n        &lt;input type=&quot;text&quot; name=&quot;contact[name]&quot;
+        id=&quot;name&quot; data-h5-errorid=&quot;invalid_name&quot; title=&quot;Required:
+        Please provide your name&quot; required=&quot;&quot;&gt;\n        &lt;div
+        id=&quot;invalid_name&quot; class=&quot;ui-state-error message&quot;&gt;Required:
+        Please provide your name.&lt;/div&gt;&lt;/div&gt;\n    {% endif %}\n\n    {%
+        if widget.contact_display_email.best_value == &quot;true&quot; %}\n      &lt;div
+        class=&quot;form-field&quot;&gt;\n        &lt;label for=&quot;contact-email&quot;&gt;Email&lt;/label&gt;\n
+        \       &lt;input id=&quot;contact-email&quot; type=&quot;email&quot; name=&quot;contact[email]&quot;
+        title=&quot;Required: Please provide your email address&quot; data-h5-errorid=&quot;invalid_email&quot;
         id=&quot;email&quot; pattern=&quot;^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$&quot;
         required=&quot;&quot; /&gt;\n        &lt;div id=&quot;invalid_email&quot;
         class=&quot;ui-state-error message&quot;&gt;Required: Please provide your
@@ -268,7 +268,7 @@ http_interactions:
         /&gt;\n  &lt;/form&gt;\n&lt;/div&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Thu, 12 Dec 2013 03:01:26 GMT
+  recorded_at: Fri, 10 Jan 2014 22:12:31 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-form/show.html
@@ -290,17 +290,17 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Thu, 12 Dec 2013 03:01:28 GMT
+      - Fri, 10 Jan 2014 22:12:32 GMT
       Last-Modified:
-      - Thu, 12 Dec 2013 02:00:23 GMT
+      - Fri, 10 Jan 2014 20:14:33 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
-      - 08e2926591bc51a3655090b96213ddeb691f6d2f
+      - 77aa5bcd3f5409f1e8180d35dbccebc1db4a67fa
       X-Rack-Cache:
       - stale, valid, store
       Content-Length:
-      - '2240'
+      - '2245'
       Connection:
       - keep-alive
     body:
@@ -310,11 +310,11 @@ http_interactions:
         widget\">\n  <p class=\"heading\">Contact Us</p>\n  <form id=\"contact-form\"
         class=\"form\" action=\"{{ widget.contact_submission_url.best_value | url_encode
         }}\" method=\"POST\">\n    {% if widget.contact_display_name.best_value ==
-        \"true\" %}\n      <div class=\"form-field\">\n        <label for=\"name\">Name</label>\n
-        \       <input type=\"text\" name=\"contact[name]\" id=\"name\" data-h5-errorid=\"invalid_name\"
-        title=\"Required: Please provide your name\" required=\"\">\n        <div
-        id=\"invalid_name\" class=\"ui-state-error message\">Required: Please provide
-        your name.</div></div>\n    {% endif %}\n\n    {% if widget.contact_display_email.best_value
+        \"true\" %}\n      <div class=\"form-field\">\n        <label for=\"name\">Full
+        Name</label>\n        <input type=\"text\" name=\"contact[name]\" id=\"name\"
+        data-h5-errorid=\"invalid_name\" title=\"Required: Please provide your name\"
+        required=\"\">\n        <div id=\"invalid_name\" class=\"ui-state-error message\">Required:
+        Please provide your name.</div></div>\n    {% endif %}\n\n    {% if widget.contact_display_email.best_value
         == \"true\" %}\n      <div class=\"form-field\">\n        <label for=\"contact-email\">Email</label>\n
         \       <input id=\"contact-email\" type=\"email\" name=\"contact[email]\"
         title=\"Required: Please provide your email address\" data-h5-errorid=\"invalid_email\"
@@ -335,7 +335,7 @@ http_interactions:
         Please leave us a message.</div>\n      </div>\n\n    {% endif %}\n\n    <input
         type=\"submit\" best_value=\"Send\" />\n  </form>\n</div>\n"
     http_version: 
-  recorded_at: Thu, 12 Dec 2013 03:01:26 GMT
+  recorded_at: Fri, 10 Jan 2014 22:12:32 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-form/edit.html
@@ -357,9 +357,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Thu, 12 Dec 2013 03:01:28 GMT
+      - Fri, 10 Jan 2014 22:12:32 GMT
       Last-Modified:
-      - Thu, 12 Dec 2013 02:00:23 GMT
+      - Fri, 10 Jan 2014 20:14:33 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -425,7 +425,7 @@ http_interactions:
         }}\" >\n        Message\n      </label>\n    </div>\n\n  </fieldset>\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Thu, 12 Dec 2013 03:01:26 GMT
+  recorded_at: Fri, 10 Jan 2014 22:12:32 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/contact-form
@@ -447,20 +447,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Thu, 12 Dec 2013 03:01:28 GMT
+      - Fri, 10 Jan 2014 22:12:34 GMT
       Last-Modified:
-      - Thu, 12 Dec 2013 02:00:23 GMT
+      - Fri, 10 Jan 2014 20:14:33 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTZhYjM5MmJmZGExM2RiMmZhOGRmOGFmOGIxYTcwYjYxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVVrRFhodVlrNDhuVEprRHJlc0UyenBINUtKdXE4OGxGOVVlSTd2ZXVoOVE9BjsARg%3D%3D--c7d83f72e78d26f16aec5b97825cd3657658d817;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTU0Njk3MGFlOWZiZTgyNDA4M2FhOTdhN2M1YWMzMDk3BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXM1MHlYR2pSMEVabUg0R3NKTElsei9WSG81NVVGZEN0bXNiUmxxS3pzSTQ9BjsARg%3D%3D--5164b19acd356c53a5431d4882781a1eaa74e6a9;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - c0f7ad17c0feb9a6cc0d35a8567cbce8
+      - 832686a9a262b922b20c5b71eb3e6b84
       X-Runtime:
-      - '0.048451'
+      - '0.053442'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -476,7 +476,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"UkDXhuYk48nTJkDresE2zpH5KJuq88lF9UeI7veuh9Q=\"
+        name=\"csrf-param\" />\n<meta content=\"s50yXGjR0EZmH4GsJLIlz/VHo55UFdCtmsbRlqKzsI4=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -623,16 +623,16 @@ http_interactions:
         \ &lt;form id=&quot;contact-form&quot; class=&quot;form&quot; action=&quot;{{
         widget.contact_submission_url.best_value | url_encode }}&quot; method=&quot;POST&quot;&gt;\n
         \   {% if widget.contact_display_name.best_value == &quot;true&quot; %}\n
-        \     &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;\n
-        \       &lt;input type=&quot;text&quot; name=&quot;contact[name]&quot; id=&quot;name&quot;
-        data-h5-errorid=&quot;invalid_name&quot; title=&quot;Required: Please provide
-        your name&quot; required=&quot;&quot;&gt;\n        &lt;div id=&quot;invalid_name&quot;
-        class=&quot;ui-state-error message&quot;&gt;Required: Please provide your
-        name.&lt;/div&gt;&lt;/div&gt;\n    {% endif %}\n\n    {% if widget.contact_display_email.best_value
-        == &quot;true&quot; %}\n      &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label
-        for=&quot;contact-email&quot;&gt;Email&lt;/label&gt;\n        &lt;input id=&quot;contact-email&quot;
-        type=&quot;email&quot; name=&quot;contact[email]&quot; title=&quot;Required:
-        Please provide your email address&quot; data-h5-errorid=&quot;invalid_email&quot;
+        \     &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label for=&quot;name&quot;&gt;Full
+        Name&lt;/label&gt;\n        &lt;input type=&quot;text&quot; name=&quot;contact[name]&quot;
+        id=&quot;name&quot; data-h5-errorid=&quot;invalid_name&quot; title=&quot;Required:
+        Please provide your name&quot; required=&quot;&quot;&gt;\n        &lt;div
+        id=&quot;invalid_name&quot; class=&quot;ui-state-error message&quot;&gt;Required:
+        Please provide your name.&lt;/div&gt;&lt;/div&gt;\n    {% endif %}\n\n    {%
+        if widget.contact_display_email.best_value == &quot;true&quot; %}\n      &lt;div
+        class=&quot;form-field&quot;&gt;\n        &lt;label for=&quot;contact-email&quot;&gt;Email&lt;/label&gt;\n
+        \       &lt;input id=&quot;contact-email&quot; type=&quot;email&quot; name=&quot;contact[email]&quot;
+        title=&quot;Required: Please provide your email address&quot; data-h5-errorid=&quot;invalid_email&quot;
         id=&quot;email&quot; pattern=&quot;^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$&quot;
         required=&quot;&quot; /&gt;\n        &lt;div id=&quot;invalid_email&quot;
         class=&quot;ui-state-error message&quot;&gt;Required: Please provide your
@@ -655,7 +655,7 @@ http_interactions:
         /&gt;\n  &lt;/form&gt;\n&lt;/div&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Thu, 12 Dec 2013 03:01:27 GMT
+  recorded_at: Fri, 10 Jan 2014 22:12:34 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-form/show.html
@@ -677,17 +677,17 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Thu, 12 Dec 2013 03:01:29 GMT
+      - Fri, 10 Jan 2014 22:12:35 GMT
       Last-Modified:
-      - Thu, 12 Dec 2013 02:00:23 GMT
+      - Fri, 10 Jan 2014 20:14:33 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
-      - 08e2926591bc51a3655090b96213ddeb691f6d2f
+      - 77aa5bcd3f5409f1e8180d35dbccebc1db4a67fa
       X-Rack-Cache:
       - stale, valid, store
       Content-Length:
-      - '2240'
+      - '2245'
       Connection:
       - keep-alive
     body:
@@ -697,11 +697,11 @@ http_interactions:
         widget\">\n  <p class=\"heading\">Contact Us</p>\n  <form id=\"contact-form\"
         class=\"form\" action=\"{{ widget.contact_submission_url.best_value | url_encode
         }}\" method=\"POST\">\n    {% if widget.contact_display_name.best_value ==
-        \"true\" %}\n      <div class=\"form-field\">\n        <label for=\"name\">Name</label>\n
-        \       <input type=\"text\" name=\"contact[name]\" id=\"name\" data-h5-errorid=\"invalid_name\"
-        title=\"Required: Please provide your name\" required=\"\">\n        <div
-        id=\"invalid_name\" class=\"ui-state-error message\">Required: Please provide
-        your name.</div></div>\n    {% endif %}\n\n    {% if widget.contact_display_email.best_value
+        \"true\" %}\n      <div class=\"form-field\">\n        <label for=\"name\">Full
+        Name</label>\n        <input type=\"text\" name=\"contact[name]\" id=\"name\"
+        data-h5-errorid=\"invalid_name\" title=\"Required: Please provide your name\"
+        required=\"\">\n        <div id=\"invalid_name\" class=\"ui-state-error message\">Required:
+        Please provide your name.</div></div>\n    {% endif %}\n\n    {% if widget.contact_display_email.best_value
         == \"true\" %}\n      <div class=\"form-field\">\n        <label for=\"contact-email\">Email</label>\n
         \       <input id=\"contact-email\" type=\"email\" name=\"contact[email]\"
         title=\"Required: Please provide your email address\" data-h5-errorid=\"invalid_email\"
@@ -722,7 +722,7 @@ http_interactions:
         Please leave us a message.</div>\n      </div>\n\n    {% endif %}\n\n    <input
         type=\"submit\" best_value=\"Send\" />\n  </form>\n</div>\n"
     http_version: 
-  recorded_at: Thu, 12 Dec 2013 03:01:27 GMT
+  recorded_at: Fri, 10 Jan 2014 22:12:35 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-form/edit.html
@@ -744,9 +744,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Thu, 12 Dec 2013 03:01:29 GMT
+      - Fri, 10 Jan 2014 22:12:35 GMT
       Last-Modified:
-      - Thu, 12 Dec 2013 02:00:23 GMT
+      - Fri, 10 Jan 2014 20:14:33 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -812,5 +812,5 @@ http_interactions:
         }}\" >\n        Message\n      </label>\n    </div>\n\n  </fieldset>\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Thu, 12 Dec 2013 03:01:27 GMT
+  recorded_at: Fri, 10 Jan 2014 22:12:35 GMT
 recorded_with: VCR 2.6.0

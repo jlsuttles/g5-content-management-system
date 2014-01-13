@@ -51,13 +51,59 @@ describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: 
         visit_web_page_template
       end
 
-      it "Destroys an existing widget in the database" do
-        main_widget = find(".main-widgets .widget:first-of-type")
-        drop_target_remove = find(".main-widgets .drop-target-remove:first-of-type")
-        expect do
-          drag_and_drop(main_widget, drop_target_remove)
-          sleep 1
-        end.to change{ @web_page_template.reload.main_widgets.count }.by(-1)
+      describe "When widgets exist on page load" do
+        it "Destroys an existing widget in the database" do
+          main_widget = find(".main-widgets .widget:first-of-type")
+          drop_target_remove = find(".main-widgets .drop-target-remove:first-of-type")
+          expect do
+            drag_and_drop(main_widget, drop_target_remove)
+            sleep 1
+          end.to change{ @web_page_template.reload.main_widgets.count }.by(-1)
+          expect(all(".main-widgets .widget").length).to eq 1
+        end
+
+        it "Destroys multiple existing widgets in the database" do
+          drop_target_remove = find(".main-widgets .drop-target-remove:first-of-type")
+          expect do
+            2.times do
+              drag_and_drop(find(".main-widgets .widget:first-of-type"), drop_target_remove)
+              sleep 1
+            end
+          end.to change{ @web_page_template.reload.main_widgets.count }.by(-2)
+          expect(all(".main-widgets .widget").length).to eq 0
+        end
+      end
+
+      describe "When widgets are added after page load" do
+        before do
+          remote_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
+          drop_target_add = find(".main-widgets .drop-target-add:first-of-type")
+          2.times do
+            drag_and_drop(remote_widget, drop_target_add)
+            sleep 1
+          end
+        end
+
+        it "Destroys an existing widget in the database" do
+          main_widget = find(".main-widgets .widget:last-of-type")
+          drop_target_remove = find(".main-widgets .drop-target-remove:first-of-type")
+          expect do
+            drag_and_drop(find(".main-widgets .widget:last-of-type"), drop_target_remove)
+            sleep 1
+          end.to change{ @web_page_template.reload.main_widgets.count }.by(-1)
+          expect(all(".main-widgets .widget").length).to eq 3
+        end
+
+        it "Destroys multiple existing widgets in the database that have just been added" do
+          drop_target_remove = find(".main-widgets .drop-target-remove:first-of-type")
+          expect do
+            2.times do
+              drag_and_drop(find(".main-widgets .widget:last-of-type"), drop_target_remove)
+              sleep 1
+            end
+          end.to change{ @web_page_template.reload.main_widgets.count }.by(-2)
+          expect(all(".main-widgets .widget").length).to eq 2
+        end
       end
     end
   end
@@ -111,13 +157,59 @@ describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: 
         visit_web_page_template
       end
 
-      it "Destroys an existing widget in the database" do
-        aside_widget = find(".aside-widgets .widget:first-of-type")
-        drop_target_remove = find(".aside-widgets .drop-target-remove:first-of-type")
-        expect do
-          drag_and_drop(aside_widget, drop_target_remove)
-          sleep 1
-        end.to change{ @website_template.reload.aside_widgets.count }.by(-1)
+      describe "When widgets exist on page load" do
+        it "Destroys an existing widget in the database" do
+          aside_widget = find(".aside-widgets .widget:first-of-type")
+          drop_target_remove = find(".aside-widgets .drop-target-remove:first-of-type")
+          expect do
+            drag_and_drop(aside_widget, drop_target_remove)
+            sleep 1
+          end.to change{ @website_template.reload.aside_widgets.count }.by(-1)
+          expect(all(".aside-widgets .widget").length).to eq 1
+        end
+
+        it "Destroys multiple existing widgets in the database" do
+          drop_target_remove = find(".aside-widgets .drop-target-remove:first-of-type")
+          expect do
+            2.times do
+              drag_and_drop(find(".aside-widgets .widget:first-of-type"), drop_target_remove)
+              sleep 1
+            end
+          end.to change{ @website_template.reload.aside_widgets.count }.by(-2)
+          expect(all(".aside-widgets .widget").length).to eq 0
+        end
+      end
+
+      describe "When widgets are added after page load" do
+        before do
+          remote_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
+          drop_target_add = find(".aside-widgets .drop-target-add:first-of-type")
+          2.times do
+            drag_and_drop(remote_widget, drop_target_add)
+            sleep 1
+          end
+        end
+
+        it "Destroys an existing widget in the database" do
+          aside_widget = find(".aside-widgets .widget:last-of-type")
+          drop_target_remove = find(".aside-widgets .drop-target-remove:first-of-type")
+          expect do
+            drag_and_drop(find(".aside-widgets .widget:last-of-type"), drop_target_remove)
+            sleep 1
+          end.to change{ @website_template.reload.aside_widgets.count }.by(-1)
+          expect(all(".aside-widgets .widget").length).to eq 3
+        end
+
+        it "Destroys multiple existing widgets in the database that have just been added" do
+          drop_target_remove = find(".aside-widgets .drop-target-remove:first-of-type")
+          expect do
+            2.times do
+              drag_and_drop(find(".aside-widgets .widget:last-of-type"), drop_target_remove)
+              sleep 1
+            end
+          end.to change{ @website_template.reload.aside_widgets.count }.by(-2)
+          expect(all(".aside-widgets .widget").length).to eq 2
+        end
       end
     end
   end

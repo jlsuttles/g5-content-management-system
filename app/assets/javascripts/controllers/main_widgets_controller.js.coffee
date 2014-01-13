@@ -1,12 +1,3 @@
-App.MainWidgetsController = Ember.ArrayController.extend App.WidgetDragController,
-  sortProperties: ["displayOrder"]
+#= require ./sortable_widgets_controller
 
-  updateSortOrder: (indexes) ->
-    @beginPropertyChanges()
-    @get("content").forEach (item) ->
-      # Get the new display order position
-      index = indexes[item.get("id")]
-      # Set display order position
-      item.set "displayOrderPosition", index
-    @endPropertyChanges()
-    @get("store").save()
+App.MainWidgetsController = App.SortableWidgetsController.extend {}

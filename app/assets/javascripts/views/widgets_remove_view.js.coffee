@@ -5,15 +5,7 @@ App.WidgetsRemoveView = Ember.View.extend JQ.Droppable,
   templateName: ["_widgets_remove"]
   # JQ.Droppable uiOptions
   accept: ".existing-widget"
-
-  # This will determine which class (if any) you should add to
-  # the view when you are in the process of dragging an item.
-  dropTargetActive: ( ->
-    if Ember.isEmpty(@get("dragContext"))
-      return null
-    else
-      "drop-target-active"
-  ).property("dragContext")
+  activeClass: "drop-target-active"
 
   # JQ.Droppable uiEvent
   drop: (event, ui) ->
@@ -22,6 +14,10 @@ App.WidgetsRemoveView = Ember.View.extend JQ.Droppable,
     # Get the dropped Ember view
     droppedViewId = ui.draggable.attr("id")
     droppedView = Ember.View.views[droppedViewId]
-    # Destroy the dropped view's content
-    droppedView.content.deleteRecord()
-    droppedView.content.save()
+    # After the content has been deleted, manually remove the element from
+    # page. This is really only necessary for widgets that have been added
+    # since page load. Not sure why Ember is not removing them.
+    droppedView.get("content").one "didDelete", ui, ->
+      @draggable.remove()
+    # Set content to be removed, controller deletes the record.
+    droppedView.set("content.isRemoved", true)

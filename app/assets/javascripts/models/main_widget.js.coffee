@@ -7,3 +7,4 @@ App.MainWidget = DS.Model.extend App.ReloadIframe,
   section: DS.attr("string")
   displayOrder: DS.attr("number")
   displayOrderPosition: DS.attr("number")
+  isRemoved: false

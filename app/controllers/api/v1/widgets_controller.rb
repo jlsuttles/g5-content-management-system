@@ -28,7 +28,7 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
   def destroy
     @widget = Widget.find(params[:id])
     if @widget.destroy
-      render json: @widget, root: klass
+      render json: nil, status: :ok
     else
       render json: @widget.errors, root: klass, status: :unprocessable_entity
     end
