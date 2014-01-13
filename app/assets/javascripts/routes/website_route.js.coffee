@@ -12,8 +12,9 @@ App.WebsiteRoute = Ember.Route.extend
     controller.set("model", model)
     # setup other controllers
     @controllerFor("websiteTemplate").set("model", model.get("websiteTemplate"))
-    @controllerFor("webHomeTemplate").set("model", model.get("webHomeTemplate"))
-    @controllerFor("webPageTemplates").set("model", model.get("webPageTemplates"))
+    @controllerFor("websiteWebHomeTemplate").set("model", model.get("webHomeTemplate"))
+    @controllerFor("websiteWebPageTemplates").set("model", model.get("webPageTemplates"))
+    @controllerFor("websiteWebPageTemplatesInTrash").set("model", model.get("webPageTemplates"))
 
   serialize: (model) ->
     website_slug: model.get "slug"

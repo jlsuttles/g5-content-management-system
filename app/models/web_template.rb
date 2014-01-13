@@ -27,10 +27,13 @@ class WebTemplate < ActiveRecord::Base
   scope :home, where(name: "Home")
   scope :enabled, where(enabled: true)
   scope :disabled, where(enabled: false)
-  scope :navigateable, enabled.where("type != ?", "WebsiteTemplate")
+  scope :trash, where(in_trash: true)
+  scope :not_trash, where(in_trash: false)
+  scope :navigateable, not_trash.enabled.where("type != ?", "WebsiteTemplate")
   scope :created_at_asc, order("created_at ASC")
 
   before_validation :default_enabled_to_true
+  before_validation :default_in_trash_to_false
   before_validation :default_title_from_name
   before_validation :default_slug_from_title
 
@@ -110,6 +113,13 @@ class WebTemplate < ActiveRecord::Base
   def default_enabled_to_true
     # ||= does not work here because enabled is a boolean
     self.enabled = true if enabled.nil?
+  end
+
+  def default_in_trash_to_false
+    # ||= does not work here because in_trash is a boolean
+    self.in_trash = false if in_trash.nil?
+    # return true to continue validation
+    true
   end
 
   def default_title_from_name

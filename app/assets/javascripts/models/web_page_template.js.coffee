@@ -9,3 +9,4 @@ App.WebPageTemplate = DS.Model.extend
   enabled: DS.attr("boolean")
   displayOrder: DS.attr("number")
   displayOrderPosition: DS.attr("number")
+  inTrash: DS.attr("boolean")

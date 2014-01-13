@@ -1,4 +1,4 @@
-App.WebsiteWebPageTemplateController = Ember.ObjectController.extend
+App.WebsiteWebPageTemplatesInTrashController = Ember.ArrayController.extend
   actions:
     save: (model) ->
       model.save()

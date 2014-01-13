@@ -20,8 +20,28 @@
       {{ outlet "newWebPageTemplate" }}
     </div>
   </div>
+</div>
 
-  <div class="delete-page">
+<div id="trash">
+  <a href="#" {{action confirmEmptyTrash}} id="trash-can">
     <div class="icon icon--trash"></div>
+  </a>
+
+  <div class="l-container">
+    <div id="deleted-pages" class="cards">
+      {{ render "website/webPageTemplatesInTrash" webPageTemplates }}
+    </div>
   </div>
+
+  {{#view App.WebsiteWebPageTemplatesEmptyTrashView}}
+    <div class="lightbox-body">
+      <h2>Empty the Trash</h2>
+      <p>This is immediate and permanent. There is no undo.</p>
+      <p class="c-important">Are you sure?</p>
+      <div class="buttons">
+        <a href="#" {{action confirmEmptyTrash}} class="btn--text" id="empty-trash-cancel">Cancel</a>
+        <a href="#" {{action emptyTrash}} class="btn" id="empty-trash-yes">Yes</a>
+      </div>
+    </div>
+  {{/view}}
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131218215532) do
+ActiveRecord::Schema.define(:version => 20140107062257) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(:version => 20131218215532) do
     t.boolean  "enabled"
     t.integer  "display_order"
     t.string   "redirect_patterns"
+    t.boolean  "in_trash"
   end
 
   add_index "web_templates", ["website_id"], :name => "index_web_templates_on_website_id"

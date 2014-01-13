@@ -59,6 +59,10 @@
   font-weight: $c-semiBold;
 }
 
+.btn--text {
+  margin-top: .5em;
+}
+
 .btn--a {
   background-color: $c-background-b;
   &:hover,

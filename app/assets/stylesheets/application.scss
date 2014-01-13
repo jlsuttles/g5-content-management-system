@@ -47,6 +47,7 @@
 @import "modules/flipper";
 @import "modules/form";
 @import "modules/icons";
+@import "modules/lightbox";
 @import "modules/navigation";
 @import "modules/page";
 @import "modules/widgets";
@@ -60,9 +61,10 @@
 
 .p-category:before { content: "#" }
 
-.delete-page {
+#trash {
   border-top: 1px solid #909090;
   margin-top: 100px;
+  position: relative;
   .icon--trash {
     left: 50%;
     margin-left: -27px;
@@ -73,4 +75,15 @@
 
 .redirects .save-redirects {
   margin-right: 25px;
+}
+
+#deleted-pages {
+  @include clearfix;
+  position: relative;
+}
+
+.ui-sortable-connected {
+  @include clearfix;
+  position: relative;
+  min-height: 320px;
 }
