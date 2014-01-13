@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Thu, 05 Dec 2013 23:49:56 GMT
+      - Mon, 13 Jan 2014 22:40:26 GMT
       Last-Modified:
-      - Thu, 05 Dec 2013 20:49:58 GMT
+      - Mon, 13 Jan 2014 20:32:41 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTM0YWY0ODhjY2EwMGVkMGIzOGMzNTdlYWQ0NDQ1YmQwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXlRWnNtL2pyb1h2UzFIVHdqc0hrY05nS0JYeEk3RmZUNWhscUhFVk5SMkk9BjsARg%3D%3D--d4b6ebf33d7895dc1624d2cc402750adb3fdda0f;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWVkNjkxNWI4NDU2N2I3N2ZmN2MxNjQ3MTg0Nzc1ZDc1BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTUrVVZPZG9zTStWR285S3dvdVMzU3kxUmlLTVdDTFRyRUdTQWRya0hURzg9BjsARg%3D%3D--a514de75b6ee88ead9962a4e4e67ca540c07808f;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 9ba80684c10d7a03d621a155bda663cd
+      - 923c3c08250be2995b54d35584773543
       X-Runtime:
-      - '0.069680'
+      - '0.162987'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"yQZsm/jroXvS1HTwjsHkcNgKBXxI7FfT5hlqHEVNR2I=\"
+        name=\"csrf-param\" />\n<meta content=\"5+UVOdosM+VGo9KwouS3Sy1RiKMWCLTrEGSAdrkHTG8=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -197,16 +197,16 @@ http_interactions:
         \ &lt;form id=&quot;contact-form&quot; class=&quot;form&quot; action=&quot;{{
         widget.contact_submission_url.best_value | url_encode }}&quot; method=&quot;POST&quot;&gt;\n
         \   {% if widget.contact_display_name.best_value == &quot;true&quot; %}\n
-        \     &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;\n
-        \       &lt;input type=&quot;text&quot; name=&quot;contact[name]&quot; id=&quot;name&quot;
-        data-h5-errorid=&quot;invalid_name&quot; title=&quot;Required: Please provide
-        your name&quot; required=&quot;&quot;&gt;\n        &lt;div id=&quot;invalid_name&quot;
-        class=&quot;ui-state-error message&quot;&gt;Required: Please provide your
-        name.&lt;/div&gt;&lt;/div&gt;\n    {% endif %}\n\n    {% if widget.contact_display_email.best_value
-        == &quot;true&quot; %}\n      &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label
-        for=&quot;contact-email&quot;&gt;Email&lt;/label&gt;\n        &lt;input id=&quot;contact-email&quot;
-        type=&quot;email&quot; name=&quot;contact[email]&quot; title=&quot;Required:
-        Please provide your email address&quot; data-h5-errorid=&quot;invalid_email&quot;
+        \     &lt;div class=&quot;form-field&quot;&gt;\n        &lt;label for=&quot;name&quot;&gt;Full
+        Name&lt;/label&gt;\n        &lt;input type=&quot;text&quot; name=&quot;contact[name]&quot;
+        id=&quot;name&quot; data-h5-errorid=&quot;invalid_name&quot; title=&quot;Required:
+        Please provide your name&quot; required=&quot;&quot;&gt;\n        &lt;div
+        id=&quot;invalid_name&quot; class=&quot;ui-state-error message&quot;&gt;Required:
+        Please provide your name.&lt;/div&gt;&lt;/div&gt;\n    {% endif %}\n\n    {%
+        if widget.contact_display_email.best_value == &quot;true&quot; %}\n      &lt;div
+        class=&quot;form-field&quot;&gt;\n        &lt;label for=&quot;contact-email&quot;&gt;Email&lt;/label&gt;\n
+        \       &lt;input id=&quot;contact-email&quot; type=&quot;email&quot; name=&quot;contact[email]&quot;
+        title=&quot;Required: Please provide your email address&quot; data-h5-errorid=&quot;invalid_email&quot;
         id=&quot;email&quot; pattern=&quot;^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$&quot;
         required=&quot;&quot; /&gt;\n        &lt;div id=&quot;invalid_email&quot;
         class=&quot;ui-state-error message&quot;&gt;Required: Please provide your
@@ -229,7 +229,7 @@ http_interactions:
         /&gt;\n  &lt;/form&gt;\n&lt;/div&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Thu, 05 Dec 2013 23:49:55 GMT
+  recorded_at: Mon, 13 Jan 2014 22:40:26 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-form/show.html
@@ -251,17 +251,17 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Thu, 05 Dec 2013 23:49:57 GMT
+      - Mon, 13 Jan 2014 22:40:27 GMT
       Last-Modified:
-      - Thu, 05 Dec 2013 20:49:58 GMT
+      - Mon, 13 Jan 2014 20:32:41 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
-      - 08e2926591bc51a3655090b96213ddeb691f6d2f
+      - 77aa5bcd3f5409f1e8180d35dbccebc1db4a67fa
       X-Rack-Cache:
       - stale, valid, store
       Content-Length:
-      - '2240'
+      - '2245'
       Connection:
       - keep-alive
     body:
@@ -271,11 +271,11 @@ http_interactions:
         widget\">\n  <p class=\"heading\">Contact Us</p>\n  <form id=\"contact-form\"
         class=\"form\" action=\"{{ widget.contact_submission_url.best_value | url_encode
         }}\" method=\"POST\">\n    {% if widget.contact_display_name.best_value ==
-        \"true\" %}\n      <div class=\"form-field\">\n        <label for=\"name\">Name</label>\n
-        \       <input type=\"text\" name=\"contact[name]\" id=\"name\" data-h5-errorid=\"invalid_name\"
-        title=\"Required: Please provide your name\" required=\"\">\n        <div
-        id=\"invalid_name\" class=\"ui-state-error message\">Required: Please provide
-        your name.</div></div>\n    {% endif %}\n\n    {% if widget.contact_display_email.best_value
+        \"true\" %}\n      <div class=\"form-field\">\n        <label for=\"name\">Full
+        Name</label>\n        <input type=\"text\" name=\"contact[name]\" id=\"name\"
+        data-h5-errorid=\"invalid_name\" title=\"Required: Please provide your name\"
+        required=\"\">\n        <div id=\"invalid_name\" class=\"ui-state-error message\">Required:
+        Please provide your name.</div></div>\n    {% endif %}\n\n    {% if widget.contact_display_email.best_value
         == \"true\" %}\n      <div class=\"form-field\">\n        <label for=\"contact-email\">Email</label>\n
         \       <input id=\"contact-email\" type=\"email\" name=\"contact[email]\"
         title=\"Required: Please provide your email address\" data-h5-errorid=\"invalid_email\"
@@ -296,7 +296,7 @@ http_interactions:
         Please leave us a message.</div>\n      </div>\n\n    {% endif %}\n\n    <input
         type=\"submit\" best_value=\"Send\" />\n  </form>\n</div>\n"
     http_version: 
-  recorded_at: Thu, 05 Dec 2013 23:49:56 GMT
+  recorded_at: Mon, 13 Jan 2014 22:40:27 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-form/edit.html
@@ -318,9 +318,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Thu, 05 Dec 2013 23:49:57 GMT
+      - Mon, 13 Jan 2014 22:40:27 GMT
       Last-Modified:
-      - Thu, 05 Dec 2013 20:49:58 GMT
+      - Mon, 13 Jan 2014 20:32:41 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -386,5 +386,5 @@ http_interactions:
         }}\" >\n        Message\n      </label>\n    </div>\n\n  </fieldset>\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Thu, 05 Dec 2013 23:49:56 GMT
+  recorded_at: Mon, 13 Jan 2014 22:40:27 GMT
 recorded_with: VCR 2.6.0

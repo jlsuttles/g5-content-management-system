@@ -16,11 +16,5 @@ class WidgetSupport
         widget.name.downcase == "twitter feed"
       end
     end
-
-    def calls_to_action
-      @calls_to_action ||= all_remote.find do |widget|
-        widget.name.downcase == "calls to action"
-      end
-    end
   end
 end

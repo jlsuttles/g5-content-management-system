@@ -3,7 +3,6 @@ require_dependency 'liquid_filters'
 class Widget < ActiveRecord::Base
   include RankedModel
   include HasManySettings
-  include AfterCreateSetDefaultCallsToAction
   include ComponentGardenable
 
   ranks :display_order, with_same: :drop_target_id
@@ -54,12 +53,6 @@ class Widget < ActiveRecord::Base
     updated_at > widget_entries.maximum(:updated_at)
   end
 
-  private
-
-  def set_defaults
-    self.removeable = true
-  end
-
   def assign_attributes_from_url
     component = Microformats2.parse(url).first
     if component
@@ -81,6 +74,12 @@ class Widget < ActiveRecord::Base
     Rails.logger.warn e.message
   end
 
+  private
+
+  def set_defaults
+    self.removeable = true
+  end
+
   def build_settings_from_microformat(component)
     return unless component.respond_to?(:g5_property_groups)
     e_property_groups = component.g5_property_groups
@@ -93,7 +92,7 @@ class Widget < ActiveRecord::Base
   end
 
   def build_setting(h_property_group, h_property)
-    settings.build(
+    settings.find_or_initialize_by_name(
       name: h_property.g5_name.to_s,
       editable: h_property.g5_editable.to_s || false,
       default_value: h_property.g5_default_value.to_s,

@@ -21,20 +21,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Sat, 16 Nov 2013 21:19:46 GMT
+      - Mon, 13 Jan 2014 22:38:38 GMT
       Last-Modified:
-      - Wed, 06 Nov 2013 22:15:25 GMT
+      - Mon, 13 Jan 2014 21:46:02 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTc1ZjI0NGNiODlkYzVlNWVhNTg1MzRlYjkwMDBmMDUyBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXZMVS9uMkFUcW4wL3hXdUdPSStCWFB0VHFpOTVaWmg0RGhWeGxMY1hoOWc9BjsARg%3D%3D--449219a736d42bc75bbc9ea45e9546cf2702af04;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTI3ZDY2OWVlYTVmNTA3MzQxMDM2MWQ4ODVlMzM5NmRkBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXhyb0orNElUdXZTUUtGOUNJSno3bDFKOXFnbUY0d3NrYXFscHVwbUVzdkE9BjsARg%3D%3D--8ad01c8936740b31ba9d118c63c585873981c8a5;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - cae79b5abe00be79176b5d30f1f8a4c6
+      - e378606a02f7788ddf055a5c9299b969
       X-Runtime:
-      - '0.029203'
+      - '0.034897'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Transfer-Encoding:
@@ -50,7 +50,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"vLU/n2ATqn0/xWuGOI+BXPtTqi95ZZh4DhVxlLcXh9g=\"
+        name=\"csrf-param\" />\n<meta content=\"xroJ+4ITuvSQKF9CIJz7l1J9qgmF4wskaqlpupmEsvA=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -80,5 +80,5 @@ http_interactions:
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Sat, 16 Nov 2013 21:19:46 GMT
+  recorded_at: Mon, 13 Jan 2014 22:38:38 GMT
 recorded_with: VCR 2.6.0
