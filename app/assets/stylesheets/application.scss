@@ -82,9 +82,8 @@
   position: relative;
 }
 
-.web-page-templates-in-trash {
+.ui-sortable-connected {
   @include clearfix;
   position: relative;
-  min-height: 100px;
-  background: red;
+  min-height: 320px;
 }
