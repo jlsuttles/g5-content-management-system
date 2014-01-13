@@ -6,7 +6,6 @@
 #= require bootstrapSwitch
 #= require jquery.thumbnailScroller
 #= require ckeditor/init
-<<<<<<< HEAD
 
 $ ->
   #= Allows CKEditor modal to play nice with Bootstrap modal
