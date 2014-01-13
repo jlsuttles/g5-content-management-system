@@ -76,6 +76,9 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       web_page_template = find(".web-page-templates .web-page-template:first-of-type")
       trash = find(".web-page-templates-in-trash")
       expect do
+        # First drag and drop doesn't work bc Capybara idk
+        drag_and_drop(web_page_template, not_trash)
+        sleep 1
         drag_and_drop(web_page_template, trash)
         sleep 1
       end.to change{ WebPageTemplate.where(in_trash: true).count }.by(1)
@@ -93,6 +96,9 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       web_page_template = find(".web-page-templates-in-trash .web-page-template:first-of-type")
       not_trash = find(".web-page-templates")
       expect do
+        # First drag and drop doesn't work bc Capybara idk
+        drag_and_drop(web_page_template, not_trash)
+        sleep 1
         drag_and_drop(web_page_template, not_trash)
         sleep 1
       end.to change{ WebPageTemplate.trash.count }.by(-1)
