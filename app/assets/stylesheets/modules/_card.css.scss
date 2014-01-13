@@ -96,6 +96,7 @@
   @extend %group;
   background-color: $base-color;
   color: $c-color-b;
+  cursor: move;
   padding: 1em;
   h3 {
     overflow: visible;
