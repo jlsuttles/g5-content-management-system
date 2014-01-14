@@ -5,3 +5,10 @@ App.ColorPickerView = Ember.View.extend
     $("input.color").spectrum
       preferredFormat: "hex"
       showInput: true
+
+  primaryColorDidChange: ( ->
+    Ember.run.next this, ->
+      $("input.color").spectrum
+        preferredFormat: "hex"
+        showInput: true
+  ).observes("controller.primaryColor")

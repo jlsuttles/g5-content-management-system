@@ -4,6 +4,28 @@ describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: 
   before do
     @client, @location, @website = seed
     @web_page_template = @website.web_page_templates.first
+    @website_template = @website.website_template
+  end
+
+  describe "Color picker" do
+    before do
+      @web_theme = @website_template.web_theme
+
+      visit_web_page_template
+    end
+
+    it "Will update with theme colors when theme changes" do
+      primary_color   = @web_theme.primary_color
+      secondary_color = @web_theme.secondary_color
+      html_primary_color   = find('#color-1', :visible => false).text
+      html_secondary_color   = find('#color-2', :visible => false).text
+      remote_theme = find('.theme-picker .thumb:first-of-type')
+
+      remote_theme.click
+
+      expect(primary_color).to_not eq html_primary_color
+      expect(secondary_color).to_not eq html_secondary_color
+    end
   end
 
   describe "Main widgets" do
