@@ -11,6 +11,10 @@ class WebPageTemplate < WebTemplate
     ["/", path, "/"].join
   end
 
+  def compile_path
+    File.join(website_compile_path.to_s, path, "index.html") if web_page_template?
+  end
+
   def path
     File.join(client.vertical_slug, location.state_slug, location.city_slug, slug)
   end

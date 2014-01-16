@@ -72,6 +72,10 @@ class WebTemplate < ActiveRecord::Base
     type == "WebHomeTemplate"
   end
 
+  def web_page_template?
+    type == "WebPageTemplate"
+  end
+
   def stylesheets
     widgets.map(&:stylesheets).flatten +
     website.try(:website_template).try(:stylesheets).to_a
@@ -95,10 +99,6 @@ class WebTemplate < ActiveRecord::Base
     website.colors if website
   end
 
-  def compile_path
-    File.join(website_compile_path.to_s, path, "index.html")
-  end
-
   def stylesheets_compiler
     @stylesheets_compiler ||= StaticWebsite::Compiler::Stylesheets.new(stylesheets, "#{Rails.root}/public", website_colors)
   end
@@ -111,7 +111,7 @@ class WebTemplate < ActiveRecord::Base
   def canonical_link_element
     if web_home_template?
       "<link rel='canonical' href='#{website.decorate.heroku_url}' />"
-    else
+    elsif web_page_template?
       "<link rel='canonical' href='#{website.decorate.heroku_url}/#{path}' />"
     end
   end

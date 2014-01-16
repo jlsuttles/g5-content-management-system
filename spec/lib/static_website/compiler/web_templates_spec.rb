@@ -35,7 +35,7 @@ describe StaticWebsite::Compiler::WebTemplates do
     context "when web template is present" do
       let(:location) { Fabricate(:location) }
       let(:website) { Fabricate(:website, location_id: location.id) }
-      let(:model) { Fabricate(:web_template, website_id: website.id) }
+      let(:model) { Fabricate(:web_page_template, website_id: website.id) }
       let(:subject) { StaticWebsite::Compiler::WebTemplates.new(nil) }
       let!(:client) { Fabricate(:client) }
 
