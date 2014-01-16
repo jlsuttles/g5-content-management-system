@@ -8,14 +8,14 @@ class WebPageTemplate < WebTemplate
   end
 
   def htaccess_substitution
-    ["/", path, "/"].join
+    ["/", relative_path, "/"].join
   end
 
   def compile_path
-    File.join(website_compile_path.to_s, path, "index.html") if web_page_template?
+    File.join(website_compile_path.to_s, relative_path, "index.html") if web_page_template?
   end
 
-  def path
+  def relative_path
     File.join(client.vertical_slug, location.state_slug, location.city_slug, slug)
   end
 end

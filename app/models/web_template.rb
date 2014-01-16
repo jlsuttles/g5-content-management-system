@@ -112,7 +112,7 @@ class WebTemplate < ActiveRecord::Base
     if web_home_template?
       "<link rel='canonical' href='#{website.decorate.heroku_url}' />"
     elsif web_page_template?
-      "<link rel='canonical' href='#{website.decorate.heroku_url}/#{path}' />"
+      "<link rel='canonical' href='#{website.decorate.heroku_url}/#{relative_path}' />"
     end
   end
 
