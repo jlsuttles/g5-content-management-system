@@ -96,7 +96,7 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def compile_path
-    File.join(website_compile_path.to_s, client.vertical_slug, location.state_slug, location.city_slug, slug, "index.html")
+    File.join(website_compile_path.to_s, path, "index.html")
   end
 
   def stylesheets_compiler
@@ -110,9 +110,9 @@ class WebTemplate < ActiveRecord::Base
 
   def canonical_link_element
     if web_home_template?
-      '<link rel="canonical" href="#{website.decorate.heroku_url}" />'
+      "<link rel='canonical' href='#{website.decorate.heroku_url}' />"
     else
-      '<link rel="canonical" href="#{website.decorate.heroku_url}/#{client.vertical_slug}/#{location.state_slug}/#{location.city_slug}/#{slug}" />'
+      "<link rel='canonical' href='#{website.decorate.heroku_url}/#{path}' />"
     end
   end
 
