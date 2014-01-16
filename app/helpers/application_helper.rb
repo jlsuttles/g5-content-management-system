@@ -6,4 +6,10 @@ module ApplicationHelper
     end
     image_tag(src, options)
   end
+  
+  def leads_service_js
+    url = @client.urn.gsub("-c-", "-cls-")
+    domain = "herokuapp.com"
+    "http://#{url}.#{domain}/assets/form_enhancer.js"
+  end
 end
