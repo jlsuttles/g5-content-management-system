@@ -12,6 +12,6 @@ class WebPageTemplateDecorator < Draper::Decorator
   end
 
   def canonical_link_element
-    "<link class='canonical' rel='canonical' href='#{website.decorate.heroku_url}/#{relative_path}' />"
+    "<link rel='canonical' href='/#{relative_path}' />"
   end
 end
