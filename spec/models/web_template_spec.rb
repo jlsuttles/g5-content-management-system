@@ -50,17 +50,6 @@ describe WebTemplate do
     end
   end
 
-  describe "#compile_path" do
-    let(:location) { Fabricate(:location) }
-    let(:website) { Fabricate(:website, location_id: location.id) }
-    let(:web_template) { Fabricate(:web_template, website_id: website.id) }
-    let!(:client) { Fabricate(:client) }
-
-    it "includes slug" do
-      web_template.compile_path.should include web_template.slug
-    end
-  end
-
   describe "#stylesheet_link_paths" do
     let(:web_template) { Fabricate.build(:web_template) }
 

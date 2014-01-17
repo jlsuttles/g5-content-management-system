@@ -4,7 +4,7 @@ describe StaticWebsite::Compiler::WebTemplate do
   describe "#compile" do
     let(:location) { Fabricate(:location) }
     let(:website) { Fabricate(:website, location_id: location.id) }
-    let(:web_template) { Fabricate(:web_template, website_id: website.id) }
+    let(:web_template) { Fabricate(:web_home_template, website_id: website.id) }
     let(:subject) { StaticWebsite::Compiler::WebTemplate.new(web_template) }
     let!(:client) { Fabricate(:client) }
 
