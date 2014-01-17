@@ -12,6 +12,10 @@ class WebHomeTemplate < WebTemplate
   end
 
   def htaccess_substitution
+    relative_path
+  end
+
+  def relative_path
     "/"
   end
 end
