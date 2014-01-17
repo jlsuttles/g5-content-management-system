@@ -74,4 +74,5 @@ group :production do
   gem "newrelic_rpm"
   gem "dalli"
   gem "memcachier"
+  gem "honeybadger"
 end
