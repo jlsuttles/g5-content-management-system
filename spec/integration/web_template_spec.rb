@@ -49,12 +49,16 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
         expect(page).to have_title @web_page_template.title
       end
 
+      it "has a rel='canonical' link" do
+        expect(page).to have_selector('.canonical', visible: false)
+      end
+
       it "displays title in h1 tag in main section" do
         within "#drop-target-main h1" do
           expect(page).to have_content @web_page_template.title
         end
       end
-      
+
       it "does not display title on home page" do
         @web_home_template = @website.web_home_template
         visit web_template_path(@web_home_template.id)

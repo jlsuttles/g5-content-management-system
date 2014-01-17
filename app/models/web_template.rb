@@ -108,14 +108,6 @@ class WebTemplate < ActiveRecord::Base
     stylesheets_compiler.link_paths
   end
 
-  def canonical_link_element
-    if web_home_template?
-      "<link rel='canonical' href='#{website.decorate.heroku_url}' />"
-    elsif web_page_template?
-      "<link rel='canonical' href='#{website.decorate.heroku_url}/#{relative_path}' />"
-    end
-  end
-
   private
 
   def default_enabled_to_true
