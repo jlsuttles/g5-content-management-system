@@ -10,6 +10,7 @@ website:
       - html_id: drop-target-head
         widgets:
           - name: meta
+          - name: analytics
       - html_id: drop-target-logo
         widgets:
           - name: logo
@@ -35,7 +36,6 @@ website:
           - name: contact-info
           - name: hours
           - name: footer-info
-          - name: analytics
 
   web_home_template:
     name: Home
