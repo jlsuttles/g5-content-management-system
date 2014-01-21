@@ -46,6 +46,7 @@ class ClientReader
         uid: uf2_location.uid.to_s,
         urn: uf2_location.uid.to_s.split("/").last,
         name: uf2_location.name.to_s,
+        domain: uf2_location.g5_domain.to_s,
         state: uf2_location.adr.try(:format).try(:region).to_s,
         city: uf2_location.adr.try(:format).try(:locality).to_s
       )

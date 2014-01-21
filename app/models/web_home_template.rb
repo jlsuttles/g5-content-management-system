@@ -18,4 +18,8 @@ class WebHomeTemplate < WebTemplate
   def relative_path
     "/"
   end
+
+  def page_url
+    location.domain if location.domain
+  end
 end

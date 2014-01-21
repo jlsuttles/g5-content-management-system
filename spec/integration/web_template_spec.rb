@@ -50,7 +50,7 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
       end
 
       it "has a rel='canonical' link" do
-        expect(page).to have_selector("link[rel=canonical][href='/#{@web_page_template.relative_path}']", visible: false)
+        expect(page).to have_selector("link[rel=canonical][href='#{@web_page_template.page_url}']", visible: false)
       end
 
       it "displays title in h1 tag in main section" do
