@@ -18,8 +18,4 @@ class WebPageTemplate < WebTemplate
   def relative_path
     File.join(client.vertical_slug, location.state_slug, location.city_slug, slug)
   end
-
-  def page_url
-    File.join(location.domain, relative_path) if location.domain
-  end
 end

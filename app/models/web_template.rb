@@ -108,6 +108,14 @@ class WebTemplate < ActiveRecord::Base
     stylesheets_compiler.link_paths
   end
 
+  def location_domain
+    location.domain if location
+  end
+
+  def page_url
+    File.join(location_domain.to_s, relative_path.to_s)
+  end
+
   private
 
   def default_enabled_to_true
