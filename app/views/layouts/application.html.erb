@@ -14,5 +14,6 @@
     <% flash.each do |name, msg| %>
       <%= flash_div name %>
     <% end %>
+    <%= yield %>
   </body>
 </html>

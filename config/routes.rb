@@ -1,21 +1,10 @@
 require "resque/server"
 
 G5ClientHub::Application.routes.draw do
+  # Dashboard for Resque job queues
   mount Resque::Server, :at => "/resque"
 
-  resources :locations, only: [:index]
-  resources :websites, only: [] do
-    member do
-      post "deploy"
-    end
-  end
-  resources :web_templates, only: [:show]
-  resources :widgets, only: [:edit, :update]
-  resources :settings, only: [:index]
-
-  resources :widget_entries, only: [:index, :show]
-  resources :tags, only: [:show]
-
+  # API endpoints
   namespace :api do
     namespace :v1 do
       resources :clients, only: [:show]
@@ -43,8 +32,37 @@ G5ClientHub::Application.routes.draw do
     end
   end
 
-  get "/:location_slug/:web_page_template_slug", to: "locations#index"
-  get "/:website_slug", to: "locations#index"
+  # TODO: move to API endpoint
+  resources :websites, only: [] do
+    member do
+      post "deploy"
+    end
+  end
 
+  # WebHomeTemplate and WebPageTemplate previews
+  resources :web_templates, only: [:show]
+
+  # Widget edit modals
+  resources :widgets, only: [:edit, :update]
+
+  # WidgetEntry is published for new form widget
+  resources :widget_entries, only: [:index, :show]
+  resources :tags, only: [:show]
+
+  # G5SiblingDeployerEngine routes shouldn't need to be explicitly added
+  resources :siblings, only: [:index] do
+    member do
+      post "deploy"
+    end
+  end
+  get "siblings/instructions" => "siblings/instructions#index", as: :siblings_instructions
+  get "siblings/deploys" => "siblings/deploys#index", as: :siblings_deploys
+  post "webhooks/g5-configurator" => "webhooks#g5_configurator", as: :g5_configurator_webhook
+
+  # Ember.js application
+  get "/:location_slug", to: "locations#index"
+  get "/:location_slug/:web_page_template_slug", to: "locations#index"
+
+  # Root to Ember.js application
   root to: "locations#index"
 end
