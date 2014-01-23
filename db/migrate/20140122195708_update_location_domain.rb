@@ -1,6 +1,6 @@
 class UpdateLocationDomain < ActiveRecord::Migration
   def up
-    ClientReader.new(ENV["G5_CLIENT_UID"]).perform
+    ClientReaderJob.perform(ENV["G5_CLIENT_UID"])
   end
 
   def down
