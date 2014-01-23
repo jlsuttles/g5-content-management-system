@@ -6,7 +6,6 @@ class WebsiteTemplateSerializer < WebTemplateSerializer
 
   has_many :head_widgets
   has_many :logo_widgets
-  has_many :phone_widgets
   has_many :btn_widgets
   has_many :nav_widgets
   has_many :aside_widgets

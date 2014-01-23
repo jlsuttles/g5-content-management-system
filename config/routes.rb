@@ -16,7 +16,6 @@ G5ClientHub::Application.routes.draw do
       resources :web_themes, only: [:show, :update]
       resources :head_widgets, only: [:index, :show, :create, :destroy]
       resources :logo_widgets, only: [:index, :show, :create, :destroy]
-      resources :phone_widgets, only: [:index, :show, :create, :destroy]
       resources :btn_widgets, only: [:index, :show, :create, :destroy]
       resources :nav_widgets, only: [:index, :show, :create, :destroy]
       resources :aside_widgets, only: [:index, :show, :create, :update, :destroy]
