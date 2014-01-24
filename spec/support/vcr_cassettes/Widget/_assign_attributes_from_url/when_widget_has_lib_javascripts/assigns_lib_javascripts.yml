@@ -21,36 +21,48 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Mon, 13 Jan 2014 22:40:18 GMT
+      - Fri, 24 Jan 2014 05:27:47 GMT
       Last-Modified:
-      - Mon, 13 Jan 2014 20:32:41 GMT
+      - Thu, 23 Jan 2014 19:28:27 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTBkNzE2MzllZDc3NzQ3ZGRiZjcxODA5Mzg0NTQ5YmRjBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVdwQXI0WlkrVldPNFZ1bXEyclhRcEdYM1NaVzY4Y3ZCYjlWTUd3RG92YUU9BjsARg%3D%3D--cbe76baa9a65ced02403dfd1ed3f100c9fbbc39e;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWU0NWJkYmYwY2I4YzhkNzQ1OGQ3NGM1MThkM2YxMDg5BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMW4zSnkvZ2JYWEc5Qng5STk5empxK05CcXJ6ZTZMRGdFRU5veHlOY011VFk9BjsARg%3D%3D--7b3809a0b3ce11949960b86b0d16da86362649ac;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 09f918740bbca3b087a816465981701f
+      - 1be6c338-d882-479d-b108-14ce18f33cad
       X-Runtime:
-      - '0.128398'
+      - '0.037091'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '10557'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Widget Garden</title>\n
-        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":8,\"applicationTime\":35,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+        type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
+        e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
+        c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
+        f=0;f<d.length;f++)e(d[f]);return e}({\"4O2Y62\":[function(a,b){function c(a,b){var
+        c=d[a];return c?c.apply(this,b):(e[a]||(e[a]=[]),void e[a].push(b))}var d={},e={};b.exports=c,c.queues=e,c.handlers=d},{}],handle:[function(a,b){b.exports=a(\"4O2Y62\")},{}],\"SvQ0B+\":[function(a,b){function
+        c(a){if(a===window)return 0;if(e.call(a,\"__nr\"))return a.__nr;try{return
+        Object.defineProperty(a,\"__nr\",{value:d,writable:!1,configurable:!1,enumerable:!1}),d}catch(b){return
+        a.__nr=d,d}finally{d+=1}}var d=1,e=Object.prototype.hasOwnProperty;b.exports=c},{}],id:[function(a,b){b.exports=a(\"SvQ0B+\")},{}],YLUGVp:[function(a,b){function
+        c(){var a=m.info=NREUM.info,b=m.proto=\"https\"===l.split(\":\")[0]||a.sslForHttp?\"https://\":\"http://\";if(a&&a.agent&&a.licenseKey&&a.applicationID){f(\"mark\",[\"onload\",e()]);var
+        c=h.createElement(\"script\");c.src=b+a.agent,h.body.appendChild(c)}}function
+        d(){\"complete\"===h.readyState&&f(\"mark\",[\"domContent\",e()])}function
+        e(){return(new Date).getTime()}var f=a(\"handle\"),g=window,h=g.document,i=\"readystatechange\",j=\"addEventListener\",k=\"attachEvent\",l=(\"\"+location).split(\"?\")[0],m=b.exports={offset:e(),origin:l};h[j]?(h[j](i,d,!1),g[j](\"load\",c,!1)):(h[k](\"on\"+i,d),g[k](\"onload\",c)),f(\"mark\",[\"firstbyte\",e()])},{handle:\"4O2Y62\"}],loader:[function(a,b){b.exports=a(\"YLUGVp\")},{}]},{},[\"YLUGVp\"]);</script>\n
+        \   <title>G5 Widget Garden</title>\n    <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
         type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"WpAr4ZY+VWO4Vumq2rXQpGX3SZW68cvBb9VMGwDovaE=\"
+        name=\"csrf-param\" />\n<meta content=\"n3Jy/gbXXG9Bx9I99zjq+NBqrze6LDgEENoxyNcMuTY=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -132,17 +144,17 @@ http_interactions:
         widget.twitter_tweet_count.best_value }}&quot;\n    /&gt;\n  &lt;/div&gt;\n\n
         \ &lt;input type=&quot;submit&quot; value=&quot;Save&quot; class=&quot;btn&quot;
         /&gt;\n&lt;/form&gt;\n\n&lt;!-- END EDIT FORM MARKUP --&gt;\n\n&lt;!-- BEGIN
-        SHOW MARKUP --&gt;\n&lt;script id=&quot;twitter-feed-config&quot; type=&quot;application/json&quot;&gt;\n
-        \ {\n    &quot;id&quot;: &quot;{{ widget.twitter_username.best_value }}&quot;,\n
-        \   &quot;count&quot;: {{ widget.twitter_tweet_count.best_value }},\n    &quot;avatar&quot;:
-        {{widget.twitter_display_avatars.best_value}}\n  }\n&lt;/script&gt;\n\n&lt;div
-        class=&quot;twitter-feed widget&quot;&gt;\n  &lt;ul class=&quot;tweet-list&quot;&gt;\n
-        \ &lt;/ul&gt;\n  &lt;a class=&quot;follow&quot; href=&quot;http://www.twitter.com/{{
-        widget.twitter_username.best_value }}&quot; href=&quot;#&quot; target=&quot;_blank&quot;&gt;Follow
-        @{{ widget.twitter_username.best_value }} on Twitter&lt;/a&gt;\n&lt;/div&gt;\n\n&lt;!--
-        END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
+        SHOW MARKUP --&gt;\n&lt;div class=&quot;twitter-feed&quot;&gt;\n  &lt;script
+        class=&quot;config&quot; type=&quot;application/json&quot;&gt;\n    {\n      &quot;id&quot;:
+        &quot;{{ widget.twitter_username.best_value }}&quot;,\n      &quot;count&quot;:
+        {{ widget.twitter_tweet_count.best_value }},\n      &quot;avatar&quot;: {{widget.twitter_display_avatars.best_value}}\n
+        \   }\n  &lt;/script&gt;\n\n  &lt;ul class=&quot;tweet-list&quot;&gt;\n  &lt;/ul&gt;\n
+        \ &lt;a class=&quot;follow&quot; href=&quot;http://www.twitter.com/{{ widget.twitter_username.best_value
+        }}&quot; href=&quot;#&quot; target=&quot;_blank&quot;&gt;Follow @{{ widget.twitter_username.best_value
+        }} on Twitter&lt;/a&gt;\n&lt;/div&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
+        \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Mon, 13 Jan 2014 22:40:18 GMT
+  recorded_at: Fri, 24 Jan 2014 05:27:47 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/show.html
@@ -164,30 +176,29 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Mon, 13 Jan 2014 22:40:19 GMT
+      - Fri, 24 Jan 2014 05:27:47 GMT
       Last-Modified:
-      - Mon, 13 Jan 2014 20:32:41 GMT
+      - Thu, 23 Jan 2014 19:28:27 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
-      - 939c2a521abd3cce1ad929d911318a1f6ef8a99e
+      - 6a7ddacd33feed1fac2a239d7ec38ae3fd80063f
       X-Rack-Cache:
       - stale, valid, store
       Content-Length:
-      - '504'
+      - '501'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<script id=\"twitter-feed-config\" type=\"application/json\">\n  {\n
-        \   \"id\": \"{{ widget.twitter_username.best_value }}\",\n    \"count\":
-        {{ widget.twitter_tweet_count.best_value }},\n    \"avatar\": {{widget.twitter_display_avatars.best_value}}\n
-        \ }\n</script>\n\n<div class=\"twitter-feed widget\">\n  <ul class=\"tweet-list\">\n
-        \ </ul>\n  <a class=\"follow\" href=\"http://www.twitter.com/{{ widget.twitter_username.best_value
-        }}\" href=\"#\" target=\"_blank\">Follow @{{ widget.twitter_username.best_value
-        }} on Twitter</a>\n</div>\n"
+      string: ! "<div class=\"twitter-feed\">\n  <script class=\"config\" type=\"application/json\">\n
+        \   {\n      \"id\": \"{{ widget.twitter_username.best_value }}\",\n      \"count\":
+        {{ widget.twitter_tweet_count.best_value }},\n      \"avatar\": {{widget.twitter_display_avatars.best_value}}\n
+        \   }\n  </script>\n\n  <ul class=\"tweet-list\">\n  </ul>\n  <a class=\"follow\"
+        href=\"http://www.twitter.com/{{ widget.twitter_username.best_value }}\" href=\"#\"
+        target=\"_blank\">Follow @{{ widget.twitter_username.best_value }} on Twitter</a>\n</div>\n"
     http_version: 
-  recorded_at: Mon, 13 Jan 2014 22:40:19 GMT
+  recorded_at: Fri, 24 Jan 2014 05:27:48 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/twitter-feed/edit.html
@@ -209,9 +220,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Mon, 13 Jan 2014 22:40:19 GMT
+      - Fri, 24 Jan 2014 05:27:48 GMT
       Last-Modified:
-      - Mon, 13 Jan 2014 20:32:41 GMT
+      - Thu, 23 Jan 2014 19:28:27 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -245,5 +256,5 @@ http_interactions:
         widget.twitter_tweet_count.best_value }}\"\n    />\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Mon, 13 Jan 2014 22:40:19 GMT
+  recorded_at: Fri, 24 Jan 2014 05:27:48 GMT
 recorded_with: VCR 2.6.0
