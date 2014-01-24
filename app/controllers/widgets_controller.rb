@@ -7,6 +7,7 @@ class WidgetsController < ApplicationController
     html = render_to_string(format: :html, layout: false)
     respond_with do |format|
       format.json { render json: {html: html} }
+      format.html { redirect_to root_path }
     end
   end
 
@@ -19,6 +20,7 @@ class WidgetsController < ApplicationController
     else
       respond_with do |format|
         format.json { render json: {errors: @widget.errors}, status: :unprocessable_entity}
+        format.html { render :edit }
       end
     end
   end
