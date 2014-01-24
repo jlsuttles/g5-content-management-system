@@ -53,20 +53,6 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
         expect(page).to have_selector("link[rel=canonical][href='#{@web_page_template.page_url}']", visible: false)
       end
 
-      it "displays title in h1 tag in main section" do
-        within "#drop-target-main h1" do
-          expect(page).to have_content @web_page_template.title
-        end
-      end
-
-      it "does not display title on home page" do
-        @web_home_template = @website.web_home_template
-        visit web_template_path(@web_home_template.id)
-        within ".page-home #drop-target-main" do
-          expect(page).to_not have_selector("h1")
-        end
-      end
-
       it "displays name in navigation widget in nav section" do
         pending "Capybara finds the selector locally but not on CI."
         within "#drop-target-nav .navigation.widget" do
