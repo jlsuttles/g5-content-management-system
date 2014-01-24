@@ -7,10 +7,6 @@ class WebHomeTemplateDecorator < Draper::Decorator
     true
   end
 
-  def url
-    "/"
-  end
-
   def canonical_link_element
     "<link rel='canonical' href='#{page_url}' />"
   end

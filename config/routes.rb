@@ -38,9 +38,6 @@ G5ClientHub::Application.routes.draw do
     end
   end
 
-  # WebHomeTemplate and WebPageTemplate previews
-  resources :web_templates, only: [:show]
-
   # Widget edit modals
   resources :widgets, only: [:edit, :update]
 
@@ -61,6 +58,8 @@ G5ClientHub::Application.routes.draw do
   # Ember.js application
   get "/:location_slug", to: "locations#index"
   get "/:location_slug/:web_page_template_slug", to: "locations#index"
+  get "/:vertical_slug/:state_slug/:city_slug", to: "web_templates#show"
+  get "/:vertical_slug/:state_slug/:city_slug/:web_template_slug", to: "web_templates#show"
 
   # Root to Ember.js application
   root to: "locations#index"

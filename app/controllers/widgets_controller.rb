@@ -15,12 +15,10 @@ class WidgetsController < ApplicationController
     if @widget.update_attributes(widget_params)
       respond_with(@widget) do |format|
         format.json { render json: @widget, status: 204}
-        format.html { redirect_to web_template_path(@widget.web_template) }
       end
     else
       respond_with do |format|
         format.json { render json: {errors: @widget.errors}, status: :unprocessable_entity}
-        format.html { render :edit }
       end
     end
   end

@@ -11,7 +11,7 @@ class WebHomeTemplateSerializer < WebTemplateSerializer
              :redirect_patterns
 
   def preview_url
-    web_template_url(object)
+    File.join(root_url, object.preview_url)
   end
 
   def slug

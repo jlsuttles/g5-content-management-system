@@ -13,7 +13,7 @@ class WebPageTemplateSerializer < WebTemplateSerializer
              :in_trash
 
   def preview_url
-    web_template_url(object)
+    File.join(root_url, object.url)
   end
 
   def slug
