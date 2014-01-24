@@ -116,6 +116,10 @@ class WebTemplate < ActiveRecord::Base
     File.join(location_domain.to_s, relative_path.to_s)
   end
 
+  def last_mod
+    widgets.order("updated_at").last.updated_at
+  end
+
   private
 
   def default_enabled_to_true
