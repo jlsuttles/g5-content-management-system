@@ -19,11 +19,11 @@ class ClientReader
     # So now either there is a client in the database with the UID we want or
     # there are no clients in the database. So we either update the existing
     # client or create a new one.
-    Client.find_or_create_by_uid(
-      uid: @client_uid,
-      name: uf2_client.name.to_s,
-      vertical: uf2_client.g5_vertical.to_s
-    )
+    client = Client.find_or_initialize_by_uid(uid: @client_uid)
+    client.name     = uf2_client.name.to_s
+    client.vertical = uf2_client.g5_vertical.to_s
+
+    client.save
 
     current_locations = Location.all
     # Start a list of the location UIDs that are part of the microformats2
@@ -42,13 +42,15 @@ class ClientReader
 
       # Update an existing location if the one with UID we want is already in
       # the database or create a new one.
-      Location.find_or_create_by_uid(
-        uid: uf2_location.uid.to_s,
-        urn: uf2_location.uid.to_s.split("/").last,
-        name: uf2_location.name.to_s,
-        state: uf2_location.adr.try(:format).try(:region).to_s,
-        city: uf2_location.adr.try(:format).try(:locality).to_s
-      )
+
+      location = Location.find_or_initialize_by_uid(uid: uf2_location.uid.to_s)
+      location.urn    = uf2_location.uid.to_s.split("/").last
+      location.name   = uf2_location.name.to_s
+      location.domain = uf2_location.g5_domain.to_s
+      location.state  = uf2_location.adr.try(:format).try(:region).to_s
+      location.city   = uf2_location.adr.try(:format).try(:locality).to_s
+
+      location.save
     end if uf2_client.respond_to?(:orgs)
 
     # Now we need to clean up locations that are in the database that shouldn't
