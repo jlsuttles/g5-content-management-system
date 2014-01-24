@@ -25,14 +25,15 @@ module StaticWebsite
         urls = []
 
         # Web Home Template
-        loc        = "\n\t\t<loc>#{File.join(@web_home_template.location_domain)}</loc>"
-        lastmod    = "\n\t\t<lastmod>#{@web_home_template.last_mod}</lastmod>"
-        changefreq = "\n\t\t<changefreq>weekly</changefreq>"
-        priority   = "\n\t\t<priority>0.9</priority>"
+        if @web_home_template && @web_home_template.enabled
+          loc        = "\n\t\t<loc>#{File.join(@web_home_template.location_domain)}</loc>"
+          lastmod    = "\n\t\t<lastmod>#{@web_home_template.last_mod}</lastmod>"
+          changefreq = "\n\t\t<changefreq>weekly</changefreq>"
+          priority   = "\n\t\t<priority>0.9</priority>"
 
-        web_home_template = "\t<url>" + loc + lastmod + changefreq + priority + "\n\t</url>"
-
-        urls << web_home_template
+          web_home_template = "\t<url>" + loc + lastmod + changefreq + priority + "\n\t</url>"
+          urls << web_home_template
+        end
 
         # Web Page Templates
         @web_page_templates.each do |template|
@@ -43,7 +44,6 @@ module StaticWebsite
             priority   = "\n\t\t<priority>0.7</priority>"
 
             web_page_template = "\t<url>" + loc + lastmod + changefreq + priority + "\n\t</url>"
-
             urls << web_page_template
           end
         end
