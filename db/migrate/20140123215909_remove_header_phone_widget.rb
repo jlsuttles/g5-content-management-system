@@ -4,6 +4,7 @@ class RemoveHeaderPhoneWidget < ActiveRecord::Migration
       phone.widgets.where(url: Widget.component_url("phone")).destroy_all
       phone.save
     end
+    DropTarget.where(html_id: "drop-target-phone").destroy_all
   end
 
   def down
