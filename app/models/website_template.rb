@@ -15,11 +15,6 @@ class WebsiteTemplate < WebTemplate
   end
 
   # TODO: remove when Ember App implements DropTarget
-  def phone_widgets
-    drop_targets.where(html_id: "drop-target-phone").first.try(:widgets)
-  end
-
-  # TODO: remove when Ember App implements DropTarget
   def nav_widgets
     drop_targets.where(html_id: "drop-target-nav").first.try(:widgets)
   end

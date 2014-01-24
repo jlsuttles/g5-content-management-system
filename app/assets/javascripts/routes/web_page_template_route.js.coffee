@@ -37,7 +37,6 @@ App.WebPageTemplateRoute = Ember.Route.extend
     @controllerFor("webTheme").set("model", model.get("website.websiteTemplate.webTheme"))
     @controllerFor("headWidgets").set("model", model.get("website.websiteTemplate.headWidgets"))
     @controllerFor("logoWidgets").set("model", model.get("website.websiteTemplate.logoWidgets"))
-    @controllerFor("phoneWidgets").set("model", model.get("website.websiteTemplate.phoneWidgets"))
     @controllerFor("btnWidgets").set("model", model.get("website.websiteTemplate.btnWidgets"))
     @controllerFor("navWidgets").set("model", model.get("website.websiteTemplate.navWidgets"))
     @controllerFor("asideWidgets").set("model", model.get("website.websiteTemplate.asideWidgets"))

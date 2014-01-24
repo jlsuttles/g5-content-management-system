@@ -21,36 +21,37 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Mon, 13 Jan 2014 22:39:34 GMT
+      - Fri, 24 Jan 2014 05:39:56 GMT
       Last-Modified:
-      - Mon, 13 Jan 2014 21:46:02 GMT
+      - Thu, 23 Jan 2014 21:42:25 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWJhY2MwYzg0ZTY1YTkzNzIwODEzM2EwNzg0YzhlODc4BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWxhNTlFUDNsNU9BbW8yc3A5RWwwWlpmN2ZYWjhoeFJORHVPa0NyM2VCSVk9BjsARg%3D%3D--85cae71bd3be93bed16aafe4116a877bc7a33f25;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTg2OGQzY2YzNTFjNTgxOTgwOWU0OTU3YjY1ZWI4N2UwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVlSUDU3RUhESDBVbTFWMTl1M2JLQitIK0w5WkprNERVT0tKMEphNVVWa1E9BjsARg%3D%3D--65eb433a4c2bb50b5abd08c7412b33ce6437c0f4;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 5553cb67ff1afaf55aaac3dc9dfb9db9
+      - cfbd548e-dbde-4f67-80ea-e7c7fc899ccf
       X-Runtime:
-      - '0.048352'
+      - '0.016726'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '4014'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Theme Garden</title>\n
-        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+      string: ! "<!DOCTYPE html>\n<html>\n  <head><script type=\"text/javascript\">var
+        NREUMQ=NREUMQ||[];NREUMQ.push([\"mark\",\"firstbyte\",new Date().getTime()]);</script>\n
+        \   <title>G5 Theme Garden</title>\n    <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
         type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"la59EP3l5OAmo2sp9El0ZZf7fXZ8hxRNDuOkCr3eBIY=\"
+        name=\"csrf-param\" />\n<meta content=\"YRP57EHDH0Um1V19u3bKB+H+L9ZJk4DUOKJ0Ja5UVkQ=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -78,9 +79,12 @@ http_interactions:
         \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/stylesheets/big-picture.scss\"
         class=\"u-g5-stylesheet u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/stylesheets/big-picture.scss</a>\n
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
-        \   </div>\n  </body>\n</html>\n"
+        \   </div>\n  <script type=\"text/javascript\">if (!NREUMQ.f) { NREUMQ.f=function()
+        {\nNREUMQ.push([\"load\",new Date().getTime()]);\nvar e=document.createElement(\"script\");\ne.type=\"text/javascript\";\ne.src=((\"http:\"===document.location.protocol)?\"http:\":\"https:\")
+        + \"//\" +\n  \"js-agent.newrelic.com/nr-100.js\";\ndocument.body.appendChild(e);\nif(NREUMQ.a)NREUMQ.a();\n};\nNREUMQ.a=window.onload;window.onload=NREUMQ.f;\n};\nNREUMQ.push([\"nrfj\",\"beacon-2.newrelic.com\",\"548d20f55f\",\"3485429\",\"cltfEURaW19cERxTDFxEXgtTW0NAFhBbXxQ=\",8,15,new
+        Date().getTime(),\"\",\"\",\"\",\"\",\"\"]);</script></body>\n</html>\n"
     http_version: 
-  recorded_at: Mon, 13 Jan 2014 22:39:34 GMT
+  recorded_at: Fri, 24 Jan 2014 05:39:56 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/components/big-picture
@@ -102,36 +106,37 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Mon, 13 Jan 2014 22:39:34 GMT
+      - Fri, 24 Jan 2014 05:39:56 GMT
       Last-Modified:
-      - Mon, 13 Jan 2014 21:46:02 GMT
+      - Thu, 23 Jan 2014 21:42:25 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTg2NjI5YzQ5NDI1MTVkYmM1MTEwNTIwZmU0ZGE4Zjk0BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVRNUXdBODEzK1pQbHY2aldsdGV5eDc4Vnh4eDF3MkwwencyMCtCWWw5eDg9BjsARg%3D%3D--fd031446d81d5f39d67509004325662d8f1c63e9;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTM2OWQ5MDU3OWU1NDViYzQwMzM3YzVhNDEyZTRkYjA0BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTVxNzJkKzM1b1pYeEZDQ0hCeG9WTW9IbElFVERxRjhLL1R2ek5EWXFnS2s9BjsARg%3D%3D--ad310e687066c7dd6e0fdde92ce0f8033ac46b70;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 2312dbd4d99deea87ade9e7d4f987096
+      - cf0c971c-13eb-4d9f-8fd0-c81197cd85cd
       X-Runtime:
-      - '0.041703'
+      - '0.018206'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '4015'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Theme Garden</title>\n
-        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+      string: ! "<!DOCTYPE html>\n<html>\n  <head><script type=\"text/javascript\">var
+        NREUMQ=NREUMQ||[];NREUMQ.push([\"mark\",\"firstbyte\",new Date().getTime()]);</script>\n
+        \   <title>G5 Theme Garden</title>\n    <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
         type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"TMQwA813+ZPlv6jWlteyx78Vxxx1w2L0zw20+BYl9x8=\"
+        name=\"csrf-param\" />\n<meta content=\"5q72d+35oZXxFCCHBxoVMoHlIETDqF8K/TvzNDYqgKk=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -159,7 +164,10 @@ http_interactions:
         \       </p>\n\n\n      <h3>Styleheets</h3>\n        <p>\n          <a href=\"http://g5-theme-garden.herokuapp.com/static/components/big-picture/stylesheets/big-picture.scss\"
         class=\"u-g5-stylesheet u-url\">http://g5-theme-garden.herokuapp.com/static/components/big-picture/stylesheets/big-picture.scss</a>\n
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
-        \   </div>\n  </body>\n</html>\n"
+        \   </div>\n  <script type=\"text/javascript\">if (!NREUMQ.f) { NREUMQ.f=function()
+        {\nNREUMQ.push([\"load\",new Date().getTime()]);\nvar e=document.createElement(\"script\");\ne.type=\"text/javascript\";\ne.src=((\"http:\"===document.location.protocol)?\"http:\":\"https:\")
+        + \"//\" +\n  \"js-agent.newrelic.com/nr-100.js\";\ndocument.body.appendChild(e);\nif(NREUMQ.a)NREUMQ.a();\n};\nNREUMQ.a=window.onload;window.onload=NREUMQ.f;\n};\nNREUMQ.push([\"nrfj\",\"beacon-2.newrelic.com\",\"548d20f55f\",\"3485429\",\"cltfEURaW19cERxTDFxEXgtTW0NAFhBbXxQ=\",61,16,new
+        Date().getTime(),\"\",\"\",\"\",\"\",\"\"]);</script></body>\n</html>\n"
     http_version: 
-  recorded_at: Mon, 13 Jan 2014 22:39:34 GMT
+  recorded_at: Fri, 24 Jan 2014 05:39:57 GMT
 recorded_with: VCR 2.6.0

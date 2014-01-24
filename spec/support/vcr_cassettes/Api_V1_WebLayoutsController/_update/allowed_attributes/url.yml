@@ -21,36 +21,48 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Mon, 13 Jan 2014 22:40:33 GMT
+      - Fri, 24 Jan 2014 05:32:19 GMT
       Last-Modified:
-      - Wed, 11 Dec 2013 21:54:28 GMT
+      - Tue, 21 Jan 2014 22:59:43 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJiOWJlMDE2YTNiODllNGUxMzY3Y2MyNWU1OTFlYTFmBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTB5VFlDWklmYkQzMW5oRHJ0WW5qMHZqRGwxbm9VUTYrR3JpQjAyY0NuSWM9BjsARg%3D%3D--af69c8c8e3912ec831f60af09897efa0f750c0ce;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTc3NmMxMmI1ZGJiYWI4MzM5YjRkNGFlYWM2OTk4YTFmBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWRsZkpRdWkwYUgvSlpPYndSTU5pQnJoekErSW5nQUtaYW5WSmFaWXYvdTQ9BjsARg%3D%3D--c0837beb5c6abe3df0dc39094b1b2ecb83b0da59;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 80a6d81d92ff6394ef4c42bf86c44207
+      - 4baf7fa1-34f7-4af6-b2d0-c0b280bb8188
       X-Runtime:
-      - '0.015393'
+      - '0.015598'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '7050'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Layout Garden</title>\n
-        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"e691cb6d66\",\"applicationID\":\"3485404\",\"transactionName\":\"dV5cRxZZVA9QFE5SXFtBXV0BWEwQGhUJXkQ=\",\"queueTime\":37,\"applicationTime\":14,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+        type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
+        e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
+        c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
+        f=0;f<d.length;f++)e(d[f]);return e}({\"4O2Y62\":[function(a,b){function c(a,b){var
+        c=d[a];return c?c.apply(this,b):(e[a]||(e[a]=[]),void e[a].push(b))}var d={},e={};b.exports=c,c.queues=e,c.handlers=d},{}],handle:[function(a,b){b.exports=a(\"4O2Y62\")},{}],\"SvQ0B+\":[function(a,b){function
+        c(a){if(a===window)return 0;if(e.call(a,\"__nr\"))return a.__nr;try{return
+        Object.defineProperty(a,\"__nr\",{value:d,writable:!1,configurable:!1,enumerable:!1}),d}catch(b){return
+        a.__nr=d,d}finally{d+=1}}var d=1,e=Object.prototype.hasOwnProperty;b.exports=c},{}],id:[function(a,b){b.exports=a(\"SvQ0B+\")},{}],YLUGVp:[function(a,b){function
+        c(){var a=m.info=NREUM.info,b=m.proto=\"https\"===l.split(\":\")[0]||a.sslForHttp?\"https://\":\"http://\";if(a&&a.agent&&a.licenseKey&&a.applicationID){f(\"mark\",[\"onload\",e()]);var
+        c=h.createElement(\"script\");c.src=b+a.agent,h.body.appendChild(c)}}function
+        d(){\"complete\"===h.readyState&&f(\"mark\",[\"domContent\",e()])}function
+        e(){return(new Date).getTime()}var f=a(\"handle\"),g=window,h=g.document,i=\"readystatechange\",j=\"addEventListener\",k=\"attachEvent\",l=(\"\"+location).split(\"?\")[0],m=b.exports={offset:e(),origin:l};h[j]?(h[j](i,d,!1),g[j](\"load\",c,!1)):(h[k](\"on\"+i,d),g[k](\"onload\",c)),f(\"mark\",[\"firstbyte\",e()])},{handle:\"4O2Y62\"}],loader:[function(a,b){b.exports=a(\"YLUGVp\")},{}]},{},[\"YLUGVp\"]);</script>\n
+        \   <title>G5 Layout Garden</title>\n    <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
         type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"0yTYCZIfbD31nhDrtYnj0vjDl1noUQ6+GriB02cCnIc=\"
+        name=\"csrf-param\" />\n<meta content=\"dlfJQui0aH/JZObwRMNiBrhzA+IngAKZanVJaZYv/u4=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -95,11 +107,10 @@ http_interactions:
         role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;\n&lt;/div&gt;\n
         \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
         id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
-        \       &lt;div class=&quot;content&quot;&gt;\n          &lt;a href=&quot;http://getg5.com&quot;
-        class=&quot;dxm&quot;&gt;DXM by G5&lt;/a&gt;\n        &lt;/div&gt;\n      &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n
-        \   </div>\n  </body>\n</html>\n"
+        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
+        \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Mon, 13 Jan 2014 22:40:33 GMT
+  recorded_at: Fri, 24 Jan 2014 05:32:19 GMT
 - request:
     method: get
     uri: http://g5-layout-garden.herokuapp.com/components/main-first-sidebar-left
@@ -121,36 +132,48 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Mon, 13 Jan 2014 22:40:34 GMT
+      - Fri, 24 Jan 2014 05:32:20 GMT
       Last-Modified:
-      - Wed, 11 Dec 2013 21:54:28 GMT
+      - Tue, 21 Jan 2014 22:59:43 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWYwNzIyZWYyNWNiODI2OGE2NmJiZTQyYTUzNGM3YTc0BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTUrbmZDb3VxRy95aC84bEJwZTlkWkxscXZBY05zeGNZWEtPUjlGSHNCY289BjsARg%3D%3D--9310fd86e1a2324ce9b602b0d66de7c53a5f33fb;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTk3MjY0NjJmZDIxNGYxM2E3YTBhZjM3MzEzYzQzMzI2BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMU01MUx1elJ0TWRvbzczazdlQXZlVDE4a2p6dC81b2o4Q3JjTGV1VW5jN289BjsARg%3D%3D--6109e09b767c42dabf322459b2148ee77bf0d142;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 952a2eabd76178da342199aa970a2312
+      - 3511a3a5-88ec-42d7-997a-dd7255d078a0
       X-Runtime:
-      - '0.016260'
+      - '0.016284'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '7050'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Layout Garden</title>\n
-        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"e691cb6d66\",\"applicationID\":\"3485404\",\"transactionName\":\"dV5cRxZZVA9QFE5SXFtBXV0BWEwQGhUJXkQ=\",\"queueTime\":37,\"applicationTime\":14,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+        type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
+        e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
+        c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
+        f=0;f<d.length;f++)e(d[f]);return e}({\"4O2Y62\":[function(a,b){function c(a,b){var
+        c=d[a];return c?c.apply(this,b):(e[a]||(e[a]=[]),void e[a].push(b))}var d={},e={};b.exports=c,c.queues=e,c.handlers=d},{}],handle:[function(a,b){b.exports=a(\"4O2Y62\")},{}],\"SvQ0B+\":[function(a,b){function
+        c(a){if(a===window)return 0;if(e.call(a,\"__nr\"))return a.__nr;try{return
+        Object.defineProperty(a,\"__nr\",{value:d,writable:!1,configurable:!1,enumerable:!1}),d}catch(b){return
+        a.__nr=d,d}finally{d+=1}}var d=1,e=Object.prototype.hasOwnProperty;b.exports=c},{}],id:[function(a,b){b.exports=a(\"SvQ0B+\")},{}],YLUGVp:[function(a,b){function
+        c(){var a=m.info=NREUM.info,b=m.proto=\"https\"===l.split(\":\")[0]||a.sslForHttp?\"https://\":\"http://\";if(a&&a.agent&&a.licenseKey&&a.applicationID){f(\"mark\",[\"onload\",e()]);var
+        c=h.createElement(\"script\");c.src=b+a.agent,h.body.appendChild(c)}}function
+        d(){\"complete\"===h.readyState&&f(\"mark\",[\"domContent\",e()])}function
+        e(){return(new Date).getTime()}var f=a(\"handle\"),g=window,h=g.document,i=\"readystatechange\",j=\"addEventListener\",k=\"attachEvent\",l=(\"\"+location).split(\"?\")[0],m=b.exports={offset:e(),origin:l};h[j]?(h[j](i,d,!1),g[j](\"load\",c,!1)):(h[k](\"on\"+i,d),g[k](\"onload\",c)),f(\"mark\",[\"firstbyte\",e()])},{handle:\"4O2Y62\"}],loader:[function(a,b){b.exports=a(\"YLUGVp\")},{}]},{},[\"YLUGVp\"]);</script>\n
+        \   <title>G5 Layout Garden</title>\n    <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
         type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"5+nfCouqG/yh/8lBpe9dZLlqvAcNsxcYXKOR9FHsBco=\"
+        name=\"csrf-param\" />\n<meta content=\"M51LuzRtMdoo73k7eAveT18kjzt/5oj8CrcLeuUnc7o=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -195,9 +218,8 @@ http_interactions:
         role=&quot;complementary&quot; id=&quot;drop-target-aside&quot;&gt;&lt;/aside&gt;\n&lt;/div&gt;\n
         \     &lt;/div&gt;\n\n      &lt;footer role=&quot;contentinfo&quot;&gt;&lt;div
         id=&quot;drop-target-footer&quot; class=&quot;content&quot;&gt;&lt;/div&gt;\n
-        \       &lt;div class=&quot;content&quot;&gt;\n          &lt;a href=&quot;http://getg5.com&quot;
-        class=&quot;dxm&quot;&gt;DXM by G5&lt;/a&gt;\n        &lt;/div&gt;\n      &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n
-        \   </div>\n  </body>\n</html>\n"
+        \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
+        \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Mon, 13 Jan 2014 22:40:34 GMT
+  recorded_at: Fri, 24 Jan 2014 05:32:20 GMT
 recorded_with: VCR 2.6.0
