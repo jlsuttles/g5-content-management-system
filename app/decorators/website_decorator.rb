@@ -11,6 +11,10 @@ class WebsiteDecorator < Draper::Decorator
     model.urn[0..29] if model.urn
   end
 
+  def domain
+    location.domain if location
+  end
+
   def heroku_repo
     "git@heroku.com:#{heroku_app_name}.git"
   end
