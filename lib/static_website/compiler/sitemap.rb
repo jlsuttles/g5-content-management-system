@@ -26,7 +26,7 @@ module StaticWebsite
 
         # Web Home Template
         if @web_home_template && @web_home_template.enabled
-          loc        = "\n\t\t<loc>#{File.join(@web_home_template.location_domain)}</loc>"
+          loc        = "\n\t\t<loc>#{@web_home_template.location_domain}</loc>"
           lastmod    = "\n\t\t<lastmod>#{@web_home_template.last_mod}</lastmod>"
           changefreq = "\n\t\t<changefreq>weekly</changefreq>"
           priority   = "\n\t\t<priority>0.9</priority>"
