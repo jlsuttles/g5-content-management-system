@@ -48,7 +48,7 @@ App.WidgetView = Ember.View.extend
       # Hide the configuration form if the request is successful
       success: =>
         $('#modal').modal('hide')
-        url = $('iframe').prop('src')
+        url = $('.preview iframe').prop('src')
         $('iframe').prop('src', url)
       error: (xhr) =>
         # This is/was needed because of a bug in jQuery, it's actually successful
