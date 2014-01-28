@@ -13,8 +13,4 @@ class WebHomeTemplateSerializer < WebTemplateSerializer
   def preview_url
     File.join(root_url, object.preview_url)
   end
-
-  def slug
-    object.name.parameterize
-  end
 end
