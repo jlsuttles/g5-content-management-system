@@ -393,48 +393,36 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:38 GMT
+      - Tue, 28 Jan 2014 01:23:29 GMT
       Last-Modified:
       - Tue, 21 Jan 2014 22:59:43 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWQyOWUxMzgwNzgxZmIzNGJlMmNjMjBiZGJiYmUzNGZlBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXV2NzFPQlpyZURuNXlGU2RUU0lkR0VPa0dLYTNnOXlVanpuTzBEd0s2SnM9BjsARg%3D%3D--9c95f366994ed073e0f77269d8836ed84243d6eb;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTRkNTcxNDdiZmZlOGFjNTA1NmVkNmI5OTQ4YzIxYmM5BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMS9KUko5TEFsajhiZkNXRG5WOGczaFhNZDRPelBkb0RmMXYyaUtFRE1oVjQ9BjsARg%3D%3D--730ac4f778e8c24a5b205952d03873ad2b437e9a;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 70a9c4c7-b3ce-4419-bf7a-f88fb0c5ae55
+      - 638452d1-0897-4411-b23b-efeaedcbe03e
       X-Runtime:
-      - '0.017363'
+      - '0.147758'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Content-Length:
-      - '7050'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"e691cb6d66\",\"applicationID\":\"3485404\",\"transactionName\":\"dV5cRxZZVA9QFE5SXFtBXV0BWEwQGhUJXkQ=\",\"queueTime\":44,\"applicationTime\":15,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
-        type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
-        e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
-        c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
-        f=0;f<d.length;f++)e(d[f]);return e}({\"4O2Y62\":[function(a,b){function c(a,b){var
-        c=d[a];return c?c.apply(this,b):(e[a]||(e[a]=[]),void e[a].push(b))}var d={},e={};b.exports=c,c.queues=e,c.handlers=d},{}],handle:[function(a,b){b.exports=a(\"4O2Y62\")},{}],\"SvQ0B+\":[function(a,b){function
-        c(a){if(a===window)return 0;if(e.call(a,\"__nr\"))return a.__nr;try{return
-        Object.defineProperty(a,\"__nr\",{value:d,writable:!1,configurable:!1,enumerable:!1}),d}catch(b){return
-        a.__nr=d,d}finally{d+=1}}var d=1,e=Object.prototype.hasOwnProperty;b.exports=c},{}],id:[function(a,b){b.exports=a(\"SvQ0B+\")},{}],YLUGVp:[function(a,b){function
-        c(){var a=m.info=NREUM.info,b=m.proto=\"https\"===l.split(\":\")[0]||a.sslForHttp?\"https://\":\"http://\";if(a&&a.agent&&a.licenseKey&&a.applicationID){f(\"mark\",[\"onload\",e()]);var
-        c=h.createElement(\"script\");c.src=b+a.agent,h.body.appendChild(c)}}function
-        d(){\"complete\"===h.readyState&&f(\"mark\",[\"domContent\",e()])}function
-        e(){return(new Date).getTime()}var f=a(\"handle\"),g=window,h=g.document,i=\"readystatechange\",j=\"addEventListener\",k=\"attachEvent\",l=(\"\"+location).split(\"?\")[0],m=b.exports={offset:e(),origin:l};h[j]?(h[j](i,d,!1),g[j](\"load\",c,!1)):(h[k](\"on\"+i,d),g[k](\"onload\",c)),f(\"mark\",[\"firstbyte\",e()])},{handle:\"4O2Y62\"}],loader:[function(a,b){b.exports=a(\"YLUGVp\")},{}]},{},[\"YLUGVp\"]);</script>\n
-        \   <title>G5 Layout Garden</title>\n    <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n    <title>G5 Layout Garden</title>\n
+        \   <link href=\"http://yandex.st/highlightjs/7.3/styles/default.min.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"http://yandex.st/highlightjs/7.3/highlight.min.js\"
         type=\"text/javascript\"></script>\n    <script type=\"text/javascript\">\n//<![CDATA[\nhljs.initHighlightingOnLoad();\n//]]>\n</script>\n
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"uv71OBZreDn5yFSdTSIdGEOkGKa3g9yUjznO0DwK6Js=\"
+        name=\"csrf-param\" />\n<meta content=\"/JRJ9LAlj8bfCWDnV8g3hXMd4OzPdoDf1v2iKEDMhV4=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -482,7 +470,7 @@ http_interactions:
         \     &lt;/footer&gt;\n&lt;/div&gt;</code></pre>\n</article>\n\n\n\n    </div>\n
         \ </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:38 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:28 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/components/classic
@@ -504,24 +492,24 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:39 GMT
+      - Tue, 28 Jan 2014 01:23:29 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 21:42:25 GMT
+      - Tue, 28 Jan 2014 01:05:35 GMT
       Server:
       - thin 1.5.0 codename Knife
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWU1NTU4MzhlY2FmZmFmZTQ2MDU5N2VhNjY0MGMwMDBiBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUVLMXNramQ1U25UaXB2Lys5M0cvdjluSExJSWtyQlRXWnhZWGxMMEJtK0E9BjsARg%3D%3D--464d6c9de064704d0d4ea3e77a856a377c823b93;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTljODhjMzM4MjEwNGUwN2E5OTJkZDUxMWRjNDE1MDNhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMW9TTmpZZEFFNmM4VGprNnRvMHh2dUVYenkyNGJabTZzRnpQZzZOalplZms9BjsARg%3D%3D--40016ee8fea6759cbf25ce2f2b8d56ac5459b98f;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - c44b28bc-f54b-4e73-9069-09b360f1f2b3
+      - 9ba9f4ca-2ae5-4309-b0df-63810ca54f41
       X-Runtime:
-      - '0.019684'
+      - '0.017703'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '3957'
+      - '3958'
       Connection:
       - keep-alive
     body:
@@ -534,7 +522,7 @@ http_interactions:
         \   <link href=\"/assets/application-be2d25472cea7722f19bc4bf751b4c89.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-c4200ed6acb86de22efe2d5e2e7374eb.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"EK1skjd5SnTipv/+93G/v9nHLIIkrBTWZxYXlL0Bm+A=\"
+        name=\"csrf-param\" />\n<meta content=\"oSNjYdAE6c8Tjk6to0xvuEXzy24bZm6sFzPg6NjZefk=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n  </head>\n  <body>\n
         \   <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n        <div
         class=\"navbar-inner\">\n          <div class=\"container\">\n\n            <!--
@@ -564,10 +552,10 @@ http_interactions:
         \       </p>\n  </header>\n  <hr>\n\n  <pre><code class=\"e-content\"></code></pre>\n</article>\n\n\n\n
         \   </div>\n  <script type=\"text/javascript\">if (!NREUMQ.f) { NREUMQ.f=function()
         {\nNREUMQ.push([\"load\",new Date().getTime()]);\nvar e=document.createElement(\"script\");\ne.type=\"text/javascript\";\ne.src=((\"http:\"===document.location.protocol)?\"http:\":\"https:\")
-        + \"//\" +\n  \"js-agent.newrelic.com/nr-100.js\";\ndocument.body.appendChild(e);\nif(NREUMQ.a)NREUMQ.a();\n};\nNREUMQ.a=window.onload;window.onload=NREUMQ.f;\n};\nNREUMQ.push([\"nrfj\",\"beacon-2.newrelic.com\",\"548d20f55f\",\"3485429\",\"cltfEURaW19cERxTDFxEXgtTW0NAFhBbXxQ=\",6,18,new
+        + \"//\" +\n  \"js-agent.newrelic.com/nr-100.js\";\ndocument.body.appendChild(e);\nif(NREUMQ.a)NREUMQ.a();\n};\nNREUMQ.a=window.onload;window.onload=NREUMQ.f;\n};\nNREUMQ.push([\"nrfj\",\"beacon-2.newrelic.com\",\"548d20f55f\",\"3485429\",\"cltfEURaW19cERxTDFxEXgtTW0NAFhBbXxQ=\",27,16,new
         Date().getTime(),\"\",\"\",\"\",\"\",\"\"]);</script></body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:39 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:29 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/meta
@@ -589,20 +577,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:39 GMT
+      - Tue, 28 Jan 2014 01:23:29 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWIzMWJkZjNkZjZjMzdmMzIxMTY5NjE0ZDRhN2Q5ODVjBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWlxSzRiZFczNUwwenJxNWV3VG9aMEltYkhxUERydENVVFJXQXpWUlhBcjA9BjsARg%3D%3D--e36e21d896736434a22153281d96896ec2643fb5;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTRmMTU0NzI5NzIwZGI2Y2MyNmMzMTBhZjFlYzc0MzViBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVl4c0ZrcGl3QTUrR2ZLMmF5Y3dvdWJ0QjNoai8vNnBwSnhseG9oS2FtRGM9BjsARg%3D%3D--18f0242f3ae99dfd9a5ef5c3cb6451852bade443;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 1898419f-b6c2-4475-863f-5294d074e837
+      - 559b1536-c394-410c-a844-1d9bef7a57c9
       X-Runtime:
-      - '0.039902'
+      - '0.054892'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -611,7 +599,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":7,\"applicationTime\":38,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":8,\"applicationTime\":52,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -630,7 +618,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"iqK4bdW35L0zrq5ewToZ0ImbHqPDrtCUTRWAzVRXAr0=\"
+        name=\"csrf-param\" />\n<meta content=\"YxsFkpiwA5+GfK2aycwoubtB3hj//6ppJxlxohKamDc=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -729,7 +717,7 @@ http_interactions:
         }}.js&quot;&gt;&lt;/script&gt;\n{% endif %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:39 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:29 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/meta/show.html
@@ -751,9 +739,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:40 GMT
+      - Tue, 28 Jan 2014 01:23:30 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -775,7 +763,7 @@ http_interactions:
         != \"\" %}\n  <script type=\"text/javascript\" src=\"//cdn.optimizely.com/js/{{
         widget.optimizely_id.best_value }}.js\"></script>\n{% endif %}\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:40 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:29 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/meta/edit.html
@@ -797,9 +785,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:40 GMT
+      - Tue, 28 Jan 2014 01:23:30 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -835,7 +823,7 @@ http_interactions:
         widget.optimizely_id.best_value }}\"\n      placeholder=\"example: 9864173\"\n
         \   />\n  </div>\n\n  <input type=\"submit\" value=\"Save\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:40 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:29 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/logo
@@ -857,29 +845,29 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:40 GMT
+      - Tue, 28 Jan 2014 01:23:30 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWYzNzFhZGQ2MTljYjJlNjUxNzA3YTYwNmUxYmZjNDViBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXJYYUFqdkw1T0ZycFYvSXM1OWNnZTE1VzdFVkkycmJwUk9jaU0rZUpnbVU9BjsARg%3D%3D--6391365af08709c690ed060726d2eecbd83a6125;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWI2ZjlhY2RhYTkwOTNhZjg3NjQ0ZTE4YWFhM2U0YjRlBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWlmWW9oQ2tRUHA4TUdJcE1FT0xzY0NqdE1pdWRibXRRMnRBNUJVVHU3ZE09BjsARg%3D%3D--f40125ea23fb276a4685df7efafc12f7f5ef07fd;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - ba0c1502-83aa-453a-a211-f73b6d34554f
+      - 8e63098c-7172-4624-bf9f-51b75f608e18
       X-Runtime:
-      - '0.039789'
+      - '0.110010'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '9361'
+      - '9362'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":9,\"applicationTime\":38,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":8,\"applicationTime\":107,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -898,7 +886,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"rXaAjvL5OFrpV/Is59cge15W7EVI2rbpROciM+eJgmU=\"
+        name=\"csrf-param\" />\n<meta content=\"ifYohCkQPp8MGIpMEOLscCjtMiudbmtQ2tA5BUTu7dM=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -980,7 +968,7 @@ http_interactions:
         itemprop=&quot;logo&quot; /&gt;\n  &lt;/a&gt;\n&lt;/h1&gt;\n{% endif %}\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:40 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:30 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/logo/show.html
@@ -1002,9 +990,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:41 GMT
+      - Tue, 28 Jan 2014 01:23:30 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1023,7 +1011,7 @@ http_interactions:
         src=\"{{ widget.logo_url.best_value | url_encode }}\" alt=\"{{ widget.business_name.best_value
         }}\" itemprop=\"logo\" />\n  </a>\n</h1>\n{% endif %}\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:41 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:30 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/logo/edit.html
@@ -1045,9 +1033,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:41 GMT
+      - Tue, 28 Jan 2014 01:23:31 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1079,7 +1067,7 @@ http_interactions:
         }}\"\n      value=\"{{ widget.logo_url.best_value | url_encode }}\"\n    />\n
         \ </div>\n  <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:41 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:30 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/phone
@@ -1101,20 +1089,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:41 GMT
+      - Tue, 28 Jan 2014 01:23:32 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWE2NWM5MjUzNzI4ZWU1NTcyZTA1ZWJlMmY3YTRmMTVjBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVNreUkzQzh5ZTBzSDl1Q3UyMnBKSnhqRzZEaU9CSi92NWhuVm5NS3NsSmc9BjsARg%3D%3D--187a05094644db7f1b8b292555e99f0ef915d8fa;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyMzc5ZWQxMjQxY2NlZDNiNDlhOGI5M2Q0MzVjYmNmBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUlPeTU1UG1DSEc0Ym5JcjVGZlpwdUwyeGJmN1JTNDlDUTR6OVR1UmNZU3M9BjsARg%3D%3D--8bc3b7e7344b4993bc79ae780dd3fc392cf4bbd4;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 7be50d38-5d35-4761-b366-09ad935a26f2
+      - e61325bc-e30b-4ed9-ae38-88b802cd4b62
       X-Runtime:
-      - '0.111628'
+      - '0.642655'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -1123,7 +1111,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":26,\"applicationTime\":100,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":17,\"applicationTime\":604,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -1142,7 +1130,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"SkyI3C8ye0sH9uCu22pJJxjG6DiOBJ/v5hnVnMKslJg=\"
+        name=\"csrf-param\" />\n<meta content=\"IOy55PmCHG4bnIr5FfZpuL2xbf7RS49CQ4z9TuRcYSs=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -1243,7 +1231,7 @@ http_interactions:
         }}&lt;/span&gt;\n  &lt;/a&gt;\n  {% endif %}\n&lt;/div&gt;\n&lt;!-- END SHOW
         MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:42 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:32 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/phone/show.html
@@ -1265,9 +1253,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:42 GMT
+      - Tue, 28 Jan 2014 01:23:32 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1288,7 +1276,7 @@ http_interactions:
         class=\"p-tel tel\" itemprop=\"telephone\">{{ widget.phone_number.best_value
         }}</span>\n  </a>\n  {% endif %}\n</div>"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:42 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:32 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/phone/edit.html
@@ -1310,9 +1298,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:42 GMT
+      - Tue, 28 Jan 2014 01:23:32 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1349,7 +1337,7 @@ http_interactions:
         }}\" >\n      Display Phone Number\n    </label>\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:42 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:32 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/button
@@ -1371,29 +1359,29 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:43 GMT
+      - Tue, 28 Jan 2014 01:23:33 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTg1ZTc0OGMwMzAyNDA1YWNkZWYzNzBhZDRjZTRlYjJjBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVQ1MDhDVnd2RnpBMEFvY2JKM0toWFlhMExKTHlGdXl0ck1DYWNLOUNwU0U9BjsARg%3D%3D--80053b2969bedb5bd1335a37a3f00e982cce48b2;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWM2MjBlMDhiOWY0NjgwNmViOGQ5YTBjYjIxOTBmYjg1BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTRuN1lQWklMT2lrd1dwejdhcVJ6cUZSSFc2dTJBRXhscGFXMWpSKzJINU09BjsARg%3D%3D--775bcdfbf7fc82e42ad573b503f4349a1272a4f9;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - b42f77e8-ec43-4b12-8080-fa53996930e0
+      - 0e43dcf8-d0f4-4cdd-b554-98f8ce3e23dd
       X-Runtime:
-      - '0.124763'
+      - '0.051953'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '12504'
+      - '12503'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":6,\"applicationTime\":120,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":0,\"applicationTime\":50,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -1412,7 +1400,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"T508CVwvFzA0AocbJ3KhXYa0LJLyFuytrMCacK9CpSE=\"
+        name=\"csrf-param\" />\n<meta content=\"4n7YPZILOikwWpz7aqRzqFRHW6u2AExlpaW1jR+2H5M=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -1533,7 +1521,7 @@ http_interactions:
         }}&lt;/p&gt;\n  {% endif %}\n&lt;/div&gt;\n{% endif %}\n&lt;!-- END SHOW MARKUP
         --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:43 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:33 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/button/show.html
@@ -1555,9 +1543,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:43 GMT
+      - Tue, 28 Jan 2014 01:23:33 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1581,7 +1569,7 @@ http_interactions:
         class=\"button-description\">{{ widget.button_description.best_value }}</p>\n
         \ {% endif %}\n</div>\n{% endif %}"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:43 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:33 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/button/edit.html
@@ -1603,9 +1591,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:43 GMT
+      - Tue, 28 Jan 2014 01:23:33 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1651,7 +1639,7 @@ http_interactions:
         >\n        Top\n      </label>\n    </fieldset>\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:43 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:33 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/navigation
@@ -1673,29 +1661,29 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:43 GMT
+      - Tue, 28 Jan 2014 01:23:34 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQxMmM1YTMyMzBiNDg4ZTNmYjgyMWIxYmZhZmE2YjA3BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWZxN3ZGOEI5eVgveTUvZzBFMDBIZ3dOZ3BneUVvM2xzZUcyQ1k0R1oxbVU9BjsARg%3D%3D--24226b615e586bfeeaef787293355e9b6dfc6c20;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTZmOGIzODUzNjRlMjRkNmZjNGFiOWUwMTlkMDZjNjNhBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVVCc3FoMWo3cytOdVVzcVJVWU83YmlhdEJhRzR5eisrRFNBdlMxYjEyWFk9BjsARg%3D%3D--532a0ad840ff4f7f56a68488d8c529c9953bbd19;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - b0db985b-f99c-4207-84c0-6729b06178d9
+      - 227ca676-f67b-4f28-a3cd-349c6875f2fe
       X-Runtime:
-      - '0.036058'
+      - '0.044316'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '11184'
+      - '11185'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":5,\"applicationTime\":34,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":10,\"applicationTime\":42,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -1714,7 +1702,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"fq7vF8B9yX/y5/g0E00HgwNgpgyEo3lseG2CY4GZ1mU=\"
+        name=\"csrf-param\" />\n<meta content=\"UBsqh1j7s+NuUsqRUYO7biatBaG4yz++DSAvS1b12XY=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -1818,7 +1806,7 @@ http_interactions:
         \ &lt;/nav&gt;\n{% endif %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:43 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:33 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/navigation/show.html
@@ -1840,9 +1828,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:44 GMT
+      - Tue, 28 Jan 2014 01:23:34 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1863,7 +1851,7 @@ http_interactions:
         | url_encode }}\">{{ web_page[1].name }}</a></li>\n        {% endif %}\n      {%
         endfor %}\n    </ul>\n  </nav>\n{% endif %}\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:44 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:34 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/navigation/edit.html
@@ -1885,9 +1873,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:44 GMT
+      - Tue, 28 Jan 2014 01:23:34 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -1933,7 +1921,7 @@ http_interactions:
         \       </li>\n        {% endfor %}\n      </ul>\n    </div>\n  </fieldset>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:44 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:35 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/calls-to-action
@@ -1953,15 +1941,15 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:44 GMT
+      - Tue, 28 Jan 2014 01:23:36 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - eb4a5361-f2eb-450b-9e09-2ff2945e9290
+      - 5d9369c6-1233-4193-93bc-ed0d9bb770fa
       X-Runtime:
-      - '0.014702'
+      - '0.015827'
       Content-Length:
       - '643'
       Connection:
@@ -1978,7 +1966,7 @@ http_interactions:
         This file lives in public/500.html -->\n  <div class=\"dialog\">\n    <h1>We're
         sorry, but something went wrong.</h1>\n  </div>\n</body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:44 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:35 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/social-links
@@ -2000,29 +1988,29 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:45 GMT
+      - Tue, 28 Jan 2014 01:23:36 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTI4YmZhZjBjODUwNjcxNWU5OWMzMmU2YjZkOTNlOTc0BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWhYdEgwSmwveUxZL0NnVFNTd3FvV242MC9mcFBFa2lsZGtYYVQ3NFQwMms9BjsARg%3D%3D--6f60c175303e322c1554265856a5167dd27ec003;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWExZDBhYTI5MzU4ZDYyMjMzYzA3MWIyNzI1MDlhZjQ5BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUlSRmN3MHk0RTNrWkw4a25GU1VWK1ZEcUhGS3ArR0pXMzArQ1gvek5oOVU9BjsARg%3D%3D--c9e8a5784c26be22e1c3573b7949d2296deebf3e;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 56d509ee-d2a5-4a3c-a0b2-7e1025f4ebc1
+      - 85dfc992-a790-4e8a-9203-5880c5d86f5c
       X-Runtime:
-      - '0.067271'
+      - '0.126194'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '17930'
+      - '17931'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":17,\"applicationTime\":65,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":20,\"applicationTime\":124,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -2041,7 +2029,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"hXtH0Jl/yLY/CgTSSwqoWn60/fpPEkildkXaT74T02k=\"
+        name=\"csrf-param\" />\n<meta content=\"IRFcw0y4E3kZL8knFSUV+VDqHFKp+GJW30+CX/zNh9U=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -2230,7 +2218,7 @@ http_interactions:
         rel=&quot;me&quot;&gt;YouTube&lt;/a&gt;\n  {% endif %}\n\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:45 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:36 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/show.html
@@ -2252,9 +2240,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:45 GMT
+      - Tue, 28 Jan 2014 01:23:36 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -2294,7 +2282,7 @@ http_interactions:
         }}\" class=\"youtube\" title=\"YouTube\" rel=\"me\">YouTube</a>\n  {% endif
         %}\n\n</div>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:45 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:36 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/edit.html
@@ -2316,9 +2304,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:45 GMT
+      - Tue, 28 Jan 2014 01:23:37 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -2378,7 +2366,7 @@ http_interactions:
         widget.youtube_username.best_value }}\"\n      />\n    </div>\n\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:45 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:36 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/navigation
@@ -2400,20 +2388,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:46 GMT
+      - Tue, 28 Jan 2014 01:23:37 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQyOGY4YTk0MGRmMThmMGExOGVlYWRkNDkyYmYwZjBkBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWVVck5OcG1ydS81UTBKdnFMb01zbmVQMyt5T2ExajVoSzRCVHJ5VEtwaTA9BjsARg%3D%3D--ffef98880d66842811a42b73aea889b896129c0d;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTk4NzUwOGI2MDk2MmJjNTRkZmI0ZmI5YWIxZTM4NDc4BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMW45OEVqWWhVa3RFMlQyK1pjeUdRRXR0YVY0OXVUQnlwbmhMaTFsWVp2UmM9BjsARg%3D%3D--9bfe20a43b2e37066bc5ab63d8e29c96704f5772;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - e10e96fb-9129-43a4-99ad-b61431dcbf82
+      - 6dc73c41-ce74-4f5e-a0a7-0278143af529
       X-Runtime:
-      - '0.034932'
+      - '0.049919'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -2422,7 +2410,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":4,\"applicationTime\":33,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":1,\"applicationTime\":47,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -2441,7 +2429,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"eUrNNpmru/5Q0JvqLoMsneP3+yOa1j5hK4BTryTKpi0=\"
+        name=\"csrf-param\" />\n<meta content=\"n98EjYhUktE2T2+ZcyGQEttaV49uTBypnhLi1lYZvRc=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -2545,7 +2533,7 @@ http_interactions:
         \ &lt;/nav&gt;\n{% endif %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:46 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:37 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/navigation/show.html
@@ -2567,9 +2555,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:46 GMT
+      - Tue, 28 Jan 2014 01:23:37 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -2590,7 +2578,7 @@ http_interactions:
         | url_encode }}\">{{ web_page[1].name }}</a></li>\n        {% endif %}\n      {%
         endfor %}\n    </ul>\n  </nav>\n{% endif %}\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:46 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:37 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/navigation/edit.html
@@ -2612,9 +2600,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:46 GMT
+      - Tue, 28 Jan 2014 01:23:38 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -2660,7 +2648,7 @@ http_interactions:
         \       </li>\n        {% endfor %}\n      </ul>\n    </div>\n  </fieldset>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:46 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:37 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/contact-info
@@ -2682,20 +2670,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:47 GMT
+      - Tue, 28 Jan 2014 01:23:38 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTNjYzFlYzc4MmNiN2EzYmM2ZDI3YzFhZTNkMjM3YzRkBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMW8wTmRpWVhJTzVnV1RTVi84UlpsWkgzY1o0MFMvVGFXbzhaQWl6empvSlk9BjsARg%3D%3D--28e0247e13d614b77dc67f2375ed6b53e3ab4416;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTA2YWRjODc0NWYwZjk2OTcwMzBiYzA0ZTgwMGZhNDhkBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXdaMFpqM2tZTXYvZFFSMzhUZVp3aHNaUk5TclRpaS90Q285WkR2N1FNcUk9BjsARg%3D%3D--e34d768cac9f35fb40810f6d9ade9acd54286648;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - f109e3d7-a5cd-4544-a633-04ad0d330649
+      - 26a7bdc5-8cc0-424a-aeea-42883a58bdc7
       X-Runtime:
-      - '0.152123'
+      - '0.070411'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -2704,7 +2692,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":7,\"applicationTime\":150,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":12,\"applicationTime\":68,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -2723,7 +2711,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"o0NdiYXIO5gWTSV/8RZlZH3cZ40S/TaWo8ZAizzjoJY=\"
+        name=\"csrf-param\" />\n<meta content=\"wZ0Zj3kYMv/dQR38TeZwhsZRNSrTii/tCo9ZDv7QMqI=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -3001,7 +2989,7 @@ http_interactions:
         \ &lt;/p&gt;\n  {% endif %}\n&lt;/div&gt;\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:47 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:38 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/show.html
@@ -3023,9 +3011,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:47 GMT
+      - Tue, 28 Jan 2014 01:23:38 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3064,7 +3052,7 @@ http_interactions:
         widget.location_email.best_value | url_encode}}\">Email Us</a>\n  </p>\n  {%
         endif %}\n</div>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:47 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:38 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/edit.html
@@ -3086,9 +3074,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:47 GMT
+      - Tue, 28 Jan 2014 01:23:39 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3213,7 +3201,7 @@ http_interactions:
         }}\"\n      value=\"{{ widget.location_email.best_value }}\"\n    />\n  </div>\n\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:47 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:38 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/hours
@@ -3235,20 +3223,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:48 GMT
+      - Tue, 28 Jan 2014 01:23:39 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTIwZmNmYTk3NjFmODBiZTQ1MWVjMWUzYjRhNmJlZDcxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMU9YV1hpdE83czFOeS9WQzlsck9UU2VVVTlCSUxNa3VWbnRPTXRJdGt5Rzg9BjsARg%3D%3D--591fadd4b0883e86f524752ea7fe4e6f374c99d8;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTM4ZTI5ZTQzODM1YjcwNmFmNDYyNDQwODc3Mjk3NGM0BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUdtenQ4bjE5WU9MN29KcXV0NEZTRmRDdWZRL1hMam92L2srQ2loL21LUlk9BjsARg%3D%3D--693161f2444f19a578b1ada06c4e52f3c5bcebeb;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 48d80326-4076-4b53-98fc-723c81c8b110
+      - e34aac62-3445-4262-8a40-262fb5c5a5ee
       X-Runtime:
-      - '0.027536'
+      - '0.051320'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -3257,7 +3245,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":4,\"applicationTime\":26,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":2,\"applicationTime\":47,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -3276,7 +3264,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"OXWXitO7s1Ny/VC9lrOTSeUU9BILMkuVntOMtItkyG8=\"
+        name=\"csrf-param\" />\n<meta content=\"Gmzt8n19YOL7oJqut4FSFdCufQ/XLjov/k+Cih/mKRY=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -3342,7 +3330,7 @@ http_interactions:
         }}\n&lt;/div&gt;\n{% endif %}\n\n&lt;!-- END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n
         \   </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:48 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:39 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/hours/show.html
@@ -3364,9 +3352,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:48 GMT
+      - Tue, 28 Jan 2014 01:23:39 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3382,7 +3370,7 @@ http_interactions:
       string: ! "{% if widget.display_hours.best_value == \"true\" %}\n<div class=\"hours
         widget\">\n  {{ widget.hours.best_value }}\n</div>\n{% endif %}\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:48 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:39 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/hours/edit.html
@@ -3404,9 +3392,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:48 GMT
+      - Tue, 28 Jan 2014 01:23:39 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3433,7 +3421,7 @@ http_interactions:
         }}</textarea>\n  </div>\n\n  <input type=\"submit\" value=\"Save\" class=\"btn\"
         />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:48 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:39 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/photo
@@ -3455,29 +3443,29 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:48 GMT
+      - Tue, 28 Jan 2014 01:23:40 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTE1NzdkMGExYzhjMTVhYWYzOWM1YTk3MmUyZDk2MGQ5BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTlGVjVxZVBTTHlpdnBnTEUyNllBYVhkOUpWeGJDVFBoYmZFU2MyNEtSZ1k9BjsARg%3D%3D--3aa1146cbbe68d4c7bf61c745d9807b87c4304c4;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTVhMmQwYWY2NDU1NjVmODNiMzVkNzMyZGJhZjM5Y2UwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMU5nK3g0Nmt2VEc5OUZVMXVRRFZGMU8vSGJVZ2VmaVR4ZUx2ZDlLcXVaTVU9BjsARg%3D%3D--8fef0ed997d217f2c8c01af648802721427d77f2;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 6fc5d478-3829-4e90-b81c-bcece4f54c2d
+      - 5d0bb70f-5b20-40a2-b85f-cea0328c9c28
       X-Runtime:
-      - '0.042443'
+      - '0.048746'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '12916'
+      - '12915'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":21,\"applicationTime\":40,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":6,\"applicationTime\":46,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -3496,7 +3484,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"9FV5qePSLyivpgLE26YAaXd9JVxbCTPhbfESc24KRgY=\"
+        name=\"csrf-param\" />\n<meta content=\"Ng+x46kvTG99FU1uQDVF1O/HbUgefiTxeLvd9KquZMU=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -3621,7 +3609,7 @@ http_interactions:
         widget.photo_caption.best_value }}&lt;/figcaption&gt;\n  {% endif %}\n&lt;/figure&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:49 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:40 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/photo/show.html
@@ -3643,9 +3631,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:49 GMT
+      - Tue, 28 Jan 2014 01:23:40 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3668,7 +3656,7 @@ http_interactions:
         class=\"p-name\" itemprop=\"description\">{{ widget.photo_caption.best_value
         }}</figcaption>\n  {% endif %}\n</figure>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:49 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:40 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/photo/edit.html
@@ -3690,9 +3678,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:49 GMT
+      - Tue, 28 Jan 2014 01:23:40 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3742,7 +3730,7 @@ http_interactions:
         >\n        Block\n      </label>\n    </fieldset>\n  </div>\n\n  <input type=\"submit\"
         value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:49 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:40 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/html
@@ -3764,20 +3752,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:49 GMT
+      - Tue, 28 Jan 2014 01:23:41 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTgwZWQ0MGM4Y2M1MjJmMTc0YTc3N2U1Y2RiOWVlMWE1BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWJjVzlhVFY4Nkh3T1kyY3ZqTFN1Rm0rZ1RiNlVvQ29NNkMxL2lXVWpZZzQ9BjsARg%3D%3D--bc07f6ce54e37fe41b111af3826347e455a042a8;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcyNGVhYjIzMmRlYWIyYTkyYTJiZjBjYzg5YTEyN2I3BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUh3bWxQajYwN1FLVWJHb1FpQ3htTUFRUTJQMEJGeHZXblZNMGJxdnRxcVE9BjsARg%3D%3D--7929e547c2cd6063ec3b5b9ad18b82b72652635b;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - f6f908db-80ce-41e5-9e77-1b4278f5e50a
+      - 3cced755-0a6a-4450-86b0-5a92a1c20ca4
       X-Runtime:
-      - '0.022891'
+      - '0.030821'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -3786,7 +3774,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":38,\"applicationTime\":21,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":11,\"applicationTime\":28,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -3805,7 +3793,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"bcW9aTV86HwOY2cvjLSuFm+gTb6UoCoM6C1/iWUjYg4=\"
+        name=\"csrf-param\" />\n<meta content=\"HwmlPj607QKUbGoQiCxmMAQQ2P0BFxvWnVM0bqvtqqQ=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -3856,7 +3844,7 @@ http_interactions:
         widget&quot;&gt;\n  {{ widget.text.best_value }}\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:50 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:40 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/show.html
@@ -3878,9 +3866,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:50 GMT
+      - Tue, 28 Jan 2014 01:23:41 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3895,7 +3883,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! "<div class=\"html widget\">\n  {{ widget.text.best_value }}\n</div>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:50 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:41 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/edit.html
@@ -3917,9 +3905,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:50 GMT
+      - Tue, 28 Jan 2014 01:23:41 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -3938,7 +3926,7 @@ http_interactions:
         }}\"\n     >\n      {{ widget.text.best_value }}\n    </textarea>\n  </div>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:50 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:41 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/html
@@ -3960,20 +3948,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:50 GMT
+      - Tue, 28 Jan 2014 01:23:42 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWZjYWVmZGZmMDBlZDFiMGM1MmZiYzFiMTBlZDY4MWNkBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMS8vS0J6eGM3R2RBaUVLMjRWOHl6VHhDdWJyK00yWWx0M1JicURoOTBTcDg9BjsARg%3D%3D--e7f7ca4e703a631d8ac9559d3a174716cbd99d13;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTAyM2UwZjcyZWFiNzhiNjJhNDI1N2Y0ZjI3NWQ4N2NmBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXg4QzFDVkxoWEdJaVBJMjZuQm5tNkF5ZVNtWFAwQjllaGswNVZNeWhGcGc9BjsARg%3D%3D--9511e85ef20de283f032ddabf790e4d130d3f583;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 7fbd8b18-5bcb-4596-a892-f55a23552883
+      - 4b7984b2-aab0-4ac2-9e9f-9d39e03efe0e
       X-Runtime:
-      - '0.022148'
+      - '0.033286'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -3982,7 +3970,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":9,\"applicationTime\":20,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":9,\"applicationTime\":30,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -4001,7 +3989,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"//KBzxc7GdAiEK24V8yzTxCubr+M2Ylt3RbqDh90Sp8=\"
+        name=\"csrf-param\" />\n<meta content=\"x8C1CVLhXGIiPI26nBnm6AyeSmXP0B9ehk05VMyhFpg=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -4052,7 +4040,7 @@ http_interactions:
         widget&quot;&gt;\n  {{ widget.text.best_value }}\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:50 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:41 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/show.html
@@ -4074,9 +4062,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:51 GMT
+      - Tue, 28 Jan 2014 01:23:42 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -4091,7 +4079,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! "<div class=\"html widget\">\n  {{ widget.text.best_value }}\n</div>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:51 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:42 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/edit.html
@@ -4113,9 +4101,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:51 GMT
+      - Tue, 28 Jan 2014 01:23:42 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -4134,7 +4122,7 @@ http_interactions:
         }}\"\n     >\n      {{ widget.text.best_value }}\n    </textarea>\n  </div>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:51 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:42 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/social-links
@@ -4156,29 +4144,29 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:51 GMT
+      - Tue, 28 Jan 2014 01:23:43 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTI0OTI3NWI4NjlkYmU1YWQ1NjZkOTYxZGFlZTIyNzY4BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMW5xYStRUnd6MmJzSUJNY1daMjdnSCtyU1JRQ1ZWdlFrRmNmNExLd3NSQ2M9BjsARg%3D%3D--732deb0cd0eb615b8dcac19fffd0597e09984c89;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWM5M2NkNzY0ZTdmNzgxOTgzMmI2ZGM1YmE4NjM3ZDRjBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMWF1RFVvdU1QcXJkSE1kdW4rTDFXQWtDMW1SQStaWm1jODdkeG13UG5jaEk9BjsARg%3D%3D--c698c9241e51777e0b92302992fbe7cea8d21573;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 33e7b348-dc1c-4519-9991-0e010a5d6529
+      - 7e06abd1-ffef-44f5-9cbe-e2835cd77747
       X-Runtime:
-      - '0.079581'
+      - '0.178112'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '17929'
+      - '17931'
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":9,\"applicationTime\":78,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":18,\"applicationTime\":175,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -4197,7 +4185,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"nqa+QRwz2bsIBMcWZ27gH+rSRQCVVvQkFcf4LKwsRCc=\"
+        name=\"csrf-param\" />\n<meta content=\"auDUouMPqrdHMdun+L1WAkC1mRA+ZZmc87dxmwPnchI=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -4386,7 +4374,7 @@ http_interactions:
         rel=&quot;me&quot;&gt;YouTube&lt;/a&gt;\n  {% endif %}\n\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:51 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:43 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/show.html
@@ -4408,9 +4396,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:52 GMT
+      - Tue, 28 Jan 2014 01:23:43 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -4450,7 +4438,7 @@ http_interactions:
         }}\" class=\"youtube\" title=\"YouTube\" rel=\"me\">YouTube</a>\n  {% endif
         %}\n\n</div>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:52 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:43 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/edit.html
@@ -4472,9 +4460,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:52 GMT
+      - Tue, 28 Jan 2014 01:23:44 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -4534,7 +4522,7 @@ http_interactions:
         widget.youtube_username.best_value }}\"\n      />\n    </div>\n\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:52 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:43 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/html
@@ -4556,20 +4544,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:52 GMT
+      - Tue, 28 Jan 2014 01:23:44 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTExY2VjYmFjNjM0ZGRhYzg1OGQ2Mjc4MWFmNDBjYTVlBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMUwxZTU1M3U0dHFiWGJNbXYycnNHYXZiczhuR1pzY29aYXoxaTlaVUEyVHM9BjsARg%3D%3D--08fc323b195291f8788d92f35bbb5279d5299752;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTI4YjZmYzY0YzhjOGQ4NTVjN2JjMWQ1ZmEzMDE2Y2E4BjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMU1zZ0MyeUpSVlpwTFlNSTl3YzRNNW5pdFVQbW9pUkp5dXB3MUxTbTh4dzg9BjsARg%3D%3D--4f2889f64564180cdf986f02e88c067068a836e7;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 49bdb254-7302-4814-8cc6-a0b6d36270d4
+      - 512aa731-7769-4939-8d98-7835289d9297
       X-Runtime:
-      - '0.023522'
+      - '0.032471'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -4578,7 +4566,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":3,\"applicationTime\":22,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":4,\"applicationTime\":30,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -4597,7 +4585,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"L1e553u4tqbXbMmv2rsGavbs8nGZscoZaz1i9ZUA2Ts=\"
+        name=\"csrf-param\" />\n<meta content=\"MsgC2yJRVZpLYMI9wc4M5nitUPmoiRJyupw1LSm8xw8=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -4648,7 +4636,7 @@ http_interactions:
         widget&quot;&gt;\n  {{ widget.text.best_value }}\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:52 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:44 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/show.html
@@ -4670,9 +4658,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:53 GMT
+      - Tue, 28 Jan 2014 01:23:44 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -4687,7 +4675,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! "<div class=\"html widget\">\n  {{ widget.text.best_value }}\n</div>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:53 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:44 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/edit.html
@@ -4709,9 +4697,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:53 GMT
+      - Tue, 28 Jan 2014 01:23:44 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -4730,7 +4718,7 @@ http_interactions:
         }}\"\n     >\n      {{ widget.text.best_value }}\n    </textarea>\n  </div>\n
         \ <input type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:53 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:44 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/components/social-links
@@ -4752,20 +4740,20 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 24 Jan 2014 05:33:53 GMT
+      - Tue, 28 Jan 2014 01:23:45 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       Set-Cookie:
-      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWI5YjZlY2NkMzUxZjFlYzNmMGNmNTU1NTc4MmQxZmNlBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMXhONzNmc3BCSWxNMkhCT3JhYnhpYkl1R09tM3R5UCtzS0cyVXk5YW1yM2c9BjsARg%3D%3D--3c56f35d9cbfee30afda85baf8a714eb24ee0a16;
+      - _g5_layout_garden_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWIwOGJiZDM1MWFkY2Y4M2JlZTg4MDA2YWUzOGNmZWQxBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMTdmZEhadGdhaWJ0WFRzNS8yQlpBanFzSGF1UnBrWFBnUjVwYzgrT2E2cWM9BjsARg%3D%3D--04bf0bf0275a229bf1862415198ff859bc464078;
         path=/; HttpOnly
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 76853318-5510-47a1-a7e6-4e8b7ca1daa6
+      - ae3a8fd9-a750-483f-a928-289ccf66a828
       X-Runtime:
-      - '0.098822'
+      - '0.094149'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -4774,7 +4762,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":18,\"applicationTime\":96,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
+      string: ! "<!DOCTYPE html>\n<html>\n  <head>\n<script type=\"text/javascript\">window.NREUM||(NREUM={});NREUM.info={\"beacon\":\"beacon-2.newrelic.com\",\"errorBeacon\":\"jserror.newrelic.com\",\"licenseKey\":\"a56e69b234\",\"applicationID\":\"2988372\",\"transactionName\":\"IF5dRhddXApSQ0tVCQ5BXFwAXEQVGEIMWRE=\",\"queueTime\":10,\"applicationTime\":91,\"ttGuid\":\"\",\"agentToken\":null,\"agent\":\"js-agent.newrelic.com/nr-292.min.js\",\"extra\":\"\"}</script>\n<script
         type=\"text/javascript\">window.NREUM||(NREUM={}),__nr_require=function a(b,c,d){function
         e(f){if(!c[f]){var g=c[f]={exports:{}};b[f][0].call(g.exports,function(a){var
         c=b[f][1][a];return e(c?c:a)},g,g.exports,a,b,c,d)}return c[f].exports}for(var
@@ -4793,7 +4781,7 @@ http_interactions:
         \   <link href=\"/assets/application-dfa3a98742be7cb1637dcc657ac36ead.css\"
         media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />\n    <script src=\"/assets/application-65099b4b230229006e07de1025148e2e.js\"
         type=\"text/javascript\"></script>\n    <meta content=\"authenticity_token\"
-        name=\"csrf-param\" />\n<meta content=\"xN73fspBIlM2HBOrabxibIuGOm3tyP+sKG2Uy9amr3g=\"
+        name=\"csrf-param\" />\n<meta content=\"7fdHZtgaibtXTs5/2BZAjqsHauRpkXPgR5pc8+Oa6qc=\"
         name=\"csrf-token\" />\n    <meta charset=\"utf8\" />\n    \n    \n    \n
         \ </head>\n  <body>\n    <div class=\"container-fluid\">\n\n      <div class=\"navbar\">\n
         \       <div class=\"navbar-inner\">\n          <div class=\"container\">\n\n
@@ -4982,7 +4970,7 @@ http_interactions:
         rel=&quot;me&quot;&gt;YouTube&lt;/a&gt;\n  {% endif %}\n\n&lt;/div&gt;\n\n&lt;!--
         END SHOW MARKUP --&gt;</code></pre>\n</article>\n\n\n\n    </div>\n  </body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:54 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:45 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/show.html
@@ -5004,9 +4992,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:54 GMT
+      - Tue, 28 Jan 2014 01:23:45 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -5046,7 +5034,7 @@ http_interactions:
         }}\" class=\"youtube\" title=\"YouTube\" rel=\"me\">YouTube</a>\n  {% endif
         %}\n\n</div>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:54 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:45 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/edit.html
@@ -5068,9 +5056,9 @@ http_interactions:
       Content-Type:
       - text/html
       Date:
-      - Fri, 24 Jan 2014 05:33:54 GMT
+      - Tue, 28 Jan 2014 01:23:45 GMT
       Last-Modified:
-      - Thu, 23 Jan 2014 19:28:27 GMT
+      - Mon, 27 Jan 2014 21:02:22 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
       X-Content-Digest:
@@ -5130,5 +5118,5 @@ http_interactions:
         widget.youtube_username.best_value }}\"\n      />\n    </div>\n\n  <input
         type=\"submit\" value=\"Save\" class=\"btn\" />\n</form>\n"
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 05:33:54 GMT
+  recorded_at: Tue, 28 Jan 2014 01:23:45 GMT
 recorded_with: VCR 2.6.0
