@@ -8,15 +8,19 @@ class Location < ActiveRecord::Base
   validates :urn, presence: true, uniqueness: true
   validates :name, presence: true
 
+  before_validation :set_city_slug_from_city
+
   def website_id
     website.try(:id)
   end
 
-  def city_slug
-    city.try(:parameterize).to_s
-  end
-
   def state_slug
     state.try(:parameterize).to_s
+  end
+
+  private
+
+  def set_city_slug_from_city
+    self.city_slug = city.to_s.parameterize
   end
 end
