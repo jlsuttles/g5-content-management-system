@@ -70,6 +70,7 @@ end
 
 group :production do
   gem "thin", "~> 1.5.0"
+  gem "lograge"
   gem "pg"
   gem "newrelic_rpm"
   gem "dalli"

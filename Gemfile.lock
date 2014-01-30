@@ -150,6 +150,10 @@ GEM
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
+    lograge (0.2.2)
+      actionpack (>= 3)
+      activesupport (>= 3)
+      railties (>= 3)
     lumberjack (1.0.4)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -332,6 +336,7 @@ DEPENDENCIES
   jquery-ui-rails (~> 4.0.5)
   launchy
   liquid (~> 2.4.1)
+  lograge
   memcachier
   microformats2 (= 2.0.0.pre5)
   newrelic_rpm
