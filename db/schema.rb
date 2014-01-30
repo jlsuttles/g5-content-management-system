@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140130193014) do
+ActiveRecord::Schema.define(:version => 20140130213358) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20140130193014) do
     t.string   "postal_code"
     t.string   "domain"
     t.string   "city_slug"
+    t.string   "phone_number"
   end
 
   add_index "locations", ["urn"], :name => "index_locations_on_urn"
