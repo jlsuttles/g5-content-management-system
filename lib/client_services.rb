@@ -26,17 +26,17 @@ class ClientServices
   SERVICES.each do |service|
     define_method("#{service}_urn") do
       # Custom or replace the Client's app prefix
-      ENV["#{service}_URN"] || client_urn.gsub(/-c-/, "-#{service}-")
+      ENV["#{service.upcase}_URN"] || client_urn.gsub(/-c-/, "-#{service}-")
     end
 
     define_method("#{service}_app_name") do
       # Custom or truncate to Heroku's max app name length
-      ENV["#{service}_APP_NAME"] || send(:"#{service}_urn")[0...HEROKU_APP_NAME_MAX_LENGTH]
+      ENV["#{service.upcase}_APP_NAME"] || send(:"#{service}_urn")[0...HEROKU_APP_NAME_MAX_LENGTH]
     end
 
     define_method("#{service}_url") do
       # Custom or Heroku URL
-      ENV["#{service}_URL"] || ("http://" + send(:"#{service}_app_name") + ".herokuapp.com/")
+      ENV["#{service.upcase}_URL"] || ("http://" + send(:"#{service}_app_name") + ".herokuapp.com/")
     end
   end
 end
