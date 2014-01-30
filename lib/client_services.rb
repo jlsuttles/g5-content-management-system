@@ -2,17 +2,12 @@ class ClientServices
   HEROKU_APP_NAME_MAX_LENGTH = 30
   SERVICES = %w(cms cpns cpas cls cxm)
 
-  #client management system (client hub)
-  #client phone number service
-  #client pricing & availability service
-  #client leads service
-  #client experience management?
-
-  # client_location_urn
-  # client_location_url
+  def client
+    Client.first
+  end
 
   def client_urn
-    Client.first.urn
+    client.urn
   end
 
   def client_app_name
@@ -21,6 +16,14 @@ class ClientServices
 
   def client_url
     "http://#{client_app_name}.herokuapp.com/"
+  end
+
+  def client_location_urns
+    client.locations.map { |location| location.urn }
+  end
+
+  def client_location_urls
+    client.locations.map { |location| location.domain }
   end
 
   SERVICES.each do |service|
