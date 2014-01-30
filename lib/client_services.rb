@@ -19,11 +19,11 @@ class ClientServices
   end
 
   def client_location_urns
-    client.locations.map { |location| location.urn }
+    client.locations.map(&:urn)
   end
 
   def client_location_urls
-    client.locations.map { |location| location.domain }
+    client.locations.map(&:domain)
   end
 
   SERVICES.each do |service|
