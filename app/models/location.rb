@@ -7,6 +7,8 @@ class Location < ActiveRecord::Base
   validates :uid, presence: true, uniqueness: true
   validates :urn, presence: true, uniqueness: true
   validates :name, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
 
   before_validation :set_city_slug_from_city
 
