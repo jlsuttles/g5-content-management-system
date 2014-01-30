@@ -11,6 +11,10 @@ class WebHomeTemplate < WebTemplate
     File.join(website_compile_path.to_s, "index.html") if website_compile_path
   end
 
+  def preview_url
+    "/#{vertical}/#{state}/#{city}/"
+  end
+
   def htaccess_substitution
     relative_path
   end

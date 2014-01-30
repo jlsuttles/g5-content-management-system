@@ -1,13 +1,24 @@
 class WebTemplatesController < ApplicationController
   def show
-    @website = Website.find_by_urn(params[:website_id])
-    @web_template = WebTemplate.find(params[:id])
+    @location = Location.where(
+      "lower(city_slug) = ?", params[:city_slug].to_s.downcase).first
+
+    @website = @location.website if @location
+
+    if @website
+      if params[:web_template_slug]
+        @web_template = @website.web_page_templates.where(
+          "lower(slug) = ?", params[:web_template_slug].to_s.downcase).first
+      else
+        @web_template = @website.web_home_template
+      end
+    end
 
     render "web_templates/show", layout: "web_template",
       locals: {
+        location: @location,
         website: @website,
         web_template: @web_template,
-        location: @web_template.website.location,
         mode: "preview"
       }
   end

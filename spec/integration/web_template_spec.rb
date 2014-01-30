@@ -42,7 +42,7 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
         @website = WebsiteSeeder.new(@location, @instructions["website"]).seed
         @web_page_template = @website.web_page_templates.first
         set_setting(@web_page_template, "Social Links", "twitter_username", "jlsuttles")
-        visit web_template_path(@web_page_template.id)
+        visit @web_page_template.url
       end
 
       it "has web template title in title tag" do
