@@ -7,19 +7,32 @@ class WebsiteSeeder
   end
 
   def seed
-    client = Client.first
+    client_services = ClientServices.new
+    client = client_services.client
 
     Rails.logger.info "Creating website for location #{location.name}"
     @website = location.create_website
 
     Rails.logger.info "Creating website settings"
-    website.settings.create!(name: "client_urn", value: client.urn)
-    website.settings.create!(name: "location_urn", value: location.urn)
-    website.settings.create!(name: "location_street_address", value: location.street_address)
-    website.settings.create!(name: "location_city", value: location.city)
-    website.settings.create!(name: "location_state", value: location.state)
-    website.settings.create!(name: "location_postal_code", value: location.postal_code)
-    website.settings.create!(name: "phone_number", value: location.phone_number)
+    create_setting!("client_urn", client_services.client_urn)
+    create_setting!("client_app_name", client_services.client_app_name)
+    create_setting!("client_url", client_services.client_url)
+    create_setting!("client_location_urns", client_services.client_location_urns)
+    create_setting!("client_location_urls", client_services.client_location_urls)
+
+    ClientServices::SERVICES.each do |service|
+      %w(urn app_name url).each do |method_suffix|
+        method_name = [service, method_suffix].join("_")
+        create_setting!(method_name, client_services.public_send(method_name.to_sym))
+      end
+    end
+
+    create_setting!("location_urn", location.urn)
+    create_setting!("location_street_address", location.street_address)
+    create_setting!("location_city", location.city)
+    create_setting!("location_state", location.state)
+    create_setting!("location_postal_code", location.postal_code)
+    create_setting!("phone_number", location.phone_number)
 
     Rails.logger.info "Creating website template"
     create_website_template(website, instructions["website_template"])
@@ -76,6 +89,10 @@ class WebsiteSeeder
   end
 
   private
+
+  def create_setting!(name, value)
+    website.settings.create!(name: name, value: value)
+  end
 
   def web_template_params(instructions)
     ActionController::Parameters.new(instructions).permit(:name)
