@@ -1,7 +1,10 @@
 require 'spec_helper'
 
 describe ClientServices do
-  let!(:client) { Fabricate(:client) }
+  let(:client_urn) { "g5-c-irrelevant-clientname" }
+  let!(:client) { Fabricate(:client, :uid => "http://www.irrelevant.com/#{client_urn}") }
+  let!(:location1) { Fabricate(:location) }
+  let!(:location2) { Fabricate(:location) }
 
   before do
     @client_services = ClientServices.new
@@ -16,13 +19,19 @@ describe ClientServices do
 
   describe "#client_urn" do
     it "grabs the client_urn" do
-      @client_services.client_urn.should == client.urn
+      @client_services.client_urn.should == client_urn
     end
   end
 
   describe "#client_app_name" do
-    it "grabs the client_app_name" do
-      @client_services.client_app_name.should == client.urn[0...@heroku_app_max_length]
+    it "grabs the full client_app_name" do
+      @client_services.client_app_name.should == client_urn
+    end
+
+    it "grabs the truncated client_app_name" do
+      client.destroy
+      long_urn_client = Fabricate(:client, :uid => "http://www.irrelevant.com/g5-c-irrelevant-clientname-thiswillbecutoff")
+      ClientServices.new.client_app_name.should == "g5-c-irrelevant-clientname-thi"
     end
   end
 
@@ -34,15 +43,13 @@ describe ClientServices do
 
   describe "#client_location_urns" do
     it "grabs the client_location_urns" do
-      location_urns = client.locations.map(&:urn)
-      @client_services.client_location_urns.should == location_urns
+      @client_services.client_location_urns.should == [location1.urn, location2.urn]
     end
   end
 
   describe "#client_location_urls" do
     it "grabs the client_location_urls" do
-      location_urls = client.locations.map(&:domain)
-      @client_services.client_location_urls.should == location_urls
+      @client_services.client_location_urls.should == [location1.domain, location2.domain]
     end
   end
 
@@ -50,19 +57,20 @@ describe ClientServices do
     ClientServices::SERVICES.each do |service|
       describe "#{service}_urn" do
         it "grabs the #{service}_urn" do
-          @client_services.send(:"#{service}_urn").should == client.urn.gsub(/-c-/, "-#{service}-")
+          @client_services.send(:"#{service}_urn").should == "g5-#{service}-irrelevant-clientname"
         end
       end
 
       describe "#{service}_app_name" do
         it "grabs the #{service}_app_name" do
-          @client_services.send(:"#{service}_app_name").should == client.urn.gsub(/-c-/, "-#{service}-")[0...@heroku_app_max_length]
+          @client_services.send(:"#{service}_app_name").should == "g5-#{service}-irrelevant-clientname"[0...@heroku_app_max_length]
         end
       end
 
       describe "#{service}_url" do
         it "grabs the #{service}_url" do
-          @client_services.send(:"#{service}_url").should == "http://" + client.urn.gsub(/-c-/, "-#{service}-")[0...@heroku_app_max_length] + ".herokuapp.com/"
+          service_app_name = "g5-#{service}-irrelevant-clientname"[0...@heroku_app_max_length]
+          @client_services.send(:"#{service}_url").should == "http://#{service_app_name}.herokuapp.com/"
         end
       end
     end
