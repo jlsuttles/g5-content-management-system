@@ -21,9 +21,9 @@ class WebsiteSeeder
     create_setting!("client_location_urls", client_services.client_location_urls)
 
     ClientServices::SERVICES.each do |service|
-      %w(urn app_name url).each do |method_suffix|
-        method_name = [service, method_suffix].join("_")
-        create_setting!(method_name, client_services.public_send(method_name.to_sym))
+      %w(urn app_name url).each do |suffix|
+        setting_name = [service, suffix].join("_")
+        create_setting!(setting_name, client_services.public_send(setting_name.to_sym))
       end
     end
 
@@ -91,7 +91,7 @@ class WebsiteSeeder
   private
 
   def create_setting!(name, value)
-    website.settings.create!(name: name, value: value)
+    website.settings.find_or_create_by_name!(name: name, value: value)
   end
 
   def web_template_params(instructions)
