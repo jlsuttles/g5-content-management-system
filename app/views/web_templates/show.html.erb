@@ -4,6 +4,7 @@
 
 <% content_for(:head) { raw web_template.decorate.canonical_link_element } %>
 
+<% content_for(:head_widgets) { raw meta_description_widgets(web_template) } %>
 <% content_for(:head_widgets) { raw head_widgets(web_template) } %>
 
 <% content_for(:body_classes) { "page-#{web_template.slug}" } %>
