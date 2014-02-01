@@ -21,8 +21,12 @@ module AfterCreateUpdateUrn
     update_attributes(urn: new_urn)
   end
 
+  def hashed_id
+    "#{self.created_at.to_i}#{self.id}".to_i.to_s(36)
+  end
+
   def new_urn
-    "#{self.class.urn_prefix}-#{id}-#{parameterized_name}"
+    "#{self.class.urn_prefix}-#{hashed_id}-#{parameterized_name}"
   end
 
   def parameterized_name
