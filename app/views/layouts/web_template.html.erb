@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" >
   <head id="drop-target-head">
-    
+
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-    
+
     <meta charset="utf8" />
-    
+    <%= yield(:head_widgets) %>
+
     <!-- for devices that don't support viewport -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <%= javascript_include_tag "/javascripts/modernizr.custom.js" %>
-    
+
     <%= yield(:head) %>
-    <%= yield(:head_widgets) %>
   </head>
-  
+
   <body class="<%= [mode, yield(:body_classes)].join(" ") %>">
 
     <%= yield %>
@@ -27,12 +27,12 @@
     <%= javascript_include_tag "/javascripts/helper.js" %>
     <%= javascript_include_tag "/javascripts/script.js" %>
     <%= javascript_include_tag "/javascripts/json2.js" %>
-    
+
     <!--[if (lt IE 9) & (!IEMobile)]>
       <%= javascript_include_tag "/javascripts/selectivizr-min.js" %>
       <%= javascript_include_tag "/javascripts/respond.min.js" %>
     <![endif]-->
-      
+
     <%= javascript_include_tag "web_template" if mode == "preview" %>
     <%= yield(:bottom_of_body) %>
   </body>

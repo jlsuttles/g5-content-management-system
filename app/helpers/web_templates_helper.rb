@@ -18,4 +18,8 @@ module WebTemplatesHelper
   def head_widgets(web_template)
     web_template.head_widgets.map(&:liquidized_html).join
   end
+
+  def meta_description_widgets(web_template)
+    web_template.meta_description_widgets.map(&:liquidized_html).join
+  end
 end

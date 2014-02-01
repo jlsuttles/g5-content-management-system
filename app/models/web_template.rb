@@ -44,6 +44,10 @@ class WebTemplate < ActiveRecord::Base
     drop_targets.where(html_id: "drop-target-main").first.try(:widgets)
   end
 
+  def meta_description_widgets
+    widgets.where(name: "Meta Description")
+  end
+
   def client
     Client.first
   end
