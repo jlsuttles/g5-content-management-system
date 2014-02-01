@@ -27,7 +27,7 @@ describe Website, vcr: VCR_OPTIONS do
     let(:website) { Fabricate(:website) }
 
     it "sets on create" do
-      website.urn.should match /g5-clw-(\d|\w){7}-/
+      website.urn.should match /g5-clw-(\d|\w){7,8}-/
     end
   end
 
