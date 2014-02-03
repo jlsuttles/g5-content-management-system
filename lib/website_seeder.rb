@@ -15,13 +15,12 @@ class WebsiteSeeder
 
     Rails.logger.info "Creating website settings"
     create_setting!("client_urn", client_services.client_urn)
-    create_setting!("client_app_name", client_services.client_app_name)
     create_setting!("client_url", client_services.client_url)
     create_setting!("client_location_urns", client_services.client_location_urns)
     create_setting!("client_location_urls", client_services.client_location_urls)
 
     ClientServices::SERVICES.each do |service|
-      %w(urn app_name url).each do |suffix|
+      %w(urn url).each do |suffix|
         setting_name = [service, suffix].join("_")
         create_setting!(setting_name, client_services.public_send(setting_name.to_sym))
       end

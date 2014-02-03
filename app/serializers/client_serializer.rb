@@ -6,29 +6,19 @@ class ClientSerializer < ActiveModel::Serializer
   attributes  :id,
               :urn,
               :name,
-              :app_name,
               :url,
               :location_urns,
               :location_urls,
               :cms_urn,
-              :cms_app_name,
               :cms_url,
               :cpns_urn,
-              :cpns_app_name,
               :cpns_url,
               :cpas_urn,
-              :cpas_app_name,
               :cpas_url,
               :cls_urn,
-              :cls_app_name,
               :cls_url,
               :cxm_urn,
-              :cxm_app_name,
               :cxm_url
-
-  def app_name
-    @client_services.client_app_name
-  end
 
   def url
     @client_services.client_url
@@ -45,10 +35,6 @@ class ClientSerializer < ActiveModel::Serializer
   ClientServices::SERVICES.each do |service|
     define_method("#{service}_urn") do
       @client_services.send(:"#{service}_urn")
-    end
-
-    define_method("#{service}_app_name") do
-      @client_services.send(:"#{service}_app_name")
     end
 
     define_method("#{service}_url") do
