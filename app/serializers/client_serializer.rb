@@ -27,38 +27,38 @@ class ClientSerializer < ActiveModel::Serializer
               :cxm_url
 
   def app_name
-    client_services.client_app_name
+    @client_services.client_app_name
   end
 
   def url
-    client_services.client_url
+    @client_services.client_url
   end
 
   def location_urns
-    client_services.client_location_urns
+    @client_services.client_location_urns
   end
 
   def location_urls
-    client_services.client_location_urls
+    @client_services.client_location_urls
   end
 
   ClientServices::SERVICES.each do |service|
     define_method("#{service}_urn") do
-      client_services.send(:"#{service}_urn")
+      @client_services.send(:"#{service}_urn")
     end
 
     define_method("#{service}_app_name") do
-      client_services.send(:"#{service}_app_name")
+      @client_services.send(:"#{service}_app_name")
     end
 
     define_method("#{service}_url") do
-      client_services.send(:"#{service}_url")
+      @client_services.send(:"#{service}_url")
     end
   end
 
   private
 
   def client_services
-    ClientServices.new
+    @client_services ||= ClientServices.new
   end
 end
