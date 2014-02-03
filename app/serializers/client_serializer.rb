@@ -26,10 +26,6 @@ class ClientSerializer < ActiveModel::Serializer
               :cxm_app_name,
               :cxm_url
 
-  def client_services
-    ClientServices.new
-  end
-
   def app_name
     client_services.client_app_name
   end
@@ -58,5 +54,11 @@ class ClientSerializer < ActiveModel::Serializer
     define_method("#{service}_url") do
       client_services.send(:"#{service}_url")
     end
+  end
+
+  private
+
+  def client_services
+    ClientServices.new
   end
 end
