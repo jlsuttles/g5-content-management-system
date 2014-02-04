@@ -27,6 +27,7 @@ class WebsiteSeeder
     end
 
     create_setting!("location_urn", location.urn)
+    create_setting!("location_url", location.domain)
     create_setting!("location_street_address", location.street_address)
     create_setting!("location_city", location.city)
     create_setting!("location_state", location.state)
