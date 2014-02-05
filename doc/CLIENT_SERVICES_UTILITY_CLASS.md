@@ -13,8 +13,32 @@
 - `app/lib/website_seeder.rb`
 - `app/serializers/client_serializer.rb`
 
+## Ruby
+
 ```ruby
+# Adds ClientServices methods as attrs on Client Serializer to feed to Ember App
+
 class ClientSerializer < ActiveModel::Serializer
+  embed :ids, include: true
+
+  has_many :locations
+
+  attributes  :id,
+              :urn,
+              :name,
+              :url,
+              :location_urns,
+              :location_urls,
+              :cms_urn,
+              :cms_url,
+              :cpns_urn,
+              :cpns_url,
+              :cpas_urn,
+              :cpas_url,
+              :cls_urn,
+              :cls_url,
+              :cxm_urn,
+              :cxm_url
 
   def url
     client_services.client_url
@@ -38,11 +62,55 @@ class ClientSerializer < ActiveModel::Serializer
     end
   end
 
-
   private
 
   def client_services
     @client_services ||= ClientServices.new
   end
 end
+```
+
+## Ember
+
+```coffee
+# Client Ember Model - Grabs the attrs from the Client Serializer
+App.Client = DS.Model.extend
+  locations:     DS.hasMany("App.Location")
+  websites:      DS.hasMany("App.Website")
+  urn:           DS.attr("string")
+  name:          DS.attr("string")
+  url:           DS.attr("string")
+  location_urns: DS.attr("string")
+  location_urls: DS.attr("string")
+  cms_urn:       DS.attr("string")
+  cms_url:       DS.attr("string")
+  cpns_urn:      DS.attr("string")
+  cpns_url:      DS.attr("string")
+  cpas_urn:      DS.attr("string")
+  cpas_url:      DS.attr("string")
+  cls_urn:       DS.attr("string")
+  cls_url:       DS.attr("string")
+  cxm_urn:       DS.attr("string")
+  cxm_url:       DS.attr("string")
+
+App.ApplicationRoute = Ember.Route.extend
+  setupController: (controller, model)->
+    # setup client controller
+    @controllerFor("client").set("model", App.Client.find(1))
+
+App.ApplicationController = Ember.Controller.extend
+  needs: ["client", "location", "website"]
+```
+
+```html
+<header role="banner" class="banner">
+  <h1 class="banner-title">
+    <a href="/">
+      <img class="banner-logo" src="<%= asset_path("logo.png") %>" alt="G5" /> Client Hub:
+    </a>
+    <a href="/">
+      <strong class="banner-subtitle">{{controllers.client.name}}</strong>
+    </a>
+  </h1>
+</header>
 ```
