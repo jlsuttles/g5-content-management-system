@@ -4,4 +4,5 @@ Fabricator :location do
   name { Faker::Name.name }
   state { Faker::Address.state_abbr }
   city { Faker::Address.city }
+  domain { Faker::Internet.url }
 end
