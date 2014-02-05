@@ -8,6 +8,7 @@ class WebsiteSerializer < ActiveModel::Serializer
   attributes  :id,
               :location_id,
               :name,
+              :urn,
               :slug,
               :heroku_url
 
