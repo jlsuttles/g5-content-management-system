@@ -5,5 +5,6 @@ class LocationSerializer < ActiveModel::Serializer
 
   attributes  :id,
               :urn,
-              :name
+              :name,
+              :domain
 end
