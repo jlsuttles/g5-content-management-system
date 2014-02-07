@@ -1,11 +1,10 @@
 <div class="l-container">
   <nav class="nav" role="navigation">
     <ul>
-      <li><a class="active" href="/">CMS</a></li>
-      <li><a href="/">Redirects</a></li>
-      <li><a href="/">Phone Numbers</a></li>
-      <li><a href="/">Pricing and Availibility</a></li>
-      <li><a href="/">Leads</a></li>
+      <li><a {{bindAttr href="controllers.client.cms_url"}}>CMS</a></li>
+      <li><a {{bindAttr href="controllers.client.cpns_url"}}>Phone Numbers</a></li>
+      <li><a {{bindAttr href="controllers.client.cpas_url"}}>Pricing and Availability</a></li>
+      <li><a {{bindAttr href="controllers.client.cls_url"}}>Leads</a></li>
     </ul>
   </nav>
 </div>
