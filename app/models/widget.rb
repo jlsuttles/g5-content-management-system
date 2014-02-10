@@ -23,6 +23,8 @@ class Widget < ActiveRecord::Base
   validates :url, presence: true
 
   scope :name_like_form, where("widgets.name LIKE '%Form'")
+  scope :meta_description, where(name: "Meta Description")
+  scope :not_meta_description, where("widgets.name != ?", "Meta Description")
 
   def website_id
     web_template.website_id if web_template

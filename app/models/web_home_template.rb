@@ -1,6 +1,6 @@
 class WebHomeTemplate < WebTemplate
   def all_widgets
-    widgets + website.try(:website_template).try(:widgets).to_a
+    widgets.not_meta_description + website.try(:website_template).try(:widgets).to_a
   end
 
   def head_widgets
