@@ -28,6 +28,43 @@ ActiveRecord::Schema.define(:version => 20140213203328) do
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "garden_web_layouts", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "thumbnail"
+    t.text     "stylesheets"
+    t.text     "html"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "garden_web_themes", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "thumbnail"
+    t.text     "javascripts"
+    t.text     "stylesheets"
+    t.string   "primary_color"
+    t.string   "secondary_color"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "garden_widgets", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "thumbnail"
+    t.text     "edit_html"
+    t.string   "edit_javascript"
+    t.text     "show_html"
+    t.string   "show_javascript"
+    t.text     "lib_javascripts"
+    t.text     "show_stylesheets"
+    t.text     "settings"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "locations", :force => true do |t|
     t.string   "uid"
     t.string   "name"
