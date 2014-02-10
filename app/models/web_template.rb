@@ -45,7 +45,7 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def meta_description_widgets
-    widgets.where(name: "Meta Description")
+    widgets.meta_description
   end
 
   def client
