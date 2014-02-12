@@ -18,6 +18,10 @@ class WebTheme < ActiveRecord::Base
   delegate :name, :url, :thumbnail, :javascripts, :stylesheets,
     to: :garden_web_theme, allow_nil: true
 
+  # prefix means access with `garden_web_theme_primary_color` not `primary_color`
+  delegate :primary_color, :secondary_color,
+    to: :garden_web_theme, allow_nil: true, prefix: true
+
   def display_colors
     { primary_color: primary_color,
       secondary_color: secondary_color }
@@ -27,7 +31,7 @@ class WebTheme < ActiveRecord::Base
     if custom_colors? && custom_primary_color
       custom_primary_color
     else
-      garden_web_theme.try(:primary_color)
+      garden_web_theme_primary_color
     end
   end
 
@@ -39,7 +43,7 @@ class WebTheme < ActiveRecord::Base
     if custom_colors? && custom_secondary_color
       custom_secondary_color
     else
-      garden_web_theme.try(:secondary_color)
+      garden_web_theme_secondary_color
     end
   end
 
