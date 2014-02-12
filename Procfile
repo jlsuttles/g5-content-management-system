@@ -1,2 +1,2 @@
-web: bundle exec unicorn -p $PORT -c ./config/unicorn.rb
+web: bundle exec thin start -R config.ru -e $RACK_ENV -p $PORT
 worker: bundle exec rake jobs:work
