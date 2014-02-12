@@ -4,19 +4,17 @@ class WebLayout < ActiveRecord::Base
 
   set_garden_url ENV["LAYOUT_GARDEN_URL"]
 
+  # TODO: add to schema
   belongs_to :garden_web_layout
   belongs_to :web_template
   has_one :website, through: :web_template
 
-  def website_id
-    web_template.website_id if web_template
-  end
+  alias_method :website_template, :web_template
+  alias_method :website_template_id, :web_template_id
 
-  def website_template
-    web_template
-  end
+  delegate :website_id,
+    to: :web_template, allow_nil: true
 
-  def website_template_id
-    web_template_id
-  end
+  delegate :name, :url, :thumbnail, :html, :stylesheets,
+    to: :garden_web_layout, allow_nil: true
 end

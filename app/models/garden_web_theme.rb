@@ -5,6 +5,7 @@ class GardenWebTheme < ActiveRecord::Base
   serialize :stylesheets, Array
   serialize :javascripts, Array
 
+  # TODO: do not destroy if in use
   has_many :web_themes, dependent: :destroy
 
   validates :name, presence: true

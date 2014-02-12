@@ -1,5 +1,3 @@
-require_dependency 'liquid_filters'
-
 class Widget < ActiveRecord::Base
   include RankedModel
   include HasManySettings
@@ -13,8 +11,21 @@ class Widget < ActiveRecord::Base
   belongs_to :garden_widget
   belongs_to :drop_target
   has_one :web_template, through: :drop_target
-
   has_many :widget_entries, dependent: :destroy
+
+  delegate :website_id,
+    to: :web_template, allow_nil: true
+
+  delegate :html_id,
+    to: :drop_target, allow_nil: true
+
+  delegate :name, :url, :thumbnail, :edit_html, :edit_javascript, :show_html,
+    :show_javascript, :lib_javascripts, :show_stylesheets,
+    to: :garden_widget, allow_nil: true
+
+  # prefix means access with `garden_widget_settings` not `settings`
+  delegate :settings,
+    to: :garden_widget, allow_nil: true, prefix: true
 
   after_initialize :set_defaults
   before_create :update_settings
@@ -24,26 +35,18 @@ class Widget < ActiveRecord::Base
   scope :meta_description, where(name: "Meta Description")
   scope :not_meta_description, where("widgets.name != ?", "Meta Description")
 
-  def website_id
-    web_template.website_id if web_template
-  end
-
-  def html_id
-    drop_target.html_id if drop_target
-  end
-
   def kind_of_widget?(kind)
     name == kind
   end
 
-  # TODO: def rendered_show_html
+  # TODO: def rendered_show_html & move to decorator
   def liquidized_html
-    Liquid::Template.parse(self.html).render({"widget" => self}, filters: [UrlEncode])
+    Liquid::Template.parse(show_html).render("widget" => self)
   end
 
-  # TODO: def rendered_edit_html
+  # TODO: def rendered_edit_html & move to decorator
   def edit_form_html_rendered
-    Liquid::Template.parse(edit_form_html).render("widget" => self)
+    Liquid::Template.parse(edit_html).render("widget" => self)
   end
 
   private
@@ -63,8 +66,8 @@ class Widget < ActiveRecord::Base
   end
 
   def update_settings
-    return unless garden_widget && garden_widget.settings
-    garden_widget.settings.each do |garden_widget_setting|
+    return unless garden_widget_settings
+    garden_widget_settings.each do |garden_widget_setting|
       settings.find_or_initialize_by_name(
         name: garden_widget_setting[:name],
         editable: garden_widget_setting[:editable],
