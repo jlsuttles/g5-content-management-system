@@ -47,13 +47,6 @@ class Widget < ActiveRecord::Base
     Liquid::Template.parse(edit_html).render("widget" => self)
   end
 
-  private
-
-  # TODO: Is this being used?
-  def set_defaults
-    self.removeable = true
-  end
-
   def create_widget_entry_if_updated
     widget_entries.create if updated_since_last_widget_entry
   end
@@ -61,6 +54,13 @@ class Widget < ActiveRecord::Base
   def updated_since_last_widget_entry
     return true if widget_entries.blank?
     updated_at > widget_entries.maximum(:updated_at)
+  end
+
+  private
+
+  # TODO: Is this being used?
+  def set_defaults
+    self.removeable = true
   end
 
   def update_settings

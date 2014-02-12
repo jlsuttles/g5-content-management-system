@@ -4,7 +4,7 @@ describe Widget, vcr: VCR_OPTIONS do
 
   describe "#update_attributes" do
     let(:widget) { Fabricate(:widget) }
-    let(:setting) { widget.settings.first }
+    let(:setting) { Fabricate(:setting, owner: widget) }
 
     it "accepts nested attributes for settings" do
       widget.update_attributes(settings_attributes: {
@@ -19,8 +19,8 @@ describe Widget, vcr: VCR_OPTIONS do
     let(:widget) { Fabricate.build(:widget) }
 
     it "does not escape funky characters" do
-      widget.html = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-      expect(widget.render_show_html).to eq widget.html
+      widget.stub(:show_html) { "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" }
+      expect(widget.render_show_html).to eq widget.show_html
     end
   end
 
@@ -28,8 +28,8 @@ describe Widget, vcr: VCR_OPTIONS do
     let(:widget) { Fabricate.build(:widget) }
 
     it "does not escape funky characters" do
-      widget.html = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-      expect(widget.render_edit_html).to eq widget.html
+      widget.stub(:edit_html) { "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" }
+      expect(widget.render_edit_html).to eq widget.edit_html
     end
   end
 
