@@ -9,9 +9,6 @@ class WebTheme < ActiveRecord::Base
   belongs_to :web_template
   has_one :website, through: :web_template
 
-  alias_method :website_template, :web_template
-  alias_method :website_template_id, :web_template_id
-
   delegate :website_id,
     to: :web_template, allow_nil: true
 

@@ -4,4 +4,8 @@ class WebLayoutSerializer < ActiveModel::Serializer
               :name,
               :thumbnail,
               :url
+
+  def website_template_id
+    object.web_template_id
+  end
 end
