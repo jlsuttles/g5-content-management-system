@@ -15,12 +15,21 @@ describe Widget, vcr: VCR_OPTIONS do
     end
   end
 
-  describe "#liquidized_html" do
+  describe "#render_show_html" do
     let(:widget) { Fabricate.build(:widget) }
 
     it "does not escape funky characters" do
       widget.html = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-      expect(widget.liquidized_html).to eq widget.html
+      expect(widget.render_show_html).to eq widget.html
+    end
+  end
+
+  describe "#render_edit_html" do
+    let(:widget) { Fabricate.build(:widget) }
+
+    it "does not escape funky characters" do
+      widget.html = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+      expect(widget.render_edit_html).to eq widget.html
     end
   end
 

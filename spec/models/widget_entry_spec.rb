@@ -6,8 +6,8 @@ describe WidgetEntry do
 
   describe "filters" do
     context "before_create" do
-      it "saves widget html" do
-        widget_entry.content.should == widget.html
+      it "sets content to widget's rendered show html" do
+        widget_entry.content.should == widget.render_show_html
       end
     end
   end
@@ -25,16 +25,16 @@ describe WidgetEntry do
     end
   end
 
-  describe "#widget_liquidized_html" do
+  describe "#widget_render_show_html" do
     context "widget is nil" do
       it "returns nil" do
-        WidgetEntry.new.widget_liquidized_html.should be_nil
+        WidgetEntry.new.widget_render_show_html.should be_nil
       end
     end
     context "widget is present" do
-      it "returns widget's liquidized_html" do
+      it "returns widget's render_show_html" do
         widget_entry.widget.stub(:html).and_return("<div></div>")
-        widget_entry.widget_liquidized_html.should eq widget.liquidized_html
+        widget_entry.widget_render_show_html.should eq widget.render_show_html
       end
     end
   end

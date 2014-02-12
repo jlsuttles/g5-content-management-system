@@ -39,13 +39,11 @@ class Widget < ActiveRecord::Base
     name == kind
   end
 
-  # TODO: def rendered_show_html & move to decorator
-  def liquidized_html
+  def render_show_html
     Liquid::Template.parse(show_html).render("widget" => self)
   end
 
-  # TODO: def rendered_edit_html & move to decorator
-  def edit_form_html_rendered
+  def render_edit_html
     Liquid::Template.parse(edit_html).render("widget" => self)
   end
 
