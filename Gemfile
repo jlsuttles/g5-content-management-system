@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 source "https://gems.gemfury.com/88yeKzEGfizstwBaXVqj/"
-ruby "2.0.0"
+ruby "1.9.3"
 
 gem "rails", "~> 3.2.14"
 gem "jquery-rails", "~> 3.0.4"
@@ -33,7 +33,7 @@ end
 
 group :development do
   gem "better_errors", "~> 0.2.0"
-  gem "binding_of_caller"
+  gem "binding_of_caller", "~> 0.6.8"
   gem "railroady"
 end
 
@@ -69,7 +69,7 @@ group :development, :test do
 end
 
 group :production do
-  gem "unicorn"
+  gem "thin", "~> 1.5.0"
   gem "lograge"
   gem "pg"
   gem "newrelic_rpm"
