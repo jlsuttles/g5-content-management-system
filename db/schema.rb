@@ -135,12 +135,14 @@ ActiveRecord::Schema.define(:version => 20140213203328) do
     t.string   "name"
     t.integer  "web_template_id"
     t.text     "html"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.string   "thumbnail"
     t.text     "stylesheets"
+    t.integer  "garden_web_layout_id"
   end
 
+  add_index "web_layouts", ["garden_web_layout_id"], :name => "index_web_layouts_on_garden_web_layout_id"
   add_index "web_layouts", ["web_template_id"], :name => "index_web_layouts_on_web_template_id"
 
   create_table "web_templates", :force => true do |t|
@@ -173,8 +175,10 @@ ActiveRecord::Schema.define(:version => 20140213203328) do
     t.boolean  "custom_colors"
     t.string   "custom_primary_color"
     t.string   "custom_secondary_color"
+    t.integer  "garden_web_theme_id"
   end
 
+  add_index "web_themes", ["garden_web_theme_id"], :name => "index_web_themes_on_garden_web_theme_id"
   add_index "web_themes", ["web_template_id"], :name => "index_web_themes_on_web_template_id"
 
   create_table "websites", :force => true do |t|
@@ -200,8 +204,8 @@ ActiveRecord::Schema.define(:version => 20140213203328) do
     t.integer  "display_order"
     t.text     "html"
     t.text     "stylesheets"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "thumbnail"
     t.string   "section"
     t.text     "edit_form_html"
@@ -209,9 +213,11 @@ ActiveRecord::Schema.define(:version => 20140213203328) do
     t.string   "edit_javascript"
     t.string   "show_javascript"
     t.text     "lib_javascripts"
+    t.integer  "garden_widget_id"
   end
 
   add_index "widgets", ["drop_target_id"], :name => "index_widgets_on_web_template_id"
+  add_index "widgets", ["garden_widget_id"], :name => "index_widgets_on_garden_widget_id"
   add_index "widgets", ["name"], :name => "index_widgets_on_name"
 
 end
