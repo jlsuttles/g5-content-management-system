@@ -2,7 +2,7 @@ class GardenWebLayoutUpdater
   def update_all
     updated_garden_web_layouts = []
 
-    WebLayout.component_microformats.map do |component|
+    GardenWebLayout.component_microformats.map do |component|
       garden_web_layout = GardenWebLayout.find_or_initialize(url: get_url(component))
       update(garden_web_layout, component)
       updated_garden_web_layouts << garden_web_layout

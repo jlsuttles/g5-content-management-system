@@ -1,8 +1,5 @@
 class WebTheme < ActiveRecord::Base
-  include ComponentGardenable
   include HasManySettings
-
-  set_garden_url ENV["THEME_GARDEN_URL"]
 
   # TODO: add to schema
   belongs_to :garden_web_theme

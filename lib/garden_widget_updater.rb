@@ -2,7 +2,7 @@ class GardenWidgetUpdater
   def update_all
     updated_garden_widgets = []
 
-    Widget.component_microformats.map do |component|
+    GardenWidget.component_microformats.map do |component|
       garden_widget = GardenWidget.find_or_initialize(url: get_url(component))
       update(garden_widget, component)
       updated_garden_widgets << garden_widget

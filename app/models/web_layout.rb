@@ -1,8 +1,5 @@
 class WebLayout < ActiveRecord::Base
-  include ComponentGardenable
   include HasManySettings
-
-  set_garden_url ENV["LAYOUT_GARDEN_URL"]
 
   # TODO: add to schema
   belongs_to :garden_web_layout

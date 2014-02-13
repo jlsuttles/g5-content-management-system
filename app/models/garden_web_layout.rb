@@ -1,4 +1,8 @@
 class GardenWebLayout < ActiveRecord::Base
+  include ComponentGardenable
+
+  set_garden_url ENV["LAYOUT_GARDEN_URL"]
+
   attr_accessible :name, :url, :thumbnail, :html, :stylesheets
 
   serialize :stylesheets, Array

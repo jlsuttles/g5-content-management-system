@@ -1,4 +1,8 @@
 class GardenWebTheme < ActiveRecord::Base
+  include ComponentGardenable
+
+  set_garden_url ENV["THEME_GARDEN_URL"]
+
   attr_accessible :name, :url, :thumbnail, :javascripts, :stylesheets,
     :primary_color, :secondary_color
 

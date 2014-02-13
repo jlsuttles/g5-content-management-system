@@ -1,4 +1,8 @@
 class GardenWidget < ActiveRecord::Base
+  include ComponentGardenable
+
+  set_garden_url ENV["WIDGET_GARDEN_URL"]
+
   attr_accessible :name, :url, :thumbnail, :edit_html, :edit_javascript,
     :show_html, :show_javascript, :lib_javascripts, :show_stylesheets, :settings
 
