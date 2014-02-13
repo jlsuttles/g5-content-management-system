@@ -1,7 +1,7 @@
 // *************************************
 //
 //   Application
-//   -> Client Hub
+//   -> G5 Content Management System
 //
 // *************************************
 
@@ -58,7 +58,7 @@
 //   Inbox
 // -------------------------------------
 
-@import "modules/client-hub-ember";
+@import "modules/cms-ember";
 
 .p-category:before { content: "#" }
 

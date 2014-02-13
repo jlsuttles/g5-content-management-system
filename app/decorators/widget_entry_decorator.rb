@@ -12,7 +12,7 @@ class WidgetEntryDecorator < Draper::Decorator
   end
 
   def author_name
-    "G5 Client Hub"
+    "G5 Content Management System"
   end
 
   def categories

@@ -1,6 +1,6 @@
 require "resque/server"
 
-G5ClientHub::Application.routes.draw do
+G5ContentManagementSystem::Application.routes.draw do
   # Dashboard for Resque job queues
   mount Resque::Server, :at => "/resque"
 
