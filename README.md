@@ -1,4 +1,4 @@
-# G5 Content Management System
+# G5 CMS
 
 - Seeds client from client uid
 - Seeds default website for each location

@@ -18,8 +18,8 @@ describe WidgetEntryDecorator, vcr: VCR_OPTIONS do
   end
 
   describe "#author_name" do
-    it "should be G5 Content Management System" do
-      decorated_widget_entry.author_name.should eq "G5 Content Management System"
+    it "should be G5 CMS" do
+      decorated_widget_entry.author_name.should eq "G5 CMS"
     end
   end
 
