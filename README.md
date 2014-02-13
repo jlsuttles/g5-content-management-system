@@ -76,7 +76,7 @@
 1. Set ENV variables.
 
     ```bash
-    $ export HEROKU_APP_NAME=g5-ch-default
+    $ export HEROKU_APP_NAME=g5-cms-default
     $ export HEROKU_USERNAME=your-username
     $ export HEROKU_API_KEY=your-api-key
     $ export ID_RSA=your-private-key
