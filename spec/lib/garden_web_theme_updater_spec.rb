@@ -1,122 +1,75 @@
 require "spec_helper"
 
-describe GardenWebThemeUpdater, vcr: VCR_OPTIONS do
+describe GardenWebThemeUpdater do
+  let(:updater) { GardenWebThemeUpdater.new }
+  let(:gardener) { GardenWebTheme }
 
-  describe ".all_remote" do
-    let(:all_remote) { WebThemeSupport.all_remote }
+  describe "#update_all" do
+    describe "when a new theme is added to the garden" do
+      it "creates new GardenWebTheme" do
+        gardener.stub(:garden_url) { "spec/support/garden_web_theme_updater/new.html" }
+        expect { updater.update_all }.to change { gardener.count }.by(1)
+      end
+    end
 
-    it "returns 5 web themes with names, urls, and thumbails" do
-      expect(all_remote).to have(5).items
-      all_remote.each do |a_remote|
-        expect(a_remote).to be_an_instance_of WebTheme
-        expect(a_remote.name).to be_present
-        expect(a_remote.url).to be_present
-        expect(a_remote.thumbnail).to be_present
+    describe "when a theme is updated in the garden" do
+      let(:garden_web_theme) { Fabricate(:garden_web_theme, url: "http://theme-garden.com/theme-test") }
+
+      it "updates GardenWebTheme with same URL" do
+        gardener.stub(:garden_url) { "spec/support/garden_web_theme_updater/updated.html" }
+        expect { updater.update_all }.to change { garden_web_theme.reload.name }.to("Updated Garden Theme")
+      end
+    end
+
+    describe "when a theme is removed from the garden" do
+      let!(:garden_web_theme) { Fabricate(:garden_web_theme, url: "http://theme-garden.com/theme-test") }
+
+      it "destroys GardenWebTheme with same URL if not in use" do
+        gardener.stub(:garden_url) { "spec/support/garden_web_theme_updater/removed.html" }
+        expect { updater.update_all }.to change { gardener.count }.by(-1)
+      end
+
+      it "does not destroy GardenWebTheme with same URL if it is in use" do
+        Fabricate(:web_theme, garden_web_theme: garden_web_theme)
+        gardener.stub(:garden_url) { "spec/support/garden_web_theme_updater/removed.html" }
+        expect { updater.update_all }.not_to change { gardener.count }
       end
     end
   end
 
-  describe "#assign_attributes_from_url" do
-    describe "when component is found at url" do
-      let(:web_theme) { Fabricate.build(:web_theme) }
+  describe "#update" do
+    let(:garden_web_theme) { Fabricate(:garden_web_theme, url: "spec/support/garden_web_theme_updater/theme-test/updated.html") }
 
-      before do
-        web_theme.send(:assign_attributes_from_url)
-      end
-
-      it "assigns a name" do
-        expect(web_theme.name).to be_present
-      end
-
-      it "assigns a url" do
-        expect(web_theme.url).to be_present
-      end
-
-      it "assigns a thumbnail" do
-        expect(web_theme.thumbnail).to be_present
-      end
-
-      it "assigns primary color" do
-        expect(web_theme.primary_color).to be_present
-      end
-
-      it "assigns secondary color" do
-        expect(web_theme.secondary_color).to be_present
-      end
-
-      it "assigns a stylesheets" do
-        expect(web_theme.stylesheets).to be_present
-      end
+    before do
+      updater.update(garden_web_theme)
     end
 
-    describe "when no component is found at url" do
-      let(:web_theme) { Fabricate.build(:web_theme, url: "http://google.com") }
-
-      it "raises an error" do
-        expect { web_theme.send(:assign_attributes_from_url) }.to raise_error(
-          StandardError, "No h-g5-component found at url: #{web_theme.url}")
-      end
+    it "sets url" do
+      expect(garden_web_theme.url).to eq "http://theme-garden.com/theme-test"
     end
 
-    describe "when OpenURI::HTTPError" do
-      let(:web_theme) { Fabricate.build(:web_theme) }
-
-      before do
-        Microformats2.stub(:parse) {
-          raise OpenURI::HTTPError.new("404 Object Not Found", nil)
-        }
-      end
-
-      it "logs a failed request" do
-        Rails.logger.should_receive(:warn).with("404 Object Not Found")
-        web_theme.send(:assign_attributes_from_url)
-      end
-    end
-  end
-
-  describe "Colors" do
-    describe "Default Colors" do
-      describe "When custom colors are nil" do
-        let(:web_theme) { Fabricate(:web_theme,
-          custom_colors: nil,
-          custom_primary_color: nil,
-          custom_secondary_color: nil) }
-
-        it { web_theme.primary_color.should eq(web_theme.colors[0]) }
-        it { web_theme.secondary_color.should eq(web_theme.colors[1]) }
-      end
-
-      describe "When custom colors are present" do
-        let(:web_theme) { Fabricate(:web_theme,
-          custom_colors: nil,
-          custom_primary_color: "#custom-primary",
-          custom_secondary_color: "#custom-secondary") }
-
-        it { web_theme.primary_color.should eq(web_theme.colors[0]) }
-        it { web_theme.secondary_color.should eq(web_theme.colors[1]) }
-      end
+    it "sets name" do
+      expect(garden_web_theme.name).to eq "Updated Garden Theme"
     end
 
-    describe "Custom Colors" do
-      describe "When custom colors are nil" do
-        let(:web_theme) { Fabricate(:web_theme,
-          custom_colors: true,
-          custom_primary_color: nil,
-          custom_secondary_color: nil) }
+    it "sets thumbnail" do
+      expect(garden_web_theme.thumbnail).to eq "http://theme-garden.com/theme-test/images/thumbnail.png"
+    end
 
-        it { web_theme.primary_color.should eq(web_theme.colors[0]) }
-        it { web_theme.secondary_color.should eq(web_theme.colors[1]) }
-      end
+    it "sets stylesheets" do
+      expect(garden_web_theme.stylesheets).to eq ["http://theme-garden.com/theme-test/stylesheets/theme-test.css"]
+    end
 
-      describe "When custom colors are present" do
-        let(:web_theme) { Fabricate(:web_theme,
-          custom_colors: true,
-          custom_primary_color: "#custom-primary",
-          custom_secondary_color: "#custom-secondary") }
+    it "sets javascripts" do
+      expect(garden_web_theme.javascripts).to eq ["http://theme-garden.com/theme-test/javascripts/theme-test.js"]
+    end
 
-        it { web_theme.primary_color.should eq "#custom-primary" }
-        it { web_theme.secondary_color.should eq "#custom-secondary" }
-      end
+    it "sets primary_color" do
+      expect(garden_web_theme.primary_color).to eq "#primary"
+    end
+
+    it "sets secondary_color" do
+      expect(garden_web_theme.secondary_color).to eq "#secondary"
     end
   end
 end

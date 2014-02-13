@@ -2,18 +2,21 @@ class GardenWidgetUpdater
   def update_all
     updated_garden_widgets = []
 
-    GardenWidget.component_microformats.map do |component|
-      garden_widget = GardenWidget.find_or_initialize(url: get_url(component))
+    components_microformats.map do |component|
+      garden_widget = GardenWidget.find_or_initialize_by_url(get_url(component))
       update(garden_widget, component)
       updated_garden_widgets << garden_widget
-    end
+    end if components_microformats
 
-    deleted_garden_widgets = GardenWidget.all - updated_garden_widgets
-    deleted_garden_widgets.destroy_all
+    removed_garden_widgets = GardenWidget.all - updated_garden_widgets
+    removed_garden_widgets.each do |removed_garden_widget|
+      removed_garden_widget.destroy
+    end
   end
 
   def update(garden_widget, component=nil)
     component ||= garden_widget.component_microformat
+    garden_widget.url = get_url(component)
     garden_widget.name = get_name(component)
     garden_widget.thumbnail = get_thumbnail(component)
     garden_widget.edit_html = get_edit_html(component)
@@ -27,6 +30,10 @@ class GardenWidgetUpdater
   end
 
   private
+
+  def components_microformats
+    GardenWidget.components_microformats
+  end
 
   def get_url(component)
     if component.respond_to?(:url)
@@ -47,7 +54,7 @@ class GardenWidgetUpdater
   end
 
   def get_edit_html(component)
-    if component.respond_to(:g5_edit_template)
+    if component.respond_to?(:g5_edit_template)
       url = component.g5_edit_template.to_s
       open(url).read if url
     end
@@ -60,7 +67,7 @@ class GardenWidgetUpdater
   end
 
   def get_show_html(component)
-    if component.respond_to(:g5_show_template)
+    if component.respond_to?(:g5_show_template)
       url = component.g5_show_template.to_s
       open(url).read if url
     end

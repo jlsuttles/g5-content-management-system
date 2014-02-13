@@ -1,80 +1,67 @@
 require "spec_helper"
 
-describe GardenWebLayoutUpdater, vcr: VCR_OPTIONS do
+describe GardenWebLayoutUpdater do
+  let(:updater) { GardenWebLayoutUpdater.new }
+  let(:gardener) { GardenWebLayout }
 
-  describe ".all_remote" do
-    let(:all_remote) { WebLayoutSupport.all_remote }
+  describe "#update_all" do
+    describe "when a new layout is added to the garden" do
+      it "creates new GardenWebLayout" do
+        gardener.stub(:garden_url) { "spec/support/garden_web_layout_updater/new.html" }
+        expect { updater.update_all }.to change { gardener.count }.by(1)
+      end
+    end
 
-    it "returns 6 web layouts with names, urls, and thumbails" do
-      expect(all_remote).to have(6).items
-      all_remote.each do |a_remote|
-        expect(a_remote).to be_an_instance_of WebLayout
-        expect(a_remote.name).to be_present
-        expect(a_remote.url).to be_present
-        expect(a_remote.thumbnail).to be_present
+    describe "when a layout is updated in the garden" do
+      let(:garden_web_layout) { Fabricate(:garden_web_layout, url: "http://layout-garden.com/layout-test") }
+
+      it "updates GardenWebLayout with same URL" do
+        gardener.stub(:garden_url) { "spec/support/garden_web_layout_updater/updated.html" }
+        expect { updater.update_all }.to change { garden_web_layout.reload.name }.to("Updated Garden Layout")
+      end
+    end
+
+    describe "when a layout is removed from the garden" do
+      let!(:garden_web_layout) { Fabricate(:garden_web_layout, url: "http://layout-garden.com/layout-test") }
+
+      it "destroys GardenWebLayout with same URL if not in use" do
+        gardener.stub(:garden_url) { "spec/support/garden_web_layout_updater/removed.html" }
+        expect { updater.update_all }.to change { gardener.count }.by(-1)
+      end
+
+      it "does not destroy GardenWebLayout with same URL if it is in use" do
+        Fabricate(:web_layout, garden_web_layout: garden_web_layout)
+        gardener.stub(:garden_url) { "spec/support/garden_web_layout_updater/removed.html" }
+        expect { updater.update_all }.not_to change { gardener.count }
       end
     end
   end
 
-  describe "#assign_attributes_from_url" do
-    describe "when component is found at url" do
-      let(:web_layout) { Fabricate.build(:web_layout) }
+  describe "#update" do
+    let(:garden_web_layout) { Fabricate(:garden_web_layout, url: "spec/support/garden_web_layout_updater/layout-test/updated.html") }
 
-      before do
-        web_layout.send(:assign_attributes_from_url)
-      end
-
-      it "assigns a name" do
-        expect(web_layout.name).to be_present
-      end
-
-      it "assigns a url" do
-        expect(web_layout.url).to be_present
-      end
-
-      it "assigns a thumbnail" do
-        expect(web_layout.thumbnail).to be_present
-      end
-
-      it "assigns a html" do
-        expect(web_layout.html).to be_present
-      end
-
-      describe "when layout has stylesheet" do
-        let(:web_layout) { Fabricate.build(:web_layout, url: WebLayoutSupport.aside_first_sidebar_left.url) }
-
-        before do
-          web_layout.send(:assign_attributes_from_url)
-        end
-
-        it "assigns stylesheets" do
-          expect(web_layout.stylesheets).to be_present
-        end
-      end
+    before do
+      updater.update(garden_web_layout)
     end
 
-    describe "when no component is found at url" do
-      let(:web_layout) { Fabricate.build(:web_layout, url: "http://google.com") }
-
-      it "raises an error" do
-        expect { web_layout.send(:assign_attributes_from_url) }.to raise_error(
-          StandardError, "No h-g5-component found at url: #{web_layout.url}")
-      end
+    it "sets url" do
+      expect(garden_web_layout.url).to eq "http://layout-garden.com/layout-test"
     end
 
-    describe "when OpenURI::HTTPError" do
-      let(:web_layout) { Fabricate.build(:web_layout) }
+    it "sets name" do
+      expect(garden_web_layout.name).to eq "Updated Garden Layout"
+    end
 
-      before do
-        Microformats2.stub(:parse) {
-          raise OpenURI::HTTPError.new("404 Object Not Found", nil)
-        }
-      end
+    it "sets thumbnail" do
+      expect(garden_web_layout.thumbnail).to eq "http://layout-garden.com/layout-test/images/thumbnail.png"
+    end
 
-      it "logs a failed request" do
-        Rails.logger.should_receive(:warn).with("404 Object Not Found")
-        web_layout.send(:assign_attributes_from_url)
-      end
+    it "sets html" do
+      expect(garden_web_layout.html).to eq "<div class=\"layout-test layout\">\n      </div>"
+    end
+
+    it "sets stylesheets" do
+      expect(garden_web_layout.stylesheets).to eq ["http://layout-garden.com/layout-test/stylesheets/layout-test.css"]
     end
   end
 end

@@ -2,19 +2,23 @@ class GardenWebThemeUpdater
   def update_all
     updated_garden_web_themes = []
 
-    GardenWebTheme.component_microformats.map do |component|
-      garden_web_theme = GardenWebTheme.find_or_initialize(url: get_url(component))
+    components_microformats.map do |component|
+      garden_web_theme = GardenWebTheme.find_or_initialize_by_url(get_url(component))
       update(garden_web_theme, component)
       updated_garden_web_themes << garden_web_theme
-    end
+    end if components_microformats
 
-    deleted_garden_web_themes = GardenWebTheme.all - updated_garden_web_themes
-    # TODO: do not destroy if in use
-    deleted_garden_web_themes.destroy_all
+    removed_garden_web_themes = GardenWebTheme.all - updated_garden_web_themes
+    removed_garden_web_themes.each do |removed_garden_web_theme|
+      unless removed_garden_web_theme.in_use?
+        removed_garden_web_theme.destroy
+      end
+    end
   end
 
   def update(garden_web_theme, component=nil)
     component ||= garden_web_theme.component_microformat
+    garden_web_theme.url = get_url(component)
     garden_web_theme.name = get_name(component)
     garden_web_theme.thumbnail = get_thumbnail(component)
     garden_web_theme.javascripts = get_javascripts(component)
@@ -25,6 +29,10 @@ class GardenWebThemeUpdater
   end
 
   private
+
+  def components_microformats
+    GardenWebTheme.components_microformats
+  end
 
   def get_url(component)
     if component.respond_to?(:url)

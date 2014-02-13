@@ -9,10 +9,13 @@ class GardenWebTheme < ActiveRecord::Base
   serialize :stylesheets, Array
   serialize :javascripts, Array
 
-  # TODO: do not destroy if in use
   has_many :web_themes, dependent: :destroy
 
   validates :name, presence: true
   validates :url, presence: true
-  validates :thumbail, presence: true
+  validates :thumbnail, presence: true
+
+  def in_use?
+    web_themes.present?
+  end
 end

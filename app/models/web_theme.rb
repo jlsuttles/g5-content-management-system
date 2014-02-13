@@ -1,7 +1,6 @@
 class WebTheme < ActiveRecord::Base
   include HasManySettings
 
-  # TODO: add to schema
   belongs_to :garden_web_theme
   belongs_to :web_template
   has_one :website, through: :web_template

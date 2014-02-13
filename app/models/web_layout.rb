@@ -1,7 +1,6 @@
 class WebLayout < ActiveRecord::Base
   include HasManySettings
 
-  # TODO: add to schema
   belongs_to :garden_web_layout
   belongs_to :web_template
   has_one :website, through: :web_template

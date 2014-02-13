@@ -4,7 +4,6 @@ class Widget < ActiveRecord::Base
 
   ranks :display_order, with_same: :drop_target_id
 
-  # TODO: add to schema
   belongs_to :garden_widget
   belongs_to :drop_target
   has_one :web_template, through: :drop_target

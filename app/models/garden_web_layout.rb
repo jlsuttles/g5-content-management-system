@@ -7,15 +7,18 @@ class GardenWebLayout < ActiveRecord::Base
 
   serialize :stylesheets, Array
 
-  # TODO: do not destroy if in use
-  has_many :garden_web_layouts, dependent: :destroy
+  has_many :web_layouts, dependent: :destroy
 
   after_initialize :set_default_stylesheets
 
   validates :name, presence: true
   validates :url, presence: true
-  validates :thumbail, presence: true
+  validates :thumbnail, presence: true
   validates :html, presence: true
+
+  def in_use?
+    web_layouts.present?
+  end
 
   private
 

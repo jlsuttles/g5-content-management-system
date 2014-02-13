@@ -2,19 +2,23 @@ class GardenWebLayoutUpdater
   def update_all
     updated_garden_web_layouts = []
 
-    GardenWebLayout.component_microformats.map do |component|
-      garden_web_layout = GardenWebLayout.find_or_initialize(url: get_url(component))
+    components_microformats.map do |component|
+      garden_web_layout = GardenWebLayout.find_or_initialize_by_url(get_url(component))
       update(garden_web_layout, component)
       updated_garden_web_layouts << garden_web_layout
-    end
+    end if components_microformats
 
-    deleted_garden_web_layouts = GardenWebLayout.all - updated_garden_web_layouts
-    # TODO: do not destroy if in use
-    deleted_garden_web_layouts.destroy_all
+    removed_garden_web_layouts = GardenWebLayout.all - updated_garden_web_layouts
+    removed_garden_web_layouts.each do |removed_garden_web_layout|
+      unless removed_garden_web_layout.in_use?
+        removed_garden_web_layout.destroy
+      end
+    end
   end
 
   def update(garden_web_layout, component=nil)
     component ||= garden_web_layout.component_microformat
+    garden_web_layout.url = get_url(component)
     garden_web_layout.name = get_name(component)
     garden_web_layout.thumbnail = get_thumbnail(component)
     garden_web_layout.html = get_html(component)
@@ -23,6 +27,10 @@ class GardenWebLayoutUpdater
   end
 
   private
+
+  def components_microformats
+    GardenWebLayout.components_microformats
+  end
 
   def get_url(component)
     if component.respond_to?(:url)
@@ -43,7 +51,7 @@ class GardenWebLayoutUpdater
   end
 
   def get_html(component)
-    if component.resepond_to?(:content)
+    if component.respond_to?(:content)
       CGI.unescapeHTML(component.content.to_s)
     end
   end
