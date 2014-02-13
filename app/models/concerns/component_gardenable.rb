@@ -41,4 +41,12 @@ module ComponentGardenable
       end
     end
   end
+
+  def component_microformat
+    component = Microformats2.parse(url).first
+    raise "No h-g5-component found at url: #{url}" unless component
+    component
+  rescue OpenURI::HTTPError => e
+    Rails.logger.warn e.message
+  end
 end

@@ -14,7 +14,7 @@ class GardenWebLayoutUpdater
   end
 
   def update(garden_web_layout, component=nil)
-    component ||= get_component(gardent_web_layout)
+    component ||= garden_web_layout.component_microformat
     garden_web_layout.name = get_name(component)
     garden_web_layout.thumbnail = get_thumbnail(component)
     garden_web_layout.html = get_html(component)
@@ -23,14 +23,6 @@ class GardenWebLayoutUpdater
   end
 
   private
-
-  def get_component(garden_web_layout)
-    component = Microformats2.parse(garden_web_layout.url).first
-    raise "No h-g5-component found at url: #{url}" unless component
-    component
-  rescue OpenURI::HTTPError => e
-    Rails.logger.warn e.message
-  end
 
   def get_url(component)
     if component.respond_to?(:url)
