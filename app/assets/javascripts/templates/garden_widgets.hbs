@@ -6,7 +6,7 @@
     {{/view}}
 
     <div class="toggle-content page-section">
-      {{#view App.RemoteWidgetsToggleView contentBinding="this"}}
+      {{#view App.GardenWidgetsToggleView contentBinding="this"}}
         <span class="toggle-widget-text">Grid View</span>
         <span class="toggle-widget-text hide">List View</span>
       {{/view}}
@@ -17,7 +17,7 @@
       {{else}}
         <ul class="widgets--list-view widget-view">
           {{#each this}}
-            {{view App.RemoteWidgetView contentBinding="this"}}
+            {{view App.GardenWidgetView contentBinding="this"}}
           {{/each}}
         </ul>
 
@@ -26,7 +26,7 @@
             <div class="jTscrollerContainer">
               <ul id="choose-widgets" class="jTscroller clearfix">
               {{#each this}}
-                {{view App.RemoteWidgetView contentBinding="this"}}
+                {{view App.GardenWidgetView contentBinding="this"}}
               {{/each}}
               </ul>
             </div>

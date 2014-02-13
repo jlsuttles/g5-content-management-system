@@ -1,8 +1,8 @@
-App.RemoteWidgetView = Ember.View.extend JQ.Draggable,
+App.GardenWidgetView = Ember.View.extend JQ.Draggable,
   tagName: "li"
   classNames: ["thumb", "widget", "new-widget"]
   classNameBindings: ["dasherizedName"]
-  templateName: "_remote_widget"
+  templateName: "_garden_widget"
   # JQ.Draggable uiOptions
   revert: true
   zIndex: 1000

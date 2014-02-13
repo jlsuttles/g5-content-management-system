@@ -1,4 +1,4 @@
-App.RemoteWebLayoutView = Ember.View.extend
+App.GardenWebLayoutView = Ember.View.extend
   tagName: "span"
 
   isSelected: ( ->

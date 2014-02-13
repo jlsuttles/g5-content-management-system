@@ -1,4 +1,4 @@
-App.RemoteWebThemesController = Ember.ArrayController.extend
+App.GardenWebThemesController = Ember.ArrayController.extend
   needs: ["webTheme"]
 
   selectedTheme: ( ->
@@ -8,5 +8,6 @@ App.RemoteWebThemesController = Ember.ArrayController.extend
   actions:
     update: (webTheme) ->
       currentWebTheme = @get("controllers.webTheme.model")
+      # TODO: update gardenWebLayoutId or relation instead
       currentWebTheme.set("url", webTheme.get("url"))
       currentWebTheme.save()

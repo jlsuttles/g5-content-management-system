@@ -1,4 +1,4 @@
-App.RemoteWidgetsController = Ember.ArrayController.extend
+App.GardenWidgetsController = Ember.ArrayController.extend
   sortProperties: ["name"]
   sortAscending: true
 

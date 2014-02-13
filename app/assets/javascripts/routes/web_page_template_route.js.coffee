@@ -41,10 +41,10 @@ App.WebPageTemplateRoute = Ember.Route.extend
     @controllerFor("navWidgets").set("model", model.get("website.websiteTemplate.navWidgets"))
     @controllerFor("asideWidgets").set("model", model.get("website.websiteTemplate.asideWidgets"))
     @controllerFor("footerWidgets").set("model", model.get("website.websiteTemplate.footerWidgets"))
-    # setup remote controllers last
-    @controllerFor("remoteWebLayouts").set("model", App.RemoteWebLayout.find())
-    @controllerFor("remoteWebThemes").set("model", App.RemoteWebTheme.find())
-    @controllerFor("remoteWidgets").set("model", App.RemoteWidget.find())
+    # setup garden controllers last
+    @controllerFor("gardenWebLayouts").set("model", App.GardenWebLayout.find())
+    @controllerFor("gardenWebThemes").set("model", App.GardenWebTheme.find())
+    @controllerFor("gardenWidgets").set("model", App.GardenWidget.find())
 
     @setBreadcrumb(@controllerFor("webPageTemplate").get("model").get("name"))
 
