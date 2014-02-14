@@ -25,7 +25,6 @@ class Widget < ActiveRecord::Base
 
   after_initialize :set_defaults
   before_create :update_settings
-  before_save :update_settings
 
   scope :name_like_form, joins(:garden_widget).where("garden_widgets.name LIKE '%Form'")
   scope :meta_description, joins(:garden_widget).where("garden_widgets.name = ?", "Meta Description")
@@ -52,13 +51,6 @@ class Widget < ActiveRecord::Base
     updated_at > widget_entries.maximum(:updated_at)
   end
 
-  private
-
-  # TODO: Is this being used?
-  def set_defaults
-    self.removeable = true
-  end
-
   def update_settings
     return unless garden_widget_settings
     garden_widget_settings.each do |garden_widget_setting|
@@ -69,5 +61,12 @@ class Widget < ActiveRecord::Base
         categories: garden_widget_setting[:categories]
       )
     end
+  end
+
+  private
+
+  # TODO: Is this being used?
+  def set_defaults
+    self.removeable = true
   end
 end

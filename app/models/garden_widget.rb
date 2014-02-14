@@ -10,7 +10,7 @@ class GardenWidget < ActiveRecord::Base
   serialize :show_stylesheets, Array
   serialize :settings, Array
 
-  has_many :widgets, dependent: :destroy
+  has_many :widgets, autosave: true, dependent: :destroy
 
   validates :name, presence: true
   validates :slug, presence: true
@@ -18,4 +18,8 @@ class GardenWidget < ActiveRecord::Base
   validates :thumbnail, presence: true
   validates :edit_html, presence: true
   validates :show_html, presence: true
+
+  def update_widgets_settings
+    widgets.map(&:update_settings)
+  end
 end
