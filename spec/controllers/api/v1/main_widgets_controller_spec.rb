@@ -51,10 +51,10 @@ describe Api::V1::MainWidgetsController, vcr: VCR_OPTIONS do
     end
 
     context "allowed attributes" do
-      it "url" do
-        post :create, id: widget.id, main_widget: { url: WidgetSupport.widget.url }
+      it "garden_widget_id" do
+        put :update, id: widget.id, main_widget: { garden_widget_id: 333 }
         expect(response.status).to eq 200
-        expect(widget.reload.url).to eq WidgetSupport.widget.url
+        expect(widget.reload.garden_widget_id).to eq 333
       end
     end
   end

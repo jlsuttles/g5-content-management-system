@@ -15,6 +15,6 @@ class Api::V1::WebLayoutsController < Api::V1::ApplicationController
   private
 
   def web_layout_params
-    params.require(:web_layout).permit(:url)
+    params.require(:web_layout).permit(:garden_web_layout_id)
   end
 end
