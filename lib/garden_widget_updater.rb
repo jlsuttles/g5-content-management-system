@@ -99,14 +99,38 @@ class GardenWidgetUpdater
         h_property_group = e_property_group.format
         h_property_group.g5_properties.each do |e_property|
           settings << {
-            name: h_property.g5_name.to_s,
-            editable: h_property.g5_editable.to_s || false,
-            default_value: h_property.g5_default_value.to_s,
-            categories: h_property_group.try(:categories).try(:map, &:to_s)
+            name: get_setting_name(e_property.format),
+            editable: get_setting_editable(e_property.format) || false,
+            default_value: get_setting_default_value(e_property.format),
+            categories: get_setting_categories(h_property_group)
           }
         end
       end
     end
     settings
+  end
+
+  def get_setting_name(setting)
+    if setting.respond_to?(:name)
+      setting.name.to_s
+    end
+  end
+
+  def get_setting_editable(setting)
+    if setting.respond_to?(:g5_editable)
+      setting.g5_editable.to_s
+    end
+  end
+
+  def get_setting_default_value(setting)
+    if setting.respond_to?(:g5_default_value)
+      setting.g5_default_value.to_s
+    end
+  end
+
+  def get_setting_categories(setting)
+    if setting.respond_to?(:categories)
+      setting.categories.try(:map, &:to_s)
+    end
   end
 end
