@@ -6,8 +6,7 @@ App.GardenWebLayoutsController = Ember.ArrayController.extend
   ).property("controllers.webLayout.model")
 
   actions:
-    update: (webLayout) ->
-      currentWebLayout = @get("controllers.webLayout.model")
-      # TODO: update gardenWebLayoutId or relation instead
-      currentWebLayout.set("url", webLayout.get("url"))
-      currentWebLayout.save()
+    update: (gardenWebLayout) ->
+      webLayout = @get("controllers.webLayout.model")
+      webLayout.set("gardenWebLayoutId", gardenWebLayout.get("id"))
+      webLayout.save()

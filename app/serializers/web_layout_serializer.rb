@@ -1,5 +1,6 @@
 class WebLayoutSerializer < ActiveModel::Serializer
   attributes  :id,
+              :garden_web_layout_id,
               :website_template_id,
               :name,
               :thumbnail,

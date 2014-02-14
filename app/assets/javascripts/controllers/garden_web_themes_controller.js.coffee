@@ -6,8 +6,7 @@ App.GardenWebThemesController = Ember.ArrayController.extend
   ).property("controllers.webTheme.model")
 
   actions:
-    update: (webTheme) ->
-      currentWebTheme = @get("controllers.webTheme.model")
-      # TODO: update gardenWebLayoutId or relation instead
-      currentWebTheme.set("url", webTheme.get("url"))
-      currentWebTheme.save()
+    update: (gardenWebTheme) ->
+      webTheme = @get("controllers.webTheme.model")
+      webTheme.set("gardenWebThemeId", gardenWebTheme.get("id"))
+      webTheme.save()

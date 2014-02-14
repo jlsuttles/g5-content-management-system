@@ -1,4 +1,6 @@
 App.WebTheme = DS.Model.extend App.ReloadIframe,
+  # TODO: make a DS.belongsTo
+  gardenWebThemeId: DS.attr("integer")
   websiteTemplate: DS.belongsTo("App.WebsiteTemplate")
   name: DS.attr("string")
   thumbnail: DS.attr("string")
