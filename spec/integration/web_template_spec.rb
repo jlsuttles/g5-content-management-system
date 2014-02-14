@@ -22,7 +22,7 @@
 require "spec_helper"
 
 def set_setting(web_template, widget_name, setting_name, setting_value)
-  widget = web_template.widgets.where(name: widget_name).first
+  widget = web_template.widgets.joins(:garden_widget).where("garden_widgets.name" => widget_name).first
   raise "Did not find '#{widget_name}' widget for web template '#{web_template.name}'" unless widget
   setting = widget.settings.where(name: setting_name).first
   raise "Did not find '#{setting_name}' setting for widget '#{widget_name}'" unless setting

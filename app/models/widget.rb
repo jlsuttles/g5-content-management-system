@@ -27,9 +27,9 @@ class Widget < ActiveRecord::Base
   before_create :update_settings
   before_save :update_settings
 
-  scope :name_like_form, where("widgets.name LIKE '%Form'")
-  scope :meta_description, where(name: "Meta Description")
-  scope :not_meta_description, where("widgets.name != ?", "Meta Description")
+  scope :name_like_form, joins(:garden_widget).where("garden_widgets.name LIKE '%Form'")
+  scope :meta_description, joins(:garden_widget).where("garden_widgets.name = ?", "Meta Description")
+  scope :not_meta_description, joins(:garden_widget).where("garden_widgets.name != ?", "Meta Description")
 
   def kind_of_widget?(kind)
     name == kind

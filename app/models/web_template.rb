@@ -101,7 +101,7 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def stylesheets
-    widgets.map(&:stylesheets).flatten +
+    widgets.map(&:show_stylesheets).flatten +
     website.try(:website_template).try(:stylesheets).to_a
   end
 
