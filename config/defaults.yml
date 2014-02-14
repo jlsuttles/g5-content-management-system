@@ -3,110 +3,109 @@ website:
   website_template:
     name: Website Template
     web_layout:
-      name: main-first-sidebar-right
+      slug: main-first-sidebar-right
     web_theme:
-      name: high-rise
+      slug: high-rise
     drop_targets:
       - html_id: drop-target-head
         widgets:
-          - name: meta
-          - name: analytics
+          - slug: meta
+          - slug: analytics
       - html_id: drop-target-logo
         widgets:
-          - name: logo
+          - slug: logo
       - html_id: drop-target-phone
         widgets:
-          - name: phone
+          - slug: phone
       - html_id: drop-target-btn
         widgets:
-          - name: button
+          - slug: button
       - html_id: drop-target-nav
         widgets:
-          - name: navigation
+          - slug: navigation
       - html_id: drop-target-aside
         widgets:
-          - name: navigation
-          - name: contact-info
-          - name: social-links
-          - name: photo
-          - name: html
-          - name: coupon
+          - slug: navigation
+          - slug: contact-info
+          - slug: social-links
+          - slug: photo
+          - slug: html
+          - slug: coupon
       - html_id: drop-target-footer
         widgets:
-          - name: contact-info
-          - name: hours
-          - name: footer-info
+          - slug: contact-info
+          - slug: hours
+          - slug: footer-info
 
   web_home_template:
     name: Home
     drop_targets:
       - html_id: drop-target-main
         widgets:
-          - name: photo
-          - name: html
+          - slug: photo
+          - slug: html
 
   web_page_templates:
     - name: Amenities
       drop_targets:
         - html_id: drop-target-main
           widgets:
-            - name: html
-            - name: photo
-            - name: photo
+            - slug: html
+            - slug: photo
+            - slug: photo
 
     - name: Coupon
       drop_targets:
         - html_id: drop-target-main
           widgets:
-            - name: coupon
+            - slug: coupon
 
     - name: Floorplans and Rates
       drop_targets:
         - html_id: drop-target-main
           widgets:
-            - name: floorplans
+            - slug: floorplans
 
     - name: Directions
       drop_targets:
         - html_id: drop-target-main
           widgets:
-            - name: directions
+            - slug: directions
 
     - name: Photo Gallery
       drop_targets:
         - html_id: drop-target-main
           widgets:
-            - name: gallery
+            - slug: gallery
 
     - name: Request Info
       drop_targets:
         - html_id: drop-target-main
           widgets:
-            - name: html
-            - name: request-info-form
+            - slug: html
+            - slug: request-info-form
 
     - name: Social
       drop_targets:
         - html_id: drop-target-main
           widgets:
-            - name: html
-            - name: blog-feed
-            - name: twitter-feed
+            - slug: html
+            - slug: blog-feed
+            - slug: twitter-feed
 
     - name: Social
       drop_targets:
         - html_id: drop-target-main
           widgets:
-            - name: html
-            - name: blog-feed
-            - name: twitter-feed
+            - slug: html
+            - slug: blog-feed
+            - slug: twitter-feed
 
     - name: Neighborhood
       drop_targets:
         - html_id: drop-target-main
           widgets:
-            - name: html
-            - name: photo
-            - name: photo
-            - name: html
-
+            - slug: html
+            - slug: photo
+            - slug: photo
+            - slug: html

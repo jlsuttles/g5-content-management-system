@@ -2,51 +2,51 @@ website:
   website_template:
     name: Example Website Template
     web_layout:
-      name: main-first-sidebar-left
+      slug: main-first-sidebar-left
     web_theme:
-      name: classic
+      slug: classic
     drop_targets:
       - html_id: drop-target-head
         widgets:
-          - name: meta
+          - slug: meta
       - html_id: drop-target-logo
         widgets:
-          - name: logo
+          - slug: logo
       - html_id: drop-target-phone
         widgets:
-          - name: phone
+          - slug: phone
       - html_id: drop-target-btn
         widgets:
-          - name: button
+          - slug: button
       - html_id: drop-target-nav
         widgets:
-          - name: navigation
+          - slug: navigation
       - html_id: drop-target-aside
         widgets:
-          - name: calls-to-action
-          - name: social-links
+          - slug: calls-to-action
+          - slug: social-links
       - html_id: drop-target-footer
         widgets:
-          - name: navigation
-          - name: contact-info
-          - name: hours
+          - slug: navigation
+          - slug: contact-info
+          - slug: hours
   web_home_template:
     name: Home
     drop_targets:
       - html_id: drop-target-main
         widgets:
-          - name: photo
-          - name: html
+          - slug: photo
+          - slug: html
   web_page_templates:
     - name: Example Page 1
       drop_targets:
         - html_id: drop-target-main
           widgets:
-            - name: html
-            - name: social-links
+            - slug: html
+            - slug: social-links
     - name: Example Page 2
       drop_targets:
         - html_id: drop-target-main
           widgets:
-            - name: html
-            - name: social-links
+            - slug: html
+            - slug: social-links
