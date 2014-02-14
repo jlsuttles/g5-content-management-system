@@ -1,14 +1,17 @@
 require "spec_helper"
 
 describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: VCR_OPTIONS do
-  before do
-    @client, @location, @website = seed
-    @web_page_template = @website.web_page_templates.first
-    @website_template = @website.website_template
-  end
-
   describe "Color picker" do
     before do
+      VCR.use_cassette("Gardens") do
+        GardenWebLayoutUpdater.new.update_all
+        GardenWebThemeUpdater.new.update_all
+        GardenWidgetUpdater.new.update_all
+      end
+
+      @client, @location, @website = seed
+      @web_page_template = @website.web_page_templates.first
+      @website_template = @website.website_template
       @web_theme = @website_template.web_theme
 
       visit_web_page_template

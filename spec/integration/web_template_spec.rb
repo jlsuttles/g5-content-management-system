@@ -31,47 +31,58 @@ end
 
 describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
   describe "Renders preview of compiled web template" do
-    before do
-      @client = Fabricate(:client)
-      @location = Fabricate(:location)
-    end
-
     describe "website_instructions/example.yml" do
       before do
-        GardenWebLayoutUpdater.new.update_all
-        GardenWebThemeUpdater.new.update_all
-        GardenWebLayoutUpdater.new.update_all
+        VCR.use_cassette("Gardens") do
+          GardenWebLayoutUpdater.new.update_all
+          GardenWebThemeUpdater.new.update_all
+          GardenWidgetUpdater.new.update_all
+        end
+
+        @client = Fabricate(:client)
+        @location = Fabricate(:location)
         @instructions = YAML.load_file("#{Rails.root}/spec/support/website_instructions/example.yml")
         @website = WebsiteSeeder.new(@location, @instructions["website"]).seed
         @web_page_template = @website.web_page_templates.first
-        set_setting(@web_page_template, "Social Links", "twitter_username", "jlsuttles")
-        visit @web_page_template.url
       end
 
-      it "has web template title in title tag" do
-        expect(page).to have_title @web_page_template.title
-      end
+      describe "When settings are not set" do
+        before do
+          visit @web_page_template.url
+        end
 
-      it "has a rel='canonical' link" do
-        expect(page).to have_selector("link[rel=canonical][href='#{@web_page_template.page_url}']", visible: false)
-      end
+        it "has web template title in title tag" do
+          expect(page).to have_title @web_page_template.title
+        end
 
-      it "displays name in navigation widget in nav section" do
-        pending "Capybara finds the selector locally but not on CI."
-        within "#drop-target-nav .navigation.widget" do
-          expect(page).to have_content @web_page_template.name.upcase
+        it "has a rel='canonical' link" do
+          expect(page).to have_selector("link[rel=canonical][href='#{@web_page_template.page_url}']", visible: false)
+        end
+
+        it "displays name in navigation widget in nav section" do
+          pending "Capybara finds the selector locally but not on CI."
+          within "#drop-target-nav .navigation.widget" do
+            expect(page).to have_content @web_page_template.name.upcase
+          end
+        end
+
+        it "displays name in navigation widget in footer section" do
+          within "#drop-target-footer .navigation.widget" do
+            expect(page).to have_content @web_page_template.name.upcase
+          end
         end
       end
 
-      it "displays name in navigation widget in footer section" do
-        within "#drop-target-footer .navigation.widget" do
-          expect(page).to have_content @web_page_template.name.upcase
+      describe "When settings are set" do
+        before do
+          set_setting(@web_page_template, "Social Links", "twitter_username", "jlsuttles")
+          visit @web_page_template.url
         end
-      end
 
-      it "has a link to twitter with the set username in social links widget" do
-        within "#drop-target-main .social-links.widget" do
-          page.should have_selector "a[href='http://www.twitter.com/jlsuttles']"
+        it "has a link to twitter with the set username in social links widget" do
+          within "#drop-target-main .social-links.widget" do
+            page.should have_selector "a[href='http://www.twitter.com/jlsuttles']"
+          end
         end
       end
     end

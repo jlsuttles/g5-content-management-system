@@ -11,6 +11,8 @@ class GardenWebTheme < ActiveRecord::Base
 
   has_many :web_themes, dependent: :destroy
 
+  after_initialize :set_defaults
+
   validates :name, presence: true
   validates :slug, presence: true
   validates :url, presence: true
@@ -18,5 +20,12 @@ class GardenWebTheme < ActiveRecord::Base
 
   def in_use?
     web_themes.present?
+  end
+
+  private
+
+  def set_defaults
+    self.stylesheets ||= []
+    self.javascripts ||= []
   end
 end
