@@ -8,9 +8,9 @@ class DeployTasks
     # GardenWebLayoutUpdaterJob must be performed before WebsiteSeeder
     GardenWebLayoutUpdaterJob.perform
     # GardenWebThemetUpdaterJob must be performed before WebsiteSeeder
-    GardenWebThemeUpdaterJob.perfom
+    GardenWebThemeUpdaterJob.perform
     # GardenWidgetUpdaterJob must be performed before WebsiteSeeder
-    GardenWidgetUpdaterJob.perfom
+    GardenWidgetUpdaterJob.perform
     # WebsiteSeederJob must be performed last
     WebsiteSeederJob.perform
   end

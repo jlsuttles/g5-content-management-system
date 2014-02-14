@@ -1,2 +1,1 @@
-G5ClientHub::ClientReaderJob.perform(ENV["G5_CLIENT_UID"])
-G5ClientHub::WebsiteSeederJob.perform
+G5ClientHub::DeployTasks.perform(ENV["G5_CLIENT_UID"])

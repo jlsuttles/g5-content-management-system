@@ -118,8 +118,8 @@ class GardenWidgetUpdater
   end
 
   def get_setting_name(setting)
-    if setting.respond_to?(:name)
-      setting.name.to_s
+    if setting.respond_to?(:g5_name)
+      setting.g5_name.to_s
     end
   end
 

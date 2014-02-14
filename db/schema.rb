@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140213203328) do
+ActiveRecord::Schema.define(:version => 20140214203842) do
 
   create_table "clients", :force => true do |t|
     t.string   "uid"
@@ -134,14 +134,9 @@ ActiveRecord::Schema.define(:version => 20140213203328) do
   end
 
   create_table "web_layouts", :force => true do |t|
-    t.string   "url"
-    t.string   "name"
     t.integer  "web_template_id"
-    t.text     "html"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
-    t.string   "thumbnail"
-    t.text     "stylesheets"
     t.integer  "garden_web_layout_id"
   end
 
@@ -166,15 +161,9 @@ ActiveRecord::Schema.define(:version => 20140213203328) do
   add_index "web_templates", ["website_id"], :name => "index_web_templates_on_website_id"
 
   create_table "web_themes", :force => true do |t|
-    t.string   "url"
-    t.string   "name"
     t.integer  "web_template_id"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
-    t.string   "thumbnail"
-    t.text     "stylesheets"
-    t.text     "javascripts"
-    t.text     "colors"
     t.boolean  "custom_colors"
     t.string   "custom_primary_color"
     t.string   "custom_secondary_color"
@@ -201,26 +190,16 @@ ActiveRecord::Schema.define(:version => 20140213203328) do
   end
 
   create_table "widgets", :force => true do |t|
-    t.string   "url"
-    t.string   "name"
     t.integer  "drop_target_id"
     t.integer  "display_order"
-    t.text     "html"
-    t.text     "stylesheets"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
-    t.string   "thumbnail"
     t.string   "section"
-    t.text     "edit_form_html"
     t.boolean  "removeable"
-    t.string   "edit_javascript"
-    t.string   "show_javascript"
-    t.text     "lib_javascripts"
     t.integer  "garden_widget_id"
   end
 
   add_index "widgets", ["drop_target_id"], :name => "index_widgets_on_web_template_id"
   add_index "widgets", ["garden_widget_id"], :name => "index_widgets_on_garden_widget_id"
-  add_index "widgets", ["name"], :name => "index_widgets_on_name"
 
 end
