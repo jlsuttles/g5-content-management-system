@@ -3,8 +3,15 @@ class DeployTasks
   @queue = :deploy_tasks
 
   def self.perform(client_uid)
-    # ClientReader must be performed before WebsiteSeeder
+    # ClientReaderJob must be performed before WebsiteSeeder
     ClientReaderJob.perform(client_uid)
+    # GardenWebLayoutUpdaterJob must be performed before WebsiteSeeder
+    GardenWebLayoutUpdaterJob.perform
+    # GardenWebThemetUpdaterJob must be performed before WebsiteSeeder
+    GardenWebThemeUpdaterJob.perfom
+    # GardenWidgetUpdaterJob must be performed before WebsiteSeeder
+    GardenWidgetUpdaterJob.perfom
+    # WebsiteSeederJob must be performed last
     WebsiteSeederJob.perform
   end
 end
