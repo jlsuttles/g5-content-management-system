@@ -7,6 +7,7 @@ describe WidgetEntry do
   describe "filters" do
     context "before_create" do
       it "sets content to widget's rendered show html" do
+        widget_entry.save
         widget_entry.content.should == widget.render_show_html
       end
     end

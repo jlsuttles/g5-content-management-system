@@ -20,6 +20,7 @@ class GardenWebThemeUpdater
     component ||= garden_web_theme.component_microformat
     garden_web_theme.url = get_url(component)
     garden_web_theme.name = get_name(component)
+    garden_web_theme.slug = get_slug(component)
     garden_web_theme.thumbnail = get_thumbnail(component)
     garden_web_theme.javascripts = get_javascripts(component)
     garden_web_theme.stylesheets = get_stylesheets(component)
@@ -43,6 +44,12 @@ class GardenWebThemeUpdater
   def get_name(component)
     if component.respond_to?(:name)
       component.name.to_s
+    end
+  end
+
+  def get_slug(component)
+    if component.respond_to?(:name)
+      component.name.to_s.parameterize
     end
   end
 

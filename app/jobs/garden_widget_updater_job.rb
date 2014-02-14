@@ -6,4 +6,3 @@ class GardenWidgetUpdaterJob
     GardenWidgetUpdater.new.update_all
   end
 end
-clas

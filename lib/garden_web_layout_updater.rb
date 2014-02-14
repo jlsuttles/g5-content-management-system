@@ -20,6 +20,7 @@ class GardenWebLayoutUpdater
     component ||= garden_web_layout.component_microformat
     garden_web_layout.url = get_url(component)
     garden_web_layout.name = get_name(component)
+    garden_web_layout.slug = get_slug(component)
     garden_web_layout.thumbnail = get_thumbnail(component)
     garden_web_layout.html = get_html(component)
     garden_web_layout.stylesheets = get_stylesheets(component)
@@ -41,6 +42,12 @@ class GardenWebLayoutUpdater
   def get_name(component)
     if component.respond_to?(:name)
       component.name.to_s
+    end
+  end
+
+  def get_slug(component)
+    if component.respond_to?(:name)
+      component.name.to_s.parameterize
     end
   end
 

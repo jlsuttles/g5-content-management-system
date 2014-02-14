@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20140213203328) do
 
   create_table "garden_web_layouts", :force => true do |t|
     t.string   "name"
+    t.string   "slug"
     t.string   "url"
     t.string   "thumbnail"
     t.text     "stylesheets"
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20140213203328) do
 
   create_table "garden_web_themes", :force => true do |t|
     t.string   "name"
+    t.string   "slug"
     t.string   "url"
     t.string   "thumbnail"
     t.text     "javascripts"
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20140213203328) do
 
   create_table "garden_widgets", :force => true do |t|
     t.string   "name"
+    t.string   "slug"
     t.string   "url"
     t.string   "thumbnail"
     t.text     "edit_html"

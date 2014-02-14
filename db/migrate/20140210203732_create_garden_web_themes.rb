@@ -2,6 +2,7 @@ class CreateGardenWebThemes < ActiveRecord::Migration
   def change
     create_table :garden_web_themes do |t|
       t.string :name
+      t.string :slug
       t.string :url
       t.string :thumbnail
       t.text :javascripts

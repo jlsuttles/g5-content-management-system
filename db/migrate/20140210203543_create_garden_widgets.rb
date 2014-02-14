@@ -2,6 +2,7 @@ class CreateGardenWidgets < ActiveRecord::Migration
   def change
     create_table :garden_widgets do |t|
       t.string :name
+      t.string :slug
       t.string :url
       t.string :thumbnail
       t.text :edit_html

@@ -5,10 +5,14 @@ class WidgetEntry < ActiveRecord::Base
 
   belongs_to :widget
 
-  delegate :name, :render_show_html,
+  delegate :render_show_html,
     to: :widget, allow_nil: true, prefix: true
 
   before_create :set_content
+
+  def widget_name
+    widget.try(:name)
+  end
 
   private
 

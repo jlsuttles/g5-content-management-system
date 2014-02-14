@@ -3,7 +3,7 @@ class GardenWidget < ActiveRecord::Base
 
   set_garden_url ENV["WIDGET_GARDEN_URL"]
 
-  attr_accessible :name, :url, :thumbnail, :edit_html, :edit_javascript,
+  attr_accessible :name, :slug, :url, :thumbnail, :edit_html, :edit_javascript,
     :show_html, :show_javascript, :lib_javascripts, :show_stylesheets, :settings
 
   serialize :lib_javascripts, Array
@@ -13,6 +13,7 @@ class GardenWidget < ActiveRecord::Base
   has_many :widgets, dependent: :destroy
 
   validates :name, presence: true
+  validates :slug, presence: true
   validates :url, presence: true
   validates :thumbnail, presence: true
   validates :edit_html, presence: true

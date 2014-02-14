@@ -12,8 +12,5 @@ class AddGardenModelForeignIds < ActiveRecord::Migration
     remove_column :web_layouts, :garden_web_layout_id
     remove_column :web_themes, :garden_web_theme_id
     remove_column :widgets, :garden_widget_id
-    remove_index :web_layouts, :garden_web_layout_id
-    remove_index :web_themes, :garden_web_theme_id
-    remove_index :widgets, :garden_widget_id
   end
 end

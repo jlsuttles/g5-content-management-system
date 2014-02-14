@@ -3,7 +3,7 @@ class GardenWebTheme < ActiveRecord::Base
 
   set_garden_url ENV["THEME_GARDEN_URL"]
 
-  attr_accessible :name, :url, :thumbnail, :javascripts, :stylesheets,
+  attr_accessible :name, :slug, :url, :thumbnail, :javascripts, :stylesheets,
     :primary_color, :secondary_color
 
   serialize :stylesheets, Array
@@ -12,6 +12,7 @@ class GardenWebTheme < ActiveRecord::Base
   has_many :web_themes, dependent: :destroy
 
   validates :name, presence: true
+  validates :slug, presence: true
   validates :url, presence: true
   validates :thumbnail, presence: true
 

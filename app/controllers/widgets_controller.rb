@@ -3,7 +3,7 @@ class WidgetsController < ApplicationController
 
   def edit
     @widget = Widget.find(params[:id])
-    @form_html = @widget.edit_form_html_rendered
+    @form_html = @widget.render_edit_html
     html = render_to_string(format: :html, layout: false)
     respond_with do |format|
       format.json { render json: {html: html} }

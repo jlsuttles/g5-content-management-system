@@ -38,6 +38,9 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
 
     describe "website_instructions/example.yml" do
       before do
+        GardenWebLayoutUpdater.new.update_all
+        GardenWebThemeUpdater.new.update_all
+        GardenWebLayoutUpdater.new.update_all
         @instructions = YAML.load_file("#{Rails.root}/spec/support/website_instructions/example.yml")
         @website = WebsiteSeeder.new(@location, @instructions["website"]).seed
         @web_page_template = @website.web_page_templates.first
