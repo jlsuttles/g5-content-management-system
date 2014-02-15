@@ -8,7 +8,6 @@ class CleanUpWebLayoutsWebThemesWidgets < ActiveRecord::Migration
 
     remove_column :web_themes, :url
     remove_column :web_themes, :name
-    remove_column :web_themes, :html
     remove_column :web_themes, :stylesheets
     remove_column :web_themes, :thumbnail
     remove_column :web_themes, :javascripts
