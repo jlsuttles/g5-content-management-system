@@ -1,3 +1,3 @@
 Fabricator :web_layout do
-  url { WebLayoutSupport.web_layout.url }
+  garden_web_layout
 end

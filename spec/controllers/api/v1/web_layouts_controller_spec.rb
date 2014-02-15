@@ -50,10 +50,10 @@ describe Api::V1::WebLayoutsController, vcr: VCR_OPTIONS do
     end
 
     context "allowed attributes" do
-      it "url" do
-        put :update, id: web_layout.id, web_layout: { url: WebLayoutSupport.web_layout.url }
+      it "garden_web_layout_id" do
+        put :update, id: web_layout.id, web_layout: { garden_web_layout_id: 333 }
         expect(response.status).to eq 200
-        expect(web_layout.reload.url).to eq WebLayoutSupport.web_layout.url
+        expect(web_layout.reload.garden_web_layout_id).to eq 333
       end
     end
   end

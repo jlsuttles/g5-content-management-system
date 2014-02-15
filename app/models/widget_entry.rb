@@ -5,19 +5,18 @@ class WidgetEntry < ActiveRecord::Base
 
   belongs_to :widget
 
-  before_create :save_widget_liquidized_html
+  delegate :render_show_html,
+    to: :widget, allow_nil: true, prefix: true
+
+  before_create :set_content
 
   def widget_name
-    widget.name if widget
-  end
-
-  def widget_liquidized_html
-    widget.liquidized_html if widget
+    widget.try(:name)
   end
 
   private
 
-  def save_widget_liquidized_html
-    self.content = widget_liquidized_html
+  def set_content
+    self.content = widget_render_show_html
   end
 end

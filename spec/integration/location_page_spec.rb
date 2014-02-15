@@ -1,14 +1,17 @@
 require "spec_helper"
 
 describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: VCR_OPTIONS do
-  before do
-    @client, @location, @website = seed
-    @web_page_template = @website.web_page_templates.first
-    @website_template = @website.website_template
-  end
-
   describe "Color picker" do
     before do
+      VCR.use_cassette("Gardens") do
+        GardenWebLayoutUpdater.new.update_all
+        GardenWebThemeUpdater.new.update_all
+        GardenWidgetUpdater.new.update_all
+      end
+
+      @client, @location, @website = seed
+      @web_page_template = @website.web_page_templates.first
+      @website_template = @website.website_template
       @web_theme = @website_template.web_theme
 
       visit_web_page_template
@@ -19,9 +22,9 @@ describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: 
       secondary_color = @web_theme.secondary_color
       html_primary_color   = find('#color-1', :visible => false).text
       html_secondary_color   = find('#color-2', :visible => false).text
-      remote_theme = find('.theme-picker .thumb:first-of-type')
+      garden_theme = find('.theme-picker .thumb:first-of-type')
 
-      remote_theme.click
+      garden_theme.click
 
       expect(primary_color).to_not eq html_primary_color
       expect(secondary_color).to_not eq html_secondary_color
@@ -39,10 +42,10 @@ describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: 
       end
 
       it "Creates a new widget in the database" do
-        remote_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
+        garden_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
         drop_target_add = find(".main-widgets .drop-target-add:first-of-type")
         expect do
-          drag_and_drop(remote_widget, drop_target_add)
+          drag_and_drop(garden_widget, drop_target_add)
           sleep 1
         end.to change{ @web_page_template.reload.main_widgets.count }.by(1)
       end
@@ -102,10 +105,10 @@ describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: 
 
       describe "When widgets are added after page load" do
         before do
-          remote_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
+          garden_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
           drop_target_add = find(".main-widgets .drop-target-add:first-of-type")
           2.times do
-            drag_and_drop(remote_widget, drop_target_add)
+            drag_and_drop(garden_widget, drop_target_add)
             sleep 1
           end
         end
@@ -146,10 +149,10 @@ describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: 
       end
 
       it "Creates a new widget in the database" do
-        remote_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
+        garden_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
         drop_target_add = find(".aside-widgets .drop-target-add:first-of-type")
         expect do
-          drag_and_drop(remote_widget, drop_target_add)
+          drag_and_drop(garden_widget, drop_target_add)
           sleep 1
         end.to change{ @website_template.reload.aside_widgets.count }.by(1)
       end
@@ -209,10 +212,10 @@ describe "Integration '/:website_slug/:web_page_template_slug'", js: true, vcr: 
 
       describe "When widgets are added after page load" do
         before do
-          remote_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
+          garden_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
           drop_target_add = find(".aside-widgets .drop-target-add:first-of-type")
           2.times do
-            drag_and_drop(remote_widget, drop_target_add)
+            drag_and_drop(garden_widget, drop_target_add)
             sleep 1
           end
         end

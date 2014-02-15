@@ -99,13 +99,15 @@ class WebsiteSeeder
   end
 
   def layout_params(instructions)
-    instructions["url"] = WebLayout.component_url(instructions["name"])
-    ActionController::Parameters.new(instructions).permit(:url)
+    garden_web_layout = GardenWebLayout.find_by_slug(instructions["slug"])
+    instructions["garden_web_layout_id"] = garden_web_layout.try(:id)
+    ActionController::Parameters.new(instructions).permit(:garden_web_layout_id)
   end
 
   def theme_params(instructions)
-    instructions["url"] = WebTheme.component_url(instructions["name"])
-    ActionController::Parameters.new(instructions).permit(:url)
+    garden_web_theme = GardenWebTheme.find_by_slug(instructions["slug"])
+    instructions["garden_web_theme_id"] = garden_web_theme.try(:id)
+    ActionController::Parameters.new(instructions).permit(:garden_web_theme_id)
   end
 
   def drop_target_params(instructions)
@@ -113,7 +115,8 @@ class WebsiteSeeder
   end
 
   def widget_params(instructions)
-    instructions["url"] = Widget.component_url(instructions["name"])
-    ActionController::Parameters.new(instructions).permit(:url)
+    garden_widget = GardenWidget.find_by_slug(instructions["slug"])
+    instructions["garden_widget_id"] = garden_widget.try(:id)
+    ActionController::Parameters.new(instructions).permit(:garden_widget_id)
   end
 end

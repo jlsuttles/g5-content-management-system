@@ -1,3 +1,3 @@
 Fabricator :widget do
-  url { WidgetSupport.widget.url }
+  garden_widget
 end

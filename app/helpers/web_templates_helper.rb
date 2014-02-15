@@ -7,7 +7,7 @@ module WebTemplatesHelper
       # find html element by id
       html_section = html.at_css("##{html_id}")
       if html_section
-        inner_html = widgets.map(&:liquidized_html).join
+        inner_html = widgets.map(&:render_show_html).join
         html_section.inner_html = inner_html
       end
     end
@@ -16,10 +16,10 @@ module WebTemplatesHelper
   end
 
   def head_widgets(web_template)
-    web_template.head_widgets.map(&:liquidized_html).join
+    web_template.head_widgets.map(&:render_show_html).join
   end
 
   def meta_description_widgets(web_template)
-    web_template.meta_description_widgets.map(&:liquidized_html).join
+    web_template.meta_description_widgets.map(&:render_show_html).join
   end
 end

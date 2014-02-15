@@ -50,10 +50,10 @@ describe Api::V1::WebThemesController, vcr: VCR_OPTIONS do
     end
 
     context "allowed attributes" do
-      it "url" do
-        put :update, id: web_theme.id, web_theme: { url: WebThemeSupport.web_theme.url }
+      it "garden_web_theme_id" do
+        put :update, id: web_theme.id, web_theme: { garden_web_theme_id: 333 }
         expect(response.status).to eq 200
-        expect(web_theme.reload.url).to eq WebThemeSupport.web_theme.url
+        expect(web_theme.reload.garden_web_theme_id).to eq 333
       end
 
       it "custom_colors" do

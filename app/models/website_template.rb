@@ -52,7 +52,7 @@ class WebsiteTemplate < WebTemplate
   end
 
   def widget_stylesheets
-    widgets ? widgets.map(&:stylesheets).flatten : []
+    widgets ? widgets.map(&:show_stylesheets).flatten : []
   end
 
   def javascripts

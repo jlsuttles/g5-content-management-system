@@ -1,5 +1,6 @@
 class WebThemeSerializer < ActiveModel::Serializer
   attributes  :id,
+              :garden_web_theme_id,
               :website_template_id,
               :name,
               :thumbnail,
@@ -7,4 +8,8 @@ class WebThemeSerializer < ActiveModel::Serializer
               :custom_colors,
               :primary_color,
               :secondary_color
+
+  def website_template_id
+    object.web_template_id
+  end
 end
