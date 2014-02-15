@@ -25,9 +25,23 @@ G5ClientHub::Application.routes.draw do
       resources :web_page_templates, only: [:index, :show, :create, :update, :destroy]
       resources :main_widgets, only: [:index, :show, :create, :update, :destroy]
 
-      resources :garden_web_layouts, only: [:index]
-      resources :garden_web_themes, only: [:index]
-      resources :garden_widgets, only: [:index]
+      resources :garden_web_layouts, only: [:index] do
+        collection do
+          post "update"
+        end
+      end
+
+      resources :garden_web_themes, only: [:index] do
+        collection do
+          post "update"
+        end
+      end
+
+      resources :garden_widgets, only: [:index] do
+        collection do
+          post "update"
+        end
+      end
     end
   end
 
