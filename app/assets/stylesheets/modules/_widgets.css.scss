@@ -32,8 +32,13 @@
 
 .widgets--small {
   li {
-    width: 12.5%;
-    height: 90px;
+    @media screen and (min-width: $l-min-medium) and (max-width: $l-max-large) {
+      width: 12.5%;
+    }
+    @media (min-width: $l-min-xlarge) {
+      width: 12.5%;
+      height: 90px;
+    }
   }
 }
 
