@@ -24,7 +24,7 @@ class Widget < ActiveRecord::Base
     to: :garden_widget, allow_nil: true, prefix: true
 
   after_initialize :set_defaults
-  before_create :update_settings
+  after_create :update_settings!
 
   scope :name_like_form, joins(:garden_widget).where("garden_widgets.name LIKE '%Form'")
   scope :meta_description, joins(:garden_widget).where("garden_widgets.name = ?", "Meta Description")
@@ -51,16 +51,19 @@ class Widget < ActiveRecord::Base
     updated_at > widget_entries.maximum(:updated_at)
   end
 
-  def update_settings(new_settings=garden_widget_settings)
+  def update_settings!(new_settings=garden_widget_settings)
     return unless new_settings
+    updated_settings = []
     new_settings.each do |new_setting|
-      settings.find_or_initialize_by_name(
-        name: new_setting[:name],
-        editable: new_setting[:editable],
-        default_value: new_setting[:default_value],
-        categories: new_setting[:categories]
-      )
+      setting = settings.find_or_initialize_by_name(new_setting[:name])
+      setting.editable = new_setting[:editable]
+      setting.default_value = new_setting[:default_value]
+      setting.categories = new_setting[:categories]
+      setting.save
+      updated_settings << setting
     end
+    removed_settings = settings - updated_settings
+    removed_settings.map(&:destroy)
   end
 
   private

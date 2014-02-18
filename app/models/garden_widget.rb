@@ -19,7 +19,7 @@ class GardenWidget < ActiveRecord::Base
   validates :edit_html, presence: true
   validates :show_html, presence: true
 
-  def update_widgets_settings(new_settings=settings)
-    widgets.map { |widget| widget.update_settings(new_settings) }
+  def update_widgets_settings!(new_settings=settings)
+    widgets.map { |widget| widget.update_settings!(new_settings) }
   end
 end

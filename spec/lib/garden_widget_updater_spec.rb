@@ -34,48 +34,73 @@ describe GardenWidgetUpdater do
   describe "#update" do
     let(:garden_widget) { Fabricate(:garden_widget, url: "spec/support/garden_widget_updater/widget-test/updated.html") }
 
-    before do
-      updater.update(garden_widget)
+    describe "GardenWidget attributes" do
+      before do
+        updater.update(garden_widget)
+      end
+
+      it "sets url" do
+        expect(garden_widget.url).to eq "http://widget-garden.com/widget-test"
+      end
+
+      it "sets name" do
+        expect(garden_widget.name).to eq "Updated Garden Widget"
+      end
+
+      it "sets thumbnail" do
+        expect(garden_widget.thumbnail).to eq "http://widget-garden.com/widget-test/images/thumbnail.png"
+      end
+
+      it "sets edit_html" do
+        expect(garden_widget.edit_html).to eq "<div>edit.html</div>\n"
+      end
+
+      it "sets edit_javascript" do
+        expect(garden_widget.edit_javascript).to eq "http://widget-garden.com/widget-test/javascripts/widget-test.js"
+      end
+
+      it "sets show_html" do
+        expect(garden_widget.show_html).to eq "<div>show.html</div>\n"
+      end
+
+      it "sets show_javascript" do
+        expect(garden_widget.show_javascript).to eq "http://widget-garden.com/widget-test/javascripts/widget-test.js"
+      end
+
+      it "sets lib_javascripts" do
+        expect(garden_widget.lib_javascripts).to eq ["http://widget-garden.com/widget-test/javascripts/widget-test.js"]
+      end
+
+      it "sets show_stylesheets" do
+        expect(garden_widget.show_stylesheets).to eq ["http://widget-garden.com/widget-test/stylesheets/widget-test.css"]
+      end
+
+      it "sets settings" do
+        expect(garden_widget.settings).to eq [{:name=>"text", :editable=>"true",
+          :default_value=>"Lorem ipsum.", :categories=>["Instance"]}]
+      end
     end
 
-    it "sets url" do
-      expect(garden_widget.url).to eq "http://widget-garden.com/widget-test"
-    end
+    describe "Widget settings" do
+      it "creates a new setting" do
+        widget = Fabricate(:widget, garden_widget: garden_widget)
+        expect { updater.update(garden_widget) }.to change { Setting.count }.by(1)
+        expect(widget.reload.settings.first.name).to eq "text"
+      end
 
-    it "sets name" do
-      expect(garden_widget.name).to eq "Updated Garden Widget"
-    end
+      it "updates an existing setting with the same name" do
+        widget = Fabricate(:widget, garden_widget: garden_widget)
+        setting = Fabricate(:setting, name: "text", owner: widget)
+        expect { updater.update(garden_widget) }.not_to change { Setting.count }
+        expect(setting.reload.default_value).to eq "Lorem ipsum."
+      end
 
-    it "sets thumbnail" do
-      expect(garden_widget.thumbnail).to eq "http://widget-garden.com/widget-test/images/thumbnail.png"
-    end
-
-    it "sets edit_html" do
-      expect(garden_widget.edit_html).to eq "<div>edit.html</div>\n"
-    end
-
-    it "sets edit_javascript" do
-      expect(garden_widget.edit_javascript).to eq "http://widget-garden.com/widget-test/javascripts/widget-test.js"
-    end
-
-    it "sets show_html" do
-      expect(garden_widget.show_html).to eq "<div>show.html</div>\n"
-    end
-
-    it "sets show_javascript" do
-      expect(garden_widget.show_javascript).to eq "http://widget-garden.com/widget-test/javascripts/widget-test.js"
-    end
-
-    it "sets lib_javascripts" do
-      expect(garden_widget.lib_javascripts).to eq ["http://widget-garden.com/widget-test/javascripts/widget-test.js"]
-    end
-
-    it "sets show_stylesheets" do
-      expect(garden_widget.show_stylesheets).to eq ["http://widget-garden.com/widget-test/stylesheets/widget-test.css"]
-    end
-
-    it "sets settings" do
-      expect(garden_widget.settings).to eq []
+      it "removes old settings" do
+        widget = Fabricate(:widget, garden_widget: garden_widget)
+        setting = Fabricate(:setting, name: "text", owner: widget)
+        setting = Fabricate(:setting, name: "old", owner: widget)
+        expect { updater.update(garden_widget) }.to change { Setting.count }.by(-1)
+      end
     end
   end
 end

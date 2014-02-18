@@ -27,7 +27,7 @@ class GardenWidgetUpdater
     garden_widget.lib_javascripts = get_lib_javascripts(component)
     garden_widget.show_stylesheets = get_show_stylesheets(component)
     garden_widget.settings = get_settings(component)
-    garden_widget.update_widgets_settings(garden_widget.settings)
+    garden_widget.update_widgets_settings!(garden_widget.settings)
     garden_widget.save
   end
 
