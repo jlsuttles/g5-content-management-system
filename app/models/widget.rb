@@ -51,14 +51,14 @@ class Widget < ActiveRecord::Base
     updated_at > widget_entries.maximum(:updated_at)
   end
 
-  def update_settings!(new_settings=garden_widget_settings)
-    return unless new_settings
+  def update_settings!
+    return unless garden_widget_settings
     updated_settings = []
-    new_settings.each do |new_setting|
-      setting = settings.find_or_initialize_by_name(new_setting[:name])
-      setting.editable = new_setting[:editable]
-      setting.default_value = new_setting[:default_value]
-      setting.categories = new_setting[:categories]
+    garden_widget_settings.each do |garden_widget_setting|
+      setting = settings.find_or_initialize_by_name(garden_widget_setting[:name])
+      setting.editable = garden_widget_setting[:editable]
+      setting.default_value = garden_widget_setting[:default_value]
+      setting.categories = garden_widget_setting[:categories]
       setting.save
       updated_settings << setting
     end
