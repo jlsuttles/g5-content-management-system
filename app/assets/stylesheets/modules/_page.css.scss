@@ -64,6 +64,10 @@
       display: block;
       margin-top: .5em;
     }
+    .btn {
+      display: block;
+      margin-bottom: .5em;
+    }
   }
   @include respond-to($l-min-medium) {
     @include clearfix;
