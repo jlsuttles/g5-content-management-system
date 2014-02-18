@@ -8,7 +8,7 @@ class AddTypekitToHead < ActiveRecord::Migration
     DropTarget.where(html_id: "drop-target-head").each do |head|
       widget = head.widgets.build(garden_widget_id: garden_widget.id)
       widget.save
-      widget.update_attribue(:display_order_position, 1)
+      widget.update_attribute(:display_order_position, 1)
    end
   end
 end
