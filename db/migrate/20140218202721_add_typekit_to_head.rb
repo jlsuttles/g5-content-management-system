@@ -6,8 +6,9 @@ class AddTypekitToHead < ActiveRecord::Migration
     garden_widget = GardenWidget.where(url: GardenWidget.component_url("typekit"))
     # Create the new widgets in the head
     DropTarget.where(html_id: "drop-target-head").each do |head|
-      head.widgets.build(garden_widget_id: garden_widget.id)
-      head.save
+      widget = head.widgets.build(garden_widget_id: garden_widget.id)
+      widget.save
+      widget.update_attribue(:display_order_position, 1)
    end
   end
 end
