@@ -3,15 +3,16 @@ require "spec_helper"
 describe Widget, vcr: VCR_OPTIONS do
 
   describe "#update_attributes" do
-    let(:widget) { Fabricate(:widget) }
-    let(:setting) { Fabricate(:setting, owner: widget) }
+    let(:garden_widget) { Fabricate(:garden_widget, settings: [name: "foo"]) }
+    let(:widget) { Fabricate(:widget, garden_widget: garden_widget) }
+    let(:setting) { widget.settings.first }
 
     it "accepts nested attributes for settings" do
       widget.update_attributes(settings_attributes: {
         id: setting.id,
         name: "TEST"
       })
-      expect(setting.reload.name).to eq "TEST"
+      expect(setting.name).to eq "TEST"
     end
   end
 
