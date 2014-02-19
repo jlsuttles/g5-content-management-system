@@ -1,6 +1,6 @@
 <% content_for(:title) { web_template.title } %>
 
-<% content_for(:head) { stylesheet_link_tag(*web_template.stylesheet_link_paths) } %>
+<% content_for(:head) { stylesheet_link_tag(web_template.concatenated_stylesheet_path) } %>
 
 <% content_for(:head) { raw web_template.decorate.canonical_link_element } %>
 

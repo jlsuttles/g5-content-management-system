@@ -132,6 +132,11 @@ class WebTemplate < ActiveRecord::Base
     stylesheets_compiler.link_paths
   end
 
+  def concatenated_stylesheet_path
+    stylesheets_compiler.compile
+    stylesheets_compiler.concatenated_link_path
+  end
+
   def location_domain
     location.domain if location
   end
