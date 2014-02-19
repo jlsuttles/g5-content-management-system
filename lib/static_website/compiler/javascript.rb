@@ -30,6 +30,10 @@ module StaticWebsite
         @coffee_javascript ||= Javascript::Coffee.new(compile_path, compile_path)
       end
 
+      def js_path
+        compile_path
+      end
+
       def filename
         @filename ||= javascript_path.split("/").last.split(".").first
       end

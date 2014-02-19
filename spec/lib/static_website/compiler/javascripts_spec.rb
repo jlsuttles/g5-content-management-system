@@ -21,7 +21,7 @@ describe StaticWebsite::Compiler::Javascripts do
       it "compiles each one" do
         javascript_klass.any_instance.stub(:compile)
         subject.should_receive(:compile_javascript).once
-        expect(subject.compile).to eq subject.javascript_paths
+        subject.compile
       end
     end
   end

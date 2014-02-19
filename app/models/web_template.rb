@@ -137,6 +137,15 @@ class WebTemplate < ActiveRecord::Base
     stylesheets_compiler.concatenated_link_path
   end
 
+  def javascripts_compiler
+    @javascripts_compiler ||= StaticWebsite::Compiler::Javascripts.new(javascripts, "#{Rails.root}/public")
+  end
+
+  def concatenated_javascript_path
+    javascripts_compiler.compile
+    javascripts_compiler.concatenated_link_path
+  end
+
   def location_domain
     location.domain if location
   end

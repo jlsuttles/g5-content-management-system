@@ -20,8 +20,10 @@ module StaticWebsite
       def concatenate
         open(compile_path, "wb") do |file|
           file_paths.uniq.each do |file_path|
-            file << open(file_path).read
-            File.delete(file_path)
+            if File.exists?(file_path)
+              file << open(file_path).read
+              File.delete(file_path)
+            end
           end
         end if compile_path
       end
