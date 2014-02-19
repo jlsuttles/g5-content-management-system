@@ -7,7 +7,7 @@ module StaticWebsite
       attr_reader :javascript_paths, :compile_path, :js_paths
 
       def initialize(javascript_paths, compile_path)
-        @javascript_paths = javascript_paths
+        @javascript_paths = javascript_paths.try(:compact).try(:uniq)
         @compile_path = compile_path
         @js_paths =[]
       end

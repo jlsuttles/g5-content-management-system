@@ -11,6 +11,7 @@ module StaticWebsite
       end
 
       def compile
+        File.delete(compile_path) if File.exists?(compile_path)
         compile_directory.compile
         concatenate
       end
@@ -20,10 +21,11 @@ module StaticWebsite
       end
 
       def concatenate
-        open(compile_path, "wb") do |file|
+        open(compile_path, "w") do |file|
           file_paths.uniq.each do |file_path|
             if File.exists?(file_path)
-              file << open(file_path).read
+              file.write open(file_path).read
+              file.write "\n\n\n"
               File.delete(file_path)
             end
           end

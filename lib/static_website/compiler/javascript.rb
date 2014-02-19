@@ -9,13 +9,13 @@ module StaticWebsite
 
       def initialize(javascript_path, compile_path)
         @javascript_path = javascript_path
-        @compile_path = File.join(compile_path, "javascripts", "#{filename}.js") if compile_path
+        @compile_path = File.join(compile_path, "javascripts", "#{filename}_#{SecureRandom.hex(3)}.js") if compile_path
       end
 
       def compile
         compile_directory.compile
         remote_javascript.compile
-        coffee_javascript.compile
+        # coffee_javascript.compile
       end
 
       def compile_directory
