@@ -1,3 +1,5 @@
+require "static_website/compiler/compile_directory"
+
 module StaticWebsite
   module Compiler
     class FileConcatenator

@@ -1,4 +1,5 @@
 require "static_website/compiler/javascript"
+require "static_website/compiler/file_concatenator"
 
 module StaticWebsite
   module Compiler
