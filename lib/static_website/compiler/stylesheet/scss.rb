@@ -22,7 +22,6 @@ module StaticWebsite
 
         def options
           { syntax: :scss,
-            style: :compressed,
             load_paths: [compile_directory.path, local_stylesheet_path] }
         end
 

@@ -23,10 +23,10 @@ describe StaticWebsite::Compiler::Javascript do
       subject.compile
     end
 
-    it "compiles coffee javascript" do
-      subject.coffee_javascript.should_receive(:compile).once
-      subject.compile
-    end
+    # it "compiles coffee javascript" do
+    #   subject.coffee_javascript.should_receive(:compile).once
+    #   subject.compile
+    # end
   end
 
   describe "#compile_directory" do
