@@ -54,4 +54,24 @@ class Website < ActiveRecord::Base
   def colors
     website_template.try(:colors)
   end
+
+  def stylesheets_compiler
+    @stylesheets_compiler ||=
+      StaticWebsite::Compiler::Stylesheets.new(stylesheets,
+      "#{Rails.root}/public", colors)
+  end
+
+  def application_min_css_path
+    stylesheets_compiler.compressed_link_path
+  end
+
+  def javascripts_compiler
+    @javascripts_compiler ||=
+      StaticWebsite::Compiler::Javascripts.new(javascripts,
+      "#{Rails.root}/public")
+  end
+
+  def application_min_js_path
+    javascripts_compiler.compressed_link_path
+  end
 end
