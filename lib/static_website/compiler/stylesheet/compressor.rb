@@ -32,13 +32,15 @@ module StaticWebsite
         def concatenate
           file_paths.map do |file_path|
             if File.exists?(file_path)
-              open(file_path).read
+              css = open(file_path).read
+              File.delete(file_path)
+              css
             end
           end.join("")
         end
 
         def compressor_options
-          { syntax: :scss, style: :compress }
+          { style: :compressed }
         end
       end
     end
