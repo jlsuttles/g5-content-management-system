@@ -1,5 +1,5 @@
 require "static_website/compiler/javascript"
-require "static_website/compiler/file_concatenator"
+require "static_website/compiler/javascript/compressor"
 
 module StaticWebsite
   module Compiler
@@ -18,8 +18,7 @@ module StaticWebsite
           javascript_paths.each do |javascript_path|
             compile_javascript(javascript_path)
           end
-
-          file_concatenator.compile
+          javascript_compressor.compile
         end
       end
 
@@ -31,16 +30,16 @@ module StaticWebsite
         end
       end
 
-      def file_concatenator
-        @file_concatenator ||= FileConcatenator.new(js_paths, concatenated_path)
+      def javascript_compressor
+        @javascript_compressor ||= Javascript::Compressor.new(js_paths, compressed_path)
       end
 
-      def concatenated_path
-        @concatenated_path ||= File.join(compile_path, "javascripts", "application.js")
+      def compressed_path
+        @compressed_path ||= File.join(compile_path, "javascripts", "application.min.js")
       end
 
-      def concatenated_link_path
-        @concatenated_link_path ||= File.join("/javascripts", "application.js")
+      def compressed_link_path
+        @compressed_link_path ||= File.join("/javascripts", "application.min.js")
       end
     end
   end

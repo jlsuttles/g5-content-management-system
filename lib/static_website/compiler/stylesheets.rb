@@ -1,6 +1,6 @@
 require "static_website/compiler/stylesheet"
 require "static_website/compiler/stylesheet/colors"
-require "static_website/compiler/file_concatenator"
+require "static_website/compiler/stylesheet/compressor"
 
 module StaticWebsite
   module Compiler
@@ -25,7 +25,7 @@ module StaticWebsite
             compile_stylesheet(stylesheet)
           end
 
-          file_concatenator.compile
+          stylesheet_compressor.compile
         end
       end
 
@@ -42,16 +42,16 @@ module StaticWebsite
         end
       end
 
-      def file_concatenator
-        @file_concatenator ||= FileConcatenator.new(css_paths, concatenated_path)
+      def stylesheet_compressor
+        @stylesheet_compressor ||= Stylesheet::Compressor.new(css_paths, compressed_path)
       end
 
-      def concatenated_path
-        @concatenated_path ||= File.join(compile_path, "stylesheets", "application.css")
+      def compressed_path
+        @compressed_path ||= File.join(compile_path, "stylesheets", "application.min.css")
       end
 
-      def concatenated_link_path
-        @concatenated_link_path ||= File.join("/stylesheets", "application.css")
+      def compressed_link_path
+        @compressed_link_path ||= File.join("/stylesheets", "application.min.css")
       end
     end
   end
