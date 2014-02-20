@@ -9,7 +9,7 @@ module StaticWebsite
 
       def initialize(stylesheet_path, compile_path)
         @stylesheet_path = stylesheet_path
-        @compile_path = File.join(compile_path, "stylesheets", "#{filename}_#{SecureRandom.hex(3)}.css") if compile_path
+        @compile_path = File.join(compile_path, "stylesheets", filename) if compile_path
       end
 
       def compile
@@ -43,7 +43,7 @@ module StaticWebsite
       end
 
       def filename
-        @filename ||= stylesheet_path.split("/").last.split(".").first
+        @filename ||= "#{stylesheet_path.split("/").last.split(".").first}_#{SecureRandom.hex(3)}"
       end
 
       def link_path
