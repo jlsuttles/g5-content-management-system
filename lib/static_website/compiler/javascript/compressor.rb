@@ -32,7 +32,7 @@ module StaticWebsite
         def concatenate
           file_paths.map do |file_path|
             if File.exists?(file_path)
-              js = compressor.compile(open(file_path).read)
+              js = open(file_path).read
               File.delete(file_path)
               js
             end
