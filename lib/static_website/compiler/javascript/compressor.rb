@@ -10,7 +10,7 @@ module StaticWebsite
         def initialize(file_paths, compile_path)
           @file_paths = file_paths
           @compile_path = compile_path
-          @compressor ||= Uglifier.new
+          @compressor ||= Uglifier.new(comments: :none)
         end
 
         def compile
@@ -36,7 +36,7 @@ module StaticWebsite
               File.delete(file_path)
               js
             end
-          end.join("")
+          end.join("\n")
         end
       end
     end
