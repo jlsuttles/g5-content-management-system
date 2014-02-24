@@ -72,6 +72,6 @@ class Website < ActiveRecord::Base
   end
 
   def application_min_js_path
-    javascripts_compiler.compressed_link_path
+    javascripts_compiler.compressed_include_path
   end
 end

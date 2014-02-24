@@ -9,7 +9,7 @@ module StaticWebsite
 
       def initialize(javascript_path, compile_path)
         @javascript_path = javascript_path
-        @compile_path = File.join(compile_path, "javascripts", "#{filename}_#{SecureRandom.hex(3)}.js") if compile_path
+        @compile_path = File.join(compile_path, "javascripts", filename) if compile_path
       end
 
       def compile
@@ -23,23 +23,23 @@ module StaticWebsite
       end
 
       def remote_javascript
-        @remote_javascript ||= RemoteFile.new(javascript_path, compile_path)
+        @remote_javascript ||= RemoteFile.new(javascript_path, js_path)
       end
 
       def coffee_javascript
-        @coffee_javascript ||= Javascript::Coffee.new(compile_path, compile_path)
+        @coffee_javascript ||= Javascript::Coffee.new(js_path, js_path)
       end
 
       def js_path
-        compile_path
+        "#{compile_path}.js"
       end
 
       def filename
-        @filename ||= javascript_path.split("/").last.split(".").first
+        @filename ||= "#{javascript_path.split("/").last.split(".").first}_#{SecureRandom.hex(3)}"
       end
 
-      def link_path
-        @link_path ||= "/javascripts/#{filename}.js"
+      def include_path
+        @include_path ||= "/javascripts/#{filename}.js"
       end
     end
   end

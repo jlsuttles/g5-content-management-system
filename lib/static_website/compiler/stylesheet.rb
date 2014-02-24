@@ -23,15 +23,11 @@ module StaticWebsite
       end
 
       def remote_stylesheet
-        @remote_stylesheet ||= RemoteFile.new(remote_path, scss_path)
+        @remote_stylesheet ||= RemoteFile.new(stylesheet_path, scss_path)
       end
 
       def scss_stylesheet
         @scss_stylesheet ||= Stylesheet::Scss.new(scss_path, css_path)
-      end
-
-      def remote_path
-        stylesheet_path
       end
 
       def scss_path

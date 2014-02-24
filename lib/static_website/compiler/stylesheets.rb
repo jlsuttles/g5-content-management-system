@@ -6,7 +6,7 @@ module StaticWebsite
   module Compiler
     class Stylesheets
       attr_reader :stylesheet_paths, :compile_path, :colors, :preview,
-        :link_paths, :css_paths
+        :css_paths, :link_paths
 
       def initialize(stylesheet_paths, compile_path, colors={}, preview=false)
         @stylesheet_paths = stylesheet_paths.try(:compact).try(:uniq)
