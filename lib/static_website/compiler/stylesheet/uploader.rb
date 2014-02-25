@@ -22,7 +22,7 @@ module StaticWebsite
         end
 
         def uploaded_path
-          File.join(bucket_url, to_path)
+          File.join(bucket_url.to_s, to_path.to_s)
         end
 
         def s3_bucket

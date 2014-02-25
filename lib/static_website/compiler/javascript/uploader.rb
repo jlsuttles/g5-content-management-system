@@ -21,7 +21,7 @@ module StaticWebsite
           from_paths.each do |from_path|
             s3_bucket_object(from_path).write(Pathname.new(from_path),
               acl: :public_read)
-            @uploaded_paths << File.join(bucket_url, to_path(from_path))
+            @uploaded_paths << File.join(bucket_url.to_s, to_path(from_path).to_s)
           end
         end
 
