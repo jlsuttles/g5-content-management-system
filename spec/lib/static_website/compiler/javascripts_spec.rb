@@ -91,6 +91,14 @@ describe StaticWebsite::Compiler::Javascripts do
     end
   end
 
+  describe "#location_name" do
+    let(:subject) { javascripts_klass.new(nil, compile_directory, "North Shore Oahu") }
+
+    it "sets on initialize" do
+      expect(subject.location_name).to eq "North Shore Oahu"
+    end
+  end
+
   describe "#compressed_path" do
     let(:subject) { javascripts_klass.new(nil, compile_directory) }
 

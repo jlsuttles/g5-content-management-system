@@ -113,6 +113,14 @@ describe StaticWebsite::Compiler::Stylesheets do
     end
   end
 
+  describe "#location_name" do
+    let(:subject) { stylesheets_klass.new(nil, compile_directory, {}, "North Shore Oahu") }
+
+    it "sets on initialize" do
+      expect(subject.location_name).to eq "North Shore Oahu"
+    end
+  end
+
   describe "#compressed_path" do
     let(:subject) { stylesheets_klass.new(nil, compile_directory) }
 

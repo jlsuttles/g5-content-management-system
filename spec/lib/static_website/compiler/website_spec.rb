@@ -61,6 +61,19 @@ describe StaticWebsite::Compiler::Website do
     end
   end
 
+  describe "#location_name" do
+    let(:location) { Fabricate(:location, name: "North Shore Oahu") }
+    let(:subject) { StaticWebsite::Compiler::Website.new(website) }
+
+    before do
+      website.location = location
+    end
+
+    it "is the name of the location" do
+      expect(subject.location_name).to eq "North Shore Oahu"
+    end
+  end
+
   describe "#web_home_template" do
     let(:subject) { StaticWebsite::Compiler::Website.new(website) }
 
