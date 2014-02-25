@@ -33,6 +33,10 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.5)
     arel (3.0.2)
+    aws-sdk (1.34.1)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     barber (0.4.2)
       ember-source
       execjs
@@ -299,6 +303,7 @@ GEM
     uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uuidtools (2.1.4)
     vcr (2.6.0)
     vegas (0.1.11)
       rack (>= 1.0.0)
@@ -314,6 +319,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk (~> 1.34.1)
   better_errors (~> 0.2.0)
   binding_of_caller (~> 0.6.8)
   bootstrap-sass (~> 2.1.1.0)

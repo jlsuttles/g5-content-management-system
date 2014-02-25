@@ -28,6 +28,7 @@ module StaticWebsite
           end
 
           stylesheet_compressor.compile unless preview
+          stylesheet_uploader.compile unless preview
         end
       end
 
@@ -52,8 +53,12 @@ module StaticWebsite
         @compressed_path ||= File.join(compile_path, "stylesheets", "application.min.css")
       end
 
-      def compressed_link_path
-        @compressed_link_path ||= File.join("/stylesheets", "application.min.css")
+      def stylesheet_uploader
+        @stylesheet_uploader ||= Stylesheet::Uploader.new(compressed_path)
+      end
+
+      def uploaded_path
+        @uploaded_path ||= stylesheet_uploader.uploaded_path
       end
     end
   end

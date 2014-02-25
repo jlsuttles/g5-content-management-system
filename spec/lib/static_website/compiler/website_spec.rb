@@ -6,6 +6,11 @@ describe StaticWebsite::Compiler::Website do
   describe "#compile" do
     let(:subject) { StaticWebsite::Compiler::Website.new(website) }
 
+    before do
+      StaticWebsite::Compiler::Javascript::Uploader.any_instance.stub(:compile) { true }
+      StaticWebsite::Compiler::Stylesheet::Uploader.any_instance.stub(:compile) { true }
+    end
+
     it "compiles compile directory" do
       subject.compile_directory.should_receive(:compile).once
       subject.compile

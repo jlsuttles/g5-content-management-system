@@ -62,16 +62,6 @@ class Website < ActiveRecord::Base
   end
 
   def application_min_css_path
-    stylesheets_compiler.compressed_link_path
-  end
-
-  def javascripts_compiler
-    @javascripts_compiler ||=
-      StaticWebsite::Compiler::Javascripts.new(javascripts,
-      "#{Rails.root}/public")
-  end
-
-  def application_min_js_path
-    javascripts_compiler.compressed_include_path
+    stylesheets_compiler.uploaded_path
   end
 end
