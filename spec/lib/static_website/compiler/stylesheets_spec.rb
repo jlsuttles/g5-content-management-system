@@ -25,12 +25,12 @@ describe StaticWebsite::Compiler::Stylesheets do
 
       it "compiles colors stylesheet" do
         subject.colors_stylesheet.should_receive(:compile).once
-        expect(subject.compile).to eq subject.stylesheet_paths
+        subject.compile
       end
 
       it "compiles each one" do
         subject.should_receive(:compile_stylesheet).once
-        expect(subject.compile).to eq subject.stylesheet_paths
+        subject.compile
       end
     end
   end

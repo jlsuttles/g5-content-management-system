@@ -33,7 +33,8 @@ module StaticWebsite
 
         def render_to_file
           open(compile_path, "wb") do |file|
-            file << Sass::Engine.new(open(stylesheet_path).read, options).render
+            css = Sass.compile(open(stylesheet_path).read, options)
+            file << css
           end if compile_path
         end
       end

@@ -30,6 +30,9 @@ dump.rdb
 .sass-cache
 public/stylesheets
 
+# Ignore compiled javascripts
+public/javascripts/application.min.js
+
 # Ignore simplecov
 coverage
 

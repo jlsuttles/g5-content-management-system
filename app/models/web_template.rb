@@ -15,6 +15,9 @@ class WebTemplate < ActiveRecord::Base
   has_many :drop_targets, autosave: true, dependent: :destroy
   has_many :widgets, through: :drop_targets, order: "display_order ASC"
 
+  delegate :application_min_css_path, :application_min_js_path,
+    to: :website, allow_nil: true
+
   validates :title , presence: true
   validates :name  , presence: true
   validates :slug  , presence: true ,
@@ -111,8 +114,8 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def widget_lib_javascripts
-    widgets.map(&:lib_javascripts).flatten +
-    website.try(:website_template).try(:widget_lib_javascripts).to_a
+    widgets.map(&:lib_javascripts).flatten.compact +
+    website.try(:website_template).try(:widget_lib_javascripts).to_a.flatten.compact
   end
 
   def website_compile_path
@@ -124,13 +127,27 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def stylesheets_compiler
-    @stylesheets_compiler ||= StaticWebsite::Compiler::Stylesheets.new(stylesheets, "#{Rails.root}/public", website_colors)
+    @stylesheets_compiler ||=
+      StaticWebsite::Compiler::Stylesheets.new(stylesheets,
+      "#{Rails.root}/public", website_colors, true)
   end
 
   def stylesheet_link_paths
     stylesheets_compiler.compile
     stylesheets_compiler.link_paths
   end
+
+  def javascripts_compiler
+    @javascripts_compiler ||=
+      StaticWebsite::Compiler::Javascripts.new(javascripts,
+        "#{Rails.root}/public")
+  end
+
+  def javascript_include_paths
+    javascripts_compiler.compile
+    javascripts_compiler.include_paths
+  end
+
 
   def location_domain
     location.domain if location

@@ -1,19 +1,24 @@
 require "static_website/compiler/stylesheet"
 require "static_website/compiler/stylesheet/colors"
+require "static_website/compiler/stylesheet/compressor"
 
 module StaticWebsite
   module Compiler
     class Stylesheets
-      attr_reader :stylesheet_paths, :compile_path, :colors, :link_paths
+      attr_reader :stylesheet_paths, :compile_path, :colors, :preview,
+        :css_paths, :link_paths
 
-      def initialize(stylesheet_paths, compile_path, colors={})
-        @stylesheet_paths = stylesheet_paths
+      def initialize(stylesheet_paths, compile_path, colors={}, preview=false)
+        @stylesheet_paths = stylesheet_paths.try(:compact).try(:uniq)
         @compile_path = compile_path
         @colors = colors
+        @preview = preview
+        @css_paths = []
         @link_paths = []
       end
 
       def compile
+        @css_paths = []
         @link_paths = []
         if stylesheet_paths
           colors_stylesheet.compile
@@ -21,6 +26,8 @@ module StaticWebsite
           stylesheet_paths.each do |stylesheet|
             compile_stylesheet(stylesheet)
           end
+
+          stylesheet_compressor.compile unless preview
         end
       end
 
@@ -32,8 +39,21 @@ module StaticWebsite
         if stylesheet_path
           stylesheet = Stylesheet.new(stylesheet_path, compile_path)
           stylesheet.compile
+          @css_paths << stylesheet.css_path
           @link_paths << stylesheet.link_path
         end
+      end
+
+      def stylesheet_compressor
+        @stylesheet_compressor ||= Stylesheet::Compressor.new(css_paths, compressed_path)
+      end
+
+      def compressed_path
+        @compressed_path ||= File.join(compile_path, "stylesheets", "application.min.css")
+      end
+
+      def compressed_link_path
+        @compressed_link_path ||= File.join("/stylesheets", "application.min.css")
       end
     end
   end

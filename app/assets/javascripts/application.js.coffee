@@ -1,5 +1,7 @@
 #= require jquery
-#= require jquery.ui.all
+#= require jquery.ui.draggable
+#= require jquery.ui.droppable
+#= require jquery.ui.sortable
 #= require jquery_ujs
 #= require bootstrap
 #= require spectrum
