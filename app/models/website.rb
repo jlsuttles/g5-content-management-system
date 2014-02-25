@@ -58,7 +58,7 @@ class Website < ActiveRecord::Base
   def stylesheets_compiler
     @stylesheets_compiler ||=
       StaticWebsite::Compiler::Stylesheets.new(stylesheets,
-      "#{Rails.root}/public", colors)
+      "#{Rails.root}/public", colors, name)
   end
 
   def application_min_css_path
