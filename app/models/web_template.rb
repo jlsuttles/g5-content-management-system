@@ -63,6 +63,10 @@ class WebTemplate < ActiveRecord::Base
     location.try(:id)
   end
 
+  def location_name
+    location.try(:name)
+  end
+
   def vertical
     client.try(:vertical_slug)
   end
@@ -129,7 +133,7 @@ class WebTemplate < ActiveRecord::Base
   def stylesheets_compiler
     @stylesheets_compiler ||=
       StaticWebsite::Compiler::Stylesheets.new(stylesheets,
-      "#{Rails.root}/public", website_colors, true)
+      "#{Rails.root}/public", website_colors, location_name, true)
   end
 
   def stylesheet_link_paths
@@ -140,7 +144,7 @@ class WebTemplate < ActiveRecord::Base
   def javascripts_compiler
     @javascripts_compiler ||=
       StaticWebsite::Compiler::Javascripts.new(javascripts,
-        "#{Rails.root}/public")
+        "#{Rails.root}/public", location_name)
   end
 
   def javascript_include_paths

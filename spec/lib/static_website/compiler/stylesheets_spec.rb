@@ -16,7 +16,7 @@ describe StaticWebsite::Compiler::Stylesheets do
     end
 
     context "when stylesheets are present" do
-      let(:subject) { stylesheets_klass.new([stylesheet_path], compile_directory, {}, true) }
+      let(:subject) { stylesheets_klass.new([stylesheet_path], compile_directory, {}, "", true) }
 
       before do
         subject.colors_stylesheet.stub(:compile)

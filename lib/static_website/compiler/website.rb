@@ -38,11 +38,15 @@ module StaticWebsite
       end
 
       def javascripts
-        @javascripts ||= Javascripts.new(website.javascripts, compile_path)
+        @javascripts ||= Javascripts.new(website.javascripts, compile_path, location_name)
       end
 
       def stylesheets
-        @stylesheets ||= Stylesheets.new(website.stylesheets, compile_path, website.colors)
+        @stylesheets ||= Stylesheets.new(website.stylesheets, compile_path, website.colors, location_name)
+      end
+
+      def location_name
+        website.name
       end
 
       def web_home_template

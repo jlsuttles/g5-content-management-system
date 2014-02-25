@@ -5,13 +5,14 @@ require "static_website/compiler/stylesheet/compressor"
 module StaticWebsite
   module Compiler
     class Stylesheets
-      attr_reader :stylesheet_paths, :compile_path, :colors, :preview,
-        :css_paths, :link_paths
+      attr_reader :stylesheet_paths, :compile_path, :colors, :location_name,
+        :preview, :css_paths, :link_paths
 
-      def initialize(stylesheet_paths, compile_path, colors={}, preview=false)
+      def initialize(stylesheet_paths, compile_path, colors={}, location_name="", preview=false)
         @stylesheet_paths = stylesheet_paths.try(:compact).try(:uniq)
         @compile_path = compile_path
         @colors = colors
+        @location_name
         @preview = preview
         @css_paths = []
         @link_paths = []
@@ -54,7 +55,7 @@ module StaticWebsite
       end
 
       def stylesheet_uploader
-        @stylesheet_uploader ||= Stylesheet::Uploader.new(compressed_path)
+        @stylesheet_uploader ||= Stylesheet::Uploader.new(compressed_path, location_name)
       end
 
       def uploaded_path

@@ -6,14 +6,15 @@ module StaticWebsite
       class Uploader
         attr_reader :from_paths, :s3, :bucket_name, :bucket_url, :uploaded_paths
 
-        def initialize(from_paths)
+        def initialize(from_paths, location_name)
           @from_paths = from_paths
           @s3 = AWS::S3.new(
             access_key_id: ENV["AWS_ACCESS_KEY_ID"],
             secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
           )
-          @bucket_name = ENV["AWS_S3_BUCKET_NAME"]
-          @bucket_url = ENV["AWS_S3_BUCKET_URL"]
+          location_name = location_name.to_s.underscore.upcase
+          @bucket_name = ENV["AWS_S3_BUCKET_NAME_#{location_name}"]
+          @bucket_url = ENV["AWS_S3_BUCKET_URL_#{location_name}"]
         end
 
         def compile

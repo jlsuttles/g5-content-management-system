@@ -4,12 +4,13 @@ require "static_website/compiler/javascript/compressor"
 module StaticWebsite
   module Compiler
     class Javascripts
-      attr_reader :javascript_paths, :compile_path, :preview,
+      attr_reader :javascript_paths, :compile_path, :location_name, :preview,
         :js_paths, :include_paths
 
-      def initialize(javascript_paths, compile_path, preview=false)
+      def initialize(javascript_paths, compile_path, location_name="", preview=false)
         @javascript_paths = javascript_paths.try(:compact).try(:uniq)
         @compile_path = compile_path
+        @location_name = location_name
         @preview = preview
         @js_paths = []
         @include_paths = []
@@ -46,7 +47,7 @@ module StaticWebsite
       end
 
       def javascript_uploader
-        @javascript_uploader ||= Javascript::Uploader.new(js_paths)
+        @javascript_uploader ||= Javascript::Uploader.new(js_paths, location_name)
       end
 
       def uploaded_paths
