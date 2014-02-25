@@ -16,21 +16,68 @@ describe StaticWebsite::Compiler::Stylesheets do
     end
 
     context "when stylesheets are present" do
-      let(:subject) { stylesheets_klass.new([stylesheet_path], compile_directory, {}, "", true) }
+      context "and previewing" do
+        let(:preview) { true }
+        let(:subject) { stylesheets_klass.new([stylesheet_path],
+          compile_directory, {}, "", preview) }
 
-      before do
-        subject.colors_stylesheet.stub(:compile)
-        stylesheet_klass.any_instance.stub(:compile)
+        before do
+          subject.colors_stylesheet.stub(:compile)
+          stylesheet_klass.any_instance.stub(:compile)
+        end
+
+        it "compiles colors stylesheet" do
+          subject.colors_stylesheet.should_receive(:compile).once
+          subject.compile
+        end
+
+        it "compiles each one" do
+          subject.should_receive(:compile_stylesheet).once
+          subject.compile
+        end
+
+        it "does not compress stylesheets" do
+          subject.stylesheet_compressor.should_not_receive(:compile)
+          subject.compile
+        end
+
+        it "does not upload stylesheets" do
+          subject.stylesheet_uploader.should_not_receive(:compile)
+          subject.compile
+        end
       end
 
-      it "compiles colors stylesheet" do
-        subject.colors_stylesheet.should_receive(:compile).once
-        subject.compile
-      end
+      context "and deploying" do
+        let(:preview) { false }
+        let(:subject) { stylesheets_klass.new([stylesheet_path],
+          compile_directory, {}, "", preview) }
 
-      it "compiles each one" do
-        subject.should_receive(:compile_stylesheet).once
-        subject.compile
+        before do
+          subject.colors_stylesheet.stub(:compile)
+          stylesheet_klass.any_instance.stub(:compile)
+          subject.stylesheet_compressor.stub(:compile)
+          subject.stylesheet_uploader.stub(:compile)
+        end
+
+        it "compiles colors stylesheet" do
+          subject.colors_stylesheet.should_receive(:compile).once
+          subject.compile
+        end
+
+        it "compiles each one" do
+          subject.should_receive(:compile_stylesheet).once
+          subject.compile
+        end
+
+        it "compresses stylesheets" do
+          subject.stylesheet_compressor.should_receive(:compile).once
+          subject.compile
+        end
+
+        it "uploads stylesheets" do
+          subject.stylesheet_uploader.should_receive(:compile).once
+          subject.compile
+        end
       end
     end
   end
@@ -63,6 +110,22 @@ describe StaticWebsite::Compiler::Stylesheets do
         stylesheet_klass.any_instance.should_receive(:compile).once
         subject.compile_stylesheet(stylesheet_path)
       end
+    end
+  end
+
+  describe "#location_name" do
+    let(:subject) { stylesheets_klass.new(nil, compile_directory, {}, "North Shore Oahu") }
+
+    it "sets on initialize" do
+      expect(subject.location_name).to eq "North Shore Oahu"
+    end
+  end
+
+  describe "#compressed_path" do
+    let(:subject) { stylesheets_klass.new(nil, compile_directory) }
+
+    it "matches /stylesheets/application.min.css" do
+      expect(subject.compressed_path).to match "/stylesheets/application.min.css"
     end
   end
 end

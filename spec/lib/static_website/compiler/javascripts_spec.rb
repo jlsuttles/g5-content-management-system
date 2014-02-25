@@ -16,12 +16,54 @@ describe StaticWebsite::Compiler::Javascripts do
     end
 
     context "when javascripts are present" do
-      let(:subject) { javascripts_klass.new([javascript_path], compile_directory) }
+      context "and previewing" do
+        let(:preview) { true }
+        let(:subject) { javascripts_klass.new([javascript_path],
+          compile_directory, "", preview) }
 
-      it "compiles each one" do
-        javascript_klass.any_instance.stub(:compile)
-        subject.should_receive(:compile_javascript).once
-        subject.compile
+        before do
+          javascript_klass.any_instance.stub(:compile)
+        end
+
+        it "compiles each one" do
+          subject.should_receive(:compile_javascript).once
+          subject.compile
+        end
+
+        it "does not compress javascripts" do
+          subject.javascript_compressor.should_not_receive(:compile)
+          subject.compile
+        end
+
+        it "does not upload javascripts" do
+          subject.javascript_uploader.should_not_receive(:compile)
+          subject.compile
+        end
+      end
+
+      context "and deploying" do
+        let(:preview) { false }
+        let(:subject) { javascripts_klass.new([javascript_path],
+          compile_directory, "", preview) }
+
+        before do
+          javascript_klass.any_instance.stub(:compile)
+        end
+
+        it "compiles each one" do
+          subject.should_receive(:compile_javascript).once
+          subject.compile
+        end
+
+        # it "compresses javascripts" do
+        #   subject.javascript_compressor.should_receive(:compile).once
+        #   subject.compile
+        # end
+
+        it "uploads javascripts" do
+          subject.javascript_uploader.should_receive(:compile).once
+          subject.compile
+        end
       end
     end
   end
@@ -46,6 +88,22 @@ describe StaticWebsite::Compiler::Javascripts do
         javascript_klass.any_instance.should_receive(:compile).once
         subject.compile_javascript(javascript_path)
       end
+    end
+  end
+
+  describe "#location_name" do
+    let(:subject) { javascripts_klass.new(nil, compile_directory, "North Shore Oahu") }
+
+    it "sets on initialize" do
+      expect(subject.location_name).to eq "North Shore Oahu"
+    end
+  end
+
+  describe "#compressed_path" do
+    let(:subject) { javascripts_klass.new(nil, compile_directory) }
+
+    it "matches /javascripts/application.min.js" do
+      expect(subject.compressed_path).to match "/javascripts/application.min.js"
     end
   end
 end

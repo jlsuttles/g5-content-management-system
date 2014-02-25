@@ -12,7 +12,7 @@ module StaticWebsite
         @stylesheet_paths = stylesheet_paths.try(:compact).try(:uniq)
         @compile_path = compile_path
         @colors = colors
-        @location_name
+        @location_name = location_name
         @preview = preview
         @css_paths = []
         @link_paths = []
