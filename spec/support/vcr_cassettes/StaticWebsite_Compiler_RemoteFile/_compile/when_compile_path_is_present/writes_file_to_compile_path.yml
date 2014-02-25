@@ -19,7 +19,7 @@ http_interactions:
       Server:
       - nginx/1.2.1
       Date:
-      - Fri, 14 Feb 2014 22:29:06 GMT
+      - Tue, 25 Feb 2014 10:22:01 GMT
       Content-Type:
       - text/html
       Content-Length:
@@ -29,7 +29,7 @@ http_interactions:
       Location:
       - http://code.jquery.com/jquery-2.0.3.min.js
       Expires:
-      - Sun, 16 Mar 2014 22:29:06 GMT
+      - Thu, 27 Mar 2014 10:22:01 GMT
       Cache-Control:
       - max-age=2592000
     body:
@@ -37,7 +37,7 @@ http_interactions:
       string: ! "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
         bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx/1.2.1</center>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Fri, 14 Feb 2014 22:29:11 GMT
+  recorded_at: Tue, 25 Feb 2014 10:22:00 GMT
 - request:
     method: get
     uri: http://code.jquery.com/jquery-2.0.3.min.js
@@ -55,7 +55,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 14 Feb 2014 22:29:08 GMT
+      - Tue, 25 Feb 2014 10:22:03 GMT
       Content-Type:
       - application/x-javascript; charset=utf-8
       Content-Length:
@@ -628,5 +628,5 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Fri, 14 Feb 2014 22:29:11 GMT
+  recorded_at: Tue, 25 Feb 2014 10:22:01 GMT
 recorded_with: VCR 2.6.0
