@@ -145,7 +145,7 @@ class WebTemplate < ActiveRecord::Base
 
   def javascript_include_paths
     javascripts_compiler.compile
-    javascripts_compiler.include_paths
+    javascripts_compiler.uploaded_paths
   end
 
 
