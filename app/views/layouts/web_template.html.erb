@@ -12,7 +12,7 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= javascript_include_tag "https://s3.amazonaws.com/themes.g5dxm.com/shared/javascripts/modernizr.custom.js" %>
+    <script src="http://themes.g5dxm.com/shared/javascripts/modernizr.custom.js"></script>
 
     <%= yield(:head) %>
   </head>
@@ -21,16 +21,16 @@
 
     <%= yield %>
 
-    <%= javascript_include_tag "https://s3.amazonaws.com/themes.g5dxm.com/shared/javascripts/jquery-1.8.1.min.js" %>
-    <%= javascript_include_tag leads_service_js %>
-    <%= javascript_include_tag "https://s3.amazonaws.com/themes.g5dxm.com/shared/javascripts/bootstrap-collapse.js" %>
-    <%= javascript_include_tag "https://s3.amazonaws.com/themes.g5dxm.com/shared/javascripts/helper.js" %>
-    <%= javascript_include_tag "https://s3.amazonaws.com/themes.g5dxm.com/shared/javascripts/script.js" %>
-    <%= javascript_include_tag "https://s3.amazonaws.com/themes.g5dxm.com/shared/javascripts/json2.js" %>
+    <script src="http://themes.g5dxm.com/shared/javascripts/jquery-1.8.1.min.js"></script>
+    <script src="<%= leads_service_js %>"></script>
+    <script src="http://themes.g5dxm.com/shared/javascripts/bootstrap-collapse.js"></script>
+    <script src="http://themes.g5dxm.com/shared/javascripts/helper.js"></script>
+    <script src="http://themes.g5dxm.com/shared/javascripts/script.js"></script>
+    <script src="http://themes.g5dxm.com/shared/javascripts/json2.js"></script>
 
     <!--[if (lt IE 9) & (!IEMobile)]>
-      <%= javascript_include_tag "https://s3.amazonaws.com/themes.g5dxm.com/shared/javascripts/selectivizr-min.js" %>
-      <%= javascript_include_tag "https://s3.amazonaws.com/themes.g5dxm.com/shared/javascripts/respond.min.js" %>
+      <script src="http://themes.g5dxm.com/shared/javascripts/selectivizr-min.js"></script>
+      <script src="http://themes.g5dxm.com/shared/javascripts/respond.min.js"></script>
     <![endif]-->
 
     <%= javascript_include_tag "web_template" if mode == "preview" %>
