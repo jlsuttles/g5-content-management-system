@@ -1,6 +1,6 @@
 class ClientServices
   HEROKU_APP_NAME_MAX_LENGTH = 30
-  SERVICES = %w(ch cpns cpas cls cxm)
+  SERVICES = %w(cms cpns cpas cls cxm)
 
   def client
     Client.first

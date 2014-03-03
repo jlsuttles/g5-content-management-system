@@ -15,7 +15,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module G5ClientHub
+module G5CMS
   class Application < Rails::Application
     config.autoload_paths << "#{config.root}/lib"    # Settings in config/environments/* take precedence over those specified here.
     config.autoload_paths += %W(#{config.root}/app/models/concerns)

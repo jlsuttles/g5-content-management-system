@@ -1,4 +1,4 @@
-# G5 Client Hub
+# G5 CMS
 
 - Seeds client from client uid
 - Seeds default website for each location
@@ -76,7 +76,7 @@
 1. Set ENV variables.
 
     ```bash
-    $ export HEROKU_APP_NAME=g5-ch-default
+    $ export HEROKU_APP_NAME=g5-cms-default
     $ export HEROKU_USERNAME=your-username
     $ export HEROKU_API_KEY=your-api-key
     $ export ID_RSA=your-private-key
@@ -140,7 +140,7 @@ of CSS. To create a new module do the following:
 1. Create new Pull Request
 
 If you find bugs, have feature requests or questions, please
-[file an issue](https://github.com/g5search/g5-client-hub/issues).
+[file an issue](https://github.com/g5search/g5-content-management-system/issues).
 
 
 ## Specs
