@@ -106,7 +106,7 @@ App.ApplicationController = Ember.Controller.extend
 <header role="banner" class="banner">
   <h1 class="banner-title">
     <a href="/">
-      <img class="banner-logo" src="<%= asset_path("logo.png") %>" alt="G5" /> Client Hub:
+      <img class="banner-logo" src="<%= asset_path("logo.png") %>" alt="G5" /> Client Management System:
     </a>
     <a href="/">
       <strong class="banner-subtitle">{{controllers.client.name}}</strong>
