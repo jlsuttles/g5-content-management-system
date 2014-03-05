@@ -2,7 +2,8 @@ App.LocationsController = Ember.ArrayController.extend
   actions:
     deploy: (model) ->
       url = "/websites/" + model.get("website.id") + "/deploy"
-      $("<form action='" + url + "' method='post'></form>").submit()
+      $form = $("<form action='" + url + "' method='post'></form>")
+      $form.appendTo("body").submit()
       false
     updateGardenWebLayouts: ->
       url = "/api/v1/garden_web_layouts"
