@@ -1,1 +1,1 @@
-G5ContentManagementSystem::DeployTasks.perform(ENV["G5_CLIENT_UID"])
+G5CMS::DeployTasks.perform(ENV["G5_CLIENT_UID"])
