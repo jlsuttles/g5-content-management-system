@@ -98,20 +98,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Age:
-      - '0'
       Content-Type:
       - text/css
-      Date:
-      - Tue, 25 Feb 2014 10:21:57 GMT
       Last-Modified:
-      - Mon, 24 Feb 2014 19:54:20 GMT
+      - Fri, 07 Mar 2014 01:50:08 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - db51f377394b9d74f129f57b5242db3b6a45371b
-      X-Rack-Cache:
-      - stale, valid, store
       Content-Length:
       - '66'
       Connection:
@@ -120,7 +112,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! ".social-links a {\n  display: inline-block;\n  margin-right: 5px;\n}\n"
     http_version: 
-  recorded_at: Tue, 25 Feb 2014 10:21:55 GMT
+  recorded_at: Mon, 10 Mar 2014 19:33:58 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/stylesheets/html.css
@@ -137,20 +129,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Age:
-      - '0'
       Content-Type:
       - text/css
-      Date:
-      - Tue, 25 Feb 2014 11:11:22 GMT
       Last-Modified:
-      - Mon, 24 Feb 2014 19:54:20 GMT
+      - Fri, 07 Mar 2014 01:50:08 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - 106203c12f788c7a935aa8068b7bbacc8d9e9d4c
-      X-Rack-Cache:
-      - stale, valid, store
       Content-Length:
       - '44'
       Connection:
@@ -159,7 +143,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! ".html {\n  clear: both;\n  overflow: hidden;\n}"
     http_version: 
-  recorded_at: Tue, 25 Feb 2014 11:11:18 GMT
+  recorded_at: Mon, 10 Mar 2014 19:35:54 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/stylesheets/social-links.css
@@ -176,20 +160,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Age:
-      - '0'
       Content-Type:
       - text/css
-      Date:
-      - Tue, 25 Feb 2014 11:11:22 GMT
       Last-Modified:
-      - Mon, 24 Feb 2014 19:54:20 GMT
+      - Fri, 07 Mar 2014 01:50:08 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - db51f377394b9d74f129f57b5242db3b6a45371b
-      X-Rack-Cache:
-      - stale, valid, store
       Content-Length:
       - '66'
       Connection:
@@ -198,7 +174,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! ".social-links a {\n  display: inline-block;\n  margin-right: 5px;\n}\n"
     http_version: 
-  recorded_at: Tue, 25 Feb 2014 11:11:19 GMT
+  recorded_at: Mon, 10 Mar 2014 19:35:54 GMT
 - request:
     method: get
     uri: http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css
@@ -215,20 +191,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Age:
-      - '0'
       Content-Type:
       - text/css
-      Date:
-      - Tue, 25 Feb 2014 11:11:22 GMT
       Last-Modified:
-      - Tue, 21 Jan 2014 22:59:43 GMT
+      - Fri, 07 Mar 2014 01:47:58 GMT
       Server:
-      - thin 1.5.0 codename Knife
-      X-Content-Digest:
-      - b1ea26401884e82b4209a6ce13d45a6865812602
-      X-Rack-Cache:
-      - stale, valid, store
+      - thin 1.5.1 codename Straight Razor
       Content-Length:
       - '351'
       Connection:
@@ -241,7 +209,7 @@ http_interactions:
         right;\n  }\n  .layout-side-left aside[role=complementary] {\n    float: left;\n
         \ }\n  footer[role=contentinfo] {\n    clear: both;\n  }\n}\n"
     http_version: 
-  recorded_at: Tue, 25 Feb 2014 11:11:19 GMT
+  recorded_at: Mon, 10 Mar 2014 19:35:55 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss
@@ -263,9 +231,9 @@ http_interactions:
       Content-Type:
       - text/plain
       Date:
-      - Tue, 25 Feb 2014 11:11:22 GMT
+      - Mon, 10 Mar 2014 19:35:46 GMT
       Last-Modified:
-      - Fri, 21 Feb 2014 21:09:58 GMT
+      - Thu, 06 Mar 2014 21:07:23 GMT
       Server:
       - thin 1.5.0 codename Knife
       X-Content-Digest:
@@ -466,7 +434,7 @@ http_interactions:
         {\n    width: 1184px;\n  }\n  aside[role=complementary] {\n    width: 416px;\n
         \ }\n}\n"
     http_version: 
-  recorded_at: Tue, 25 Feb 2014 11:11:19 GMT
+  recorded_at: Mon, 10 Mar 2014 19:35:55 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/button/stylesheets/button.css
@@ -483,20 +451,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Age:
-      - '0'
       Content-Type:
       - text/css
-      Date:
-      - Tue, 25 Feb 2014 11:11:23 GMT
       Last-Modified:
-      - Mon, 24 Feb 2014 19:54:20 GMT
+      - Fri, 07 Mar 2014 01:50:08 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - eb3c9627e3e80fc627315faff980590f89a90620
-      X-Rack-Cache:
-      - stale, valid, store
       Content-Length:
       - '488'
       Connection:
@@ -511,7 +471,7 @@ http_interactions:
         50%;\n  }\n  .button-grid:nth-of-type(2n+1) {\n    clear: left;\n  }\n}\n.button-grid
         .btn-img {\n  margin: 0 auto 1em;\n}\n"
     http_version: 
-  recorded_at: Tue, 25 Feb 2014 11:11:20 GMT
+  recorded_at: Mon, 10 Mar 2014 19:35:57 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/stylesheets/contact-info.css
@@ -528,20 +488,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Age:
-      - '0'
       Content-Type:
       - text/css
-      Date:
-      - Tue, 25 Feb 2014 11:11:23 GMT
       Last-Modified:
-      - Mon, 24 Feb 2014 19:54:20 GMT
+      - Fri, 07 Mar 2014 01:50:08 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - 7a6e8abe04328b26bc9e5ebca437f60f35a1b454
-      X-Rack-Cache:
-      - stale, valid, store
       Content-Length:
       - '194'
       Connection:
@@ -552,7 +504,7 @@ http_interactions:
         .p-street-address,\n.contact-info .p-tel,\n.contact-info .p-url,\n {\n  display:
         block;\n}\n.contact-info p {\n  margin-top: 0;\n}"
     http_version: 
-  recorded_at: Tue, 25 Feb 2014 11:11:20 GMT
+  recorded_at: Mon, 10 Mar 2014 19:35:57 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/hours/stylesheets/hours.css
@@ -569,20 +521,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Age:
-      - '0'
       Content-Type:
       - text/css
-      Date:
-      - Tue, 25 Feb 2014 11:11:23 GMT
       Last-Modified:
-      - Mon, 24 Feb 2014 19:54:20 GMT
+      - Fri, 07 Mar 2014 01:50:08 GMT
       Server:
       - thin 1.5.1 codename Straight Razor
-      X-Content-Digest:
-      - 73794a32b048ba25b65eab0fb806a6debe958cd0
-      X-Rack-Cache:
-      - stale, valid, store
       Content-Length:
       - '30'
       Connection:
@@ -591,5 +535,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! ".hours p {\n  margin-top: 0;\n}\n"
     http_version: 
-  recorded_at: Tue, 25 Feb 2014 11:11:20 GMT
+  recorded_at: Mon, 10 Mar 2014 19:35:57 GMT
 recorded_with: VCR 2.6.0

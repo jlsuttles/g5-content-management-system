@@ -19,7 +19,7 @@ http_interactions:
       Server:
       - nginx/1.2.1
       Date:
-      - Tue, 25 Feb 2014 10:22:01 GMT
+      - Mon, 10 Mar 2014 18:07:25 GMT
       Content-Type:
       - text/html
       Content-Length:
@@ -29,15 +29,16 @@ http_interactions:
       Location:
       - http://code.jquery.com/jquery-2.0.3.min.js
       Expires:
-      - Thu, 27 Mar 2014 10:22:01 GMT
+      - Wed, 09 Apr 2014 18:07:25 GMT
       Cache-Control:
       - max-age=2592000
+      - public
     body:
       encoding: US-ASCII
       string: ! "<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body
         bgcolor=\"white\">\r\n<center><h1>301 Moved Permanently</h1></center>\r\n<hr><center>nginx/1.2.1</center>\r\n</body>\r\n</html>\r\n"
     http_version: 
-  recorded_at: Tue, 25 Feb 2014 10:22:00 GMT
+  recorded_at: Mon, 10 Mar 2014 18:07:36 GMT
 - request:
     method: get
     uri: http://code.jquery.com/jquery-2.0.3.min.js
@@ -55,7 +56,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 25 Feb 2014 10:22:03 GMT
+      - Mon, 10 Mar 2014 18:07:28 GMT
       Content-Type:
       - application/x-javascript; charset=utf-8
       Content-Length:
@@ -63,15 +64,14 @@ http_interactions:
       Connection:
       - keep-alive
       Last-Modified:
-      - Wed, 15 Jan 2014 17:26:59 GMT
+      - Sun, 02 Feb 2014 00:30:12 GMT
       Vary:
       - Accept-Encoding
-      Etag:
-      - ! '"52d6c4e3-1469c"'
       Expires:
       - Thu, 31 Dec 2037 23:55:55 GMT
       Cache-Control:
       - max-age=315360000
+      - public
       Server:
       - NetDNA-cache/2.2
       X-Cache:
@@ -628,5 +628,5 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Tue, 25 Feb 2014 10:22:01 GMT
+  recorded_at: Mon, 10 Mar 2014 18:07:36 GMT
 recorded_with: VCR 2.6.0
