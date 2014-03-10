@@ -70,7 +70,7 @@ group :development, :test do
 end
 
 group :production do
-  gem "thin", "~> 1.5.0"
+  gem "unicorn"
   gem "lograge"
   gem "pg"
   gem "rails_12factor"
