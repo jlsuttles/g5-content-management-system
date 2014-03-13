@@ -18,7 +18,8 @@ G5CMS::Application.routes.draw do
       resources :logo_widgets, only: [:index, :show, :create, :destroy]
       resources :btn_widgets, only: [:index, :show, :create, :destroy]
       resources :nav_widgets, only: [:index, :show, :create, :destroy]
-      resources :aside_widgets, only: [:index, :show, :create, :update, :destroy]
+      resources :aside_before_widgets, only: [:index, :show, :create, :update, :destroy]
+      resources :aside_after_widgets, only: [:index, :show, :create, :update, :destroy]
       resources :footer_widgets, only: [:index, :show, :create, :destroy]
 
       resources :web_home_templates, only: [:index, :show, :update]
