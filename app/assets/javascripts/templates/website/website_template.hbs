@@ -20,7 +20,10 @@
       {{#each navWidgets}}
         {{ partial "website/widget" }}
       {{/each}}
-      {{#each asideWidgets}}
+      {{#each asideBeforeWidgets}}
+        {{ partial "website/widget" }}
+      {{/each}}
+      {{#each asideAfterWidgets}}
         {{ partial "website/widget" }}
       {{/each}}
       {{#each footerWidgets}}
