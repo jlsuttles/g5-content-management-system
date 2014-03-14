@@ -1,4 +1,4 @@
-App.AsideWidget = DS.Model.extend App.ReloadIframe,
+App.AsideBeforeMainWidget = DS.Model.extend App.ReloadIframe,
   # TODO: make a DS.belongsTo
   gardenWidgetId: DS.attr("number")
   websiteTemplate: DS.belongsTo("App.WebsiteTemplate")
