@@ -73,6 +73,8 @@
 1. [Also add your private key to
    Heroku.](https://devcenter.heroku.com/articles/keys)
 
+1. [Get your AWS S3 credentials ready — for the client's assets](https://console.aws.amazon.com/s3)
+
 1. Set ENV variables.
 
     ```bash
@@ -80,6 +82,11 @@
     $ export HEROKU_USERNAME=your-username
     $ export HEROKU_API_KEY=your-api-key
     $ export ID_RSA=your-private-key
+    $ export AWS_ACCESS_KEY_ID=
+    $ export AWS_SECRET_ACCESS_KEY=
+    $ export AWS_REGION=
+    $ export AWS_S3_BUCKET_NAME_#{location_name}=
+    $ export AWS_S3_BUCKET_URL_#{location_name}=
     ```
 
 1. Install [redis](http://redis.io/) and start it.
