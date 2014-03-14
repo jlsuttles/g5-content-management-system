@@ -88,6 +88,7 @@
     $ export AWS_S3_BUCKET_NAME_#{location_name}=
     $ export AWS_S3_BUCKET_URL_#{location_name}=
     ```
+  * if you have issues connecting to S3 (SocketError: getaddrinfo: nodename nor servname provided, or not known) make sure [your region is correct](http://docs.aws.amazon.com/general/latest/gr/rande.html)
 
 1. Install [redis](http://redis.io/) and start it.
 
