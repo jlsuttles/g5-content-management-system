@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Api::V1::WebsiteTemplatesController do
+describe Api::V1::WebsiteTemplatesController, :auth_controller do
   let(:website_template) { Fabricate(:website_template) }
   let(:web_layout) { Fabricate(:web_layout) }
   let(:web_theme) { Fabricate(:web_theme) }

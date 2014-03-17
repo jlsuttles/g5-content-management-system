@@ -14,6 +14,7 @@ require "capybara/rspec"
 require "database_cleaner"
 require "webmock/rspec"
 require "vcr"
+require 'g5_authenticatable/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

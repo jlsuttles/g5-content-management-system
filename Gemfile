@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+
 ruby "1.9.3"
 
 gem "rails", "~> 3.2.14"
@@ -24,6 +25,8 @@ gem "aws-sdk", "~> 1.34.1"
 gem "ember-rails"
 gem "ember-source", "~> 1.0.0"
 gem "ember-data-source", "~> 0.14"
+
+gem 'g5_authenticatable', '~> 0.2'
 
 group :assets do
   gem "sass-rails", "~> 3.2.3"
@@ -55,6 +58,7 @@ group :development, :test do
   gem "database_cleaner", "~> 0.9.1"
   # ruby spec support
   gem "fabrication", "~> 2.5.0"
+  gem 'factory_girl_rails'
   gem "faker"
   gem "webmock", "~> 1.13.0", require: false
   gem "vcr", "~> 2.6.0", require: false
