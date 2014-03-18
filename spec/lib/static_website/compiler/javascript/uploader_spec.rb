@@ -18,4 +18,16 @@ describe StaticWebsite::Compiler::Javascript::Uploader do
       expect(uploader.bucket_url).to eq "http://assets.northshoreoahu.com"
     end
   end
+
+  describe "#write_options" do
+    let(:uploader) { uploader_klass.new([], "") }
+
+    it "is public readable" do
+      expect(uploader.write_options[:acl]).to eq :public_read
+    end
+
+    it "content type is 'text/javascript'" do
+      expect(uploader.write_options[:content_type]).to eq "text/javascript"
+    end
+  end
 end

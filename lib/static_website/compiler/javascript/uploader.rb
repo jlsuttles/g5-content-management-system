@@ -21,8 +21,7 @@ module StaticWebsite
         def compile
           @uploaded_paths = []
           from_paths.each do |from_path|
-            s3_bucket_object(from_path).write(Pathname.new(from_path),
-              acl: :public_read, content_type: "text/javascript")
+            s3_bucket_object(from_path).write(Pathname.new(from_path), write_options)
             @uploaded_paths << File.join(bucket_url.to_s, to_path(from_path).to_s)
           end
         end
@@ -37,6 +36,10 @@ module StaticWebsite
 
         def s3_bucket_object(from_path)
           s3_bucket.objects[to_path(from_path)]
+        end
+
+        def write_options
+          { acl: :public_read, content_type: "text/javascript" }
         end
 
         def to_path(from_path)
