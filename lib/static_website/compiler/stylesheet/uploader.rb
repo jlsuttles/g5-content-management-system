@@ -20,7 +20,7 @@ module StaticWebsite
 
         def compile
           s3_bucket_object.write(Pathname.new(from_path),
-            acl: :public_read)
+            acl: :public_read, content_type: "text/css")
         end
 
         def uploaded_path
