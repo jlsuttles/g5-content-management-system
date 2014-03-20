@@ -19,8 +19,7 @@ module StaticWebsite
         end
 
         def compile
-          s3_bucket_object.write(Pathname.new(from_path),
-            acl: :public_read)
+          s3_bucket_object.write(Pathname.new(from_path), write_options)
         end
 
         def uploaded_path
@@ -37,6 +36,10 @@ module StaticWebsite
 
         def s3_bucket_object
           @s3_bucket_object ||= s3_bucket.objects[to_path]
+        end
+
+        def write_options
+          { acl: :public_read, content_type: "text/css" }
         end
 
         def to_path
