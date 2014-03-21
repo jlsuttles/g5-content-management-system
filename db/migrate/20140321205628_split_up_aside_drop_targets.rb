@@ -43,7 +43,7 @@ class SplitUpAsideDropTargets < ActiveRecord::Migration
     drop_target.widgets << widget
   end
 
-  def move_to_after_main(widget)
+  def move_to_after_main(widget, website_template)
     drop_target = website_template.drop_targets.find_or_create_by_html_id('drop-target-aside-after-main')
     drop_target.widgets << widget
   end
