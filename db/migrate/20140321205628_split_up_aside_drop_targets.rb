@@ -18,7 +18,7 @@ class SplitUpAsideDropTargets < ActiveRecord::Migration
 
   def down
     WebsiteTemplate.all.each do |website_template|
-      merged_drop_target = website_template.drop_targets.find_or_create_by_html_id('drop-target-aside').first
+      merged_drop_target = website_template.drop_targets.find_or_create_by_html_id('drop-target-aside')
       split_drop_targets = website_template.drop_targets.select {|drop_target| SPLIT_DROP_TARGETS.include?(drop_target.html_id)}
       widget_bucket = []
 
