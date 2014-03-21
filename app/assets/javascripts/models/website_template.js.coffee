@@ -6,6 +6,6 @@ App.WebsiteTemplate = DS.Model.extend
   logoWidgets: DS.hasMany("App.LogoWidget")
   btnWidgets: DS.hasMany("App.BtnWidget")
   navWidgets: DS.hasMany("App.NavWidget")
-  asideBeforeWidgets: DS.hasMany("App.AsideBeforeMainWidget")
-  asideAfterWidgets: DS.hasMany("App.AsideAfterMainWidget")
+  asideBeforeMainWidgets: DS.hasMany("App.AsideBeforeMainWidget")
+  asideAfterMainWidgets: DS.hasMany("App.AsideAfterMainWidget")
   footerWidgets: DS.hasMany("App.FooterWidget")
