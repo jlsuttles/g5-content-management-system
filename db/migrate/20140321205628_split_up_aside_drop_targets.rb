@@ -3,7 +3,7 @@ class SplitUpAsideDropTargets < ActiveRecord::Migration
   SPLIT_DROP_TARGETS = ['drop-target-aside-before-main', 'drop-target-aside-after-main']
 
   def up
-    WebsiteTemplate.each do |website_template|
+    WebsiteTemplate.all.each do |website_template|
       drop_target = website_template.drop_targets.where(html_id: 'drop-target-aside').first
       drop_target.widgets.each do |widget|
         if CTA_WIDGETS.include?(widget.name)
@@ -17,7 +17,7 @@ class SplitUpAsideDropTargets < ActiveRecord::Migration
   end
 
   def down
-    WebsiteTemplate.each do |website_template|
+    WebsiteTemplate.all.each do |website_template|
       merged_drop_target = website_template.drop_targets.find_or_create_by_html_id('drop-target-aside').first
       split_drop_targets = website_template.drop_targets.select {|drop_target| SPLIT_DROP_TARGETS.include?(drop_target.html_id)}
       widget_bucket = []
