@@ -32,7 +32,7 @@ class SplitUpAsideDropTargets < ActiveRecord::Migration
         merged_drop_target.widgets << widget
       end
 
-      split_drop_targets.destroy_all
+      split_drop_targets.map {|drop_target| drop_target.destroy}
     end
   end
   
