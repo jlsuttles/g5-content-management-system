@@ -22,8 +22,12 @@ Fabricator :phone_drop_target, class_name: :drop_target do
   html_id { "drop-target-phone" }
 end
 
-Fabricator :aside_drop_target, class_name: :drop_target do
-  html_id { "drop-target-aside" }
+Fabricator :aside_before_main_drop_target, class_name: :drop_target do
+  html_id { "drop-target-aside-before-main" }
+end
+
+Fabricator :aside_after_main_drop_target, class_name: :drop_target do
+  html_id { "drop-target-aside-after-main" }
 end
 
 Fabricator :footer_drop_target, class_name: :drop_target do

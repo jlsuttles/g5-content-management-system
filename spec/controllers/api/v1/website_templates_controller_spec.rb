@@ -9,7 +9,8 @@ describe Api::V1::WebsiteTemplatesController do
   let(:phone_drop_target) { Fabricate(:phone_drop_target) }
   let(:btn_drop_target) { Fabricate(:btn_drop_target) }
   let(:nav_drop_target) { Fabricate(:nav_drop_target) }
-  let(:aside_drop_target) { Fabricate(:aside_drop_target) }
+  let(:aside_before_main_drop_target) { Fabricate(:aside_before_main_drop_target) }
+  let(:aside_after_main_drop_target) { Fabricate(:aside_after_main_drop_target) }
   let(:footer_drop_target) { Fabricate(:footer_drop_target) }
 
   before do
@@ -18,7 +19,8 @@ describe Api::V1::WebsiteTemplatesController do
     website_template.drop_targets << phone_drop_target
     website_template.drop_targets << btn_drop_target
     website_template.drop_targets << nav_drop_target
-    website_template.drop_targets << aside_drop_target
+    website_template.drop_targets << aside_before_main_drop_target
+    website_template.drop_targets << aside_after_main_drop_target
     website_template.drop_targets << footer_drop_target
   end
 
