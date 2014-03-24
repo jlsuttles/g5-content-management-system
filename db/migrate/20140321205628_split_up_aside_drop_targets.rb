@@ -1,5 +1,5 @@
 class SplitUpAsideDropTargets < ActiveRecord::Migration
-  CTA_WIDGETS = ['Navigation', 'Contact Info', 'Coupon', 'Coupon', 'Request Info Form', 'Social Links', 'Phone Number', 'Tour Form']
+  CTA_WIDGET_NAME = 'Navigation'
   SPLIT_DROP_TARGETS = ['drop-target-aside-before-main', 'drop-target-aside-after-main']
 
   def up
@@ -8,7 +8,7 @@ class SplitUpAsideDropTargets < ActiveRecord::Migration
       say("Found #{website_template.drop_targets.where(html_id: 'drop-target-aside').length} drop targets matching drop-target-aside")
       drop_target.widgets.each do |widget|
         say("Inside #{widget} widget")
-        if CTA_WIDGETS.include?(widget.name)
+        if widget.name == CTA_WIDGET_NAME
           say("moving to before main")
           move_to_before_main(widget, website_template)
         else
