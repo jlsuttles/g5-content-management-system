@@ -161,6 +161,7 @@
     float: right;
   }
   .widgets--list-view {
+    @include columns(5);
     li {
       display: inline-block;
       margin-bottom: 5px;
