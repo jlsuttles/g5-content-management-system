@@ -28,10 +28,6 @@ website:
         widgets:
           - slug: navigation
           - slug: contact-info
-          - slug: social-links
-          - slug: photo
-          - slug: html
-          - slug: coupon
       - html_id: drop-target-footer
         widgets:
           - slug: contact-info
@@ -45,68 +41,134 @@ website:
         widgets:
           - slug: photo
           - slug: html
+          - slug: meta-description
 
   web_page_templates:
+    - name: Floor Plans
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - slug: html
+            - slug: floor-plans
+            - slug: html
+            - slug: meta-description
+
     - name: Amenities
       drop_targets:
         - html_id: drop-target-main
           widgets:
             - slug: html
-            - slug: photo
-            - slug: photo
-
-    - name: Coupon
-      drop_targets:
-        - html_id: drop-target-main
-          widgets:
-            - slug: coupon
-
-    - name: Floorplans and Rates
-      drop_targets:
-        - html_id: drop-target-main
-          widgets:
-            - slug: floorplans
-
-    - name: Directions
-      drop_targets:
-        - html_id: drop-target-main
-          widgets:
-            - slug: directions
+            - slug: meta-description
 
     - name: Photo Gallery
       drop_targets:
         - html_id: drop-target-main
           widgets:
+            - slug: html
             - slug: gallery
-
-    - name: Request Info
-      drop_targets:
-        - html_id: drop-target-main
-          widgets:
             - slug: html
-            - slug: request-info-form
-
-    - name: Social
-      drop_targets:
-        - html_id: drop-target-main
-          widgets:
-            - slug: html
-            - slug: blog-feed
-            - slug: twitter-feed
-
-    - name: Social
-      drop_targets:
-        - html_id: drop-target-main
-          widgets:
-            - slug: html
-            - slug: blog-feed
-            - slug: twitter-feed
+            - slug: meta-description
 
     - name: Neighborhood
       drop_targets:
         - html_id: drop-target-main
           widgets:
             - slug: html
-            - slug: photo
-            - slug: photo
+            - slug: meta-description
+
+    - name: Map and Directions
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
             - slug: html
+            - slug: map
+            - slug: html
+            - slug: meta-description
+
+    - name: Residents
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - slug: html
+            - slug: button
+            - slug: button
+            - slug: button
+            - slug: button
+            - slug: button
+            - slug: html
+            - slug: meta-description
+
+    - name: Apply
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - slug: html
+            - slug: apply-form
+            - slug: html
+            - slug: meta-description
+
+    - name: Schedule Tour
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - slug: html
+            - slug: tour-form
+            - slug: html
+            - slug: meta-description
+
+    - name: Request Information
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - slug: html
+            - slug: request-info-form
+            - slug: html
+            - slug: meta-description
+
+    - name: Contact Us
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - slug: html
+            - slug: contact-form
+            - slug: html
+            - slug: meta-description
+
+    - name: Pet Friendly
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - slug: html
+            - slug: meta-description
+
+    - name: Community Events
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - slug: html
+            - slug: meta-description
+
+    - name: Maintenance Request
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - slug: html
+            - slug: service-request-form
+            - slug: html
+            - slug: meta-description
+
+    - name: Suggestion Box
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - slug: html
+            - slug: suggestion-form
+            - slug: html
+            - slug: meta-description
+
+    - name: Privacy Policy
+      drop_targets:
+        - html_id: drop-target-main
+          widgets:
+            - slug: html
+            - slug: meta-description
