@@ -21,9 +21,11 @@ website:
       - html_id: drop-target-nav
         widgets:
           - slug: navigation
-      - html_id: drop-target-aside
+      - html_id: drop-target-aside-before-main
         widgets:
-          - slug: calls-to-action
+          - slug: navigation
+      - html_id: drop-target-aside-after-main
+        widgets:
           - slug: social-links
       - html_id: drop-target-footer
         widgets:

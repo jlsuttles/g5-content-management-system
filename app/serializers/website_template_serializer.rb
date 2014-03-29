@@ -8,6 +8,7 @@ class WebsiteTemplateSerializer < WebTemplateSerializer
   has_many :logo_widgets
   has_many :btn_widgets
   has_many :nav_widgets
-  has_many :aside_widgets
+  has_many :aside_before_main_widgets
+  has_many :aside_after_main_widgets
   has_many :footer_widgets
 end
