@@ -1,13 +1,13 @@
 case Client.first.vertical
 
 when 'Assisted-Living'
-  default_template = 'defaults_sl.yml'
+  default_template = 'website_defaults_assisted_living.yml'
 
 when 'Self-Storage'
-  default_template = 'defaults_ss.yml'
+  default_template = 'website_defaults_self_storage.yml'
 
 when 'Apartments'
-  default_template = 'defaults_mf.yml'
+  default_template = 'website_defaults_apartments.yml'
 
 else
   default_template = 'defaults.yml'
