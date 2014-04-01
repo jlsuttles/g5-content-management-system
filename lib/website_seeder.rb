@@ -2,16 +2,9 @@ class WebsiteSeeder
   attr_reader :location, :instructions, :website
 
   def initialize(location, instructions=WEBSITE_DEFAULTS)
-    if Client.first.vertical == 'Assisted-Living'
-      instructions = WEBSITE_DEFAULTS_ASSISTED_LIVING
-    elsif Client.first.vertical == 'Self-Storage'
-      instructions = WEBSITE_DEFAULTS_SELF_STORAGE
-    elsif Client.first.vertical == 'Apartments'
-      instructions = WEBSITE_DEFAULTS_APARTMENTS
-    end
-
     @location = location
-    @instructions = instructions
+    @client = Client.first
+    @instructions = @client.try(:website_defaults) || instructions
   end
 
   def seed
