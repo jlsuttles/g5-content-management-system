@@ -2,7 +2,6 @@ class WebsiteSeeder
   attr_reader :location, :instructions, :website
 
   def initialize(location, instructions=DEFAULTS["website"])
-
     if Client.first.vertical == 'Assisted-Living'
       instructions = ASSISTED_LIVING_DEFAULTS["website"]
     elsif Client.first.vertical == 'Self-Storage'
