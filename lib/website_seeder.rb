@@ -2,6 +2,17 @@ class WebsiteSeeder
   attr_reader :location, :instructions, :website
 
   def initialize(location, instructions=DEFAULTS["website"])
+    case Client.first.vertical
+    when 'Assisted-Living'
+      instructions = ASSISTED_LIVING_DEFAULTS["website"]
+    when 'Self-Storage'
+      instructions = SELF_STORAGE_DEFAULTS["website"]
+    when 'Apartments'
+      instructions = APARTMENTS_DEFAULTS["website"]
+    else
+      instructions = DEFAULTS["website"]
+    end
+
     @location = location
     @instructions = instructions
   end
