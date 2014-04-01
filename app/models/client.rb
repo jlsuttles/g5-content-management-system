@@ -18,11 +18,11 @@ class Client < ActiveRecord::Base
   end
 
   def website_defaults
-    if self.first.vertical == 'Assisted-Living'
+    if self.vertical == 'Assisted-Living'
       instructions = WEBSITE_DEFAULTS_ASSISTED_LIVING
-    elsif self.first.vertical == 'Self-Storage'
+    elsif self.vertical == 'Self-Storage'
       instructions = WEBSITE_DEFAULTS_SELF_STORAGE
-    elsif self.first.vertical == 'Apartments'
+    elsif self.vertical == 'Apartments'
       instructions = WEBSITE_DEFAULTS_APARTMENTS
     end
   end
