@@ -42,7 +42,7 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
         @client = Fabricate(:client)
         @location = Fabricate(:location)
         @instructions = YAML.load_file("#{Rails.root}/spec/support/website_instructions/example.yml")
-        @website = WebsiteSeeder.new(@location, @instructions["website"]).seed
+        @website = WebsiteSeeder.new(@location, @instructions).seed
         @web_page_template = @website.web_page_templates.first
       end
 
