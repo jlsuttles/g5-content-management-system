@@ -20,11 +20,11 @@ class Client < ActiveRecord::Base
   def website_defaults
     case vertical
     when 'Assisted-Living'
-      instructions = WEBSITE_DEFAULTS_ASSISTED_LIVING
+      WEBSITE_DEFAULTS_ASSISTED_LIVING
     when 'Self-Storage'
-      instructions = WEBSITE_DEFAULTS_SELF_STORAGE
+      WEBSITE_DEFAULTS_SELF_STORAGE
     when 'Apartments'
-      instructions = WEBSITE_DEFAULTS_APARTMENTS
+      WEBSITE_DEFAULTS_APARTMENTS
     end
   end
 end

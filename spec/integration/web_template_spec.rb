@@ -79,23 +79,6 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
           end
         end
       end
-
-      describe "Uses the correct default instructions based on vertical" do
-        it "has correct title for first page in Apartment vertical" do
-          visit @web_page_template.url
-          expect(page).to have_title "Floor Plans"
-        end
-
-        it "has correct title for first page in Self-Storage vertical" do
-          @client = Fabricate(:client, vertical: "Self-Storage")
-          @location = Fabricate(:location)
-          @website = WebsiteSeeder.new(@location, nil, @client).seed
-          @web_page_template = @website.web_page_templates.first
-
-          visit @web_page_template.url
-          expect(page).to have_title "Amenities"
-        end
-      end
     end
   end
 end
