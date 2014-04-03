@@ -21,10 +21,10 @@ class Client < ActiveRecord::Base
     case vertical
     when 'Assisted-Living'
       WEBSITE_DEFAULTS_ASSISTED_LIVING
-    when 'Self-Storage'
-      WEBSITE_DEFAULTS_SELF_STORAGE
     when 'Apartments'
       WEBSITE_DEFAULTS_APARTMENTS
+    when 'Self-Storage'
+      WEBSITE_DEFAULTS_SELF_STORAGE
     end
   end
 end
