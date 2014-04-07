@@ -1,0 +1,25 @@
+<div id="releases" class="l-container">
+  <h1>Releases</h1>
+
+  <div class="faux-table faux-table--striped">
+    <div class="faux-table-head">
+      <span class="faux-table-cell">Version</span>
+      <span class="faux-table-cell">Timestamp</span>
+      <span class="faux-table-cell">Description</span>
+      <span class="faux-table-cell">Rollback</span>
+    </div>
+
+    <ul class="faux-table-body">
+      {{#each model}}
+      <li class="faux-table-row">
+        <div class="faux-table-cell">{{version}}</div>
+        <div class="faux-table-cell">{{created_at}}</div>
+        <div class="faux-table-cell">{{description}}</div>
+        <div class="faux-table-cell">
+          <a href="/api/v1/releases/{{unbound id}}/rollback" class="btn">Rollback</a>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

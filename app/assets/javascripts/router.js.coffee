@@ -8,6 +8,9 @@ App.Router.map ->
     @resource "webPageTemplates", ->
       @route "new"
 
+  @resource "releases", path: "/releases", ->
+    @route "update"
+
   @resource "locations", path: "/"
 
 App.Router.reopen
