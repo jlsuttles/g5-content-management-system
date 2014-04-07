@@ -43,6 +43,10 @@ G5CMS::Application.routes.draw do
           post "update"
         end
       end
+
+      resources :releases, only: :index do
+        get 'rollback', on: :member
+      end
     end
   end
 
