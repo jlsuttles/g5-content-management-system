@@ -5,10 +5,11 @@ App.Router.map ->
   @resource "webPageTemplate", path: "/:website_slug/:web_page_template_slug"
 
   @resource "website", path: "/:website_slug", ->
+    @resource "assets"
     @resource "webPageTemplates", ->
       @route "new"
 
-  @resource "locations", path: "/"
+  @resource "locations", path: "/", ->
 
 App.Router.reopen
   location: "history"
