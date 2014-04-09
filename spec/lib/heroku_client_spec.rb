@@ -2,11 +2,12 @@ require 'spec_helper'
 
 describe HerokuClient do
   let(:heroku_client) { HerokuClient.new(app, api_key) }
-  let(:response) { double(body: '[{"foo":"bar"}]') }
-  let(:app) { "chucknorris" }
+  let(:app) { "foo" }
   let(:api_key) { "12345" }
 
   describe "#releases" do
+    let(:response) { double(body: '[{"foo":"bar"}]') }
+
     before { HTTParty.stub(get: response) }
 
     subject { heroku_client.releases }
@@ -20,8 +21,6 @@ describe HerokuClient do
       )
       subject
     end
-
-    it { should eq([{ "foo" => "bar" }]) }
   end
 
   describe "#rollback" do
@@ -34,7 +33,7 @@ describe HerokuClient do
     it "calls the Heroku api resource with the appropriate headers and body" do
       HTTParty.should_receive(:post).with(
         "https://api.heroku.com/apps/#{app}/releases",
-        { body: { release: id },
+        { body: { "release" => id }.to_json,
           headers: { "Content-Type" => "application/json",
                      "Accept" => "application/vnd.heroku+json; version=3",
                      "Authorization" => Base64.encode64(":#{api_key}") } }
