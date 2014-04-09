@@ -1,5 +1,5 @@
-<div id="releases" class="l-container">
-  <h1>Releases</h1>
+<div class="releases l-container">
+  <h2 class="page-title">Releases</h2>
 
   <div class="faux-table faux-table--striped">
     <div class="faux-table-head">
@@ -16,7 +16,8 @@
         <div class="faux-table-cell">{{created_at}}</div>
         <div class="faux-table-cell">{{description}}</div>
         <div class="faux-table-cell">
-          <a href="/api/v1/releases/{{unbound id}}/rollback" class="btn">Rollback</a>
+          {{controllers.website.slug}}
+          <button class="btn" {{action rollback this.id controller.slug}}>Rollback</button>
         </div>
       </li>
       {{/each}}

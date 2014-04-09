@@ -44,8 +44,8 @@ G5CMS::Application.routes.draw do
         end
       end
 
-      resources :releases, only: :index do
-        get 'rollback', on: :member
+      resources :releases, only: [:index, :show] do
+        post "website/:website_slug", to: 'releases#rollback'
       end
     end
   end

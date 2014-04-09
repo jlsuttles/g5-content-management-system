@@ -1,16 +1,16 @@
 class Api::V1::ReleasesController < Api::V1::ApplicationController
   def index
-    render json: heroku_client.releases.reverse.first(10)
+    render json: release_manager.fetch_all
   end
 
   def rollback
-    heroku_client.rollback(params[:id])
-    redirect_to root_path, notice: "Rolling Back. This may take a few minutes."
+    release_manager.rollback(params[:release_id])
+    redirect_to root_path, notice: "Rolling Back Deploy. This may take a few minutes."
   end
 
-  protected
+  private
 
-  def heroku_client
-    HerokuClient.new(ENV["HEROKU_APP_NAME"], ENV["HEROKU_API_KEY"])
+  def release_manager
+    ReleasesManager.new(params["website_slug"])
   end
 end

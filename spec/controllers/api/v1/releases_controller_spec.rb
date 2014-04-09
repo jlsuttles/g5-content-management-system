@@ -1,22 +1,21 @@
 require "spec_helper"
 
 describe Api::V1::ReleasesController do
-  let(:releases) { [{ version: 10 }, { version: 11 }] }
-  let(:heroku_client) { double(releases: releases, rollback: nil) }
+  let(:release_manager) { double(fetch_all: nil, rollback: nil) }
 
-  before { HerokuClient.stub(new: heroku_client) }
+  before { ReleasesManager.stub(new: release_manager) }
 
   describe "#index" do
-    it "calls releases on HerokuClient" do
-      heroku_client.should_receive(:releases)
-      get :index
+    it "calls releases on ReleasesManager" do
+      release_manager.should_receive(:fetch_all)
+      get :index, website_slug: "foo"
     end
   end
 
   describe "#rollback" do
-    it "calls rollback on HerokuClient" do
-      heroku_client.should_receive(:rollback).with("123")
-      get :rollback, id: "123"
+    it "calls rollback on ReleasesManager" do
+      release_manager.should_receive(:rollback).with("123")
+      post :rollback, website_slug: "foo", release_id: "123"
     end
   end
 end
