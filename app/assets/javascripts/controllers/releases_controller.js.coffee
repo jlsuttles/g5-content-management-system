@@ -1,5 +1,4 @@
 App.ReleasesController = Ember.ArrayController.extend
-  needs: "website",
   actions:
     rollback: (id, slug) ->
       url = "/api/v1/releases/" + id + "/website/" + slug

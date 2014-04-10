@@ -2,21 +2,11 @@
   <h2 class="page-title">Releases</h2>
 
   <div class="faux-table faux-table--striped">
-    <div class="faux-table-head">
-      <span class="faux-table-cell">Version</span>
-      <span class="faux-table-cell">Timestamp</span>
-      <span class="faux-table-cell">Description</span>
-      <span class="faux-table-cell">Rollback</span>
-    </div>
-
     <ul class="faux-table-body">
       {{#each model}}
-      <li class="faux-table-row">
-        <div class="faux-table-cell">{{version}}</div>
+      <li {{bindAttr class=":faux-table-row current"}}>
         <div class="faux-table-cell">{{created_at}}</div>
-        <div class="faux-table-cell">{{description}}</div>
         <div class="faux-table-cell">
-          {{controllers.website.slug}}
           <button class="btn" {{action rollback this.id controller.slug}}>Rollback</button>
         </div>
       </li>
