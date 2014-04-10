@@ -15,22 +15,21 @@ describe ReleasesManager do
 
       before { HTTParty.stub_chain(:get, :body).and_return(releases) }
 
-      its(:size) { 10 }
+      its(:size) { 5 }
 
       context "custom limit" do
-        let(:limit) { 4 }
+        let(:limit) { 3 }
 
-        its(:size) { 4 }
+        its(:size) { 3 }
       end
 
       context "specific data" do
         subject { releases_manager.fetch_all.first }
 
-        its([:id]) { should eq("7b4590be-58a6-4e0e-946c-d332ef27f0a5") }
-        its([:version]) { should eq(52) }
-        its([:created_at]) { should eq("2014-01-22T01:12:51Z") }
-        its([:description]) { should eq("Deploy ef4d0d6") }
-        its([:user]) { should eq("brian.bauer@g5searchmarketing.com") }
+        its(["id"]) { should eq("7b4590be-58a6-4e0e-946c-d332ef27f0a5") }
+        its(["version"]) { should eq(52) }
+        its(["created_at"]) { should eq("2014-01-22T01:12:51Z") }
+        its(["description"]) { should eq("Deploy ef4d0d6") }
       end
     end
 
