@@ -1,4 +1,3 @@
 App.Release = DS.Model.extend
-  created_at:  DS.attr("string")
-  description: DS.attr("string")
+  created_at:  DS.attr("date")
   current:     DS.attr("boolean")
