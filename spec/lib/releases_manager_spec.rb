@@ -10,7 +10,7 @@ describe ReleasesManager do
     subject { releases_manager.fetch_all }
 
     context "a valid location" do
-      let(:releases) { open(Rails.root+"spec/support/releases.json").read }
+      let(:releases) { open(Rails.root+"spec/fixtures/releases.json").read }
       let(:website_slug) { location.name.parameterize }
 
       before { HTTParty.stub_chain(:get, :body).and_return(releases) }
@@ -23,13 +23,28 @@ describe ReleasesManager do
         its(:size) { 3 }
       end
 
-      context "specific data" do
+      context "specific data with no rollbacks" do
         subject { releases_manager.fetch_all.first }
 
-        its(["id"]) { should eq("7b4590be-58a6-4e0e-946c-d332ef27f0a5") }
-        its(["version"]) { should eq(52) }
-        its(["created_at"]) { should eq("2014-01-22T01:12:51Z") }
-        its(["description"]) { should eq("Deploy ef4d0d6") }
+        its(["id"]) { should eq("c83d6988-36b8-42b0-a30a-c0df1d0797f6") }
+        its(["version"]) { should eq(48) }
+        its(["created_at"]) { should eq("2014-01-22T00:16:59Z") }
+        its(["description"]) { should eq("Deploy aeccd5a") }
+        its(["current"]) { should be_true }
+      end
+
+      context "specific data with a rollback" do
+        let(:releases) do
+          open(Rails.root+"spec/fixtures/releases_rolledback.json").read
+        end
+
+        subject { releases_manager.fetch_all.first }
+
+        its(["id"]) { should eq("e26ae957-c33e-41ef-b9a5-31fc40fda36b") }
+        its(["version"]) { should eq(53) }
+        its(["created_at"]) { should eq("2014-01-22T00:20:00Z") }
+        its(["description"]) { should eq("Deploy 1h12h") }
+        its(["current"]) { should be_true }
       end
     end
 

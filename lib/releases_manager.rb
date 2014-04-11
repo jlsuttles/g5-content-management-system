@@ -32,7 +32,6 @@ class ReleasesManager
   end
 
   def current_deploy(items)
-    items.reverse!
     return items.first if deploy?(items.first)
     current = items.detect { |item| item["version"] == version(items.first) }
 
@@ -46,7 +45,7 @@ class ReleasesManager
   end
 
   def flag_current(items)
-    current = current_deploy(items)
+    current = current_deploy(items.reverse!)
 
     items.each do |item|
       if item == current
