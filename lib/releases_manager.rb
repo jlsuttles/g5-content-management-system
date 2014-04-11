@@ -8,8 +8,8 @@ class ReleasesManager
 
   def fetch_all
     return unless location.present?
-
     items = JSON.parse(HerokuClient.new(location.website.urn).releases)
+
     process(filtered(items)).first(@limit)
   end
 
@@ -35,9 +35,7 @@ class ReleasesManager
     return items.first if deploy?(items.first)
     current = items.detect { |item| item["version"] == version(items.first) }
 
-    return current if current.present?
-
-    items.detect { |item| deploy?(item) }
+    current.present? ? current : items.detect { |item| deploy?(item) }
   end
 
   def process(items)
@@ -46,14 +44,7 @@ class ReleasesManager
 
   def flag_current(items)
     current = current_deploy(items.reverse!)
-
-    items.each do |item|
-      if item == current
-        item["current"] = true
-      else
-        item["current"] = false
-      end
-    end
+    items.each { |item| item["current"] = item == current ? true : false }
   end
 
   def deploy?(item)
