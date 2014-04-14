@@ -7,6 +7,7 @@ G5CMS::Application.routes.draw do
   # API endpoints
   namespace :api do
     namespace :v1 do
+      get '/sign', to: 'application#sign'
       resources :clients, only: [:show]
       resources :locations, only: [:index, :show]
       resources :websites, only: [:index, :show]
@@ -25,6 +26,7 @@ G5CMS::Application.routes.draw do
       resources :web_home_templates, only: [:index, :show, :update]
       resources :web_page_templates, only: [:index, :show, :create, :update, :destroy]
       resources :main_widgets, only: [:index, :show, :create, :update, :destroy]
+      resources :assets, only: [:index, :show, :create, :update, :destroy]
 
       resources :garden_web_layouts, only: [:index] do
         collection do

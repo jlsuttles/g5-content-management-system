@@ -13,4 +13,6 @@ class ApplicationController < ActionController::Base
   def client_name
     @client_name ||= client.name if client
   end
+
 end
+

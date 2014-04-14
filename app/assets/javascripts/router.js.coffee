@@ -9,7 +9,7 @@ App.Router.map ->
     @resource "webPageTemplates", ->
       @route "new"
 
-  @resource "locations", path: "/", ->
+  @resource "locations", path: "/"
 
 App.Router.reopen
   location: "history"

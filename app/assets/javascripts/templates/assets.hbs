@@ -1,0 +1,30 @@
+<div class="redirects l-container">
+  <h2 class="page-title">
+    Asset Manager
+  </h2>
+
+  Image: {{!view App.UploadFile name="image" imageBinding="Landcode.image" }}
+  <button {{action 'saveLandcode'}}>Save</button>
+  <br>
+  <hr>
+  <br>
+  {{s3-upload url="/api/v1/sign" action='saveAsset' }}
+
+  <div class="faux-table faux-table--striped">
+    <div class="faux-table-head">
+    </div> <!-- end .faux-table-head -->
+    <ul class="faux-table-body">
+    </ul> <!-- end .faux-table-body -->
+  </div> <!-- end .faux-table -->
+  <button class="save-redirects btn l-pullRight" {{action save this}}>Submit</button>
+</div>
+<table>
+  {{#each controller}}
+    <tr>
+      <td>{{name}}</td>
+      <td>{{click-select url=url }}</td>
+      <td><a {{bindAttr href=url}} target='new'><img {{bindAttr src=url}} width='100'></a></td>
+      <td>{{confirm-button title='delete' action='deleteAsset' param=this}}</td>
+    </tr>
+  {{/each}}
+</table>

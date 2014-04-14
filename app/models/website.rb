@@ -14,6 +14,7 @@ class Website < ActiveRecord::Base
   has_one  :web_home_template, dependent: :destroy
   has_many :web_page_templates, dependent: :destroy, order: "display_order ASC"
   has_many :web_templates
+  has_many :assets, dependent: :destroy
   has_many :widgets, through: :web_templates
   has_many :widget_settings, through: :widgets, source: :settings
 
