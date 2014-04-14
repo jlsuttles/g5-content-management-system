@@ -75,22 +75,15 @@ Ember.Uploader = Ember.Object.extend(Ember.Evented, {
   },
 
   authorizationAjax: function(url, params, method) {
-    console.log('method: ' + method)
-
     var self = this;
     var settings = {
       url: url,
       type: method || 'POST',
       contentType: false,
       processData: false,
-      xhr: function() {
-        var xhr = Ember.$.ajaxSettings.xhr();
-        xhr.upload.onprogress = function(e) {
-          self.didProgress(e);
-        };
-        return xhr;
-      },
-      data: params
+      headers: {'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIAJ25M6CYZNCRYZ73A/20140414/us-west-2/s3/aws4_request, SignedHeaders=host;x-amz-date, Signature=2a9fa5a3c9e302cddfd03ffd8039b85823deca982f2fc0d1d55f96273cd8297f',
+                'x-amz-date': "20140414T202915Z",
+                'x-amz-content-sha256' : 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}
     };
 
     return this._ajax(settings);
@@ -150,13 +143,13 @@ Ember.S3Uploader = Ember.Uploader.extend({
 
     set(this, 'isDeleting', true);
     return this.sign(file).then(function(json) {
-      var url = "http://" + json.bucket + ".s3.amazonaws.com";
-      //var url = file.get('url')
+      //var url = "http://" + json.bucket + ".s3.amazonaws.com";
+      var url = file.get('url')
       var data = self.setupFormData(file, json);
       var type = 'DELETE'
 
       console.log("117: " + type)
-      return self.ajax(url, data, type);
+      return self.authorizationAjax(url, data, type);
     }).then(function(respData) {
       self.didUpload(respData);
       return respData;
