@@ -136,6 +136,9 @@ GEM
     hike (1.2.3)
     honeybadger (1.10.1)
       json
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.5)
     journey (1.0.4)
     jquery-rails (3.0.4)
@@ -168,6 +171,7 @@ GEM
       nokogiri (~> 1.5.6)
     mime-types (1.25)
     multi_json (1.8.2)
+    multi_xml (0.5.5)
     newrelic_rpm (3.7.1.182)
     nokogiri (1.5.10)
     orm_adapter (0.4.0)
@@ -342,6 +346,7 @@ DEPENDENCIES
   guard-rspec (~> 2.1.0)
   heroku_resque_autoscaler (~> 0.1.0)
   honeybadger
+  httparty
   jquery-rails (~> 3.0.4)
   jquery-ui-rails (~> 4.0.5)
   launchy
