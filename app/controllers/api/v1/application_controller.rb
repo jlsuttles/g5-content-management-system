@@ -1,5 +1,5 @@
 class Api::V1::ApplicationController < ActionController::Base
-  def sign
+  def sign_upload
     render json: {
       acl: 'public-read',
       awsaccesskeyid: ENV['AWS_ACCESS_KEY_ID'],
@@ -33,23 +33,33 @@ class Api::V1::ApplicationController < ActionController::Base
   end
 
   def sign_delete
+    now = Time.now.utc
+    region = ENV['AWS_REGION']
+
     k_secret = ENV['AWS_SECRET_ACCESS_KEY']
-    k_date = hmac_sha256("AWS4" + k_secret, "20140414")
-    puts k_date
-    k_region = hmac_sha256(k_date, "us-west-2")
-    puts k_region
+    k_date = hmac_sha256("AWS4" + k_secret, now.strftime("%Y%m%d"))
+    k_region = hmac_sha256(k_date, region)
     k_service = hmac_sha256(k_region, "s3")
-    puts k_service
     k_signing = hmac_sha256(k_service, "aws4_request")
-    puts 'k_signing ' + k_signing
 
-    canonical_request = "DELETE\n/uploads/serveimage.jpg\n\nhost:assets.hollywood.com.s3.amazonaws.com\nx-amz-date:20140414T202915Z\n\nhost;x-amz-date\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    simple_date = now.strftime("%Y%m%d")
+    iso8601_date = now.strftime("%Y%m%dT%H%M%SZ")
+    empty_string_sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
-    string_to_sign = "AWS4-HMAC-SHA256\n20140414T202915Z\n20140414/us-west-2/s3/aws4_request\n#{sha256(canonical_request)}"
+    canonical_request = "DELETE\n/uploads/#{params[:name]}\n\nhost:#{ENV['AWS_S3_BUCKET_NAME_HOLLYWOOD']}.s3.amazonaws.com\nx-amz-date:#{iso8601_date}\n\nhost;x-amz-date\n#{empty_string_sha256}"
 
-    puts string_to_sign
-    signature = hmac_sha256(k_signing, string_to_sign)
+    string_to_sign = "AWS4-HMAC-SHA256\n#{iso8601_date}\n#{simple_date}/#{ENV['AWS_REGION']}/s3/aws4_request\n#{sha256(canonical_request)}"
+
+    signature = Digest::hexencode(hmac_sha256(k_signing, string_to_sign))
     signature
+    render json: {
+      signature: signature, 
+      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      success_action_status: '201',
+      iso8601_date: iso8601_date,
+      simple_date: simple_date,
+      region: region
+    }, status: :ok
   end
 
   def policy(options = {})

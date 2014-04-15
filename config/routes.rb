@@ -7,7 +7,8 @@ G5CMS::Application.routes.draw do
   # API endpoints
   namespace :api do
     namespace :v1 do
-      get '/sign', to: 'application#sign'
+      get '/sign_upload', to: 'application#sign_upload'
+      get '/sign_delete', to: 'application#sign_delete'
       resources :clients, only: [:show]
       resources :locations, only: [:index, :show]
       resources :websites, only: [:index, :show]

@@ -1,6 +1,6 @@
 class Api::V1::AssetsController < Api::V1::ApplicationController
   def index
-    render json: Asset.find(params[:ids])
+    render json: Asset.all
   end
 
   def show
@@ -26,7 +26,7 @@ class Api::V1::AssetsController < Api::V1::ApplicationController
   end
 
   def destroy
-    @asset = asset.find(params[:id])
+    @asset = Asset.find(params[:id])
     if @asset.destroy
       render json: nil, status: :ok
     else

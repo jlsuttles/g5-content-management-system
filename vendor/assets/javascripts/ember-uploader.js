@@ -74,18 +74,19 @@ Ember.Uploader = Ember.Object.extend(Ember.Evented, {
     return this._ajax(settings);
   },
 
-  authorizationAjax: function(url, params, method) {
+  authorizationAjax: function(url, method, signatureJson) {
     var self = this;
     var settings = {
+      signature: signatureJson['signature'],
       url: url,
       type: method || 'POST',
       contentType: false,
       processData: false,
-      headers: {'Authorization': 'AWS4-HMAC-SHA256 Credential=AKIAJ25M6CYZNCRYZ73A/20140414/us-west-2/s3/aws4_request, SignedHeaders=host;x-amz-date, Signature=2a9fa5a3c9e302cddfd03ffd8039b85823deca982f2fc0d1d55f96273cd8297f',
-                'x-amz-date': "20140414T202915Z",
+      headers: {'Authorization': 'AWS4-HMAC-SHA256 Credential=' + signatureJson['aws_access_key_id'] + 
+               '/' + signatureJson['simple_date'] + '/' + signatureJson['region'] + '/s3/aws4_request, SignedHeaders=host;x-amz-date, Signature=' + signatureJson['signature'],
+                'x-amz-date': signatureJson['iso8601_date'],
                 'x-amz-content-sha256' : 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}
     };
-
     return this._ajax(settings);
   },
 
@@ -99,11 +100,10 @@ Ember.Uploader = Ember.Object.extend(Ember.Evented, {
         Ember.run(null, reject, jqXHR);
       };
 
-      Ember.$.ajax(settings);
+      return Ember.$.ajax(settings);
     });
   }
 });
-
 
 })();
 
@@ -138,21 +138,14 @@ Ember.S3Uploader = Ember.Uploader.extend({
     });
   },
 
-  delete: function(file) {
+  deleteAsset: function(asset) {
+    console.log("delete")
     var self = this;
-
-    set(this, 'isDeleting', true);
-    return this.sign(file).then(function(json) {
-      //var url = "http://" + json.bucket + ".s3.amazonaws.com";
-      var url = file.get('url')
-      var data = self.setupFormData(file, json);
-      var type = 'DELETE'
-
-      console.log("117: " + type)
-      return self.authorizationAjax(url, data, type);
-    }).then(function(respData) {
-      self.didUpload(respData);
-      return respData;
+    return this.signDelete(asset).then(function(json) {
+      console.log("got signature back")
+      var url = asset.get('url');
+      var type = 'DELETE';
+      return self.authorizationAjax(url, "DELETE", json);
     });
   },
 
@@ -166,6 +159,18 @@ Ember.S3Uploader = Ember.Uploader.extend({
       }
     };
 
+    return this._ajax(settings);
+  },
+
+  signDelete: function(file) {
+    var settings = {
+      url: get(this, 'url'),
+      type: 'GET',
+      contentType: 'json',
+      data: {
+        name: file.get('url').split('/').pop()
+      }
+    };
     return this._ajax(settings);
   }
 });
