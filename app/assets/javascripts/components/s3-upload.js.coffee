@@ -10,7 +10,6 @@ App.S3UploadComponent = Ember.FileField.extend
     files = @get("files")
     uploader = Ember.S3Uploader.create(url: uploadUrl)
     uploader.on "didUpload", (response) =>
-      console.log("did upload")
       uploadedUrl = $(response).find("Location")[0].textContent
       uploadedUrl = unescape(uploadedUrl)
       this.sendAction('action', uploadedUrl)

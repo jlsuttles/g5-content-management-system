@@ -14,24 +14,6 @@ class Api::V1::ApplicationController < ActionController::Base
     }, status: :ok
   end
 
-  def signature
-    Base64.encode64(
-      OpenSSL::HMAC.digest(
-        OpenSSL::Digest::Digest.new('sha1'),
-        ENV['AWS_SECRET_ACCESS_KEY'],
-        policy({ secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] })
-      )
-    ).gsub(/\n/, '')
-  end
-
-  def hmac_sha256(key, input)
-    OpenSSL::HMAC.digest(OpenSSL::Digest::Digest.new("sha256"), key, input)
-  end
-
-  def sha256(input)
-    OpenSSL::Digest::Digest::SHA256.new(input).to_s
-  end
-
   def sign_delete
     now = Time.now.utc
     region = ENV['AWS_REGION']
@@ -61,6 +43,27 @@ class Api::V1::ApplicationController < ActionController::Base
       region: region
     }, status: :ok
   end
+
+private
+
+  def signature
+    Base64.encode64(
+      OpenSSL::HMAC.digest(
+        OpenSSL::Digest::Digest.new('sha1'),
+        ENV['AWS_SECRET_ACCESS_KEY'],
+        policy({ secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] })
+      )
+    ).gsub(/\n/, '')
+  end
+
+  def hmac_sha256(key, input)
+    OpenSSL::HMAC.digest(OpenSSL::Digest::Digest.new("sha256"), key, input)
+  end
+
+  def sha256(input)
+    OpenSSL::Digest::Digest::SHA256.new(input).to_s
+  end
+
 
   def policy(options = {})
     Base64.encode64(
