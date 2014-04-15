@@ -7,9 +7,7 @@ App.AssetsController = Ember.ArrayController.extend
         asset = App.Asset.createRecord({website_id: website.get('id'), url: uploadedUrl})
         website.get('assets').addObject(asset)
         asset.save().then ((asset) =>
-          console.log("saved")
         ), (asset)=>
-          console.log('failed')
           errorField = undefined
           for key of asset.get('errors')
             errorField = key
@@ -22,7 +20,6 @@ App.AssetsController = Ember.ArrayController.extend
         website.get('assets').removeObject(asset)
         asset.deleteRecord()
         asset.save().then ->
-          console.log('successfully destroyed the asset record')
       ), (response) ->
         console.log('The delete failed: ' + response)
 
