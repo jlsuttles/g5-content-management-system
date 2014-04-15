@@ -162,7 +162,7 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def last_mod
-    widgets.order("updated_at").last.updated_at
+    widgets.order("updated_at").last.updated_at.to_date
   end
 
   private
