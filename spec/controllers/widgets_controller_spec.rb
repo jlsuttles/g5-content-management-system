@@ -17,6 +17,11 @@ describe WidgetsController, vcr: VCR_OPTIONS do
 
   describe "PUT update" do
 
+    it "returns the last updated widget with date only" do
+      widget.stub(:update_attributes) { true }
+      expect(page.last_mod).to eq(widget.updated_at.to_date)
+    end
+
     describe "HTML" do
       let(:update) { put :update, id: 1, widget: { username: "Bookis" } }
 
