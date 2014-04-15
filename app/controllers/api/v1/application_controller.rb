@@ -3,7 +3,7 @@ class Api::V1::ApplicationController < ActionController::Base
     render json: {
       acl: 'public-read',
       awsaccesskeyid: ENV['AWS_ACCESS_KEY_ID'],
-      bucket: ENV['AWS_S3_BUCKET_NAME_HOLLYWOOD'],
+      bucket: bucket,
       expires: 10.hours.from_now,
       key: "uploads/#{params[:name]}",
       policy: policy,
@@ -46,7 +46,7 @@ class Api::V1::ApplicationController < ActionController::Base
     iso8601_date = now.strftime("%Y%m%dT%H%M%SZ")
     empty_string_sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
-    canonical_request = "DELETE\n/uploads/#{params[:name]}\n\nhost:#{ENV['AWS_S3_BUCKET_NAME_HOLLYWOOD']}.s3.amazonaws.com\nx-amz-date:#{iso8601_date}\n\nhost;x-amz-date\n#{empty_string_sha256}"
+    canonical_request = "DELETE\n/uploads/#{params[:name]}\n\nhost:#{bucket}.s3.amazonaws.com\nx-amz-date:#{iso8601_date}\n\nhost;x-amz-date\n#{empty_string_sha256}"
 
     string_to_sign = "AWS4-HMAC-SHA256\n#{iso8601_date}\n#{simple_date}/#{ENV['AWS_REGION']}/s3/aws4_request\n#{sha256(canonical_request)}"
 
@@ -67,7 +67,7 @@ class Api::V1::ApplicationController < ActionController::Base
       {
         expiration: 10.hours.from_now,
         conditions: [
-          { bucket: ENV['AWS_S3_BUCKET_NAME_HOLLYWOOD'] },
+          { bucket: bucket },
           { acl: 'public-read' },
           { expires: 10.hours.from_now },
           { success_action_status: '201' },
@@ -78,6 +78,10 @@ class Api::V1::ApplicationController < ActionController::Base
         ]
       }.to_json
     ).gsub(/\n|\r/, '')
+  end
+  
+  def bucket
+    ENV["AWS_S3_BUCKET_NAME_#{params['location-name'].upcase}"]
   end
 end
 

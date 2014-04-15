@@ -101,7 +101,7 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Fri, 21 Mar 2014 01:43:55 GMT
+      - Fri, 21 Mar 2014 01:50:35 GMT
       Last-Modified:
       - Wed, 12 Mar 2014 00:07:36 GMT
       Status:
@@ -114,44 +114,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! ".social-links a {\n  display: inline-block;\n  margin-right: 5px;\n}\n"
     http_version: 
-  recorded_at: Fri, 21 Mar 2014 01:43:56 GMT
-- request:
-    method: get
-    uri: http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/css
-      Date:
-      - Fri, 21 Mar 2014 01:43:56 GMT
-      Last-Modified:
-      - Wed, 12 Mar 2014 00:16:41 GMT
-      Status:
-      - 200 OK
-      Content-Length:
-      - '351'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! "@media (min-width: 980px) {\n  .wrapper:before,\n  .wrapper:after
-        {\n    display: table;\n    line-height: 0;\n    content: \"\";\n  }\n  .wrapper:after
-        {\n    clear: both;\n  }\n  .layout-side-left section[role=main] {\n    float:
-        right;\n  }\n  .layout-side-left aside[role=complementary] {\n    float: left;\n
-        \ }\n  footer[role=contentinfo] {\n    clear: both;\n  }\n}\n"
-    http_version: 
-  recorded_at: Fri, 21 Mar 2014 01:43:56 GMT
+  recorded_at: Fri, 21 Mar 2014 01:50:35 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/stylesheets/html.css
@@ -171,9 +134,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Fri, 21 Mar 2014 01:50:35 GMT
+      - Tue, 15 Apr 2014 02:58:44 GMT
       Last-Modified:
-      - Wed, 12 Mar 2014 00:07:36 GMT
+      - Tue, 08 Apr 2014 19:41:19 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -184,7 +147,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! ".html {\n  clear: both;\n  overflow: hidden;\n}"
     http_version: 
-  recorded_at: Fri, 21 Mar 2014 01:50:35 GMT
+  recorded_at: Tue, 15 Apr 2014 02:58:44 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/stylesheets/social-links.css
@@ -204,9 +167,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Fri, 21 Mar 2014 01:50:35 GMT
+      - Tue, 15 Apr 2014 02:58:44 GMT
       Last-Modified:
-      - Wed, 12 Mar 2014 00:07:36 GMT
+      - Tue, 08 Apr 2014 19:41:19 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -217,7 +180,45 @@ http_interactions:
       encoding: US-ASCII
       string: ! ".social-links a {\n  display: inline-block;\n  margin-right: 5px;\n}\n"
     http_version: 
-  recorded_at: Fri, 21 Mar 2014 01:50:35 GMT
+  recorded_at: Tue, 15 Apr 2014 02:58:44 GMT
+- request:
+    method: get
+    uri: http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/css
+      Date:
+      - Tue, 15 Apr 2014 02:58:44 GMT
+      Last-Modified:
+      - Sat, 29 Mar 2014 00:14:23 GMT
+      Status:
+      - 200 OK
+      Content-Length:
+      - '383'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! "@media (min-width: 980px) {\n  .wrapper:before,\n  .wrapper:after
+        {\n    display: table;\n    line-height: 0;\n    content: \"\";\n  }\n  .wrapper:after
+        {\n    clear: both;\n  }\n  .layout-side-left section[role=main] {\n    float:
+        right;\n  }\n  .layout-side-left .aside-top,\n  .layout-side-left aside[role=complementary]
+        {\n    float: left;\n  }\n  footer[role=contentinfo] {\n    clear: both;\n
+        \ }\n}\n"
+    http_version: 
+  recorded_at: Tue, 15 Apr 2014 02:58:44 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss
@@ -237,13 +238,13 @@ http_interactions:
       Content-Type:
       - text/plain
       Date:
-      - Fri, 21 Mar 2014 01:50:35 GMT
+      - Tue, 15 Apr 2014 02:58:45 GMT
       Last-Modified:
-      - Wed, 12 Mar 2014 19:24:43 GMT
+      - Sat, 29 Mar 2014 00:17:10 GMT
       Status:
       - 200 OK
       Content-Length:
-      - '14494'
+      - '14589'
       Connection:
       - keep-alive
     body:
@@ -291,9 +292,9 @@ http_interactions:
         {\n  height: 5em;\n}\nlabel,\nlegend {\n  font-family: $serif;\n}\ninput[type=submit]
         {\n  display: inline-block;\n}\n\n// LAYOUT ========================\n.wrapper
         .content,\nheader[role=banner] {\n  max-width: 1600px;\n  width: 100%;\n}\n.wrapper
-        .content {\n  @include clearfix;\n}\nheader[role=banner],\nsection[role=main],\naside[role=complementary],\nfooter[role=contentinfo],\n.wrapper
-        {\n  @include border-box;\n  position: relative;\n}\nheader[role=banner],\nfooter[role=contentinfo],\nsection[role=main],\naside[role=complementary]
-        {\n  padding-left: 2.5%;\n  padding-right: 2.5%;\n}\nsection[role=main],\naside[role=complementary]
+        .content {\n  @include clearfix;\n}\nheader[role=banner],\nsection[role=main],\n.aside-top,\naside[role=complementary],\nfooter[role=contentinfo],\n.wrapper
+        {\n  @include border-box;\n  position: relative;\n}\nheader[role=banner],\nfooter[role=contentinfo],\nsection[role=main],\n.aside-top,\naside[role=complementary]
+        {\n  padding-left: 2.5%;\n  padding-right: 2.5%;\n}\nsection[role=main],\n.aside-top,\naside[role=complementary]
         {\n  padding-bottom: 2em;\n}\nfooter[role=contentinfo] {\n  max-width: 1184px;\n}\n\n//
         HEADER/FOOTER STYLES =========================\nheader[role=banner] {\n  @include
         clearfix;\n  margin-bottom: 1em;\n  position: relative;\n  text-transform:
@@ -354,10 +355,10 @@ http_interactions:
         \   color: $white;\n    font-family: $serif;\n    margin-top: 1em;\n    padding:
         .5em 1em;\n  }\n}\n.tweet-list a {\n  color: $secondaryColor;\n}\n[role=complementary]
         {\n  .twitter-feed {\n    .tweet-text {\n      @include font-size(12);\n    }\n
-        \ }\n}\naside[role=complementary] {\n  .widget {\n    margin-top: 2em;\n  }\n
-        \ .contact-info {\n    color: #707070;\n    font-family: $serif;\n    text-align:
-        center;\n    text-transform: uppercase;\n    p {\n      border-top: 1px dotted
-        #707070;\n      padding: .5em;\n      &:first-child {\n        border-top:
+        \ }\n}\n.aside-top,\naside[role=complementary] {\n  .widget {\n    margin-top:
+        2em;\n  }\n  .contact-info {\n    color: #707070;\n    font-family: $serif;\n
+        \   text-align: center;\n    text-transform: uppercase;\n    p {\n      border-top:
+        1px dotted #707070;\n      padding: .5em;\n      &:first-child {\n        border-top:
         none;\n      }\n    }\n  }\n}\n.coupon {\n  @include clearfix;\n  h2 {\n    @include
         font-size(18);\n    border-bottom-color: $secondaryColor;\n    color: $secondaryColor;\n
         \   padding-bottom: .5em;\n    margin-bottom: 2em;\n    text-align: center;\n
@@ -420,23 +421,23 @@ http_interactions:
         absolute;\n        width: 0;\n      }\n      li {\n        border-top: none;\n
         \       display: inline-block;\n      }\n    }\n  }\n  .footer li:before {\n
         \   color: $primaryColor;\n  }\n  section[role=main] {\n    padding: 2em 2.5%
-        1em;\n    overflow: hidden;\n    width: 74%;\n  }\n  aside[role=complementary]
-        {\n    background: transparent;\n    padding-top: 150px;\n    width: 26%;\n
-        \ }\n  footer[role=contentinfo] {\n    margin-left: 26%;\n    width: 74%;\n
-        \   .content {\n      @include clearfix;\n    }\n  }\n  .action-calls {\n
-        \   background: #fff;\n    border-radius: 10px;\n    font-size: 18px;\n    a
-        {\n      border-top: 1px solid $primaryColor;\n      display: block;\n      padding:
-        .5em 1em;\n      &:hover,\n      &:focus {\n        background: $primaryColor;\n
-        \       color: #fff;\n        text-decoration: none;\n      }\n    }\n    li:first-child
-        a {\n      border-top: none;\n      &:hover,\n      &:focus {\n        border-radius:
-        10px 10px 0 0;\n      }\n    }\n    li:nth-child(4n) a:hover,\n      li:nth-child(4n)
-        a:focus {\n      border-radius: 0 0 10px 10px;\n    }\n  }\n  .gallery-navigation
-        a {\n    margin-right: .2em;\n  }\n}\n@media (min-width: 1600px) {\n  footer[role=contentinfo]
-        {\n    margin-left: 416px;\n    width: 1184px;\n  }\n  section[role=main]
-        {\n    width: 1184px;\n  }\n  aside[role=complementary] {\n    width: 416px;\n
-        \ }\n}\n"
+        1em;\n    overflow: hidden;\n    width: 74%;\n  }\n  .aside-top {\n    padding-top:
+        150px;\n  }\n  .aside-top,\n  aside[role=complementary] {\n    background:
+        transparent;\n    width: 26%;\n  }\n  footer[role=contentinfo] {\n    margin-left:
+        26%;\n    width: 74%;\n    .content {\n      @include clearfix;\n    }\n  }\n
+        \ .action-calls {\n    background: #fff;\n    border-radius: 10px;\n    font-size:
+        18px;\n    a {\n      border-top: 1px solid $primaryColor;\n      display:
+        block;\n      padding: .5em 1em;\n      &:hover,\n      &:focus {\n        background:
+        $primaryColor;\n        color: #fff;\n        text-decoration: none;\n      }\n
+        \   }\n    li:first-child a {\n      border-top: none;\n      &:hover,\n      &:focus
+        {\n        border-radius: 10px 10px 0 0;\n      }\n    }\n    li:nth-child(4n)
+        a:hover,\n      li:nth-child(4n) a:focus {\n      border-radius: 0 0 10px
+        10px;\n    }\n  }\n  .gallery-navigation a {\n    margin-right: .2em;\n  }\n}\n@media
+        (min-width: 1600px) {\n  footer[role=contentinfo] {\n    margin-left: 416px;\n
+        \   width: 1184px;\n  }\n  section[role=main] {\n    width: 1184px;\n  }\n
+        \ .aside-top,\n  aside[role=complementary] {\n    width: 416px;\n  }\n}\n"
     http_version: 
-  recorded_at: Fri, 21 Mar 2014 01:50:35 GMT
+  recorded_at: Tue, 15 Apr 2014 02:58:45 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/button/stylesheets/button.css
@@ -456,9 +457,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Fri, 21 Mar 2014 01:50:36 GMT
+      - Tue, 15 Apr 2014 02:58:45 GMT
       Last-Modified:
-      - Wed, 12 Mar 2014 00:07:36 GMT
+      - Tue, 08 Apr 2014 19:41:19 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -475,7 +476,7 @@ http_interactions:
         50%;\n  }\n  .button-grid:nth-of-type(2n+1) {\n    clear: left;\n  }\n}\n.button-grid
         .btn-img {\n  margin: 0 auto 1em;\n}\n"
     http_version: 
-  recorded_at: Fri, 21 Mar 2014 01:50:36 GMT
+  recorded_at: Tue, 15 Apr 2014 02:58:45 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/stylesheets/contact-info.css
@@ -495,9 +496,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Fri, 21 Mar 2014 01:50:36 GMT
+      - Tue, 15 Apr 2014 02:58:45 GMT
       Last-Modified:
-      - Wed, 12 Mar 2014 00:07:36 GMT
+      - Tue, 08 Apr 2014 19:41:19 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -510,7 +511,7 @@ http_interactions:
         .p-street-address,\n.contact-info .p-tel,\n.contact-info .p-url,\n {\n  display:
         block;\n}\n.contact-info p {\n  margin-top: 0;\n}"
     http_version: 
-  recorded_at: Fri, 21 Mar 2014 01:50:36 GMT
+  recorded_at: Tue, 15 Apr 2014 02:58:45 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/hours/stylesheets/hours.css
@@ -530,9 +531,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Fri, 21 Mar 2014 01:50:36 GMT
+      - Tue, 15 Apr 2014 02:58:46 GMT
       Last-Modified:
-      - Wed, 12 Mar 2014 00:07:36 GMT
+      - Tue, 08 Apr 2014 19:41:19 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -543,5 +544,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! ".hours p {\n  margin-top: 0;\n}\n"
     http_version: 
-  recorded_at: Fri, 21 Mar 2014 01:50:36 GMT
+  recorded_at: Tue, 15 Apr 2014 02:58:46 GMT
 recorded_with: VCR 2.6.0
