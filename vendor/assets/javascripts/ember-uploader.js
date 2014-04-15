@@ -53,8 +53,6 @@ Ember.Uploader = Ember.Object.extend(Ember.Evented, {
   },
 
   ajax: function(url, params, method) {
-    console.log('method: ' + method)
-
     var self = this;
     var settings = {
       url: url,
@@ -130,7 +128,6 @@ Ember.S3Uploader = Ember.Uploader.extend({
       var data = self.setupFormData(file, json);
       var type = get(self, 'type');
 
-      console.log("117: " + type)
       return self.ajax(url, data, type);
     }).then(function(respData) {
       self.didUpload(respData);
@@ -139,10 +136,8 @@ Ember.S3Uploader = Ember.Uploader.extend({
   },
 
   deleteAsset: function(asset) {
-    console.log("delete")
     var self = this;
     return this.signDelete(asset).then(function(json) {
-      console.log("got signature back")
       var url = asset.get('url');
       var type = 'DELETE';
       return self.authorizationAjax(url, "DELETE", json);
