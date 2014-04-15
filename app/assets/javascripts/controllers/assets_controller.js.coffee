@@ -15,7 +15,7 @@ App.AssetsController = Ember.ArrayController.extend
           asset.deleteRecord()
     deleteAsset: (asset) ->
       website = @get('website')
-      uploader = Ember.S3Uploader.create(url: '/api/v1/sign_delete?location-name=' + website.get('name'))
+      uploader = Ember.S3Uploader.create(url: '/api/v1/sign_delete?locationName=' + website.get('name'))
       uploader.deleteAsset(asset).then ((response) ->
         website.get('assets').removeObject(asset)
         asset.deleteRecord()
