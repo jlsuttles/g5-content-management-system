@@ -1,7 +1,6 @@
 App.WebsiteRoute = Ember.Route.extend
   model: (params) ->
     slug = params["website_slug"]
-    console.log('slug ' + slug)
     websites = App.Website.find({})
     websites.one "didLoad", ->
       website = null
