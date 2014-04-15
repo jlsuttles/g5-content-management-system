@@ -19,7 +19,7 @@ App.AssetsController = Ember.ArrayController.extend
       uploader.deleteAsset(asset).then ((response) ->
         website.get('assets').removeObject(asset)
         asset.deleteRecord()
-        asset.save().then ->
+        asset.save()
       ), (response) ->
         console.log('The delete failed: ' + response)
 
