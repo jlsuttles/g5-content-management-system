@@ -1,5 +1,7 @@
 ## Customize the test machine
 machine:
+  ruby:
+    version: 1.9.3-p484
   # Add some environment variables
   environment:
     CODECLIMATE_REPO_TOKEN: dcf473cbaa01c1af3bfeff1b3348686c82936fcca82a0b315e91d6079be38a27
