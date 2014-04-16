@@ -8,6 +8,13 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       @web_page_template = @website.web_page_templates.first
       visit_website
     end
+    it "displays the website menu" do
+      within ".page > .l-container > .page-title" do
+        page.should have_content "DEPLOY"
+        page.should have_content "REDIRECTS MANAGER"
+        page.should have_content "ASSET MANAGER"
+      end
+    end
 
     it "Displays client, location, and page names" do
       within "header" do
