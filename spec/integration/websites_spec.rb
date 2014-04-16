@@ -9,7 +9,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       visit_website
     end
     it "displays the website menu" do
-      within ".page > .l-container > .page-title" do
+      within TOP_NAV do
         page.should have_content "DEPLOY"
         page.should have_content "REDIRECTS MANAGER"
         page.should have_content "ASSET MANAGER"
