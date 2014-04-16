@@ -1,6 +1,6 @@
 App.AssetsController = Ember.ArrayController.extend
   needs: 'website'
-  website: Ember.computed.alias("controllers.website.content")
+  website: Ember.computed.alias("controllers.websiteIndex.content")
   actions:
     saveAsset: (uploadedUrl) ->
       website = @get('website').then (website) ->
