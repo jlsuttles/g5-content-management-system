@@ -46,6 +46,7 @@ group :development, :test do
   gem "sqlite3", "~> 1.3.8"
   gem "rails-default-database", "~> 1.0.6"
   # ruby specs
+  gem "timecop"
   gem "rspec-rails", "~> 2.11.4"
   gem "shoulda-matchers", "~> 2.0.0"
   # ruby request specs
