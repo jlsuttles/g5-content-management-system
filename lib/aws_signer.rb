@@ -4,14 +4,79 @@ class AWSSigner
     @params = params
   end
     
-  def signature
-    Base64.encode64(
-      OpenSSL::HMAC.digest(
-        OpenSSL::Digest::Digest.new('sha1'),
-        ENV['AWS_SECRET_ACCESS_KEY'],
-        policy({ secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] })
-      )
-    ).gsub(/\n/, '')
+  def upload_headers
+    {
+      acl: 'public-read',
+      awsaccesskeyid: ENV['AWS_ACCESS_KEY_ID'],
+      bucket: bucket,
+      expires: 10.hours.from_now,
+      key: "uploads/#{@params[:name]}",
+      policy: policy,
+      signature: upload_signature,
+      success_action_status: '201',
+      'Content-Type' => @params[:type],
+      'Cache-Control' => 'max-age=630720000, public'
+    }  
+  end
+
+  def delete_headers
+    now = Time.now.utc
+    {
+      signature: delete_signature(now), 
+      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      success_action_status: '201',
+      iso8601_date: iso8601_datetime(now),
+      simple_date: simple_date(now),
+      region: region
+    }
+  end
+
+private
+
+  def iso8601_datetime(datetime)
+    datetime.strftime("%Y%m%dT%H%M%SZ")
+  end
+
+  def simple_date(datetime)
+    datetime.strftime("%Y%m%d")
+  end
+
+  def delete_signature(datetime)
+    Digest::hexencode(hmac_sha256(signing_key, string_to_sign(datetime)))
+  end
+
+  def string_to_sign(datetime)
+    "AWS4-HMAC-SHA256\n"\
+     "#{iso8601_datetime(datetime)}\n"\
+     "#{simple_date(datetime)}/#{region}/s3/aws4_request\n"\
+     "#{sha256(canonical_request(datetime))}"
+  end
+
+  def canonical_request(datetime)
+    "DELETE\n"\
+    "/uploads/#{@params[:name]}\n"\
+    "\n"\
+    "host:#{bucket}.s3.amazonaws.com\n"\
+    "x-amz-date:#{iso8601_datetime(datetime)}\n"\
+    "\n"\
+    "host;x-amz-date\n"\
+    "#{empty_string_sha256}"
+  end
+
+  def empty_string_sha256
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  end
+
+  def region
+    ENV['AWS_REGION']
+  end
+
+  def signing_key
+    k_secret = ENV['AWS_SECRET_ACCESS_KEY']
+    k_date = hmac_sha256("AWS4" + k_secret, Time.now.utc.strftime("%Y%m%d"))
+    k_region = hmac_sha256(k_date, region)
+    k_service = hmac_sha256(k_region, "s3")
+    k_signing = hmac_sha256(k_service, "aws4_request")
   end
 
   def hmac_sha256(key, input)
@@ -44,52 +109,14 @@ class AWSSigner
     ENV["AWS_S3_BUCKET_NAME_#{@params['locationName'].upcase}"]
   end
 
-  def upload_headers
-    {
-      acl: 'public-read',
-      awsaccesskeyid: ENV['AWS_ACCESS_KEY_ID'],
-      bucket: bucket,
-      expires: 10.hours.from_now,
-      key: "uploads/#{@params[:name]}",
-      policy: policy,
-      signature: signature,
-      success_action_status: '201',
-      'Content-Type' => @params[:type],
-      'Cache-Control' => 'max-age=630720000, public'
-    }  
-  end
-
-  def region
-    ENV['AWS_REGION']
-  end
-
-  def signing_key
-    k_secret = ENV['AWS_SECRET_ACCESS_KEY']
-    k_date = hmac_sha256("AWS4" + k_secret, Time.now.utc.strftime("%Y%m%d"))
-    k_region = hmac_sha256(k_date, region)
-    k_service = hmac_sha256(k_region, "s3")
-    k_signing = hmac_sha256(k_service, "aws4_request")
-  end
-
-  def delete_headers
-    now = Time.now.utc
-
-    simple_date = now.strftime("%Y%m%d")
-    iso8601_date = now.strftime("%Y%m%dT%H%M%SZ")
-    empty_string_sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-
-    canonical_request = "DELETE\n/uploads/#{@params[:name]}\n\nhost:#{bucket}.s3.amazonaws.com\nx-amz-date:#{iso8601_date}\n\nhost;x-amz-date\n#{empty_string_sha256}"
-
-    string_to_sign = "AWS4-HMAC-SHA256\n#{iso8601_date}\n#{simple_date}/#{region}/s3/aws4_request\n#{sha256(canonical_request)}"
-
-    signature = Digest::hexencode(hmac_sha256(signing_key, string_to_sign))
-    {
-      signature: signature, 
-      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-      success_action_status: '201',
-      iso8601_date: iso8601_date,
-      simple_date: simple_date,
-      region: region
-    }
+  def upload_signature
+    Base64.encode64(
+      OpenSSL::HMAC.digest(
+        OpenSSL::Digest::Digest.new('sha1'),
+        ENV['AWS_SECRET_ACCESS_KEY'],
+        policy({ secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] })
+      )
+    ).gsub(/\n/, '')
   end
 end
+
