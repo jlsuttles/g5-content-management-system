@@ -1,6 +1,7 @@
 LOCATION_SELECTOR = ".location:first-of-type"
 WEB_HOME_SELECTOR = ".web-home-template:first-of-type"
 WEB_PAGE_SELECTOR = ".web-page-template:first-of-type"
+TOP_NAV          = ".page > .l-container > .page-title"
 
 def scroll_to(page, selector)
   page.execute_script <<-EOS
@@ -29,6 +30,7 @@ def seed(file="example.yml")
   location = Fabricate(:location)
   instructions = YAML.load_file("#{Rails.root}/spec/support/website_instructions/#{file}")
   website = WebsiteSeeder.new(location, instructions["website"]).seed
+  website.assets << Fabricate(:asset)
   [client, location, website]
 end
 
@@ -58,3 +60,13 @@ def visit_web_page_template
     click_link "Edit"
   end
 end
+
+def visit_assets
+  # Navigate to Ember application page
+  # TODO: Get deep linking working for testing.
+  visit_website
+  within TOP_NAV do
+    click_link "Asset Manager"
+  end
+end
+
