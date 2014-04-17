@@ -46,6 +46,10 @@ G5CMS::Application.routes.draw do
           post "update"
         end
       end
+
+      resources :releases, only: [:index, :show] do
+        post "website/:website_slug", to: 'releases#rollback'
+      end
     end
   end
 

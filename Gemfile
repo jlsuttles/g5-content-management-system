@@ -20,6 +20,7 @@ gem "draper", "~> 1.1.0"
 gem "coffee-script"
 gem "ranked-model"
 gem "aws-sdk", "~> 1.34.1"
+gem "httparty"
 
 gem "ember-rails"
 gem "ember-source", "~> 1.0.0"
@@ -67,6 +68,7 @@ group :development, :test do
   # ruby spec coverage
   gem "simplecov", "~> 0.7.1", require: false
   gem "codeclimate-test-reporter", "~> 0.1.1", require: false
+  gem "foreman"
 end
 
 group :production do
