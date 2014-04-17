@@ -6,6 +6,7 @@ App.Router.map ->
   @resource "releases", path: "/:website_slug/releases"
 
   @resource "website", path: "/:website_slug", ->
+    @resource "assets"
     @resource "webPageTemplates", ->
       @route "new"
 
