@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
+describe "Integration assets", js: true, vcr: VCR_OPTIONS do
   before do
     @client, @location, @website = seed
     visit_assets
