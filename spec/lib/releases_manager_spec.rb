@@ -46,6 +46,14 @@ describe ReleasesManager do
         its(["description"]) { should eq("Deploy 1h12h") }
         its(["current"]) { should be_true }
       end
+
+      context "bad credentials" do
+        let(:releases) do
+          '{"id":"unauthorized","message":"Invalid credentials provided."}'
+        end
+
+        it { should be_empty }
+      end
     end
 
     context "an in-valid location" do

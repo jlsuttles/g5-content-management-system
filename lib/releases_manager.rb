@@ -11,6 +11,8 @@ class ReleasesManager
     items = JSON.parse(HerokuClient.new(location.website.urn).releases)
 
     process(filtered(items)).first(@limit)
+  rescue
+    []
   end
 
   def rollback(release_id)
