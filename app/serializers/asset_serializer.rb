@@ -1,4 +1,4 @@
 class AssetSerializer < ActiveModel::Serializer
-  attributes  :id, :name, :url
+  attributes  :id, :url
 end
 
