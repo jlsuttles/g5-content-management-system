@@ -34,7 +34,8 @@ class GardenWidgetUpdater
 
   def update_available_garden_widgets_setting
     Website.all.each do |website|
-      website.settings.find_or_create_by_name!("available_garden_widgets", GardenWidgetSetting.new.value)
+      website.settings.find_or_create_by_name!("available_garden_widgets",
+                                               value: GardenWidgetsSetting.new.value)
     end
   end
 
