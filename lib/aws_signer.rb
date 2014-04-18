@@ -106,7 +106,7 @@ private
   end
   
   def bucket
-    ENV["AWS_S3_BUCKET_NAME_#{@params['locationName'].upcase}"]
+    ENV["AWS_S3_BUCKET_NAME_#{@params['locationName'].gsub(' ','_').upcase}"]
   end
 
   def upload_signature
