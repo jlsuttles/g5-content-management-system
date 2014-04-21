@@ -127,7 +127,7 @@ describe GardenWidgetUpdater do
       end
 
       context "with an existing setting" do
-        let!(:setting) { Fabricate(:setting, owner_type: "Website",
+        let!(:setting) { Fabricate(:setting, owner: website,
                                              website: website,
                                              name: "available_garden_widgets",
                                              value: [["foo"]]) }
