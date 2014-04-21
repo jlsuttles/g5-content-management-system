@@ -17,47 +17,30 @@ describe WebsiteSeeder do
     before { location.stub(create_website: website) }
     subject { seeder.seed }
 
-    it "creates a website for the location" do
-      location.should_receive(:create_website).and_return(website)
-      subject
-    end
-
     it "returns a website" do
       expect(subject).to eq(website)
     end
 
-    describe "setting creation" do
-      before { subject }
-
-      it "creates settings for the website" do
-        expect(setting_value_for("client_url")).to eq(client_services.client_url)
-        expect(setting_value_for("client_location_urns")).to eq(client_services.client_location_urns)
-        expect(setting_value_for("client_location_urls")).to eq(client_services.client_location_urls)
-        expect(setting_value_for("location_urn")).to eq(location.urn)
-        expect(setting_value_for("location_url")).to eq(location.domain)
-        expect(setting_value_for("location_street_address")).to eq(location.street_address)
-        expect(setting_value_for("location_city")).to eq(location.city)
-        expect(setting_value_for("location_state")).to eq(location.state)
-        expect(setting_value_for("location_postal_code")).to eq(location.postal_code)
-        expect(setting_value_for("phone_number")).to eq(location.phone_number)
-        expect(setting_value_for("available_garden_widgets")).to eq(GardenWidgetsSetting.new.value)
-      end
+    it "creates settings for the website" do
+      subject
+      expect(setting_value_for("client_url")).to eq(client_services.client_url)
+      expect(setting_value_for("client_location_urns")).to eq(client_services.client_location_urns)
+      expect(setting_value_for("client_location_urls")).to eq(client_services.client_location_urls)
+      expect(setting_value_for("location_urn")).to eq(location.urn)
+      expect(setting_value_for("location_url")).to eq(location.domain)
+      expect(setting_value_for("location_street_address")).to eq(location.street_address)
+      expect(setting_value_for("location_city")).to eq(location.city)
+      expect(setting_value_for("location_state")).to eq(location.state)
+      expect(setting_value_for("location_postal_code")).to eq(location.postal_code)
+      expect(setting_value_for("phone_number")).to eq(location.phone_number)
+      expect(setting_value_for("available_garden_widgets")).to eq(GardenWidgetsSetting.new.value)
     end
 
-    describe "template creation" do
-      after { subject }
-
-      it "creates a website template" do
-        seeder.should_receive(:create_website_template)
-      end
-
-      it "creates a web home template" do
-        seeder.should_receive(:create_web_home_template)
-      end
-
-      it "creates a web page template" do
-        seeder.should_receive(:create_web_page_templates)
-      end
+    it "creates the appropriate templates" do
+      seeder.should_receive(:create_website_template)
+      seeder.should_receive(:create_web_home_template)
+      seeder.should_receive(:create_web_page_templates)
+      subject
     end
   end
 
