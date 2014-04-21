@@ -14,7 +14,8 @@ App.WebHomeTemplateRoute = Ember.Route.extend
     @controllerFor("logoWidgets").set("model", model.get("website.websiteTemplate.logoWidgets"))
     @controllerFor("btnWidgets").set("model", model.get("website.websiteTemplate.btnWidgets"))
     @controllerFor("navWidgets").set("model", model.get("website.websiteTemplate.navWidgets"))
-    @controllerFor("asideWidgets").set("model", model.get("website.websiteTemplate.asideWidgets"))
+    @controllerFor("asideBeforeMainWidgets").set("model", model.get("website.websiteTemplate.asideBeforeMainWidgets"))
+    @controllerFor("asideAfterMainWidgets").set("model", model.get("website.websiteTemplate.asideAfterMainWidgets"))
     @controllerFor("footerWidgets").set("model", model.get("website.websiteTemplate.footerWidgets"))
     # setup garden controllers last
     @controllerFor("gardenWebLayouts").set("model", App.GardenWebLayout.find())

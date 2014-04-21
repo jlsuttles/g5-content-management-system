@@ -4,6 +4,7 @@ class WebsiteSerializer < ActiveModel::Serializer
   has_one :website_template
   has_one :web_home_template
   has_many :web_page_templates
+  has_many :assets
 
   attributes  :id,
               :location_id,

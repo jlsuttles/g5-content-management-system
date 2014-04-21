@@ -52,6 +52,6 @@ class Api::V1::WidgetsController < Api::V1::ApplicationController
   end
 
   def section
-    "drop-target-#{klass.split("_").first}"
+    "drop-target-#{klass.split("_widget").first.dasherize}"
   end
 end

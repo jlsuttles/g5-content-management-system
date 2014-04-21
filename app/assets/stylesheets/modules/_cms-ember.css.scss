@@ -206,18 +206,19 @@
     text-transform: uppercase;
   }
   .widget-drop-zone {
-    box-sizing: border-box;
+    @include box-sizing(border-box);
     float: left;
     padding-right: 3%;
-    width: 25%;
+    width: 20%;
     h2 {
-      @extend %c-h3;
+      @include font-size(18px);
     }
   }
   .main-widgets,
   .aside-widgets {
     .add-widgets {
-      padding: 1em 0;
+      padding-bottom: 1em;
+      min-height: 120px;
     }
   }
   .add-widgets {
@@ -237,20 +238,26 @@
   .ui-sortable-helper {
     cursor: move;
   }
-
+  .add-drop-zone,
+  .remove-drop-zone {
+    width: 50%;
+    float: left;
+  }
   .drop-target-add,
   .drop-target-remove {
+    @include box-sizing(border-box);
+    @include font-size(12px);
+    @include transition(opacity 0.8s ease);
+    border: 1px solid #888;
     text-transform: uppercase;
     color: #000;
     background-color: #eee;
-    background-size: 25px;
-    box-sizing: border-box;
+    background-size: 23px;
     display: block;
-    padding: 1em 25px 1em 55px;
+    padding: 1em 0 1em 40px;
     width: 100%;
     position: relative;
     opacity: .5;
-    -webkit-transition: opacity 0.8s ease;
   }
 
   .drop-target-active {
@@ -258,20 +265,19 @@
   }
 
   .drop-target-add {
-    margin-top: -1em;
     &:before {
       content: "\002B";
       color: #000;
-      font-size: 60px;
+      font-size: 35px;
       position: absolute;
-      left: 15px;
-      line-height: .5;
+      left: 10px;
+      line-height: 1;
     }
   }
 
   .drop-target-remove {
     background-image:  url(icon-trash.png);
-    background-position: 15px center;
+    background-position: 10px center;
     background-repeat: no-repeat;
   }
 

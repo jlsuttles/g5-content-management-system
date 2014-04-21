@@ -9,6 +9,8 @@ G5CMS::Application.routes.draw do
   # API endpoints
   namespace :api do
     namespace :v1 do
+      get '/sign_upload', to: 'assets#sign_upload'
+      get '/sign_delete', to: 'assets#sign_delete'
       resources :clients, only: [:show]
       resources :locations, only: [:index, :show]
       resources :websites, only: [:index, :show]
@@ -20,12 +22,14 @@ G5CMS::Application.routes.draw do
       resources :logo_widgets, only: [:index, :show, :create, :destroy]
       resources :btn_widgets, only: [:index, :show, :create, :destroy]
       resources :nav_widgets, only: [:index, :show, :create, :destroy]
-      resources :aside_widgets, only: [:index, :show, :create, :update, :destroy]
+      resources :aside_before_main_widgets, only: [:index, :show, :create, :update, :destroy]
+      resources :aside_after_main_widgets, only: [:index, :show, :create, :update, :destroy]
       resources :footer_widgets, only: [:index, :show, :create, :destroy]
 
       resources :web_home_templates, only: [:index, :show, :update]
       resources :web_page_templates, only: [:index, :show, :create, :update, :destroy]
       resources :main_widgets, only: [:index, :show, :create, :update, :destroy]
+      resources :assets, only: [:index, :show, :create, :update, :destroy]
 
       resources :garden_web_layouts, only: [:index] do
         collection do
@@ -43,6 +47,10 @@ G5CMS::Application.routes.draw do
         collection do
           post "update"
         end
+      end
+
+      resources :releases, only: [:index, :show] do
+        post "website/:website_slug", to: 'releases#rollback'
       end
     end
   end

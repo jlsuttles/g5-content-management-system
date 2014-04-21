@@ -21,6 +21,7 @@ gem "draper", "~> 1.1.0"
 gem "coffee-script"
 gem "ranked-model"
 gem "aws-sdk", "~> 1.34.1"
+gem "httparty"
 
 gem "ember-rails"
 gem "ember-source", "~> 1.0.0"
@@ -49,6 +50,7 @@ group :development, :test do
   gem "sqlite3", "~> 1.3.8"
   gem "rails-default-database", "~> 1.0.6"
   # ruby specs
+  gem "timecop"
   gem "rspec-rails", "~> 2.11.4"
   gem "shoulda-matchers", "~> 2.0.0"
   # ruby request specs
@@ -70,6 +72,7 @@ group :development, :test do
   # ruby spec coverage
   gem "simplecov", "~> 0.7.1", require: false
   gem "codeclimate-test-reporter", "~> 0.1.1", require: false
+  gem "foreman"
 end
 
 group :production do

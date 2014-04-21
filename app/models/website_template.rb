@@ -25,8 +25,13 @@ class WebsiteTemplate < WebTemplate
   end
 
   # TODO: remove when Ember App implements DropTarget
-  def aside_widgets
-    drop_targets.where(html_id: "drop-target-aside").first.try(:widgets)
+  def aside_before_main_widgets
+    drop_targets.where(html_id: "drop-target-aside-before-main").first.try(:widgets)
+  end
+
+  # TODO: remove when Ember App implements DropTarget
+  def aside_after_main_widgets
+    drop_targets.where(html_id: "drop-target-aside-after-main").first.try(:widgets)
   end
 
   def stylesheets
