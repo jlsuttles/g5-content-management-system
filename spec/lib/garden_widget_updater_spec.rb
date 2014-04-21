@@ -102,5 +102,50 @@ describe GardenWidgetUpdater do
         expect { updater.update(garden_widget) }.to change { Setting.count }.by(-1)
       end
     end
+
+    describe "available garden widgets setting" do
+      let!(:website) { Fabricate(:website) }
+      let(:value) { [garden_widget.id, garden_widget.name] }
+      let(:available_garden_widgets) do
+        website.settings.where(name: "available_garden_widgets")
+      end
+
+      context "with no existing setting" do
+        context "before executing update" do
+          it "does not have a setting" do
+            expect(available_garden_widgets).to be_empty
+          end
+        end
+
+        context "after executing update" do
+          before { updater.update(garden_widget) }
+
+          it "creates the available_garden_widgets setting" do
+            expect(available_garden_widgets.first.value).to eq([value])
+          end
+        end
+      end
+
+      context "with an existing setting" do
+        let!(:setting) { Fabricate(:setting, owner_type: "Website",
+                                             website: website,
+                                             name: "available_garden_widgets",
+                                             value: [["foo"]]) }
+
+        context "before executing update" do
+          it "does not have a setting" do
+            expect(available_garden_widgets.first.value).to eq([["foo"]])
+          end
+        end
+
+        context "after executing update" do
+          before { updater.update(garden_widget) }
+
+          it "updates the available_garden_widgets setting" do
+            expect(available_garden_widgets.first.value).to include(value)
+          end
+        end
+      end
+    end
   end
 end

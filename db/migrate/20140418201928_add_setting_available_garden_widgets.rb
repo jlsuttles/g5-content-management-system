@@ -1,7 +1,8 @@
 class AddSettingAvailableGardenWidgets < ActiveRecord::Migration
   def up
     Website.all.each do |website|
-      website.settings.find_or_create_by_name!("available_garden_widgets", value: GardenWidgetsSetting.new.value)
+      setting = website.settings.find_or_create_by_name!("available_garden_widgets")
+      setting.update_attributes!(value: GardenWidgetsSetting.new.value)
     end
   end
 
