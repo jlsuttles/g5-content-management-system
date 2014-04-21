@@ -159,7 +159,7 @@ describe WebsiteSeeder do
       before { web_template.drop_targets.stub(create: drop_target) }
       after  { subject }
 
-      it "creates a drop template for each instruction" do
+      it "creates a drop target for each instruction" do
         web_template.drop_targets.should_receive(:create)
       end
 
@@ -187,7 +187,7 @@ describe WebsiteSeeder do
       before { drop_target.widgets.stub(create: widget) }
       after  { subject }
 
-      it "creates a drop template for each instruction" do
+      it "creates a widget for each drop target" do
         drop_target.widgets.should_receive(:create)
       end
     end
