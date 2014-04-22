@@ -37,7 +37,7 @@ module SettingAvailableGardenWidgets
   end
 
   def selected_garden_widget_id
-    GardenWidget.where(value: best_value).first.try(:id)
+    GardenWidget.where(name: best_value).first.try(:id)
   end
 
   def widget_id_setting_name
