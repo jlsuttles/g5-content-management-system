@@ -120,7 +120,8 @@ private
   end
 
   def sluggify_filename
-    @params[:name].gsub(' ','-')
+    name, extension = @params[:name].split('.')
+    [name.parameterize, extension].join('.')
   end
 end
 
