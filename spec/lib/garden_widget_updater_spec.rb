@@ -105,7 +105,7 @@ describe GardenWidgetUpdater do
 
     describe "available garden widgets setting" do
       let!(:website) { Fabricate(:website) }
-      let(:value) { [garden_widget.id, garden_widget.name] }
+      let(:value) { garden_widget.name }
       let(:available_garden_widgets) do
         website.settings.where(name: "available_garden_widgets")
       end
@@ -130,11 +130,11 @@ describe GardenWidgetUpdater do
         let!(:setting) { Fabricate(:setting, owner: website,
                                              website: website,
                                              name: "available_garden_widgets",
-                                             value: [["foo"]]) }
+                                             value: ["foo"]) }
 
         context "before executing update" do
           it "does not have a setting" do
-            expect(available_garden_widgets.first.value).to eq([["foo"]])
+            expect(available_garden_widgets.first.value).to eq(["foo"])
           end
         end
 

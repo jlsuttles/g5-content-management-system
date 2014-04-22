@@ -33,7 +33,7 @@ describe WebsiteSeeder do
       expect(setting_value_for("location_state")).to eq(location.state)
       expect(setting_value_for("location_postal_code")).to eq(location.postal_code)
       expect(setting_value_for("phone_number")).to eq(location.phone_number)
-      expect(setting_value_for("available_garden_widgets")).to eq(GardenWidgetsSetting.new.value)
+      expect(setting_value_for("available_garden_widgets")).to eq(AvailableGardenWidgetsSetting.new.value)
     end
 
     it "creates the appropriate templates" do
