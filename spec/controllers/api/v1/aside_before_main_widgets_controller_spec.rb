@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Api::V1::AsideBeforeMainWidgetsController, vcr: VCR_OPTIONS do
+describe Api::V1::AsideBeforeMainWidgetsController, :auth_controller, vcr: VCR_OPTIONS do
   let(:widget) { Fabricate(:widget) }
   describe "#show" do
     it "renders widget as json" do

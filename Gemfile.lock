@@ -173,11 +173,10 @@ GEM
     hike (1.2.3)
     honeybadger (1.10.1)
       json
-    i18n (0.6.9)
     httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
-    i18n (0.6.5)
+    i18n (0.6.9)
     journey (1.0.4)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -406,8 +405,8 @@ DEPENDENCIES
   fabrication (~> 2.5.0)
   factory_girl_rails
   faker
-  g5_authenticatable (~> 0.2)
   foreman
+  g5_authenticatable (~> 0.2)
   g5_sibling_deployer_engine (~> 0.2.5)
   github_heroku_deployer (~> 0.2.0)
   guard-rspec (~> 2.1.0)
