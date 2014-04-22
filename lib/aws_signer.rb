@@ -10,7 +10,7 @@ class AWSSigner
       awsaccesskeyid: ENV['AWS_ACCESS_KEY_ID'],
       bucket: bucket,
       expires: 10.hours.from_now,
-      key: "uploads/#{@params[:name]}",
+      key: "uploads/#{sluggify_filename}",
       policy: policy,
       signature: upload_signature,
       success_action_status: '201',
@@ -54,7 +54,7 @@ private
 
   def canonical_request(datetime)
     "DELETE\n"\
-    "/uploads/#{@params[:name]}\n"\
+    "/uploads/#{sluggify_filename}\n"\
     "\n"\
     "host:#{bucket}.s3.amazonaws.com\n"\
     "x-amz-date:#{iso8601_datetime(datetime)}\n"\
@@ -106,7 +106,7 @@ private
   end
   
   def bucket
-    ENV["AWS_S3_BUCKET_NAME_#{@params['locationName'].gsub(' ','_').upcase}"]
+    ENV["AWS_S3_BUCKET_NAME_#{@params[:locationName].gsub(' ','_').upcase}"]
   end
 
   def upload_signature
@@ -117,6 +117,10 @@ private
         policy({ secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] })
       )
     ).gsub(/\n/, '')
+  end
+
+  def sluggify_filename
+    @params[:name].gsub(' ','-')
   end
 end
 
