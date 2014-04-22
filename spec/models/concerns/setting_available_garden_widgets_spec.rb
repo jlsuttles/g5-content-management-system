@@ -4,10 +4,10 @@ shared_examples_for SettingAvailableGardenWidgets do
   describe "When availble_garden_widgets setting" do
     let!(:widget) { Fabricate(:widget) }
     let!(:described_instance) { Fabricate(:setting,
-      name: SettingAvailableGardenWidgets::SELECTED_GARDEN_WIDGET_SETTING_NAMES[0],
+      name: SettingAvailableGardenWidgets::GARDEN_WIDGET_NAME_SETTINGS[0],
       owner: widget) }
     let!(:corresponding_setting) { Fabricate(:setting,
-      name: SettingAvailableGardenWidgets::WIDGET_ID_SETTING_NAMES[0],
+      name: SettingAvailableGardenWidgets::WIDGET_ID_SETTINGS[0],
       owner: widget) }
 
     describe "After update" do

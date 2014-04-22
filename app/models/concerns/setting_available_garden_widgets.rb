@@ -1,15 +1,15 @@
 module SettingAvailableGardenWidgets
   extend ActiveSupport::Concern
 
-  SELECTED_GARDEN_WIDGET_SETTING_NAMES = ["selected_garden_widget_one",
-    "selected_garden_widget_two", "selected_garden_widget_three",
-    "selected_garden_widget_four"]
+  GARDEN_WIDGET_NAME_SETTINGS = ["column_one_widget_name",
+    "column_two_widget_name", "column_three_widget_name",
+    "column_four_widget_name"]
 
-  WIDGET_ID_SETTING_NAMES = ["widget_one_id", "widget_two_id",
-    "widget_three_id", "widget_four_id"]
+  WIDGET_ID_SETTINGS = ["column_one_widget_id", "column_two_widget_id",
+    "column_three_widget_id", "column_four_widget_id"]
 
   included do
-    after_update :update_widget_id_setting, if: :selected_garden_widget_setting?
+    after_update :update_widget_id_setting, if: :garden_widget_name_setting?
   end
 
   def update_widget_id_setting
@@ -20,12 +20,12 @@ module SettingAvailableGardenWidgets
     end
   end
 
-  def selected_garden_widget_setting?
-    SELECTED_GARDEN_WIDGET_SETTING_NAMES.include?(name)
+  def garden_widget_name_setting?
+    GARDEN_WIDGET_NAME_SETTINGS.include?(name)
   end
 
   def create_new_widget
-    @new_widget = Widget.create(garden_widget_id: selected_garden_widget_id)
+    @new_widget = Widget.create(garden_widget_id: garden_widget_id)
   end
 
   def destroy_old_widget
@@ -36,12 +36,12 @@ module SettingAvailableGardenWidgets
     widget_id_setting.update_attributes(value: @new_widget.id)
   end
 
-  def selected_garden_widget_id
+  def garden_widget_id
     GardenWidget.where(name: best_value).first.try(:id)
   end
 
   def widget_id_setting_name
-    WIDGET_ID_SETTING_NAMES[SELECTED_GARDEN_WIDGET_SETTING_NAMES.index(name)]
+    WIDGET_ID_SETTINGS[GARDEN_WIDGET_NAME_SETTINGS.index(name)]
   end
 
   def widget_id_setting
