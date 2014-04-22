@@ -101,7 +101,7 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Wed, 16 Apr 2014 22:11:28 GMT
+      - Wed, 16 Apr 2014 22:13:02 GMT
       Last-Modified:
       - Tue, 08 Apr 2014 19:41:19 GMT
       Status:
@@ -114,7 +114,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! ".social-links a {\n  display: inline-block;\n  margin-right: 5px;\n}\n"
     http_version: 
-  recorded_at: Wed, 16 Apr 2014 22:11:30 GMT
+  recorded_at: Wed, 16 Apr 2014 22:13:04 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/html/stylesheets/html.css
@@ -134,9 +134,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Wed, 16 Apr 2014 22:13:02 GMT
+      - Tue, 22 Apr 2014 21:03:29 GMT
       Last-Modified:
-      - Tue, 08 Apr 2014 19:41:19 GMT
+      - Thu, 17 Apr 2014 21:19:44 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -147,7 +147,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! ".html {\n  clear: both;\n  overflow: hidden;\n}"
     http_version: 
-  recorded_at: Wed, 16 Apr 2014 22:13:04 GMT
+  recorded_at: Tue, 22 Apr 2014 21:03:29 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/stylesheets/social-links.css
@@ -167,9 +167,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Wed, 16 Apr 2014 22:13:02 GMT
+      - Tue, 22 Apr 2014 21:03:29 GMT
       Last-Modified:
-      - Tue, 08 Apr 2014 19:41:19 GMT
+      - Thu, 17 Apr 2014 21:19:44 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -180,7 +180,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! ".social-links a {\n  display: inline-block;\n  margin-right: 5px;\n}\n"
     http_version: 
-  recorded_at: Wed, 16 Apr 2014 22:13:04 GMT
+  recorded_at: Tue, 22 Apr 2014 21:03:30 GMT
 - request:
     method: get
     uri: http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css
@@ -200,7 +200,7 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Wed, 16 Apr 2014 22:13:03 GMT
+      - Tue, 22 Apr 2014 21:03:30 GMT
       Last-Modified:
       - Sat, 29 Mar 2014 00:14:23 GMT
       Status:
@@ -218,7 +218,7 @@ http_interactions:
         {\n    float: left;\n  }\n  footer[role=contentinfo] {\n    clear: both;\n
         \ }\n}\n"
     http_version: 
-  recorded_at: Wed, 16 Apr 2014 22:13:05 GMT
+  recorded_at: Tue, 22 Apr 2014 21:03:30 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss
@@ -238,7 +238,7 @@ http_interactions:
       Content-Type:
       - text/plain
       Date:
-      - Wed, 16 Apr 2014 22:13:03 GMT
+      - Tue, 22 Apr 2014 21:03:30 GMT
       Last-Modified:
       - Sat, 29 Mar 2014 00:17:10 GMT
       Status:
@@ -437,7 +437,7 @@ http_interactions:
         \   width: 1184px;\n  }\n  section[role=main] {\n    width: 1184px;\n  }\n
         \ .aside-top,\n  aside[role=complementary] {\n    width: 416px;\n  }\n}\n"
     http_version: 
-  recorded_at: Wed, 16 Apr 2014 22:13:05 GMT
+  recorded_at: Tue, 22 Apr 2014 21:03:30 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/button/stylesheets/button.css
@@ -457,9 +457,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Wed, 16 Apr 2014 22:13:04 GMT
+      - Tue, 22 Apr 2014 21:03:31 GMT
       Last-Modified:
-      - Tue, 08 Apr 2014 19:41:19 GMT
+      - Thu, 17 Apr 2014 21:19:44 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -476,7 +476,7 @@ http_interactions:
         50%;\n  }\n  .button-grid:nth-of-type(2n+1) {\n    clear: left;\n  }\n}\n.button-grid
         .btn-img {\n  margin: 0 auto 1em;\n}\n"
     http_version: 
-  recorded_at: Wed, 16 Apr 2014 22:13:06 GMT
+  recorded_at: Tue, 22 Apr 2014 21:03:31 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/stylesheets/contact-info.css
@@ -496,9 +496,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Wed, 16 Apr 2014 22:13:05 GMT
+      - Tue, 22 Apr 2014 21:03:31 GMT
       Last-Modified:
-      - Tue, 08 Apr 2014 19:41:19 GMT
+      - Thu, 17 Apr 2014 21:19:44 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -511,7 +511,7 @@ http_interactions:
         .p-street-address,\n.contact-info .p-tel,\n.contact-info .p-url,\n {\n  display:
         block;\n}\n.contact-info p {\n  margin-top: 0;\n}"
     http_version: 
-  recorded_at: Wed, 16 Apr 2014 22:13:06 GMT
+  recorded_at: Tue, 22 Apr 2014 21:03:31 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/hours/stylesheets/hours.css
@@ -531,9 +531,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Wed, 16 Apr 2014 22:13:05 GMT
+      - Tue, 22 Apr 2014 21:03:31 GMT
       Last-Modified:
-      - Tue, 08 Apr 2014 19:41:19 GMT
+      - Thu, 17 Apr 2014 21:19:44 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -544,5 +544,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! ".hours p {\n  margin-top: 0;\n}\n"
     http_version: 
-  recorded_at: Wed, 16 Apr 2014 22:13:07 GMT
+  recorded_at: Tue, 22 Apr 2014 21:03:31 GMT
 recorded_with: VCR 2.6.0
