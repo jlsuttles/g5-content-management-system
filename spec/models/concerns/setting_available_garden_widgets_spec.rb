@@ -14,13 +14,15 @@ shared_examples_for SettingAvailableGardenWidgets do
 
       describe "When value does not change" do
         it "Does not update corresponding setting" do
-          expect { described_instance.save }.to_not change { described_instance.widget_id_setting_value }
+          expect { corresponding_setting.save }.to_not change { described_instance.widget_id_setting_value }
         end
       end
 
       describe "When value changes" do
+        before { corresponding_setting.value = "Foo" }
+
         it "Updates corresponding setting" do
-          expect { described_instance.save }.to change { described_instance.widget_id_setting_value }
+          expect { corresponding_setting.save }.to change { described_instance.widget_id_setting_value }
         end
       end
     end

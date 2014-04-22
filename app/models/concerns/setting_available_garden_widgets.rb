@@ -14,9 +14,9 @@ module SettingAvailableGardenWidgets
 
   def update_widget_id_setting
     if value_changed?
-      new_widget = create_new_widget
+      create_new_widget
       destroy_old_widget
-      assign_new_widget(new_widget)
+      assign_new_widget
     end
   end
 
@@ -32,12 +32,12 @@ module SettingAvailableGardenWidgets
     Widget.find(widget_id_setting_value).destroy
   end
 
-  def assing_new_widget
-    widget_id_setting.update_attributes(value, @new_widget.id)
+  def assign_new_widget
+    widget_id_setting.update_attributes(value: @new_widget.id)
   end
 
   def selected_garden_widget_id
-    GardenWidget.find(best_value).try(:id)
+    GardenWidget.where(value: best_value).first.try(:id)
   end
 
   def widget_id_setting_name
