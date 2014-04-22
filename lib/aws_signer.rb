@@ -120,8 +120,7 @@ private
   end
 
   def sluggify_filename
-    name, extension = @params[:name].split('.')
-    [name.parameterize, extension].join('.')
+    @params[:name].split('.').map {|part| part.parameterize}.join('.')
   end
 end
 
