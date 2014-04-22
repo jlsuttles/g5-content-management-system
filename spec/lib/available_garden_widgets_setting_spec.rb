@@ -6,6 +6,6 @@ describe AvailableGardenWidgetsSetting do
   describe "#value" do
     subject { described_class.new.value }
 
-    it { should eq([[garden_widget.name]]) }
+    it { should eq([garden_widget.name]) }
   end
 end
