@@ -4,7 +4,7 @@ describe WebsiteSeeder do
   let!(:client) { Fabricate(:client) }
   let!(:location) { Fabricate(:location) }
   let(:website) { Fabricate(:website) }
-  let(:defaults) { YAML.load_file("#{Rails.root}/config/defaults.yml")["website"] }
+  let(:defaults) { YAML.load_file("#{Rails.root}/config/defaults.yml") }
   let(:seeder) { WebsiteSeeder.new(location) }
 
   def setting_value_for(name)
