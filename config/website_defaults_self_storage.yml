@@ -1,9 +1,9 @@
 website_template:
   name: Website Template
   web_layout:
-    slug: main-first-sidebar-right
+    slug: main-first-sidebar-left
   web_theme:
-    slug: high-rise
+    slug: cardboard
   drop_targets:
     - html_id: drop-target-head
       widgets:
@@ -44,15 +44,6 @@ web_home_template:
         - slug: meta-description
 
 web_page_templates:
-  - name: Floor Plans
-    drop_targets:
-      - html_id: drop-target-main
-        widgets:
-          - slug: html
-          - slug: floor-plans
-          - slug: html
-          - slug: meta-description
-
   - name: Amenities
     drop_targets:
       - html_id: drop-target-main
