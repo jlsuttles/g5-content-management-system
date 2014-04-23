@@ -1,54 +1,53 @@
-website:
-  website_template:
-    name: Example Website Template
-    web_layout:
-      slug: main-first-sidebar-left
-    web_theme:
-      slug: classic
-    drop_targets:
-      - html_id: drop-target-head
-        widgets:
-          - slug: meta
-      - html_id: drop-target-logo
-        widgets:
-          - slug: logo
-      - html_id: drop-target-phone
-        widgets:
-          - slug: phone
-      - html_id: drop-target-btn
-        widgets:
-          - slug: button
-      - html_id: drop-target-nav
-        widgets:
-          - slug: navigation
-      - html_id: drop-target-aside-before-main
-        widgets:
-          - slug: navigation
-      - html_id: drop-target-aside-after-main
-        widgets:
-          - slug: social-links
-      - html_id: drop-target-footer
-        widgets:
-          - slug: navigation
-          - slug: contact-info
-          - slug: hours
-  web_home_template:
-    name: Home
+website_template:
+  name: Example Website Template
+  web_layout:
+    slug: main-first-sidebar-left
+  web_theme:
+    slug: classic
+  drop_targets:
+    - html_id: drop-target-head
+      widgets:
+        - slug: meta
+    - html_id: drop-target-logo
+      widgets:
+        - slug: logo
+    - html_id: drop-target-phone
+      widgets:
+        - slug: phone
+    - html_id: drop-target-btn
+      widgets:
+        - slug: button
+    - html_id: drop-target-nav
+      widgets:
+        - slug: navigation
+    - html_id: drop-target-aside-before-main
+      widgets:
+        - slug: navigation
+    - html_id: drop-target-aside-after-main
+      widgets:
+        - slug: social-links
+    - html_id: drop-target-footer
+      widgets:
+        - slug: navigation
+        - slug: contact-info
+        - slug: hours
+web_home_template:
+  name: Home
+  drop_targets:
+    - html_id: drop-target-main
+      widgets:
+        - slug: photo
+        - slug: html
+web_page_templates:
+  - name: Example Page 1
     drop_targets:
       - html_id: drop-target-main
         widgets:
-          - slug: photo
           - slug: html
-  web_page_templates:
-    - name: Example Page 1
-      drop_targets:
-        - html_id: drop-target-main
-          widgets:
-            - slug: html
-            - slug: social-links
-    - name: Example Page 2
-      drop_targets:
-        - html_id: drop-target-main
-          widgets:
-            - slug: html
-            - slug: social-links
+          - slug: social-links
+  - name: Example Page 2
+    drop_targets:
+      - html_id: drop-target-main
+        widgets:
+          - slug: html
+          - slug: social-links

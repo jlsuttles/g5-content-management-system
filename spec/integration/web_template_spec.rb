@@ -31,7 +31,7 @@ end
 
 describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
   describe "Renders preview of compiled web template" do
-    describe "website_instructions/example.yml" do
+    describe "website_instructions" do
       before do
         VCR.use_cassette("Gardens") do
           GardenWebLayoutUpdater.new.update_all
@@ -41,8 +41,7 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
 
         @client = Fabricate(:client)
         @location = Fabricate(:location)
-        @instructions = YAML.load_file("#{Rails.root}/spec/support/website_instructions/example.yml")
-        @website = WebsiteSeeder.new(@location, @instructions["website"]).seed
+        @website = WebsiteSeeder.new(@location).seed
         @web_page_template = @website.web_page_templates.first
       end
 
@@ -66,22 +65,17 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
           end
         end
 
-        it "displays name in navigation widget in footer section" do
-          within "#drop-target-footer .navigation.widget" do
-            expect(page).to have_content @web_page_template.name.upcase
-          end
-        end
       end
 
       describe "When settings are set" do
         before do
-          set_setting(@web_page_template, "Social Links", "twitter_username", "jlsuttles")
+          set_setting(@web_page_template, "HTML", "text", "enter text here")
           visit @web_page_template.url
         end
 
-        it "has a link to twitter with the set username in social links widget" do
-          within "#drop-target-main .social-links.widget" do
-            page.should have_selector "a[href='http://www.twitter.com/jlsuttles']"
+        it "has some text set in the HTML widget" do
+          within first("#drop-target-main .html.widget") do
+            page.should have_content "enter text here"
           end
         end
       end
