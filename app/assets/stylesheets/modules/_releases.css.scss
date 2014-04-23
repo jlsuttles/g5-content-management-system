@@ -1,0 +1,19 @@
+// *************************************
+//
+//   Releases
+//   ->
+//
+// *************************************
+
+.releases {
+  .faux-table--striped {
+    .current {
+      background:#E2F8D6;
+      font-weight:bold;
+
+      button {
+        display:none;
+      }
+    }
+  }
+}

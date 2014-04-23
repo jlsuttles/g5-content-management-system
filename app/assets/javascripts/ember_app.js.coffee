@@ -1,6 +1,7 @@
 #= require handlebars
 #= require ember
 #= require ember-data
+#= require ember-uploader
 #= require_self
 #= require app
 

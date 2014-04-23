@@ -1,8 +1,15 @@
 ## Customize the test machine
 machine:
+  ruby:
+    version: 1.9.3-p484
   # Add some environment variables
   environment:
     CODECLIMATE_REPO_TOKEN: dcf473cbaa01c1af3bfeff1b3348686c82936fcca82a0b315e91d6079be38a27
+    AWS_ACCESS_KEY_ID: foobar
+    AWS_SECRET_ACCESS_KEY: foobar
+    AWS_REGION: foobar
+    AWS_S3_BUCKET_NAME: foobar
+
 
 ## Customize test commands
 test:
