@@ -1,0 +1,29 @@
+// *************************************
+//
+//   Tables
+//
+// *************************************
+
+.table {
+  thead {
+    border-bottom: 1px solid $c-background-b;
+  }
+  th,
+  td {
+    text-align: left;
+    padding: 1em $base-whitespace;
+  }
+  td {
+    border-bottom: $c-border-b;
+  }
+}
+
+// -------------------------------------
+//   Stiped Table
+// -------------------------------------
+
+.table--striped {
+  tbody tr:nth-child(odd) {
+    background: $c-background-a;
+  }
+}

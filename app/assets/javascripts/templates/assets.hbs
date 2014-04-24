@@ -1,15 +1,29 @@
-<div class="redirects l-container">
+<div class="redirects">
   <h2 class="page-title">
     Asset Manager
   </h2>
-  {{s3-upload url="/api/v1/sign_upload" action='saveAsset' websiteName=website.name}}
 
-<table>
-  {{#each controller}}
-    <tr class="asset">
-      <td>{{click-select url=url }}</td>
-      <td><a {{bindAttr href=url}} target='new'><img {{bindAttr src=url}} width='100'></a></td>
-      <td>{{confirm-button title='delete' action='deleteAsset' param=this}}</td>
-    </tr>
-  {{/each}}
-</table>
+  <div class="l-xspace">
+    {{s3-upload url="/api/v1/sign_upload" action='saveAsset' websiteName=website.name}}
+  </div>
+
+  <table class="table table--striped">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Image Path</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each controller}}
+        <tr class="asset">
+          <td><a {{bindAttr href=url}} target='new'><img {{bindAttr src=url}} width='100'></a></td>
+          <td>{{click-select url=url }}</td>
+          <td>{{confirm-button title='delete' action='deleteAsset' param=this}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
