@@ -4,7 +4,7 @@ class WebsiteSeeder
   def initialize(location, instructions=nil)
     @location = location
     @client = Client.first
-    @instructions = instructions || @client.website_defaults || WEBSITE_DEFAULTS
+    @instructions = instructions || @client.website_defaults
   end
 
   def seed
