@@ -14,8 +14,6 @@ describe Client do
   end
 
   describe "Web Page Defaults" do
-    before { WEBSITE_DEFAULTS_APARTMENTS = YAML.load_file("#{Rails.root}/config/website_defaults_apartments.yml") }
-
     it "website defaults are for self-storage if vertical is self-storage" do
       @client = Fabricate(:client, vertical: "Self-Storage")
       expect(@client.website_defaults).to eq YAML.load_file("#{Rails.root}/config/website_defaults_self_storage.yml")

@@ -1,10 +1,10 @@
 class WebsiteSeeder
   attr_reader :location, :instructions, :website
 
-  def initialize(location, instructions=WEBSITE_DEFAULTS)
+  def initialize(location, instructions=nil)
     @location = location
     @client = Client.first
-    @instructions = @client.try(:website_defaults) || instructions
+    @instructions = instructions || @client.website_defaults || WEBSITE_DEFAULTS
   end
 
   def seed
