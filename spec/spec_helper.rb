@@ -59,4 +59,8 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+
+  config.after(:each) do
+    WEBSITE_DEFAULTS_APARTMENTS = YAML.load_file("#{Rails.root}/config/website_defaults_apartments.yml")
+  end
 end
