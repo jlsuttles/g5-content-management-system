@@ -67,14 +67,14 @@ class RowWidgetShowHtml
   def render_column_two_widget
     if column_two_widget
       column_two = nokogiri.at_css("#drop-target-second-col")
-      column_two.inner_html = render_column_two_widget.render_show_html
+      column_two.inner_html = column_two_widget.render_show_html
     end
   end
 
   def render_column_three_widget
     if column_three_widget
       column_three = nokogiri.at_css("#drop-target-third-col")
-      column_three.inner_html = render_column_three_widget.render_show_html
+      column_three.inner_html = column_three_widget.render_show_html
     end
   end
 
