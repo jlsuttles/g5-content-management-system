@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe WebsiteSeeder, vcr: VCR_OPTIONS do
   def load_yaml(file)
-    YAML.load_file("#{Rails.root}/spec/support/#{file}")
+    YAML.load_file("#{Rails.root}/spec/support/website_instructions/#{file}")
   end
 
   before do
-    defaults = load_yaml('defaults.yml')
+    defaults = load_yaml('defaults_with_settings.yml')
     GardenWidgetUpdater.new.update_all
     @client = Fabricate(:client)
     @location = Fabricate(:location)
