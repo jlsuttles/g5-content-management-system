@@ -14,17 +14,20 @@ module ComponentGardenable
       "#{garden_url}/components/#{component_name}"
     end
 
-    def microformats_parser
-      @microformats_parser ||= Microformats2::Parser.new
+    def if_modified_since
+      cached_http_headers["last-modified"]
     end
 
-    def if_modified_since
-      microformats_parser.http_headers["last-modified"]
+    def cached_http_headers
+      @http_headers ||= {}
     end
 
     def garden_microformats
-      @microformats = microformats_parser.parse(garden_url,
-        {"If-Modified-Since" => if_modified_since.to_s})
+      parser = Microformats2::Parser.new
+      @microformats = parser.parse(garden_url,
+        {"If-Modified-Since" => if_modified_since.to_s}) || @microformats
+      @http_headers = parser.http_headers
+      @microformats
     rescue OpenURI::HTTPError => e
       if e.message.include?("304")
         @microformats || []

@@ -1,14 +1,17 @@
 require 'spec_helper'
 
-WEBSITE_DEFAULTS_APARTMENTS = YAML.load_file("#{Rails.root}/spec/support/defaults.yml")
-
 describe WebsiteSeeder, vcr: VCR_OPTIONS do
+  def load_yaml(file)
+    YAML.load_file("#{Rails.root}/spec/support/#{file}")
+  end
+
   before do
+    defaults = load_yaml('defaults.yml')
     GardenWidgetUpdater.new.update_all
     @client = Fabricate(:client)
     @location = Fabricate(:location)
     @client.locations << @location
-    @seeder = WebsiteSeeder.new(@location)
+    @seeder = WebsiteSeeder.new(@location, defaults)
   end
   it "calls create_setting!" do
     @seeder.should_receive(:create_setting!).exactly(21).times

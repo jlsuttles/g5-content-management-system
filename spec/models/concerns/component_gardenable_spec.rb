@@ -16,7 +16,7 @@ describe ComponentGardenable, vcr: { record: :new_episodes } do
     end
 
     it "returns @microformats if there is an OpenURI::HTTPError 304" do
-      Component.components_microformats
+      Component.components_microformats.should be_present
       Microformats2::Parser.any_instance.stub(:parse).
         and_raise(OpenURI::HTTPError.new("304 Not Modified", nil))
       Component.components_microformats.should be_present
