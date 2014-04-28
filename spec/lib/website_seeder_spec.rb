@@ -185,7 +185,7 @@ describe WebsiteSeeder do
     end
   end
 
-  describe "#create_widget_settings", vcr: VCR_OPTIONS do
+  describe "#create_widget_settings" do
     let(:defaults) { YAML.load_file("#{Rails.root}/spec/support/website_instructions/defaults_with_settings.yml") }
     let(:instructions) { defaults["website_template"]["drop_targets"].first["widgets"].first["settings"] }
     let(:widget) { Fabricate(:widget) }
