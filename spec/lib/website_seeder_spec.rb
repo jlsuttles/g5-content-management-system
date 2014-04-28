@@ -162,6 +162,7 @@ describe WebsiteSeeder do
   describe "#create_widgets" do
     let(:instructions) { defaults["web_page_templates"].first["drop_targets"].first["widgets"] }
     let(:drop_target) { Fabricate.build(:drop_target) }
+    let(:widget) { Fabricate.build(:widget) }
 
     subject { seeder.create_widgets(drop_target, instructions) }
 
