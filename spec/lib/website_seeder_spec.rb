@@ -162,7 +162,6 @@ describe WebsiteSeeder do
   describe "#create_widgets" do
     let(:instructions) { defaults["web_page_templates"].first["drop_targets"].first["widgets"] }
     let(:drop_target) { Fabricate.build(:drop_target) }
-    let(:widget) { Fabricate.build(:widget) }
 
     subject { seeder.create_widgets(drop_target, instructions) }
 
@@ -187,22 +186,15 @@ describe WebsiteSeeder do
   end
 
   describe "#create_widget_settings", vcr: VCR_OPTIONS do
-    def load_yaml(file)
-      YAML.load_file("#{Rails.root}/spec/support/website_instructions/#{file}")
-    end
+    let(:defaults) { YAML.load_file("#{Rails.root}/spec/support/website_instructions/defaults_with_settings.yml") }
+    let(:instructions) { defaults["website_template"]["drop_targets"].first["widgets"].first["settings"] }
+    let(:widget) { Fabricate(:widget) }
 
-    before do
-      defaults = load_yaml('defaults_with_settings.yml')
-      GardenWidgetUpdater.new.update_all
-      @client = Fabricate(:client)
-      @location = Fabricate(:location)
-      @client.locations << @location
-      @seeder = WebsiteSeeder.new(@location, defaults)
-    end
+    subject { seeder.create_widget_settings(widget, instructions) }
+    before  { subject }
 
     it "sets widget setting values from yml file" do
-      @seeder.seed
-      @location.website.widgets[1].settings.find_by_name("google_plus_id").value.
+      widget.settings.find_by_name("google_plus_id").value.
         should == "the google plus id"
     end
   end

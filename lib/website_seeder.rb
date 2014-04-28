@@ -86,21 +86,21 @@ class WebsiteSeeder
     if drop_target && instructions
       instructions.each do |instruction|
         widget = drop_target.widgets.create(widget_params(instruction))
-        create_widget_settings(widget, instruction)
+        create_widget_settings(widget, instruction["settings"])
       end
     end
   end
 
-  private
-  
   def create_widget_settings(widget, instruction)
-    instruction["settings"].try(:each) do |setting|
+    instruction.try(:each) do |setting|
       create_widget_setting(widget, setting)
     end
   end
 
+  private
+
   def create_widget_setting(widget, setting)
-    if widget_setting = widget.settings.find_by_name(setting["name"])
+    if widget_setting = widget.settings.find_or_create_by_name(setting["name"])
       widget_setting.update_attributes(setting)
     end
   end
