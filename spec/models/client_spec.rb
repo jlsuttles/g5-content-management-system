@@ -1,6 +1,10 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe Client do
+  def load_yaml(file)
+    YAML.load_file("#{Rails.root}/config/#{file}")
+  end
+
   describe "validations" do
     it "should have a valid fabricator" do
       Fabricate.build(:client).should be_valid
@@ -13,20 +17,41 @@ describe Client do
     end
   end
 
-  describe "Web Page Defaults" do
-    it "website defaults are for self-storage if vertical is self-storage" do
-      @client = Fabricate(:client, vertical: "Self-Storage")
-      expect(@client.website_defaults).to eq YAML.load_file("#{Rails.root}/config/website_defaults_self_storage.yml")
+  describe "#website_defaults" do
+    let!(:client) { Fabricate(:client, vertical: vertical) }
+
+    subject { client.website_defaults }
+
+    context "Self Storage" do
+      let(:vertical) { "Self-Storage" }
+
+      it "loads the appropriate defaults" do
+        expect(subject).to eq load_yaml("website_defaults_self_storage.yml")
+      end
     end
 
-    it "website defaults are for apartments if vertical is apartments" do
-      @client = Fabricate(:client, vertical: "Apartments")
-      expect(@client.website_defaults).to eq YAML.load_file("#{Rails.root}/config/website_defaults_apartments.yml")
+    context "Apartments" do
+      let(:vertical) { "Apartments" }
+
+      it "loads the appropriate defaults" do
+        expect(subject).to eq load_yaml("website_defaults_apartments.yml")
+      end
     end
 
-    it "website defaults are for assisted-living if vertical is assisted-living" do
-      @client = Fabricate(:client, vertical: "Assisted-Living")
-      expect(@client.website_defaults).to eq YAML.load_file("#{Rails.root}/config/website_defaults_assisted_living.yml")
+    context "Assisted Living" do
+      let(:vertical) { "Assisted-Living" }
+
+      it "loads the appropriate defaults" do
+        expect(subject).to eq load_yaml("website_defaults_assisted_living.yml")
+      end
+    end
+
+    context "everything else" do
+      let(:vertical) { "foo" }
+
+      it "loads the appropriate defaults" do
+        expect(subject).to eq load_yaml("defaults.yml")
+      end
     end
   end
 end
