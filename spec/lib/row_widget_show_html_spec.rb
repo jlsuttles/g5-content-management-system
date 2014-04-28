@@ -78,20 +78,4 @@ describe RowWidgetShowHtml do
       end
     end
   end
-
-  describe "#render_column_one_widget" do
-    subject { row_widget_show_html.render_column_one_widget }
-  end
-
-  describe "#render_column_two_widget" do
-    subject { row_widget_show_html.render_column_two_widget }
-  end
-
-  describe "#render_column_three_widget" do
-    subject { row_widget_show_html.render_column_three_widget }
-  end
-
-  describe "#render_column_four_widget" do
-    subject { row_widget_show_html.render_column_four_widget }
-  end
 end
