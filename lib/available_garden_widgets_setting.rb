@@ -1,5 +1,5 @@
 class AvailableGardenWidgetsSetting
   def value
-    GardenWidget.all.map(&:name)
+    GardenWidget.where("name != ?", "Row").map(&:name)
   end
 end
