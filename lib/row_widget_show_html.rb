@@ -8,13 +8,13 @@ class RowWidgetShowHtml
   def render
     show_html = Liquid::Template.parse(row_widget.show_html).render("widget" => row_widget)
     @nokogiri = Nokogiri.parse(show_html)
-    render_column_one_widget
+    render_widget("column_one_widget_id", "#drop-target-first-col")
     if two_columns? or three_columns? or four_columns?
-      render_column_two_widget
+      render_widget("column_two_widget_id", "#drop-target-second-col")
       if three_columns? or four_columns?
-        render_column_three_widget
+        render_widget("column_three_widget_id", "#drop-target-third-col")
         if four_columns?
-          render_column_four_widget
+          render_widget("column_four_widget_id", "#drop-target-fourth-col")
         end
       end
     end
@@ -37,51 +37,15 @@ class RowWidgetShowHtml
     row_layout == "quarters"
   end
 
-  def column_one_widget
-    id = row_widget.settings.where(name: "column_one_widget_id").first.try(:value)
+  def find_widget(setting_name)
+    id = row_widget.settings.where(name: setting_name).first.try(:value)
     Widget.where(id: id).first if id
   end
 
-  def column_two_widget
-    id = row_widget.settings.where(name: "column_two_widget_id").first.try(:value)
-    Widget.where(id: id).first if id
-  end
-
-  def column_three_widget
-    id = row_widget.settings.where(name: "column_three_widget_id").first.try(:value)
-    Widget.where(id: id).first if id
-  end
-
-  def column_four_widget
-    id = row_widget.settings.where(name: "column_four_widget_id").first.try(:value)
-    Widget.where(id: id).first if id
-  end
-
-  def render_column_one_widget
-    if column_one_widget
-      column_one = nokogiri.at_css("#drop-target-first-col")
-      column_one.inner_html = column_one_widget.render_show_html
-    end
-  end
-
-  def render_column_two_widget
-    if column_two_widget
-      column_two = nokogiri.at_css("#drop-target-second-col")
-      column_two.inner_html = column_two_widget.render_show_html
-    end
-  end
-
-  def render_column_three_widget
-    if column_three_widget
-      column_three = nokogiri.at_css("#drop-target-third-col")
-      column_three.inner_html = column_three_widget.render_show_html
-    end
-  end
-
-  def render_column_four_widget
-    if column_four_widget
-      column_four = nokogiri.at_css("#drop-target-fourth-col")
-      column_four.inner_html = column_four_widget.render_show_html
+  def render_widget(setting_name, html_id)
+    if widget = find_widget(setting_name)
+      html_at_id = nokogiri.at_css(html_id)
+      html_at_id.inner_html = widget.render_show_html
     end
   end
 end

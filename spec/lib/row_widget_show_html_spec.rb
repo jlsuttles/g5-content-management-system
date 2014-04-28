@@ -44,8 +44,8 @@ describe RowWidgetShowHtml do
         context "single column" do
           let(:name) { "column_one_widget_id" }
 
-          it "calls render_column_one_widget" do
-            expect(row_widget_show_html).to receive(:render_column_one_widget)
+          it "calls render_widget once" do
+            expect(row_widget_show_html).to receive(:render_widget).once
           end
         end
 
@@ -53,8 +53,8 @@ describe RowWidgetShowHtml do
           let(:name) { "column_two_widget_id" }
           let(:value) { "halves" }
 
-          it "calls render_column_one_widget" do
-            expect(row_widget_show_html).to receive(:render_column_two_widget)
+          it "calls render_widget twice" do
+            expect(row_widget_show_html).to receive(:render_widget).exactly(2).times
           end
         end
 
@@ -62,8 +62,8 @@ describe RowWidgetShowHtml do
           let(:name) { "column_three_widget_id" }
           let(:value) { "thirds-1" }
 
-          it "calls render_column_three_widget" do
-            expect(row_widget_show_html).to receive(:render_column_three_widget)
+          it "calls render_widget three times" do
+            expect(row_widget_show_html).to receive(:render_widget).exactly(3).times
           end
         end
 
@@ -71,8 +71,8 @@ describe RowWidgetShowHtml do
           let(:name) { "column_four_widget_id" }
           let(:value) { "quarters" }
 
-          it "calls render_column_three_widget" do
-            expect(row_widget_show_html).to receive(:render_column_four_widget)
+          it "calls render_widget four times" do
+            expect(row_widget_show_html).to receive(:render_widget).exactly(4).times
           end
         end
       end
