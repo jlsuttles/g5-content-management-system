@@ -55,6 +55,9 @@
 
 .faux-table-cell {
   padding: 1em 0;
+  vertical-align: middle;
+  overflow-wrap: break-word;
+  word-break: break-all;
   @include respond-to($l-max-large, max-width) {
     &:first-child {
       padding-bottom: 0;
