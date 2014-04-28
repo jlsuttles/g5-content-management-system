@@ -1,3 +1,10 @@
+<h2 class="page-title">
+  {{#link-to "assets" this class="btn" }}Asset Manager{{/link-to}}
+  {{#link-to "redirectManager" this class="btn" }}Redirects Manager{{/link-to}}
+  {{#link-to "releases" this class="btn" }}Recent Deploys{{/link-to}}
+  <a href="#" {{action deploy this}} class="btn">Deploy</a>
+</h2>
+
 <div class="site-settings page-section l-grid">
   {{ render "website/websiteTemplate" websiteTemplate }}
 </div>
