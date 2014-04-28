@@ -17,7 +17,7 @@ describe WebsiteSeeder, vcr: VCR_OPTIONS do
     @seeder.should_receive(:create_setting!).exactly(21).times
     @seeder.seed
   end
-  it "overrides widget setting defaults if in yml file" do
+  it "sets widget setting values from yml file" do
     @seeder.seed
     @location.website.widgets[1].settings.find_by_name("google_plus_id").value.
       should == "the google plus id"
