@@ -173,12 +173,37 @@ describe WebsiteSeeder do
       it "creates a widget for each drop target" do
         drop_target.widgets.should_receive(:create)
       end
+
+      it "creates widget settings" do
+        seeder.should_receive(:create_widget_settings).exactly(4).times
+      end
     end
 
     context "no web template" do
       let(:drop_target) { nil }
 
       it { should be_nil }
+    end
+  end
+
+  describe "#create_widget_settings", vcr: VCR_OPTIONS do
+    def load_yaml(file)
+      YAML.load_file("#{Rails.root}/spec/support/website_instructions/#{file}")
+    end
+
+    before do
+      defaults = load_yaml('defaults_with_settings.yml')
+      GardenWidgetUpdater.new.update_all
+      @client = Fabricate(:client)
+      @location = Fabricate(:location)
+      @client.locations << @location
+      @seeder = WebsiteSeeder.new(@location, defaults)
+    end
+
+    it "sets widget setting values from yml file" do
+      @seeder.seed
+      @location.website.widgets[1].settings.find_by_name("google_plus_id").value.
+        should == "the google plus id"
     end
   end
 end
