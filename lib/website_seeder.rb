@@ -1,10 +1,10 @@
 class WebsiteSeeder
   attr_reader :location, :instructions, :website
 
-  def initialize(location, instructions=WEBSITE_DEFAULTS)
+  def initialize(location, instructions=nil)
     @location = location
     @client = Client.first
-    @instructions = @client.try(:website_defaults) || instructions
+    @instructions = instructions || @client.website_defaults
   end
 
   def seed
@@ -84,12 +84,25 @@ class WebsiteSeeder
   def create_widgets(drop_target, instructions)
     if drop_target && instructions
       instructions.each do |instruction|
-        drop_target.widgets.create(widget_params(instruction))
+        widget = drop_target.widgets.create(widget_params(instruction))
+        create_widget_settings(widget, instruction)
       end
     end
   end
 
   private
+  
+  def create_widget_settings(widget, instruction)
+    instruction["settings"].try(:each) do |setting|
+      create_widget_setting(widget, setting)
+    end
+  end
+
+  def create_widget_setting(widget, setting)
+    if widget_setting = widget.settings.find_by_name(setting["name"])
+      widget_setting.update_attributes(setting)
+    end
+  end
 
   def create_setting!(name, value)
     website.settings.find_or_create_by_name!(name: name, value: value)

@@ -25,6 +25,8 @@ class Client < ActiveRecord::Base
       WEBSITE_DEFAULTS_APARTMENTS
     when 'Self-Storage'
       WEBSITE_DEFAULTS_SELF_STORAGE
+    else
+      WEBSITE_DEFAULTS
     end
   end
 end
