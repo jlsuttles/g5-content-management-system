@@ -20,6 +20,10 @@ describe Client do
   describe "#website_defaults" do
     let!(:client) { Fabricate(:client, vertical: vertical) }
 
+    before do
+      WEBSITE_DEFAULTS_APARTMENTS = load_yaml("website_defaults_apartments.yml")
+    end
+
     subject { client.website_defaults }
 
     context "Self Storage" do
