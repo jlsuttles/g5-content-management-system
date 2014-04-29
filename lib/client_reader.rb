@@ -22,6 +22,7 @@ class ClientReader
     client = Client.find_or_initialize_by_uid(uid: @client_uid)
     client.name     = uf2_client.name.to_s
     client.vertical = uf2_client.g5_vertical.to_s
+    client.type     = uf2_client.type.to_s
 
     client.save
 

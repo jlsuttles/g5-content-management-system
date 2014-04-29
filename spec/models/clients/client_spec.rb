@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require "spec_helper"
 
 describe Client do
   def load_yaml(file)
@@ -9,11 +9,17 @@ describe Client do
     it "should have a valid fabricator" do
       Fabricate.build(:client).should be_valid
     end
+
     it "should require uid" do
       Fabricate.build(:client, uid: "").should_not be_valid
     end
+
     it "should require name" do
       Fabricate.build(:client, name: "").should_not be_valid
+    end
+
+    it "should require type" do
+      Fabricate.build(:client, type: "").should_not be_valid
     end
   end
 
