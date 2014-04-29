@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140418201928) do
+ActiveRecord::Schema.define(:version => 20140429162041) do
 
   create_table "assets", :force => true do |t|
     t.string   "url"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20140418201928) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "vertical"
+    t.string   "type"
   end
 
   create_table "drop_targets", :force => true do |t|
