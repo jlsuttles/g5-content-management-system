@@ -174,8 +174,8 @@ describe WebsiteSeeder do
         drop_target.widgets.should_receive(:create)
       end
 
-      it "creates widget settings" do
-        seeder.should_receive(:create_widget_settings).exactly(4).times
+      it "sets defaults widget settings" do
+        seeder.should_receive(:set_default_widget_settings).exactly(4).times
       end
     end
 
@@ -186,17 +186,29 @@ describe WebsiteSeeder do
     end
   end
 
-  describe "#create_widget_settings" do
+  describe "#set_default_widget_settings" do
     let(:defaults) { YAML.load_file("#{Rails.root}/spec/support/website_instructions/defaults_with_settings.yml") }
     let(:instructions) { defaults["website_template"]["drop_targets"].first["widgets"].first["settings"] }
-    let(:widget) { Fabricate(:widget) }
+    let!(:widget) { Fabricate(:widget) }
 
-    subject { seeder.create_widget_settings(widget, instructions) }
-    before  { subject }
+    subject { seeder.set_default_widget_settings(widget, instructions) }
 
-    it "sets widget setting values from yml file" do
-      widget.settings.find_by_name("google_plus_id").value.
-        should == "the google plus id"
+    context "when widget has setting" do
+      let!(:setting) { Fabricate(:setting, owner: widget, name: "google_plus_id") }
+      before  { subject }
+
+      it "sets default value from yml file" do
+        widget.settings.find_by_name("google_plus_id").value.
+          should == "the google plus id"
+      end
+    end
+
+    context "when widget does not have setting" do
+      before  { subject }
+
+      it "does not set value from yml file" do
+        widget.settings.find_by_name("google_plus_id").should be_nil
+      end
     end
   end
 end
