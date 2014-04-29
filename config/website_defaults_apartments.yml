@@ -27,7 +27,7 @@ website_template:
         - slug: navigation
           settings:
             - name: display_as_calls_to_action
-              value: true
+              value: "true"
     - html_id: drop-target-aside-after-main
       widgets:
         - slug: contact-info
