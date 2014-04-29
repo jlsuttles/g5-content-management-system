@@ -1,5 +1,5 @@
 class RowWidgetShowHtml
-  attr_accessor :row_widget, :nokogiri
+  attr_accessor :row_widget
 
   def initialize(row_widget)
     @row_widget = row_widget
@@ -18,8 +18,10 @@ class RowWidgetShowHtml
         end
       end
     end
-    nokogiri.to_html
+    @nokogiri.to_html
   end
+
+  private
 
   def row_layout
     @row_layout ||= row_widget.settings.where(name: "row_layout").first.try(:value)
@@ -44,7 +46,7 @@ class RowWidgetShowHtml
 
   def render_widget(setting_name, html_id)
     if widget = find_widget(setting_name)
-      html_at_id = nokogiri.at_css(html_id)
+      html_at_id = @nokogiri.at_css(html_id)
       html_at_id.inner_html = widget.render_show_html
     end
   end
