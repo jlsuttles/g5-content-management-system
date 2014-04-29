@@ -1,4 +1,10 @@
-<% content_for(:title) { web_template.title } %>
+<% content_for(:title) {
+  Liquid::Template.parse(web_template.title).render(
+    "location_name" => location.name,
+    "location_state" => location.state,
+    "web_template_slug" => web_template.slug
+  )
+} %>
 
 <% content_for(:head) {
   if mode == "preview"
