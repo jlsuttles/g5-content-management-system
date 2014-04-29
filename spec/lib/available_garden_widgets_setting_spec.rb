@@ -7,6 +7,8 @@ describe AvailableGardenWidgetsSetting do
   describe "#value" do
     subject { described_class.new.value }
 
-    it { should eq([garden_widget.name]) }
+    it "does not include the Row widget" do
+      subject.should eq([garden_widget.name])
+    end
   end
 end
