@@ -2,6 +2,7 @@ require_dependency "hash_with_to_liquid"
 
 class Setting < ActiveRecord::Base
   include SettingNavigation
+  include SettingRowWidgetGardenWidgets
 
   PRIORITIZED_OWNERS = [
     "Widget",

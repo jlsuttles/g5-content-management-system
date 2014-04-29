@@ -35,7 +35,15 @@ class Widget < ActiveRecord::Base
   end
 
   def render_show_html
-    Liquid::Template.parse(show_html).render("widget" => self)
+    if row_widget?
+      RowWidgetShowHtml.new(self).render
+    else
+      Liquid::Template.parse(show_html).render("widget" => self)
+    end
+  end
+
+  def row_widget?
+    name == "Row"
   end
 
   def render_edit_html

@@ -34,6 +34,7 @@ class WebsiteSeeder
     create_setting!("location_state", location.state)
     create_setting!("location_postal_code", location.postal_code)
     create_setting!("phone_number", location.phone_number)
+    create_setting!("row_widget_garden_widgets", RowWidgetGardenWidgetsSetting.new.value)
 
     Rails.logger.info "Creating website template"
     create_website_template(website, instructions["website_template"])
@@ -85,20 +86,20 @@ class WebsiteSeeder
     if drop_target && instructions
       instructions.each do |instruction|
         widget = drop_target.widgets.create(widget_params(instruction))
-        create_widget_settings(widget, instruction)
+        set_default_widget_settings(widget, instruction["settings"])
       end
     end
   end
 
-  private
-  
-  def create_widget_settings(widget, instruction)
-    instruction["settings"].try(:each) do |setting|
-      create_widget_setting(widget, setting)
+  def set_default_widget_settings(widget, instruction)
+    instruction.try(:each) do |setting|
+      set_default_widget_setting(widget, setting)
     end
   end
 
-  def create_widget_setting(widget, setting)
+  private
+
+  def set_default_widget_setting(widget, setting)
     if widget_setting = widget.settings.find_by_name(setting["name"])
       widget_setting.update_attributes(setting)
     end
