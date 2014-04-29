@@ -1,4 +1,4 @@
-module SettingAvailableGardenWidgets
+module SettingRowWidgetGardenWidgets
   extend ActiveSupport::Concern
 
   GARDEN_WIDGET_NAME_SETTINGS = ["column_one_widget_name",

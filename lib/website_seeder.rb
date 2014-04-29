@@ -34,7 +34,7 @@ class WebsiteSeeder
     create_setting!("location_state", location.state)
     create_setting!("location_postal_code", location.postal_code)
     create_setting!("phone_number", location.phone_number)
-    create_setting!("available_garden_widgets", AvailableGardenWidgetsSetting.new.value)
+    create_setting!("row_widget_garden_widgets", RowWidgetGardenWidgetsSetting.new.value)
 
     Rails.logger.info "Creating website template"
     create_website_template(website, instructions["website_template"])

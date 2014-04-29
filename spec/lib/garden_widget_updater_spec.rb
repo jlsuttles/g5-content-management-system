@@ -103,25 +103,25 @@ describe GardenWidgetUpdater do
       end
     end
 
-    describe "available garden widgets setting" do
+    describe "row_widget garden widgets setting" do
       let!(:website) { Fabricate(:website) }
       let(:value) { garden_widget.name }
-      let(:available_garden_widgets) do
-        website.settings.where(name: "available_garden_widgets")
+      let(:row_widget_garden_widgets) do
+        website.settings.where(name: "row_widget_garden_widgets")
       end
 
       context "with no existing setting" do
         context "before executing update" do
           it "does not have a setting" do
-            expect(available_garden_widgets).to be_empty
+            expect(row_widget_garden_widgets).to be_empty
           end
         end
 
         context "after executing update" do
           before { updater.update(garden_widget) }
 
-          it "creates the available_garden_widgets setting" do
-            expect(available_garden_widgets.first.value).to eq([value])
+          it "creates the row_widget_garden_widgets setting" do
+            expect(row_widget_garden_widgets.first.value).to eq([value])
           end
         end
       end
@@ -129,20 +129,20 @@ describe GardenWidgetUpdater do
       context "with an existing setting" do
         let!(:setting) { Fabricate(:setting, owner: website,
                                              website: website,
-                                             name: "available_garden_widgets",
+                                             name: "row_widget_garden_widgets",
                                              value: ["foo"]) }
 
         context "before executing update" do
           it "does not have a setting" do
-            expect(available_garden_widgets.first.value).to eq(["foo"])
+            expect(row_widget_garden_widgets.first.value).to eq(["foo"])
           end
         end
 
         context "after executing update" do
           before { updater.update(garden_widget) }
 
-          it "updates the available_garden_widgets setting" do
-            expect(available_garden_widgets.first.value).to include(value)
+          it "updates the row_widget_garden_widgets setting" do
+            expect(row_widget_garden_widgets.first.value).to include(value)
           end
         end
       end

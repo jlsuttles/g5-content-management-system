@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AvailableGardenWidgetsSetting do
+describe RowWidgetGardenWidgetsSetting do
   let!(:garden_widget) { Fabricate(:garden_widget) }
   let!(:row_widget) { Fabricate(:garden_widget, name: "Row") }
 

@@ -1,13 +1,13 @@
 require "spec_helper"
 
-shared_examples_for SettingAvailableGardenWidgets do
+shared_examples_for SettingRowWidgetGardenWidgets do
   describe "When availble_garden_widgets setting" do
     let!(:widget) { Fabricate(:widget) }
     let!(:described_instance) { Fabricate(:setting,
-      name: SettingAvailableGardenWidgets::GARDEN_WIDGET_NAME_SETTINGS[0],
+      name: SettingRowWidgetGardenWidgets::GARDEN_WIDGET_NAME_SETTINGS[0],
       owner: widget) }
     let!(:corresponding_setting) { Fabricate(:setting,
-      name: SettingAvailableGardenWidgets::WIDGET_ID_SETTINGS[0],
+      name: SettingRowWidgetGardenWidgets::WIDGET_ID_SETTINGS[0],
       owner: widget) }
 
     describe "After update" do
@@ -45,5 +45,5 @@ shared_examples_for SettingAvailableGardenWidgets do
 end
 
 describe Setting do
-  it_behaves_like SettingAvailableGardenWidgets
+  it_behaves_like SettingRowWidgetGardenWidgets
 end
