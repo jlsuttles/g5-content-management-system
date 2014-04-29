@@ -1,1 +1,2 @@
 web: bundle exec rails s -p $G5_CONTENT_MANAGEMENT_SYSTEM_PORT
+worker: bundle exec rake jobs:work
