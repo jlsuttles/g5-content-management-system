@@ -66,7 +66,7 @@ describe StaticWebsite::Compiler::Website do
     let(:subject) { StaticWebsite::Compiler::Website.new(website) }
 
     before do
-      website.location = location
+      website.owner = location
     end
 
     it "is the name of the location" do

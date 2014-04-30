@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ReleasesManager do
   let!(:location) { Fabricate(:location) }
-  let!(:website) { Fabricate(:website, location: location) }
+  let!(:website) { Fabricate(:website, owner: location) }
   let(:releases_manager) { ReleasesManager.new(website_slug, limit) }
   let(:limit) { nil }
 

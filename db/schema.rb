@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140429162041) do
+ActiveRecord::Schema.define(:version => 20140429231417) do
 
   create_table "assets", :force => true do |t|
     t.string   "url"
@@ -182,13 +182,14 @@ ActiveRecord::Schema.define(:version => 20140429162041) do
   add_index "web_themes", ["web_template_id"], :name => "index_web_themes_on_web_template_id"
 
   create_table "websites", :force => true do |t|
-    t.integer  "location_id"
+    t.integer  "owner_id"
     t.string   "urn"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "owner_type"
   end
 
-  add_index "websites", ["location_id"], :name => "index_websites_on_location_id"
+  add_index "websites", ["owner_id"], :name => "index_websites_on_location_id"
 
   create_table "widget_entries", :force => true do |t|
     t.integer  "widget_id"

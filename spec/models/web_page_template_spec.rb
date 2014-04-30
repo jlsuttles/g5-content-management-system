@@ -13,7 +13,7 @@ describe WebPageTemplate do
 
   describe "#compile_path" do
     let(:location) { Fabricate(:location) }
-    let(:website) { Fabricate(:website, location_id: location.id) }
+    let(:website) { Fabricate(:website, owner: location) }
     let(:web_page_template) { Fabricate(:web_page_template, website_id: website.id) }
     let!(:client) { Fabricate(:client) }
 

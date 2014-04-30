@@ -8,7 +8,7 @@ class Website < ActiveRecord::Base
 
   set_urn_prefix "g5-clw"
 
-  belongs_to :location
+  belongs_to :owner, polymorphic: true
 
   has_one  :website_template, dependent: :destroy
   has_one  :web_home_template, dependent: :destroy
@@ -25,7 +25,7 @@ class Website < ActiveRecord::Base
   end
 
   def name
-    location.try(:name)
+    owner.try(:name)
   end
 
   def slug

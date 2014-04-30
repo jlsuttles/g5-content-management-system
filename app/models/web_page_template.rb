@@ -16,6 +16,6 @@ class WebPageTemplate < WebTemplate
   end
 
   def relative_path
-    File.join(client.vertical_slug, location.state_slug, location.city_slug, slug)
+    File.join(client.vertical_slug, owner.state_slug, owner.city_slug, slug)
   end
 end

@@ -55,16 +55,16 @@ class WebTemplate < ActiveRecord::Base
     Client.first
   end
 
-  def location
-    website.try(:location)
+  def owner
+    website.try(:owner)
   end
 
-  def location_id
-    location.try(:id)
+  def owner_id
+    owner.try(:id)
   end
 
-  def location_name
-    location.try(:name)
+  def owner_name
+    owner.try(:name)
   end
 
   def vertical
@@ -72,11 +72,11 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def city
-    location.try(:city_slug)
+    owner.try(:city_slug)
   end
 
   def state
-    location.try(:state_slug)
+    owner.try(:state_slug)
   end
 
   def url
@@ -133,7 +133,7 @@ class WebTemplate < ActiveRecord::Base
   def stylesheets_compiler
     @stylesheets_compiler ||=
       StaticWebsite::Compiler::Stylesheets.new(stylesheets,
-      "#{Rails.root}/public", website_colors, location_name, true)
+      "#{Rails.root}/public", website_colors, owner_name, true)
   end
 
   def stylesheet_link_paths
@@ -144,7 +144,7 @@ class WebTemplate < ActiveRecord::Base
   def javascripts_compiler
     @javascripts_compiler ||=
       StaticWebsite::Compiler::Javascripts.new(javascripts,
-        "#{Rails.root}/public", location_name)
+        "#{Rails.root}/public", owner_name)
   end
 
   def javascript_include_paths
@@ -153,12 +153,12 @@ class WebTemplate < ActiveRecord::Base
   end
 
 
-  def location_domain
-    location.domain if location
+  def owner_domain
+    owner.domain if owner
   end
 
   def page_url
-    File.join(location_domain.to_s, relative_path.to_s)
+    File.join(owner_domain.to_s, relative_path.to_s)
   end
 
   def last_mod

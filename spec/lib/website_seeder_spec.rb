@@ -3,7 +3,7 @@ require "spec_helper"
 describe WebsiteSeeder do
   let!(:client) { Fabricate(:client) }
   let!(:location) { Fabricate(:location) }
-  let(:website) { Fabricate(:website) }
+  let(:website) { Fabricate(:website, owner: location) }
   let(:defaults) { YAML.load_file("#{Rails.root}/config/defaults.yml") }
   let(:seeder) { WebsiteSeeder.new(location) }
 

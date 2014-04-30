@@ -44,7 +44,7 @@ describe Website, vcr: VCR_OPTIONS do
     let(:location) { Fabricate.build(:location) }
 
     it "uses location's name" do
-      website.location = location
+      website.owner = location
       website.name.should eq location.name
     end
   end
@@ -54,7 +54,7 @@ describe Website, vcr: VCR_OPTIONS do
     let(:location) { Fabricate.build(:location) }
 
     it "uses location's name parameterized" do
-      website.location = location
+      website.owner = location
       website.slug.should eq location.name.parameterize
     end
   end
