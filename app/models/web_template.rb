@@ -80,11 +80,7 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def url
-    if web_home_template?
-      "/"
-    else
-      "/#{vertical}/#{state}/#{city}/#{slug}/"
-    end
+    client.url_formatter_class.new(self, owner).format
   end
 
   def website_id

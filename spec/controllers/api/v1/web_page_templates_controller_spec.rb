@@ -1,6 +1,7 @@
 require "spec_helper"
 
 describe Api::V1::WebPageTemplatesController do
+  let!(:client) { Fabricate(:client) }
   let(:web_page_template) { Fabricate(:web_page_template) }
   let(:main_drop_target) { Fabricate(:drop_target) }
 
