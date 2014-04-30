@@ -79,6 +79,7 @@ describe "Integration '/web_template/:id'", js: true, vcr: VCR_OPTIONS do
           end
         end
       end
+
     end
   end
 end

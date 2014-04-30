@@ -46,6 +46,44 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
 
       current_path.should eq "/#{@website.slug}/#{@web_page_template.slug}"
     end
+
+  end
+
+  describe "Web page templates have settings" do
+    before do
+      @client, @location, @website = seed
+      @web_home_template = @website.web_home_template
+      @web_page_template = @website.web_page_templates.first
+      visit_website
+    end
+
+    it "clicking on the gear should flip page card to reveal settings" do
+      within WEB_PAGE_SELECTOR do
+        click_link "Page Settings"
+      end
+      expect(page).to have_css(".web-page-template.flipped:first-of-type")
+      expect(page).to have_content("PAGE NAME (FOR CMS)")
+      expect(page).to have_content("PAGE TITLE")
+    end
+
+    it "can update web page template name" do
+      within WEB_PAGE_SELECTOR do
+        click_link "Page Settings"
+        fill_in "page_name", with: "Hakuna Matata"
+        click_button "Save"
+        expect(page).to have_content("HAKUNA MATATA")
+      end
+    end
+
+    it "can update web page template title" do
+      within WEB_PAGE_SELECTOR do
+        click_link "Page Settings"
+        fill_in "page_title", with: "No Worries"
+        click_button "Save"
+        click_link "Preview"
+        expect(page).to have_title("No Worries")
+      end
+    end
   end
 
   describe "Web page templates are drag and drop sortable" do
