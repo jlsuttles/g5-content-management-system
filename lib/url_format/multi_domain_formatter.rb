@@ -4,10 +4,4 @@ class URLFormat::MultiDomainFormatter < URLFormat::Formatter
 
     "#{seo_optimized_path}/#{@web_template.slug}"
   end
-
-  private
-
-  def web_home_template?
-    @web_template.type == "WebHomeTemplate"
-  end
 end

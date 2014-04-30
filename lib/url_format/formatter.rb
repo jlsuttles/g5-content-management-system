@@ -15,4 +15,8 @@ class URLFormat::Formatter
   def seo_optimized_path
     "/#{client.vertical_slug}/#{@owner.try(:state_slug)}/#{@owner.try(:city_slug)}"
   end
+
+  def web_home_template?
+    @web_template.type == "WebHomeTemplate"
+  end
 end
