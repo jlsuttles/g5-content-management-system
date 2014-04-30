@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe URLFormat::SingleDomainFormatter do
-  let!(:client) { Fabricate(:client, type: "SingleDomain") }
+  let!(:client) { Fabricate(:client, type: "SingleDomainClient") }
   let(:owner) { Fabricate.build(:location, city_slug: "Bend") }
   let(:web_template) { Fabricate.build(:web_template, slug: "foo") }
 

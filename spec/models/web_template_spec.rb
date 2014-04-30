@@ -62,7 +62,7 @@ describe WebTemplate do
     end
 
     context "single domain client" do
-      let(:type) { "SingleDomain"}
+      let(:type) { "SingleDomainClient"}
 
       it "calls the correct formatter" do
         expect(single_domain_formatter).to have_received(:format)
@@ -70,7 +70,7 @@ describe WebTemplate do
     end
 
     context "multi domain client" do
-      let(:type) { "MultiDomain"}
+      let(:type) { "MultiDomainClient"}
 
       it "calls the correct formatter" do
         expect(multi_domain_formatter).to have_received(:format)

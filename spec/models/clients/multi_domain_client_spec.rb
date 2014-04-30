@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe MultiDomain do
+describe MultiDomainClient do
   describe "#url_formatter_class" do
     before { Fabricate(:client) }
 

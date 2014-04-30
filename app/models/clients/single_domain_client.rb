@@ -1,4 +1,4 @@
-class SingleDomain < Client
+class SingleDomainClient < Client
   has_one :website, as: :owner, dependent: :destroy
 
   def url_formatter_class
