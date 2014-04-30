@@ -81,8 +81,8 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         fill_in "page_title", with: "No Worries"
         click_button "Save"
         click_link "Preview"
-        expect(page).to have_title("No Worries")
       end
+      expect(page).to have_title("No Worries")
     end
   end
 
