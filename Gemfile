@@ -51,7 +51,7 @@ group :development, :test do
   gem "rails-default-database", "~> 1.0.6"
   # ruby specs
   gem "timecop"
-  gem "rspec-rails", "~> 2.11.4"
+  gem "rspec-rails", "~> 2.14.2"
   gem "shoulda-matchers", "~> 2.0.0"
   # ruby request specs
   gem "capybara", "~> 2.1.0"

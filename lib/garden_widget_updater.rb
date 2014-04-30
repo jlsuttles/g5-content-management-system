@@ -29,6 +29,14 @@ class GardenWidgetUpdater
     garden_widget.settings = get_settings(component)
     garden_widget.save
     garden_widget.update_widgets_settings!
+    update_row_widget_garden_widgets_setting
+  end
+
+  def update_row_widget_garden_widgets_setting
+    Website.all.each do |website|
+      setting = website.settings.find_or_create_by_name!("row_widget_garden_widgets")
+      setting.update_attributes!(value: RowWidgetGardenWidgetsSetting.new.value)
+    end
   end
 
   private

@@ -1,9 +1,10 @@
 class WebsiteSeeder
   attr_reader :location, :instructions, :website
 
-  def initialize(location, instructions=DEFAULTS["website"])
+  def initialize(location, instructions=nil)
     @location = location
-    @instructions = instructions
+    @client = Client.first
+    @instructions = instructions || @client.website_defaults
   end
 
   def seed
@@ -33,6 +34,7 @@ class WebsiteSeeder
     create_setting!("location_state", location.state)
     create_setting!("location_postal_code", location.postal_code)
     create_setting!("phone_number", location.phone_number)
+    create_setting!("row_widget_garden_widgets", RowWidgetGardenWidgetsSetting.new.value)
 
     Rails.logger.info "Creating website template"
     create_website_template(website, instructions["website_template"])
@@ -83,12 +85,25 @@ class WebsiteSeeder
   def create_widgets(drop_target, instructions)
     if drop_target && instructions
       instructions.each do |instruction|
-        drop_target.widgets.create(widget_params(instruction))
+        widget = drop_target.widgets.create(widget_params(instruction))
+        set_default_widget_settings(widget, instruction["settings"])
       end
     end
   end
 
+  def set_default_widget_settings(widget, instruction)
+    instruction.try(:each) do |setting|
+      set_default_widget_setting(widget, setting)
+    end
+  end
+
   private
+
+  def set_default_widget_setting(widget, setting)
+    if widget_setting = widget.settings.find_by_name(setting["name"])
+      widget_setting.update_attributes(setting)
+    end
+  end
 
   def create_setting!(name, value)
     website.settings.find_or_create_by_name!(name: name, value: value)
@@ -100,12 +115,14 @@ class WebsiteSeeder
 
   def layout_params(instructions)
     garden_web_layout = GardenWebLayout.find_by_slug(instructions["slug"])
+    instructions = instructions.dup
     instructions["garden_web_layout_id"] = garden_web_layout.try(:id)
     ActionController::Parameters.new(instructions).permit(:garden_web_layout_id)
   end
 
   def theme_params(instructions)
     garden_web_theme = GardenWebTheme.find_by_slug(instructions["slug"])
+    instructions = instructions.dup
     instructions["garden_web_theme_id"] = garden_web_theme.try(:id)
     ActionController::Parameters.new(instructions).permit(:garden_web_theme_id)
   end
@@ -116,6 +133,7 @@ class WebsiteSeeder
 
   def widget_params(instructions)
     garden_widget = GardenWidget.find_by_slug(instructions["slug"])
+    instructions = instructions.dup
     instructions["garden_widget_id"] = garden_widget.try(:id)
     ActionController::Parameters.new(instructions).permit(:garden_widget_id)
   end

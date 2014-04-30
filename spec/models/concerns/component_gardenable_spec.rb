@@ -1,39 +1,38 @@
 require "spec_helper"
 
-describe ComponentGardenable, vcr: {record: :new_episodes} do
+class Component
+  include ComponentGardenable
+  set_garden_url ENV["WIDGET_GARDEN_URL"]
 
-  let(:component_class) do
-    Class.new do
-      include ComponentGardenable
-      set_garden_url ENV["WIDGET_GARDEN_URL"]
-      def url
-        "http://google.com/"
-      end
-    end
+  def url
+    "http://google.com/"
   end
+end
 
+describe ComponentGardenable, vcr: { record: :new_episodes } do
   describe ".components_microformats" do
-
     it "returns microformats when no error" do
-      component_class.components_microformats.should be_present
+      Component.components_microformats.should be_present
     end
 
-    it "returns @microformats if there is an OpenURI::HTTPError 304" do
-      component_class.components_microformats
-      Microformats2::Parser.any_instance.stub(:parse).
-        and_raise(OpenURI::HTTPError.new("304 Not Modified", nil))
-      component_class.components_microformats.should be_present
+    describe "when not modified" do
+      it "returns @microformats if there is an OpenURI::HTTPError 304" do
+        Component.components_microformats.should be_present
+        Microformats2::Parser.any_instance.stub(:parse).
+          and_raise(OpenURI::HTTPError.new("304 Not Modified", nil))
+        Component.components_microformats.should be_present
+      end
     end
 
     it "raises error if there is an OpenURI::HTTPError other than 304" do
       Microformats2::Parser.any_instance.stub(:parse).
         and_raise(OpenURI::HTTPError.new("400 Not Found", nil))
-      expect{ component_class.components_microformats }.to raise_error(OpenURI::HTTPError)
+      expect{ Component.components_microformats }.to raise_error(OpenURI::HTTPError)
     end
   end
 
   describe "#component_microformat" do
-    let(:component) { component_class.new }
+    let(:component) { Component.new }
 
     describe "when no component is found at url" do
       it "raises an error" do

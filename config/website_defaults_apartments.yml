@@ -93,11 +93,49 @@ web_page_templates:
       - html_id: drop-target-main
         widgets:
           - slug: html
+            settings:
+              - name: text
+                value: <h1>Information for Current Residents</h1>
           - slug: button
+            settings:
+              - name: button_label
+                value: Maintenance Request
+              - name: button_description
+                value: Send a request to our maintenance department day or night
+              - name: button_layout
+                value: grid
           - slug: button
+            settings:
+              - name: button_label
+                value: Pay Online
+              - name: button_description
+                value: Pay online using your checking account
+              - name: button_layout
+                value: grid
           - slug: button
+            settings:
+              - name: button_label
+                value: Pet Friendly
+              - name: button_description
+                value: Looking to bring a pet into your home? View our pet policy for more information
+              - name: button_layout
+                value: grid
           - slug: button
+            settings:
+              - name: button_label
+                value: Community Events
+              - name: button_description
+                value: Keep up with all the community events by viewing our events calendar
+              - name: button_layout
+                value: grid
           - slug: button
+            settings:
+              - name: button_label
+                value: Suggestion Box
+              - name: button_description
+                value: We would love to know how we're doing. Use this form to send our staff feedback about our service or property
+              - name: button_layout
+                value: grid
           - slug: html
           - slug: meta-description
 

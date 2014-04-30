@@ -12,8 +12,7 @@ describe "Integration assets", :auth_request, js: true, vcr: VCR_OPTIONS do
 
   context "has assets" do
     it "shows an asset" do
-      page.should have_css "tr.asset"
+      page.should have_css "li.asset"
     end
   end
 end
-

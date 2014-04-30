@@ -17,11 +17,26 @@ describe Widget, vcr: VCR_OPTIONS do
   end
 
   describe "#render_show_html" do
-    let(:widget) { Fabricate.build(:widget) }
+    context "row widget" do
+      let(:garden_widget) { Fabricate.build(:garden_widget, name: "Row") }
+      let(:widget) { Fabricate.build(:widget, garden_widget: garden_widget) }
+      let(:row_widget_show_html) { double(render: nil) }
 
-    it "does not escape funky characters" do
-      widget.stub(:show_html) { "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" }
-      expect(widget.render_show_html).to eq widget.show_html
+      before { RowWidgetShowHtml.stub(new: row_widget_show_html) }
+
+      it "calls render on RowWidgetShowHtml" do
+        widget.render_show_html
+        expect(row_widget_show_html).to have_received(:render)
+      end
+    end
+
+    context "all other widgets" do
+      let(:widget) { Fabricate.build(:widget) }
+
+      it "does not escape funky characters" do
+        widget.stub(:show_html) { "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" }
+        expect(widget.render_show_html).to eq widget.show_html
+      end
     end
   end
 
