@@ -1,25 +1,23 @@
 source "https://rubygems.org"
 ruby "1.9.3"
 
-gem "rails", "~> 3.2.14"
-gem "jquery-rails", "~> 3.0.4"
-gem "jquery-ui-rails", "~> 4.0.5"
+gem "rails", "~> 4.0.0"
+gem "jquery-rails"
+gem "jquery-ui-rails"
 
-gem "strong_parameters"
-
-gem "quiet_assets", "~> 1.0.1"
-gem "bootstrap-sass", "~> 2.1.1.0"
-gem "bourbon", "~> 3.1.8"
-gem "heroku_resque_autoscaler", "~> 0.1.0"
-gem "microformats2", "2.0.0.pre5"
-gem "github_heroku_deployer", "~> 0.2.0"
-gem "g5_sibling_deployer_engine", "~> 0.2.5"
-gem "liquid", "~> 2.4.1"
+gem "quiet_assets"
+gem "bootstrap-sass"
+gem "bourbon"
+gem "heroku_resque_autoscaler"
+gem "microformats2"
+gem "github_heroku_deployer"
+gem "g5_sibling_deployer_engine"
+gem "liquid"
 gem "ckeditor"
-gem "draper", "~> 1.1.0"
+gem "draper"
 gem "coffee-script"
 gem "ranked-model"
-gem "aws-sdk", "~> 1.34.1"
+gem "aws-sdk"
 gem "httparty"
 
 gem "ember-rails"
@@ -27,48 +25,44 @@ gem "ember-source", "~> 1.0.0"
 gem "ember-data-source", "~> 0.14"
 
 group :assets do
-  gem "sass-rails", "~> 3.2.3"
-  gem "sass", "~> 3.2.13"
-  gem "coffee-rails", "~> 3.2.1"
-  gem "uglifier", ">= 1.0.3"
+  gem "sass-rails"
+  gem "coffee-rails"
+  gem "uglifier"
 end
 
 group :development do
-  gem "better_errors", "~> 0.2.0"
-  gem "binding_of_caller", "~> 0.6.8"
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "railroady"
 end
 
 group :development, :test do
   # secrets
-  gem "dotenv-rails", "~> 0.9.0"
+  gem "dotenv-rails"
   # debugging
-  gem "pry", "~> 0.9.12.2"
+  gem "pry"
   # database
-  gem "sqlite3", "~> 1.3.8"
-  gem "rails-default-database", "~> 1.0.6"
+  gem "sqlite3"
+  gem "rails-default-database"
   # ruby specs
   gem "timecop"
-  gem "rspec-rails", "~> 2.14.2"
-  gem "shoulda-matchers", "~> 2.0.0"
+  gem "rspec-rails"
+  gem "shoulda-matchers"
   # ruby request specs
-  gem "capybara", "~> 2.1.0"
+  gem "capybara"
   gem "launchy"
-  gem "selenium-webdriver", "~> 2.35"
-  gem "database_cleaner", "~> 0.9.1"
+  gem "selenium-webdriver"
+  gem "database_cleaner"
   # ruby spec support
-  gem "fabrication", "~> 2.5.0"
+  gem "fabrication"
   gem "faker"
-  gem "webmock", "~> 1.13.0", require: false
-  gem "vcr", "~> 2.6.0", require: false
+  gem "webmock", require: false
+  gem "vcr", require: false
   # javascript specs
-  gem "teaspoon", "~> 0.7.5"
-  # guard specs
-  gem "guard-rspec", "~> 2.1.0"
-  gem "rb-fsevent", "~> 0.9.2"
+  gem "teaspoon"
   # ruby spec coverage
-  gem "simplecov", "~> 0.7.1", require: false
-  gem "codeclimate-test-reporter", "~> 0.1.1", require: false
+  gem "simplecov", require: false
+  gem "codeclimate-test-reporter", require: false
   gem "foreman"
 end
 
