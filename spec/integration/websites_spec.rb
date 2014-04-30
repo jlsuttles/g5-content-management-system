@@ -80,9 +80,9 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         click_link "Page Settings"
         fill_in "page_title", with: "No Worries"
         click_button "Save"
-        click_link "Preview"
       end
-      expect(page).to have_title("No Worries")
+
+      expect(@web_page_template.reload.title).to eq("No Worries")
     end
   end
 
