@@ -3,9 +3,6 @@ class GardenWebTheme < ActiveRecord::Base
 
   set_garden_url ENV["THEME_GARDEN_URL"]
 
-  attr_accessible :name, :slug, :url, :thumbnail, :javascripts, :stylesheets,
-    :primary_color, :secondary_color
-
   serialize :stylesheets, Array
   serialize :javascripts, Array
 

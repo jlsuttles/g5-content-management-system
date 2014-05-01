@@ -3,8 +3,6 @@ class GardenWebLayout < ActiveRecord::Base
 
   set_garden_url ENV["LAYOUT_GARDEN_URL"]
 
-  attr_accessible :name, :slug, :url, :thumbnail, :html, :stylesheets
-
   serialize :stylesheets, Array
 
   has_many :web_layouts, dependent: :destroy
