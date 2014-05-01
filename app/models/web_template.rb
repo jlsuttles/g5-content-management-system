@@ -22,7 +22,7 @@ class WebTemplate < ActiveRecord::Base
   validates :name  , presence: true
   validates :slug  , presence: true ,
     format: {
-      with: /^[-_A-Za-z0-9]*$/,
+      with: /\A[-_A-Za-z0-9]*\z/,
       message: "can only contain letters, numbers, dashes, and underscores."
     },
     unless: :new_record?
