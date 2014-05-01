@@ -165,6 +165,14 @@ class WebTemplate < ActiveRecord::Base
     widgets.order("updated_at").last.updated_at.to_date
   end
 
+  def render_title
+    Liquid::Template.parse(title).render(
+      "location_name" => location.name,
+      "location_state" => location.state,
+      "web_template_slug" => slug
+    )
+  end
+
   private
 
   def default_enabled_to_true
@@ -190,4 +198,5 @@ class WebTemplate < ActiveRecord::Base
   def format_redirect_patterns
     self.redirect_patterns = redirect_patterns.split.uniq.join("\n") if redirect_patterns
   end
+
 end
