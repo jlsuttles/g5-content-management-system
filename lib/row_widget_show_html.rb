@@ -47,7 +47,9 @@ class RowWidgetShowHtml
   def render_widget(setting_name, html_id)
     if widget = find_widget(setting_name)
       html_at_id = @nokogiri.at_css(html_id)
-      html_at_id.inner_html = widget.render_show_html
+      if html_at_id
+        html_at_id.inner_html = widget.render_show_html
+      end
     end
   end
 end
