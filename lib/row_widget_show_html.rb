@@ -28,11 +28,11 @@ class RowWidgetShowHtml
   end
 
   def two_columns?
-    row_layout == "halves"
+    row_layout == "halves"|| row_layout == "thirds-1" || row_layout == "thirds-2"
   end
 
   def three_columns?
-    row_layout == "thirds-1" || row_layout == "thirds-2" || row_layout == "thirds"
+    row_layout == "thirds"
   end
 
   def four_columns?
