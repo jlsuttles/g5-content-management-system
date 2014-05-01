@@ -32,14 +32,14 @@ class Setting < ActiveRecord::Base
   validates :priority, presence: true, numericality: { only_integer: true },
     unless: :new_record?
 
-  scope :where_name, -> { |name| where(name: name) }
+  scope :where_name, ->(name) { where(name: name) }
   scope :value_is_present, -> { where("value IS NOT NULL") }
   scope :order_priority_asc, -> { order("priority ASC") }
   scope :order_priority_desc, -> { order("priority DESC") }
-  scope :where_priority_gte, -> { |priority| where("priority >= ?", priority) }
-  scope :where_priority_gt, -> { |priority| where("priority > ?", priority) }
-  scope :where_priority_lt, -> { |priority| where("priority < ?", priority) }
-  scope :for_website, -> { |wid| where(website_id: wid) }
+  scope :where_priority_gte, ->(priority) { where("priority >= ?", priority) }
+  scope :where_priority_gt, ->(priority) { where("priority > ?", priority) }
+  scope :where_priority_lt, ->(priority) { where("priority < ?", priority) }
+  scope :for_website, ->(wid) { where(website_id: wid) }
   scope :for_no_website, -> { where("website_id IS NULL") }
 
   # TODO: rename to best_value to value
