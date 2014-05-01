@@ -25,6 +25,7 @@ module ComponentGardenable
     def garden_microformats
       @microformats = microformats_parser.parse(garden_url,
         {"If-Modified-Since" => if_modified_since.to_s})
+      @microformats = reject_untargeted_private(@microformats)
     rescue OpenURI::HTTPError => e
       if e.message.include?("304")
         @microformats || []
@@ -40,6 +41,19 @@ module ComponentGardenable
         []
       end
     end
+
+    def reject_untargeted_private(microformats)
+      microformats.g5_components.reject! do |component|
+        not_targeted?(component)
+      end
+      microformats
+    end
+
+    def not_targeted?(component)
+      if component.respond_to?(:g5_targets)
+        !component.g5_targets.map(&:to_s).include? ENV["MAIN_APP_UID"]
+      end
+    end
   end
 
   def component_microformat
@@ -50,3 +64,4 @@ module ComponentGardenable
     Rails.logger.warn e.message
   end
 end
+
