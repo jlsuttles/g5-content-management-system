@@ -53,13 +53,22 @@
 }
 
 .page-title {
-  @extend %c-shout;
-  @extend %c-h3;
+  @include clearfix;
   border-bottom: $base-border;
-  color: $c-color-a;
-  font-weight: $c-semiBold;
   margin-bottom: 1.25em;
+  h2 {
+    @extend %c-shout;
+    @extend %c-h3;
+    color: $c-color-a;
+    font-weight: $c-semiBold;
+    float: left;
+    margin-bottom: 0;
+  }
   @include respond-to($l-max-medium, max-width) {
+    .l-pullLeft,
+    .l-pullRight {
+      width: 100%;
+    }
     .buttons {
       display: block;
       margin-top: .5em;
@@ -70,10 +79,11 @@
     }
   }
   @include respond-to($l-min-medium) {
-    @include clearfix;
     .btn {
-      float: right;
       margin-left: 5px;
+      &:first-of-type {
+        margin-left: 0;
+      }
     }
   }
 }
