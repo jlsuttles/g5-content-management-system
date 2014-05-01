@@ -1,4 +1,4 @@
-<% content_for(:title) { web_template.title } %>
+<% content_for(:title) { web_template.render_title } %>
 
 <% content_for(:head) {
   if mode == "preview"
