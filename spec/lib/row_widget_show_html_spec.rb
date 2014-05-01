@@ -58,9 +58,27 @@ describe RowWidgetShowHtml do
           end
         end
 
+        context "two columns" do
+          let(:name) { "column_two_widget_id" }
+          let(:value) { "thirds-1" }
+
+          it "calls render_widget twice" do
+            expect(row_widget_show_html).to receive(:render_widget).exactly(2).times
+          end
+        end
+
+        context "two columns" do
+          let(:name) { "column_two_widget_id" }
+          let(:value) { "thirds-2" }
+
+          it "calls render_widget twice" do
+            expect(row_widget_show_html).to receive(:render_widget).exactly(2).times
+          end
+        end
+
         context "three columns" do
           let(:name) { "column_three_widget_id" }
-          let(:value) { "thirds-1" }
+          let(:value) { "thirds" }
 
           it "calls render_widget three times" do
             expect(row_widget_show_html).to receive(:render_widget).exactly(3).times
