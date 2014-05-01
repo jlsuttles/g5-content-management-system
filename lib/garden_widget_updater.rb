@@ -3,7 +3,7 @@ class GardenWidgetUpdater
     updated_garden_widgets = []
 
     components_microformats.map do |component|
-      garden_widget = GardenWidget.find_or_initialize_by_url(get_url(component))
+      garden_widget = GardenWidget.find_or_initialize_by(url: get_url(component))
       update(garden_widget, component)
       updated_garden_widgets << garden_widget
     end if components_microformats
@@ -34,7 +34,7 @@ class GardenWidgetUpdater
 
   def update_row_widget_garden_widgets_setting
     Website.all.each do |website|
-      setting = website.settings.find_or_create_by_name!("row_widget_garden_widgets")
+      setting = website.settings.find_or_create_by(name: "row_widget_garden_widgets")
       setting.update_attributes!(value: RowWidgetGardenWidgetsSetting.new.value)
     end
   end

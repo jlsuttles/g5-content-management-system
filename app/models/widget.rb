@@ -66,7 +66,7 @@ class Widget < ActiveRecord::Base
     return unless garden_widget_settings
     updated_settings = []
     garden_widget_settings.each do |garden_widget_setting|
-      setting = settings.find_or_initialize_by_name(garden_widget_setting[:name])
+      setting = settings.find_or_initialize_by(name: garden_widget_setting[:name])
       setting.editable = garden_widget_setting[:editable]
       setting.default_value = garden_widget_setting[:default_value]
       setting.categories = garden_widget_setting[:categories]
