@@ -27,13 +27,13 @@ class WebTemplate < ActiveRecord::Base
     },
     unless: :new_record?
 
-  scope :home, where(name: "Home")
-  scope :enabled, where(enabled: true)
-  scope :disabled, where(enabled: false)
-  scope :trash, where(in_trash: true)
-  scope :not_trash, where(in_trash: false)
-  scope :navigateable, not_trash.enabled.where("type != ?", "WebsiteTemplate")
-  scope :created_at_asc, order("created_at ASC")
+  scope :home, -> { where(name: "Home") }
+  scope :enabled, -> { where(enabled: true) }
+  scope :disabled, -> { where(enabled: false) }
+  scope :trash, -> { where(in_trash: true) }
+  scope :not_trash, -> { where(in_trash: false) }
+  scope :navigateable, -> { not_trash.enabled.where("type != ?", "WebsiteTemplate") }
+  scope :created_at_asc, -> { order("created_at ASC") }
 
   before_validation :default_enabled_to_true
   before_validation :default_in_trash_to_false
