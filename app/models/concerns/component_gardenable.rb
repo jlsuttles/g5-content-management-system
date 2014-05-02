@@ -25,7 +25,6 @@ module ComponentGardenable
     def garden_microformats
       @microformats = microformats_parser.parse(garden_url,
         {"If-Modified-Since" => if_modified_since.to_s})
-      @microformats = reject_untargeted_private(@microformats)
     rescue OpenURI::HTTPError => e
       if e.message.include?("304")
         @microformats || []
@@ -35,18 +34,18 @@ module ComponentGardenable
     end
 
     def components_microformats
-      if garden_microformats.respond_to?(:g5_components)
-        garden_microformats.g5_components
+      if garden_microformats.respond_to?(:g5_components) && garden_microformats.g5_components
+        reject_untargeted_private(garden_microformats.g5_components)
       else
         []
       end
     end
 
-    def reject_untargeted_private(microformats)
-      microformats.g5_components.reject! do |component|
+    def reject_untargeted_private(g5_components)
+      g5_components.reject! do |component|
         not_targeted?(component)
       end
-      microformats
+      g5_components
     end
 
     def not_targeted?(component)
