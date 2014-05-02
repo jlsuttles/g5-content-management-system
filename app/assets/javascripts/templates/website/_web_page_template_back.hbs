@@ -7,12 +7,12 @@
     <form class="form">
       {{#view App.ValidateEmptyFormField}}
         <label>Page Name (for CMS)</label>
-        {{input value=name}}
+        {{input value=name name="page_name"}}
       {{/view}}
 
       {{#view App.ValidateEmptyFormField}}
         <label>Page Title</label>
-        {{input value=title}}
+        {{input value=title name="page_title"}}
       {{/view}}
 
       <div class="form-field">
