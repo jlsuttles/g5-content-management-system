@@ -50,6 +50,7 @@ class ClientReader
       location.street_address = uf2_location.adr.try(:format).try(:street_address).to_s
       location.state          = uf2_location.adr.try(:format).try(:region).to_s
       location.city           = uf2_location.adr.try(:format).try(:locality).to_s
+      location.neighborhood   = uf2_location.adr.try(:format).try(:neighborhood).to_s
       location.postal_code    = uf2_location.adr.try(:format).try(:postal_code).to_s
       location.phone_number   = uf2_location.adr.try(:format).try(:tel).to_s
 

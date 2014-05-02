@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140418201928) do
+ActiveRecord::Schema.define(:version => 20140502172124) do
 
   create_table "assets", :force => true do |t|
     t.string   "url"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20140418201928) do
     t.string   "domain"
     t.string   "city_slug"
     t.string   "phone_number"
+    t.string   "neighborhood"
   end
 
   add_index "locations", ["urn"], :name => "index_locations_on_urn"
