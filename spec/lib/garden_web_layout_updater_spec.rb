@@ -26,7 +26,6 @@ describe GardenWebLayoutUpdater do
 
       it "destroys GardenWebLayout with same URL if not in use" do
         gardener.stub(:garden_url) { "spec/support/garden_web_layout_updater/removed.html" }
-        binding.pry
         expect { updater.update_all }.to change { gardener.count }.by(-1)
       end
 
