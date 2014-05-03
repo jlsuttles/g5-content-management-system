@@ -143,19 +143,6 @@ Run once.
 $ rspec
 ```
 
-Keep them running.
-
-```bash
-$ guard
-```
-
-Coverage.
-
-```bash
-$ rspec
-$ open coverage/index.html
-```
-
 
 ## Deployment Specs
 

@@ -58,8 +58,8 @@ group :development, :test do
   gem "webmock", require: false
   gem "vcr", require: false
   # ruby spec coverage
-  gem "simplecov", require: false
   gem "codeclimate-test-reporter", require: false
+  # server processes runner
   gem "foreman"
 end
 
