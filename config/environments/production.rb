@@ -70,4 +70,6 @@ G5CMS::Application.configure do
 
   # Configure Ember variant
   config.ember.variant = :production
+
+  config.eager_load = true
 end
