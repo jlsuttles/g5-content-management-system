@@ -27,7 +27,6 @@ describe ComponentGardenable, vcr: { record: :new_episodes } do
     context "garden_microformats responds to g5_components" do
       context "private widget targets us" do
         it "should accept components when they have targets including our UID" do
-          binding.pry
           Component.components_microformats.length.should == 39
         end
       end
