@@ -69,7 +69,5 @@ module G5CMS
 
     # Do not initialize application or connect to the database
     config.assets.initialize_on_precompile = false
-
-    config.main_app_uid = ENV["MAIN_APP_UID"]
   end
 end
