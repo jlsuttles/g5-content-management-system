@@ -33,8 +33,9 @@ describe ComponentGardenable, vcr: { record: :new_episodes } do
           Component.components_microformats.length.should == 38
         end
       end
+
       context "private widget targets us" do
-        it "should accept components when they have targets not including our UID" do
+        it "should accept components when they have targets including our UID" do
           Component.components_microformats.length.should == 39
         end
       end
