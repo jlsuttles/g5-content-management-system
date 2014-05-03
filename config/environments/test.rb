@@ -39,5 +39,4 @@ G5CMS::Application.configure do
 
   # Configure Ember variant
   config.ember.variant = :development
-  config.main_app_uid = ENV['MAIN_APP_UID']
 end
