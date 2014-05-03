@@ -17,10 +17,26 @@ describe ComponentGardenable, vcr: { record: :new_episodes } do
 
     describe "when not modified" do
       it "returns @microformats if there is an OpenURI::HTTPError 304" do
-        Component.components_microformats.should be_present
+        Component.components_microformats.should
         Microformats2::Parser.any_instance.stub(:parse).
           and_raise(OpenURI::HTTPError.new("304 Not Modified", nil))
         Component.components_microformats.should be_present
+      end
+    end
+
+    context "garden_microformats responds to g5_components" do
+      context "private widget not ours" do
+        before do
+          stub_const "MAIN_APP_UID", 'foo'
+        end
+        it "should reject components when they have targets not including our UID" do
+          Component.components_microformats.length.should == 38
+        end
+      end
+      context "private widget targets us" do
+        it "should accept components when they have targets not including our UID" do
+          Component.components_microformats.length.should == 39
+        end
       end
     end
 
@@ -29,6 +45,8 @@ describe ComponentGardenable, vcr: { record: :new_episodes } do
         and_raise(OpenURI::HTTPError.new("400 Not Found", nil))
       expect{ Component.components_microformats }.to raise_error(OpenURI::HTTPError)
     end
+
+
   end
 
   describe "#component_microformat" do

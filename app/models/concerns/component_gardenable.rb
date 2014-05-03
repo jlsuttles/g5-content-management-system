@@ -50,7 +50,7 @@ module ComponentGardenable
 
     def not_targeted?(component)
       if component.respond_to?(:g5_targets)
-        !component.g5_targets.map(&:to_s).include? ENV["MAIN_APP_UID"]
+        !component.g5_targets.map(&:to_s).include? MAIN_APP_UID
       end
     end
   end
