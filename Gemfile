@@ -24,6 +24,8 @@ gem "ember-rails"
 gem "ember-source", "~> 1.0.0"
 gem "ember-data-source", "~> 0.14"
 
+# Temporary fix
+gem "sprockets", "=2.11.0"
 gem "sass-rails"
 gem "coffee-rails"
 gem "uglifier"
