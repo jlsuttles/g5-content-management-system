@@ -32,14 +32,9 @@
 1. Set up your database.
 
     ```bash
+    $ cp config/database.example.yml config/database.yml
     $ rake db:setup
     ```
-
-    [rails-default-database](https://github.com/tpope/rails-default-database)
-    automatically uses sensible defaults for the primary ActiveRecord database.
-
-    __ProTip™:__ If you have trouble in development try running `bundle --without
-    production` before `rake db:setup`.
 
 1. Customize garden ENV variables __or don't__. Defaults are shown.
 

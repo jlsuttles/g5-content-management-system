@@ -43,7 +43,6 @@ group :development, :test do
   gem "pry"
   # database
   gem "sqlite3"
-  gem "rails-default-database"
   # ruby specs
   gem "timecop"
   gem "rspec-rails"
