@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/html/stylesheets/html.css
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/css
+      Date:
+      - Sat, 03 May 2014 03:59:36 GMT
+      Last-Modified:
+      - Sat, 03 May 2014 01:31:12 GMT
+      Status:
+      - 200 OK
+      Content-Length:
+      - '44'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! ".html {\n  clear: both;\n  overflow: hidden;\n}"
+    http_version: 
+  recorded_at: Sat, 03 May 2014 03:59:36 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/stylesheets/social-links.css
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/css
+      Date:
+      - Sat, 03 May 2014 03:59:36 GMT
+      Last-Modified:
+      - Sat, 03 May 2014 01:31:12 GMT
+      Status:
+      - 200 OK
+      Content-Length:
+      - '66'
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! ".social-links a {\n  display: inline-block;\n  margin-right: 5px;\n}\n"
+    http_version: 
+  recorded_at: Sat, 03 May 2014 03:59:36 GMT
+recorded_with: VCR 2.9.0
