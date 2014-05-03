@@ -12,7 +12,7 @@ class Website < ActiveRecord::Base
 
   has_one  :website_template, dependent: :destroy
   has_one  :web_home_template, dependent: :destroy
-  has_many :web_page_templates, -> { order("display_order ASC") }, dependent: :destroy
+  has_many :web_page_templates, -> { order("web_page_templates.display_order ASC") }, dependent: :destroy
   has_many :web_templates
   has_many :assets, dependent: :destroy
   has_many :widgets, through: :web_templates

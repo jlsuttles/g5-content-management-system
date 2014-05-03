@@ -13,7 +13,7 @@ class WebTemplate < ActiveRecord::Base
   has_one :web_theme  , autosave: true , dependent: :destroy
 
   has_many :drop_targets, autosave: true, dependent: :destroy
-  has_many :widgets, -> { order("display_order ASC") }, through: :drop_targets
+  has_many :widgets, -> { order("widgets.display_order ASC") }, through: :drop_targets
 
   delegate :application_min_css_path, :application_min_js_path,
     to: :website, allow_nil: true
