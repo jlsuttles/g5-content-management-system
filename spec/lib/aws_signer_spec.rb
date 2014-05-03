@@ -19,17 +19,17 @@ describe AWSSigner do
     it "returns a hash of header items" do
       subject.upload_headers.should include :acl => "public-read"
       subject.upload_headers.should include \
-        :signature => "fXrnzlPiA0UcfRsRYj2Ye/6hXLU="
+        :signature => "GWl5VffTKRxZ8HtF2RrzpPVJ/+w="
       subject.upload_headers.should include :key => "uploads/file-with-spaces.something.jpg"
     end
-  end  
+  end
 
   describe "#delete_headers" do
     it "returns a hash of header items" do
       subject.delete_headers.should include :aws_access_key_id => ENV['AWS_ACCESS_KEY_ID']
       subject.delete_headers.should include \
-        :signature => "1b6957b80766631398569aaeefb3d8ab485029eb26e8e956435e032fbb462961"
+        :signature => "94e5663bb5925d34bff680107ad443958ddcf591bfbf5cf79f5292528bd04078"
     end
-  end  
+  end
 end
 
