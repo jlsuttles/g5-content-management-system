@@ -35,7 +35,7 @@ module ComponentGardenable
 
     def components_microformats
       if garden_microformats.respond_to?(:g5_components) && garden_microformats.g5_components
-        reject_untargeted_private(garden_microformats.g5_components)
+        reject_untargeted_private(garden_microformats.g5_components.dup)
       else
         []
       end

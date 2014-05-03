@@ -28,21 +28,19 @@ describe ComponentGardenable, vcr: { record: :new_episodes } do
       end
     end
 
-    context "fresh Componant class instance" do
-      describe "private widget targets us" do
-        it "should accept components when they have targets including our UID" do
-          Component.components_microformats.length.should == 39
-        end
-      end
-    end
-
-    context "fresh Componant class instance" do
+    context "garden_microformats responds to g5_components" do
       describe "private widget not ours" do
         before do
           stub_const "MAIN_APP_UID", 'foo'
         end
         it "should reject components when they have targets not including our UID" do
           Component.components_microformats.length.should == 38
+        end
+      end
+
+      describe "private widget targets us" do
+        it "should accept components when they have targets including our UID" do
+          Component.components_microformats.length.should == 39
         end
       end
     end
