@@ -57,8 +57,6 @@ group :development, :test do
   gem "faker"
   gem "webmock", require: false
   gem "vcr", require: false
-  # javascript specs
-  gem "teaspoon"
   # ruby spec coverage
   gem "simplecov", require: false
   gem "codeclimate-test-reporter", require: false
