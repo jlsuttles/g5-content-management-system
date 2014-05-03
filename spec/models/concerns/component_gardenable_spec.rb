@@ -10,6 +10,10 @@ class Component
 end
 
 describe ComponentGardenable, vcr: { record: :new_episodes } do
+  before do
+    stub_const "MAIN_APP_UID", 
+               'http://g5-configurator.herokuapp.com/apps/g5-cms-1s7nay2b-mj-storage-client'
+  end
   describe ".components_microformats" do
     it "returns microformats when no error" do
       Component.components_microformats.should be_present
@@ -24,15 +28,16 @@ describe ComponentGardenable, vcr: { record: :new_episodes } do
       end
     end
 
-    context "garden_microformats responds to g5_components" do
-      describe "private widget targets us", vcr: { record: :new_episodes } do
+    context "fresh Componant class instance" do
+      describe "private widget targets us" do
         it "should accept components when they have targets including our UID" do
           Component.components_microformats.length.should == 39
         end
       end
+    end
 
-      describe "private widget not ours", vcr: { record: :new_episodes } do
-
+    context "fresh Componant class instance" do
+      describe "private widget not ours" do
         before do
           stub_const "MAIN_APP_UID", 'foo'
         end
