@@ -41,6 +41,8 @@ RSpec.configure do |config|
   config.filter_run_excluding type: "deployment"
 
   config.before(:suite) do
+    # Temporary fix for default_url_host not being properly set in Rails 4.1.0
+    Rails.application.routes.default_url_options[:host] = "test.com"
     DatabaseCleaner.clean_with(:truncation)
   end
 
