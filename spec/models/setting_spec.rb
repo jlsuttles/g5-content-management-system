@@ -88,10 +88,21 @@ describe Setting, vcr: VCR_OPTIONS do
   describe "#global_others" do
     let(:web_template_setting) { Fabricate(:setting, name: "same", website_id: 1) }
     let(:website_setting) { Fabricate(:setting, name: "same", website_id: 1) }
-    let(:client_setting) { Fabricate(:setting, name: "same") }
 
-    it "returns settings without a website id" do
-      web_template_setting.global_others.should eq [client_setting]
+    describe "when name is the same and value is nil" do
+      let(:client_setting) { Fabricate(:setting, name: "same", website_id: nil, value: nil) }
+
+      it "does not return setting without a website id" do
+        web_template_setting.global_others.to_a.should eq []
+      end
+    end
+
+    describe "when name is the same and value is present" do
+      let(:client_setting) { Fabricate(:setting, name: "same", website_id: nil, value: "not nil") }
+
+      it "returns settings without a website id" do
+        web_template_setting.global_others.to_a.should eq [client_setting]
+      end
     end
   end
 
