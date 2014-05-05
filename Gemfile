@@ -59,6 +59,9 @@ group :development, :test do
   gem "vcr", require: false
   # ruby spec coverage
   gem "codeclimate-test-reporter", require: false
+  # guard specs
+  gem "guard-rspec", require: false
+  gem "rb-fsevent"
   # server processes runner
   gem "foreman"
 end
