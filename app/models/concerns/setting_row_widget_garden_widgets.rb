@@ -33,7 +33,7 @@ module SettingRowWidgetGardenWidgets
   end
 
   def assign_new_widget
-    widget_id_setting.try(:update_attributes, value: @new_widget.id)
+    widget_id_setting.update_attributes(value: @new_widget.id)
   end
 
   def garden_widget_id
