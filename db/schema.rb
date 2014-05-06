@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20140418201928) do
     t.string   "domain"
     t.string   "city_slug"
     t.string   "phone_number"
+    t.string   "neighborhood"
   end
 
   add_index "locations", ["urn"], name: "index_locations_on_urn"
