@@ -34,10 +34,23 @@ module ComponentGardenable
     end
 
     def components_microformats
-      if garden_microformats.respond_to?(:g5_components)
-        garden_microformats.g5_components
+      if garden_microformats.respond_to?(:g5_components) && garden_microformats.g5_components
+        reject_untargeted_private(garden_microformats.g5_components.dup)
       else
         []
+      end
+    end
+
+    def reject_untargeted_private(g5_components)
+      g5_components.reject! do |component|
+        not_targeted?(component)
+      end
+      g5_components
+    end
+
+    def not_targeted?(component)
+      if component.respond_to?(:g5_targets)
+        !component.g5_targets.map(&:to_s).include? MAIN_APP_UID
       end
     end
   end
@@ -50,3 +63,4 @@ module ComponentGardenable
     Rails.logger.warn e.message
   end
 end
+
