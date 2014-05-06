@@ -4,7 +4,7 @@ module SettingNavigation
   included do
     before_update :update_widget_navigation_setting, if: :widget_navigation_setting_updated?
     after_update :update_widget_navigation_settings, if: :website_navigation_setting?
-    scope :navigation, where(name: "navigation")
+    scope :navigation, -> { where(name: "navigation") }
   end
 
   def website_navigation_setting?

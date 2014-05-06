@@ -13,7 +13,7 @@ class WebTemplate < ActiveRecord::Base
   has_one :web_theme  , autosave: true , dependent: :destroy
 
   has_many :drop_targets, autosave: true, dependent: :destroy
-  has_many :widgets, through: :drop_targets, order: "display_order ASC"
+  has_many :widgets, -> { order("widgets.display_order ASC") }, through: :drop_targets
 
   delegate :application_min_css_path, :application_min_js_path,
     to: :website, allow_nil: true
@@ -22,18 +22,18 @@ class WebTemplate < ActiveRecord::Base
   validates :name  , presence: true
   validates :slug  , presence: true ,
     format: {
-      with: /^[-_A-Za-z0-9]*$/,
+      with: /\A[-_A-Za-z0-9]*\z/,
       message: "can only contain letters, numbers, dashes, and underscores."
     },
     unless: :new_record?
 
-  scope :home, where(name: "Home")
-  scope :enabled, where(enabled: true)
-  scope :disabled, where(enabled: false)
-  scope :trash, where(in_trash: true)
-  scope :not_trash, where(in_trash: false)
-  scope :navigateable, not_trash.enabled.where("type != ?", "WebsiteTemplate")
-  scope :created_at_asc, order("created_at ASC")
+  scope :home, -> { where(name: "Home") }
+  scope :enabled, -> { where(enabled: true) }
+  scope :disabled, -> { where(enabled: false) }
+  scope :trash, -> { where(in_trash: true) }
+  scope :not_trash, -> { where(in_trash: false) }
+  scope :navigateable, -> { not_trash.enabled.where("type != ?", "WebsiteTemplate") }
+  scope :created_at_asc, -> { order("created_at ASC") }
 
   before_validation :default_enabled_to_true
   before_validation :default_in_trash_to_false

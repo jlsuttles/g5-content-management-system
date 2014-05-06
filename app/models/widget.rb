@@ -26,9 +26,12 @@ class Widget < ActiveRecord::Base
   after_initialize :set_defaults
   after_create :update_settings!
 
-  scope :name_like_form, joins(:garden_widget).where("garden_widgets.name LIKE '%Form'")
-  scope :meta_description, joins(:garden_widget).where("garden_widgets.name = ?", "Meta Description")
-  scope :not_meta_description, joins(:garden_widget).where("garden_widgets.name != ?", "Meta Description")
+  scope :name_like_form, -> {
+    joins(:garden_widget).where("garden_widgets.name LIKE '%Form'") }
+  scope :meta_description, -> {
+    joins(:garden_widget).where("garden_widgets.name = ?", "Meta Description") }
+  scope :not_meta_description, -> {
+    joins(:garden_widget).where("garden_widgets.name != ?", "Meta Description") }
 
   def kind_of_widget?(kind)
     name == kind
@@ -63,7 +66,7 @@ class Widget < ActiveRecord::Base
     return unless garden_widget_settings
     updated_settings = []
     garden_widget_settings.each do |garden_widget_setting|
-      setting = settings.find_or_initialize_by_name(garden_widget_setting[:name])
+      setting = settings.find_or_initialize_by(name: garden_widget_setting[:name])
       setting.editable = garden_widget_setting[:editable]
       setting.default_value = garden_widget_setting[:default_value]
       setting.categories = garden_widget_setting[:categories]

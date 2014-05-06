@@ -19,7 +19,7 @@ class ClientReader
     # So now either there is a client in the database with the UID we want or
     # there are no clients in the database. So we either update the existing
     # client or create a new one.
-    client = Client.find_or_initialize_by_uid(uid: @client_uid)
+    client = Client.find_or_initialize_by(uid: @client_uid)
     client.name     = uf2_client.name.to_s
     client.vertical = uf2_client.g5_vertical.to_s
 
@@ -43,7 +43,7 @@ class ClientReader
       # Update an existing location if the one with UID we want is already in
       # the database or create a new one.
 
-      location = Location.find_or_initialize_by_uid(uid: uf2_location.uid.to_s)
+      location = Location.find_or_initialize_by(uid: uf2_location.uid.to_s)
       location.urn            = uf2_location.uid.to_s.split("/").last
       location.name           = uf2_location.name.to_s
       location.domain         = uf2_location.g5_domain.to_s
