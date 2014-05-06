@@ -11,28 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424184558) do
+ActiveRecord::Schema.define(version: 20140418201928) do
 
   create_table "assets", force: true do |t|
     t.string   "url"
     t.integer  "website_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "clients", force: true do |t|
     t.string   "uid"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "vertical"
   end
 
   create_table "drop_targets", force: true do |t|
     t.integer  "web_template_id"
     t.string   "html_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "garden_web_layouts", force: true do |t|
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20140424184558) do
     t.string   "thumbnail"
     t.text     "stylesheets"
     t.text     "html"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "garden_web_themes", force: true do |t|
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20140424184558) do
     t.text     "stylesheets"
     t.string   "primary_color"
     t.string   "secondary_color"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "garden_widgets", force: true do |t|
@@ -71,16 +71,16 @@ ActiveRecord::Schema.define(version: 20140424184558) do
     t.text     "lib_javascripts"
     t.text     "show_stylesheets"
     t.text     "settings"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "locations", force: true do |t|
     t.string   "uid"
     t.string   "name"
     t.boolean  "corporate"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "urn"
     t.string   "state"
     t.string   "city"
@@ -95,12 +95,12 @@ ActiveRecord::Schema.define(version: 20140424184558) do
 
   create_table "settings", force: true do |t|
     t.string   "name"
-    t.text     "value"
-    t.boolean  "editable",      default: false
+    t.text     "value",         limit: 255
+    t.boolean  "editable",                  default: false
     t.string   "default_value"
     t.integer  "owner_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "owner_type"
     t.text     "categories"
     t.integer  "priority"
@@ -117,16 +117,16 @@ ActiveRecord::Schema.define(version: 20140424184558) do
     t.string   "git_repo"
     t.string   "heroku_repo"
     t.string   "heroku_app_name"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sibling_instructions", force: true do |t|
     t.string   "uid"
     t.string   "name"
     t.datetime "published_at"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "siblings", force: true do |t|
@@ -136,14 +136,14 @@ ActiveRecord::Schema.define(version: 20140424184558) do
     t.string   "heroku_repo"
     t.string   "heroku_app_name"
     t.boolean  "main_app"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "web_layouts", force: true do |t|
     t.integer  "web_template_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "garden_web_layout_id"
   end
 
@@ -153,8 +153,8 @@ ActiveRecord::Schema.define(version: 20140424184558) do
   create_table "web_templates", force: true do |t|
     t.integer  "website_id"
     t.string   "name"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "slug"
     t.boolean  "template",          default: false
     t.string   "title"
@@ -169,8 +169,8 @@ ActiveRecord::Schema.define(version: 20140424184558) do
 
   create_table "web_themes", force: true do |t|
     t.integer  "web_template_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "custom_colors"
     t.string   "custom_primary_color"
     t.string   "custom_secondary_color"
@@ -183,8 +183,8 @@ ActiveRecord::Schema.define(version: 20140424184558) do
   create_table "websites", force: true do |t|
     t.integer  "location_id"
     t.string   "urn"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "websites", ["location_id"], name: "index_websites_on_location_id"
@@ -192,21 +192,21 @@ ActiveRecord::Schema.define(version: 20140424184558) do
   create_table "widget_entries", force: true do |t|
     t.integer  "widget_id"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "widgets", force: true do |t|
     t.integer  "drop_target_id"
     t.integer  "display_order"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "section"
     t.boolean  "removeable"
     t.integer  "garden_widget_id"
   end
 
-  add_index "widgets", ["drop_target_id"], name: "index_widgets_on_web_template_id"
+  add_index "widgets", ["drop_target_id"], name: "index_widgets_on_drop_target_id"
   add_index "widgets", ["garden_widget_id"], name: "index_widgets_on_garden_widget_id"
 
 end
