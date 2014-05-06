@@ -2,10 +2,10 @@
 
 @font-face {
   font-family: 'Proxima Nova Extra Condensed';
-  src: url('proxima_nova_extra_condensed_light-webfont.eot');
-  src: url('proxima_nova_extra_condensed_light-webfont.eot?#iefix') format('embedded-opentype'),
-       url('proxima_nova_extra_condensed_light-webfont.ttf') format('truetype'),
-       url('proxima_nova_extra_condensed_light-webfont.svg#webfont') format('svg');
+  src: asset-url('proxima_nova_extra_condensed_light-webfont.eot');
+  src: asset-url('proxima_nova_extra_condensed_light-webfont.eot?#iefix') format('embedded-opentype'),
+       asset-url('proxima_nova_extra_condensed_light-webfont.ttf') format('truetype'),
+       asset-url('proxima_nova_extra_condensed_light-webfont.svg#webfont') format('svg');
 }
 
 body {

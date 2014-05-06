@@ -23,8 +23,9 @@ module ComponentGardenable
     end
 
     def garden_microformats
-      @microformats = microformats_parser.parse(garden_url,
-        {"If-Modified-Since" => if_modified_since.to_s})
+      # Passing these options breaks since upgrading to Ruby 2.1.1
+      # {"If-Modified-Since" => if_modified_since.to_s}
+      @microformats = microformats_parser.parse(garden_url, {})
     rescue OpenURI::HTTPError => e
       if e.message.include?("304")
         @microformats || []
