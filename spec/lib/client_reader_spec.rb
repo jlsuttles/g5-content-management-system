@@ -50,7 +50,7 @@ describe ClientReader do
         before { client_reader.perform }
 
         its([:name]) { should eq("Farmhouse") }
-        its([:vertical]) { should eq("Assisted-Living") }
+        its([:vertical]) { should eq("Apartments") }
         its([:type]) { should eq("MultiDomainClient") }
       end
     end
