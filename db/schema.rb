@@ -9,45 +9,45 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140430165903) do
+ActiveRecord::Schema.define(:version => 20140502172124) do
 
-  create_table "assets", :force => true do |t|
+  create_table "assets", force: true do |t|
     t.string   "url"
     t.integer  "website_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "clients", :force => true do |t|
+  create_table "clients", force: true do |t|
     t.string   "uid"
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "vertical"
     t.string   "type"
   end
 
-  create_table "drop_targets", :force => true do |t|
+  create_table "drop_targets", force: true do |t|
     t.integer  "web_template_id"
     t.string   "html_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  create_table "garden_web_layouts", :force => true do |t|
+  create_table "garden_web_layouts", force: true do |t|
     t.string   "name"
     t.string   "slug"
     t.string   "url"
     t.string   "thumbnail"
     t.text     "stylesheets"
     t.text     "html"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table "garden_web_themes", :force => true do |t|
+  create_table "garden_web_themes", force: true do |t|
     t.string   "name"
     t.string   "slug"
     t.string   "url"
@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(:version => 20140430165903) do
     t.text     "stylesheets"
     t.string   "primary_color"
     t.string   "secondary_color"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  create_table "garden_widgets", :force => true do |t|
+  create_table "garden_widgets", force: true do |t|
     t.string   "name"
     t.string   "slug"
     t.string   "url"
@@ -72,16 +72,16 @@ ActiveRecord::Schema.define(:version => 20140430165903) do
     t.text     "lib_javascripts"
     t.text     "show_stylesheets"
     t.text     "settings"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
-  create_table "locations", :force => true do |t|
+  create_table "locations", force: true do |t|
     t.string   "uid"
     t.string   "name"
     t.boolean  "corporate"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "urn"
     t.string   "state"
     t.string   "city"
@@ -90,27 +90,28 @@ ActiveRecord::Schema.define(:version => 20140430165903) do
     t.string   "domain"
     t.string   "city_slug"
     t.string   "phone_number"
+    t.string   "neighborhood"
   end
 
-  add_index "locations", ["urn"], :name => "index_locations_on_urn"
+  add_index "locations", ["urn"], name: "index_locations_on_urn"
 
-  create_table "settings", :force => true do |t|
+  create_table "settings", force: true do |t|
     t.string   "name"
     t.text     "value"
-    t.boolean  "editable",      :default => false
+    t.boolean  "editable",      default: false
     t.string   "default_value"
     t.integer  "owner_id"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "owner_type"
     t.text     "categories"
     t.integer  "priority"
     t.integer  "website_id"
   end
 
-  add_index "settings", ["website_id"], :name => "index_settings_on_website_id"
+  add_index "settings", ["website_id"], name: "index_settings_on_website_id"
 
-  create_table "sibling_deploys", :force => true do |t|
+  create_table "sibling_deploys", force: true do |t|
     t.integer  "sibling_id"
     t.integer  "instruction_id"
     t.boolean  "manual"
@@ -118,46 +119,46 @@ ActiveRecord::Schema.define(:version => 20140430165903) do
     t.string   "git_repo"
     t.string   "heroku_repo"
     t.string   "heroku_app_name"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  create_table "sibling_instructions", :force => true do |t|
+  create_table "sibling_instructions", force: true do |t|
     t.string   "uid"
     t.string   "name"
     t.datetime "published_at"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  create_table "siblings", :force => true do |t|
+  create_table "siblings", force: true do |t|
     t.string   "uid"
     t.string   "name"
     t.string   "git_repo"
     t.string   "heroku_repo"
     t.string   "heroku_app_name"
     t.boolean  "main_app"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  create_table "web_layouts", :force => true do |t|
+  create_table "web_layouts", force: true do |t|
     t.integer  "web_template_id"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.integer  "garden_web_layout_id"
   end
 
-  add_index "web_layouts", ["garden_web_layout_id"], :name => "index_web_layouts_on_garden_web_layout_id"
-  add_index "web_layouts", ["web_template_id"], :name => "index_web_layouts_on_web_template_id"
+  add_index "web_layouts", ["garden_web_layout_id"], name: "index_web_layouts_on_garden_web_layout_id"
+  add_index "web_layouts", ["web_template_id"], name: "index_web_layouts_on_web_template_id"
 
-  create_table "web_templates", :force => true do |t|
+  create_table "web_templates", force: true do |t|
     t.integer  "website_id"
     t.string   "name"
-    t.datetime "created_at",                           :null => false
-    t.datetime "updated_at",                           :null => false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "slug"
-    t.boolean  "template",          :default => false
+    t.boolean  "template",          default: false
     t.string   "title"
     t.string   "type"
     t.boolean  "enabled"
@@ -166,20 +167,20 @@ ActiveRecord::Schema.define(:version => 20140430165903) do
     t.boolean  "in_trash"
   end
 
-  add_index "web_templates", ["website_id"], :name => "index_web_templates_on_website_id"
+  add_index "web_templates", ["website_id"], name: "index_web_templates_on_website_id"
 
-  create_table "web_themes", :force => true do |t|
+  create_table "web_themes", force: true do |t|
     t.integer  "web_template_id"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.boolean  "custom_colors"
     t.string   "custom_primary_color"
     t.string   "custom_secondary_color"
     t.integer  "garden_web_theme_id"
   end
 
-  add_index "web_themes", ["garden_web_theme_id"], :name => "index_web_themes_on_garden_web_theme_id"
-  add_index "web_themes", ["web_template_id"], :name => "index_web_themes_on_web_template_id"
+  add_index "web_themes", ["garden_web_theme_id"], name: "index_web_themes_on_garden_web_theme_id"
+  add_index "web_themes", ["web_template_id"], name: "index_web_themes_on_web_template_id"
 
   create_table "websites", :force => true do |t|
     t.integer  "owner_id"
@@ -191,24 +192,24 @@ ActiveRecord::Schema.define(:version => 20140430165903) do
 
   add_index "websites", ["owner_id"], :name => "index_websites_on_location_id"
 
-  create_table "widget_entries", :force => true do |t|
+  create_table "widget_entries", force: true do |t|
     t.integer  "widget_id"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "widgets", :force => true do |t|
+  create_table "widgets", force: true do |t|
     t.integer  "drop_target_id"
     t.integer  "display_order"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "section"
     t.boolean  "removeable"
     t.integer  "garden_widget_id"
   end
 
-  add_index "widgets", ["drop_target_id"], :name => "index_widgets_on_web_template_id"
-  add_index "widgets", ["garden_widget_id"], :name => "index_widgets_on_garden_widget_id"
+  add_index "widgets", ["drop_target_id"], name: "index_widgets_on_web_template_id"
+  add_index "widgets", ["garden_widget_id"], name: "index_widgets_on_garden_widget_id"
 
 end

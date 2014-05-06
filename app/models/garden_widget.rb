@@ -3,9 +3,6 @@ class GardenWidget < ActiveRecord::Base
 
   set_garden_url ENV["WIDGET_GARDEN_URL"]
 
-  attr_accessible :name, :slug, :url, :thumbnail, :edit_html, :edit_javascript,
-    :show_html, :show_javascript, :lib_javascripts, :show_stylesheets, :settings
-
   serialize :lib_javascripts, Array
   serialize :show_stylesheets, Array
   serialize :settings, Array

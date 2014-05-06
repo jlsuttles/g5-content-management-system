@@ -276,7 +276,7 @@
   }
 
   .drop-target-remove {
-    background-image:  url(icon-trash.png);
+    background-image:  asset-url("icon-trash.png");
     background-position: 10px center;
     background-repeat: no-repeat;
   }
@@ -314,7 +314,7 @@
 }
 
 .loading {
-  background: url(ajax-loader.gif) center no-repeat;
+  background: asset-url("ajax-loader.gif") center no-repeat;
   height: 225px;
   overflow: hidden;
   width: 100%;

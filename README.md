@@ -32,14 +32,9 @@
 1. Set up your database.
 
     ```bash
+    $ cp config/database.example.yml config/database.yml
     $ rake db:setup
     ```
-
-    [rails-default-database](https://github.com/tpope/rails-default-database)
-    automatically uses sensible defaults for the primary ActiveRecord database.
-
-    __ProTip™:__ If you have trouble in development try running `bundle --without
-    production` before `rake db:setup`.
 
 1. Customize garden ENV variables __or don't__. Defaults are shown.
 
@@ -75,19 +70,8 @@
 
 1. [Get your AWS S3 credentials ready — for the client's assets](https://console.aws.amazon.com/s3)
 
-1. Set ENV variables.
+1. Set ENV variables. See `.env`.
 
-    ```bash
-    $ export HEROKU_APP_NAME=g5-cms-default
-    $ export HEROKU_USERNAME=your-username
-    $ export HEROKU_API_KEY=your-api-key
-    $ export ID_RSA=your-private-key
-    $ export AWS_ACCESS_KEY_ID=
-    $ export AWS_SECRET_ACCESS_KEY=
-    $ export AWS_REGION=
-    $ export AWS_S3_BUCKET_NAME_#{location_name}=
-    $ export AWS_S3_BUCKET_URL_#{location_name}=
-    ```
   * if you have issues connecting to S3 (SocketError: getaddrinfo: nodename nor servname provided, or not known) make sure [your region is correct](http://docs.aws.amazon.com/general/latest/gr/rande.html)
 
 1. Install [redis](http://redis.io/) and start it.
@@ -157,19 +141,6 @@ Run once.
 
 ```bash
 $ rspec
-```
-
-Keep them running.
-
-```bash
-$ guard
-```
-
-Coverage.
-
-```bash
-$ rspec
-$ open coverage/index.html
 ```
 
 

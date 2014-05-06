@@ -24,7 +24,7 @@ class SplitUpAsideDropTargets < ActiveRecord::Migration
 
   def down
     # NOTE there will be errors if you run the down method and expect it to work without reverting
-    # changes to website_template.rb and website_template_serializer.rb and anywhere else 
+    # changes to website_template.rb and website_template_serializer.rb and anywhere else
     # aside_before_main and aside_after_main are mentioned.
     # e.g. replacing the aside_before_main_widgets, aside_after_main_widgets methods with aside_widgets
     # when serializing a website_template it tries to call each of these methods and the aforementioned
@@ -32,7 +32,7 @@ class SplitUpAsideDropTargets < ActiveRecord::Migration
 
     WebsiteTemplate.all.each do |website_template|
       say("inside #{website_template}")
-      merged_drop_target = website_template.drop_targets.find_or_create_by_html_id('drop-target-aside')
+      merged_drop_target = website_template.drop_targets.find_or_create_by(html_id: 'drop-target-aside')
       say("merged_drop_target is #{merged_drop_target}")
       split_drop_targets = website_template.drop_targets.select {|drop_target| SPLIT_DROP_TARGETS.include?(drop_target.html_id)}
       say("split_drop_targets is #{split_drop_targets}")
@@ -54,16 +54,16 @@ class SplitUpAsideDropTargets < ActiveRecord::Migration
       split_drop_targets.map {|drop_target| drop_target.destroy}
     end
   end
-  
+
   private
 
   def move_to_before_main(widget, website_template)
-    drop_target = website_template.drop_targets.find_or_create_by_html_id('drop-target-aside-before-main')
+    drop_target = website_template.drop_targets.find_or_create_by(html_id: 'drop-target-aside-before-main')
     drop_target.widgets << widget
   end
 
   def move_to_after_main(widget, website_template)
-    drop_target = website_template.drop_targets.find_or_create_by_html_id('drop-target-aside-after-main')
+    drop_target = website_template.drop_targets.find_or_create_by(html_id: 'drop-target-aside-after-main')
     drop_target.widgets << widget
   end
 
