@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418201928) do
+ActiveRecord::Schema.define(version: 20140506195459) do
 
   create_table "assets", force: true do |t|
     t.string   "url"
@@ -96,8 +96,8 @@ ActiveRecord::Schema.define(version: 20140418201928) do
 
   create_table "settings", force: true do |t|
     t.string   "name"
-    t.text     "value",         limit: 255
-    t.boolean  "editable",                  default: false
+    t.text     "value"
+    t.boolean  "editable",      default: false
     t.string   "default_value"
     t.integer  "owner_id"
     t.datetime "created_at"
