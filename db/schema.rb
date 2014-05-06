@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140502172124) do
+ActiveRecord::Schema.define(version: 20140502172124) do
 
   create_table "assets", force: true do |t|
     t.string   "url"
@@ -182,15 +182,15 @@ ActiveRecord::Schema.define(:version => 20140502172124) do
   add_index "web_themes", ["garden_web_theme_id"], name: "index_web_themes_on_garden_web_theme_id"
   add_index "web_themes", ["web_template_id"], name: "index_web_themes_on_web_template_id"
 
-  create_table "websites", :force => true do |t|
+  create_table "websites", force: true do |t|
     t.integer  "owner_id"
     t.string   "urn"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "owner_type"
   end
 
-  add_index "websites", ["owner_id"], :name => "index_websites_on_location_id"
+  add_index "websites", ["owner_id"], name: "index_websites_on_owner_id"
 
   create_table "widget_entries", force: true do |t|
     t.integer  "widget_id"
@@ -202,8 +202,8 @@ ActiveRecord::Schema.define(:version => 20140502172124) do
   create_table "widgets", force: true do |t|
     t.integer  "drop_target_id"
     t.integer  "display_order"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "section"
     t.boolean  "removeable"
     t.integer  "garden_widget_id"

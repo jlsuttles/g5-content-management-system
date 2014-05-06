@@ -26,7 +26,7 @@ private
   # client or create a new one.
   #
   def create_client
-    client = Client.find_or_initialize_by_uid(@client_uid)
+    client = Client.find_or_initialize_by(uid: @client_uid)
 
     client.name     = uf2_client.name.to_s
     client.vertical = uf2_client.g5_vertical.to_s
@@ -45,7 +45,7 @@ private
   def process_uf2_location(uf2_location)
     @uf2_location_uids << uf2_location.uid.to_s
 
-    location = Location.find_or_initialize_by_uid(uf2_location.uid.to_s)
+    location = Location.find_or_initialize_by(uid: uf2_location.uid.to_s)
 
     location.urn            = uf2_location.uid.to_s.split("/").last
     location.name           = uf2_location.name.to_s
