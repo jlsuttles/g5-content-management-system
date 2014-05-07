@@ -16,6 +16,10 @@ class WebPageTemplate < WebTemplate
   end
 
   def relative_path
-    File.join(client.vertical_slug, owner.state_slug, owner.city_slug, slug)
+    if single_domain?
+      File.join(client.vertical_slug, owner.state_slug, owner.city_slug, owner.urn, slug)
+    else
+      File.join(client.vertical_slug, owner.state_slug, owner.city_slug, slug)
+    end
   end
 end

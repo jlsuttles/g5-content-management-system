@@ -20,6 +20,8 @@ class Website < ActiveRecord::Base
 
   validates :urn, presence: true, uniqueness: true, unless: :new_record?
 
+  scope :location_websites, -> { where(owner_type: "Location") }
+
   def website_id
     id
   end
@@ -33,7 +35,11 @@ class Website < ActiveRecord::Base
   end
 
   def compile_path
-    File.join(COMPILE_PATH, urn)
+    if single_domain_location?
+      File.join(COMPILE_PATH, client.urn, urn)
+    else
+      File.join(COMPILE_PATH, urn)
+    end
   end
 
   def stylesheets
@@ -64,5 +70,15 @@ class Website < ActiveRecord::Base
 
   def application_min_css_path
     stylesheets_compiler.uploaded_path
+  end
+
+private
+
+  def single_domain_location?
+    client.type == "SingleDomainClient" && owner_type == "Location"
+  end
+
+  def client
+    @client ||= Client.first
   end
 end

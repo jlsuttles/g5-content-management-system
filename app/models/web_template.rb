@@ -55,6 +55,10 @@ class WebTemplate < ActiveRecord::Base
     Client.first
   end
 
+  def single_domain?
+    client.type == "SingleDomainClient"
+  end
+
   def owner
     website.try(:owner)
   end
@@ -93,6 +97,14 @@ class WebTemplate < ActiveRecord::Base
 
   def web_theme_id
     web_theme.try(:id)
+  end
+
+  def web_corporate_home_template?
+    type == "WebCorporateHomeTemplate"
+  end
+
+  def web_corporate_page_template?
+    type == "WebCorporatePageTemplate"
   end
 
   def web_home_template?
