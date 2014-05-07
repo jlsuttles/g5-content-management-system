@@ -23,6 +23,17 @@ describe Website, vcr: VCR_OPTIONS do
     end
   end
 
+  describe "#location_websites" do
+    let(:client) { Fabricate(:client) }
+    let(:location) { Fabricate(:location) }
+    let!(:client_website) { Fabricate(:website, owner: client) }
+    let!(:location_website) { Fabricate(:website, owner: location) }
+
+    it "returns location websites only" do
+      expect(Website.location_websites).to eq([location_website])
+    end
+  end
+
   describe "#urn" do
     let(:website) { Fabricate(:website) }
 
