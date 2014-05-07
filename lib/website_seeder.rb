@@ -110,7 +110,7 @@ class WebsiteSeeder
   end
 
   def web_template_params(instructions)
-    ActionController::Parameters.new(instructions).permit(:name)
+    ActionController::Parameters.new(instructions).permit(:name, :title)
   end
 
   def layout_params(instructions)
