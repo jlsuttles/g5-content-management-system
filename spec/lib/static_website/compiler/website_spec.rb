@@ -1,6 +1,7 @@
 require "spec_helper"
 
 describe StaticWebsite::Compiler::Website do
+  let!(:client) { Fabricate(:client) }
   let(:website) { Fabricate(:website) }
 
   describe "#compile" do

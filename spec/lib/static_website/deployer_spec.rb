@@ -1,6 +1,7 @@
 require "spec_helper"
 
 describe StaticWebsite::Deployer do
+  let!(:client) { Fabricate(:client) }
   let(:website) { Fabricate(:website).decorate }
   let(:subject) { StaticWebsite::Deployer.new(website) }
 
