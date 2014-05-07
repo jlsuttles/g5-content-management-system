@@ -36,7 +36,7 @@ class Website < ActiveRecord::Base
 
   def compile_path
     if single_domain_location?
-      File.join(COMPILE_PATH, client.urn, urn)
+      File.join(COMPILE_PATH, client.website.urn, urn)
     else
       File.join(COMPILE_PATH, urn)
     end

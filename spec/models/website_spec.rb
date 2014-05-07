@@ -71,6 +71,7 @@ describe Website, vcr: VCR_OPTIONS do
   end
 
   describe "#compile_path" do
+    let!(:client) { Fabricate(:client) }
     let(:website) { Fabricate(:website) }
 
     it "includes urn" do
