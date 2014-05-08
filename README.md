@@ -1,5 +1,7 @@
 # G5 CMS
 
+[![Build Status](https://travis-ci.org/G5/g5-content-management-system.svg)](https://travis-ci.org/G5/g5-content-management-system)
+
 - Seeds client from client uid
 - Seeds default website for each location
 - Gardens provide components that make up websites and web pages

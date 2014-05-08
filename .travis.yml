@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+  - 2.1.1
+script:
+  - RAILS_ENV=test bundle exec rake db:schema:load --trace
+  - bundle exec rspec
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - psql -c 'create database g5_content_management_system_test;' -U postgres
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+notifications:
+  campfire:
+    rooms:
+      secure: kp3AoXOS91YPScPGF/i4fWOKlG3HiMEdW4fJZKlAiQsKIBTjh5R4VnvwbSAfG62bb2LaERlgq3G3uKE5X1ayRA0BG7hMYXmK1pK8KMQfQF2iOo9FgLn8qW9bdFrg/e0KWNtFimjL+oBoT7zOlCQEXWfMoMbMeaICiSxnFdIg6U0=
+    template:
+      - "%{repository}#%{build_number} %{message} (%{branch} - %{commit} : %{author}) Change view : %{compare_url} Build details : %{build_url}"
+    on_success: change
+    on_failure: always
