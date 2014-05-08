@@ -1,5 +1,7 @@
 # G5 CMS
 
+[![Code Climate](https://codeclimate.com/repos/5114447913d6374d5000e638/badges/065a0ae50d3b8277ebb2/gpa.png)](https://codeclimate.com/repos/5114447913d6374d5000e638/feed)
+
 - Seeds client from client uid
 - Seeds default website for each location
 - Gardens provide components that make up websites and web pages
