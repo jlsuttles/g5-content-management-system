@@ -16,6 +16,10 @@ require "vcr"
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+# Checks for pending migrations before tests are run.
+# If you are not using ActiveRecord, you can remove this line.
+ActiveRecord::Migration.maintain_test_schema! if defined?(ActiveRecord::Migration)
+
 VCR.configure do |config|
   config.cassette_library_dir = "spec/support/vcr_cassettes"
   config.hook_into :webmock
