@@ -89,3 +89,27 @@
   position: relative;
   min-height: 320px;
 }
+
+.table th {
+  font-weight: normal;
+}
+
+.table--small {
+  border: 1px solid #aaa;
+  width: auto;
+  thead {
+    border-bottom: 2px solid #aaa;
+  }
+  tbody tr {
+    border-bottom: 1px solid #aaa;
+  }
+  th {
+    text-align: left;
+  }
+  th,
+  td {
+    padding: .5em 1em;
+    &:first-child {
+    }
+  }
+}

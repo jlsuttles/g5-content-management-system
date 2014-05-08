@@ -19,7 +19,7 @@ class ClientReader
     # So now either there is a client in the database with the UID we want or
     # there are no clients in the database. So we either update the existing
     # client or create a new one.
-    client = Client.find_or_initialize_by_uid(uid: @client_uid)
+    client = Client.find_or_initialize_by(uid: @client_uid)
     client.name     = uf2_client.name.to_s
     client.vertical = uf2_client.g5_vertical.to_s
 
@@ -43,13 +43,14 @@ class ClientReader
       # Update an existing location if the one with UID we want is already in
       # the database or create a new one.
 
-      location = Location.find_or_initialize_by_uid(uid: uf2_location.uid.to_s)
+      location = Location.find_or_initialize_by(uid: uf2_location.uid.to_s)
       location.urn            = uf2_location.uid.to_s.split("/").last
       location.name           = uf2_location.name.to_s
       location.domain         = uf2_location.g5_domain.to_s
       location.street_address = uf2_location.adr.try(:format).try(:street_address).to_s
       location.state          = uf2_location.adr.try(:format).try(:region).to_s
       location.city           = uf2_location.adr.try(:format).try(:locality).to_s
+      location.neighborhood   = uf2_location.adr.try(:format).try(:g5_neighborhood).to_s
       location.postal_code    = uf2_location.adr.try(:format).try(:postal_code).to_s
       location.phone_number   = uf2_location.adr.try(:format).try(:tel).to_s
 

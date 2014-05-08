@@ -69,19 +69,9 @@ G5CMS::Application.routes.draw do
   resources :widget_entries, only: [:index, :show]
   resources :tags, only: [:show]
 
-  # G5SiblingDeployerEngine routes shouldn't need to be explicitly added
-  resources :siblings, only: [:index] do
-    member do
-      post "deploy"
-    end
-  end
-  get "siblings/instructions" => "siblings/instructions#index", as: :siblings_instructions
-  get "siblings/deploys" => "siblings/deploys#index", as: :siblings_deploys
-  post "webhooks/g5-configurator" => "webhooks#g5_configurator", as: :g5_configurator_webhook
-
   # Ember.js application
   get "/:location_slug", to: "locations#index"
-  get "/:location_slug/:web_page_template_slug", to: "locations#index"
+  get "/:location_slug/:web_page_template_slug", to: "locations#index", location_slug: /([^a][^s][^s][^e][^t][^s])/
   get "/:vertical_slug/:state_slug/:city_slug", to: "web_templates#show"
   get "/:vertical_slug/:state_slug/:city_slug/:web_template_slug", to: "web_templates#show"
 
