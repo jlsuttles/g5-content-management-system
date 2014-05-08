@@ -57,6 +57,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Amenities
+    title: "{{ web_template_name }} in {{ location_city }}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
