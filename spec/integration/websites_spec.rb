@@ -81,7 +81,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         fill_in "page_title", with: "No Worries"
         click_button "Save"
       end
-      expect(@web_page_template.reload.title).to eq("No Worries")
+      expect(WebPageTemplate.find(@web_page_template.id).title).to eq("No Worries")
     end
 
     it "can update web page template title with liquid variables" do
