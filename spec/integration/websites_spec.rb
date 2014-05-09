@@ -75,37 +75,14 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       end
     end
 
-    it "can update web page template title with liquid variables" do
+    it "can update web page template title" do
       within WEB_PAGE_SELECTOR do
         click_link "Page Settings"
         fill_in "page_title", with: "No Worries"
         click_button "Save"
-        expect(@web_page_template.reload.title).to eq("No Worries")
+        visit current_path
       end
-    end
-    it "can update web page template title with liquid variables" do
-      within WEB_PAGE_SELECTOR do
-        click_link "Page Settings"
-        fill_in "page_title", with: "No Worries"
-        click_button "Save"
-        expect(@web_page_template.reload.title).to eq("No Worries")
-      end
-    end
-    it "can update web page template title with liquid variables" do
-      within WEB_PAGE_SELECTOR do
-        click_link "Page Settings"
-        fill_in "page_title", with: "No Worries"
-        click_button "Save"
-        expect(@web_page_template.reload.title).to eq("No Worries")
-      end
-    end
-    it "can update web page template title with liquid variables" do
-      within WEB_PAGE_SELECTOR do
-        click_link "Page Settings"
-        fill_in "page_title", with: "No Worries"
-        click_button "Save"
-        expect(@web_page_template.reload.title).to eq("No Worries")
-      end
+      expect(@web_page_template.reload.title).to eq("No Worries")
     end
 
     it "can update web page template title with liquid variables" do
@@ -113,8 +90,9 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         click_link "Page Settings"
         fill_in "page_title", with: "{{ location_name }}"
         click_button "Save"
-        expect(@web_page_template.reload.title).to eq("{{ location_name }}")
+        visit current_path
       end
+      expect(@web_page_template.reload.title).to eq("{{ location_name }}")
     end
   end
 
