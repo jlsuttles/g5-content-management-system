@@ -83,6 +83,30 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         expect(@web_page_template.reload.title).to eq("No Worries")
       end
     end
+    it "can update web page template title with liquid variables" do
+      within WEB_PAGE_SELECTOR do
+        click_link "Page Settings"
+        fill_in "page_title", with: "No Worries"
+        click_button "Save"
+        expect(@web_page_template.reload.title).to eq("No Worries")
+      end
+    end
+    it "can update web page template title with liquid variables" do
+      within WEB_PAGE_SELECTOR do
+        click_link "Page Settings"
+        fill_in "page_title", with: "No Worries"
+        click_button "Save"
+        expect(@web_page_template.reload.title).to eq("No Worries")
+      end
+    end
+    it "can update web page template title with liquid variables" do
+      within WEB_PAGE_SELECTOR do
+        click_link "Page Settings"
+        fill_in "page_title", with: "No Worries"
+        click_button "Save"
+        expect(@web_page_template.reload.title).to eq("No Worries")
+      end
+    end
 
     it "can update web page template title with liquid variables" do
       within WEB_PAGE_SELECTOR do
