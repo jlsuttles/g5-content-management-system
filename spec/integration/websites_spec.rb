@@ -80,8 +80,8 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         click_link "Page Settings"
         fill_in "page_title", with: "No Worries"
         click_button "Save"
+        expect(WebPageTemplate.find(@web_page_template.id).title).to eq("No Worries")
       end
-      expect(WebPageTemplate.find(@web_page_template.id).title).to eq("No Worries")
     end
 
     it "can update web page template title with liquid variables" do
@@ -89,8 +89,8 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         click_link "Page Settings"
         fill_in "page_title", with: "{{ location_name }}"
         click_button "Save"
+        expect(@web_page_template.reload.title).to eq("{{ location_name }}")
       end
-      expect(@web_page_template.reload.title).to eq("{{ location_name }}")
     end
   end
 
