@@ -80,6 +80,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         click_link "Page Settings"
         fill_in "page_title", with: "No Worries"
         click_button "Save"
+        visit current_path
       end
       expect(@web_page_template.reload.title).to eq("No Worries")
     end
@@ -89,6 +90,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         click_link "Page Settings"
         fill_in "page_title", with: "{{ location_name }}"
         click_button "Save"
+        visit current_path
       end
       expect(@web_page_template.reload.title).to eq("{{ location_name }}")
     end
