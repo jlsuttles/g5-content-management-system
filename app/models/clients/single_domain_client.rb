@@ -4,4 +4,12 @@ class SingleDomainClient < Client
   def url_formatter_class
     URLFormat::SingleDomainFormatter
   end
+
+  def stylesheets_compiler_class
+    ClientDeployer::WebsiteCompiler::Stylesheets
+  end
+
+  def javascripts_compiler
+    ClientDeployer::WebsiteCompiler::Javascripts
+  end
 end

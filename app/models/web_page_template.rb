@@ -8,7 +8,11 @@ class WebPageTemplate < WebTemplate
   end
 
   def htaccess_substitution
-    ["/", relative_path, "/"].join
+    if single_domain?
+      ["/", owner.urn, relative_path, "/"].join
+    else
+      ["/", relative_path, "/"].join
+    end
   end
 
   def compile_path
@@ -16,10 +20,6 @@ class WebPageTemplate < WebTemplate
   end
 
   def relative_path
-    if single_domain?
-      File.join(client.vertical_slug, owner.state_slug, owner.city_slug, owner.urn, slug)
-    else
-      File.join(client.vertical_slug, owner.state_slug, owner.city_slug, slug)
-    end
+    File.join(client.vertical_slug, owner.state_slug, owner.city_slug, slug)
   end
 end

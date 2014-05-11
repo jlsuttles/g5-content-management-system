@@ -7,7 +7,8 @@ module ClientDeployer
       attr_reader :javascript_paths, :compile_path, :location_name, :preview,
         :js_paths, :include_paths
 
-      def initialize(javascript_paths, compile_path, location_name="", preview=false)
+      def initialize(javascript_paths, compile_path, website, location_name="", preview=false)
+        @website = website
         @javascript_paths = javascript_paths.try(:compact).try(:uniq)
         @compile_path = compile_path
         @location_name = location_name
@@ -24,14 +25,14 @@ module ClientDeployer
             compile_javascript(javascript_path)
           end
 
-          # javascript_compressor.compile unless preview
+          javascript_compressor.compile unless preview
           javascript_uploader.compile unless preview
         end
       end
 
       def compile_javascript(javascript_path)
         if javascript_path
-          javascript = Javascript.new(javascript_path, compile_path)
+          javascript = Javascript.new(@website, javascript_path, compile_path)
           javascript.compile
           @js_paths << javascript.js_path
           @include_paths << javascript.include_path

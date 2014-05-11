@@ -12,16 +12,24 @@ class WebHomeTemplate < WebTemplate
   end
 
   def preview_url
-    "/#{vertical}/#{state}/#{city}/"
+    if single_domain?
+      "#{owner.urn}/#{vertical}/#{state}/#{city}/"
+    else
+      "/#{vertical}/#{state}/#{city}/"
+    end
   end
 
   def htaccess_substitution
-    relative_path
+    if single_domain?
+      "/#{owner.urn}/#{relative_path}"
+    else
+      relative_path
+    end
   end
 
   def relative_path
     if single_domain?
-      File.join(client.vertical_slug, owner.state_slug, owner.city_slug, owner.urn)
+      File.join(client.vertical_slug, owner.state_slug, owner.city_slug)
     else
       "/"
     end

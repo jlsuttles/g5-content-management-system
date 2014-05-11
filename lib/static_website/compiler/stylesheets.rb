@@ -8,7 +8,7 @@ module StaticWebsite
       attr_reader :stylesheet_paths, :compile_path, :colors, :location_name,
         :preview, :css_paths, :link_paths
 
-      def initialize(stylesheet_paths, compile_path, colors={}, location_name="", preview=false)
+      def initialize(stylesheet_paths, compile_path, website, colors={}, location_name="", preview=false)
         @stylesheet_paths = stylesheet_paths.try(:compact).try(:uniq)
         @compile_path = compile_path
         @colors = colors

@@ -7,7 +7,8 @@ module ClientDeployer
     class Stylesheet
       attr_reader :stylesheet_path, :compile_path
 
-      def initialize(stylesheet_path, compile_path)
+      def initialize(website, stylesheet_path, compile_path)
+        @website = website
         @stylesheet_path = stylesheet_path
         @compile_path = File.join(compile_path, "stylesheets", filename) if compile_path
       end
@@ -43,7 +44,7 @@ module ClientDeployer
       end
 
       def link_path
-        @link_path ||= "/stylesheets/#{filename}.css"
+        @link_path ||= "/#{@website.urn}/stylesheets/#{filename}.css"
       end
     end
   end

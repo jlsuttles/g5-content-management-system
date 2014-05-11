@@ -7,7 +7,8 @@ module ClientDeployer
     class Javascript
       attr_reader :javascript_path, :compile_path
 
-      def initialize(javascript_path, compile_path)
+      def initialize(website, javascript_path, compile_path)
+        @website = website
         @javascript_path = javascript_path
         @compile_path = File.join(compile_path, "javascripts", filename) if compile_path
       end
@@ -15,7 +16,7 @@ module ClientDeployer
       def compile
         compile_directory.compile
         remote_javascript.compile
-        # coffee_javascript.compile
+        coffee_javascript.compile
       end
 
       def compile_directory
@@ -39,7 +40,7 @@ module ClientDeployer
       end
 
       def include_path
-        @include_path ||= "/javascripts/#{filename}.js"
+        @include_path ||= "/#{@website.urn}/javascripts/#{filename}.js"
       end
     end
   end

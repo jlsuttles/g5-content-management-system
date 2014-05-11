@@ -13,8 +13,9 @@ module ClientDeployer
       end
 
       def compile
+        #compile_directory.clean_up
         compile_directory.compile
-        javascripts.compile
+        #javascripts.compile
         stylesheets.compile
         web_home_template.compile
         web_page_templates.compile
@@ -27,11 +28,11 @@ module ClientDeployer
       end
 
       def javascripts
-        @javascripts ||= Javascripts.new(@website.javascripts, @compile_path, location_name)
+        @javascripts ||= Javascripts.new(@website, @compile_path, location_name)
       end
 
       def stylesheets
-        @stylesheets ||= Stylesheets.new(@website.stylesheets, @compile_path, @website.colors, location_name)
+        @stylesheets ||= Stylesheets.new(@website, @compile_path, @website.colors, location_name)
       end
 
       def location_name

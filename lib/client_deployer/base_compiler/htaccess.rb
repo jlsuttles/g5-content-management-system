@@ -43,10 +43,9 @@ module ClientDeployer
         templates = (website.web_page_templates + [web_home_template]).compact
         templates.each { |template| process_template(template) }
 
-        @empty_folders << ["\tRewriteRule ^#{File.join(@client.vertical_slug)}/?$ #{web_home_template.htaccess_substitution} [R=301,L]",
-                           "\tRewriteRule ^#{File.join(@client.vertical_slug, web_home_template.owner.state_slug)}/?$ #{web_home_template.htaccess_substitution} [R=301,L]",
-                           "\tRewriteRule ^#{File.join(@client.vertical_slug, web_home_template.owner.state_slug, web_home_template.owner.city_slug)}/?$ #{web_home_template.htaccess_substitution} [R=301,L]",
-                           "\tRewriteRule ^#{File.join(@client.vertical_slug, web_home_template.owner.state_slug, web_home_template.owner.city_slug, web_home_template.owner.urn)}/?$ #{web_home_template.htaccess_substitution} [R=301,L]"]
+        @empty_folders << ["\tRewriteRule ^#{File.join(web_home_template.owner.urn, @client.vertical_slug)}/?$ #{web_home_template.htaccess_substitution} [R=301,L]",
+                           "\tRewriteRule ^#{File.join(web_home_template.owner.urn, @client.vertical_slug, web_home_template.owner.state_slug)}/?$ #{web_home_template.htaccess_substitution} [R=301,L]",
+                           "\tRewriteRule ^#{File.join(web_home_template.owner.urn, @client.vertical_slug, web_home_template.owner.state_slug, web_home_template.owner.city_slug)}/?$ #{web_home_template.htaccess_substitution} [R=301,L]"]
       end
 
       def process_template(template)

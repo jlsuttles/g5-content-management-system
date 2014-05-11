@@ -8,9 +8,10 @@ module ClientDeployer
       attr_reader :stylesheet_paths, :compile_path, :colors, :location_name,
         :preview, :css_paths, :link_paths
 
-      def initialize(stylesheet_paths, compile_path, colors={}, location_name="", preview=false)
+      def initialize(stylesheet_paths, compile_path, website, colors={}, location_name="", preview=false)
         @stylesheet_paths = stylesheet_paths.try(:compact).try(:uniq)
         @compile_path = compile_path
+        @website = website
         @colors = colors
         @location_name = location_name
         @preview = preview
@@ -39,7 +40,7 @@ module ClientDeployer
 
       def compile_stylesheet(stylesheet_path)
         if stylesheet_path
-          stylesheet = Stylesheet.new(stylesheet_path, compile_path)
+          stylesheet = Stylesheet.new(@website, stylesheet_path, compile_path)
           stylesheet.compile
           @css_paths << stylesheet.css_path
           @link_paths << stylesheet.link_path

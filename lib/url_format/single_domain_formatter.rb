@@ -8,6 +8,6 @@ class URLFormat::SingleDomainFormatter < URLFormat::Formatter
   private
 
   def base_url
-    "#{seo_optimized_path}/#{@owner.urn}"
+    "/#{@owner.urn}#{seo_optimized_path}"
   end
 end
