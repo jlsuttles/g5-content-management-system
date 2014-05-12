@@ -16,3 +16,5 @@ App.Client = DS.Model.extend
   cls_url:       DS.attr("string")
   cxm_urn:       DS.attr("string")
   cxm_url:       DS.attr("string")
+  multi_domain:  DS.attr("boolean")
+  single_domain: DS.attr("boolean")

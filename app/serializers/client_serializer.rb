@@ -18,7 +18,9 @@ class ClientSerializer < ActiveModel::Serializer
               :cls_urn,
               :cls_url,
               :cxm_urn,
-              :cxm_url
+              :cxm_url,
+              :multi_domain,
+              :single_domain
 
   def url
     client_services.client_url
@@ -30,6 +32,14 @@ class ClientSerializer < ActiveModel::Serializer
 
   def location_urls
     client_services.client_location_urls
+  end
+
+  def multi_domain
+    object.type == "MultiDomainClient"
+  end
+
+  def single_domain
+    object.type == "SingleDomainClient"
   end
 
   ClientServices::SERVICES.each do |service|

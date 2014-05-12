@@ -5,6 +5,10 @@
       <a {{action updateGardenWidgets}} href="#" class="btn">Update Widgets</a>
       <a {{action updateGardenWebThemes}} href="#" class="btn">Update Themes</a>
       <a {{action updateGardenWebLayouts}} href="#" class="btn">Update Layouts</a>
+
+      {{#if controllers.client.single_domain}}
+      <a {{action deploy_all}} href="#" class="btn">Deploy All</a>
+      {{/if}}
     </div>
   </div>
 
@@ -19,14 +23,20 @@
 
     <ul class="faux-table-body">
       {{#each model}}
-      <li class="faux-table-row location">
+      <li {{bindAttr class=":faux-table-row :location corporate"}}>
         <div class="faux-table-cell">
+          {{#if corporate}}
+          <strong>Corporate:</strong>
+          {{/if}}
           {{name}}
         </div>
-        <div class="faux-table-cell buttons">
+        <div class="faux-table-cell">
           {{#link-to "website" this.website class="btn btn--a" }}Edit{{/link-to}}
           <a {{bindAttr href="this.website.herokuUrl"}} class="btn btn--a">View</a>
-          <a {{action deploy this}} href="#" class="btn btn--a">Deploy</a>
+
+          {{#if controllers.client.mulit_domain}}
+          <a {{action deploy this}} href="#" class="btn btn--a deploy">Deploy</a>
+          {{/if}}
         </div>
       </li>
       {{/each}}
