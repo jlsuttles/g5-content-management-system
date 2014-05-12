@@ -69,7 +69,11 @@ class Website < ActiveRecord::Base
   end
 
   def application_min_css_path
-    stylesheets_compiler.uploaded_path
+    if single_domain_location?
+      "/#{urn}/stylesheets/application.min.css"
+    else
+      stylesheets_compiler.uploaded_path
+    end
   end
 
 private

@@ -140,7 +140,7 @@ class WebTemplate < ActiveRecord::Base
 
   def stylesheets_compiler
     @stylesheets_compiler ||=
-      client.stylesheets_compiler_class.new(stylesheets,
+      StaticWebsite::Compiler::Stylesheets.new(stylesheets,
       "#{Rails.root}/public", owner, website_colors, owner_name, true)
   end
 
@@ -151,7 +151,7 @@ class WebTemplate < ActiveRecord::Base
 
   def javascripts_compiler
     @javascripts_compiler ||=
-      client.javascripts_compiler_class.new(javascripts,
+      StaticWebsite::Compiler::Javascripts.new(javascripts,
         "#{Rails.root}/public", owner, owner_name)
   end
 

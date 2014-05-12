@@ -1,6 +1,6 @@
 require "client_deployer/compile_directory"
-require "client_deployer/website_compiler/javascripts"
-require "client_deployer/website_compiler/stylesheets"
+require "static_website/compiler/javascripts"
+require "static_website/compiler/stylesheets"
 require "client_deployer/website_compiler/web_template"
 require "client_deployer/website_compiler/web_templates"
 
@@ -15,7 +15,7 @@ module ClientDeployer
       def compile
         #compile_directory.clean_up
         compile_directory.compile
-        #javascripts.compile
+        javascripts.compile
         stylesheets.compile
         web_home_template.compile
         web_page_templates.compile
@@ -28,11 +28,11 @@ module ClientDeployer
       end
 
       def javascripts
-        @javascripts ||= Javascripts.new(@website, @compile_path, location_name)
+        @javascripts ||= StaticWebsite::Compiler::Javascripts.new(@website.javascripts, @compile_path, @website, location_name)
       end
 
       def stylesheets
-        @stylesheets ||= Stylesheets.new(@website, @compile_path, @website.colors, location_name)
+        @stylesheets ||= StaticWebsite::Compiler::Stylesheets.new(@website.stylesheets, @compile_path, @website, @website.colors, location_name)
       end
 
       def location_name

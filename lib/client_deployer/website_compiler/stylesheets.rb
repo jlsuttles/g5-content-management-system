@@ -52,6 +52,7 @@ module ClientDeployer
       end
 
       def compressed_path
+        #@compressed_path ||= File.join(root_path, "stylesheets", "#{@website.urn}.min.css")
         @compressed_path ||= File.join(compile_path, "stylesheets", "application.min.css")
       end
 
@@ -61,6 +62,10 @@ module ClientDeployer
 
       def uploaded_path
         @uploaded_path ||= stylesheet_uploader.uploaded_path
+      end
+
+      def root_path
+        compile_path.split("/")[0...-1].join("/")
       end
     end
   end

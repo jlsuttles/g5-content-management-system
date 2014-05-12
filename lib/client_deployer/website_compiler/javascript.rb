@@ -10,6 +10,7 @@ module ClientDeployer
       def initialize(website, javascript_path, compile_path)
         @website = website
         @javascript_path = javascript_path
+        @root_path = compile_path.split("/")[0...-1].join("/")
         @compile_path = File.join(compile_path, "javascripts", filename) if compile_path
       end
 
@@ -40,7 +41,7 @@ module ClientDeployer
       end
 
       def include_path
-        @include_path ||= "/#{@website.urn}/javascripts/#{filename}.js"
+        @include_path ||= "/javascripts/#{filename}.js"
       end
     end
   end

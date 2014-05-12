@@ -10,6 +10,7 @@ module ClientDeployer
       def initialize(website, stylesheet_path, compile_path)
         @website = website
         @stylesheet_path = stylesheet_path
+        @root_path = compile_path.split("/")[0...-1].join("/")
         @compile_path = File.join(compile_path, "stylesheets", filename) if compile_path
       end
 
@@ -44,7 +45,7 @@ module ClientDeployer
       end
 
       def link_path
-        @link_path ||= "/#{@website.urn}/stylesheets/#{filename}.css"
+        @link_path ||= "/stylesheets/#{filename}.css"
       end
     end
   end

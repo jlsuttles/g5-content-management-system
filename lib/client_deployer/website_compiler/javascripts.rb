@@ -44,6 +44,7 @@ module ClientDeployer
       end
 
       def compressed_path
+        #@compressed_path ||= File.join(root_path, "javascripts", "#{@website.urn}.min.js")
         @compressed_path ||= File.join(compile_path, "javascripts", "application.min.js")
       end
 
@@ -53,6 +54,10 @@ module ClientDeployer
 
       def uploaded_paths
         @uploaded_path ||= javascript_uploader.uploaded_paths
+      end
+
+      def root_path
+        compile_path.split("/")[0...-1].join("/")
       end
     end
   end

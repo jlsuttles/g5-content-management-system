@@ -9,7 +9,7 @@ class SingleDomainClient < Client
     ClientDeployer::WebsiteCompiler::Stylesheets
   end
 
-  def javascripts_compiler
+  def javascripts_compiler_class
     ClientDeployer::WebsiteCompiler::Javascripts
   end
 end
