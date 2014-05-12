@@ -32,6 +32,8 @@ private
     client.vertical = uf2_client.g5_vertical.to_s
     client.type     = uf2_client.g5_type.to_s
     client.save
+
+    create_client_website(client) if client.type == "SingleDomainClient"
   end
 
   def process_client
@@ -55,6 +57,7 @@ private
     location.city           = uf2_location.adr.try(:format).try(:locality).to_s
     location.postal_code    = uf2_location.adr.try(:format).try(:postal_code).to_s
     location.phone_number   = uf2_location.adr.try(:format).try(:tel).to_s
+    location.corporate      = uf2_location.g5_corporate.to_s
     location.save
   end
 
@@ -74,5 +77,9 @@ private
   #
   def uf2_client
     @uf2_client ||= Microformats2.parse(@client_uid).first
+  end
+
+  def create_client_website(client)
+    Website.create(owner_id: client.id, owner_type: "Client")
   end
 end
