@@ -7,7 +7,7 @@ App.LocationsController = Ember.ArrayController.extend
       $form.appendTo("body").submit()
       false
     deploy_all: (model) ->
-      url = "/clients/1/deploy_websites"
+      url = "/api/v1/clients/1/deploy_websites"
       $form = $("<form action='" + url + "' method='post'></form>")
       $form.appendTo("body").submit()
       false

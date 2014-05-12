@@ -81,8 +81,6 @@ class Website < ActiveRecord::Base
     owner_type == "Location" && owner.corporate?
   end
 
-private
-
   def single_domain_location?
     client.type == "SingleDomainClient" && owner_type == "Location"
   end
