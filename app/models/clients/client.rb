@@ -18,6 +18,14 @@ class Client < ActiveRecord::Base
     vertical.try(:parameterize).to_s
   end
 
+  def deploy
+    ClientDeployerJob.perform
+  end
+
+  def async_deploy
+    Resque.enqueue(ClientDeployerJob)
+  end
+
   def website_defaults
     case vertical
     when 'Assisted-Living'
