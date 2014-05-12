@@ -2,7 +2,8 @@ source "https://rubygems.org"
 ruby "2.1.1"
 
 gem "rails", github: "rails/rails", branch: "4-1-stable"
-gem "jquery-rails"
+# Downgraded jquery-rails for Ember Views
+gem "jquery-rails", "~> 3.0.4"
 gem "jquery-ui-rails"
 
 gem "quiet_assets"
