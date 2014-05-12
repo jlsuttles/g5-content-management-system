@@ -6,17 +6,17 @@ App.LocationsController = Ember.ArrayController.extend
       $form.appendTo("body").submit()
       false
     updateGardenWebLayouts: ->
-      url = "/api/v1/garden_web_layouts"
+      url = "/api/v1/garden_web_layouts/update"
       $form = $("<form action='" + url + "' method='post'></form>")
       $form.appendTo("body").submit()
       false
     updateGardenWebThemes: ->
-      url = "/api/v1/garden_web_themes"
+      url = "/api/v1/garden_web_themes/update"
       $form = $("<form action='" + url + "' method='post'></form>")
       $form.appendTo("body").submit()
       false
     updateGardenWidgets: ->
-      url = "/api/v1/garden_widgets"
+      url = "/api/v1/garden_widgets/update"
       $form = $("<form action='" + url + "' method='post'></form>")
       $form.appendTo("body").submit()
       false

@@ -51,5 +51,20 @@ describe "Integration '/'", js: true, vcr: VCR_OPTIONS do
 
       expect(page).to have_content("Heroku | No such app")
     end
+
+    it "Update widgets link produces a flash notice" do
+      click_link "Update Widgets"
+      expect(page).to have_selector(".alert", "UPDATING WIDGETS")
+    end
+
+    it "Update themes link produces a flash notice" do
+      click_link "Update Themes"
+      expect(page).to have_selector(".alert", "UPDATING THEMES")
+    end
+
+    it "Update layouts link produces a flash notice" do
+      click_link "Update Layouts"
+      expect(page).to have_selector(".alert", "UPDATING LAYOUTS")
+    end
   end
 end
