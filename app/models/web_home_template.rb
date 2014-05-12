@@ -12,8 +12,10 @@ class WebHomeTemplate < WebTemplate
   end
 
   def preview_url
-    if single_domain? && !website.corporate?
-      "#{owner.urn}/#{vertical}/#{state}/#{city}/"
+    if website.corporate?
+      "/#{owner.urn}"
+    elsif single_domain?
+      "/#{owner.urn}/#{vertical}/#{state}/#{city}"
     else
       "/#{vertical}/#{state}/#{city}/"
     end
