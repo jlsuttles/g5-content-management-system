@@ -13,7 +13,6 @@ module ClientDeployer
       end
 
       def compile
-        #compile_directory.clean_up
         compile_directory.compile
         javascripts.compile
         stylesheets.compile

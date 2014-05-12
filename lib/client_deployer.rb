@@ -18,7 +18,7 @@ module ClientDeployer
     WebsiteCompiler.new(website).compile
   end
 
-  def self.cleanup(cleanup)
+  def self.cleanup(compile_path)
     ClientDeployer::CompileDirectory.new(compile_path, false).clean_up
   end
 end

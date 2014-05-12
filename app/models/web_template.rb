@@ -158,7 +158,7 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def page_url
-    File.join(owner_domain.to_s, relative_path.to_s)
+    File.join(domain_for_type.to_s, relative_path.to_s)
   end
 
   def last_mod
@@ -208,4 +208,7 @@ class WebTemplate < ActiveRecord::Base
     self.redirect_patterns = redirect_patterns.split.uniq.join("\n") if redirect_patterns
   end
 
+  def domain_for_type
+    single_domain? ? client.domain : owner_domain
+  end
 end
