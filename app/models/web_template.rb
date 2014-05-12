@@ -99,14 +99,6 @@ class WebTemplate < ActiveRecord::Base
     web_theme.try(:id)
   end
 
-  def web_corporate_home_template?
-    type == "WebCorporateHomeTemplate"
-  end
-
-  def web_corporate_page_template?
-    type == "WebCorporatePageTemplate"
-  end
-
   def web_home_template?
     type == "WebHomeTemplate"
   end
