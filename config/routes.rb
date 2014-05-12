@@ -9,10 +9,13 @@ G5CMS::Application.routes.draw do
     namespace :v1 do
       get '/sign_upload', to: 'assets#sign_upload'
       get '/sign_delete', to: 'assets#sign_delete'
-      resources :clients, only: [:show]
+
+      resources :clients, only: [:show] do
+        post "deploy_websites"
+      end
+
       resources :locations, only: [:index, :show]
       resources :websites, only: [:index, :show]
-
       resources :website_templates, only: [:show]
       resources :web_layouts, only: [:show, :update]
       resources :web_themes, only: [:show, :update]
