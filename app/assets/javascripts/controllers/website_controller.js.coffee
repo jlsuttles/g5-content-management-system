@@ -1,4 +1,4 @@
-App.WebsiteIndexController = Ember.ObjectController.extend
+App.WebsiteController = Ember.ObjectController.extend
   confirmEmptyTrash: false
 
   actions:
