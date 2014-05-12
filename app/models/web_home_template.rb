@@ -8,11 +8,11 @@ class WebHomeTemplate < WebTemplate
   end
 
   def compile_path
-    File.join(website_compile_path.to_s, relative_path, "index.html") if website_compile_path
+    File.join(base_path.to_s, relative_path, "index.html") if base_path
   end
 
   def preview_url
-    if single_domain?
+    if single_domain? && !website.corporate?
       "#{owner.urn}/#{vertical}/#{state}/#{city}/"
     else
       "/#{vertical}/#{state}/#{city}/"
@@ -28,7 +28,7 @@ class WebHomeTemplate < WebTemplate
   end
 
   def relative_path
-    if single_domain?
+    if single_domain? && !website.corporate?
       File.join(client.vertical_slug, owner.state_slug, owner.city_slug)
     else
       "/"

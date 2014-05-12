@@ -73,6 +73,7 @@ describe ClientReader do
         its([:city]) { should eq("Hollywood") }
         its([:postal_code]) { should eq("80229") }
         its([:phone_number]) { should eq("555-555-5555") }
+        its([:corporate]) { should be_false }
       end
     end
 

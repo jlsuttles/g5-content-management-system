@@ -5,4 +5,5 @@ Fabricator :location do
   state { Faker::Address.state_abbr }
   city { Faker::Address.city }
   domain { Faker::Internet.url }
+  corporate { false }
 end

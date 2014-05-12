@@ -182,6 +182,14 @@ class WebTemplate < ActiveRecord::Base
     )
   end
 
+  def base_path
+    if single_domain? && website.corporate?
+      client.website.compile_path
+    else
+      website_compile_path
+    end
+  end
+
   private
 
   def default_enabled_to_true

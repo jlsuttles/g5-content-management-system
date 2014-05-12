@@ -7,6 +7,7 @@ module ClientDeployer
     ClientDeployer::BaseCompiler.new(client).compile
     compile_location_websites
     ClientDeployer::Deployer.new(client).deploy
+    cleanup(client.website.compile_path)
   end
 
   def self.compile_location_websites
@@ -15,5 +16,9 @@ module ClientDeployer
 
   def self.compile(website)
     WebsiteCompiler.new(website).compile
+  end
+
+  def self.cleanup(cleanup)
+    ClientDeployer::CompileDirectory.new(compile_path, false).clean_up
   end
 end

@@ -69,11 +69,15 @@ class Website < ActiveRecord::Base
   end
 
   def application_min_css_path
-    if single_domain_location?
+    if single_domain_location? && !corporate?
       "/#{urn}/stylesheets/application.min.css"
     else
       stylesheets_compiler.uploaded_path
     end
+  end
+
+  def corporate?
+    owner_type == "Location" && owner.corporate?
   end
 
 private
