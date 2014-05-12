@@ -7,8 +7,10 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -19,9 +21,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Thu, 01 May 2014 02:07:05 GMT
+      - Fri, 09 May 2014 18:13:30 GMT
       Last-Modified:
-      - Tue, 29 Apr 2014 19:05:14 GMT
+      - Thu, 08 May 2014 17:19:43 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -29,96 +31,14 @@ http_interactions:
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! ".html {\n  clear: both;\n  overflow: hidden;\n}"
+      encoding: UTF-8
+      string: |-
+        .html {
+          clear: both;
+          overflow: hidden;
+        }
     http_version: 
-  recorded_at: Thu, 01 May 2014 02:07:05 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/floorplans/stylesheets/floorplans.css
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/css
-      Date:
-      - Thu, 01 May 2014 02:07:05 GMT
-      Last-Modified:
-      - Tue, 29 Apr 2014 19:05:14 GMT
-      Status:
-      - 200 OK
-      Content-Length:
-      - '4122'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: ! "/* FILTER STYLES =============================*/\n.filters:after
-        {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n.filter-btn {\n
-        \ display: inline-block;\n}\n.filter-name {\n  margin-right: .25em;\n}\n.available-filter
-        {\n  text-align: right;\n  font-size: 15px;\n  font-weight: bold;\n  padding:
-        1em 0;\n}\n.available-filter input {\n  display: inline;\n  margin-right:
-        .5em;\n  vertical-align: .1em;\n}\n@media (min-width: 768px) {\n  .filter
-        {\n    float: left;\n    margin-right: 2%;\n  }\n  .filter-name {\n    margin-right:
-        .5em;\n  }\n}\n@media (min-width: 980px) {\n  .available-filter {\n    font-size:
-        18px;\n  }\n}\n\n\n/* SELECT FLOORPLAN STYLES =========================*/\n.floorplans
-        {\n  margin-bottom: 2em;\n}\n.floorplan-btn {\n  overflow: hidden;\n  border:
-        1px solid #cbcbcb;\n  border-radius: 5px;\n  background: #f0f0f0;\n  background:
-        -webkit-linear-gradient(#fff, #f0f0f0);\n  background: -moz-linear-gradient(#fff,
-        #f0f0f0);\n  background: -ms-linear-gradient(#fff, #f0f0f0);\n  background:
-        -o-linear-gradient(#fff, #f0f0f0);\n  background: linear-gradient(#fff, #f0f0f0);\n
-        \ text-decoration: none;\n}\n.floorplans ul {\n  list-style-type: none;\n
-        \ margin: 0;\n  padding: 0;\n}\n.floorplan-box {\n  border: 1px solid #bcbcbc;\n
-        \ border-radius: 10px;\n  position: relative;\n}\n.floorplan-container {\n
-        \ padding: .625em 10px;\n}\n.floorplan-container.selected {\n  background:
-        #f0f0f0;\n  background: -webkit-linear-gradient(#fff, #f0f0f0);\n  background:
-        -moz-linear-gradient(#fff, #f0f0f0);\n  background: -ms-linear-gradient(#fff,
-        #f0f0f0);\n  background: -o-linear-gradient(#fff, #f0f0f0);\n  background:
-        linear-gradient(#fff, #f0f0f0);\n}\n.floorplans a {\n  color: #504e4e;\n}\n.floorplans
-        h2 {\n  font-size: 24px;\n}\n.floorplans h3 {\n  font-size: 20px;\n}\n.floorplan
-        {\n  position: relative;\n  border-top: 1px solid #ccc;\n  padding: .625em
-        10px;\n}\n.floorplan:after {\n  content: \"\";\n  display: table;\n  clear:both;\n}\nli.floorplan:first-child
-        {\n  border-top: none;\n}\nli.floorplan:nth-child(even) {\n  background: #efeded;\n}\n.floorplan-heading
-        {\n  overflow: hidden;\n  margin-bottom: 1em;\n}\n.floorplan-heading p {\n
-        \ float: left;\n  margin-top: 0;\n  font-size: 18px;\n  border-bottom: 1px
-        solid #504e4e;\n}\n.choose-floorplan {\n  -webkit-box-sizing: border-box;\n
-        \ -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  width: 100%;\n
-        \ padding: .5em 1em;\n  float: right;\n  font-size: 16px;\n  text-align: center;\n}\n.choose-floorplan
-        span {\n  display: block;\n}\n.choose-floorplan .soon {\n  border-top: 1px
-        solid #cbcbcb;\n  padding-top: .2em;\n  margin-top: .2em;\n}\n.selected .choose-floorplan
-        {\n  display: none;\n}\n.floorplan-info {\n  position: relative;\n  min-height:
-        50px;\n}\n.floorplan-info div {\n  min-height: 1px;\n}\n.floorplan-info p
-        {\n  font-size: 13px;\n  line-height: 1.5;\n  margin: 0;\n}\n.floorplan-img
-        {\n  float: left;\n  margin-right: 2%;\n  width: 13%;\n}\n.floorplan-img .floorplan-btn
-        {\n  padding: 2px;\n  display: block;\n}\n.floorplan-img img {\n  display:
-        block;\n  margin: 0 auto;\n}\n.floorplan .floorplan-beds,\n.floorplan .floorplan-size
-        {\n  margin-left: 17%;\n  width: 35%;\n}\n\n@media (max-width: 979px) {\n
-        \ .floorplan-rent {\n    position: absolute;\n    right: 0;\n    top: 0;\n
-        \   width: 45%;\n  }\n  .floorplan-beds p {\n    display: inline-block;\n
-        \ }\n  .floorplan-beds p:first-child:after {\n    padding-left: .5em;\n    content:
-        '/';\n  }\n}\n@media (min-width: 768px) {\n  .floorplan-heading {\n    margin-bottom:
-        0;\n  }\n  .floorplan-heading p {\n    font-size: 20px;\n  }\n  .choose-floorplan
-        {\n    width: auto;\n  }\n  .floorplan-info p {\n    font-size: 16px;\n  }\n}\n@media
-        (min-width: 980px) {\n  .floorplans h2 {\n    font-size: 36px;\n  }\n  .choose-floorplan
-        {\n    position: absolute;\n    right: 10px;\n    top: 2em;\n    z-index:
-        1;\n  }\n  .floorplan .floorplan-beds,\n  .floorplan .floorplan-size,\n  .floorplan
-        .floorplan-rent {\n    float: left;\n    margin-left: 0;\n    width: 20%;\n
-        \ }\n}\n\n#loading-floorplans {\n  margin: 200px auto;\n  text-align: center;\n
-        \ width: 200px;\n}\n\n#loading-floorplans .loader {\n  background: url(http://widgets.g5dxm.com/shared/loader.gif)
-        center no-repeat;\n  height: 32px;\n  margin: 0 auto 1em;\n  width: 32px;\n}\n\n.filters
-        .filter .disabled {\n  cursor: default;\n}"
-    http_version: 
-  recorded_at: Thu, 01 May 2014 02:07:05 GMT
+  recorded_at: Fri, 09 May 2014 18:13:30 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/floorplans/stylesheets/jquery.fancybox.css
@@ -126,8 +46,10 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -138,9 +60,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Thu, 01 May 2014 02:07:05 GMT
+      - Fri, 09 May 2014 18:13:30 GMT
       Last-Modified:
-      - Tue, 29 Apr 2014 19:05:14 GMT
+      - Thu, 08 May 2014 17:19:43 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -148,8 +70,8 @@ http_interactions:
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! "/*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license
+      encoding: UTF-8
+      string: "/*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license
         */\n.fancybox-wrap,\n.fancybox-skin,\n.fancybox-outer,\n.fancybox-inner,\n.fancybox-image,\n.fancybox-wrap
         iframe,\n.fancybox-wrap object,\n.fancybox-nav,\n.fancybox-nav span,\n.fancybox-tmp\n{\n\tpadding:
         0;\n\tmargin: 0;\n\tborder: 0;\n\toutline: none;\n\tvertical-align: top;\n}\n\n.fancybox-wrap
@@ -212,16 +134,18 @@ http_interactions:
         div {\n\t\tbackground-image: url('http://widgets.g5dxm.com/shared/fancybox_loading@2x.gif');\n\t\tbackground-size:
         24px 24px; /*The size of the normal image, half the size of the hi-res image*/\n\t}\n}"
     http_version: 
-  recorded_at: Thu, 01 May 2014 02:07:05 GMT
+  recorded_at: Fri, 09 May 2014 18:13:30 GMT
 - request:
     method: get
-    uri: http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/stylesheets/layout-side-right.css
+    uri: http://g5-widget-garden.herokuapp.com/static/components/floorplans/stylesheets/floorplans.css
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -232,7 +156,269 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Thu, 01 May 2014 02:07:06 GMT
+      - Fri, 09 May 2014 18:13:30 GMT
+      Last-Modified:
+      - Thu, 08 May 2014 17:19:43 GMT
+      Status:
+      - 200 OK
+      Content-Length:
+      - '4122'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        /* FILTER STYLES =============================*/
+        .filters:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        .filter-btn {
+          display: inline-block;
+        }
+        .filter-name {
+          margin-right: .25em;
+        }
+        .available-filter {
+          text-align: right;
+          font-size: 15px;
+          font-weight: bold;
+          padding: 1em 0;
+        }
+        .available-filter input {
+          display: inline;
+          margin-right: .5em;
+          vertical-align: .1em;
+        }
+        @media (min-width: 768px) {
+          .filter {
+            float: left;
+            margin-right: 2%;
+          }
+          .filter-name {
+            margin-right: .5em;
+          }
+        }
+        @media (min-width: 980px) {
+          .available-filter {
+            font-size: 18px;
+          }
+        }
+
+
+        /* SELECT FLOORPLAN STYLES =========================*/
+        .floorplans {
+          margin-bottom: 2em;
+        }
+        .floorplan-btn {
+          overflow: hidden;
+          border: 1px solid #cbcbcb;
+          border-radius: 5px;
+          background: #f0f0f0;
+          background: -webkit-linear-gradient(#fff, #f0f0f0);
+          background: -moz-linear-gradient(#fff, #f0f0f0);
+          background: -ms-linear-gradient(#fff, #f0f0f0);
+          background: -o-linear-gradient(#fff, #f0f0f0);
+          background: linear-gradient(#fff, #f0f0f0);
+          text-decoration: none;
+        }
+        .floorplans ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+        .floorplan-box {
+          border: 1px solid #bcbcbc;
+          border-radius: 10px;
+          position: relative;
+        }
+        .floorplan-container {
+          padding: .625em 10px;
+        }
+        .floorplan-container.selected {
+          background: #f0f0f0;
+          background: -webkit-linear-gradient(#fff, #f0f0f0);
+          background: -moz-linear-gradient(#fff, #f0f0f0);
+          background: -ms-linear-gradient(#fff, #f0f0f0);
+          background: -o-linear-gradient(#fff, #f0f0f0);
+          background: linear-gradient(#fff, #f0f0f0);
+        }
+        .floorplans a {
+          color: #504e4e;
+        }
+        .floorplans h2 {
+          font-size: 24px;
+        }
+        .floorplans h3 {
+          font-size: 20px;
+        }
+        .floorplan {
+          position: relative;
+          border-top: 1px solid #ccc;
+          padding: .625em 10px;
+        }
+        .floorplan:after {
+          content: "";
+          display: table;
+          clear:both;
+        }
+        li.floorplan:first-child {
+          border-top: none;
+        }
+        li.floorplan:nth-child(even) {
+          background: #efeded;
+        }
+        .floorplan-heading {
+          overflow: hidden;
+          margin-bottom: 1em;
+        }
+        .floorplan-heading p {
+          float: left;
+          margin-top: 0;
+          font-size: 18px;
+          border-bottom: 1px solid #504e4e;
+        }
+        .choose-floorplan {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          width: 100%;
+          padding: .5em 1em;
+          float: right;
+          font-size: 16px;
+          text-align: center;
+        }
+        .choose-floorplan span {
+          display: block;
+        }
+        .choose-floorplan .soon {
+          border-top: 1px solid #cbcbcb;
+          padding-top: .2em;
+          margin-top: .2em;
+        }
+        .selected .choose-floorplan {
+          display: none;
+        }
+        .floorplan-info {
+          position: relative;
+          min-height: 50px;
+        }
+        .floorplan-info div {
+          min-height: 1px;
+        }
+        .floorplan-info p {
+          font-size: 13px;
+          line-height: 1.5;
+          margin: 0;
+        }
+        .floorplan-img {
+          float: left;
+          margin-right: 2%;
+          width: 13%;
+        }
+        .floorplan-img .floorplan-btn {
+          padding: 2px;
+          display: block;
+        }
+        .floorplan-img img {
+          display: block;
+          margin: 0 auto;
+        }
+        .floorplan .floorplan-beds,
+        .floorplan .floorplan-size {
+          margin-left: 17%;
+          width: 35%;
+        }
+
+        @media (max-width: 979px) {
+          .floorplan-rent {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 45%;
+          }
+          .floorplan-beds p {
+            display: inline-block;
+          }
+          .floorplan-beds p:first-child:after {
+            padding-left: .5em;
+            content: '/';
+          }
+        }
+        @media (min-width: 768px) {
+          .floorplan-heading {
+            margin-bottom: 0;
+          }
+          .floorplan-heading p {
+            font-size: 20px;
+          }
+          .choose-floorplan {
+            width: auto;
+          }
+          .floorplan-info p {
+            font-size: 16px;
+          }
+        }
+        @media (min-width: 980px) {
+          .floorplans h2 {
+            font-size: 36px;
+          }
+          .choose-floorplan {
+            position: absolute;
+            right: 10px;
+            top: 2em;
+            z-index: 1;
+          }
+          .floorplan .floorplan-beds,
+          .floorplan .floorplan-size,
+          .floorplan .floorplan-rent {
+            float: left;
+            margin-left: 0;
+            width: 20%;
+          }
+        }
+
+        #loading-floorplans {
+          margin: 200px auto;
+          text-align: center;
+          width: 200px;
+        }
+
+        #loading-floorplans .loader {
+          background: url(http://widgets.g5dxm.com/shared/loader.gif) center no-repeat;
+          height: 32px;
+          margin: 0 auto 1em;
+          width: 32px;
+        }
+
+        .filters .filter .disabled {
+          cursor: default;
+        }
+    http_version: 
+  recorded_at: Fri, 09 May 2014 18:13:30 GMT
+- request:
+    method: get
+    uri: http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/stylesheets/layout-side-right.css
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/css
+      Date:
+      - Fri, 09 May 2014 18:13:30 GMT
       Last-Modified:
       - Wed, 30 Apr 2014 22:47:24 GMT
       Status:
@@ -242,15 +428,31 @@ http_interactions:
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! "@media (min-width: 980px) {\n  .wrapper:before,\n  .wrapper:after
-        {\n    display: table;\n    line-height: 0;\n    content: \"\";\n  }\n  .wrapper:after
-        {\n    clear: both;\n  }\n  .layout-side-right section[role=main] {\n    float:
-        left;\n  }\n  .layout-side-right .aside-top,\n  .layout-side-right aside[role=complementary]
-        {\n    float: right;\n  }\n  footer[role=contentinfo] {\n    clear: both;\n
-        \ }\n}\n"
+      encoding: UTF-8
+      string: |
+        @media (min-width: 980px) {
+          .wrapper:before,
+          .wrapper:after {
+            display: table;
+            line-height: 0;
+            content: "";
+          }
+          .wrapper:after {
+            clear: both;
+          }
+          .layout-side-right section[role=main] {
+            float: left;
+          }
+          .layout-side-right .aside-top,
+          .layout-side-right aside[role=complementary] {
+            float: right;
+          }
+          footer[role=contentinfo] {
+            clear: both;
+          }
+        }
     http_version: 
-  recorded_at: Thu, 01 May 2014 02:07:06 GMT
+  recorded_at: Fri, 09 May 2014 18:13:30 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/static/components/high-rise/stylesheets/high-rise.scss
@@ -258,8 +460,10 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -270,9 +474,9 @@ http_interactions:
       Content-Type:
       - text/plain
       Date:
-      - Thu, 01 May 2014 02:07:06 GMT
+      - Fri, 09 May 2014 18:13:30 GMT
       Last-Modified:
-      - Sat, 29 Mar 2014 00:17:10 GMT
+      - Thu, 08 May 2014 17:43:08 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -280,195 +484,810 @@ http_interactions:
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! "@import 'colors.scss';\n@import 'bourbon/bourbon.scss';\n\n// HELPERS
-        =======================\n@mixin font-size($value) {\n  font-size: $value +
-        px;\n  font-size: ($value / 10) + rem;\n}\n\n// VARIABLES ==================================\n$text:
-        #393939;\n$light-text: #707070;\n$text-font: 'proxima-nova', Helvetica, Arial,
-        sans-serif;\n$alt-font: 'proxima-nova-alt-condensed', Helvetica, Arial, sans-serif;\n$heading-font:
-        'arvo', Georgia, serif;\n$light-grey: #d9d9d9;\n$grey: #888;\n$dark: #393939;\n$white:
-        #fff;\n$border-width: 6px;\n\n\n// GENERAL ==================================\nhtml
-        {\n  font-size: 62.5%;\n  background: $white url('http://themes.g5dxm.com/high-rise/background.png')
-        0 0 repeat;\n}\nbody {\n  @include font-size(16);\n  border-top: $border-width
-        solid $secondaryColor;\n  color: $text;\n  font-family: 'proxima-nova', Helvetica,
-        Arial, sans-serif;\n  font-weight: 400;\n  line-height: 1.25;\n  @media (min-width:
-        960px) {\n    line-height: 1.375;\n  }\n}\nh1, h2, h3, h4, h5, h6 {\n  font-family:
-        $heading-font;\n  font-weight: 400;\n  margin-top: 0;\n}\nh1 {\n  @include
-        font-size(26);\n  line-height: 1.15384615;\n  margin-bottom: .5em;\n  @media
-        (min-width: 960px) {\n    @include font-size(32);\n    line-height: 1.25;\n
-        \ }\n  @media (min-width: 1200px) {\n    @include font-size(36);\n  }\n}\nh2
-        {\n  @include font-size(22);\n  color: $grey;\n  font-family: $text-font;\n
-        \ line-height: 1.13636364;\n  margin-bottom: .5em;\n  @media (min-width: 960px)
-        {\n    @include font-size(24);\n    line-height: 1.25;\n  }\n}\na {\n  @include
-        transition(color 0.2s ease-in);\n  color: $text;\n  text-decoration: none;\n
-        \ &:hover,\n  &:focus {\n    color: $secondaryColor;\n  }\n  [role=main] &
-        {\n    text-decoration: underline;\n  }\n}\nfieldset {\n  border: none;\n
-        \ padding: 0;\n}\n.form-field {\n  margin-bottom: 1em;\n}\ninput,\nlabel,\nlegend
-        {\n  @include font-size(18);\n}\nlabel,\nlegend {\n  font-family: $alt-font;\n
-        \ font-weight: 100;\n}\n#{$all-text-inputs},\ntextarea {\n  @include box-sizing(border-box);\n
-        \ background: $light-grey;\n  border: none;\n  font-family: $text-font;\n
-        \ padding: .3em .5em;\n  width: 100%;\n}\ninput[type=checkbox],\ninput[type=radio]
-        {\n  display: inline-block;\n  margin-right: .5em;\n  width: auto;\n}\ntextarea
-        {\n  height: 5em;\n}\n\n\n// LAYOUT ==================================\n.layout
-        {\n  @include box-sizing(border-box);\n  margin-left: auto;\n  margin-right:
-        auto;\n  max-width: 1230px;\n  width: 100%;\n}\n.wrapper {\n  background:
-        $white;\n}\n.content,\n[role=main],\n[role=aside] {\n  @include clearfix;\n
-        \ @include box-sizing(border-box);\n}\n\n\n// HEADER/FOOTER ==================================\n[role=banner]
-        {\n  @include font-size(13);\n  font-family: $heading-font;\n  position: relative;\n
-        \ a {\n    color: #fff;\n  }\n  .buttons {\n    position: absolute;\n    right:
-        0;\n    top: -$border-width;\n  }\n  .navigation {\n    background: $dark;\n
-        \   font-family: $heading-font;\n    a {\n      display: block;\n      &:hover,\n
-        \     &:focus {\n        background: #000;\n        background: rgba(0, 0,
-        0, .3);\n      }\n    }\n  }\n}\n.logo {\n  max-width: 300px;\n  &, img {\n
-        \   display: block;\n    margin: 0;\n  }\n}\n.buttons {\n  a {\n    margin-left:
-        5px;\n    vertical-align: top;\n  }\n  .widget {\n    @include font-size(15);\n
-        \   display: inline-block;\n  }\n}\n.collapsable-btn {\n  border-left-color:
-        $secondaryColor;\n  padding: 2px 6px !important;\n  .text {\n    display:
-        none;\n  }\n  .bars {\n    display: block;\n    span {\n      border-bottom:
-        1px solid $white;\n      display: block;\n      margin: 6px 0;\n      width:
-        20px;\n    }\n  }\n  &:first-child {\n    margin-top: 0;\n  }\n}\n[role=contentinfo]
-        {\n  @include clearfix;\n  @include font-size(12);\n  border-top: 4px double
-        $text;\n  padding-bottom: 2em;\n  padding-top: 1em;\n  text-transform: uppercase;\n}\n\n\n//
-        MAIN/ASIDE ==================================\n[role=main] {\n  padding-bottom:
-        2em;\n  padding-top: 2em;\n}\n.aside-top {\n  padding-top: 2em;\n}\n[role=complementary]
-        {\n  padding-bottom: 3em;\n}\n\n\n// WIDGETS ==================================\n[role=contentinfo]
-        .widget {\n  margin-bottom: 2em;\n}\n[role=main],\n[role=complementary] {\n
-        \ .widget {\n    margin-top: 2em;\n  }\n}\n\n.btn,\ninput[type=submit] {\n
-        \ background: $dark;\n  border: none;\n  border-left: $border-width solid
-        $primaryColor;\n  color: $white;\n  display: inline-block;\n  padding: .6em
-        2em;\n  text-decoration: none;\n  vertical-align: top;\n  &:hover,\n  &:focus
-        {\n    border-left-color: $secondaryColor;\n    color: $white;\n  }\n}\n.form-note
-        {\n  margin-bottom: 2em;\n}\n.form .required:after {\n  content: '*';\n  margin-left:
-        .25em;\n}\n.form-instruction {\n  @include font-size(16);\n  display: inline-block;\n
-        \ font-family: $alt-font;\n  font-weight: 100;\n  margin: .5em 0 0 25px;\n}\n.form-optional
-        {\n  color: $grey;\n  padding: 0 .5em;\n}\ninput[type=submit] {\n  @include
-        font-size(15);\n}\n[role=main] {\n  .btn {\n    text-decoration: none;\n  }\n
-        \ p, ul, ol {\n    color: $light-text;\n  }\n}\n.action-calls {\n  @include
-        font-size(18);\n  font-family: $alt-font;\n  font-weight: 100;\n  text-transform:
-        uppercase;\n  a {\n    background: $primaryColor;\n    border-left: $border-width
-        solid $secondaryColor;\n    display: block;\n    margin-bottom: .2em;\n    padding:
-        .2em 1em .3em 2em;\n    position: relative;\n    &:hover,\n    &:focus {\n
-        \     color: $white;\n    }\n    &:after {\n      content: '>';\n      position:
-        absolute;\n      right: 1em;\n    }\n  }\n}\n.coupon {\n  @include clearfix;\n
-        \ h2 {\n    @include font-size(18);\n    border-bottom-color: $secondaryColor;\n
-        \   color: $secondaryColor;\n    margin-bottom: 2em;\n    padding-bottom:
-        .5em;\n    text-align: center;\n  }\n  .coupon-logo {\n    display: block;\n
-        \   max-width: 60%;\n    margin: 1em auto 2em;\n  }\n  .p-name {\n    @include
-        font-size(14);\n  }\n  .p-street-address,\n  .p-tel {\n    display: block;\n
-        \ }\n  .btn {\n    @include box-sizing(border-box);\n    @include font-size(14);\n
-        \   margin: 0;\n    padding: .4em;\n    text-align: center;\n    text-decoration:
-        none;\n  }\n  .coupon-print {\n    margin-bottom: 1%;\n    width: 100%;\n
-        \ }\n  .coupon-email,\n  .coupon-text {\n    width: 49.5%;\n  }\n  .coupon-email
-        {\n    margin-right: 1%;\n  }\n}\n[role=complementary] .photo img {\n  display:
-        block;\n}\n\n@media (min-width: 768px) and (max-width: 980px) {\n  .coupon-info,\n
-        \ .coupon-map {\n    @include box-sizing(border-box);\n    float: left;\n
-        \   width: 50%;\n  }\n}\n@media (min-width: 1200px) {\n  [role=main] {\n    .coupon
-        {\n      @include clearfix;\n      .coupon-info {\n        padding-right:
-        1%;\n      }\n      .coupon-map {\n        padding-left: 1%;\n      }\n      .btn
-        {\n        @include font-size(16);\n      }\n    }\n    .coupon-info,\n    .coupon-map
-        {\n      @include box-sizing(border-box);\n      float: left;\n      width:
-        50%;\n    }\n  }\n}\n\n.social-links {\n  a {\n    background: url('http://widgets.g5dxm.com/social-links/social-icons.png')
-        no-repeat;\n    background-size: 100%;\n    height: 33px;\n    overflow: hidden;\n
-        \   text-indent: -999em;\n    width: 32px;\n    vertical-align: middle;\n
-        \   &:last-child {\n      margin-right: 0;\n    }\n  }\n  .twitter {\n    background-position:
-        0 0;\n  }\n  .tumblr {\n    background-position: 0 -44px;\n  }\n  .facebook
-        {\n    background-position: 0 -88px;\n  }\n  .instagram {\n    background-position:
-        0 -131px;\n  }\n  .vimeo {\n    background-position: 0 -174px;\n  }\n  .yelp
-        {\n    background-position: 0 -218px;\n  }\n  .foursquare {\n    background-position:
-        0 -261px;\n  }\n  .pinterest {\n    background-position: 0 -305px;\n  }\n
-        \ .youtube {\n    background-position: 0 -349px;\n  }\n}\n\n.blog-feed a {\n
-        \ display: block;\n}\n.twitter-feed {\n  .tweet-text a,\n  .tweet-name,\n
-        \ .tweet-date,\n  .follow {\n    text-decoration: none;\n  }\n  li {\n    background:
-        #393939;\n  }\n  .tweet-date {\n    color: #707070;\n  }\n  .tweet-date,\n
-        \ .tweet-name {\n    @include font-size(12);\n  }\n  .tweet-date,\n  .tweet-text
-        p {\n    color: #b5b5b5;\n  }\n  .tweet-name {\n    color: $white;\n    display:
-        block;\n  }\n  .tweet-text {\n    display: block;\n    margin-top: .25em;\n
-        \ }\n  .follow {\n    @include font-size(14);\n    background: $secondaryColor;\n
-        \   color: $white;\n    font-family: $heading-font;\n    margin-top: 1em;\n
-        \   padding: .5em 1em;\n  }\n}\n.tweet-list a {\n  color: $secondaryColor;\n}\n[role=complementary]
-        {\n  .twitter-feed {\n    .tweet-text {\n      @include font-size(12);\n    }\n
-        \ }\n}\n\n.floorplans {\n  h3 {\n    font-family: $text-font;\n  }\n  label
-        {\n    @include font-size(12);\n    font-family: inherit;\n  }\n  .filter
-        {\n    @include linear-gradient(#fff, #f0f0f0);\n    border: 1px solid #cbcbcb;\n
-        \   border-radius: 5px;\n    margin-bottom: .5em;\n    padding: .75em .5em;\n
-        \   input {\n      display: none;\n    }\n  }\n  .filter-btn {\n    @include
-        font-size(15);\n    @include linear-gradient(white, #f0f0f0);\n    border:
-        1px solid #cbcbcb;\n    border-radius: 5px;\n    cursor: pointer;\n    font-weight:
-        700;\n    padding: .3125em .5em;\n  }\n  .disabled {\n    color: #cbcbcb;\n
-        \ }\n  input:checked + .filter-btn {\n    border-color: $text;\n  }\n  .filter-name
-        {\n    @include font-size(15);\n    color: $secondaryColor;\n  }\n  .floorplan-heading
-        strong {\n    @include font-size(16);\n    font-weight: 400;\n  }\n  .choose-floorplan
-        {\n    text-decoration: none;\n    strong {\n      color: $secondaryColor;\n
-        \   }\n  }\n}\n.floorplan-container {\n  background: $white;\n}\n\n@media
-        (min-width: 768px) {\n  .floorplans {\n    .filter {\n      padding: .75em
-        1em;\n    }\n    .filter-name {\n      @include font-size(22);\n    }\n    .filter-btn
-        {\n      @include font-size(15);\n    }\n  }\n}\n\n[role=complementary] {\n
-        \ .social-links {\n    background: $white;\n    padding: 1em 20px;\n    text-align:
-        center;\n  }\n  .contact-info {\n    font-family: $alt-font;\n    line-height:
-        1.2;\n    .p-name {\n      @include font-size(18px);\n      border-bottom:
-        1px dotted $text;\n      padding-bottom: .4em;\n    }\n    .adr,\n    .tel,\n
-        \   .email {\n      @include font-size(18);\n      background: url('http://widgets.g5dxm.com/contact-info/contact-icons.png')
-        no-repeat;\n      min-height: 35px;\n      padding-left: 40px;\n      text-transform:
-        uppercase;\n    }\n    .tel {\n      background-position: 0 0;\n    }\n    .adr
-        {\n      background-position: 0 -65px;\n    }\n    .email {\n      background-position:
-        0 -150px;\n    }\n  }\n}\n[role=contentinfo] {\n  .hours,\n  .contact-info
-        {\n    float: left;\n    margin-right: 2em;\n  }\n  .contact-info h4 {\n    font-family:
-        $text-font;\n    font-size: inherit;\n    margin: 0;\n  }\n  .navigation {\n
-        \   li {\n      display: inline-block;\n      &:before {\n        content:
-        '| ';\n      }\n      &:first-child:before {\n        content: '';\n      }\n
-        \   }\n    a {\n      display: inline-block;\n    }\n  }\n  .hours p,\n  .contact-info
-        p {\n    margin-bottom: 0;\n  }\n}\n\n\n\n// SMALLER THAN DESKTOP =====================\n@media
-        (max-width: 979px) {\n  [role=banner],\n  [role=main],\n  .aside-top,\n  [role=complementary],\n
-        \ [role=contentinfo] {\n    padding-left: 3%;\n    padding-right: 3%;\n  }\n
-        \ [role=banner] {\n    h1 {\n      @include font-size(30);\n    }\n    .logo
-        {\n      width: 65%;\n    }\n    .buttons .button .btn {\n      height: 21px;\n
-        \     padding: 5px 1em;\n    }\n    .navigation {\n      @include font-size(16);\n
-        \     a {\n        display: block;\n        padding: .5em .5em .5em 2em;\n
-        \     }\n      li {\n        box-shadow: 0 -1px 0 #212121;\n        border-left:
-        $border-width solid $secondaryColor;\n      }\n    }\n  }\n  [role=main] .action-calls
-        li {\n    margin-bottom: .5em;\n  }\n  footer[role=contentinfo] .navigation
-        {\n    text-align: center;\n  }\n}\n\n\n// IPAD AND LARGER ========================\n@media
-        (min-width: 768px) {\n  h2 {\n    margin-bottom: 1em;\n  }\n  input[type=checkbox],\n
-        \ input[type=radio] {\n    width: auto;\n  }\n  [role=banner] {\n    @include
-        font-size(15);\n    padding-top: 1.5em;\n  }\n  .page-home [role=main] .photo
-        {\n    margin-right: -1px;\n  }\n  .blog-feed,\n  .twitter-feed {\n    @include
-        box-sizing(border-box);\n    width: 100%;\n  }\n  [role=contentinfo] .navigation
-        {\n    float: right;\n    text-align: right;\n    margin-bottom: 0;\n  }\n}\n\n\n//
-        SMALL DESKTOP AND LARGER =====================\n@media (min-width: 980px)
-        {\n  .layout {\n    padding-left: 2.5%;\n    padding-right: 2.5%;\n  }\n  [role=main]
-        {\n    padding-left: 5.1282051%; // 60/1170px\n    padding-right: 5.1282051%;\n
-        \ }\n  [role=banner] {\n    margin-bottom: 1em;\n    h1 {\n      float: left;\n
-        \     margin-bottom: .5em;\n    }\n    .navigation {\n      border-collapse:
-        collapse;\n      border-left: none;\n      clear: both;\n      display: table;\n
-        \     text-align: center;\n      width: 100%;\n      ul {\n        display:
-        table-row;\n      }\n      li {\n        box-shadow: -1px 0 0 #212121;\n        border-left:
-        1px solid #434343;\n        display: table-cell;\n        &:first-child {\n
-        \         box-shadow: none;\n          border-left: none;\n        }\n      }\n
-        \     a {\n        padding: 1.25em 0 .783em;\n        border-bottom: .467em
-        solid $dark;\n        &:hover,\n        &:focus,\n        &.active {\n          border-bottom-color:
-        $secondaryColor;\n        }\n      }\n    }\n  }\n  .wrapper {\n    border-bottom:
-        $border-width solid $secondaryColor;\n    margin-bottom: 2em;\n    overflow:
-        hidden;\n  }\n  .aside-top {\n    @include box-sizing(border-box);\n    padding-top:
-        0;\n  }\n  // this is a trick to create equal height columns. the parent needs
-        overflow: hidden\n  [role=main],\n  [role=complementary] {\n    @include box-sizing(border-box);\n
-        \   margin-bottom: -2000px;\n    padding-bottom: 2000px;\n    .widget:last-child
-        {\n      margin-bottom: 2em;\n    }\n  }\n  [role=main] {\n    border-right:
-        1px solid $light-grey;\n    width: 68.376068%; // 800/1170px\n  }\n  .aside-top,\n
-        \ [role=complementary] {\n    width: 31.623932%; // 370/1170px\n    .widget
-        {\n      padding-left: 5.4054054%; // 20/370px\n      padding-right: 5.4054054%;\n
-        \   }\n    .action-calls {\n      padding-left: 0;\n      padding-right: 0;\n
-        \   }\n    .photo img {\n      width: 100%;\n    }\n  }\n  .buttons {\n    float:
-        right;\n  }\n  .action-calls {\n    @include font-size(24);\n    a {\n      padding:
-        .5em 1em;\n    }\n  }\n  .floorplans {\n    .floorplan-beds {\n      width:
-        15%;\n    }\n    .floorplan-rent {\n      width: 25%;\n    }\n  }\n  .page-home
-        {\n    [role=main] {\n      padding-left: 0;\n      padding-right: 0;\n      padding-top:
-        0;\n      .html {\n        margin: 1em 5.1282051%;\n      }\n    }\n  }\n}\n\n\n//
-        DESKTOP =====================\n@media (min-width: 1200px) {\n  [role=complementary]
-        .social-links {\n    text-align: left;\n    &:before {\n      @include font-size(32);\n
-        \     content: 'GET SOCIAL ///';\n      font-family: $alt-font;\n      font-weight:
-        100;\n      vertical-align: middle;\n    }\n  }\n}\n"
+      encoding: UTF-8
+      string: |
+        @import 'colors.scss';
+        @import 'bourbon/bourbon.scss';
+
+        // HELPERS =======================
+        @mixin font-size($value) {
+          font-size: $value + px;
+          font-size: ($value / 10) + rem;
+        }
+
+        // VARIABLES ==================================
+        $text: #393939;
+        $light-text: #707070;
+        $text-font: 'proxima-nova', Helvetica, Arial, sans-serif;
+        $alt-font: 'proxima-nova-alt-condensed', Helvetica, Arial, sans-serif;
+        $heading-font: 'arvo', Georgia, serif;
+        $light-grey: #d9d9d9;
+        $grey: #888;
+        $dark: #393939;
+        $white: #fff;
+        $border-width: 6px;
+
+
+        // GENERAL ==================================
+        html {
+          font-size: 62.5%;
+          background: $white url('http://themes.g5dxm.com/high-rise/background.png') 0 0 repeat;
+        }
+        body {
+          @include font-size(16);
+          border-top: $border-width solid $secondaryColor;
+          color: $text;
+          font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
+          font-weight: 400;
+          line-height: 1.25;
+          @media (min-width: 960px) {
+            line-height: 1.375;
+          }
+        }
+        h1, h2, h3, h4, h5, h6 {
+          font-family: $heading-font;
+          font-weight: 400;
+          margin-top: 0;
+        }
+        h1 {
+          @include font-size(26);
+          line-height: 1.15384615;
+          margin-bottom: .5em;
+          @media (min-width: 960px) {
+            @include font-size(32);
+            line-height: 1.25;
+          }
+          @media (min-width: 1200px) {
+            @include font-size(36);
+          }
+        }
+        h2 {
+          @include font-size(22);
+          color: $grey;
+          font-family: $text-font;
+          line-height: 1.13636364;
+          margin-bottom: .5em;
+          @media (min-width: 960px) {
+            @include font-size(24);
+            line-height: 1.25;
+          }
+        }
+        a {
+          @include transition(color 0.2s ease-in);
+          color: $text;
+          text-decoration: none;
+          &:hover,
+          &:focus {
+            color: $secondaryColor;
+          }
+          [role=main] & {
+            text-decoration: underline;
+          }
+        }
+        fieldset {
+          border: none;
+          padding: 0;
+        }
+        .form-field {
+          margin-bottom: 1em;
+        }
+        input,
+        label,
+        legend {
+          @include font-size(18);
+        }
+        label,
+        legend {
+          font-family: $alt-font;
+          font-weight: 100;
+        }
+        #{$all-text-inputs},
+        textarea {
+          @include box-sizing(border-box);
+          background: $light-grey;
+          border: none;
+          font-family: $text-font;
+          padding: .3em .5em;
+          width: 100%;
+        }
+        input[type=checkbox],
+        input[type=radio] {
+          display: inline-block;
+          margin-right: .5em;
+          width: auto;
+        }
+        textarea {
+          height: 5em;
+        }
+
+
+        // LAYOUT ==================================
+        .layout {
+          @include box-sizing(border-box);
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 1230px;
+          width: 100%;
+        }
+        .wrapper {
+          background: $white;
+        }
+        .content,
+        [role=main],
+        [role=aside] {
+          @include clearfix;
+          @include box-sizing(border-box);
+        }
+
+
+        // HEADER/FOOTER ==================================
+        [role=banner] {
+          @include font-size(13);
+          font-family: $heading-font;
+          position: relative;
+          a {
+            color: #fff;
+          }
+          .buttons {
+            position: absolute;
+            right: 0;
+            top: -$border-width;
+          }
+          .navigation {
+            background: $dark;
+            font-family: $heading-font;
+            a {
+              display: block;
+              &:hover,
+              &:focus {
+                background: #000;
+                background: rgba(0, 0, 0, .3);
+              }
+            }
+          }
+        }
+        .logo {
+          max-width: 300px;
+          &, img {
+            display: block;
+            margin: 0;
+          }
+        }
+        .buttons {
+          a {
+            margin-left: 5px;
+            vertical-align: top;
+          }
+          .widget {
+            @include font-size(15);
+            display: inline-block;
+          }
+        }
+        .collapsable-btn {
+          border-left-color: $secondaryColor;
+          padding: 2px 6px !important;
+          .text {
+            display: none;
+          }
+          .bars {
+            display: block;
+            span {
+              border-bottom: 1px solid $white;
+              display: block;
+              margin: 6px 0;
+              width: 20px;
+            }
+          }
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+        [role=contentinfo] {
+          @include clearfix;
+          @include font-size(12);
+          border-top: 4px double $text;
+          padding-bottom: 2em;
+          padding-top: 1em;
+          text-transform: uppercase;
+        }
+
+
+        // MAIN/ASIDE ==================================
+        [role=main] {
+          padding-bottom: 2em;
+          padding-top: 2em;
+        }
+        .aside-top {
+          padding-top: 2em;
+        }
+        [role=complementary] {
+          padding-bottom: 3em;
+        }
+
+
+        // WIDGETS ==================================
+        [role=contentinfo] .widget {
+          margin-bottom: 2em;
+        }
+        [role=main],
+        [role=complementary] {
+          .widget {
+            margin-top: 2em;
+          }
+        }
+
+        .btn,
+        input[type=submit] {
+          background: $dark;
+          border: none;
+          border-left: $border-width solid $primaryColor;
+          color: $white;
+          display: inline-block;
+          padding: .6em 2em;
+          text-decoration: none;
+          vertical-align: top;
+          &:hover,
+          &:focus {
+            border-left-color: $secondaryColor;
+            color: $white;
+          }
+        }
+        .form-note {
+          margin-bottom: 2em;
+        }
+        .form .required:after {
+          content: '*';
+          margin-left: .25em;
+        }
+        .form-instruction {
+          @include font-size(16);
+          display: inline-block;
+          font-family: $alt-font;
+          font-weight: 100;
+          margin: .5em 0 0 25px;
+        }
+        .form-optional {
+          color: $grey;
+          padding: 0 .5em;
+        }
+        input[type=submit] {
+          @include font-size(15);
+        }
+        [role=main] {
+          .btn {
+            text-decoration: none;
+          }
+          p, ul, ol {
+            color: $light-text;
+          }
+        }
+        .action-calls {
+          @include font-size(18);
+          font-family: $alt-font;
+          font-weight: 100;
+          text-transform: uppercase;
+          a {
+            background: $primaryColor;
+            border-left: $border-width solid $secondaryColor;
+            display: block;
+            margin-bottom: .2em;
+            padding: .2em 1em .3em 2em;
+            position: relative;
+            &:hover,
+            &:focus {
+              color: $white;
+            }
+            &:after {
+              content: '>';
+              position: absolute;
+              right: 1em;
+            }
+          }
+        }
+        .coupon {
+          @include clearfix;
+          h2 {
+            @include font-size(18);
+            border-bottom-color: $secondaryColor;
+            color: $secondaryColor;
+            margin-bottom: 2em;
+            padding-bottom: .5em;
+            text-align: center;
+          }
+          .coupon-logo {
+            display: block;
+            max-width: 60%;
+            margin: 1em auto 2em;
+          }
+          .p-name {
+            @include font-size(14);
+          }
+          .p-street-address,
+          .p-tel {
+            display: block;
+          }
+          .btn {
+            @include box-sizing(border-box);
+            @include font-size(14);
+            margin: 0;
+            padding: .4em;
+            text-align: center;
+            text-decoration: none;
+          }
+          .coupon-print {
+            margin-bottom: 1%;
+            width: 100%;
+          }
+          .coupon-email,
+          .coupon-text {
+            width: 49.5%;
+          }
+          .coupon-email {
+            margin-right: 1%;
+          }
+        }
+        [role=complementary] .photo img {
+          display: block;
+        }
+
+        @media (min-width: 768px) and (max-width: 980px) {
+          .coupon-info,
+          .coupon-map {
+            @include box-sizing(border-box);
+            float: left;
+            width: 50%;
+          }
+        }
+        @media (min-width: 1200px) {
+          [role=main] {
+            .coupon {
+              @include clearfix;
+              .coupon-info {
+                padding-right: 1%;
+              }
+              .coupon-map {
+                padding-left: 1%;
+              }
+              .btn {
+                @include font-size(16);
+              }
+            }
+            .coupon-info,
+            .coupon-map {
+              @include box-sizing(border-box);
+              float: left;
+              width: 50%;
+            }
+          }
+        }
+
+        .social-links {
+          a {
+            background: url('http://widgets.g5dxm.com/social-links/social-icons.png') no-repeat;
+            background-size: 100%;
+            height: 33px;
+            overflow: hidden;
+            text-indent: -999em;
+            width: 32px;
+            vertical-align: middle;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+          .twitter {
+            background-position: 0 0;
+          }
+          .tumblr {
+            background-position: 0 -44px;
+          }
+          .facebook {
+            background-position: 0 -88px;
+          }
+          .instagram {
+            background-position: 0 -131px;
+          }
+          .vimeo {
+            background-position: 0 -174px;
+          }
+          .yelp {
+            background-position: 0 -218px;
+          }
+          .foursquare {
+            background-position: 0 -261px;
+          }
+          .pinterest {
+            background-position: 0 -305px;
+          }
+          .youtube {
+            background-position: 0 -349px;
+          }
+        }
+
+        .blog-feed a {
+          display: block;
+        }
+        .twitter-feed {
+          .tweet-text a,
+          .tweet-name,
+          .tweet-date,
+          .follow {
+            text-decoration: none;
+          }
+          li {
+            background: #393939;
+          }
+          .tweet-date {
+            color: #707070;
+          }
+          .tweet-date,
+          .tweet-name {
+            @include font-size(12);
+          }
+          .tweet-date,
+          .tweet-text p {
+            color: #b5b5b5;
+          }
+          .tweet-name {
+            color: $white;
+            display: block;
+          }
+          .tweet-text {
+            display: block;
+            margin-top: .25em;
+          }
+          .follow {
+            @include font-size(14);
+            background: $secondaryColor;
+            color: $white;
+            font-family: $heading-font;
+            margin-top: 1em;
+            padding: .5em 1em;
+          }
+        }
+        .tweet-list a {
+          color: $secondaryColor;
+        }
+        [role=complementary] {
+          .twitter-feed {
+            .tweet-text {
+              @include font-size(12);
+            }
+          }
+        }
+
+        .floorplans {
+          h3 {
+            font-family: $text-font;
+          }
+          label {
+            @include font-size(12);
+            font-family: inherit;
+          }
+          .filter {
+            @include linear-gradient(#fff, #f0f0f0);
+            border: 1px solid #cbcbcb;
+            border-radius: 5px;
+            margin-bottom: .5em;
+            padding: .75em .5em;
+            input {
+              display: none;
+            }
+          }
+          .filter-btn {
+            @include font-size(15);
+            @include linear-gradient(white, #f0f0f0);
+            border: 1px solid #cbcbcb;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 700;
+            padding: .3125em .5em;
+          }
+          .disabled {
+            color: #cbcbcb;
+          }
+          input:checked + .filter-btn {
+            border-color: $text;
+          }
+          .filter-name {
+            @include font-size(15);
+            color: $secondaryColor;
+          }
+          .floorplan-heading strong {
+            @include font-size(16);
+            font-weight: 400;
+          }
+          .choose-floorplan {
+            text-decoration: none;
+            strong {
+              color: $secondaryColor;
+            }
+          }
+        }
+        .floorplan-container {
+          background: $white;
+        }
+
+        @media (min-width: 768px) {
+          .floorplans {
+            .filter {
+              padding: .75em 1em;
+            }
+            .filter-name {
+              @include font-size(22);
+            }
+            .filter-btn {
+              @include font-size(15);
+            }
+          }
+        }
+
+        [role=complementary] {
+          .social-links {
+            background: $white;
+            padding: 1em 20px;
+            text-align: center;
+          }
+          .contact-info {
+            font-family: $alt-font;
+            line-height: 1.2;
+            .p-name {
+              @include font-size(18px);
+              border-bottom: 1px dotted $text;
+              padding-bottom: .4em;
+            }
+            .adr,
+            .tel,
+            .email {
+              @include font-size(18);
+              background: url('http://widgets.g5dxm.com/contact-info/contact-icons.png') no-repeat;
+              min-height: 35px;
+              padding-left: 40px;
+              text-transform: uppercase;
+            }
+            .tel {
+              background-position: 0 0;
+            }
+            .adr {
+              background-position: 0 -65px;
+            }
+            .email {
+              background-position: 0 -150px;
+            }
+          }
+        }
+        [role=contentinfo] {
+          .hours,
+          .contact-info {
+            float: left;
+            margin-right: 2em;
+          }
+          .contact-info h4 {
+            font-family: $text-font;
+            font-size: inherit;
+            margin: 0;
+          }
+          .navigation {
+            li {
+              display: inline-block;
+              &:before {
+                content: '| ';
+              }
+              &:first-child:before {
+                content: '';
+              }
+            }
+            a {
+              display: inline-block;
+            }
+          }
+          .hours p,
+          .contact-info p {
+            margin-bottom: 0;
+          }
+        }
+
+
+
+        // SMALLER THAN DESKTOP =====================
+        @media (max-width: 979px) {
+          [role=banner],
+          [role=main],
+          .aside-top,
+          [role=complementary],
+          [role=contentinfo] {
+            padding-left: 3%;
+            padding-right: 3%;
+          }
+          [role=banner] {
+            h1 {
+              @include font-size(30);
+            }
+            .logo {
+              width: 65%;
+            }
+            .buttons .button .btn {
+              height: 21px;
+              padding: 5px 1em;
+            }
+            .navigation {
+              @include font-size(16);
+              a {
+                display: block;
+                padding: .5em .5em .5em 2em;
+              }
+              li {
+                box-shadow: 0 -1px 0 #212121;
+                border-left: $border-width solid $secondaryColor;
+              }
+            }
+          }
+          [role=main] .action-calls li {
+            margin-bottom: .5em;
+          }
+          footer[role=contentinfo] .navigation {
+            text-align: center;
+          }
+        }
+
+
+        // IPAD AND LARGER ========================
+        @media (min-width: 768px) {
+          h2 {
+            margin-bottom: 1em;
+          }
+          input[type=checkbox],
+          input[type=radio] {
+            width: auto;
+          }
+          [role=banner] {
+            @include font-size(15);
+            padding-top: 1.5em;
+          }
+          .page-home [role=main] .photo {
+            margin-right: -1px;
+          }
+          .blog-feed,
+          .twitter-feed {
+            @include box-sizing(border-box);
+            width: 100%;
+          }
+          [role=contentinfo] .navigation {
+            float: right;
+            text-align: right;
+            margin-bottom: 0;
+          }
+        }
+
+
+        // SMALL DESKTOP AND LARGER =====================
+        @media (min-width: 980px) {
+          .layout {
+            padding-left: 2.5%;
+            padding-right: 2.5%;
+          }
+          [role=main] {
+            padding-left: 5.1282051%; // 60/1170px
+            padding-right: 5.1282051%;
+          }
+          [role=banner] {
+            margin-bottom: 1em;
+            h1 {
+              float: left;
+              margin-bottom: .5em;
+            }
+            .navigation {
+              border-collapse: collapse;
+              border-left: none;
+              clear: both;
+              display: table;
+              text-align: center;
+              width: 100%;
+              ul {
+                display: table-row;
+              }
+              li {
+                box-shadow: -1px 0 0 #212121;
+                border-left: 1px solid #434343;
+                display: table-cell;
+                &:first-child {
+                  box-shadow: none;
+                  border-left: none;
+                }
+              }
+              a {
+                padding: 1.25em 0 .783em;
+                border-bottom: .467em solid $dark;
+                &:hover,
+                &:focus,
+                &.active {
+                  border-bottom-color: $secondaryColor;
+                }
+              }
+            }
+          }
+          .wrapper {
+            border-bottom: $border-width solid $secondaryColor;
+            margin-bottom: 2em;
+            overflow: hidden;
+          }
+          .aside-top {
+            @include box-sizing(border-box);
+            padding-top: 0;
+          }
+          // this is a trick to create equal height columns. the parent needs overflow: hidden
+          [role=main],
+          [role=complementary] {
+            @include box-sizing(border-box);
+            margin-bottom: -2000px;
+            padding-bottom: 2000px;
+            .widget:last-child {
+              margin-bottom: 2em;
+            }
+          }
+          [role=main] {
+            border-right: 1px solid $light-grey;
+            width: 68.376068%; // 800/1170px
+          }
+          .aside-top,
+          [role=complementary] {
+            width: 31.623932%; // 370/1170px
+            .widget {
+              padding-left: 5.4054054%; // 20/370px
+              padding-right: 5.4054054%;
+            }
+            .action-calls {
+              padding-left: 0;
+              padding-right: 0;
+            }
+            .photo img {
+              width: 100%;
+            }
+          }
+          .buttons {
+            float: right;
+          }
+          .action-calls {
+            @include font-size(24);
+            a {
+              padding: .5em 1em;
+            }
+          }
+          .floorplans {
+            .floorplan-beds {
+              width: 15%;
+            }
+            .floorplan-rent {
+              width: 25%;
+            }
+          }
+          .page-home {
+            [role=main] {
+              padding-left: 0;
+              padding-right: 0;
+              padding-top: 0;
+              .html {
+                margin: 1em 5.1282051%;
+              }
+            }
+          }
+        }
+
+
+        // DESKTOP =====================
+        @media (min-width: 1200px) {
+          [role=complementary] .social-links {
+            text-align: left;
+            &:before {
+              @include font-size(32);
+              content: 'GET SOCIAL ///';
+              font-family: $alt-font;
+              font-weight: 100;
+              vertical-align: middle;
+            }
+          }
+        }
     http_version: 
-  recorded_at: Thu, 01 May 2014 02:07:06 GMT
+  recorded_at: Fri, 09 May 2014 18:13:30 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/button/stylesheets/button.css
@@ -476,8 +1295,10 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -488,9 +1309,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Thu, 01 May 2014 02:07:08 GMT
+      - Fri, 09 May 2014 18:13:31 GMT
       Last-Modified:
-      - Tue, 29 Apr 2014 19:05:14 GMT
+      - Thu, 08 May 2014 17:19:43 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -498,16 +1319,41 @@ http_interactions:
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! ".button .btn-img,\n.button a {\n  display: block;\n}\n\n.button-list
-        {\n  overflow: hidden;\n}\n.button-list .btn-img {\n  float: left;\n  margin-right:
-        1em;\n}\n.button-grid {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing:
-        border-box;\n  box-sizing: border-box;\n  text-align: center;\n}\n@media (min-width:
-        500px) {\n  .button-grid {\n    float: left;\n    padding: 0 1em;\n    width:
-        50%;\n  }\n  .button-grid:nth-of-type(2n+1) {\n    clear: left;\n  }\n}\n.button-grid
-        .btn-img {\n  margin: 0 auto 1em;\n}\n"
+      encoding: UTF-8
+      string: |
+        .button .btn-img,
+        .button a {
+          display: block;
+        }
+
+        .button-list {
+          overflow: hidden;
+        }
+        .button-list .btn-img {
+          float: left;
+          margin-right: 1em;
+        }
+        .button-grid {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          text-align: center;
+        }
+        @media (min-width: 500px) {
+          .button-grid {
+            float: left;
+            padding: 0 1em;
+            width: 50%;
+          }
+          .button-grid:nth-of-type(2n+1) {
+            clear: left;
+          }
+        }
+        .button-grid .btn-img {
+          margin: 0 auto 1em;
+        }
     http_version: 
-  recorded_at: Thu, 01 May 2014 02:07:07 GMT
+  recorded_at: Fri, 09 May 2014 18:13:31 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/stylesheets/contact-info.css
@@ -515,8 +1361,10 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -527,9 +1375,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Thu, 01 May 2014 02:07:08 GMT
+      - Fri, 09 May 2014 18:13:31 GMT
       Last-Modified:
-      - Tue, 29 Apr 2014 19:05:14 GMT
+      - Thu, 08 May 2014 17:19:43 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -537,12 +1385,21 @@ http_interactions:
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! ".contact-info .p-organization-name,\n.contact-info .h-adr,\n.contact-info
-        .p-street-address,\n.contact-info .p-tel,\n.contact-info .p-url,\n {\n  display:
-        block;\n}\n.contact-info p {\n  margin-top: 0;\n}"
+      encoding: UTF-8
+      string: |-
+        .contact-info .p-organization-name,
+        .contact-info .h-adr,
+        .contact-info .p-street-address,
+        .contact-info .p-tel,
+        .contact-info .p-url,
+         {
+          display: block;
+        }
+        .contact-info p {
+          margin-top: 0;
+        }
     http_version: 
-  recorded_at: Thu, 01 May 2014 02:07:08 GMT
+  recorded_at: Fri, 09 May 2014 18:13:31 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/hours/stylesheets/hours.css
@@ -550,8 +1407,10 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -562,9 +1421,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Thu, 01 May 2014 02:07:08 GMT
+      - Fri, 09 May 2014 18:13:31 GMT
       Last-Modified:
-      - Tue, 29 Apr 2014 19:05:14 GMT
+      - Thu, 08 May 2014 17:19:43 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -572,10 +1431,13 @@ http_interactions:
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! ".hours p {\n  margin-top: 0;\n}\n"
+      encoding: UTF-8
+      string: |
+        .hours p {
+          margin-top: 0;
+        }
     http_version: 
-  recorded_at: Thu, 01 May 2014 02:07:08 GMT
+  recorded_at: Fri, 09 May 2014 18:13:31 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/footer-info/stylesheets/footer-info.css
@@ -583,8 +1445,10 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - "*/*"
       User-Agent:
       - Ruby
   response:
@@ -595,9 +1459,9 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Thu, 01 May 2014 02:07:08 GMT
+      - Fri, 09 May 2014 18:13:31 GMT
       Last-Modified:
-      - Tue, 29 Apr 2014 19:05:14 GMT
+      - Thu, 08 May 2014 17:19:43 GMT
       Status:
       - 200 OK
       Content-Length:
@@ -605,8 +1469,8 @@ http_interactions:
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! ".footer-info {\n  float: right;\n  text-align: right;\n}\n.footer-info
+      encoding: UTF-8
+      string: ".footer-info {\n  float: right;\n  text-align: right;\n}\n.footer-info
         .copyright {\n  margin-top: 0;\n}\n.footer-info .access {\n  display: inline-block;\n
         \ margin-left: 10px;\n  vertical-align: top;\n}\n\n.footer-info .access {\n
         \ background: url(http://themes.g5dxm.com/shared/access-icons.png) 0 0 no-repeat;\n
@@ -615,5 +1479,5 @@ http_interactions:
         {\n  background-position: -43px 0;\n  height: 23px;\n  width: 20px;\n}\n\n.footer-info
         .corporate-logo {\n  display: inline-block;\n  max-width: 200px;\n}"
     http_version: 
-  recorded_at: Thu, 01 May 2014 02:07:08 GMT
-recorded_with: VCR 2.6.0
+  recorded_at: Fri, 09 May 2014 18:13:31 GMT
+recorded_with: VCR 2.9.0
