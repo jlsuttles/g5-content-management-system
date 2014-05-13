@@ -17,15 +17,17 @@ class WebHomeTemplate < WebTemplate
 
   def htaccess_substitution
     if single_domain?
-      "/#{owner.urn}/#{relative_path}"
+      website.single_domain_location_path
     else
       relative_path
     end
   end
 
   def relative_path
+    return "/"
+
     if single_domain? && !website.corporate?
-      File.join(client.vertical_slug, owner.state_slug, owner.city_slug)
+      website.single_domain_location_base_path
     else
       "/"
     end

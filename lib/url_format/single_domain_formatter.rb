@@ -14,7 +14,7 @@ class URLFormat::SingleDomainFormatter < URLFormat::Formatter
   private
 
   def base_url
-    "/#{@web_template.website.urn}#{seo_optimized_path}"
+    "#{seo_optimized_path}/#{@web_template.website.urn}"
   end
 
   def corporate?

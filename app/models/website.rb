@@ -37,7 +37,7 @@ class Website < ActiveRecord::Base
   def compile_path
     if single_domain_location?
       return File.join(COMPILE_PATH, client.website.urn) if corporate?
-      File.join(COMPILE_PATH, client.website.urn, urn)
+      File.join(COMPILE_PATH, client.website.urn, single_domain_location_path)
     else
       File.join(COMPILE_PATH, urn)
     end
@@ -71,10 +71,18 @@ class Website < ActiveRecord::Base
 
   def application_min_css_path
     if single_domain_location? && !corporate?
-      "/#{urn}/stylesheets/application.min.css"
+      "/#{single_domain_location_path}/stylesheets/application.min.css"
     else
       stylesheets_compiler.uploaded_path
     end
+  end
+
+  def single_domain_location_path
+    "#{single_domain_location_base_path}/#{urn}"
+  end
+
+  def single_domain_location_base_path
+    "#{client.vertical_slug}/#{owner.state_slug}/#{owner.city_slug}"
   end
 
   def corporate?
