@@ -76,6 +76,9 @@ G5CMS::Application.routes.draw do
   get "/:vertical_slug/:state_slug/:city_slug", to: "web_templates#show"
   get "/:vertical_slug/:state_slug/:city_slug/:web_template_slug", to: "web_templates#show"
   #get "/:vertical_slug/:state_slug/:city_slug/:owner_urn/:web_template_slug", to: "web_templates#show"
+
+  get "/:owner_urn", to: "web_templates#show"
+  get "/:owner_urn/:web_template_slug", to: "web_templates#show"
   get "/:owner_urn/:vertical_slug/:state_slug/:city_slug", to: "web_templates#show"
   get "/:owner_urn/:vertical_slug/:state_slug/:city_slug/:web_template_slug", to: "web_templates#show"
 

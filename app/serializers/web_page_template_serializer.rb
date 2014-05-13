@@ -13,6 +13,16 @@ class WebPageTemplateSerializer < WebTemplateSerializer
              :in_trash
 
   def preview_url
-    File.join(root_url, object.url)
+    if object.website.corporate?
+      File.join(root_url, object.client.vertical_slug, location.state_slug, location.city_slug, object.slug)
+    else
+      File.join(root_url, object.url)
+    end
+  end
+
+private
+
+  def location
+    object.website.owner
   end
 end

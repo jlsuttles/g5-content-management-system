@@ -1,8 +1,8 @@
-require "client_deployer/compile_directory"
+require "static_website/compiler/compile_directory"
 require "static_website/compiler/javascripts"
 require "static_website/compiler/stylesheets"
-require "client_deployer/website_compiler/web_template"
-require "client_deployer/website_compiler/web_templates"
+require "static_website/compiler/web_template"
+require "static_website/compiler/web_templates"
 
 module ClientDeployer
   module WebsiteCompiler
@@ -23,27 +23,28 @@ module ClientDeployer
     private
 
       def compile_directory
-        @compile_directory ||= ClientDeployer::CompileDirectory.new(@compile_path, false)
+        StaticWebsite::Compiler::CompileDirectory.new(@compile_path, false)
       end
 
       def javascripts
-        @javascripts ||= StaticWebsite::Compiler::Javascripts.new(@website.javascripts, @compile_path, @website, location_name)
+        StaticWebsite::Compiler::Javascripts.new(@website.javascripts, @compile_path, @website, location_name)
       end
 
       def stylesheets
-        @stylesheets ||= StaticWebsite::Compiler::Stylesheets.new(@website.stylesheets, @compile_path, @website, @website.colors, location_name)
+        StaticWebsite::Compiler::Stylesheets.new(@website.stylesheets, @compile_path,
+                                                 @website, @website.colors, location_name)
+      end
+
+      def web_home_template
+         StaticWebsite::Compiler::WebTemplate.new(@website.web_home_template)
+      end
+
+      def web_page_templates
+        StaticWebsite::Compiler::WebTemplates.new(@website.web_page_templates)
       end
 
       def location_name
         @website.name
-      end
-
-      def web_home_template
-        @web_home_template ||= WebTemplate.new(@website.web_home_template)
-      end
-
-      def web_page_templates
-        @web_page_templates ||= WebTemplates.new(@website.web_page_templates)
       end
     end
   end

@@ -12,13 +12,7 @@ class WebHomeTemplate < WebTemplate
   end
 
   def preview_url
-    if website.corporate?
-      "/#{owner.urn}"
-    elsif single_domain?
-      "/#{owner.urn}/#{vertical}/#{state}/#{city}"
-    else
-      "/#{vertical}/#{state}/#{city}/"
-    end
+    "/#{vertical}/#{state}/#{city}/"
   end
 
   def htaccess_substitution

@@ -1,3 +1,4 @@
+require "static_website/compiler/compile_directory"
 require "client_deployer/base_compiler"
 require "client_deployer/website_compiler"
 require "client_deployer/deployer"
@@ -19,6 +20,6 @@ module ClientDeployer
   end
 
   def self.cleanup(compile_path)
-    ClientDeployer::CompileDirectory.new(compile_path, false).clean_up
+    StaticWebsite::Compiler::CompileDirectory.new(compile_path, false).clean_up
   end
 end
