@@ -2,7 +2,8 @@ source "https://rubygems.org"
 ruby "2.1.1"
 
 gem "rails", github: "rails/rails", branch: "4-1-stable"
-gem "jquery-rails"
+# Downgraded jquery-rails for Ember Views
+gem "jquery-rails", "~> 3.0.4"
 gem "jquery-ui-rails"
 
 gem "quiet_assets"
@@ -14,6 +15,7 @@ gem "github_heroku_deployer"
 gem "g5_sibling_deployer_engine"
 gem "liquid"
 gem "ckeditor"
+gem "non-stupid-digest-assets"
 gem "draper"
 gem "coffee-script"
 gem "ranked-model"

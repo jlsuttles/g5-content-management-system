@@ -203,7 +203,7 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.9)
-    jquery-rails (3.1.0)
+    jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (4.2.1)
@@ -247,6 +247,7 @@ GEM
     nio4r (1.0.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    non-stupid-digest-assets (1.0.4)
     oauth2 (0.9.3)
       faraday (>= 0.8, < 0.10)
       jwt (~> 0.1.8)
@@ -413,7 +414,7 @@ DEPENDENCIES
   heroku_resque_autoscaler
   honeybadger
   httparty
-  jquery-rails
+  jquery-rails (~> 3.0.4)
   jquery-ui-rails
   launchy
   liquid
@@ -421,6 +422,7 @@ DEPENDENCIES
   memcachier
   microformats2
   newrelic_rpm
+  non-stupid-digest-assets
   pg
   pry
   quiet_assets

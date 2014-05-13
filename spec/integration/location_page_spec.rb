@@ -14,7 +14,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
       @website_template = @website.website_template
       @web_theme = @website_template.web_theme
 
-      visit_web_page_template
+      visit "/#{@website.slug}/#{@web_page_template.slug}"
     end
 
     it "Will update with theme colors when theme changes" do
@@ -38,7 +38,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
 
     describe "Are drag and drop addable" do
       before do
-        visit_web_page_template
+        visit "/#{@website.slug}/#{@web_page_template.slug}"
       end
 
       it "Creates a new widget in the database" do
@@ -60,7 +60,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
         @widget1.update_attribute :display_order, :first
         @widget2.update_attribute :display_order, :last
 
-        visit_web_page_template
+        visit "/#{@website.slug}/#{@web_page_template.slug}"
       end
 
       it "Updates display order in database" do
@@ -77,7 +77,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
 
     describe "Are drag and drop removeable" do
       before do
-        visit_web_page_template
+        visit "/#{@website.slug}/#{@web_page_template.slug}"
       end
 
       describe "When widgets exist on page load" do
@@ -145,7 +145,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
 
     describe "Are drag and drop addable" do
       before do
-        visit_web_page_template
+        visit "/#{@website.slug}/#{@web_page_template.slug}"
       end
 
       it "Creates a new widget in the database" do
@@ -167,7 +167,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
         @widget1.update_attribute :display_order, :first
         @widget2.update_attribute :display_order, :last
 
-        visit_web_page_template
+        visit "/#{@website.slug}/#{@web_page_template.slug}"
       end
 
       it "Updates display order in database" do
@@ -184,7 +184,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
 
     describe "Are drag and drop removeable" do
       before do
-        visit_web_page_template
+        visit "/#{@website.slug}/#{@web_page_template.slug}"
       end
 
       describe "When widgets exist on page load" do

@@ -71,7 +71,7 @@ G5CMS::Application.routes.draw do
 
   # Ember.js application
   get "/:location_slug", to: "locations#index"
-  get "/:location_slug/:web_page_template_slug", to: "locations#index", location_slug: /([^a][^s][^s][^e][^t][^s])/
+  get "/:location_slug/:web_page_template_slug", to: "locations#index"
   get "/:vertical_slug/:state_slug/:city_slug", to: "web_templates#show"
   get "/:vertical_slug/:state_slug/:city_slug/:web_template_slug", to: "web_templates#show"
 
