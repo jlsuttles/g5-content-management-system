@@ -23,7 +23,7 @@ class WebsiteDecorator < Draper::Decorator
 
   def heroku_url
     if single_domain_location? && !corporate?
-      "#{heroku_url_base}/#{urn}/#{web_home_template.relative_path}"
+      "#{heroku_url_base}/#{single_domain_location_path}"
     else
       heroku_url_base
     end
