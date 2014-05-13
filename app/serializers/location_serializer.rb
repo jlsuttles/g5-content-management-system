@@ -7,5 +7,10 @@ class LocationSerializer < ActiveModel::Serializer
               :urn,
               :name,
               :domain,
-              :corporate
+              :corporate,
+              :single_domain
+
+  def single_domain
+    Client.first.type == "SingleDomainClient"
+  end
 end

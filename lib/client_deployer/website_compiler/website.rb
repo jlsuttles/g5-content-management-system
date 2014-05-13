@@ -27,12 +27,11 @@ module ClientDeployer
       end
 
       def javascripts
-        StaticWebsite::Compiler::Javascripts.new(@website.javascripts, @compile_path, @website, location_name)
+        StaticWebsite::Compiler::Javascripts.new(@website.javascripts, @compile_path, location_name)
       end
 
       def stylesheets
-        StaticWebsite::Compiler::Stylesheets.new(@website.stylesheets, @compile_path,
-                                                 @website, @website.colors, location_name)
+        StaticWebsite::Compiler::Stylesheets.new(@website.stylesheets, @compile_path, @website.colors, location_name)
       end
 
       def web_home_template

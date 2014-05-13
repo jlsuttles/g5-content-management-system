@@ -30,13 +30,10 @@
           {{/if}}
           {{name}}
         </div>
-        <div class="faux-table-cell">
+        <div {{bindAttr class=":faux-table-cell single_domain"}}>
           {{#link-to "website" this.website class="btn btn--a" }}Edit{{/link-to}}
           <a {{bindAttr href="this.website.herokuUrl"}} class="btn btn--a">View</a>
-
-          {{#unless controllers.client.single_domain}}
           <a {{action deploy this}} href="#" class="btn btn--a deploy">Deploy</a>
-          {{/unless}}
         </div>
       </li>
       {{/each}}
