@@ -1,4 +1,4 @@
-require "client_deployer/compile_directory"
+require "static_website/compiler/compile_directory"
 
 module ClientDeployer
   module BaseCompiler
@@ -17,7 +17,7 @@ module ClientDeployer
     private
 
       def compile_directory
-        @compile_directory ||= ClientDeployer::CompileDirectory.new(compile_path, false)
+       StaticWebsite::Compiler::CompileDirectory.new(compile_path, false)
       end
 
       def compile_path

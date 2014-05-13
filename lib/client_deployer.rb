@@ -1,7 +1,6 @@
 require "static_website/compiler/compile_directory"
 require "client_deployer/base_compiler"
 require "client_deployer/website_compiler"
-require "client_deployer/deployer"
 
 module ClientDeployer
   def self.compile_and_deploy(client)
