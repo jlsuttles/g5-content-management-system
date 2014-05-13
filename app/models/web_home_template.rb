@@ -24,12 +24,6 @@ class WebHomeTemplate < WebTemplate
   end
 
   def relative_path
-    return "/"
-
-    if single_domain? && !website.corporate?
-      website.single_domain_location_base_path
-    else
-      "/"
-    end
+    "/"
   end
 end

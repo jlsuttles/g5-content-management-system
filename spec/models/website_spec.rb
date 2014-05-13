@@ -72,10 +72,31 @@ describe Website, vcr: VCR_OPTIONS do
 
   describe "#compile_path" do
     let!(:client) { Fabricate(:client) }
-    let(:website) { Fabricate(:website) }
+    let!(:location) { Fabricate(:location) }
+    let(:website) { Fabricate(:website, owner: location) }
 
     it "includes urn" do
       website.compile_path.should include website.urn
+    end
+
+    context "single domain" do
+      let(:client) { Fabricate(:client, type: "SingleDomainClient") }
+
+      subject { website.compile_path }
+
+      before do
+        Client.stub(first: client)
+        client.stub(website: website)
+      end
+
+      it { should eq("#{Website::COMPILE_PATH}/#{client.website.urn}/" \
+                     "#{website.single_domain_location_path}") }
+
+      context "corporate website" do
+        let!(:location) { Fabricate(:location, corporate: true) }
+
+        it { should eq("#{Website::COMPILE_PATH}/#{client.website.urn}") }
+      end
     end
   end
 

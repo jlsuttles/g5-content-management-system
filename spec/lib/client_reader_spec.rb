@@ -52,7 +52,7 @@ describe ClientReader do
         its([:name]) { should eq("Farmhouse") }
         its([:vertical]) { should eq("Apartments") }
         its([:type]) { should eq("MultiDomainClient") }
-        its([:domain]) { should eq("http://farmhouseapartments.com") }
+        its([:domain]) { should eq("http://farmhouseapartments.com/") }
       end
     end
 

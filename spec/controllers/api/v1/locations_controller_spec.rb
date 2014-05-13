@@ -1,6 +1,7 @@
 require "spec_helper"
 
 describe Api::V1::LocationsController do
+  let!(:client) { Fabricate(:client) }
   let(:location) { Fabricate(:location) }
 
   describe "#show" do

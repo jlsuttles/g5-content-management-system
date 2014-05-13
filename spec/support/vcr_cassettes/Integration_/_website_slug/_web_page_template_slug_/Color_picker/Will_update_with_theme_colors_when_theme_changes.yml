@@ -2,114 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/button/stylesheets/button.css
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/css
-      Date:
-      - Sat, 03 May 2014 04:24:53 GMT
-      Last-Modified:
-      - Sat, 03 May 2014 01:31:12 GMT
-      Status:
-      - 200 OK
-      Content-Length:
-      - '488'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: |
-        .button .btn-img,
-        .button a {
-          display: block;
-        }
-
-        .button-list {
-          overflow: hidden;
-        }
-        .button-list .btn-img {
-          float: left;
-          margin-right: 1em;
-        }
-        .button-grid {
-          -webkit-box-sizing: border-box;
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-          text-align: center;
-        }
-        @media (min-width: 500px) {
-          .button-grid {
-            float: left;
-            padding: 0 1em;
-            width: 50%;
-          }
-          .button-grid:nth-of-type(2n+1) {
-            clear: left;
-          }
-        }
-        .button-grid .btn-img {
-          margin: 0 auto 1em;
-        }
-    http_version: 
-  recorded_at: Sat, 03 May 2014 04:24:52 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/stylesheets/contact-info.css
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/css
-      Date:
-      - Sat, 03 May 2014 04:24:53 GMT
-      Last-Modified:
-      - Sat, 03 May 2014 01:31:12 GMT
-      Status:
-      - 200 OK
-      Content-Length:
-      - '194'
-      Connection:
-      - keep-alive
-    body:
-      encoding: US-ASCII
-      string: |-
-        .contact-info .p-organization-name,
-        .contact-info .h-adr,
-        .contact-info .p-street-address,
-        .contact-info .p-tel,
-        .contact-info .p-url,
-         {
-          display: block;
-        }
-        .contact-info p {
-          margin-top: 0;
-        }
-    http_version: 
-  recorded_at: Sat, 03 May 2014 04:24:53 GMT
-- request:
-    method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/hours/stylesheets/hours.css
     body:
       encoding: US-ASCII
@@ -146,6 +38,140 @@ http_interactions:
   recorded_at: Sat, 03 May 2014 04:24:53 GMT
 - request:
     method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/html/stylesheets/html.css
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/css
+      Date:
+      - Tue, 13 May 2014 20:41:24 GMT
+      Last-Modified:
+      - Thu, 08 May 2014 17:19:43 GMT
+      Status:
+      - 200 OK
+      Content-Length:
+      - '44'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        .html {
+          clear: both;
+          overflow: hidden;
+        }
+    http_version: 
+  recorded_at: Tue, 13 May 2014 20:41:24 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/stylesheets/social-links.css
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/css
+      Date:
+      - Tue, 13 May 2014 20:41:25 GMT
+      Last-Modified:
+      - Thu, 08 May 2014 17:19:43 GMT
+      Status:
+      - 200 OK
+      Content-Length:
+      - '66'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        .social-links a {
+          display: inline-block;
+          margin-right: 5px;
+        }
+    http_version: 
+  recorded_at: Tue, 13 May 2014 20:41:25 GMT
+- request:
+    method: get
+    uri: http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/css
+      Date:
+      - Tue, 13 May 2014 20:41:25 GMT
+      Last-Modified:
+      - Wed, 30 Apr 2014 22:47:24 GMT
+      Status:
+      - 200 OK
+      Content-Length:
+      - '383'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        @media (min-width: 980px) {
+          .wrapper:before,
+          .wrapper:after {
+            display: table;
+            line-height: 0;
+            content: "";
+          }
+          .wrapper:after {
+            clear: both;
+          }
+          .layout-side-left section[role=main] {
+            float: right;
+          }
+          .layout-side-left .aside-top,
+          .layout-side-left aside[role=complementary] {
+            float: left;
+          }
+          footer[role=contentinfo] {
+            clear: both;
+          }
+        }
+    http_version: 
+  recorded_at: Tue, 13 May 2014 20:41:25 GMT
+- request:
+    method: get
     uri: http://g5-theme-garden.herokuapp.com/static/components/classic/stylesheets/classic.scss
     body:
       encoding: US-ASCII
@@ -165,7 +191,7 @@ http_interactions:
       Content-Type:
       - text/plain
       Date:
-      - Tue, 13 May 2014 17:02:42 GMT
+      - Tue, 13 May 2014 20:41:25 GMT
       Last-Modified:
       - Thu, 08 May 2014 17:43:08 GMT
       Status:
@@ -972,10 +998,10 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Tue, 13 May 2014 17:02:42 GMT
+  recorded_at: Tue, 13 May 2014 20:41:25 GMT
 - request:
     method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/html/stylesheets/html.css
+    uri: http://g5-widget-garden.herokuapp.com/static/components/button/stylesheets/button.css
     body:
       encoding: US-ASCII
       string: ''
@@ -994,117 +1020,95 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Tue, 13 May 2014 17:27:57 GMT
+      - Tue, 13 May 2014 20:41:26 GMT
       Last-Modified:
       - Thu, 08 May 2014 17:19:43 GMT
       Status:
       - 200 OK
       Content-Length:
-      - '44'
+      - '488'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        .button .btn-img,
+        .button a {
+          display: block;
+        }
+
+        .button-list {
+          overflow: hidden;
+        }
+        .button-list .btn-img {
+          float: left;
+          margin-right: 1em;
+        }
+        .button-grid {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          text-align: center;
+        }
+        @media (min-width: 500px) {
+          .button-grid {
+            float: left;
+            padding: 0 1em;
+            width: 50%;
+          }
+          .button-grid:nth-of-type(2n+1) {
+            clear: left;
+          }
+        }
+        .button-grid .btn-img {
+          margin: 0 auto 1em;
+        }
+    http_version: 
+  recorded_at: Tue, 13 May 2014 20:41:26 GMT
+- request:
+    method: get
+    uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/stylesheets/contact-info.css
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/css
+      Date:
+      - Tue, 13 May 2014 20:41:26 GMT
+      Last-Modified:
+      - Thu, 08 May 2014 17:19:43 GMT
+      Status:
+      - 200 OK
+      Content-Length:
+      - '194'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: |-
-        .html {
-          clear: both;
-          overflow: hidden;
+        .contact-info .p-organization-name,
+        .contact-info .h-adr,
+        .contact-info .p-street-address,
+        .contact-info .p-tel,
+        .contact-info .p-url,
+         {
+          display: block;
+        }
+        .contact-info p {
+          margin-top: 0;
         }
     http_version: 
-  recorded_at: Tue, 13 May 2014 17:27:57 GMT
-- request:
-    method: get
-    uri: http://g5-widget-garden.herokuapp.com/static/components/social-links/stylesheets/social-links.css
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/css
-      Date:
-      - Tue, 13 May 2014 17:27:58 GMT
-      Last-Modified:
-      - Thu, 08 May 2014 17:19:43 GMT
-      Status:
-      - 200 OK
-      Content-Length:
-      - '66'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: |
-        .social-links a {
-          display: inline-block;
-          margin-right: 5px;
-        }
-    http_version: 
-  recorded_at: Tue, 13 May 2014 17:27:58 GMT
-- request:
-    method: get
-    uri: http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-left/stylesheets/layout-side-left.css
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - text/css
-      Date:
-      - Tue, 13 May 2014 17:27:58 GMT
-      Last-Modified:
-      - Wed, 30 Apr 2014 22:47:24 GMT
-      Status:
-      - 200 OK
-      Content-Length:
-      - '383'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: |
-        @media (min-width: 980px) {
-          .wrapper:before,
-          .wrapper:after {
-            display: table;
-            line-height: 0;
-            content: "";
-          }
-          .wrapper:after {
-            clear: both;
-          }
-          .layout-side-left section[role=main] {
-            float: right;
-          }
-          .layout-side-left .aside-top,
-          .layout-side-left aside[role=complementary] {
-            float: left;
-          }
-          footer[role=contentinfo] {
-            clear: both;
-          }
-        }
-    http_version: 
-  recorded_at: Tue, 13 May 2014 17:27:58 GMT
+  recorded_at: Tue, 13 May 2014 20:41:26 GMT
 recorded_with: VCR 2.9.0

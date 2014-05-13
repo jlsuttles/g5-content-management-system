@@ -60,4 +60,23 @@ describe Client do
       end
     end
   end
+
+  describe "#deploy" do
+    let(:client) { Fabricate(:client) }
+
+    it "calls StaticWebsiteDeployerJob with urn" do
+      ClientDeployerJob.should_receive(:perform).once
+      client.deploy
+    end
+  end
+
+  describe "#async_deploy" do
+    let(:client) { Fabricate(:client) }
+
+    it "enqueues StaticWebsiteDeployerJob with urn" do
+      Resque.stub(:enqueue)
+      Resque.should_receive(:enqueue).with(ClientDeployerJob).once
+      client.async_deploy
+    end
+  end
 end
