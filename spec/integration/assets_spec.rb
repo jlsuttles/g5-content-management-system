@@ -3,7 +3,7 @@ require "spec_helper"
 describe "Integration assets", js: true, vcr: VCR_OPTIONS do
   before do
     @client, @location, @website = seed
-    visit_assets
+    visit "/#{@website.slug}/assets"
   end
 
   it "shows the file select input" do

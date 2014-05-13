@@ -1,0 +1,22 @@
+App.WebsiteIndexController = Ember.ObjectController.extend
+  confirmEmptyTrash: false
+  needs: ["client"]
+
+  actions:
+    deploy: (model) ->
+      url = "/websites/" + model.id + "/deploy"
+      $("<form action='" + url + "' method='post'></form>").submit()
+      false
+    deploy_all: (model) ->
+      url = "/api/v1/clients/1/deploy_websites"
+      $form = $("<form action='" + url + "' method='post'></form>")
+      false
+    confirmEmptyTrash: ->
+      @set "confirmEmptyTrash", not @get("confirmEmptyTrash")
+    emptyTrash: ->
+      @beginPropertyChanges()
+      @get("webPageTemplates").filterBy("inTrash", true).forEach (item) ->
+        item.deleteRecord()
+      @endPropertyChanges()
+      @get("store").save()
+      @set "confirmEmptyTrash", false

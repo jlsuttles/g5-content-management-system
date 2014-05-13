@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe WebsiteDecorator do
+  let!(:client) { Fabricate(:client) }
   let(:website) { WebsiteDecorator.decorate(Fabricate(:website)) }
   before do
     Website.any_instance.stub(:name).and_return "awesome location name"

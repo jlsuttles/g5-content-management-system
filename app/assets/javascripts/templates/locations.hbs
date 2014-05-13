@@ -34,9 +34,9 @@
           {{#link-to "website" this.website class="btn btn--a" }}Edit{{/link-to}}
           <a {{bindAttr href="this.website.herokuUrl"}} class="btn btn--a">View</a>
 
-          {{#if controllers.client.mulit_domain}}
+          {{#unless controllers.client.single_domain}}
           <a {{action deploy this}} href="#" class="btn btn--a deploy">Deploy</a>
-          {{/if}}
+          {{/unless}}
         </div>
       </li>
       {{/each}}
