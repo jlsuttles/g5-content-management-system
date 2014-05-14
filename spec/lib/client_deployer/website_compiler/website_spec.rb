@@ -36,6 +36,26 @@ describe ClientDeployer::WebsiteCompiler::Website do
       subject.compile_directory.should_receive(:compile).once
       subject.compile
     end
+
+    it "does not compile htaccess" do
+      subject.should_not_receive(:htaccess)
+      subject.compile
+    end
+
+    it "does not compile sitemap" do
+      subject.should_not_receive(:sitemap)
+      subject.compile
+    end
+
+    it "does not compile robots" do
+      subject.should_not_receive(:robots)
+      subject.compile
+    end
+
+    it "does not cleanup" do
+      subject.should_not_receive(:cleanup)
+      subject.compile
+    end
   end
 
   describe "#compile_directory" do
