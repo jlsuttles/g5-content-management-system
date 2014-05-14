@@ -7,6 +7,7 @@
 #= require spectrum
 #= require bootstrapSwitch
 #= require jquery.thumbnailScroller
+#= require ckeditor/override
 #= require ckeditor/init
 
 $ ->

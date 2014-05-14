@@ -6,7 +6,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       @client, @location, @website = seed
       @web_home_template = @website.web_home_template
       @web_page_template = @website.web_page_templates.first
-      visit_website
+      visit "/#{@website.slug}"
     end
     it "displays the website menu" do
       within TOP_NAV do
@@ -54,7 +54,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       @client, @location, @website = seed
       @web_home_template = @website.web_home_template
       @web_page_template = @website.web_page_templates.first
-      visit_website
+      visit "/#{@website.slug}"
     end
 
     it "clicking on the gear should flip page card to reveal settings" do
@@ -80,6 +80,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         click_link "Page Settings"
         fill_in "page_title", with: "No Worries"
         click_button "Save"
+        visit current_path
       end
       expect(@web_page_template.reload.title).to eq("No Worries")
     end
@@ -89,6 +90,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
         click_link "Page Settings"
         fill_in "page_title", with: "{{ location_name }}"
         click_button "Save"
+        visit current_path
       end
       expect(@web_page_template.reload.title).to eq("{{ location_name }}")
     end
@@ -105,7 +107,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       @web_page_template1.update_attribute :display_order, :first
       @web_page_template2.update_attribute :display_order, :last
 
-      visit_website
+      visit "/#{@website.slug}"
     end
 
     it "Updates database" do
@@ -124,7 +126,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
     before do
       pending("Drag and drop specs fail intermittently.")
       @client, @location, @website = seed
-      visit_website
+      visit "/#{@website.slug}"
     end
 
     it "Updates database" do
@@ -142,7 +144,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
       pending("Drag and drop specs fail intermittently.")
       @client, @location, @website = seed
       @website.web_page_templates.first.update_attribute(:in_trash, true)
-      visit_website
+      visit "/#{@website.slug}"
     end
 
     it "Updates database" do
@@ -159,7 +161,7 @@ describe "Integration '/:id'", js: true, vcr: VCR_OPTIONS do
     before do
       @client, @location, @website = seed
       @website.web_page_templates.first.update_attribute(:in_trash, true)
-      visit_website
+      visit "/#{@website.slug}"
       within "#trash" do
         click_link "trash-can"
       end
