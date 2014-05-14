@@ -18,6 +18,7 @@ module StaticWebsite
         end
       rescue GithubHerokuDeployer::CommandException,
              Heroku::API::Errors::ErrorWithResponse => e
+        Rails.logger.info("Try failed with: " + e.to_s)
         if should_retry?
           increment_retries
           retry
