@@ -13,14 +13,14 @@ describe URLFormat::SingleDomainFormatter do
       let(:type) { "WebHomeTemplate" }
 
       it { should eq("/#{client.vertical_slug}/#{owner.state_slug}" \
-                     "/#{owner.city_slug}/#{website.urn}") }
+                     "/#{owner.city_slug}/#{website.slug}") }
     end
 
     context "other templates" do
       let(:type) { "WebPageTemplate" }
 
       it { should eq("/#{client.vertical_slug}/#{owner.state_slug}" \
-                     "/#{owner.city_slug}/#{website.urn}/#{web_template.slug}") }
+                     "/#{owner.city_slug}/#{website.slug}/#{web_template.slug}") }
     end
   end
 

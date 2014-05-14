@@ -64,7 +64,7 @@ module ClientDeployer
         if web_home_template && template.enabled
           web_page_template = <<-end.strip_heredoc
             <url>
-              <loc>#{File.join(web_home_template.owner_domain, @client.vertical_slug, web_home_template.owner.state_slug, web_home_template.owner.city_slug, web_home_template.owner.urn)}/#{template.slug}</loc>
+              <loc>#{File.join(web_home_template.owner_domain, @client.vertical_slug, web_home_template.owner.state_slug, web_home_template.owner.city_slug, web_home_template.website.slug)}/#{template.slug}</loc>
               <lastmod>#{template.last_mod}</lastmod>
               <changefreq>weekly</changefreq>
               <priority>0.7</priority>

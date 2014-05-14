@@ -158,7 +158,11 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def page_url
-    File.join(domain_for_type.to_s, relative_path.to_s)
+    if single_domain_internal_page?
+      File.join(domain_for_type.to_s, website.single_domain_location_path.to_s, slug)
+    else
+      File.join(domain_for_type.to_s, relative_path.to_s)
+    end
   end
 
   def last_mod
@@ -210,5 +214,9 @@ class WebTemplate < ActiveRecord::Base
 
   def domain_for_type
     single_domain? ? client.domain : owner_domain
+  end
+
+  def single_domain_internal_page?
+    web_page_template? && single_domain? && !website.corporate?
   end
 end

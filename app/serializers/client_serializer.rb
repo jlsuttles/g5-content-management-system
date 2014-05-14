@@ -19,7 +19,6 @@ class ClientSerializer < ActiveModel::Serializer
               :cls_url,
               :cxm_urn,
               :cxm_url,
-              :multi_domain,
               :single_domain
 
   def url
@@ -32,10 +31,6 @@ class ClientSerializer < ActiveModel::Serializer
 
   def location_urls
     client_services.client_location_urls
-  end
-
-  def multi_domain
-    object.type == "MultiDomainClient"
   end
 
   def single_domain
