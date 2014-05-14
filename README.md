@@ -56,6 +56,10 @@
     $ rspec
     ```
 
+1. [Register your oAuth application](https://github.com/G5/g5_authenticatable#registering-your-oauth-application)
+
+1. [Set oAuth Enviroment Variables](https://github.com/G5/g5_authenticatable#environment-variables)
+
 1. Start the application.
 
     ```bash

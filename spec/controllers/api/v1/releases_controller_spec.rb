@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Api::V1::ReleasesController do
+describe Api::V1::ReleasesController, :auth_controller do
   let(:release_manager) { double(fetch_all: nil, rollback: nil) }
 
   before { ReleasesManager.stub(new: release_manager) }

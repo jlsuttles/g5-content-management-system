@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Api::V1::WebsitesController do
+describe Api::V1::WebsitesController, :auth_controller do
   let(:website) { Fabricate(:website) }
 
   describe "#index" do

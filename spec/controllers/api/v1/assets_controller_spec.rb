@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Api::V1::AssetsController do
+describe Api::V1::AssetsController, :auth_controller do
   describe "#sign_upload" do
     it "should render json template with header data for aws" do
       get :sign_upload, {name: 'foo', :'locationName'=> 'hollywood'}

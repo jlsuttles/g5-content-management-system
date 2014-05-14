@@ -26,6 +26,8 @@ gem "ember-rails"
 gem "ember-source", "~> 1.0.0"
 gem "ember-data-source", "~> 0.14"
 
+gem 'g5_authenticatable', '~> 0.2'
+
 # Temporary fix
 gem "sprockets", "=2.11.0"
 gem "sass-rails"
@@ -55,6 +57,7 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "database_cleaner"
   # ruby spec support
+  gem 'factory_girl_rails'
   gem "fabrication"
   gem "faker"
   gem "webmock", require: false

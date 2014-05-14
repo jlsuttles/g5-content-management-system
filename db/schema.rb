@@ -35,6 +35,23 @@ ActiveRecord::Schema.define(version: 20140506195829) do
     t.datetime "updated_at"
   end
 
+  create_table "g5_authenticatable_users", force: true do |t|
+    t.string   "email",              default: "",   null: false
+    t.string   "provider",           default: "g5", null: false
+    t.string   "uid",                               null: false
+    t.string   "g5_access_token"
+    t.integer  "sign_in_count",      default: 0,    null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "g5_authenticatable_users", ["email"], name: "index_g5_authenticatable_users_on_email", unique: true
+  add_index "g5_authenticatable_users", ["provider", "uid"], name: "index_g5_authenticatable_users_on_provider_and_uid", unique: true
+
   create_table "garden_web_layouts", force: true do |t|
     t.string   "name"
     t.string   "slug"
