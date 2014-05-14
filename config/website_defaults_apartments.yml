@@ -39,6 +39,7 @@ website_template:
 
 web_home_template:
   name: Home
+  title: "Apartments in {{location_neighborhood}} {{location_city}}"
   drop_targets:
     - html_id: drop-target-main
       widgets:
@@ -48,6 +49,7 @@ web_home_template:
 
 web_page_templates:
   - name: Floor Plans
+    title: "Apartments in {{location_city}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -57,7 +59,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Amenities
-    title: "{{ web_template_name }} in {{ location_city }}"
+    title: "{{location_city}} Apartment Amenities at {{location_name}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -65,6 +67,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Photo Gallery
+    title: "Photos of Our Apartments in {{location_city}} | {{location_name}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -74,6 +77,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Neighborhood
+    title: "{{location_neighborhood}} {{location_city}} Apartments | {{location_name}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -81,6 +85,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Map and Directions
+    title: "Directions to Apartments for rent in {{location_city}}, {{location_state}} | {{location_name}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -90,6 +95,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Residents
+    title: "Information for Current Residents at {{location_name}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -168,6 +174,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Contact Us
+    title: "Contact {{location_name}} in {{location_city}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -177,6 +184,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Pet Friendly
+    title: "Pet Friendly Apartments in {{location_city}} by {{location_name}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -184,6 +192,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Community Events
+    title: "Events at {{location_name}} in {{location_city}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -209,6 +218,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Privacy Policy
+    title: "{{location_name}}'s Privacy Policy"
     drop_targets:
       - html_id: drop-target-main
         widgets:
