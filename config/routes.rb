@@ -1,6 +1,8 @@
 require "resque/server"
 
 G5CMS::Application.routes.draw do
+  mount G5Authenticatable::Engine => '/g5_auth'
+
   # Dashboard for Resque job queues
   mount Resque::Server, :at => "/resque"
 

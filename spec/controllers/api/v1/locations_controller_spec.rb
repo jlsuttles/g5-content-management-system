@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Api::V1::LocationsController do
+describe Api::V1::LocationsController, :auth_controller do
   let!(:client) { Fabricate(:client) }
   let(:location) { Fabricate(:location) }
 
