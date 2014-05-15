@@ -44,7 +44,7 @@ class WebTemplate < ActiveRecord::Base
 
   # TODO: remove when Ember App implements DropTarget
   def main_widgets
-    drop_targets.where(html_id: "drop-target-main").first.try(:widgets)
+    drop_targets.where(html_id: "drop-target-main").first.try(:widgets) || []
   end
 
   def meta_description_widgets
