@@ -7,4 +7,5 @@ App.Website = DS.Model.extend App.ReloadIframe,
   name: DS.attr("string")
   urn: DS.attr("string")
   slug: DS.attr("string")
+  corporate: DS.attr("boolean")
   herokuUrl: DS.attr("string")

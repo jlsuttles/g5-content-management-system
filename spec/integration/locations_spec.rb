@@ -7,7 +7,7 @@ describe "Integration '/'", :auth_request, js: true, vcr: VCR_OPTIONS do
 
       @client = Fabricate(:client)
       @location = Fabricate(:location)
-      @website = Fabricate(:website, location_id: @location.id)
+      @website = Fabricate(:website, owner: @location)
       @location.reload
 
       visit root_path

@@ -1,6 +1,7 @@
 require "spec_helper"
 
 describe StaticWebsite::Compiler::Website do
+  let!(:client) { Fabricate(:client) }
   let(:website) { Fabricate(:website) }
 
   describe "#compile" do
@@ -66,7 +67,7 @@ describe StaticWebsite::Compiler::Website do
     let(:subject) { StaticWebsite::Compiler::Website.new(website) }
 
     before do
-      website.location = location
+      website.owner = location
     end
 
     it "is the name of the location" do

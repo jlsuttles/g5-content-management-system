@@ -12,10 +12,12 @@ class WebPageTemplate < WebTemplate
   end
 
   def compile_path
-    File.join(website_compile_path.to_s, relative_path, "index.html") if web_page_template?
+    File.join(base_path.to_s, relative_path, "index.html") if web_page_template?
   end
 
   def relative_path
-    File.join(client.vertical_slug, location.state_slug, location.city_slug, slug)
+    return slug if website.corporate? || single_domain?
+
+    File.join(client.vertical_slug, owner.state_slug, owner.city_slug, slug)
   end
 end

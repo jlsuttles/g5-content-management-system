@@ -1,7 +1,9 @@
 require "spec_helper"
 
 describe Api::V1::WebsitesController, :auth_controller do
-  let(:website) { Fabricate(:website) }
+  let!(:client) { Fabricate(:client) }
+  let(:location) { Fabricate(:location) }
+  let(:website) { Fabricate(:website, owner: location) }
 
   describe "#index" do
     before do

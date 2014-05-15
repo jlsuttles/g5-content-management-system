@@ -11,10 +11,13 @@ G5CMS::Application.routes.draw do
     namespace :v1 do
       get '/sign_upload', to: 'assets#sign_upload'
       get '/sign_delete', to: 'assets#sign_delete'
-      resources :clients, only: [:show]
+
+      resources :clients, only: [:show] do
+        post "deploy_websites"
+      end
+
       resources :locations, only: [:index, :show]
       resources :websites, only: [:index, :show]
-
       resources :website_templates, only: [:show]
       resources :web_layouts, only: [:show, :update]
       resources :web_themes, only: [:show, :update]
@@ -74,6 +77,7 @@ G5CMS::Application.routes.draw do
   get "/:location_slug/:web_page_template_slug", to: "locations#index"
   get "/:vertical_slug/:state_slug/:city_slug", to: "web_templates#show"
   get "/:vertical_slug/:state_slug/:city_slug/:web_template_slug", to: "web_templates#show"
+  get "/:vertical_slug/:state_slug/:city_slug/:owner_urn/:web_template_slug", to: "web_templates#show"
 
   # Root to Ember.js application
   root to: "locations#index"

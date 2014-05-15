@@ -5,7 +5,12 @@
     {{#link-to "releases" this class="btn" }}Recent Deploys{{/link-to}}
     {{#link-to "docs" this class="btn" }}Docs{{/link-to}}
   </span>
+
+  {{#if controllers.client.single_domain}}
+  <a href="#" {{action deploy_all }} class="btn l-pullRight">Deploy All</a>
+  {{else}}
   <a href="#" {{action deploy this}} class="btn l-pullRight">Deploy</a>
+  {{/if}}
 </div>
 
 <div class="site-settings page-section l-grid">

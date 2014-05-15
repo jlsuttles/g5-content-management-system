@@ -13,7 +13,7 @@ describe ClientServices do
 
   describe "#client" do
     it "grabs the first client" do
-      @client_services.client.should == client
+      @client_services.client.should == Client.first
     end
   end
 

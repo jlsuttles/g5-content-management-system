@@ -1,7 +1,9 @@
 require "spec_helper"
 
 describe Api::V1::WebPageTemplatesController, :auth_controller do
-  let(:web_page_template) { Fabricate(:web_page_template) }
+  let!(:client) { Fabricate(:client) }
+  let!(:website) { Fabricate(:website) }
+  let(:web_page_template) { Fabricate(:web_page_template, website: website) }
   let(:main_drop_target) { Fabricate(:drop_target) }
 
   before do

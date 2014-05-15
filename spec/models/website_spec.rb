@@ -23,6 +23,17 @@ describe Website, vcr: VCR_OPTIONS do
     end
   end
 
+  describe "#location_websites" do
+    let(:client) { Fabricate(:client) }
+    let(:location) { Fabricate(:location) }
+    let!(:client_website) { Fabricate(:website, owner: client) }
+    let!(:location_website) { Fabricate(:website, owner: location) }
+
+    it "returns location websites only" do
+      expect(Website.location_websites).to eq([location_website])
+    end
+  end
+
   describe "#urn" do
     let(:website) { Fabricate(:website) }
 
@@ -44,7 +55,7 @@ describe Website, vcr: VCR_OPTIONS do
     let(:location) { Fabricate.build(:location) }
 
     it "uses location's name" do
-      website.location = location
+      website.owner = location
       website.name.should eq location.name
     end
   end
@@ -54,16 +65,38 @@ describe Website, vcr: VCR_OPTIONS do
     let(:location) { Fabricate.build(:location) }
 
     it "uses location's name parameterized" do
-      website.location = location
+      website.owner = location
       website.slug.should eq location.name.parameterize
     end
   end
 
   describe "#compile_path" do
-    let(:website) { Fabricate(:website) }
+    let!(:client) { Fabricate(:client) }
+    let!(:location) { Fabricate(:location) }
+    let(:website) { Fabricate(:website, owner: location) }
 
     it "includes urn" do
       website.compile_path.should include website.urn
+    end
+
+    context "single domain" do
+      let(:client) { Fabricate(:client, type: "SingleDomainClient") }
+
+      subject { website.compile_path }
+
+      before do
+        Client.stub(first: client)
+        client.stub(website: website)
+      end
+
+      it { should eq("#{Website::COMPILE_PATH}/#{client.website.urn}/" \
+                     "#{website.single_domain_location_path}") }
+
+      context "corporate website" do
+        let!(:location) { Fabricate(:location, corporate: true) }
+
+        it { should eq("#{Website::COMPILE_PATH}/#{client.website.urn}") }
+      end
     end
   end
 

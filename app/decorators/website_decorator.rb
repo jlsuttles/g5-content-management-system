@@ -8,7 +8,9 @@ class WebsiteDecorator < Draper::Decorator
   end
 
   def heroku_app_name
-    model.urn[0..29] if model.urn
+    return model.urn[0..29] unless single_domain_location?
+
+    client.website.urn[0..29]
   end
 
   def domain
@@ -20,6 +22,14 @@ class WebsiteDecorator < Draper::Decorator
   end
 
   def heroku_url
+    if single_domain_location? && !corporate?
+      "#{heroku_url_base}/#{single_domain_location_path}"
+    else
+      heroku_url_base
+    end
+  end
+
+  def heroku_url_base
     "http://#{heroku_app_name}.herokuapp.com"
   end
 end

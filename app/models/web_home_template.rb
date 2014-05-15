@@ -8,15 +8,19 @@ class WebHomeTemplate < WebTemplate
   end
 
   def compile_path
-    File.join(website_compile_path.to_s, "index.html") if website_compile_path
+    File.join(base_path.to_s, relative_path, "index.html") if base_path
   end
 
   def preview_url
-    "/#{vertical}/#{state}/#{city}/"
+    "/#{vertical}/#{state}/#{city}"
   end
 
   def htaccess_substitution
-    relative_path
+    if single_domain?
+      website.single_domain_location_path
+    else
+      relative_path
+    end
   end
 
   def relative_path
