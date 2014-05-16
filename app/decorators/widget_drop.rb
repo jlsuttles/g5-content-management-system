@@ -11,7 +11,9 @@ class WidgetDrop < Liquid::Drop
   end
 
   def locations
-    widget.drop_target.web_template.client.locations
+    widget.drop_target.web_template.client.locations.map do |location|
+      {id: location.id, name: location.name}
+    end
   end
 end
 
