@@ -1,19 +1,24 @@
 class WidgetDrop < Liquid::Drop
-  attr_accessor :widget
+  attr_accessor :widget, :locations
 
-  def initialize(widget)
-    @widget = widget
-    widget.settings.each do |setting|
-      self.class.send(:define_method, setting.name) do
-        setting.decorate
-      end
+  def initialize(widget, locations)
+    @widget, @locations = widget, locations
+    #widget.settings.each do |setting|
+    #  self.class.send(:define_method, setting.name) do
+    #    setting.decorate
+    #  end
+    #end
+  end
+
+  def client_locations
+    locations.map do |location|
+      location.decorate
     end
   end
 
-  def locations
-    widget.drop_target.web_template.client.locations.map do |location|
-      {id: location.id, name: location.name}
-    end
+  def before_method(method)
+    setting = widget.settings.find_by(name: method)
+    setting.try(:decorate)
   end
 end
 
