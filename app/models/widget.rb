@@ -1,8 +1,6 @@
 class Widget < ActiveRecord::Base
   include RankedModel
-  liquid_methods :locations
   include HasManySettings
-
 
   ranks :display_order, with_same: :drop_target_id
 
@@ -52,7 +50,7 @@ class Widget < ActiveRecord::Base
   end
 
   def render_edit_html
-    Liquid::Template.parse(edit_html).render("widget" => self.decorate)
+    Liquid::Template.parse(edit_html).render("widget" => WidgetDrop.new(self))
   end
 
   def create_widget_entry_if_updated

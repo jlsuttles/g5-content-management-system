@@ -15,13 +15,7 @@ module HasManySettings
     settings_names.each do |setting_name|
       liquid[setting_name] = send(setting_name).to_liquid
     end
-    liquid["client_locations"] = client_locations
     liquid
-  end
-
-  def client_locations
-    return unless drop_target
-    drop_target.web_template.client.locations.map(&:decorate)
   end
 
   def settings_names
