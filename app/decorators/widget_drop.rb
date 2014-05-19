@@ -3,11 +3,6 @@ class WidgetDrop < Liquid::Drop
 
   def initialize(widget, locations)
     @widget, @locations = widget, locations
-    #widget.settings.each do |setting|
-    #  self.class.send(:define_method, setting.name) do
-    #    setting.decorate
-    #  end
-    #end
   end
 
   def client_locations
