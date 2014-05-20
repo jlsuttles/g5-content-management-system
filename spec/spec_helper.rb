@@ -50,6 +50,7 @@ RSpec.configure do |config|
 
   config.before(:each) do
     DatabaseCleaner.strategy = :transaction
+    set_selenium_window_size(1250, 800) if Capybara.current_driver == :selenium
   end
 
   config.before(:each, :js => true) do
@@ -63,4 +64,9 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+end
+
+def set_selenium_window_size(width, height)
+  window = Capybara.current_session.driver.browser.manage.window
+  window.resize_to(width, height)
 end
