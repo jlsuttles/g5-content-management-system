@@ -23,9 +23,11 @@ website_template:
     - html_id: drop-target-aside-before-main
       widgets:
         - slug: navigation
+        - slug: html
     - html_id: drop-target-aside-after-main
       widgets:
         - slug: social-links
+        - slug: html
     - html_id: drop-target-footer
       widgets:
         - slug: navigation
