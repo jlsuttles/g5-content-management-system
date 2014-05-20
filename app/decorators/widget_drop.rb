@@ -6,9 +6,7 @@ class WidgetDrop < Liquid::Drop
   end
 
   def client_locations
-    locations.map do |location|
-      location.decorate
-    end
+    locations.map(&:decorate)
   end
 
   def before_method(method)

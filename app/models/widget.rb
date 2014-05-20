@@ -42,7 +42,8 @@ class Widget < ActiveRecord::Base
     if row_widget?
       RowWidgetShowHtml.new(self).render
     else
-      Liquid::Template.parse(show_html).render("widget" => self)
+      Liquid::Template.parse(show_html).render(
+        "widget" => WidgetDrop.new(self, client.locations))
     end
   end
 
