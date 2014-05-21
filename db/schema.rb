@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140506195829) do
+ActiveRecord::Schema.define(version: 20140512193842) do
 
   create_table "assets", force: true do |t|
     t.string   "url"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20140506195829) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "vertical"
+    t.string   "type"
+    t.string   "domain"
   end
 
   create_table "drop_targets", force: true do |t|
@@ -34,6 +36,23 @@ ActiveRecord::Schema.define(version: 20140506195829) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "g5_authenticatable_users", force: true do |t|
+    t.string   "email",              default: "",   null: false
+    t.string   "provider",           default: "g5", null: false
+    t.string   "uid",                               null: false
+    t.string   "g5_access_token"
+    t.integer  "sign_in_count",      default: 0,    null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "g5_authenticatable_users", ["email"], name: "index_g5_authenticatable_users_on_email", unique: true
+  add_index "g5_authenticatable_users", ["provider", "uid"], name: "index_g5_authenticatable_users_on_provider_and_uid", unique: true
 
   create_table "garden_web_layouts", force: true do |t|
     t.string   "name"
@@ -182,13 +201,14 @@ ActiveRecord::Schema.define(version: 20140506195829) do
   add_index "web_themes", ["web_template_id"], name: "index_web_themes_on_web_template_id"
 
   create_table "websites", force: true do |t|
-    t.integer  "location_id"
+    t.integer  "owner_id"
     t.string   "urn"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "owner_type"
   end
 
-  add_index "websites", ["location_id"], name: "index_websites_on_location_id"
+  add_index "websites", ["owner_id"], name: "index_websites_on_owner_id"
 
   create_table "widget_entries", force: true do |t|
     t.integer  "widget_id"
@@ -200,8 +220,8 @@ ActiveRecord::Schema.define(version: 20140506195829) do
   create_table "widgets", force: true do |t|
     t.integer  "drop_target_id"
     t.integer  "display_order"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "section"
     t.boolean  "removeable"
     t.integer  "garden_widget_id"

@@ -25,7 +25,7 @@ module StaticWebsite
       def view_options
         { layout: "web_template",
           locals: {
-            location: web_template.try(:location),
+            location: web_template.try(:owner),
             website: web_template.try(:website),
             web_template: web_template,
             mode: "deployed"

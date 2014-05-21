@@ -4,6 +4,7 @@ class Client < ActiveRecord::Base
   validates :uid, presence: true, uniqueness: true
   validates :name, presence: true
   validates :vertical, presence: true
+  validates :type, presence: true
 
   def urn
     uid.split("/").last
@@ -15,6 +16,14 @@ class Client < ActiveRecord::Base
 
   def vertical_slug
     vertical.try(:parameterize).to_s
+  end
+
+  def deploy
+    ClientDeployerJob.perform
+  end
+
+  def async_deploy
+    Resque.enqueue(ClientDeployerJob)
   end
 
   def website_defaults

@@ -44,7 +44,7 @@ class WebTemplate < ActiveRecord::Base
 
   # TODO: remove when Ember App implements DropTarget
   def main_widgets
-    drop_targets.where(html_id: "drop-target-main").first.try(:widgets)
+    drop_targets.where(html_id: "drop-target-main").first.try(:widgets) || []
   end
 
   def meta_description_widgets
@@ -55,16 +55,20 @@ class WebTemplate < ActiveRecord::Base
     Client.first
   end
 
-  def location
-    website.try(:location)
+  def single_domain?
+    client.type == "SingleDomainClient"
   end
 
-  def location_id
-    location.try(:id)
+  def owner
+    website.try(:owner)
   end
 
-  def location_name
-    location.try(:name)
+  def owner_id
+    owner.try(:id)
+  end
+
+  def owner_name
+    owner.try(:name)
   end
 
   def vertical
@@ -72,19 +76,15 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def city
-    location.try(:city_slug)
+    owner.try(:city_slug)
   end
 
   def state
-    location.try(:state_slug)
+    owner.try(:state_slug)
   end
 
   def url
-    if web_home_template?
-      "/"
-    else
-      "/#{vertical}/#{state}/#{city}/#{slug}/"
-    end
+    client.url_formatter_class.new(self, owner).format
   end
 
   def website_id
@@ -133,7 +133,7 @@ class WebTemplate < ActiveRecord::Base
   def stylesheets_compiler
     @stylesheets_compiler ||=
       StaticWebsite::Compiler::Stylesheets.new(stylesheets,
-      "#{Rails.root}/public", website_colors, location_name, true)
+      "#{Rails.root}/public", website_colors, owner_name, true)
   end
 
   def stylesheet_link_paths
@@ -144,7 +144,7 @@ class WebTemplate < ActiveRecord::Base
   def javascripts_compiler
     @javascripts_compiler ||=
       StaticWebsite::Compiler::Javascripts.new(javascripts,
-        "#{Rails.root}/public", location_name)
+        "#{Rails.root}/public", owner_name)
   end
 
   def javascript_include_paths
@@ -153,12 +153,16 @@ class WebTemplate < ActiveRecord::Base
   end
 
 
-  def location_domain
-    location.domain if location
+  def owner_domain
+    owner.domain if owner
   end
 
   def page_url
-    File.join(location_domain.to_s, relative_path.to_s)
+    if single_domain_internal_page?
+      File.join(domain_for_type.to_s, website.single_domain_location_path.to_s, slug)
+    else
+      File.join(domain_for_type.to_s, relative_path.to_s)
+    end
   end
 
   def last_mod
@@ -167,11 +171,19 @@ class WebTemplate < ActiveRecord::Base
 
   def render_title
     Liquid::Template.parse(title).render(
-      "location_name" => location.name,
-      "location_city" => location.city,
-      "location_state" => location.state,
+      "location_name" => owner.name,
+      "location_city" => owner.city,
+      "location_state" => owner.state,
       "web_template_name" => name
     )
+  end
+
+  def base_path
+    if single_domain? && website.corporate?
+      client.website.compile_path
+    else
+      website_compile_path
+    end
   end
 
   private
@@ -200,4 +212,11 @@ class WebTemplate < ActiveRecord::Base
     self.redirect_patterns = redirect_patterns.split.uniq.join("\n") if redirect_patterns
   end
 
+  def domain_for_type
+    single_domain? ? client.domain : owner_domain
+  end
+
+  def single_domain_internal_page?
+    web_page_template? && single_domain? && !website.corporate?
+  end
 end

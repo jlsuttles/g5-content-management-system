@@ -8,7 +8,7 @@ class Website < ActiveRecord::Base
 
   set_urn_prefix "g5-clw"
 
-  belongs_to :location
+  belongs_to :owner, polymorphic: true
 
   has_one  :website_template, dependent: :destroy
   has_one  :web_home_template, dependent: :destroy
@@ -20,12 +20,14 @@ class Website < ActiveRecord::Base
 
   validates :urn, presence: true, uniqueness: true, unless: :new_record?
 
+  scope :location_websites, -> { where(owner_type: "Location") }
+
   def website_id
     id
   end
 
   def name
-    location.try(:name)
+    owner.try(:name)
   end
 
   def slug
@@ -33,7 +35,12 @@ class Website < ActiveRecord::Base
   end
 
   def compile_path
-    File.join(COMPILE_PATH, urn)
+    if single_domain_location?
+      return File.join(COMPILE_PATH, client.website.urn) if corporate?
+      File.join(COMPILE_PATH, client.website.urn, single_domain_location_path)
+    else
+      File.join(COMPILE_PATH, urn)
+    end
   end
 
   def stylesheets
@@ -63,6 +70,30 @@ class Website < ActiveRecord::Base
   end
 
   def application_min_css_path
-    stylesheets_compiler.uploaded_path
+    if single_domain_location? && !corporate?
+      "/#{single_domain_location_path}/stylesheets/application.min.css"
+    else
+      stylesheets_compiler.uploaded_path
+    end
+  end
+
+  def single_domain_location_path
+    "#{single_domain_location_base_path}/#{slug}"
+  end
+
+  def single_domain_location_base_path
+    "#{client.vertical_slug}/#{owner.state_slug}/#{owner.city_slug}"
+  end
+
+  def corporate?
+    owner_type == "Location" && owner.corporate?
+  end
+
+  def single_domain_location?
+    client.type == "SingleDomainClient" && owner_type == "Location"
+  end
+
+  def client
+    @client ||= Client.first
   end
 end

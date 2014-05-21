@@ -1,6 +1,7 @@
 require "spec_helper"
 
 shared_examples_for HasSettingNavigation do
+  let!(:client) { Fabricate(:client) }
   let(:described_instance) { described_class.new }
 
   describe "#navigation_settings" do

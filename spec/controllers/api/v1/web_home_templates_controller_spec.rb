@@ -1,6 +1,7 @@
 require "spec_helper"
 
-describe Api::V1::WebHomeTemplatesController do
+describe Api::V1::WebHomeTemplatesController, :auth_controller do
+  let!(:client) { Fabricate(:client) }
   let(:web_home_template) { Fabricate(:web_home_template) }
   let(:main_drop_target) { Fabricate(:drop_target) }
 

@@ -1,13 +1,13 @@
 require "spec_helper"
 
-describe "Integration '/'", js: true, vcr: VCR_OPTIONS do
+describe "Integration '/'", :auth_request, js: true, vcr: VCR_OPTIONS do
   describe "Lists all locations" do
     before do
       Resque.stub(:enqueue)
 
       @client = Fabricate(:client)
       @location = Fabricate(:location)
-      @website = Fabricate(:website, location_id: @location.id)
+      @website = Fabricate(:website, owner: @location)
       @location.reload
 
       visit root_path

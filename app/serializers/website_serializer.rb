@@ -7,7 +7,8 @@ class WebsiteSerializer < ActiveModel::Serializer
   has_many :assets
 
   attributes  :id,
-              :location_id,
+              :owner_id,
+              :owner_type,
               :name,
               :urn,
               :slug,

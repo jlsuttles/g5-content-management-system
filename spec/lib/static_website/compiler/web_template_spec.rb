@@ -3,7 +3,7 @@ require "spec_helper"
 describe StaticWebsite::Compiler::WebTemplate do
   let!(:client) { Fabricate(:client) }
   let(:location) { Fabricate(:location) }
-  let(:website) { Fabricate(:website, location_id: location.id) }
+  let(:website) { Fabricate(:website, owner: location) }
   let(:web_template) { Fabricate(:web_home_template, website_id: website.id) }
   let(:web_layout) { Fabricate(:web_layout) }
 
