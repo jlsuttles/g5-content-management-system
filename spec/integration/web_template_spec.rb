@@ -51,7 +51,7 @@ describe "Integration '/web_template/:id'", :auth_request, js: true, vcr: VCR_OP
         end
 
         it "has web template title in title tag" do
-          expect(page).to have_title @web_page_template.title
+          expect(page).to have_title @web_page_template.render_title
         end
 
         it "has a rel='canonical' link" do

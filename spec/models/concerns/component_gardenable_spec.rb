@@ -11,7 +11,7 @@ end
 
 describe ComponentGardenable, vcr: { record: :new_episodes } do
   before do
-    stub_const "MAIN_APP_UID", 
+    stub_const "MAIN_APP_UID",
                'http://g5-configurator.herokuapp.com/apps/g5-cms-1s7nay2b-mj-storage-client'
   end
   describe ".components_microformats" do
