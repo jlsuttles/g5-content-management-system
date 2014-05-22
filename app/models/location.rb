@@ -12,6 +12,8 @@ class Location < ActiveRecord::Base
 
   before_validation :set_city_slug_from_city
 
+  scope :by_city, ->(city) { where(city: city) }
+
   def website_id
     website.try(:id)
   end
