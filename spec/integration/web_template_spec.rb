@@ -81,10 +81,20 @@ describe "Integration '/web_template/:id'", :auth_request, js: true, vcr: VCR_OP
       end
 
       describe "Liquid parsing in settings" do
-        it "correctly parses Liquid and displays title" do
-          @web_page_template.update_attributes!(title: "{{ location_name }} {{ location_state }} {{ web_template_name }}")
+        it "correctly parses and displays page name in title" do
+          @web_page_template.update_attributes!(title: "{{web_template_name}}")
           visit @web_page_template.url
-          expect(page).to have_title "#{@location.name} #{@location.state} #{@web_page_template.name}"
+          expect(page).to have_title "#{@web_page_template.name}"
+        end
+        it "correctly parses and displays location address in title" do
+          @web_page_template.update_attributes!(title: "{{location_city}} {{loation_neighborhood}} {{location_state}}")
+          visit @web_page_template.url
+          expect(page).to have_title "#{@location.city} #{@location.neighborhood} #{@location.state}"
+        end
+        it "correctly parses and displays location info in title" do
+          @web_page_template.update_attributes!(title: "{{location_floor_plans}} {{loation_primary_amenity}} {{location_qualifier}} {{location_primary_landmark}}")
+          visit @web_page_template.url
+          expect(page).to have_title "#{@location.floor_plans} #{@location.primary_amenity} #{@location.qualifier} #{@location.primary_landmark}"
         end
       end
 
