@@ -147,6 +147,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Apply
+    title: "Apply to live at {{location_name}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -156,6 +157,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Schedule Tour
+    title: "Schedule a tour to view {{location_name}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -165,6 +167,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Request Information
+    title: "Request information from {{location_name}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -200,6 +203,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Maintenance Request
+    title: "Maintenance request at {{location_name}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
@@ -209,6 +213,7 @@ web_page_templates:
           - slug: meta-description
 
   - name: Suggestion Box
+    title: "Suggestion box at {{location_name}}"
     drop_targets:
       - html_id: drop-target-main
         widgets:
