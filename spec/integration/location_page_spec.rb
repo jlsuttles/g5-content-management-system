@@ -265,7 +265,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
 
   describe "Aside after main widgets" do
     describe "Are drag and drop addable" do
-      after do
+      before do
         visit "/#{@website.slug}/#{@web_page_template.slug}"
       end
 
@@ -283,7 +283,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
     end
 
     describe "Are drag and drop sortable" do
-      after do
+      before do
         @widget1 = @website_template.aside_after_main_widgets.first
         @widget2 = @website_template.aside_after_main_widgets.last
 
@@ -307,7 +307,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
     end
 
     describe "Are drag and drop removeable" do
-      after do
+      before do
         visit "/#{@website.slug}/#{@web_page_template.slug}"
       end
 
@@ -340,7 +340,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
       end
 
       describe "When widgets are added after page load" do
-        after do
+        before do
           garden_widget = find(".widget-list .widgets--list-view .widget:first-of-type")
           drop_target_add = find(".aside-after-main-widgets .drop-target-add:first-of-type")
           2.times do
