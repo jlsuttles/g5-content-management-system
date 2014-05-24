@@ -11,7 +11,7 @@ end
 
 describe ComponentGardenable, vcr: { record: :new_episodes } do
   before do
-    stub_const "MAIN_APP_UID", 
+    stub_const "MAIN_APP_UID",
                'http://g5-configurator.herokuapp.com/apps/g5-cms-1s7nay2b-mj-storage-client'
   end
   describe ".components_microformats" do
@@ -34,7 +34,7 @@ describe ComponentGardenable, vcr: { record: :new_episodes } do
           stub_const "MAIN_APP_UID", 'foo'
         end
         it "should reject components when they have targets not including our UID" do
-          Component.components_microformats.length.should == 38
+          Component.components_microformats.length.should == 40
         end
       end
 

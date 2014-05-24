@@ -75,6 +75,11 @@ describe ClientReader do
         its([:postal_code]) { should eq("80229") }
         its([:phone_number]) { should eq("555-555-5555") }
         its([:corporate]) { should be_false }
+        its([:neighborhood]) { should eq('Westwood')}
+        its([:floor_plans]) { should eq('2 Bedroom 2 Bath, Studio')}
+        its([:primary_amenity]) { should eq('Secret Passages')}
+        its([:qualifier]) { should eq('Luxury')}
+        its([:primary_landmark]) { should eq('Seattle Grace Hospital')}
       end
     end
 
