@@ -7,4 +7,8 @@ class LocationDecorator < Draper::Decorator
   def id
     object.id.to_s
   end
+
+  def address
+    "#{street_address}, #{city}, #{state}"
+  end
 end
