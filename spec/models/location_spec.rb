@@ -38,4 +38,24 @@ describe Location do
       location.website_id.should eq website.id
     end
   end
+
+  describe "#neighborhood_slug" do
+    let(:location) { Fabricate(:location) }
+
+    subject { location.neighborhood_slug }
+
+    context "with no neighborhood" do
+      it "doesn't blow up" do
+        expect(subject).to be_blank
+      end
+    end
+
+    context "with a neighborhood" do
+      let(:location) { Fabricate(:location, neighborhood: "Some Place") }
+
+      it "parameterizes it" do
+        expect(subject).to eq("some-place")
+      end
+    end
+  end
 end

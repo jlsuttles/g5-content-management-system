@@ -11,8 +11,6 @@ module StaticWebsite
         render_to_file
       end
 
-    private
-
       def compile_path
         File.join(@base_path.to_s, @slug, "index.html")
       end
