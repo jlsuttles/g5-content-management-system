@@ -18,7 +18,7 @@ private
   end
 
   def locations_by_city
-    Location.all.select { |location| location.city_slug == @params[:city] }
+    locations_by_state.select { |location| location.city_slug == @params[:city] }
   end
 
   def locations_by_state
