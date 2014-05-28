@@ -10,6 +10,8 @@ class Location < ActiveRecord::Base
   validates :city, presence: true
   validates :state, presence: true
 
+  scope :corporate, -> { where(corporate: true).first }
+
   before_validation :set_city_slug_from_city
 
   def website_id

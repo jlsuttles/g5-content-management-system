@@ -8,28 +8,29 @@ module StaticWebsite
 
       def compile
         states.each do |state|
-          compile_area_page(state)
+          compile_area_page(state, params(state))
           compile_cities_for(state)
         end
       end
 
     private
 
-      def compile_area_page(path)
-        AreaPage.new(@base_path, path).compile
-      end
-
       def compile_cities_for(state)
         cities_for(state).each do |city|
-          compile_area_page("#{state}/#{city}")
+          compile_area_page("#{state}/#{city}", params(state, city))
           compile_neighborhoods_for(city, state)
         end
       end
 
       def compile_neighborhoods_for(city, state)
         neighborhoods_for(city).each do |neighborhood|
-          compile_area_page("#{state}/#{city}/#{neighborhood}")
+          path = "#{state}/#{city}/#{neighborhood}"
+          compile_area_page(path, params(state, city, neighborhood))
         end
+      end
+
+      def compile_area_page(path, params)
+        AreaPage.new(@base_path, path, params).compile
       end
 
       def states
@@ -50,6 +51,10 @@ module StaticWebsite
 
       def websites_for_city(city)
         @websites.select { |website| website.owner.city_slug == city }
+      end
+
+      def params(state, city=nil, neighborhood=nil)
+        { state: state, city: city, neighborhood: neighborhood }
       end
     end
   end
