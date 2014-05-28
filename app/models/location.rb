@@ -20,6 +20,10 @@ class Location < ActiveRecord::Base
     state.try(:parameterize).to_s
   end
 
+  def neighborhood_slug
+    neighborhood.try(:parameterize).to_s
+  end
+
   private
 
   def set_city_slug_from_city
