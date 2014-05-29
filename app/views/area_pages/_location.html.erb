@@ -1,0 +1,16 @@
+<p class="h-adr p-adr adr" itemscope itemtype="http://schema.org/PostalAddress">
+  <a href="<%= location.website.decorate.heroku_url %>"><%= location.name %></a><br>
+
+  <span class="p-street-address street-address" itemprop="streetAddress">
+    <%= location.street_address %>
+  </span><br>
+  <span class="p-locality locality" itemprop="addressLocality">
+    <%= location.city %>,
+  </span>
+  <span class="p-region region" itemprop="addressRegion">
+    <%= location.state %>
+  </span>
+  <span class="p-postal-code postal-code" itemprop="postalCode">
+    <%= location.postal_code %>
+  </span>
+</p>

@@ -1,0 +1,10 @@
+<script class="config" type="application/json">
+  {
+    "address": <%= addresses.first.to_json.html_safe %>,
+    "addresses": <%= addresses.to_json.html_safe %>,
+    "panZoom": true,
+    "mapType": "ROADMAP"
+  }
+</script>
+
+<div class='canvas'></div>

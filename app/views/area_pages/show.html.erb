@@ -1,4 +1,4 @@
-<% content_for(:title) { web_template.render_title } %>
+<% content_for(:title) { "Locations" } %>
 
 <% content_for(:head) {
   if mode == "preview"
@@ -8,16 +8,16 @@
   end
 } %>
 
+<% content_for(:head) { stylesheet_link_tag("area_page") } %>
 <% content_for(:head) { raw canonical_link_element(params, web_template) } %>
 <% content_for(:head_widgets) { raw meta_description_widgets(web_template) } %>
 <% content_for(:head_widgets) { raw head_widgets(web_template) } %>
-<% content_for(:body_classes) { "page-#{web_template.slug}" } %>
 
 <%= raw area_preview(web_template.website_layout, web_template, locations, area) %>
 
 <% content_for(:bottom_of_body) {
   if mode == "preview"
-    javascript_include_tag(*web_template.javascripts)
+    javascript_include_tag("area_page")
   else
     javascript_include_tag(*web_template.javascript_include_paths)
   end
