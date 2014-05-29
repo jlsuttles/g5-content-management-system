@@ -5,7 +5,7 @@ class AreaPageRenderer
   end
 
   def render
-    "<div class='area_page'>#{title + locations + map}</div>"
+    "<div class='area_page map'>#{title + locations + map}</div>"
   end
 
 private
