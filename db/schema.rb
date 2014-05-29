@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140512193842) do
+ActiveRecord::Schema.define(version: 20140521185630) do
 
   create_table "assets", force: true do |t|
     t.string   "url"
@@ -109,6 +109,10 @@ ActiveRecord::Schema.define(version: 20140512193842) do
     t.string   "city_slug"
     t.string   "phone_number"
     t.string   "neighborhood"
+    t.string   "primary_amenity"
+    t.string   "primary_landmark"
+    t.string   "qualifier"
+    t.string   "floor_plans"
   end
 
   add_index "locations", ["urn"], name: "index_locations_on_urn"

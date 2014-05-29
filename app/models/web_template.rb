@@ -171,10 +171,15 @@ class WebTemplate < ActiveRecord::Base
 
   def render_title
     Liquid::Template.parse(title).render(
+      "web_template_name" => name,
       "location_name" => owner.name,
       "location_city" => owner.city,
       "location_state" => owner.state,
-      "web_template_name" => name
+      "location_neighborhood" => owner.neighborhood,
+      "location_floor_plans" => owner.floor_plans,
+      "location_primary_amenity" => owner.primary_amenity,
+      "location_qualifier" => owner.qualifier,
+      "location_primary_landmark" => owner.primary_landmark
     )
   end
 
