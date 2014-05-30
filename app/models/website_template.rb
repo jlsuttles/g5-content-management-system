@@ -1,6 +1,6 @@
 class WebsiteTemplate < WebTemplate
   def all_widgets
-    widgets
+    widgets.not_meta_description
   end
 
   # TODO: remove when Ember App implements DropTarget
