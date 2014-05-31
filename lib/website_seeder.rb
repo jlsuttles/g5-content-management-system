@@ -107,7 +107,9 @@ class WebsiteSeeder
   end
 
   def create_setting!(name, value)
-    website.settings.find_or_create_by(name: name, value: value)
+    website.settings.find_or_create_by(name: name) do |setting|
+      setting.value = value
+    end
   end
 
   def web_template_params(instructions)
