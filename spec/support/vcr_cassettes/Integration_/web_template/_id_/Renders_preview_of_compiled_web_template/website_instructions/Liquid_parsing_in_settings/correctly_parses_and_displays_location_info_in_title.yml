@@ -925,7 +925,7 @@ http_interactions:
           }
           .tweet-date,
           .tweet-text p {
-            color: #b5b5b5;
+            spec/support/vcr_cassettes/Integration_/web_template/_id_/Renders_preview_of_compiled_web_template/website_instructions/Liquid_parsing_in_settings/correctly_parses_and_displays_location_info_in_title.ymlcolor: #b5b5b5;
           }
           .tweet-name {
             color: $white;

@@ -10,6 +10,12 @@ module StaticWebsite
     Compiler.new(website).compile
   end
 
+  def self.compile_area_pages(website)
+    if website.owner.corporate?
+      AreaPages.new(website.compile_path, Website.location_websites).compile
+    end
+  end
+
   def self.deploy(website)
     Deployer.new(website).deploy
   end
