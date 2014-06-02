@@ -22,6 +22,7 @@ class Widget < ActiveRecord::Base
   # prefix means access with `garden_widget_settings` not `settings`
   delegate :settings,
     to: :garden_widget, allow_nil: true, prefix: true
+  delegate :client, to: :drop_target, allow_nil: true
 
   after_initialize :set_defaults
   after_create :update_settings!
@@ -41,7 +42,8 @@ class Widget < ActiveRecord::Base
     if row_widget?
       RowWidgetShowHtml.new(self).render
     else
-      Liquid::Template.parse(show_html).render("widget" => self)
+      Liquid::Template.parse(show_html).render(
+        "widget" => WidgetDrop.new(self, client.try(:locations)))
     end
   end
 
@@ -50,7 +52,8 @@ class Widget < ActiveRecord::Base
   end
 
   def render_edit_html
-    Liquid::Template.parse(edit_html).render("widget" => self)
+    Liquid::Template.parse(edit_html).render(
+      "widget" => WidgetDrop.new(self, client.try(:locations)))
   end
 
   def create_widget_entry_if_updated
