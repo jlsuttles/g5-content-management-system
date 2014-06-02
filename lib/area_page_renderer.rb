@@ -20,10 +20,16 @@ private
     end
   end
 
+  def location_addresses
+    @locations.map do |location|
+      [address_for(location), formatted_address_for(location)]
+    end
+  end
+
   def map
     ActionController::Base.new.render_to_string(
       partial: "area_pages/map",
-      locals: { addresses: location_addresses  }
+      locals: { addresses: location_addresses }
     )
   end
 
@@ -34,8 +40,11 @@ private
     )
   end
 
-  def location_addresses
-    @locations.map { |location| address_for(location) }
+  def formatted_address_for(location)
+    ActionController::Base.new.render_to_string(
+      partial: "area_pages/location_map_address",
+      locals: { location: location }
+    )
   end
 
   def address_for(location)
