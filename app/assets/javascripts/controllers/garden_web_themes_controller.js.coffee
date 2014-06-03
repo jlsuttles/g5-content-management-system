@@ -7,6 +7,8 @@ App.GardenWebThemesController = Ember.ArrayController.extend
 
   actions:
     update: (gardenWebTheme) ->
-      webTheme = @get("controllers.webTheme.model")
-      webTheme.set("gardenWebThemeId", gardenWebTheme.get("id"))
-      webTheme.save()
+      userConfirm = confirm("You are about to select this theme. Are you sure?")
+      if userConfirm
+        webTheme = @get("controllers.webTheme.model")
+        webTheme.set("gardenWebThemeId", gardenWebTheme.get("id"))
+        webTheme.save()
