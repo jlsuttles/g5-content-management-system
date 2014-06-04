@@ -18,7 +18,7 @@ describe GardenWidgetUpdater do
                                   url: "http://widget-garden.com/foo")
       end
 
-      it "updates GardenWidget with same URL" do
+      it "updates GardenWidget with same name" do
         gardener.stub(:garden_url) { "spec/support/garden_widget_updater/updated.html" }
         expect { updater.update_all }.to change { garden_widget.reload.url }.to("http://widget-garden.com/widget-test")
       end

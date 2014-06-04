@@ -18,7 +18,7 @@ describe GardenWebLayoutUpdater do
                                       url: "http://layout-garden.com/foo")
       end
 
-      it "updates GardenWebLayout with same URL" do
+      it "updates GardenWebLayout with same name" do
         gardener.stub(:garden_url) { "spec/support/garden_web_layout_updater/updated.html" }
         expect { updater.update_all }.to change { garden_web_layout.reload.url }.to("http://layout-garden.com/layout-test")
       end

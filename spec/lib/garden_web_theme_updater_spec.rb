@@ -18,7 +18,7 @@ describe GardenWebThemeUpdater do
                                      url: "http://theme-garden.com/foo")
       end
 
-      it "updates GardenWebTheme with same URL" do
+      it "updates GardenWebTheme with same name" do
         gardener.stub(:garden_url) { "spec/support/garden_web_theme_updater/updated.html" }
         expect { updater.update_all }.to change { garden_web_theme.reload.url }.to("http://theme-garden.com/theme-test")
       end
