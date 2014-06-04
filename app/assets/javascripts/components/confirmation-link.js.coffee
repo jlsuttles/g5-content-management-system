@@ -5,13 +5,10 @@ App.ConfirmationLinkComponent = Ember.Component.extend
     showConfirmation: ->
       @toggleProperty "isShowingConfirmation"
       userConfirm = confirm(@get("message"))
-      if userConfirm
-        @sendAction "action", @get("param")
-      else
+      @sendAction "action", @get("param") if userConfirm
       return
 
     confirm: ->
       @toggleProperty "isShowingConfirmation"
       @sendAction "action", @get("param")
       return
-
