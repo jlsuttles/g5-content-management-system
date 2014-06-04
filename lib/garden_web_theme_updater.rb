@@ -3,7 +3,7 @@ class GardenWebThemeUpdater
     updated_garden_web_themes = []
 
     components_microformats.map do |component|
-      garden_web_theme = GardenWebTheme.find_or_initialize_by(url: get_url(component))
+      garden_web_theme = GardenWebTheme.find_or_initialize_by(name: get_name(component))
       update(garden_web_theme, component)
       updated_garden_web_themes << garden_web_theme
     end if components_microformats

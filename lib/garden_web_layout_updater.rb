@@ -3,7 +3,7 @@ class GardenWebLayoutUpdater
     updated_garden_web_layouts = []
 
     components_microformats.map do |component|
-      garden_web_layout = GardenWebLayout.find_or_initialize_by(url: get_url(component))
+      garden_web_layout = GardenWebLayout.find_or_initialize_by(name: get_name(component))
       update(garden_web_layout, component)
       updated_garden_web_layouts << garden_web_layout
     end if components_microformats
