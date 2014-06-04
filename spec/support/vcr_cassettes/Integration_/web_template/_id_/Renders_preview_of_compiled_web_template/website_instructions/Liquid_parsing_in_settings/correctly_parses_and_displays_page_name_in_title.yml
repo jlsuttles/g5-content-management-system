@@ -21,15 +21,23 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Sat, 31 May 2014 21:34:39 GMT
+      - Wed, 04 Jun 2014 03:33:17 GMT
       Last-Modified:
-      - Thu, 29 May 2014 19:10:29 GMT
+      - Tue, 03 Jun 2014 22:03:15 GMT
       Status:
       - 200 OK
       Content-Length:
       - '44'
+      Age:
+      - '58'
+      X-Cache:
+      - HIT from 172.19.134.2
+      X-Cache-Lookup:
+      - HIT from 172.19.134.2:3128
+      Via:
+      - 1.0 172.19.134.2:3128 (squid/2.6.STABLE14)
       Connection:
-      - keep-alive
+      - close
     body:
       encoding: UTF-8
       string: |-
@@ -38,7 +46,7 @@ http_interactions:
           overflow: hidden;
         }
     http_version: 
-  recorded_at: Sat, 31 May 2014 21:34:39 GMT
+  recorded_at: Wed, 04 Jun 2014 03:34:16 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/floorplans/stylesheets/jquery.fancybox.css
@@ -60,15 +68,23 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Sat, 31 May 2014 21:34:39 GMT
+      - Wed, 04 Jun 2014 03:33:18 GMT
       Last-Modified:
-      - Thu, 29 May 2014 19:10:29 GMT
+      - Tue, 03 Jun 2014 22:03:15 GMT
       Status:
       - 200 OK
       Content-Length:
       - '5087'
+      Age:
+      - '57'
+      X-Cache:
+      - HIT from 172.19.134.2
+      X-Cache-Lookup:
+      - HIT from 172.19.134.2:3128
+      Via:
+      - 1.0 172.19.134.2:3128 (squid/2.6.STABLE14)
       Connection:
-      - keep-alive
+      - close
     body:
       encoding: UTF-8
       string: "/*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license
@@ -134,7 +150,7 @@ http_interactions:
         div {\n\t\tbackground-image: url('http://widgets.g5dxm.com/shared/fancybox_loading@2x.gif');\n\t\tbackground-size:
         24px 24px; /*The size of the normal image, half the size of the hi-res image*/\n\t}\n}"
     http_version: 
-  recorded_at: Sat, 31 May 2014 21:34:39 GMT
+  recorded_at: Wed, 04 Jun 2014 03:34:16 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/floorplans/stylesheets/floorplans.css
@@ -156,15 +172,23 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Sat, 31 May 2014 21:34:39 GMT
+      - Wed, 04 Jun 2014 03:33:20 GMT
       Last-Modified:
-      - Thu, 29 May 2014 19:10:29 GMT
+      - Tue, 03 Jun 2014 22:03:15 GMT
       Status:
       - 200 OK
       Content-Length:
       - '4122'
+      Age:
+      - '56'
+      X-Cache:
+      - HIT from 172.19.134.2
+      X-Cache-Lookup:
+      - HIT from 172.19.134.2:3128
+      Via:
+      - 1.0 172.19.134.2:3128 (squid/2.6.STABLE14)
       Connection:
-      - keep-alive
+      - close
     body:
       encoding: UTF-8
       string: |-
@@ -396,7 +420,7 @@ http_interactions:
           cursor: default;
         }
     http_version: 
-  recorded_at: Sat, 31 May 2014 21:34:39 GMT
+  recorded_at: Wed, 04 Jun 2014 03:34:16 GMT
 - request:
     method: get
     uri: http://g5-layout-garden.herokuapp.com/static/components/main-first-sidebar-right/stylesheets/layout-side-right.css
@@ -418,15 +442,23 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Sat, 31 May 2014 21:34:40 GMT
+      - Wed, 04 Jun 2014 03:33:21 GMT
       Last-Modified:
-      - Wed, 30 Apr 2014 22:47:24 GMT
+      - Tue, 03 Jun 2014 22:00:16 GMT
       Status:
       - 200 OK
       Content-Length:
       - '386'
+      Age:
+      - '54'
+      X-Cache:
+      - HIT from 172.19.134.2
+      X-Cache-Lookup:
+      - HIT from 172.19.134.2:3128
+      Via:
+      - 1.0 172.19.134.2:3128 (squid/2.6.STABLE14)
       Connection:
-      - keep-alive
+      - close
     body:
       encoding: UTF-8
       string: |
@@ -452,7 +484,7 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Sat, 31 May 2014 21:34:40 GMT
+  recorded_at: Wed, 04 Jun 2014 03:34:16 GMT
 - request:
     method: get
     uri: http://g5-theme-garden.herokuapp.com/static/components/high-rise/stylesheets/high-rise.scss
@@ -474,15 +506,23 @@ http_interactions:
       Content-Type:
       - text/plain
       Date:
-      - Sat, 31 May 2014 21:34:40 GMT
+      - Wed, 04 Jun 2014 03:33:24 GMT
       Last-Modified:
       - Thu, 08 May 2014 17:43:08 GMT
       Status:
       - 200 OK
       Content-Length:
       - '14297'
+      Age:
+      - '52'
+      X-Cache:
+      - HIT from 172.19.134.2
+      X-Cache-Lookup:
+      - HIT from 172.19.134.2:3128
+      Via:
+      - 1.0 172.19.134.2:3128 (squid/2.6.STABLE14)
       Connection:
-      - keep-alive
+      - close
     body:
       encoding: UTF-8
       string: |
@@ -1287,7 +1327,7 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Sat, 31 May 2014 21:34:40 GMT
+  recorded_at: Wed, 04 Jun 2014 03:34:16 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/button/stylesheets/button.css
@@ -1309,18 +1349,27 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Sat, 31 May 2014 21:34:40 GMT
+      - Wed, 04 Jun 2014 03:33:25 GMT
       Last-Modified:
-      - Thu, 29 May 2014 19:10:29 GMT
+      - Tue, 03 Jun 2014 22:03:15 GMT
       Status:
       - 200 OK
       Content-Length:
-      - '488'
+      - '497'
+      Age:
+      - '50'
+      X-Cache:
+      - HIT from 172.19.134.2
+      X-Cache-Lookup:
+      - HIT from 172.19.134.2:3128
+      Via:
+      - 1.0 172.19.134.2:3128 (squid/2.6.STABLE14)
       Connection:
-      - keep-alive
+      - close
     body:
       encoding: UTF-8
       string: |
+        .button,
         .button .btn-img,
         .button a {
           display: block;
@@ -1353,7 +1402,7 @@ http_interactions:
           margin: 0 auto 1em;
         }
     http_version: 
-  recorded_at: Sat, 31 May 2014 21:34:40 GMT
+  recorded_at: Wed, 04 Jun 2014 03:34:16 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/contact-info/stylesheets/contact-info.css
@@ -1375,15 +1424,23 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Sat, 31 May 2014 21:34:41 GMT
+      - Wed, 04 Jun 2014 03:33:26 GMT
       Last-Modified:
-      - Thu, 29 May 2014 19:10:29 GMT
+      - Tue, 03 Jun 2014 22:03:15 GMT
       Status:
       - 200 OK
       Content-Length:
       - '194'
+      Age:
+      - '49'
+      X-Cache:
+      - HIT from 172.19.134.2
+      X-Cache-Lookup:
+      - HIT from 172.19.134.2:3128
+      Via:
+      - 1.0 172.19.134.2:3128 (squid/2.6.STABLE14)
       Connection:
-      - keep-alive
+      - close
     body:
       encoding: UTF-8
       string: |-
@@ -1399,7 +1456,7 @@ http_interactions:
           margin-top: 0;
         }
     http_version: 
-  recorded_at: Sat, 31 May 2014 21:34:41 GMT
+  recorded_at: Wed, 04 Jun 2014 03:34:16 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/hours/stylesheets/hours.css
@@ -1421,15 +1478,23 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Sat, 31 May 2014 21:34:41 GMT
+      - Wed, 04 Jun 2014 03:33:28 GMT
       Last-Modified:
-      - Thu, 29 May 2014 19:10:29 GMT
+      - Tue, 03 Jun 2014 22:03:15 GMT
       Status:
       - 200 OK
       Content-Length:
       - '30'
+      Age:
+      - '48'
+      X-Cache:
+      - HIT from 172.19.134.2
+      X-Cache-Lookup:
+      - HIT from 172.19.134.2:3128
+      Via:
+      - 1.0 172.19.134.2:3128 (squid/2.6.STABLE14)
       Connection:
-      - keep-alive
+      - close
     body:
       encoding: UTF-8
       string: |
@@ -1437,7 +1502,7 @@ http_interactions:
           margin-top: 0;
         }
     http_version: 
-  recorded_at: Sat, 31 May 2014 21:34:41 GMT
+  recorded_at: Wed, 04 Jun 2014 03:34:16 GMT
 - request:
     method: get
     uri: http://g5-widget-garden.herokuapp.com/static/components/footer-info/stylesheets/footer-info.css
@@ -1459,15 +1524,23 @@ http_interactions:
       Content-Type:
       - text/css
       Date:
-      - Sat, 31 May 2014 21:34:41 GMT
+      - Wed, 04 Jun 2014 03:33:29 GMT
       Last-Modified:
-      - Thu, 29 May 2014 19:10:29 GMT
+      - Tue, 03 Jun 2014 22:03:15 GMT
       Status:
       - 200 OK
       Content-Length:
       - '600'
+      Age:
+      - '47'
+      X-Cache:
+      - HIT from 172.19.134.2
+      X-Cache-Lookup:
+      - HIT from 172.19.134.2:3128
+      Via:
+      - 1.0 172.19.134.2:3128 (squid/2.6.STABLE14)
       Connection:
-      - keep-alive
+      - close
     body:
       encoding: UTF-8
       string: ".footer-info {\n  float: right;\n  text-align: right;\n}\n.footer-info
@@ -1479,5 +1552,5 @@ http_interactions:
         {\n  background-position: -43px 0;\n  height: 23px;\n  width: 20px;\n}\n\n.footer-info
         .corporate-logo {\n  display: inline-block;\n  max-width: 200px;\n}"
     http_version: 
-  recorded_at: Sat, 31 May 2014 21:34:41 GMT
+  recorded_at: Wed, 04 Jun 2014 03:34:16 GMT
 recorded_with: VCR 2.9.0

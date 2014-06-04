@@ -1,0 +1,16 @@
+.area_page .canvas {
+  height: 0;
+  padding-bottom: 75%;
+  padding-top: 30px;
+  width: 100%;
+  position: relative;
+}
+
+/*google map bootstrap fix*/
+.area_page .canvas img {
+  max-width: none;
+}
+.area_page .canvas label {
+  width: auto;
+  display: inline;
+}

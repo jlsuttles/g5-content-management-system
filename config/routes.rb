@@ -72,6 +72,10 @@ G5CMS::Application.routes.draw do
   resources :widget_entries, only: [:index, :show]
   resources :tags, only: [:show]
 
+  get "/areas/:state", to: "area_pages#show"
+  get "/areas/:state/:city", to: "area_pages#show"
+  get "/areas/:state/:city/:neighborhood", to: "area_pages#show"
+
   # Ember.js application
   get "/:location_slug", to: "locations#index"
   get "/:location_slug/:web_page_template_slug", to: "locations#index"

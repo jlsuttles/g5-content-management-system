@@ -3,6 +3,8 @@ class WebsiteDecorator < Draper::Decorator
   decorates_association :web_home_template
   decorates_association :web_page_template
 
+  liquid_methods :heroku_url
+
   def github_repo
     "git@github.com:G5/static-heroku-app.git"
   end
