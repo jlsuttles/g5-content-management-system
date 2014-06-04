@@ -3,8 +3,11 @@ require "spec_helper"
 describe LocationsNavigationSetting do
   describe "#group_locations" do
     let!(:location_2) { Fabricate(:location, state: "California", city: "San Francisco") }
+    let!(:website_2) { Fabricate(:website, owner: location_2) }
     let!(:location_3) { Fabricate(:location, state: "Oregon") }
+    let!(:website_3) { Fabricate(:website, owner: location_3) }
     let!(:location_1) { Fabricate(:location, state: "California", city: "Los Angeles") }
+    let!(:website_1) { Fabricate(:website, owner: location_1) }
     subject { LocationsNavigationSetting.new.grouped_locations }
 
     it "groups locations with the same state" do
