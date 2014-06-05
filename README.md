@@ -42,9 +42,9 @@
 1. Customize garden ENV variables __or don't__. Defaults are shown.
 
     ```bash
-    $ export LAYOUT_GARDEN_URL=http://g5-layout-garden.herokuapp.com
-    $ export THEME_GARDEN_URL=http://g5-theme-garden.herokuapp.com
-    $ export WIDGET_GARDEN_URL=http://g5-widget-garden.herokuapp.com
+    $ export LAYOUT_GARDEN_URL=https://g5-layout-garden.herokuapp.com
+    $ export THEME_GARDEN_URL=https://g5-theme-garden.herokuapp.com
+    $ export WIDGET_GARDEN_URL=https://g5-widget-garden.herokuapp.com
     ```
 
     Defaults are set in `config/initializers/env.rb`.
