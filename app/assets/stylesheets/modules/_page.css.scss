@@ -61,7 +61,6 @@
     @extend %c-h3;
     color: $c-color-a;
     font-weight: $c-semiBold;
-    float: left;
     margin-bottom: 0;
   }
   @include respond-to($l-max-medium, max-width) {
