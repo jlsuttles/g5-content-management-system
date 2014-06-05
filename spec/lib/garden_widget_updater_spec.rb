@@ -13,11 +13,14 @@ describe GardenWidgetUpdater do
     end
 
     describe "when a widget is updated in the garden" do
-      let(:garden_widget) { Fabricate(:garden_widget, url: "http://widget-garden.com/widget-test") }
+      let(:garden_widget) do
+        Fabricate(:garden_widget, name: "Updated Garden Widget",
+                                  url: "http://widget-garden.com/foo")
+      end
 
-      it "updates GardenWidget with same URL" do
+      it "updates GardenWidget with same name" do
         gardener.stub(:garden_url) { "spec/support/garden_widget_updater/updated.html" }
-        expect { updater.update_all }.to change { garden_widget.reload.name }.to("Updated Garden Widget")
+        expect { updater.update_all }.to change { garden_widget.reload.url }.to("http://widget-garden.com/widget-test")
       end
     end
 

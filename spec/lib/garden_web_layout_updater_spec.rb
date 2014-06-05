@@ -13,11 +13,14 @@ describe GardenWebLayoutUpdater do
     end
 
     describe "when a layout is updated in the garden" do
-      let(:garden_web_layout) { Fabricate(:garden_web_layout, url: "http://layout-garden.com/layout-test") }
+      let(:garden_web_layout) do
+        Fabricate(:garden_web_layout, name: "Updated Garden Layout",
+                                      url: "http://layout-garden.com/foo")
+      end
 
-      it "updates GardenWebLayout with same URL" do
+      it "updates GardenWebLayout with same name" do
         gardener.stub(:garden_url) { "spec/support/garden_web_layout_updater/updated.html" }
-        expect { updater.update_all }.to change { garden_web_layout.reload.name }.to("Updated Garden Layout")
+        expect { updater.update_all }.to change { garden_web_layout.reload.url }.to("http://layout-garden.com/layout-test")
       end
     end
 
