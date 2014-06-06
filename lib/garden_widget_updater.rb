@@ -43,7 +43,7 @@ class GardenWidgetUpdater
   def update_column_widget_garden_widgets_setting
     Website.all.each do |website|
       setting = website.settings.find_or_create_by(name: "column_widget_garden_widgets")
-      setting.update_attributes!(value: RowWidgetGardenWidgetsSetting.new.value)
+      setting.update_attributes!(value: ColumnWidgetGardenWidgetsSetting.new.value)
     end
   end
 
