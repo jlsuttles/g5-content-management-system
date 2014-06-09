@@ -1,8 +1,9 @@
 #= require jquery
+#= require jquery_ujs
 #= require jquery.ui.draggable
 #= require jquery.ui.droppable
 #= require jquery.ui.sortable
-#= require jquery_ujs
+#= require jquery.ui.effect-slide
 #= require bootstrap
 #= require spectrum
 #= require bootstrapSwitch
