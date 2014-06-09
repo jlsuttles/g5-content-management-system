@@ -110,13 +110,13 @@ class WebTemplate < ActiveRecord::Base
   def stylesheets
     widgets.map(&:show_stylesheets).flatten +
     website.try(:website_template).try(:stylesheets).to_a +
-    layout_widget_asset_collector.stylesheets
+    row_widget_asset_collector.stylesheets
   end
 
   def javascripts
     widget_lib_javascripts + widgets.map(&:show_javascript).flatten.compact +
     website.try(:website_template).try(:javascripts).to_a.flatten.compact +
-    layout_widget_asset_collector.javascripts
+    row_widget_asset_collector.javascripts
   end
 
   def widget_lib_javascripts
@@ -227,7 +227,7 @@ class WebTemplate < ActiveRecord::Base
     web_page_template? && single_domain? && !website.corporate?
   end
 
-  def layout_widget_asset_collector
-    @layout_widget_asset_collector ||= LayoutWidgetAssetCollector.new(self)
+  def row_widget_asset_collector
+    @row_widget_asset_collector ||= RowWidgetAssetCollector.new(self)
   end
 end

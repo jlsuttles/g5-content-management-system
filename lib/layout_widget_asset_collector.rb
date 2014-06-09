@@ -1,84 +1,59 @@
-class LayoutWidgetAssetCollector
+class RowWidgetAssetCollector
   def initialize(template)
     @template = template
   end
 
   def javascripts
     return [] unless row_widget.present?
-    (row_widget_javascripts + column_widget_javascripts).flatten.compact
+    javascripts_for(row_widget_widgets) + javascripts_for(column_widget_widgets)
   end
 
   def stylesheets
     return [] unless row_widget.present?
-    row_widget_stylesheets + column_widget_stylesheets
+    stylesheets_for(row_widget_widgets) + stylesheets_for(column_widget_widgets)
   end
 
+private
 
+  def javascripts_for(widgets)
+    (widgets.map(&:lib_javascripts) + widgets.map(&:show_javascript)).flatten.compact
+  end
 
+  def stylesheets_for(widgets)
+    widgets.map(&:show_stylesheets).flatten.compact
+  end
 
+  def widget_for(widgets, type)
+    widgets.joins(:garden_widget).where("garden_widgets.name = ?", type).first
+  end
 
-
-
-
-  def row_widget
-    @template.widgets.map do |widget|
-      widget if widget.garden_widget.name == "Row"
-    end.compact.first
+  def widget_ids_for(settings, type)
+    pattern = /(?=.*#{type})(?=.*widget_id).*/
+    settings.select { |setting| setting.name =~ pattern }.map(&:value).compact
   end
 
   def row_widget_widget_ids
-    row_widget.settings.map do |setting|
-      setting.value if setting.name =~ /(?=.*column)(?=.*widget_id).*/
-    end.compact
+    widget_ids_for(row_widget.settings, "column")
+  end
 
+  def column_widget_widget_ids
+    widget_ids_for(column_widget.settings, "row")
+  end
 
-    #row_widget.settings.where("name REGEXP ?" => "/(?=.*column)(?=.*widget_id).*/").map(&:value)
+  def row_widget
+    @row_widget ||= widget_for(@template.widgets, "Row")
+  end
+
+  def column_widget
+    @column_widget ||= widget_for(row_widget_widgets, "Column")
   end
 
   def row_widget_widgets
     @row_widget_widgets ||= Widget.where(id: row_widget_widget_ids)
   end
 
-  def row_widget_javascripts
-    row_widget_widgets.map(&:lib_javascripts) +
-    row_widget_widgets.map(&:show_javascript)
-  end
-
-  def row_widget_stylesheets
-    row_widget_widgets.map(&:show_stylesheets).flatten.compact
-  end
-
-
-  def javascripts_for(widgets)
-    widgets.map(&:lib_javascripts) + widgets.map(&:show_javascript)
-  end
-
-
-
-  def column_widget
-    row_widget_widgets.map do |widget|
-      widget if widget.garden_widget.name == "Column"
-    end.compact.first
-  end
-
-  def column_widget_widget_ids
-    column_widget.settings.map do |setting|
-      setting.value if setting.name =~ /(?=.*row)(?=.*widget_id).*/
-    end.compact
-  end
-
   def column_widget_widgets
+    return [] unless column_widget.present?
     @column_widget_widgets ||= Widget.where(id: column_widget_widget_ids)
-  end
-
-  def column_widget_javascripts
-    return [] unless column_widget.present?
-    column_widget_widgets.map(&:lib_javascripts) +
-    column_widget_widgets.map(&:show_javascript)
-  end
-
-  def column_widget_stylesheets
-    return [] unless column_widget.present?
-    column_widget_widgets.map(&:show_stylesheets).flatten.compact
   end
 end
