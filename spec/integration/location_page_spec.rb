@@ -104,6 +104,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
 
           expect do
             drag_and_drop(existing_widget, drop_target_remove)
+            page.driver.browser.switch_to.alert.accept
             sleep 1
           end.to change{ @web_page_template.reload.main_widgets.count }.by(-1)
           expect(all(".main-widgets .widget").length).to eq existing_widget_count-1
@@ -117,6 +118,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
             2.times do
               existing_widget = find(".main-widgets .widget:first-of-type")
               drag_and_drop(existing_widget, drop_target_remove)
+              page.driver.browser.switch_to.alert.accept
               sleep 1
             end
           end.to change{ @web_page_template.reload.main_widgets.count }.by(-2)
@@ -141,6 +143,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
 
           expect do
             drag_and_drop(existing_widget, drop_target_remove)
+            page.driver.browser.switch_to.alert.accept
             sleep 1
           end.to change{ @web_page_template.reload.main_widgets.count }.by(-1)
           expect(all(".main-widgets .widget").length).to eq existing_widget_count-1
@@ -154,6 +157,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
             2.times do
               existing_widget = find(".main-widgets .widget:last-of-type")
               drag_and_drop(existing_widget, drop_target_remove)
+              page.driver.browser.switch_to.alert.accept
               sleep 1
             end
           end.to change{ @web_page_template.reload.main_widgets.count }.by(-2)
@@ -219,6 +223,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
 
           expect do
             drag_and_drop(existing_widget, drop_target_remove)
+            page.driver.browser.switch_to.alert.accept
             sleep 1
           end.to change{ @website_template.reload.aside_before_main_widgets.count }.by(-1)
           expect(all(".aside-before-main-widgets .widget").length).to eq existing_widget_count-1
@@ -232,6 +237,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
             2.times do
               existing_widget = find(".aside-before-main-widgets .widget:first-of-type")
               drag_and_drop(existing_widget, drop_target_remove)
+              page.driver.browser.switch_to.alert.accept
               sleep 1
             end
           end.to change{ @website_template.reload.aside_before_main_widgets.count }.by(-2)
@@ -256,6 +262,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
 
           expect do
             drag_and_drop(existing_widget, drop_target_remove)
+            page.driver.browser.switch_to.alert.accept
             sleep 1
           end.to change{ @website_template.reload.aside_before_main_widgets.count }.by(-1)
           expect(all(".aside-before-main-widgets .widget").length).to eq existing_widget_count-1
@@ -269,6 +276,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
             2.times do
               existing_widget = find(".aside-before-main-widgets .widget:last-of-type")
               drag_and_drop(existing_widget, drop_target_remove)
+              page.driver.browser.switch_to.alert.accept
               sleep 1
             end
           end.to change{ @website_template.reload.aside_before_main_widgets.count }.by(-2)
@@ -334,6 +342,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
 
           expect do
             drag_and_drop(existing_widget, drop_target_remove)
+            page.driver.browser.switch_to.alert.accept
             sleep 1
           end.to change{ @website_template.reload.aside_after_main_widgets.count }.by(-1)
           expect(all(".aside-after-main-widgets .widget").length).to eq existing_widget_count-1
@@ -347,6 +356,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
             2.times do
               existing_widget = find(".aside-after-main-widgets .widget:first-of-type")
               drag_and_drop(existing_widget, drop_target_remove)
+              page.driver.browser.switch_to.alert.accept
               sleep 1
             end
           end.to change{ @website_template.reload.aside_after_main_widgets.count }.by(-2)
@@ -371,6 +381,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
 
           expect do
             drag_and_drop(existing_widget, drop_target_remove)
+            page.driver.browser.switch_to.alert.accept
             sleep 1
           end.to change{ @website_template.reload.aside_after_main_widgets.count }.by(-1)
           expect(all(".aside-after-main-widgets .widget").length).to eq existing_widget_count-1
@@ -384,6 +395,7 @@ describe "Integration '/:website_slug/:web_page_template_slug'", :auth_request, 
             2.times do
               existing_widget = find(".aside-after-main-widgets .widget:last-of-type")
               drag_and_drop(existing_widget, drop_target_remove)
+              page.driver.browser.switch_to.alert.accept
               sleep 1
             end
           end.to change{ @website_template.reload.aside_after_main_widgets.count }.by(-2)
