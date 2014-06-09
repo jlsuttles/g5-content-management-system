@@ -14,7 +14,8 @@ module SettingRowWidgetGardenWidgets
 
   def update_row_widget_id_setting
     if value_changed?
-      LayoutWidgetUpdater.new(self, ROW_GARDEN_WIDGET_NAME_SETTINGS, ROW_WIDGET_ID_SETTINGS).update
+      LayoutWidgetUpdater.
+        new(self, ROW_GARDEN_WIDGET_NAME_SETTINGS, ROW_WIDGET_ID_SETTINGS).update
     end
   end
 end

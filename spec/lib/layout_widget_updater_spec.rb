@@ -8,14 +8,21 @@ describe LayoutWidgetUpdater do
   let(:id_settings) { SettingRowWidgetGardenWidgets::ROW_WIDGET_ID_SETTINGS }
 
   describe "#update" do
-    subject { updater.update }
+    after { updater.update }
 
     context "a setting name not within name settings" do
       let(:name) { "Foo" }
 
-      it "does nothing" do
-        Widget.should_not_receive(:create)
-        subject
+      it "does not create a new widget" do
+        updater.should_not_receive(:create_new_widget)
+      end
+
+      it "does not destroy the old widget" do
+        updater.should_not_receive(:destroy_old_widget)
+      end
+
+      it "does not assign the new widget" do
+        updater.should_not_receive(:assign_new_widget)
       end
     end
 
@@ -24,17 +31,14 @@ describe LayoutWidgetUpdater do
 
       it "creates a new widget" do
         updater.should_receive(:create_new_widget)
-        subject
       end
 
       it "destroys the old widget" do
         updater.should_receive(:destroy_old_widget)
-        subject
       end
 
       it "assigns the new widget" do
         updater.should_receive(:assign_new_widget)
-        subject
       end
     end
   end
