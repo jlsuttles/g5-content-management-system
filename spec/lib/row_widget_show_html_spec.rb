@@ -60,7 +60,7 @@ describe RowWidgetShowHtml do
 
         context "two columns" do
           let(:name) { "column_two_widget_id" }
-          let(:value) { "thirds-1" }
+          let(:value) { "uneven-thirds-1" }
 
           it "calls render_widget twice" do
             expect(row_widget_show_html).to receive(:render_widget).exactly(2).times
@@ -69,7 +69,7 @@ describe RowWidgetShowHtml do
 
         context "two columns" do
           let(:name) { "column_two_widget_id" }
-          let(:value) { "thirds-2" }
+          let(:value) { "uneven-thirds-2" }
 
           it "calls render_widget twice" do
             expect(row_widget_show_html).to receive(:render_widget).exactly(2).times
