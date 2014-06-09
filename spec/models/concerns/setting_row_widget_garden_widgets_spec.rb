@@ -4,15 +4,15 @@ shared_examples_for SettingRowWidgetGardenWidgets do
   describe "When availble_garden_widgets setting" do
     let!(:widget) { Fabricate(:widget) }
     let!(:corresponding_setting) { Fabricate(:setting,
-      name: SettingRowWidgetGardenWidgets::WIDGET_ID_SETTINGS[0],
+      name: SettingRowWidgetGardenWidgets::ROW_WIDGET_ID_SETTINGS[0],
       owner: widget) }
     let!(:described_instance) { Fabricate(:setting,
-      name: SettingRowWidgetGardenWidgets::GARDEN_WIDGET_NAME_SETTINGS[0],
+      name: SettingRowWidgetGardenWidgets::ROW_GARDEN_WIDGET_NAME_SETTINGS[0],
       owner: widget) }
 
     describe "After update" do
       it "Tries to update corresponding setting" do
-        described_instance.should_receive(:update_widget_id_setting)
+        described_instance.should_receive(:update_row_widget_id_setting)
         described_instance.save
       end
 

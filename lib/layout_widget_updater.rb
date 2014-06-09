@@ -1,12 +1,12 @@
-module SettingWidgetGardenWidgets
-  extend ActiveSupport::Concern
-
-  included do
-    after_update :update_widget_id_setting, if: :garden_widget_name_setting?
+class LayoutWidgetUpdater
+  def initialize(setting, name_settings, id_settings)
+    @setting = setting
+    @name_settings = name_settings
+    @id_settings = id_settings
   end
 
-  def update_widget_id_setting
-    if value_changed?
+  def update
+    if garden_widget_name_setting?
       create_new_widget
       destroy_old_widget
       assign_new_widget
@@ -25,12 +25,20 @@ module SettingWidgetGardenWidgets
     widget_id_setting.update_attributes(value: @new_widget.id) if widget_id_setting
   end
 
+  def garden_widget_name_setting?
+    @name_settings.include?(@setting.name)
+  end
+
   def garden_widget_id
-    GardenWidget.where(name: best_value).first.try(:id)
+    GardenWidget.where(name: @setting.best_value).first.try(:id)
+  end
+
+  def widget_id_setting_name
+    @id_settings[@name_settings.index(@setting.name)]
   end
 
   def widget_id_setting
-    owner.settings.where(name: widget_id_setting_name).first
+    @setting.owner.settings.where(name: widget_id_setting_name).first
   end
 
   def widget_id_setting_value
