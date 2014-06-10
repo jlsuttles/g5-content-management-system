@@ -2,6 +2,7 @@ class AWSSigner
 
   def initialize(params)
     @params = params
+    @now =  Time.now.utc
   end
 
   def upload_headers
@@ -9,8 +10,7 @@ class AWSSigner
       acl: 'public-read',
       awsaccesskeyid: ENV['AWS_ACCESS_KEY_ID'],
       bucket: bucket,
-      region: region,
-      expires: 10.hours.from_now,
+      expires: @now + 10.hours,
       key: "uploads/#{sluggify_filename}",
       policy: policy,
       signature: upload_signature,
@@ -21,13 +21,12 @@ class AWSSigner
   end
 
   def delete_headers
-    now = Time.now.utc
     {
-      signature: delete_signature(now),
+      signature: delete_signature(@now),
       aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
       success_action_status: '201',
-      iso8601_date: iso8601_datetime(now),
-      simple_date: simple_date(now),
+      iso8601_date: iso8601_datetime(@now),
+      simple_date: simple_date(@now),
       region: region
     }
   end
@@ -74,7 +73,7 @@ private
 
   def signing_key
     k_secret = ENV['AWS_SECRET_ACCESS_KEY']
-    k_date = hmac_sha256("AWS4" + k_secret, Time.now.utc.strftime("%Y%m%d"))
+    k_date = hmac_sha256("AWS4" + k_secret, @now.strftime("%Y%m%d"))
     k_region = hmac_sha256(k_date, region)
     k_service = hmac_sha256(k_region, "s3")
     k_signing = hmac_sha256(k_service, "aws4_request")
@@ -91,11 +90,11 @@ private
   def policy(options = {})
     Base64.encode64(
       {
-        expiration: 10.hours.from_now,
+        expiration: @now + 10.hours,
         conditions: [
           { bucket: bucket },
           { acl: 'public-read' },
-          { expires: 10.hours.from_now },
+          { expires: @now + 10.hours },
           { success_action_status: '201' },
           [ 'starts-with', '$key', '' ],
           [ 'starts-with', '$Content-Type', '' ],
