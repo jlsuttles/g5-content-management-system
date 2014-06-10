@@ -1,5 +1,6 @@
 class ColumnWidgetGardenWidgetsSetting
   def value
-    GardenWidget.where("name != ?", "Column").map(&:name).sort
+    GardenWidget.where("name != ? AND name != ?", "Column", "Row").
+                 order("name ASC").map(&:name)
   end
 end
