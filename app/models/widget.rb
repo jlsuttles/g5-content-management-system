@@ -39,16 +39,11 @@ class Widget < ActiveRecord::Base
   end
 
   def render_show_html
-    if row_widget?
-      RowWidgetShowHtml.new(self).render
-    else
-      Liquid::Template.parse(show_html).render(
-        "widget" => WidgetDrop.new(self, client.try(:locations)))
-    end
-  end
+    return RowWidgetShowHtml.new(self).render if kind_of_widget?("Row")
+    return ColumnWidgetShowHtml.new(self).render if kind_of_widget?("Column")
 
-  def row_widget?
-    name == "Row"
+    Liquid::Template.parse(show_html).render(
+      "widget" => WidgetDrop.new(self, client.try(:locations)))
   end
 
   def render_edit_html
