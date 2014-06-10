@@ -10,6 +10,7 @@ class AWSSigner
       acl: 'public-read',
       awsaccesskeyid: ENV['AWS_ACCESS_KEY_ID'],
       bucket: bucket,
+      region: region,
       expires: @now + 10.hours,
       key: "uploads/#{sluggify_filename}",
       policy: policy,
