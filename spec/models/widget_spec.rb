@@ -30,6 +30,19 @@ describe Widget, vcr: VCR_OPTIONS do
       end
     end
 
+    context "column widget" do
+      let(:garden_widget) { Fabricate.build(:garden_widget, name: "Column") }
+      let(:widget) { Fabricate.build(:widget, garden_widget: garden_widget) }
+      let(:column_widget_show_html) { double(render: nil) }
+
+      before { ColumnWidgetShowHtml.stub(new: column_widget_show_html) }
+
+      it "calls render on ColumnWidgetShowHtml" do
+        widget.render_show_html
+        expect(column_widget_show_html).to have_received(:render)
+      end
+    end
+
     context "all other widgets" do
       let(:widget) { Fabricate.build(:widget) }
 
