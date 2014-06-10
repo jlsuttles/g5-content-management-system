@@ -55,6 +55,8 @@ group :development, :test do
   gem "capybara"
   gem "launchy"
   gem "selenium-webdriver"
+  # for headless request specs
+  gem 'poltergeist'
   gem "database_cleaner"
   # ruby spec support
   gem 'factory_girl_rails'
