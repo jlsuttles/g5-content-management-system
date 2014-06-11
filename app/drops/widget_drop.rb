@@ -20,7 +20,7 @@ class WidgetDrop < Liquid::Drop
   end
 
   def id
-    @widget.id
+    widget.id
   end
 
 private
