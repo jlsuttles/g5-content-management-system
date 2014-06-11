@@ -16,7 +16,6 @@ class Widget < ActiveRecord::Base
     to: :drop_target, allow_nil: true
 
   delegate :name, :url, :thumbnail, :edit_html, :edit_javascript, :show_html,
-    :show_javascript, :lib_javascripts, :show_stylesheets,
     to: :garden_widget, allow_nil: true
 
   # prefix means access with `garden_widget_settings` not `settings`
@@ -33,6 +32,33 @@ class Widget < ActiveRecord::Base
     joins(:garden_widget).where("garden_widgets.name = ?", "Meta Description") }
   scope :not_meta_description, -> {
     joins(:garden_widget).where("garden_widgets.name != ?", "Meta Description") }
+  scope :layout, -> {
+    joins(:garden_widget).where("garden_widgets.name == 'Row' OR garden_widgets.name == 'Column'") }
+  
+  def show_stylesheets
+    [garden_widget.try(:show_stylesheets), 
+     widgets.collect(&:show_stylesheets)].flatten.compact.uniq
+  end
+
+  def show_javascripts
+    [garden_widget.try(:show_javascript),
+     widgets.collect(&:show_javascripts)].flatten.compact.uniq
+  end
+
+  def lib_javascripts
+    [garden_widget.try(:lib_javascripts), 
+     widgets.collect(&:lib_javascripts)].flatten.compact.uniq
+  end
+
+  def widgets
+    pattern = /(?=.*widget_id\z).*/
+    widgets = Widget.find(settings.select { |setting| setting.name =~ pattern &&
+                                                      setting.value != nil}.map(&:value))
+    more_widgets = widgets.collect do |widget|
+      widget.try(:widgets)
+    end
+    [widgets, more_widgets].flatten
+  end
 
   def kind_of_widget?(kind)
     name == kind
