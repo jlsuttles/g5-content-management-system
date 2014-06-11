@@ -21,8 +21,9 @@ class NavigationSettingWebsiteFinder
 
 private
 
-  def website_for(widget)
-    @widget.drop_target.web_template.website if @widget.drop_target
+  def website_for(owner)
+    return owner if owner.kind_of?(Website)
+    owner.drop_target.web_template.website if owner.drop_target
   end
 
   def find_setting(widget_id)
