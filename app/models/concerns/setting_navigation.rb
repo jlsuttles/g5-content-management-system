@@ -52,6 +52,6 @@ module SettingNavigation
   end
 
   def setting_website
-    website || LayoutWidgetWebsiteFinder.new(self).find
+    website || NavigationSettingWebsiteFinder.new(self).find
   end
 end
