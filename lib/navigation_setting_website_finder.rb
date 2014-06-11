@@ -7,21 +7,22 @@ class NavigationSettingWebsiteFinder
 
   def find
     loop do
-      setting = find_setting(@widget.id)
+      @website = website_for(@widget)
+      return @website if @website.present?
 
+      setting = find_setting(@widget.id)
       return unless setting
 
-      website_for(setting.owner)
-
-      return @website unless @website.nil?
+      @widget = setting.owner
+      @website = website_for(@widget)
+      return @website if @website.present?
     end
   end
 
 private
 
   def website_for(widget)
-    @widget = widget
-    @website = @widget.drop_target.web_template.website if @widget.drop_target
+    @widget.drop_target.web_template.website if @widget.drop_target
   end
 
   def find_setting(widget_id)
