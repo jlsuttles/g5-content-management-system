@@ -19,6 +19,10 @@ class WidgetDrop < Liquid::Drop
                                               map(&:address).to_json
   end
 
+  def id
+    @widget.id
+  end
+
 private
 
   def selected_location_ids
