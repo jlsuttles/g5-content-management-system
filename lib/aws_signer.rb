@@ -55,9 +55,9 @@ private
 
   def canonical_request(datetime)
     "DELETE\n"\
-    "/uploads/#{sluggify_filename}\n"\
+    "/#{bucket}/uploads/#{sluggify_filename}\n"\
     "\n"\
-    "host:#{bucket}.s3.amazonaws.com\n"\
+    "host:s3-#{region}.amazonaws.com\n"\
     "x-amz-date:#{iso8601_datetime(datetime)}\n"\
     "\n"\
     "host;x-amz-date\n"\
