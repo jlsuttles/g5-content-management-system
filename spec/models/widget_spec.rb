@@ -92,7 +92,12 @@ describe Widget, vcr: VCR_OPTIONS do
     end
   end
   describe "instance methods" do
-    let(:widget) {Fabricate.create(:widget)}
+    let(:widget) {Fabricate.create(:widget,
+                                   {garden_widget: garden_widget})}
+    let(:garden_widget) {Fabricate(:garden_widget,
+                                 {  show_stylesheets: ["foo.css", "bar.css"],
+                                    show_javascript: "show.js",
+                                    lib_javascripts: ["a.js", "b.js"] })}
     let!(:setting) { Fabricate.create(:setting,
                                      {name: 'row_1_widget_id',
                                       value: widget.id,
