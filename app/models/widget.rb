@@ -32,8 +32,6 @@ class Widget < ActiveRecord::Base
     joins(:garden_widget).where("garden_widgets.name = ?", "Meta Description") }
   scope :not_meta_description, -> {
     joins(:garden_widget).where("garden_widgets.name != ?", "Meta Description") }
-  scope :layout, -> {
-    joins(:garden_widget).where("garden_widgets.name == 'Row' OR garden_widgets.name == 'Column'") }
   
   def show_stylesheets
     [garden_widget.try(:show_stylesheets), 
