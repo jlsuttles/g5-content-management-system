@@ -1,4 +1,4 @@
-App.WebPageTemplatesNewController = Ember.ObjectController.extend
+App.WebsiteWebPageTemplatesNewController = Ember.ObjectController.extend
   actions:
     save: ->
       @get('model').save()

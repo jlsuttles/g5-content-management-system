@@ -1,4 +1,4 @@
-App.WebPageTemplatesNewRoute = Ember.Route.extend
+App.WebsiteWebPageTemplatesNewRoute = Ember.Route.extend
   setupController: (controller, model) ->
     website = @controllerFor("website").get("model")
 
