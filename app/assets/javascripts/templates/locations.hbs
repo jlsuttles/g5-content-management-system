@@ -7,7 +7,8 @@
       <a {{action updateGardenWebLayouts}} href="#" class="btn">Update Layouts</a>
 
       {{#if controllers.client.single_domain}}
-      <a {{action deploy_all}} href="#" class="btn">Deploy All</a>
+         {{confirmation-link title="Deploy All" action="deploy_all" param=this 
+          message="You are about to deploy. Are you sure?" classes="btn"}}
       {{/if}}
     </div>
   </div>
@@ -33,10 +34,12 @@
         <div {{bindAttr class=":faux-table-cell single_domain"}}>
           {{#link-to "website" this.website class="btn btn--a" }}Edit{{/link-to}}
           <a {{bindAttr href="this.website.herokuUrl"}} class="btn btn--a">View</a>
-          <a {{action deploy this}} href="#" class="btn btn--a deploy">Deploy</a>
+          {{confirmation-link title="Deploy" action="deploy" param=this 
+            message="You are about to deploy. Are you sure?" classes="btn btn--a deploy"}}
         </div>
       </li>
       {{/each}}
     </ul> <!-- end .faux-table-body -->
   </div> <!-- end .faux-table -->
 </div>
+

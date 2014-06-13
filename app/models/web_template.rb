@@ -109,17 +109,13 @@ class WebTemplate < ActiveRecord::Base
 
   def stylesheets
     widgets.map(&:show_stylesheets).flatten +
-    website.try(:website_template).try(:stylesheets).to_a
+    website.try(:website_template).try(:stylesheets).to_a 
   end
 
   def javascripts
-    widget_lib_javascripts + widgets.map(&:show_javascript).flatten.compact +
-    website.try(:website_template).try(:javascripts).to_a.flatten.compact
-  end
-
-  def widget_lib_javascripts
+    widgets.map(&:show_javascripts).flatten.compact +
     widgets.map(&:lib_javascripts).flatten.compact +
-    website.try(:website_template).try(:widget_lib_javascripts).to_a.flatten.compact
+    website.try(:website_template).try(:javascripts).to_a.flatten.compact
   end
 
   def website_compile_path
@@ -223,5 +219,9 @@ class WebTemplate < ActiveRecord::Base
 
   def single_domain_internal_page?
     web_page_template? && single_domain? && !website.corporate?
+  end
+
+  def row_widget_asset_collector
+    @row_widget_asset_collector ||= RowWidgetAssetCollector.new(self)
   end
 end

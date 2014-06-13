@@ -30,6 +30,19 @@ describe Widget, vcr: VCR_OPTIONS do
       end
     end
 
+    context "column widget" do
+      let(:garden_widget) { Fabricate.build(:garden_widget, name: "Column") }
+      let(:widget) { Fabricate.build(:widget, garden_widget: garden_widget) }
+      let(:column_widget_show_html) { double(render: nil) }
+
+      before { ColumnWidgetShowHtml.stub(new: column_widget_show_html) }
+
+      it "calls render on ColumnWidgetShowHtml" do
+        widget.render_show_html
+        expect(column_widget_show_html).to have_received(:render)
+      end
+    end
+
     context "all other widgets" do
       let(:widget) { Fabricate.build(:widget) }
 
@@ -75,6 +88,41 @@ describe Widget, vcr: VCR_OPTIONS do
       it "returns nil if the widget has not been updated" do
         widget.updated_at = Time.now - 1.day
         expect(widget.create_widget_entry_if_updated).to be_nil
+      end
+    end
+  end
+  describe "instance methods" do
+    let(:widget) {Fabricate.create(:widget,
+                                   {garden_widget: garden_widget})}
+    let(:garden_widget) {Fabricate(:garden_widget,
+                                 {  show_stylesheets: ["foo.css", "bar.css"],
+                                    show_javascript: "show.js",
+                                    lib_javascripts: ["a.js", "b.js"] })}
+    let!(:setting) { Fabricate.create(:setting,
+                                     {name: 'row_1_widget_id',
+                                      value: widget.id,
+                                      owner: row_widget}) }
+    let(:row_widget) {Fabricate.create(:widget).reload}
+
+
+    describe "#show_stylesheets" do
+      it "returns stylesheets associated through garden_widget" do
+        expect(widget.show_stylesheets).to eq(["foo.css","bar.css"])
+      end
+    end
+    describe "#show_javascripts" do
+      it "returns associated javascripts" do
+        expect(widget.show_javascripts).to eq(["show.js"])
+      end
+    end
+    describe "#lib_javascripts" do
+      it "returns associated lib javascripts" do
+        expect(widget.lib_javascripts).to eq(["a.js","b.js"])
+      end
+    end
+    describe "#widgets" do
+      it "returns associated child widgets" do
+        expect(row_widget.widgets).to eq([widget])
       end
     end
   end
