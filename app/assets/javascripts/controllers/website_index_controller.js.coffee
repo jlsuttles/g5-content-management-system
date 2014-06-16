@@ -5,7 +5,7 @@ App.WebsiteIndexController = Ember.ObjectController.extend
   actions:
     deploy: (model) ->
       url = "/websites/" + model.get('id') + "/deploy"
-      $("<form action='" + url + "' method='post'></form>").submit()
+      $("<form action='" + url + "' method='post'></form>").appendTo("body").submit()
       false
     deploy_all: (model) ->
       url = "/api/v1/clients/1/deploy_websites"
