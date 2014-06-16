@@ -206,7 +206,7 @@ class WebTemplate < ActiveRecord::Base
   end
 
   def default_slug_from_title
-    self.slug ||= title.parameterize
+    self.slug ||= name.parameterize
   end
 
   def format_redirect_patterns
